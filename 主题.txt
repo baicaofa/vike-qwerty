@@ -1,0 +1,17 @@
+修改robots.txt   public/robots.txt
+
+修改备案：src/components/Footer/index.tsx   src/components/Header/index.tsx
+
+处理：src\pages\Typing\components\ResultScreen\index.tsx
+
+删除：src\pages\Typing\components\ResultScreen\AuthorButton.tsx
+
+替换：Qwerty Learner
+替换：
+src目录下：text-indigo-500  换 text-blue-500
+
+bg-indigo-400换 bg-blue-400
+
+bg-indigo-500 换 bg-blue-500
+
+

@@ -94,8 +94,8 @@ const createIsOpenDarkModeAtom = () => {
   if (typeof window !== 'undefined') {
     return atomWithStorage('isOpenDarkModeAtom', window.matchMedia('(prefers-color-scheme: dark)').matches)
   }
-  // 如果不在浏览器环境中，返回 null 或者一个默认的原子
-  return null
+  // 如果不在浏览器环境中，返回一个默认的原子
+  return atom(false)
 }
 
 export const isOpenDarkModeAtom = createIsOpenDarkModeAtom()

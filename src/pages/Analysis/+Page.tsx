@@ -12,7 +12,7 @@ import { useHotkeys } from 'react-hotkeys-hook'
 import { useNavigate } from 'react-router-dom'
 import IconX from '~icons/tabler/x'
 
-const Analysis = () => {
+const Page = () => {
   const navigate = useNavigate()
   const [, setIsOpenDarkMode] = useAtom(isOpenDarkModeAtom)
 
@@ -78,4 +78,4 @@ const Analysis = () => {
   )
 }
 
-export default Analysis
+export default Page

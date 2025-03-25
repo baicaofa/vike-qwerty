@@ -1,5 +1,12 @@
+import { CHAPTER_LENGTH } from '@/constants'
 import type { Dictionary, DictionaryResource } from '@/typings/index'
-import { calcChapterCount } from '@/utils'
+
+// 定义 calcChapterCount 函数
+function calcChapterCount(length: number) {
+  return Math.ceil(length / CHAPTER_LENGTH)
+}
+console.log('[dictionary.ts] File loaded')
+console.log('[dictionary.ts] calcChapterCount:', calcChapterCount)
 
 // 中国考试
 const chinaExam: DictionaryResource[] = [

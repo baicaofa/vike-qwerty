@@ -15,8 +15,17 @@ export type RemarkRingProps = {
    */
   size?: number
 }
+function getRootFontSize() {
+  if (typeof window === 'undefined') {
+    // 服务器端渲染环境，返回默认值
+    return 16
+  }
+  const fontSize = window.getComputedStyle(document.documentElement).getPropertyValue('font-size')
+  const parsedSize = Number(fontSize.replace(/[^\d.]/g, ''))
+  return isNaN(parsedSize) ? 16 : parsedSize
+}
 
-const rootFontSize = parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('font-size'))
+const rootFontSize = getRootFontSize()
 
 export default function RemarkRing({ remark, caption, percentage = null, size = 7 }: RemarkRingProps) {
   const clipPath = useMemo((): string | undefined => {

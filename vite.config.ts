@@ -8,15 +8,20 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import Icons from 'unplugin-icons/vite'
 import { defineConfig } from 'vite'
 import type { PluginOption } from 'vite'
+import vike from 'vike/plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig(async ({ mode }) => {
   const latestCommitHash = await new Promise<string>((resolve) => {
     return getLastCommit((err, commit) => (err ? 'unknown' : resolve(commit.shortHash)))
   })
+ 
+
+
   return {
     plugins: [
       react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),
+      vike(),
       visualizer() as PluginOption,
       Icons({
         compiler: 'jsx',
@@ -44,6 +49,9 @@ export default defineConfig(async ({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, 'src'),
       },
+    },
+    ssr: {
+      noExternal: ['@/utils'], // 强制将 utils 作为内部模块
     },
     css: {
       modules: {

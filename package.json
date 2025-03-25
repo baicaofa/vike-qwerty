@@ -54,11 +54,12 @@
     "typescript": "^4.0.3",
     "use-immer": "^0.9.0",
     "use-sound": "^4.0.1",
+    "vike": "^0.4.226",
     "xlsx": "^0.18.5"
   },
   "scripts": {
-    "dev": "vite",
-    "start": "vite",
+    "dev": "vike dev",
+    "start": "vike start",
     "build": "cross-env CI=false vite build --base=./",
     "test": "echo \"No tests\"",
     "test:e2e": "playwright test",

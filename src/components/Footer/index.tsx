@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
   return (
     <>
       <footer className="mb-1 mt-4 flex w-full items-center justify-center gap-2.5 text-sm ease-in" onClick={(e) => e.currentTarget.blur()}>
-        <a href="https://www.keybr.com.cn/keybr/" target="_blank" aria-label="">
+        <a href="https://www.keybr.com.cn/keybr/" target="_blank" aria-label="" rel="noreferrer">
           Keybr Blog
         </a>
         <a

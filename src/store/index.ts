@@ -88,8 +88,17 @@ export const phoneticConfigAtom = atomForConfig('phoneticConfig', {
   isOpen: true,
   type: 'us' as PhoneticType,
 })
+// 定义一个函数来创建原子
+const createIsOpenDarkModeAtom = () => {
+  // 检查是否在浏览器环境中
+  if (typeof window !== 'undefined') {
+    return atomWithStorage('isOpenDarkModeAtom', window.matchMedia('(prefers-color-scheme: dark)').matches)
+  }
+  // 如果不在浏览器环境中，返回 null 或者一个默认的原子
+  return null
+}
 
-export const isOpenDarkModeAtom = atomWithStorage('isOpenDarkModeAtom', window.matchMedia('(prefers-color-scheme: dark)').matches)
+export const isOpenDarkModeAtom = createIsOpenDarkModeAtom()
 
 export const isShowSkipAtom = atom(false)
 

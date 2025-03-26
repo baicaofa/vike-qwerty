@@ -6,22 +6,20 @@ import jotaiReactRefresh from 'jotai/babel/plugin-react-refresh'
 import path from 'node:path'
 import { visualizer } from 'rollup-plugin-visualizer'
 import Icons from 'unplugin-icons/vite'
+import vike from 'vike/plugin'
 import { defineConfig } from 'vite'
 import type { PluginOption } from 'vite'
-import vike from 'vike/plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig(async ({ mode }) => {
   const latestCommitHash = await new Promise<string>((resolve) => {
     return getLastCommit((err, commit) => (err ? 'unknown' : resolve(commit.shortHash)))
   })
- 
-
 
   return {
     plugins: [
       react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),
-      vike(),
+      vike({ prerender: true }),
       visualizer() as PluginOption,
       Icons({
         compiler: 'jsx',
@@ -33,6 +31,14 @@ export default defineConfig(async ({ mode }) => {
         },
       }),
     ],
+    server: {
+      proxy: {
+        '/api/pronunciation': {
+          target: 'http://localhost:3003',
+          changeOrigin: true,
+        },
+      },
+    },
     build: {
       minify: true,
       outDir: 'build',

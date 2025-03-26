@@ -1,4 +1,44 @@
-<!DOCTYPE html>
+import { TypingContext, initialState } from '../pages/Typing/store'
+import 'animate.css'
+import { Provider as JotaiProvider, createStore } from 'jotai'
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+import { dangerouslySkipEscape, escapeInject } from 'vike/server'
+import type { PageContextServer } from 'vike/types'
+
+// https://vike.dev/onRenderHtml
+export { onRenderHtml }
+
+interface PageContext extends PageContextServer {
+  Page: React.ComponentType
+  urlPathname: string
+}
+
+async function onRenderHtml(pageContext: PageContext) {
+  const { Page } = pageContext
+
+  // 创建一个空的 dispatch 函数用于服务端渲染
+  const typingContextValue = {
+    state: initialState,
+    dispatch: () => {
+      console.warn('Dispatch called during SSR')
+    },
+  }
+
+  // 创建一个 Jotai store 实例用于服务端渲染
+  const store = createStore()
+
+  const pageHtml = dangerouslySkipEscape(
+    renderToString(
+      <JotaiProvider store={store}>
+        <TypingContext.Provider value={typingContextValue}>
+          <Page />
+        </TypingContext.Provider>
+      </JotaiProvider>,
+    ),
+  )
+
+  return escapeInject`<!DOCTYPE html>
 <html lang="zh-Hans">
   <head>
     <meta charset="UTF-8" />
@@ -93,7 +133,11 @@
       <div>You need to enable JavaScript to run Keybr.</div>
       <div>你需要启用 JavaScript 来运行 Keybr。</div>
     </noscript>
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
+    <div id="root">${pageHtml}</div>
+
   </body>
 </html>
+
+
+  `
+}

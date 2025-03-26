@@ -6,7 +6,7 @@ import { PRONUNCIATION_PHONETIC_MAP } from '@/typings'
 import { CTRL } from '@/utils'
 import { Listbox, Popover, Switch, Transition } from '@headlessui/react'
 import { useAtom, useAtomValue } from 'jotai'
-import { Fragment, useCallback, useEffect, useMemo } from 'react'
+import { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import IconCheck from '~icons/tabler/check'
 import IconChevronDown from '~icons/tabler/chevron-down'
 
@@ -15,6 +15,7 @@ const PronunciationSwitcher = () => {
   const [pronunciationConfig, setPronunciationConfig] = useAtom(pronunciationConfigAtom)
   const [phoneticConfig, setPhoneticConfig] = useAtom(phoneticConfigAtom)
   const pronunciationList = useMemo(() => LANG_PRON_MAP[currentDictInfo.language].pronunciation, [currentDictInfo.language])
+  const [hasSpeechSynthesis, setHasSpeechSynthesis] = useState(false)
 
   useEffect(() => {
     const defaultPronIndex = currentDictInfo.defaultPronIndex || LANG_PRON_MAP[currentDictInfo.language].defaultPronIndex
@@ -41,6 +42,10 @@ const PronunciationSwitcher = () => {
       }))
     }
   }, [pronunciationConfig.type, setPhoneticConfig])
+
+  useEffect(() => {
+    setHasSpeechSynthesis(typeof window !== 'undefined' && window.speechSynthesis)
+  }, [])
 
   const onChangePronunciationIsOpen = useCallback(
     (value: boolean) => {
@@ -152,7 +157,7 @@ const PronunciationSwitcher = () => {
                     }`}</span>
                   </div>
                 </div>
-                {window.speechSynthesis && (
+                {hasSpeechSynthesis && (
                   <div className="flex w-full  flex-col  items-start gap-2 py-0">
                     <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">开关释义发音</span>
                     <div className="flex w-full flex-row items-center justify-between">

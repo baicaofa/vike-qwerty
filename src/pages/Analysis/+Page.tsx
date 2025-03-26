@@ -9,11 +9,10 @@ import dayjs from 'dayjs'
 import { useAtom } from 'jotai'
 import { useCallback } from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { useNavigate } from 'react-router-dom'
+import { navigate } from 'vike/client/router'
 import IconX from '~icons/tabler/x'
 
-const Page = () => {
-  const navigate = useNavigate()
+export function Page() {
   const [, setIsOpenDarkMode] = useAtom(isOpenDarkModeAtom)
 
   const onBack = useCallback(() => {
@@ -77,5 +76,3 @@ const Page = () => {
     </Layout>
   )
 }
-
-export default Page

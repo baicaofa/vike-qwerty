@@ -1,15 +1,13 @@
 import { recordAnalysisAction } from '@/utils'
 import { useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { navigate } from 'vike/client/router'
 import ChartPie from '~icons/heroicons/chart-pie-solid'
 
 const AnalysisButton = () => {
-  const navigate = useNavigate()
-
   const toAnalysis = useCallback(() => {
     navigate('/analysis')
     recordAnalysisAction('open')
-  }, [navigate])
+  }, [])
 
   return (
     <button

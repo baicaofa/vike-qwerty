@@ -2,7 +2,7 @@ import { wordDictationConfigAtom } from '@/store'
 import type { WordDictationType } from '@/typings'
 import { Listbox, Popover, Switch, Transition } from '@headlessui/react'
 import { useAtom } from 'jotai'
-import { Fragment, useLayoutEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
 import IconEyeSlash from '~icons/heroicons/eye-slash-solid'
 import IconEye from '~icons/heroicons/eye-solid'
@@ -48,7 +48,7 @@ export default function WordDictationSwitcher() {
     })
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setCurrentType(wordDictationTypeList.find((item) => item.type === wordDictationConfig.type) || wordDictationTypeList[0])
   }, [wordDictationConfig.type])
 

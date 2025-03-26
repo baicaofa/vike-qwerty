@@ -6,19 +6,13 @@
   Keybr
 </h1>
 
-
-
 <p align="center">
   为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件
 </p>
 
-
-
 <div align=center>
 <img  src="docs/Screenshot.png"/>
 </div>
-
-
 
 <br />
 
@@ -183,9 +177,6 @@
 <br />
 <br />
 
-
-
-
 ## 🎁 大感谢
 
 ### 灵感来源
@@ -220,5 +211,3 @@
 
 JS API 来自于[react-code-game](https://github.com/webzhd/react-code-game) ，感谢项目对 JS API 的爬取与预处理。
 <br/><br/>
-
-

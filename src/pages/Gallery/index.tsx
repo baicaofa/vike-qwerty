@@ -9,12 +9,12 @@ import groupBy from '@/utils/groupBy'
 import { useAtomValue } from 'jotai'
 import type React from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { navigate } from 'vike/client/router'
 
 const GalleryPage: React.FC = () => {
   const currentDictInfo = useAtomValue(currentDictInfoAtom)
   const groups = Object.entries(groupBy(dictionaries, (dict) => dict.category))
-  const navigate = useNavigate()
+
   useHotkeys(
     'enter,esc',
     () => {
@@ -27,9 +27,12 @@ const GalleryPage: React.FC = () => {
     <Layout>
       <Header>
         <Tooltip content="快捷键 Enter or Esc">
-          <NavLink className="rounded-lg bg-blue-400 px-6 py-1 text-lg text-white focus:outline-none dark:text-opacity-80" to="/">
+          <button
+            className="rounded-lg bg-blue-400 px-6 py-1 text-lg text-white focus:outline-none dark:text-opacity-80"
+            onClick={() => navigate('/')}
+          >
             完成选择
-          </NavLink>
+          </button>
         </Tooltip>
       </Header>
       <div className="mb-auto mt-auto flex w-auto space-x-4 overflow-y-auto">

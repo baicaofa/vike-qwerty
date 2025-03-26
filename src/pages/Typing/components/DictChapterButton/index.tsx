@@ -4,7 +4,7 @@ import range from '@/utils/range'
 import { Listbox, Transition } from '@headlessui/react'
 import { useAtom, useAtomValue } from 'jotai'
 import { Fragment } from 'react'
-import { NavLink } from 'react-router-dom'
+import { navigate } from 'vike/client/router'
 import IconCheck from '~icons/tabler/check'
 
 export const DictChapterButton = () => {
@@ -18,15 +18,20 @@ export const DictChapterButton = () => {
       event.preventDefault()
     }
   }
+
+  const toGallery = () => {
+    navigate('/gallery')
+  }
+
   return (
     <>
       <Tooltip content="词典切换">
-        <NavLink
+        <button
+          onClick={toGallery}
           className="block rounded-lg px-3 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
-          to="/gallery"
         >
           {currentDictInfo.name} {isReviewMode && '错题复习'}
-        </NavLink>
+        </button>
       </Tooltip>
       {!isReviewMode && (
         <Tooltip content="章节切换">

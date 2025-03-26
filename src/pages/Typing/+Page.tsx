@@ -24,7 +24,7 @@ import type React from 'react'
 import { useCallback, useEffect, useState } from 'react'
 import { useImmerReducer } from 'use-immer'
 
-const App: React.FC = () => {
+export function Page() {
   const [state, dispatch] = useImmerReducer(typingReducer, structuredClone(initialState))
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const { words } = useWordList()
@@ -171,5 +171,3 @@ const App: React.FC = () => {
     </TypingContext.Provider>
   )
 }
-
-export default App

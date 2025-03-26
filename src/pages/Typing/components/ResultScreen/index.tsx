@@ -21,7 +21,7 @@ import { Transition } from '@headlessui/react'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { useNavigate } from 'react-router-dom'
+import { navigate } from 'vike/client/router'
 import IexportWords from '~icons/icon-park-outline/excel'
 import IconX from '~icons/tabler/x'
 
@@ -34,7 +34,6 @@ const ResultScreen = () => {
   const [currentChapter, setCurrentChapter] = useAtom(currentChapterAtom)
   const setInfoPanelState = useSetAtom(infoPanelStateAtom)
   const randomConfig = useAtomValue(randomConfigAtom)
-  const navigate = useNavigate()
 
   const setReviewModeInfo = useSetAtom(reviewModeInfoAtom)
   const isReviewMode = useAtomValue(isReviewModeAtom)
@@ -165,7 +164,7 @@ const ResultScreen = () => {
     setCurrentChapter(0)
     setReviewModeInfo((old) => ({ ...old, isReviewMode: false }))
     navigate('/gallery')
-  }, [navigate, setCurrentChapter, setReviewModeInfo])
+  }, [setCurrentChapter, setReviewModeInfo])
 
   useHotkeys(
     'enter',
@@ -218,7 +217,7 @@ const ResultScreen = () => {
             <div className="text-center font-sans text-xl font-normal text-gray-900 dark:text-gray-400 md:text-2xl">
               {`${currentDictInfo.name} ${isReviewMode ? '错题复习' : '第' + (currentChapter + 1) + '章'}`}
             </div>
-            <button className="absolute right-7 top-5" onClick={exitButtonHandler}>
+            <button className="absolute right-7 top-5" onClick={exitButtonHandler} title="关闭结果页面" aria-label="关闭结果页面">
               <IconX className="text-gray-400" />
             </button>
             <div className="mt-10 flex flex-row gap-2 overflow-hidden">

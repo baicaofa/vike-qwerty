@@ -3,7 +3,7 @@ import { useAtom } from 'jotai'
 import type { FC } from 'react'
 import React from 'react'
 import type { Activity } from 'react-activity-calendar'
-import ActivityCalendar from 'react-activity-calendar'
+import { ActivityCalendar } from 'react-activity-calendar'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 
@@ -11,6 +11,16 @@ interface HeatmapChartsProps {
   title: string
   data: Activity[]
 }
+// 生成过去一年的默认数据
+const defaultData: Activity[] = Array.from({ length: 365 }, (_, i) => {
+  const date = new Date()
+  date.setDate(date.getDate() - (364 - i))
+  return {
+    date: date.toISOString().split('T')[0],
+    count: 0,
+    level: 0,
+  }
+})
 
 const HeatmapCharts: FC<HeatmapChartsProps> = ({ data, title }) => {
   const [isOpenDarkMode] = useAtom(isOpenDarkModeAtom)
@@ -27,7 +37,7 @@ const HeatmapCharts: FC<HeatmapChartsProps> = ({ data, title }) => {
           color: isOpenDarkMode ? '#fff' : '#000',
         }}
         colorScheme={isOpenDarkMode ? 'dark' : 'light'}
-        data={data}
+        data={data.length > 0 ? data : defaultData}
         theme={{
           light: ['#f0f0f0', '#6366f1'],
           dark: ['hsl(0, 0%, 22%)', '#818cf8'],

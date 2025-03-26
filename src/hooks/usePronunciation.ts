@@ -9,29 +9,44 @@ import { useEffect, useMemo, useState } from 'react'
 import useSound from 'use-sound'
 import type { HookOptions } from 'use-sound/dist/types'
 
-const pronunciationApi = 'https://dict.youdao.com/dictvoice?audio='
+const PROXY_URL = '/api/pronunciation'
+
 export function generateWordSoundSrc(word: string, pronunciation: Exclude<PronunciationType, false>): string {
+  const params = new URLSearchParams()
+  params.append('word', word)
+
   switch (pronunciation) {
     case 'uk':
-      return `${pronunciationApi}${word}&type=1`
+      params.append('type', '1')
+      break
     case 'us':
-      return `${pronunciationApi}${word}&type=2`
+      params.append('type', '2')
+      break
     case 'romaji':
-      return `${pronunciationApi}${romajiToHiragana(word)}&le=jap`
+      params.append('word', romajiToHiragana(word))
+      params.append('le', 'jap')
+      break
     case 'zh':
-      return `${pronunciationApi}${word}&le=zh`
+      params.append('le', 'zh')
+      break
     case 'ja':
-      return `${pronunciationApi}${word}&le=jap`
+      params.append('le', 'jap')
+      break
     case 'de':
-      return `${pronunciationApi}${word}&le=de`
+      params.append('le', 'de')
+      break
     case 'hapin':
     case 'kk':
-      return `${pronunciationApi}${word}&le=ru` // 有道不支持哈萨克语, 暂时用俄语发音兜底
+      params.append('le', 'ru') // 有道不支持哈萨克语, 暂时用俄语发音兜底
+      break
     case 'id':
-      return `${pronunciationApi}${word}&le=id`
+      params.append('le', 'id')
+      break
     default:
       return ''
   }
+
+  return `${PROXY_URL}?${params.toString()}`
 }
 
 export default function usePronunciationSound(word: string, isLoop?: boolean) {

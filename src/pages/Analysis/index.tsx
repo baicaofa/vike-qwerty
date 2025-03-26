@@ -9,16 +9,15 @@ import dayjs from 'dayjs'
 import { useAtom } from 'jotai'
 import { useCallback } from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { useNavigate } from 'react-router-dom'
+import { navigate } from 'vike/client/router'
 import IconX from '~icons/tabler/x'
 
 const Analysis = () => {
-  const navigate = useNavigate()
   const [, setIsOpenDarkMode] = useAtom(isOpenDarkModeAtom)
 
   const onBack = useCallback(() => {
     navigate('/')
-  }, [navigate])
+  }, [])
 
   const changeDarkModeState = () => {
     setIsOpenDarkMode((old) => !old)

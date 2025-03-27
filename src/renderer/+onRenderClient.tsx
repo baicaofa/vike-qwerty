@@ -1,7 +1,7 @@
 import { TypingContext, initialState } from '../pages/Typing/store'
 import './PageLayout.css'
 import { Provider as JotaiProvider, createStore } from 'jotai'
-import React from 'react'
+import type React from 'react'
 import { hydrateRoot } from 'react-dom/client'
 import type { PageContextClient } from 'vike/types'
 

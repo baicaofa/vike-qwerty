@@ -12,7 +12,7 @@ import type { Dictionary } from '@/typings'
 import range from '@/utils/range'
 import { useAtom, useSetAtom } from 'jotai'
 import { useCallback, useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { navigate } from 'vike/client/router'
 import IcOutlineCollectionsBookmark from '~icons/ic/outline-collections-bookmark'
 import MajesticonsPaperFoldTextLine from '~icons/majesticons/paper-fold-text-line'
 import PajamasReviewList from '~icons/pajamas/review-list'
@@ -28,7 +28,6 @@ export default function DictDetail({ dictionary: dict }: { dictionary: Dictionar
   const [currentDictId, setCurrentDictId] = useAtom(currentDictIdAtom)
   const [curTab, setCurTab] = useState<Tab>(Tab.Chapters)
   const setReviewModeInfo = useSetAtom(reviewModeInfoAtom)
-  const navigate = useNavigate()
   const { deleteWordRecord } = useDeleteWordRecord()
   const [reload, setReload] = useState(false)
 
@@ -54,7 +53,7 @@ export default function DictDetail({ dictionary: dict }: { dictionary: Dictionar
       setReviewModeInfo((old) => ({ ...old, isReviewMode: false }))
       navigate('/')
     },
-    [dict.id, navigate, setCurrentChapter, setCurrentDictId, setReviewModeInfo],
+    [dict.id, setCurrentChapter, setCurrentDictId, setReviewModeInfo],
   )
 
   const handleTabChange = useCallback(

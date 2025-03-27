@@ -13,7 +13,7 @@ const PROXY_URL = '/api/pronunciation'
 
 export function generateWordSoundSrc(word: string, pronunciation: Exclude<PronunciationType, false>): string {
   const params = new URLSearchParams()
-  params.append('word', word)
+  params.append('audio', word)
 
   switch (pronunciation) {
     case 'uk':
@@ -23,7 +23,7 @@ export function generateWordSoundSrc(word: string, pronunciation: Exclude<Pronun
       params.append('type', '2')
       break
     case 'romaji':
-      params.append('word', romajiToHiragana(word))
+      params.append('audio', romajiToHiragana(word))
       params.append('le', 'jap')
       break
     case 'zh':
@@ -53,13 +53,25 @@ export default function usePronunciationSound(word: string, isLoop?: boolean) {
   const pronunciationConfig = useAtomValue(pronunciationConfigAtom)
   const loop = useMemo(() => (typeof isLoop === 'boolean' ? isLoop : pronunciationConfig.isLoop), [isLoop, pronunciationConfig.isLoop])
   const [isPlaying, setIsPlaying] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
 
-  const [play, { stop, sound }] = useSound(generateWordSoundSrc(word, pronunciationConfig.type), {
+  const soundUrl = useMemo(() => {
+    const url = generateWordSoundSrc(word, pronunciationConfig.type)
+    console.log('Generated sound URL:', url)
+    return url
+  }, [word, pronunciationConfig.type])
+
+  const [play, { stop, sound }] = useSound(soundUrl, {
     html5: true,
     format: ['mp3'],
     loop,
     volume: pronunciationConfig.volume,
     rate: pronunciationConfig.rate,
+    onplayerror: (id, error) => {
+      console.error('Sound play error:', error)
+      setError(error)
+      setIsPlaying(false)
+    },
   } as HookOptions)
 
   useEffect(() => {
@@ -72,19 +84,42 @@ export default function usePronunciationSound(word: string, isLoop?: boolean) {
     if (!sound) return
     const unListens: Array<() => void> = []
 
-    unListens.push(addHowlListener(sound, 'play', () => setIsPlaying(true)))
-    unListens.push(addHowlListener(sound, 'end', () => setIsPlaying(false)))
-    unListens.push(addHowlListener(sound, 'pause', () => setIsPlaying(false)))
-    unListens.push(addHowlListener(sound, 'playerror', () => setIsPlaying(false)))
+    unListens.push(
+      addHowlListener(sound, 'play', () => {
+        console.log('Sound started playing')
+        setIsPlaying(true)
+        setError(null)
+      }),
+    )
+    unListens.push(
+      addHowlListener(sound, 'end', () => {
+        console.log('Sound finished playing')
+        setIsPlaying(false)
+      }),
+    )
+    unListens.push(
+      addHowlListener(sound, 'pause', () => {
+        console.log('Sound paused')
+        setIsPlaying(false)
+      }),
+    )
+    unListens.push(
+      addHowlListener(sound, 'playerror', (id, error) => {
+        console.error('Sound play error:', error)
+        setError(error)
+        setIsPlaying(false)
+      }),
+    )
 
     return () => {
       setIsPlaying(false)
+      setError(null)
       unListens.forEach((unListen) => unListen())
       ;(sound as Howl).unload()
     }
   }, [sound])
 
-  return { play, stop, isPlaying }
+  return { play, stop, isPlaying, error }
 }
 
 export function usePrefetchPronunciationSound(word: string | undefined) {

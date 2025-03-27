@@ -1,7 +1,7 @@
 import { TypingContext, initialState } from '../pages/Typing/store'
 import 'animate.css'
 import { Provider as JotaiProvider, createStore } from 'jotai'
-import React from 'react'
+import type React from 'react'
 import { renderToString } from 'react-dom/server'
 import { dangerouslySkipEscape, escapeInject } from 'vike/server'
 import type { PageContextServer } from 'vike/types'
@@ -32,7 +32,7 @@ async function onRenderHtml(pageContext: PageContext) {
     renderToString(
       <JotaiProvider store={store}>
         <TypingContext.Provider value={typingContextValue}>
-          <Page />
+          <Page pageContext={pageContext} />
         </TypingContext.Provider>
       </JotaiProvider>,
     ),

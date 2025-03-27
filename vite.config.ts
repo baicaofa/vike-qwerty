@@ -34,8 +34,20 @@ export default defineConfig(async ({ mode }) => {
     server: {
       proxy: {
         '/api/pronunciation': {
-          target: 'http://localhost:3003',
+          target: 'https://dict.youdao.com',
           changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api\/pronunciation/, '/dictvoice'),
+          configure: (proxy, options) => {
+            proxy.on('error', (err, req, res) => {
+              console.error('Proxy error:', err)
+            })
+            proxy.on('proxyReq', (proxyReq, req, res) => {
+              console.log('Proxying request:', req.method, req.url)
+            })
+            proxy.on('proxyRes', (proxyRes, req, res) => {
+              console.log('Received response:', proxyRes.statusCode)
+            })
+          }
         },
       },
     },

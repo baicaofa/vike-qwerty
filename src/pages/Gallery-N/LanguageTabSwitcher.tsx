@@ -25,17 +25,24 @@ const options: LanguageTabOption[] = [
 ]
 
 export function LanguageTabSwitcher() {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const { state, setState } = useContext(GalleryContext)!
+  const context = useContext(GalleryContext)
 
   const onChangeTab = useCallback(
     (tab: string) => {
-      setState((draft) => {
+      if (!context) return
+      context.setState((draft) => {
         draft.currentLanguageTab = tab as LanguageCategoryType
       })
     },
-    [setState],
+    [context],
   )
+
+  // 如果上下文为空，返回一个占位符或空组件
+  if (!context) {
+    return null
+  }
+
+  const { state } = context
 
   return (
     <RadioGroup value={state.currentLanguageTab} onChange={onChangeTab}>
@@ -44,7 +51,7 @@ export function LanguageTabSwitcher() {
           <RadioGroup.Option key={option.id} value={option.id} className="cursor-pointer">
             {({ checked }) => (
               <div className={`flex items-center border-b-2 px-2 pb-1 ${checked ? 'border-indigo-500' : 'border-transparent'}`}>
-                <img src={option.flag} className="mr-1.5 h-7 w-7" />
+                <img src={option.flag} alt={option.name} className="mr-1.5 h-7 w-7" />
                 <p className={`text-lg font-medium text-gray-700 dark:text-gray-200`}>{option.name}</p>
               </div>
             )}

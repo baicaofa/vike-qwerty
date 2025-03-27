@@ -1,9 +1,8 @@
-// DictionaryPage.tsx
+// Gallery-N-Page.tsx
 import { DictChapterButton } from '../Typing/components/DictChapterButton'
 import PronunciationSwitcher from '../Typing/components/PronunciationSwitcher'
 import StartButton from '../Typing/components/StartButton'
 import Switcher from '../Typing/components/Switcher'
-// 引入 wordListFetcher
 import bookCover from '@/assets/book-cover.png'
 import Header from '@/components/Header'
 import Layout from '@/components/Layout'
@@ -25,40 +24,56 @@ import { CTRL, getUtcStringForMixpanel, useMixPanelWordLogUploader } from '@/uti
 import { wordListFetcher } from '@/utils/wordListFetcher'
 import { useAtomValue } from 'jotai'
 import { useEffect, useRef, useState } from 'react'
-import { Helmet } from 'react-helmet-async'
-import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { navigate } from 'vike/client/router'
+import type { PageContext } from 'vike/types'
 import IconBack from '~icons/ic/outline-arrow-back'
 
-export default function DictionaryPage() {
-  const { id } = useParams<{ id: string }>() // 获取 URL 中的 ID 参数
-  const [dictionary, setDictionary] = useState<Dictionary | null>(null) // 当前词典
-  const [words, setWords] = useState<any[]>([]) // 用于存储加载的单词数据
-  const navigate = useNavigate() // 用于导航
-  const [currentPage, setCurrentPage] = useState(1) // 当前页码
-  const wordsPerPage = 100 // 每页显示的单词数量
+interface Props {
+  pageContext?: PageContext
+}
+
+export default function Page({ pageContext }: Props) {
+  const routeParams = pageContext?.routeParams || {}
+  console.log('qwe:', routeParams)
+
+  const [dictionary, setDictionary] = useState<Dictionary | null>(null)
+  const [words, setWords] = useState<any[]>([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const wordsPerPage = 100
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const currentLanguage = useAtomValue(currentDictInfoAtom).language
   const wordPronunciationIconRef = useRef<WordPronunciationIconRef>(null)
+
   useEffect(() => {
-    if (id) {
-      const dict = dictionaries.find((dict) => dict.id === id) // 根据 ID 查找词典
-      if (dict) {
-        setDictionary(dict) // 设置词典状态
-        // 使用 wordListFetcher 加载词典的单词数据
-        wordListFetcher(dict.url)
-          .then((wordList) => {
-            setWords(wordList) // 将加载的单词数据存储到状态中
-          })
-          .catch((error) => {
-            console.error('Failed to load dictionary words:', error)
-          })
-      }
+    if (!routeParams?.id) {
+      setIsLoading(false)
+      return
     }
-  }, [id])
+
+    console.log('Looking for dictionary with ID:', routeParams.id)
+    console.log('Available dictionaries:', dictionaries)
+    const dict = dictionaries.find((dict) => dict.id === routeParams.id)
+    console.log('Found dictionary:', dict)
+
+    if (dict) {
+      setDictionary(dict)
+      setIsLoading(true)
+      wordListFetcher(dict.url)
+        .then((wordList) => {
+          setWords(wordList)
+          setIsLoading(false)
+        })
+        .catch((error) => {
+          console.error('Failed to load dictionary words:', error)
+          setIsLoading(false)
+        })
+    } else {
+      setIsLoading(false)
+    }
+  }, [routeParams?.id])
 
   const onBack = () => {
-    navigate('/gallery') // 返回到 Gallery-N 页面
+    navigate('/gallery')
   }
 
   if (!dictionary) {
@@ -66,6 +81,8 @@ export default function DictionaryPage() {
       <Layout>
         <div className="flex h-full items-center justify-center">
           <p className="text-2xl text-gray-500">词典未找到</p>
+          <p className="mt-2 text-sm text-gray-400">ID: {routeParams?.id || '未提供'}</p>
+          <p className="mt-2 text-sm text-gray-400">Available IDs: {dictionaries.map((d) => d.id).join(', ')}</p>
         </div>
       </Layout>
     )
@@ -86,10 +103,6 @@ export default function DictionaryPage() {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{dictionary.name} 词典</title>
-        <meta name="description" content={dictionary.description} />
-      </Helmet>
       <Header>
         <DictChapterButton />
         <PronunciationSwitcher />
@@ -113,12 +126,14 @@ export default function DictionaryPage() {
                 <p className="font-bold text-gray-600">共计{dictionary.length} 词</p>
               </div>
             </div>
-            <div className="mr-4 flex flex-1 flex-col items-start justify-start  ">
+            <div className="mr-4 flex flex-1 flex-col items-start justify-start">
               <div className="flex flex-col items-start justify-start gap-4">
                 <p className="text-lg font-bold">词典内容</p>
-                {currentWords.length > 0 ? (
+                {isLoading ? (
+                  <p className="text-gray-600">加载中...</p>
+                ) : currentWords.length > 0 ? (
                   <div className="grid grid-cols-4 gap-4">
-                    {currentWords.map((word, index) => (
+                    {currentWords.map((word: { name: string; usphone: string; ukphone: string; trans: string[] }, index: number) => (
                       <div
                         key={index}
                         className="mb-2 cursor-pointer grid-cols-2 items-center justify-center overflow-hidden rounded-lg border-b border-gray-200 bg-zinc-50 p-4 pb-2 text-left shadow-lg hover:bg-white focus:outline-none group-hover:text-indigo-400 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
@@ -128,7 +143,7 @@ export default function DictionaryPage() {
                         <p className="text-gray-600">英式发音：/{word.ukphone}/</p>
                         <p className="text-gray-600">释义：</p>
                         <ul className="list-inside list-disc text-gray-600">
-                          {word.trans.map((translation, idx) => (
+                          {word.trans.map((translation: string, idx: number) => (
                             <li key={idx}>{translation}</li>
                           ))}
                         </ul>
@@ -136,12 +151,11 @@ export default function DictionaryPage() {
                     ))}
                   </div>
                 ) : (
-                  <p className="text-gray-600">加载中...</p>
+                  <p className="text-gray-600">暂无数据</p>
                 )}
               </div>
             </div>
             <div className="mt-4 flex flex-wrap justify-center gap-y-4">
-              {/* 分页按钮 */}
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
                   key={index}

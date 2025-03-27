@@ -29,7 +29,7 @@ export const GalleryContext = createContext<{
   setState: Updater<GalleryState>
 } | null>(null)
 
-export default function GalleryPage() {
+export default function Page() {
   const [galleryState, setGalleryState] = useImmer<GalleryState>(initialGalleryState)
   const currentDictInfo = useAtomValue(currentDictInfoAtom)
 

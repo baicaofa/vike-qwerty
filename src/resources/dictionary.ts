@@ -5,6 +5,7 @@ import type { Dictionary, DictionaryResource } from '@/typings/index'
 function calcChapterCount(length: number) {
   return Math.ceil(length / CHAPTER_LENGTH)
 }
+
 console.log('[dictionary.ts] File loaded')
 console.log('[dictionary.ts] calcChapterCount:', calcChapterCount)
 

@@ -133,7 +133,7 @@ async function onRenderHtml(pageContext: PageContext) {
       <div>You need to enable JavaScript to run Keybr.</div>
       <div>你需要启用 JavaScript 来运行 Keybr。</div>
     </noscript>
-    <div id="root">${pageHtml}</div>
+    <div id="root">${dangerouslySkipEscape(pageHtml)}</div>
 
   </body>
 </html>

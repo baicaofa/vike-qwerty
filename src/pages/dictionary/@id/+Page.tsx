@@ -1,8 +1,8 @@
 // Gallery-N-Page.tsx
-import { DictChapterButton } from '../Typing/components/DictChapterButton'
-import PronunciationSwitcher from '../Typing/components/PronunciationSwitcher'
-import StartButton from '../Typing/components/StartButton'
-import Switcher from '../Typing/components/Switcher'
+import { DictChapterButton } from '../../Typing/components/DictChapterButton'
+import PronunciationSwitcher from '../../Typing/components/PronunciationSwitcher'
+import StartButton from '../../Typing/components/StartButton'
+import Switcher from '../../Typing/components/Switcher'
 import bookCover from '@/assets/book-cover.png'
 import Header from '@/components/Header'
 import Layout from '@/components/Layout'

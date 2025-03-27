@@ -33,7 +33,7 @@ export function onRenderClient(pageContext: PageContext) {
     container,
     <JotaiProvider store={store}>
       <TypingContext.Provider value={typingContextValue}>
-        <Page />
+        <Page pageContext={pageContext} />
       </TypingContext.Provider>
     </JotaiProvider>,
   )

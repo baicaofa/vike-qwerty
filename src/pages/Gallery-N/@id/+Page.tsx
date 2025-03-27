@@ -29,12 +29,12 @@ import type { PageContext } from 'vike/types'
 import IconBack from '~icons/ic/outline-arrow-back'
 
 interface Props {
-  pageContext?: PageContext
+  dictionary: Dictionary
+  words: any[]
 }
 
 export default function Page({ pageContext }: Props) {
   const routeParams = pageContext?.routeParams || {}
-  console.log('qwe:', routeParams)
 
   const [dictionary, setDictionary] = useState<Dictionary | null>(null)
   const [words, setWords] = useState<any[]>([])
@@ -74,18 +74,6 @@ export default function Page({ pageContext }: Props) {
 
   const onBack = () => {
     navigate('/gallery')
-  }
-
-  if (!dictionary) {
-    return (
-      <Layout>
-        <div className="flex h-full items-center justify-center">
-          <p className="text-2xl text-gray-500">词典未找到</p>
-          <p className="mt-2 text-sm text-gray-400">ID: {routeParams?.id || '未提供'}</p>
-          <p className="mt-2 text-sm text-gray-400">Available IDs: {dictionaries.map((d) => d.id).join(', ')}</p>
-        </div>
-      </Layout>
-    )
   }
 
   // 计算当前页要显示的单词

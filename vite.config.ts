@@ -3,12 +3,16 @@ import { promises as fs } from 'fs'
 import { getLastCommit } from 'git-last-commit'
 import jotaiDebugLabel from 'jotai/babel/plugin-debug-label'
 import jotaiReactRefresh from 'jotai/babel/plugin-react-refresh'
-import path from 'node:path'
+import { fileURLToPath } from 'url'
+import { dirname, resolve } from 'path'
 import { visualizer } from 'rollup-plugin-visualizer'
 import Icons from 'unplugin-icons/vite'
 import vike from 'vike/plugin'
 import { defineConfig } from 'vite'
 import type { PluginOption } from 'vite'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // https://vitejs.dev/config/
 export default defineConfig(async ({ mode }) => {
@@ -19,7 +23,7 @@ export default defineConfig(async ({ mode }) => {
   return {
     plugins: [
       react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),
-      vike({ prerender: true }),
+      vike(),
       visualizer() as PluginOption,
       Icons({
         compiler: 'jsx',
@@ -47,7 +51,7 @@ export default defineConfig(async ({ mode }) => {
             proxy.on('proxyRes', (proxyRes, req, res) => {
               console.log('Received response:', proxyRes.statusCode)
             })
-          }
+          },
         },
       },
     },
@@ -65,7 +69,7 @@ export default defineConfig(async ({ mode }) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src'),
+        '@': resolve(__dirname, 'src'),
       },
     },
     ssr: {

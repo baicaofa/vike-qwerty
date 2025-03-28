@@ -1,11 +1,26 @@
+import headlessui from '@headlessui/tailwindcss'
+import forms from '@tailwindcss/forms'
+import animate from 'tailwindcss-animate'
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: ['class'],
+export default {
+  darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}', './index.html'],
   theme: {
     extend: {
       colors: {
-        primary: '#6366f1',
+        primary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+        },
       },
       keyframes: {
         'accordion-down': {
@@ -73,5 +88,5 @@ module.exports = {
       backgroundOpacity: ['dark'],
     },
   },
-  plugins: [require('@headlessui/tailwindcss'), require('@tailwindcss/forms'), require('tailwindcss-animate')],
+  plugins: [headlessui, forms, animate],
 }

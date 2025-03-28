@@ -1,4 +1,4 @@
-import type { Config } from 'vike/types'
+import type { Config } from "vike/types";
 
 // https://vike.dev/config
 export default {
@@ -17,5 +17,7 @@ export default {
   },
   hydrationCanBeAborted: true,
   // 添加必要的配置
-  passToClient: ['pageProps', 'routeParams'],
-} satisfies Config
+  passToClient: ["pageProps", "routeParams"],
+  // 预渲染设置
+  prerender: true,
+} satisfies Config;

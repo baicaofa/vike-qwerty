@@ -1,9 +1,22 @@
-import type { Word } from '@/typings'
+import type { Word } from "@/typings";
 
 export async function wordListFetcher(url: string): Promise<Word[]> {
-  const URL_PREFIX: string = REACT_APP_DEPLOY_ENV === 'pages' ? '/qwerty-learner' : ''
+  // 确保 URL 以 / 开头
+  const normalizedUrl = url.startsWith("/") ? url : `/${url}`;
+  const URL_PREFIX: string =
+    REACT_APP_DEPLOY_ENV === "pages" ? "/qwerty-learner" : "";
 
-  const response = await fetch(URL_PREFIX + url)
-  const words: Word[] = await response.json()
-  return words
+  try {
+    const response = await fetch(URL_PREFIX + normalizedUrl);
+    if (!response.ok) {
+      throw new Error(
+        `Failed to fetch dictionary: ${response.status} ${response.statusText}`
+      );
+    }
+    const words: Word[] = await response.json();
+    return words;
+  } catch (error) {
+    console.error("Error fetching dictionary:", error);
+    throw error;
+  }
 }

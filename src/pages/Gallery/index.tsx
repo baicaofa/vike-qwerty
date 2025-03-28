@@ -1,27 +1,27 @@
-import ChapterGroup from './ChapterGroup'
-import DictionaryGroup from './DictionaryGroup'
-import Header from '@/components/Header'
-import Layout from '@/components/Layout'
-import Tooltip from '@/components/Tooltip'
-import { dictionaries } from '@/resources/dictionary'
-import { currentDictInfoAtom } from '@/store'
-import groupBy from '@/utils/groupBy'
-import { useAtomValue } from 'jotai'
-import type React from 'react'
-import { useHotkeys } from 'react-hotkeys-hook'
-import { navigate } from 'vike/client/router'
+import ChapterGroup from "./ChapterGroup";
+import DictionaryGroup from "./DictionaryGroup";
+import Header from "@/components/Header";
+import Layout from "@/components/Layout";
+import Tooltip from "@/components/Tooltip";
+import { dictionaries } from "@/resources/dictionary";
+import { currentDictInfoAtom } from "@/store";
+import groupBy from "@/utils/groupBy";
+import { useAtomValue } from "jotai";
+import type React from "react";
+import { useHotkeys } from "react-hotkeys-hook";
+import { navigate } from "vike/client/router";
 
-const GalleryPage: React.FC = () => {
-  const currentDictInfo = useAtomValue(currentDictInfoAtom)
-  const groups = Object.entries(groupBy(dictionaries, (dict) => dict.category))
+export function Page() {
+  const currentDictInfo = useAtomValue(currentDictInfoAtom);
+  const groups = Object.entries(groupBy(dictionaries, (dict) => dict.category));
 
   useHotkeys(
-    'enter,esc',
+    "enter,esc",
     () => {
-      navigate('/')
+      navigate("/");
     },
-    { preventDefault: true },
-  )
+    { preventDefault: true }
+  );
 
   return (
     <Layout>
@@ -29,7 +29,7 @@ const GalleryPage: React.FC = () => {
         <Tooltip content="快捷键 Enter or Esc">
           <button
             className="rounded-lg bg-blue-400 px-6 py-1 text-lg text-white focus:outline-none dark:text-opacity-80"
-            onClick={() => navigate('/')}
+            onClick={() => navigate("/")}
           >
             完成选择
           </button>
@@ -56,9 +56,5 @@ const GalleryPage: React.FC = () => {
         </div>
       </div>
     </Layout>
-  )
+  );
 }
-
-GalleryPage.displayName = 'GalleryPage'
-
-export default GalleryPage

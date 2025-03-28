@@ -1,32 +1,32 @@
-import { TypingContext, initialState } from '../pages/Typing/store'
-import 'animate.css'
-import { Provider as JotaiProvider, createStore } from 'jotai'
-import type React from 'react'
-import { renderToString } from 'react-dom/server'
-import { dangerouslySkipEscape, escapeInject } from 'vike/server'
-import type { PageContextServer } from 'vike/types'
+import { TypingContext, initialState } from "../pages/Typing/store";
+import "animate.css";
+import { Provider as JotaiProvider, createStore } from "jotai";
+import type React from "react";
+import { renderToString } from "react-dom/server";
+import { dangerouslySkipEscape, escapeInject } from "vike/server";
+import type { PageContextServer } from "vike/types";
 
 // https://vike.dev/onRenderHtml
-export { onRenderHtml }
+export { onRenderHtml };
 
 interface PageContext extends PageContextServer {
-  Page: React.ComponentType
-  urlPathname: string
+  Page: React.ComponentType;
+  urlPathname: string;
 }
 
 async function onRenderHtml(pageContext: PageContext) {
-  const { Page } = pageContext
+  const { Page } = pageContext;
 
   // 创建一个空的 dispatch 函数用于服务端渲染
   const typingContextValue = {
     state: initialState,
     dispatch: () => {
-      console.warn('Dispatch called during SSR')
+      console.warn("Dispatch called during SSR");
     },
-  }
+  };
 
   // 创建一个 Jotai store 实例用于服务端渲染
-  const store = createStore()
+  const store = createStore();
 
   const pageHtml = dangerouslySkipEscape(
     renderToString(
@@ -34,9 +34,9 @@ async function onRenderHtml(pageContext: PageContext) {
         <TypingContext.Provider value={typingContextValue}>
           <Page pageContext={pageContext} />
         </TypingContext.Provider>
-      </JotaiProvider>,
-    ),
-  )
+      </JotaiProvider>
+    )
+  );
 
   return escapeInject`<!DOCTYPE html>
 <html lang="zh-Hans">
@@ -110,7 +110,6 @@ async function onRenderHtml(pageContext: PageContext) {
     <meta name="keywords" content="Keybr, 打字练习软件, 单词记忆工具, 英语学习, 背单词, 英语肌肉记忆锻炼, 键盘工作者, 免费背单词软件" />
 
     <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -139,5 +138,5 @@ async function onRenderHtml(pageContext: PageContext) {
 </html>
 
 
-  `
+  `;
 }

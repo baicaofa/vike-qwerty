@@ -1,26 +1,26 @@
-import { hintSoundsConfigAtom, keySoundsConfigAtom } from '@/store'
-import { Popover, Switch, Transition } from '@headlessui/react'
-import { useAtom } from 'jotai'
-import { Fragment, useCallback } from 'react'
-import IconSpeakerWave from '~icons/heroicons/speaker-wave-solid'
+import { hintSoundsConfigAtom, keySoundsConfigAtom } from "@/store";
+import { Popover, Switch, Transition } from "@headlessui/react";
+import { useAtom } from "jotai";
+import { Fragment, useCallback } from "react";
+import IconSpeakerWave from "~icons/heroicons/speaker-wave-solid";
 
 export default function SoundSwitcher() {
-  const [keySoundsConfig, setKeySoundsConfig] = useAtom(keySoundsConfigAtom)
-  const [hintSoundsConfig, setHintSoundsConfig] = useAtom(hintSoundsConfigAtom)
+  const [keySoundsConfig, setKeySoundsConfig] = useAtom(keySoundsConfigAtom);
+  const [hintSoundsConfig, setHintSoundsConfig] = useAtom(hintSoundsConfigAtom);
 
   const onChangeKeySound = useCallback(
     (checked: boolean) => {
-      setKeySoundsConfig((old) => ({ ...old, isOpen: checked }))
+      setKeySoundsConfig((old) => ({ ...old, isOpen: checked }));
     },
-    [setKeySoundsConfig],
-  )
+    [setKeySoundsConfig]
+  );
 
   const onChangeHintSound = useCallback(
     (checked: boolean) => {
-      setHintSoundsConfig((old) => ({ ...old, isOpen: checked }))
+      setHintSoundsConfig((old) => ({ ...old, isOpen: checked }));
     },
-    [setHintSoundsConfig],
-  )
+    [setHintSoundsConfig]
+  );
 
   return (
     <Popover className="relative">
@@ -28,10 +28,10 @@ export default function SoundSwitcher() {
         <>
           <Popover.Button
             className={`flex items-center justify-center rounded p-[2px] text-lg text-blue-500 outline-none transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white  ${
-              open ? ' bg-blue-500 text-white' : ''
+              open ? " bg-blue-500 text-white" : ""
             }`}
             onFocus={(e) => {
-              e.target.blur()
+              e.target.blur();
             }}
             aria-label="音效设置"
             title="音效设置"
@@ -51,24 +51,36 @@ export default function SoundSwitcher() {
             <Popover.Panel className="absolute left-1/2 z-10 mt-2 flex max-w-max -translate-x-1/2 px-4 ">
               <div className="shadow-upper box-border flex w-60 select-none flex-col items-center justify-center gap-4 rounded-xl bg-white p-4 drop-shadow dark:bg-gray-800">
                 <div className="flex w-full  flex-col  items-start gap-2 py-0">
-                  <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">开关按键音</span>
+                  <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
+                    开关按键音
+                  </span>
                   <div className="flex w-full flex-row items-center justify-between">
-                    <Switch checked={keySoundsConfig.isOpen} onChange={onChangeKeySound} className="switch-root">
+                    <Switch
+                      checked={keySoundsConfig.isOpen}
+                      onChange={onChangeKeySound}
+                      className="switch-root"
+                    >
                       <span aria-hidden="true" className="switch-thumb" />
                     </Switch>
                     <span className="text-right text-xs font-normal leading-tight text-gray-600">{`发音已${
-                      keySoundsConfig.isOpen ? '开启' : '关闭'
+                      keySoundsConfig.isOpen ? "开启" : "关闭"
                     }`}</span>
                   </div>
                 </div>
                 <div className="flex w-full flex-col items-start  gap-2 py-0">
-                  <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">开关效果音</span>
+                  <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
+                    开关效果音
+                  </span>
                   <div className="flex w-full flex-row items-center justify-between">
-                    <Switch checked={hintSoundsConfig.isOpen} onChange={onChangeHintSound} className="switch-root">
+                    <Switch
+                      checked={hintSoundsConfig.isOpen}
+                      onChange={onChangeHintSound}
+                      className="switch-root"
+                    >
                       <span aria-hidden="true" className="switch-thumb" />
                     </Switch>
                     <span className="text-right text-xs font-normal leading-tight text-gray-600">{`发音已${
-                      hintSoundsConfig.isOpen ? '开启' : '关闭'
+                      hintSoundsConfig.isOpen ? "开启" : "关闭"
                     }`}</span>
                   </div>
                 </div>
@@ -78,5 +90,5 @@ export default function SoundSwitcher() {
         </>
       )}
     </Popover>
-  )
+  );
 }

@@ -1,17 +1,17 @@
-import InfoPanel from '@/components/InfoPanel'
-import { useCallback, useState } from 'react'
-import IconBook2 from '~icons/tabler/book-2'
+import InfoPanel from "@/components/InfoPanel";
+import { useCallback, useState } from "react";
+import IconBook2 from "~icons/tabler/book-2";
 
 export default function DictRequest() {
-  const [showPanel, setShowPanel] = useState(false)
+  const [showPanel, setShowPanel] = useState(false);
 
   const onOpenPanel = useCallback(() => {
-    setShowPanel(true)
-  }, [])
+    setShowPanel(true);
+  }, []);
 
   const onClosePanel = useCallback(() => {
-    setShowPanel(false)
-  }, [])
+    setShowPanel(false);
+  }, []);
 
   return (
     <>
@@ -31,9 +31,12 @@ export default function DictRequest() {
           <br />
         </InfoPanel>
       )}
-      <button className="cursor-pointer pr-6 text-sm text-blue-500" onClick={onOpenPanel}>
+      <button
+        className="cursor-pointer pr-6 text-sm text-blue-500"
+        onClick={onOpenPanel}
+      >
         没有找到想要的词典？
       </button>
     </>
-  )
+  );
 }

@@ -1,14 +1,18 @@
-import { LoadingUI } from '@/components/Loading'
-import type { FC } from 'react'
-import ErrorIcon from '~icons/ic/outline-error'
+import { LoadingUI } from "@/components/Loading";
+import type { FC } from "react";
+import ErrorIcon from "~icons/ic/outline-error";
 
 type LoadingWordUIProps = {
-  className?: string
-  isLoading: boolean
-  hasError: boolean
-}
+  className?: string;
+  isLoading: boolean;
+  hasError: boolean;
+};
 
-export const LoadingWordUI: FC<LoadingWordUIProps> = ({ className, isLoading, hasError }) => {
+export const LoadingWordUI: FC<LoadingWordUIProps> = ({
+  className,
+  isLoading,
+  hasError,
+}) => {
   return (
     <div className={`${className}`}>
       {hasError ? (
@@ -19,5 +23,5 @@ export const LoadingWordUI: FC<LoadingWordUIProps> = ({ className, isLoading, ha
         isLoading && <LoadingUI />
       )}
     </div>
-  )
-}
+  );
+};

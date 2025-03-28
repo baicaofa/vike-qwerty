@@ -1,20 +1,28 @@
-import { Dialog, Transition } from '@headlessui/react'
-import classNames from 'classnames'
-import type { ElementType, SVGProps } from 'react'
-import type React from 'react'
-import { Fragment } from 'react'
+import { Dialog, Transition } from "@headlessui/react";
+import classNames from "classnames";
+import type { ElementType, SVGProps } from "react";
+import type React from "react";
+import { Fragment } from "react";
 
 type InfoPanelProps = {
-  openState: boolean
-  onClose: () => void
-  title: string
-  icon: ElementType<SVGProps<SVGSVGElement>>
-  iconClassName: string
-  buttonClassName: string
-  children: React.ReactNode
-}
+  openState: boolean;
+  onClose: () => void;
+  title: string;
+  icon: ElementType<SVGProps<SVGSVGElement>>;
+  iconClassName: string;
+  buttonClassName: string;
+  children: React.ReactNode;
+};
 
-const InfoPanel: React.FC<InfoPanelProps> = ({ openState, title, onClose, icon: Icon, iconClassName, buttonClassName, children }) => {
+const InfoPanel: React.FC<InfoPanelProps> = ({
+  openState,
+  title,
+  onClose,
+  icon: Icon,
+  iconClassName,
+  buttonClassName,
+  children,
+}) => {
   return (
     <Transition.Root show={openState} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={() => onClose()}>
@@ -47,13 +55,16 @@ const InfoPanel: React.FC<InfoPanelProps> = ({ openState, title, onClose, icon: 
                     <div
                       className={classNames(
                         iconClassName,
-                        `mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full dark:bg-opacity-30 sm:mx-0 sm:h-10 sm:w-10`,
+                        `mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full dark:bg-opacity-30 sm:mx-0 sm:h-10 sm:w-10`
                       )}
                     >
                       <Icon className="h-6 w-6 stroke-current dark:bg-opacity-100" />
                     </div>
                     <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                      <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900 dark:text-white">
+                      <Dialog.Title
+                        as="h3"
+                        className="text-base font-semibold leading-6 text-gray-900 dark:text-white"
+                      >
                         {title}
                       </Dialog.Title>
                       <div className="mt-2">{children}</div>
@@ -61,7 +72,14 @@ const InfoPanel: React.FC<InfoPanelProps> = ({ openState, title, onClose, icon: 
                   </div>
                 </div>
                 <div className="bg-gray-50 px-4 py-3 dark:bg-gray-700  sm:flex sm:flex-row-reverse sm:px-6">
-                  <button type="button" className={classNames(buttonClassName, 'my-btn-info-panel ')} onClick={() => onClose()}>
+                  <button
+                    type="button"
+                    className={classNames(
+                      buttonClassName,
+                      "my-btn-info-panel "
+                    )}
+                    onClick={() => onClose()}
+                  >
                     关闭
                   </button>
                 </div>
@@ -71,7 +89,7 @@ const InfoPanel: React.FC<InfoPanelProps> = ({ openState, title, onClose, icon: 
         </div>
       </Dialog>
     </Transition.Root>
-  )
-}
+  );
+};
 
-export default InfoPanel
+export default InfoPanel;

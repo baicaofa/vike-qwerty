@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export const LoadingUI: React.FC<{ className?: string }> = ({ className }) => {
   return (
@@ -6,8 +6,8 @@ export const LoadingUI: React.FC<{ className?: string }> = ({ className }) => {
       className={`inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid  border-indigo-400 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] ${className}`}
       role="status"
     ></div>
-  )
-}
+  );
+};
 
 const Loading: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const Loading: React.FC = () => {
         <LoadingUI />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default React.memo(Loading)
+export default React.memo(Loading);

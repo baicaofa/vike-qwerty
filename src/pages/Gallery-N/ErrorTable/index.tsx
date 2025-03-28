@@ -1,21 +1,38 @@
-import type { ErrorColumn } from './columns'
-import { errorColumns } from './columns'
-import { LoadingUI } from '@/components/Loading'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import type { SortingState } from '@tanstack/react-table'
-import { flexRender, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table'
-import { useMemo, useState } from 'react'
+import type { ErrorColumn } from "./columns";
+import { errorColumns } from "./columns";
+import { LoadingUI } from "@/components/Loading";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import type { SortingState } from "@tanstack/react-table";
+import {
+  flexRender,
+  getCoreRowModel,
+  getSortedRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+import { useMemo, useState } from "react";
 
 interface DataTableProps {
-  data: ErrorColumn[]
-  isLoading: boolean
-  error: unknown
-  onDelete: (word: string) => Promise<void>
+  data: ErrorColumn[];
+  isLoading: boolean;
+  error: unknown;
+  onDelete: (word: string) => Promise<void>;
 }
 
-export function ErrorTable({ data, isLoading, error, onDelete }: DataTableProps) {
-  const [sorting, setSorting] = useState<SortingState>([])
-  const columns = useMemo(() => errorColumns(onDelete), [onDelete])
+export function ErrorTable({
+  data,
+  isLoading,
+  error,
+  onDelete,
+}: DataTableProps) {
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const columns = useMemo(() => errorColumns(onDelete), [onDelete]);
 
   const table = useReactTable({
     data,
@@ -27,7 +44,7 @@ export function ErrorTable({ data, isLoading, error, onDelete }: DataTableProps)
       sorting,
     },
     autoResetPageIndex: true,
-  })
+  });
 
   return (
     <div className="h-full w-full rounded-md border p-1">
@@ -46,9 +63,14 @@ export function ErrorTable({ data, isLoading, error, onDelete }: DataTableProps)
                       },
                     }}
                   >
-                    {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                   </TableHead>
-                )
+                );
               })}
             </TableRow>
           ))}
@@ -56,7 +78,10 @@ export function ErrorTable({ data, isLoading, error, onDelete }: DataTableProps)
         <TableBody className="w-full">
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
+              <TableRow
+                key={row.id}
+                data-state={row.getIsSelected() && "selected"}
+              >
                 {row.getVisibleCells().map((cell) => {
                   return (
                     <TableCell
@@ -67,21 +92,33 @@ export function ErrorTable({ data, isLoading, error, onDelete }: DataTableProps)
                         },
                       }}
                     >
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
                     </TableCell>
-                  )
+                  );
                 })}
               </TableRow>
             ))
           ) : (
             <TableRow>
-              <TableCell colSpan={table.getAllColumns().length} className="h-[22rem] text-center">
-                {isLoading ? <LoadingUI /> : error ? '好像遇到错误啦！尝试刷新下' : '暂无数据, 快去练习吧！'}
+              <TableCell
+                colSpan={table.getAllColumns().length}
+                className="h-[22rem] text-center"
+              >
+                {isLoading ? (
+                  <LoadingUI />
+                ) : error ? (
+                  "好像遇到错误啦！尝试刷新下"
+                ) : (
+                  "暂无数据, 快去练习吧！"
+                )}
               </TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
     </div>
-  )
+  );
 }

@@ -1,50 +1,59 @@
-import clamp from '@/utils/clamp'
-import classNames from 'classnames'
-import { useMemo } from 'react'
+import clamp from "@/utils/clamp";
+import classNames from "classnames";
+import { useMemo } from "react";
 
 export type RemarkRingProps = {
-  remark: string
-  caption: string
+  remark: string;
+  caption: string;
   /**
    * `null` if the percentage is not appliable.
    * Otherwise, this is an integer between 0 and 100.
    */
-  percentage?: number | null
+  percentage?: number | null;
   /**
    * Default to 7 rem.
    */
-  size?: number
-}
+  size?: number;
+};
 function getRootFontSize() {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     // 服务器端渲染环境，返回默认值
-    return 16
+    return 16;
   }
-  const fontSize = window.getComputedStyle(document.documentElement).getPropertyValue('font-size')
-  const parsedSize = Number(fontSize.replace(/[^\d.]/g, ''))
-  return isNaN(parsedSize) ? 16 : parsedSize
+  const fontSize = window
+    .getComputedStyle(document.documentElement)
+    .getPropertyValue("font-size");
+  const parsedSize = Number(fontSize.replace(/[^\d.]/g, ""));
+  return isNaN(parsedSize) ? 16 : parsedSize;
 }
 
-const rootFontSize = getRootFontSize()
+const rootFontSize = getRootFontSize();
 
-export default function RemarkRing({ remark, caption, percentage = null, size = 7 }: RemarkRingProps) {
+export default function RemarkRing({
+  remark,
+  caption,
+  percentage = null,
+  size = 7,
+}: RemarkRingProps) {
   const clipPath = useMemo((): string | undefined => {
     if (percentage === null) {
-      return undefined
+      return undefined;
     }
-    const clamped = clamp(percentage, 0, 100)
+    const clamped = clamp(percentage, 0, 100);
     if (clamped === 100) {
-      return undefined
+      return undefined;
     }
-    const alpha = Math.PI * 2 * (clamped / 100)
-    const r = (rootFontSize * size) / 2
-    const path = `M ${r},0 A ${r},${r} 0 ${clamped > 50 ? 1 : 0},1 ${r + Math.sin(alpha) * r},${r + -Math.cos(alpha) * r} L ${r},${r} Z`
-    return `path("${path}")`
-  }, [percentage, size])
+    const alpha = Math.PI * 2 * (clamped / 100);
+    const r = (rootFontSize * size) / 2;
+    const path = `M ${r},0 A ${r},${r} 0 ${clamped > 50 ? 1 : 0},1 ${
+      r + Math.sin(alpha) * r
+    },${r + -Math.cos(alpha) * r} L ${r},${r} Z`;
+    return `path("${path}")`;
+  }, [percentage, size]);
   return (
     <div
       className={classNames(
-        'relative flex flex-shrink-0 flex-col items-center justify-center rounded-full border-8 border-indigo-200 bg-transparent dark:border-gray-700',
+        "relative flex flex-shrink-0 flex-col items-center justify-center rounded-full border-8 border-indigo-200 bg-transparent dark:border-gray-700"
       )}
       style={{
         width: `${size}rem`,
@@ -58,8 +67,12 @@ export default function RemarkRing({ remark, caption, percentage = null, size = 
           aria-hidden
         />
       )}
-      <span className="text-xl tabular-nums text-gray-800 dark:text-gray-300">{remark}</span>
-      <span className="text-sm font-medium text-gray-600 dark:text-gray-500">{caption}</span>
+      <span className="text-xl tabular-nums text-gray-800 dark:text-gray-300">
+        {remark}
+      </span>
+      <span className="text-sm font-medium text-gray-600 dark:text-gray-500">
+        {caption}
+      </span>
     </div>
-  )
+  );
 }

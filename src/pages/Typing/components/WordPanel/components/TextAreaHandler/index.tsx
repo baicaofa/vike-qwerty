@@ -1,41 +1,45 @@
-import type { WordUpdateAction } from '../InputHandler'
-import { TypingContext } from '@/pages/Typing/store'
-import type { FormEvent } from 'react'
-import { useCallback, useContext, useEffect, useRef } from 'react'
+import type { WordUpdateAction } from "../InputHandler";
+import { TypingContext } from "@/pages/Typing/store";
+import type { FormEvent } from "react";
+import { useCallback, useContext, useEffect, useRef } from "react";
 
-export default function TextAreaHandler({ updateInput }: { updateInput: (updateObj: WordUpdateAction) => void }) {
-  const textareaRef = useRef<HTMLTextAreaElement>(null)
+export default function TextAreaHandler({
+  updateInput,
+}: {
+  updateInput: (updateObj: WordUpdateAction) => void;
+}) {
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
-  const { state } = useContext(TypingContext)!
+  const { state } = useContext(TypingContext)!;
 
   useEffect(() => {
-    if (!textareaRef.current) return
+    if (!textareaRef.current) return;
 
     if (state.isTyping) {
-      textareaRef.current.focus()
+      textareaRef.current.focus();
     } else {
-      textareaRef.current.blur()
+      textareaRef.current.blur();
     }
-  }, [state.isTyping])
+  }, [state.isTyping]);
 
   const onInput = (e: FormEvent<HTMLTextAreaElement>) => {
-    const nativeEvent = e.nativeEvent as InputEvent
+    const nativeEvent = e.nativeEvent as InputEvent;
     if (!nativeEvent.isComposing && nativeEvent.data !== null) {
-      updateInput({ type: 'add', value: nativeEvent.data, event: e })
+      updateInput({ type: "add", value: nativeEvent.data, event: e });
 
       if (textareaRef.current) {
-        textareaRef.current.value = ''
+        textareaRef.current.value = "";
       }
     }
-  }
+  };
 
   const onBlur = useCallback(() => {
-    if (!textareaRef.current) return
+    if (!textareaRef.current) return;
 
     if (state.isTyping) {
-      textareaRef.current.focus()
+      textareaRef.current.focus();
     }
-  }, [state.isTyping])
+  }, [state.isTyping]);
 
   return (
     <textarea
@@ -46,8 +50,8 @@ export default function TextAreaHandler({ updateInput }: { updateInput: (updateO
       onInput={onInput}
       onBlur={onBlur}
       onCompositionStart={() => {
-        alert('您正在使用输入法，请关闭输入法。')
+        alert("您正在使用输入法，请关闭输入法。");
       }}
     ></textarea>
-  )
+  );
 }

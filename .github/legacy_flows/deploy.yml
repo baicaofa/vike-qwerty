@@ -24,7 +24,7 @@ jobs:
         with:
           accessKeyId: ${{ secrets.YUN_KEY_ID }}
           accessKeySecret: ${{ secrets.YUN_KEY_SECRET }}
-          bucket: 'qwerty-front'
-          endpoint: 'oss-cn-beijing.aliyuncs.com'
-          folder: './build'
+          bucket: "qwerty-front"
+          endpoint: "oss-cn-beijing.aliyuncs.com"
+          folder: "./build"
           skipSetting: true

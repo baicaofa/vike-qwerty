@@ -1,8 +1,15 @@
-import atomForConfig from './atomForConfig'
-import { reviewInfoAtom } from './reviewInfoAtom'
-import { DISMISS_START_CARD_DATE_KEY, defaultFontSizeConfig } from '@/constants'
-import { idDictionaryMap } from '@/resources/dictionary'
-import { correctSoundResources, keySoundResources, wrongSoundResources } from '@/resources/soundResource'
+import atomForConfig from "./atomForConfig";
+import { reviewInfoAtom } from "./reviewInfoAtom";
+import {
+  DISMISS_START_CARD_DATE_KEY,
+  defaultFontSizeConfig,
+} from "@/constants";
+import { idDictionaryMap } from "@/resources/dictionary";
+import {
+  correctSoundResources,
+  keySoundResources,
+  wrongSoundResources,
+} from "@/resources/soundResource";
 import type {
   Dictionary,
   InfoPanelState,
@@ -11,113 +18,137 @@ import type {
   PronunciationType,
   WordDictationOpenBy,
   WordDictationType,
-} from '@/typings'
-import type { ReviewRecord } from '@/utils/db/record'
-import { atom } from 'jotai'
-import { atomWithStorage } from 'jotai/utils'
+} from "@/typings";
+import type { ReviewRecord } from "@/utils/db/record";
+import { atom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 
-export const currentDictIdAtom = atomWithStorage('currentDict', 'cet4')
+export const currentDictIdAtom = atomWithStorage("currentDict", "cet4");
 export const currentDictInfoAtom = atom<Dictionary>((get) => {
-  const id = get(currentDictIdAtom)
-  let dict = idDictionaryMap[id]
+  const id = get(currentDictIdAtom);
+  let dict = idDictionaryMap[id];
   // 如果 dict 不存在，则返回 cet4. Typing 中会检查 DictId 是否存在，如果不存在则会重置为 cet4
   if (!dict) {
-    dict = idDictionaryMap.cet4
+    dict = idDictionaryMap.cet4;
   }
-  return dict
-})
+  return dict;
+});
 
-export const currentChapterAtom = atomWithStorage('currentChapter', 0)
+export const currentChapterAtom = atomWithStorage("currentChapter", 0);
 
-export const loopWordConfigAtom = atomForConfig<{ times: LoopWordTimesOption }>('loopWordConfig', {
-  times: 1,
-})
+export const loopWordConfigAtom = atomForConfig<{ times: LoopWordTimesOption }>(
+  "loopWordConfig",
+  {
+    times: 1,
+  }
+);
 
-export const keySoundsConfigAtom = atomForConfig('keySoundsConfig', {
+export const keySoundsConfigAtom = atomForConfig("keySoundsConfig", {
   isOpen: true,
   isOpenClickSound: true,
   volume: 1,
   resource: keySoundResources[0],
-})
+});
 
-export const hintSoundsConfigAtom = atomForConfig('hintSoundsConfig', {
+export const hintSoundsConfigAtom = atomForConfig("hintSoundsConfig", {
   isOpen: true,
   volume: 1,
   isOpenWrongSound: true,
   isOpenCorrectSound: true,
   wrongResource: wrongSoundResources[0],
   correctResource: correctSoundResources[0],
-})
+});
 
-export const pronunciationConfigAtom = atomForConfig('pronunciation', {
+export const pronunciationConfigAtom = atomForConfig("pronunciation", {
   isOpen: true,
   volume: 1,
-  type: 'us' as PronunciationType,
-  name: '美音',
+  type: "us" as PronunciationType,
+  name: "美音",
   isLoop: false,
   isTransRead: false,
   transVolume: 1,
   rate: 1,
-})
+});
 
-export const fontSizeConfigAtom = atomForConfig('fontsize', defaultFontSizeConfig)
+export const fontSizeConfigAtom = atomForConfig(
+  "fontsize",
+  defaultFontSizeConfig
+);
 
-export const pronunciationIsOpenAtom = atom((get) => get(pronunciationConfigAtom).isOpen)
+export const pronunciationIsOpenAtom = atom(
+  (get) => get(pronunciationConfigAtom).isOpen
+);
 
-export const pronunciationIsTransReadAtom = atom((get) => get(pronunciationConfigAtom).isTransRead)
+export const pronunciationIsTransReadAtom = atom(
+  (get) => get(pronunciationConfigAtom).isTransRead
+);
 
-export const randomConfigAtom = atomForConfig('randomConfig', {
+export const randomConfigAtom = atomForConfig("randomConfig", {
   isOpen: false,
-})
+});
 
-export const isShowPrevAndNextWordAtom = atomWithStorage('isShowPrevAndNextWord', true)
+export const isShowPrevAndNextWordAtom = atomWithStorage(
+  "isShowPrevAndNextWord",
+  true
+);
 
-export const isIgnoreCaseAtom = atomWithStorage('isIgnoreCase', true)
+export const isIgnoreCaseAtom = atomWithStorage("isIgnoreCase", true);
 
-export const isShowAnswerOnHoverAtom = atomWithStorage('isShowAnswerOnHover', true)
+export const isShowAnswerOnHoverAtom = atomWithStorage(
+  "isShowAnswerOnHover",
+  true
+);
 
-export const isTextSelectableAtom = atomWithStorage('isTextSelectable', false)
+export const isTextSelectableAtom = atomWithStorage("isTextSelectable", false);
 
 export const reviewModeInfoAtom = reviewInfoAtom({
   isReviewMode: false,
   reviewRecord: undefined as ReviewRecord | undefined,
-})
-export const isReviewModeAtom = atom((get) => get(reviewModeInfoAtom).isReviewMode)
+});
+export const isReviewModeAtom = atom(
+  (get) => get(reviewModeInfoAtom).isReviewMode
+);
 
-export const phoneticConfigAtom = atomForConfig('phoneticConfig', {
+export const phoneticConfigAtom = atomForConfig("phoneticConfig", {
   isOpen: true,
-  type: 'us' as PhoneticType,
-})
+  type: "us" as PhoneticType,
+});
 // 定义一个函数来创建原子
 const createIsOpenDarkModeAtom = () => {
   // 检查是否在浏览器环境中
-  if (typeof window !== 'undefined') {
-    return atomWithStorage('isOpenDarkModeAtom', window.matchMedia('(prefers-color-scheme: dark)').matches)
+  if (typeof window !== "undefined") {
+    return atomWithStorage(
+      "isOpenDarkModeAtom",
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    );
   }
   // 如果不在浏览器环境中，返回一个默认的原子
-  return atom(false)
-}
+  return atom(false);
+};
 
-export const isOpenDarkModeAtom = createIsOpenDarkModeAtom()
+export const isOpenDarkModeAtom = createIsOpenDarkModeAtom();
 
-export const isShowSkipAtom = atom(false)
+export const isShowSkipAtom = atom(false);
 
-export const isInDevModeAtom = atom(false)
+export const isInDevModeAtom = atom(false);
 
 export const infoPanelStateAtom = atom<InfoPanelState>({
   donate: false,
   vsc: false,
   community: false,
   redBook: false,
-})
+});
 
-export const wordDictationConfigAtom = atomForConfig('wordDictationConfig', {
+export const wordDictationConfigAtom = atomForConfig("wordDictationConfig", {
   isOpen: false,
-  type: 'hideAll' as WordDictationType,
-  openBy: 'auto' as WordDictationOpenBy,
-})
+  type: "hideAll" as WordDictationType,
+  openBy: "auto" as WordDictationOpenBy,
+});
 
-export const dismissStartCardDateAtom = atomWithStorage<Date | null>(DISMISS_START_CARD_DATE_KEY, null)
+export const dismissStartCardDateAtom = atomWithStorage<Date | null>(
+  DISMISS_START_CARD_DATE_KEY,
+  null
+);
 
 // for dev test
 //   dismissStartCardDateAtom = atom<Date | null>(new Date())

@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   qwertylearner:
@@ -6,4 +6,4 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '8990:5173'
+      - "8990:5173"

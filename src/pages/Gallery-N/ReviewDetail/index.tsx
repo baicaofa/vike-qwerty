@@ -1,36 +1,49 @@
-import type { TErrorWordData } from '../hooks/useErrorWords'
-import { Button } from '@/components/ui/button'
-import { currentChapterAtom, currentDictIdAtom, reviewModeInfoAtom } from '@/store'
-import type { Dictionary } from '@/typings'
-import { timeStamp2String } from '@/utils'
-import { generateNewWordReviewRecord, useGetLatestReviewRecord } from '@/utils/db/review-record'
-import * as Progress from '@radix-ui/react-progress'
-import { useSetAtom } from 'jotai'
-import { navigate } from 'vike/client/router'
-import MdiRobotAngry from '~icons/mdi/robot-angry'
+import type { TErrorWordData } from "../hooks/useErrorWords";
+import { Button } from "@/components/ui/button";
+import {
+  currentChapterAtom,
+  currentDictIdAtom,
+  reviewModeInfoAtom,
+} from "@/store";
+import type { Dictionary } from "@/typings";
+import { timeStamp2String } from "@/utils";
+import {
+  generateNewWordReviewRecord,
+  useGetLatestReviewRecord,
+} from "@/utils/db/review-record";
+import * as Progress from "@radix-ui/react-progress";
+import { useSetAtom } from "jotai";
+import { navigate } from "vike/client/router";
+import MdiRobotAngry from "~icons/mdi/robot-angry";
 
-export function ReviewDetail({ errorData, dict }: { errorData: TErrorWordData[]; dict: Dictionary }) {
-  const latestReviewRecord = useGetLatestReviewRecord(dict.id)
-  const setReviewModeInfo = useSetAtom(reviewModeInfoAtom)
-  const setCurrentDictId = useSetAtom(currentDictIdAtom)
-  const setCurrentChapter = useSetAtom(currentChapterAtom)
+export function ReviewDetail({
+  errorData,
+  dict,
+}: {
+  errorData: TErrorWordData[];
+  dict: Dictionary;
+}) {
+  const latestReviewRecord = useGetLatestReviewRecord(dict.id);
+  const setReviewModeInfo = useSetAtom(reviewModeInfoAtom);
+  const setCurrentDictId = useSetAtom(currentDictIdAtom);
+  const setCurrentChapter = useSetAtom(currentChapterAtom);
 
   const startReview = async () => {
-    setCurrentDictId(dict.id)
-    setCurrentChapter(-1)
+    setCurrentDictId(dict.id);
+    setCurrentChapter(-1);
 
-    const record = await generateNewWordReviewRecord(dict.id, errorData)
-    setReviewModeInfo({ isReviewMode: true, reviewRecord: record })
-    navigate('/')
-  }
+    const record = await generateNewWordReviewRecord(dict.id, errorData);
+    setReviewModeInfo({ isReviewMode: true, reviewRecord: record });
+    navigate("/");
+  };
 
   const continueReview = () => {
-    setCurrentDictId(dict.id)
-    setCurrentChapter(-1)
+    setCurrentDictId(dict.id);
+    setCurrentChapter(-1);
 
-    setReviewModeInfo({ isReviewMode: true, reviewRecord: latestReviewRecord })
-    navigate('/')
-  }
+    setReviewModeInfo({ isReviewMode: true, reviewRecord: latestReviewRecord });
+    navigate("/");
+  };
 
   return (
     <div className="flex h-full flex-col items-center justify-around px-60">
@@ -55,14 +68,22 @@ export function ReviewDetail({ errorData, dict }: { errorData: TErrorWordData[];
               >
                 <Progress.Indicator
                   className="h-full rounded-full bg-blue-400 pl-0"
-                  style={{ width: `calc(${((latestReviewRecord.index + 1) / latestReviewRecord.words.length) * 100}% )` }}
+                  style={{
+                    width: `calc(${
+                      ((latestReviewRecord.index + 1) /
+                        latestReviewRecord.words.length) *
+                      100
+                    }% )`,
+                  }}
                 />
               </Progress.Root>
               <span className="p-0 text-xs">
                 {latestReviewRecord.index + 1}/{latestReviewRecord.words.length}
               </span>
             </div>
-            <div className="mt-1 text-sm font-normal text-gray-500">{`( 创建于 ${timeStamp2String(latestReviewRecord.createTime)} )`}</div>
+            <div className="mt-1 text-sm font-normal text-gray-500">{`( 创建于 ${timeStamp2String(
+              latestReviewRecord.createTime
+            )} )`}</div>
           </>
         )}
 
@@ -75,10 +96,10 @@ export function ReviewDetail({ errorData, dict }: { errorData: TErrorWordData[];
             </Button>
           )}
           <Button size="sm" onClick={startReview}>
-            开始{latestReviewRecord && '新的'}复习
+            开始{latestReviewRecord && "新的"}复习
           </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }

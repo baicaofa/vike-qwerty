@@ -1,18 +1,18 @@
-import standTypingHandPosition from '@/assets/standard_typing_hand_position.png'
-import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
-import IconKeyboard from '~icons/ic/round-keyboard'
-import IconX from '~icons/tabler/x'
+import standTypingHandPosition from "@/assets/standard_typing_hand_position.png";
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
+import IconKeyboard from "~icons/ic/round-keyboard";
+import IconX from "~icons/tabler/x";
 
 export default function HandPositionIllustration() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
-    setIsOpen(false)
+    setIsOpen(false);
   }
 
   function openModal() {
-    setIsOpen(true)
+    setIsOpen(true);
   }
 
   return (
@@ -21,7 +21,7 @@ export default function HandPositionIllustration() {
         type="button"
         onClick={openModal}
         className={`flex items-center justify-center rounded p-[2px] text-lg text-blue-500 outline-none transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white  ${
-          isOpen && ' bg-blue-500 text-white'
+          isOpen && " bg-blue-500 text-white"
         }`}
       >
         <IconKeyboard className="icon"></IconKeyboard>
@@ -53,14 +53,25 @@ export default function HandPositionIllustration() {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-200  transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-gray-800">
-                  <button type="button" onClick={() => setIsOpen(false)} title="关闭对话框">
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(false)}
+                    title="关闭对话框"
+                  >
                     <IconX className="absolute right-7 top-5 cursor-pointer text-gray-400" />
                   </button>
-                  <Dialog.Title as="h3" className="text-center text-xl font-medium leading-6 text-gray-800 dark:text-gray-200">
+                  <Dialog.Title
+                    as="h3"
+                    className="text-center text-xl font-medium leading-6 text-gray-800 dark:text-gray-200"
+                  >
                     推荐打字指法图示
                   </Dialog.Title>
                   <div className="mt-8">
-                    <img className="block " src={standTypingHandPosition} alt="" />
+                    <img
+                      className="block "
+                      src={standTypingHandPosition}
+                      alt=""
+                    />
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
@@ -69,5 +80,5 @@ export default function HandPositionIllustration() {
         </Dialog>
       </Transition>
     </>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import sticker2 from '@/assets/sticker2.jpg'
-import sticker1 from '@/assets/sticker.jpg'
-import { Tooltip } from 'react-tooltip'
-import 'react-tooltip/dist/react-tooltip.css'
-import IconInfo from '~icons/ic/outline-info'
-import SolarStickerSmileSquareOutline from '~icons/solar/sticker-smile-square-outline'
+import sticker2 from "@/assets/sticker2.jpg";
+import sticker1 from "@/assets/sticker.jpg";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
+import IconInfo from "~icons/ic/outline-info";
+import SolarStickerSmileSquareOutline from "~icons/solar/sticker-smile-square-outline";
 
 export const StickerButton = ({ className }: { className?: string }) => {
   return (
@@ -24,8 +24,16 @@ export const StickerButton = ({ className }: { className?: string }) => {
         dark:!bg-gray-800 dark:text-gray-300 dark:shadow-lg dark:shadow-gray-700"
       >
         <div className="flex gap-2">
-          <img src={sticker1} alt="alipay" className=" h-44 rounded shadow-lg shadow-gray-300 dark:shadow-gray-700" />
-          <img src={sticker2} alt="alipay" className=" h-44 rounded shadow-lg shadow-gray-300 dark:shadow-gray-700" />
+          <img
+            src={sticker1}
+            alt="alipay"
+            className=" h-44 rounded shadow-lg shadow-gray-300 dark:shadow-gray-700"
+          />
+          <img
+            src={sticker2}
+            alt="alipay"
+            className=" h-44 rounded shadow-lg shadow-gray-300 dark:shadow-gray-700"
+          />
         </div>
         <span className="mt-3 text-xs font-bold text-gray-500">
           <IconInfo className="mb-[3px] mr-1 inline-block" />
@@ -33,5 +41,5 @@ export const StickerButton = ({ className }: { className?: string }) => {
         </span>
       </Tooltip>
     </>
-  )
-}
+  );
+};

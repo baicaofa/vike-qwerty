@@ -1,57 +1,63 @@
-import styles from './index.module.css'
-import type { ExportProgress, ImportProgress } from '@/utils/db/data-export'
-import { exportDatabase, importDatabase } from '@/utils/db/data-export'
-import * as Progress from '@radix-ui/react-progress'
-import * as ScrollArea from '@radix-ui/react-scroll-area'
-import { useCallback, useState } from 'react'
+import styles from "./index.module.css";
+import type { ExportProgress, ImportProgress } from "@/utils/db/data-export";
+import { exportDatabase, importDatabase } from "@/utils/db/data-export";
+import * as Progress from "@radix-ui/react-progress";
+import * as ScrollArea from "@radix-ui/react-scroll-area";
+import { useCallback, useState } from "react";
 
 export default function DataSetting() {
-  const [isExporting, setIsExporting] = useState(false)
-  const [exportProgress, setExportProgress] = useState(0)
+  const [isExporting, setIsExporting] = useState(false);
+  const [exportProgress, setExportProgress] = useState(0);
 
-  const [isImporting, setIsImporting] = useState(false)
-  const [importProgress, setImportProgress] = useState(0)
+  const [isImporting, setIsImporting] = useState(false);
+  const [importProgress, setImportProgress] = useState(0);
 
-  const exportProgressCallback = useCallback(({ totalRows, completedRows, done }: ExportProgress) => {
-    if (done) {
-      setIsExporting(false)
-      setExportProgress(100)
-      return true
-    }
-    if (totalRows) {
-      setExportProgress(Math.floor((completedRows / totalRows) * 100))
-    }
+  const exportProgressCallback = useCallback(
+    ({ totalRows, completedRows, done }: ExportProgress) => {
+      if (done) {
+        setIsExporting(false);
+        setExportProgress(100);
+        return true;
+      }
+      if (totalRows) {
+        setExportProgress(Math.floor((completedRows / totalRows) * 100));
+      }
 
-    return true
-  }, [])
+      return true;
+    },
+    []
+  );
 
   const onClickExport = useCallback(() => {
-    setExportProgress(0)
-    setIsExporting(true)
-    exportDatabase(exportProgressCallback)
-  }, [exportProgressCallback])
+    setExportProgress(0);
+    setIsExporting(true);
+    exportDatabase(exportProgressCallback);
+  }, [exportProgressCallback]);
 
-  const importProgressCallback = useCallback(({ totalRows, completedRows, done }: ImportProgress) => {
-    if (done) {
-      setIsImporting(false)
-      setImportProgress(100)
-      return true
-    }
-    if (totalRows) {
-      setImportProgress(Math.floor((completedRows / totalRows) * 100))
-    }
+  const importProgressCallback = useCallback(
+    ({ totalRows, completedRows, done }: ImportProgress) => {
+      if (done) {
+        setIsImporting(false);
+        setImportProgress(100);
+        return true;
+      }
+      if (totalRows) {
+        setImportProgress(Math.floor((completedRows / totalRows) * 100));
+      }
 
-    return true
-  }, [])
+      return true;
+    },
+    []
+  );
 
   const onStartImport = useCallback(() => {
-    setImportProgress(0)
-    setIsImporting(true)
-  }, [])
+    setImportProgress(0);
+    setIsImporting(true);
+  }, []);
 
   const onClickImport = useCallback(() => {
-    importDatabase(onStartImport, importProgressCallback)
-  }, [importProgressCallback, onStartImport])
+    importDatabase(onStartImport, importProgressCallback);
+  }, [importProgressCallback, onStartImport]);
 
   return (
     <ScrollArea.Root className="flex-1 select-none overflow-y-auto ">
@@ -60,7 +66,8 @@ export default function DataSetting() {
           <div className={styles.section}>
             <span className={styles.sectionLabel}>数据导出</span>
             <span className={styles.sectionDescription}>
-              目前，用户的练习数据<strong>仅保存在本地</strong>。如果您需要在不同的设备、浏览器或者其他非官方部署上使用 Keybr，
+              目前，用户的练习数据<strong>仅保存在本地</strong>
+              。如果您需要在不同的设备、浏览器或者其他非官方部署上使用 Keybr，
               您需要手动进行数据同步和保存。为了保留您的练习进度，以及使用近期即将上线的数据分析和智能训练功能，
               我们建议您及时备份您的数据。
             </span>
@@ -93,7 +100,12 @@ export default function DataSetting() {
           <div className={styles.section}>
             <span className={styles.sectionLabel}>数据导入</span>
             <span className={styles.sectionDescription}>
-              请注意，导入数据将<strong className="text-sm font-bold text-red-500"> 完全覆盖 </strong>当前数据。请谨慎操作。
+              请注意，导入数据将
+              <strong className="text-sm font-bold text-red-500">
+                {" "}
+                完全覆盖{" "}
+              </strong>
+              当前数据。请谨慎操作。
             </span>
 
             <div className="flex h-3 w-full items-center justify-start px-5">
@@ -121,7 +133,10 @@ export default function DataSetting() {
           </div>
         </div>
       </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar className="flex touch-none select-none bg-transparent " orientation="vertical"></ScrollArea.Scrollbar>
+      <ScrollArea.Scrollbar
+        className="flex touch-none select-none bg-transparent "
+        orientation="vertical"
+      ></ScrollArea.Scrollbar>
     </ScrollArea.Root>
-  )
+  );
 }

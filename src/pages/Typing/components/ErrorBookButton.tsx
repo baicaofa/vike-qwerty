@@ -1,13 +1,13 @@
-import { recordErrorBookAction } from '@/utils'
-import { useCallback } from 'react'
-import { navigate } from 'vike/client/router'
-import IconBook from '~icons/bxs/book'
+import { recordErrorBookAction } from "@/utils";
+import { useCallback } from "react";
+import { navigate } from "vike/client/router";
+import IconBook from "~icons/bxs/book";
 
 const ErrorBookButton = () => {
   const toErrorBook = useCallback(() => {
-    navigate('/error-book')
-    recordErrorBookAction('open')
-  }, [])
+    navigate("/error-book");
+    recordErrorBookAction("open");
+  }, []);
 
   return (
     <button
@@ -18,7 +18,7 @@ const ErrorBookButton = () => {
     >
       <IconBook className="icon" />
     </button>
-  )
-}
+  );
+};
 
-export default ErrorBookButton
+export default ErrorBookButton;

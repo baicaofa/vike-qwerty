@@ -1,27 +1,33 @@
-import SharePicDialog from './SharePicDialog'
-import { recordShareAction } from '@/utils'
-import { useCallback, useMemo, useState } from 'react'
-import IconShare2 from '~icons/tabler/share-2'
+import SharePicDialog from "./SharePicDialog";
+import { recordShareAction } from "@/utils";
+import { useCallback, useMemo, useState } from "react";
+import IconShare2 from "~icons/tabler/share-2";
 
 export default function ShareButton() {
-  const [isShowSharePanel, setIsShowSharePanel] = useState(false)
+  const [isShowSharePanel, setIsShowSharePanel] = useState(false);
 
   const randomChoose = useMemo(
     () => ({
       picRandom: Math.random(),
       promoteRandom: Math.random(),
     }),
-    [],
-  )
+    []
+  );
 
   const onClickShare = useCallback(() => {
-    recordShareAction('open')
-    setIsShowSharePanel(true)
-  }, [])
+    recordShareAction("open");
+    setIsShowSharePanel(true);
+  }, []);
 
   return (
     <>
-      {isShowSharePanel && <SharePicDialog showState={isShowSharePanel} setShowState={setIsShowSharePanel} randomChoose={randomChoose} />}
+      {isShowSharePanel && (
+        <SharePicDialog
+          showState={isShowSharePanel}
+          setShowState={setIsShowSharePanel}
+          randomChoose={randomChoose}
+        />
+      )}
 
       <button
         type="button"
@@ -32,5 +38,5 @@ export default function ShareButton() {
         <IconShare2 />
       </button>
     </>
-  )
+  );
 }

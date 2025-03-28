@@ -1,11 +1,11 @@
-import { CONFETTI_DEFAULTS } from '@/constants'
-import confetti from 'canvas-confetti'
-import { useEffect } from 'react'
+import { CONFETTI_DEFAULTS } from "@/constants";
+import confetti from "canvas-confetti";
+import { useEffect } from "react";
 
 export function useConfetti(state: boolean) {
   useEffect(() => {
-    let leftConfettiTimer: number | undefined
-    let rightConfettiTimer: number | undefined
+    let leftConfettiTimer: number | undefined;
+    let rightConfettiTimer: number | undefined;
     if (state) {
       leftConfettiTimer = window.setTimeout(() => {
         confetti({
@@ -14,8 +14,8 @@ export function useConfetti(state: boolean) {
           angle: 60,
           spread: 100,
           origin: { x: 0 },
-        })
-      }, 250)
+        });
+      }, 250);
       rightConfettiTimer = window.setTimeout(() => {
         confetti({
           ...CONFETTI_DEFAULTS,
@@ -23,12 +23,12 @@ export function useConfetti(state: boolean) {
           angle: 120,
           spread: 100,
           origin: { x: 1 },
-        })
-      }, 400)
+        });
+      }, 400);
     }
     return () => {
-      window.clearTimeout(leftConfettiTimer)
-      window.clearTimeout(rightConfettiTimer)
-    }
-  }, [state])
+      window.clearTimeout(leftConfettiTimer);
+      window.clearTimeout(rightConfettiTimer);
+    };
+  }, [state]);
 }

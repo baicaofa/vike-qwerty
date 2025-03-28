@@ -1,6 +1,6 @@
-import logo from '@/assets/logo.svg'
-import type { PropsWithChildren } from 'react'
-import type React from 'react'
+import logo from "@/assets/logo.svg";
+import type { PropsWithChildren } from "react";
+import type React from "react";
 
 const Header: React.FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -20,7 +20,7 @@ const Header: React.FC<PropsWithChildren> = ({ children }) => {
         </nav>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

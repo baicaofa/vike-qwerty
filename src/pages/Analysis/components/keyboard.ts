@@ -1,12 +1,12 @@
 const Keyboard = {
-  type: 'FeatureCollection',
+  type: "FeatureCollection",
   features: [
     {
-      type: 'Feature',
-      id: '01',
-      properties: { name: 'Q' },
+      type: "Feature",
+      id: "01",
+      properties: { name: "Q" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [0, 18],
@@ -18,11 +18,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '02',
-      properties: { name: 'W' },
+      type: "Feature",
+      id: "02",
+      properties: { name: "W" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [11, 18],
@@ -34,11 +34,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '03',
-      properties: { name: 'E' },
+      type: "Feature",
+      id: "03",
+      properties: { name: "E" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [22, 18],
@@ -50,11 +50,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '04',
-      properties: { name: 'R' },
+      type: "Feature",
+      id: "04",
+      properties: { name: "R" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [33, 18],
@@ -66,11 +66,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '05',
-      properties: { name: 'T' },
+      type: "Feature",
+      id: "05",
+      properties: { name: "T" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [44, 18],
@@ -82,11 +82,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '06',
-      properties: { name: 'Y' },
+      type: "Feature",
+      id: "06",
+      properties: { name: "Y" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [55, 18],
@@ -98,11 +98,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '07',
-      properties: { name: 'U' },
+      type: "Feature",
+      id: "07",
+      properties: { name: "U" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [66, 18],
@@ -114,11 +114,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '08',
-      properties: { name: 'I' },
+      type: "Feature",
+      id: "08",
+      properties: { name: "I" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [77, 18],
@@ -130,11 +130,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '09',
-      properties: { name: 'O' },
+      type: "Feature",
+      id: "09",
+      properties: { name: "O" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [88, 18],
@@ -146,11 +146,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '10',
-      properties: { name: 'P' },
+      type: "Feature",
+      id: "10",
+      properties: { name: "P" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [99, 18],
@@ -162,11 +162,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '11',
-      properties: { name: 'A' },
+      type: "Feature",
+      id: "11",
+      properties: { name: "A" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [5, 9],
@@ -178,11 +178,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '12',
-      properties: { name: 'S' },
+      type: "Feature",
+      id: "12",
+      properties: { name: "S" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [16, 9],
@@ -194,11 +194,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '13',
-      properties: { name: 'D' },
+      type: "Feature",
+      id: "13",
+      properties: { name: "D" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [27, 9],
@@ -210,11 +210,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '14',
-      properties: { name: 'F' },
+      type: "Feature",
+      id: "14",
+      properties: { name: "F" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [38, 9],
@@ -226,11 +226,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '15',
-      properties: { name: 'G' },
+      type: "Feature",
+      id: "15",
+      properties: { name: "G" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [49, 9],
@@ -242,11 +242,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '16',
-      properties: { name: 'H' },
+      type: "Feature",
+      id: "16",
+      properties: { name: "H" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [60, 9],
@@ -258,11 +258,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '17',
-      properties: { name: 'J' },
+      type: "Feature",
+      id: "17",
+      properties: { name: "J" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [71, 9],
@@ -274,11 +274,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '18',
-      properties: { name: 'K' },
+      type: "Feature",
+      id: "18",
+      properties: { name: "K" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [82, 9],
@@ -290,11 +290,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '19',
-      properties: { name: 'L' },
+      type: "Feature",
+      id: "19",
+      properties: { name: "L" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [93, 9],
@@ -306,11 +306,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '20',
-      properties: { name: 'Z' },
+      type: "Feature",
+      id: "20",
+      properties: { name: "Z" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [10, 0],
@@ -322,11 +322,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '21',
-      properties: { name: 'X' },
+      type: "Feature",
+      id: "21",
+      properties: { name: "X" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [21, 0],
@@ -338,11 +338,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '22',
-      properties: { name: 'C' },
+      type: "Feature",
+      id: "22",
+      properties: { name: "C" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [32, 0],
@@ -354,11 +354,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '23',
-      properties: { name: 'V' },
+      type: "Feature",
+      id: "23",
+      properties: { name: "V" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [43, 0],
@@ -370,11 +370,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '24',
-      properties: { name: 'B' },
+      type: "Feature",
+      id: "24",
+      properties: { name: "B" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [54, 0],
@@ -386,11 +386,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '25',
-      properties: { name: 'N' },
+      type: "Feature",
+      id: "25",
+      properties: { name: "N" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [65, 0],
@@ -402,11 +402,11 @@ const Keyboard = {
       },
     },
     {
-      type: 'Feature',
-      id: '26',
-      properties: { name: 'M' },
+      type: "Feature",
+      id: "26",
+      properties: { name: "M" },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [76, 0],
@@ -418,6 +418,6 @@ const Keyboard = {
       },
     },
   ],
-}
+};
 
-export default Keyboard
+export default Keyboard;

@@ -1,57 +1,76 @@
-import type { IChapterRecord, IReviewRecord, IRevisionDictRecord, IWordRecord, LetterMistakes } from './record'
-import { ChapterRecord, ReviewRecord, WordRecord } from './record'
-import { TypingContext, TypingStateActionType } from '@/pages/Typing/store'
-import type { TypingState } from '@/pages/Typing/store/type'
-import { currentChapterAtom, currentDictIdAtom, isReviewModeAtom } from '@/store'
-import type { Table } from 'dexie'
-import Dexie from 'dexie'
-import { useAtomValue } from 'jotai'
-import { useCallback, useContext } from 'react'
+import type {
+  IChapterRecord,
+  IReviewRecord,
+  IRevisionDictRecord,
+  IWordRecord,
+  LetterMistakes,
+} from "./record";
+import { ChapterRecord, ReviewRecord, WordRecord } from "./record";
+import { TypingContext, TypingStateActionType } from "@/pages/Typing/store";
+import type { TypingState } from "@/pages/Typing/store/type";
+import {
+  currentChapterAtom,
+  currentDictIdAtom,
+  isReviewModeAtom,
+} from "@/store";
+import type { Table } from "dexie";
+import Dexie from "dexie";
+import { useAtomValue } from "jotai";
+import { useCallback, useContext } from "react";
 
 class RecordDB extends Dexie {
-  wordRecords!: Table<IWordRecord, number>
-  chapterRecords!: Table<IChapterRecord, number>
-  reviewRecords!: Table<IReviewRecord, number>
+  wordRecords!: Table<IWordRecord, number>;
+  chapterRecords!: Table<IChapterRecord, number>;
+  reviewRecords!: Table<IReviewRecord, number>;
 
-  revisionDictRecords!: Table<IRevisionDictRecord, number>
-  revisionWordRecords!: Table<IWordRecord, number>
+  revisionDictRecords!: Table<IRevisionDictRecord, number>;
+  revisionWordRecords!: Table<IWordRecord, number>;
 
   constructor() {
-    super('RecordDB')
+    super("RecordDB");
     this.version(1).stores({
-      wordRecords: '++id,word,timeStamp,dict,chapter,errorCount,[dict+chapter]',
-      chapterRecords: '++id,timeStamp,dict,chapter,time,[dict+chapter]',
-    })
+      wordRecords: "++id,word,timeStamp,dict,chapter,errorCount,[dict+chapter]",
+      chapterRecords: "++id,timeStamp,dict,chapter,time,[dict+chapter]",
+    });
     this.version(2).stores({
-      wordRecords: '++id,word,timeStamp,dict,chapter,wrongCount,[dict+chapter]',
-      chapterRecords: '++id,timeStamp,dict,chapter,time,[dict+chapter]',
-    })
+      wordRecords: "++id,word,timeStamp,dict,chapter,wrongCount,[dict+chapter]",
+      chapterRecords: "++id,timeStamp,dict,chapter,time,[dict+chapter]",
+    });
     this.version(3).stores({
-      wordRecords: '++id,word,timeStamp,dict,chapter,wrongCount,[dict+chapter]',
-      chapterRecords: '++id,timeStamp,dict,chapter,time,[dict+chapter]',
-      reviewRecords: '++id,dict,createTime,isFinished',
-    })
+      wordRecords: "++id,word,timeStamp,dict,chapter,wrongCount,[dict+chapter]",
+      chapterRecords: "++id,timeStamp,dict,chapter,time,[dict+chapter]",
+      reviewRecords: "++id,dict,createTime,isFinished",
+    });
   }
 }
 
-export const db = new RecordDB()
+export const db = new RecordDB();
 
-db.wordRecords.mapToClass(WordRecord)
-db.chapterRecords.mapToClass(ChapterRecord)
-db.reviewRecords.mapToClass(ReviewRecord)
+db.wordRecords.mapToClass(WordRecord);
+db.chapterRecords.mapToClass(ChapterRecord);
+db.reviewRecords.mapToClass(ReviewRecord);
 
 export function useSaveChapterRecord() {
-  const currentChapter = useAtomValue(currentChapterAtom)
-  const isRevision = useAtomValue(isReviewModeAtom)
-  const dictID = useAtomValue(currentDictIdAtom)
+  const currentChapter = useAtomValue(currentChapterAtom);
+  const isRevision = useAtomValue(isReviewModeAtom);
+  const dictID = useAtomValue(currentDictIdAtom);
 
   const saveChapterRecord = useCallback(
     (typingState: TypingState) => {
       const {
-        chapterData: { correctCount, wrongCount, userInputLogs, wordCount, words, wordRecordIds },
+        chapterData: {
+          correctCount,
+          wrongCount,
+          userInputLogs,
+          wordCount,
+          words,
+          wordRecordIds,
+        },
         timerData: { time },
-      } = typingState
-      const correctWordIndexes = userInputLogs.filter((log) => log.correctCount > 0 && log.wrongCount === 0).map((log) => log.index)
+      } = typingState;
+      const correctWordIndexes = userInputLogs
+        .filter((log) => log.correctCount > 0 && log.wrongCount === 0)
+        .map((log) => log.index);
 
       const chapterRecord = new ChapterRecord(
         dictID,
@@ -62,27 +81,27 @@ export function useSaveChapterRecord() {
         wordCount,
         correctWordIndexes,
         words.length,
-        wordRecordIds ?? [],
-      )
-      db.chapterRecords.add(chapterRecord)
+        wordRecordIds ?? []
+      );
+      db.chapterRecords.add(chapterRecord);
     },
-    [currentChapter, dictID, isRevision],
-  )
+    [currentChapter, dictID, isRevision]
+  );
 
-  return saveChapterRecord
+  return saveChapterRecord;
 }
 
 export type WordKeyLogger = {
-  letterTimeArray: number[]
-  letterMistake: LetterMistakes
-}
+  letterTimeArray: number[];
+  letterMistake: LetterMistakes;
+};
 
 export function useSaveWordRecord() {
-  const isRevision = useAtomValue(isReviewModeAtom)
-  const currentChapter = useAtomValue(currentChapterAtom)
-  const dictID = useAtomValue(currentDictIdAtom)
+  const isRevision = useAtomValue(isReviewModeAtom);
+  const currentChapter = useAtomValue(currentChapterAtom);
+  const dictID = useAtomValue(currentDictIdAtom);
 
-  const { dispatch } = useContext(TypingContext) ?? {}
+  const { dispatch } = useContext(TypingContext) ?? {};
 
   const saveWordRecord = useCallback(
     async ({
@@ -91,45 +110,59 @@ export function useSaveWordRecord() {
       letterTimeArray,
       letterMistake,
     }: {
-      word: string
-      wrongCount: number
-      letterTimeArray: number[]
-      letterMistake: LetterMistakes
+      word: string;
+      wrongCount: number;
+      letterTimeArray: number[];
+      letterMistake: LetterMistakes;
     }) => {
-      const timing = []
+      const timing = [];
       for (let i = 1; i < letterTimeArray.length; i++) {
-        const diff = letterTimeArray[i] - letterTimeArray[i - 1]
-        timing.push(diff)
+        const diff = letterTimeArray[i] - letterTimeArray[i - 1];
+        timing.push(diff);
       }
 
-      const wordRecord = new WordRecord(word, dictID, isRevision ? -1 : currentChapter, timing, wrongCount, letterMistake)
+      const wordRecord = new WordRecord(
+        word,
+        dictID,
+        isRevision ? -1 : currentChapter,
+        timing,
+        wrongCount,
+        letterMistake
+      );
 
-      let dbID = -1
+      let dbID = -1;
       try {
-        dbID = await db.wordRecords.add(wordRecord)
+        dbID = await db.wordRecords.add(wordRecord);
       } catch (e) {
-        console.error(e)
+        console.error(e);
       }
       if (dispatch) {
-        dbID > 0 && dispatch({ type: TypingStateActionType.ADD_WORD_RECORD_ID, payload: dbID })
-        dispatch({ type: TypingStateActionType.SET_IS_SAVING_RECORD, payload: false })
+        dbID > 0 &&
+          dispatch({
+            type: TypingStateActionType.ADD_WORD_RECORD_ID,
+            payload: dbID,
+          });
+        dispatch({
+          type: TypingStateActionType.SET_IS_SAVING_RECORD,
+          payload: false,
+        });
       }
     },
-    [currentChapter, dictID, dispatch, isRevision],
-  )
+    [currentChapter, dictID, dispatch, isRevision]
+  );
 
-  return saveWordRecord
+  return saveWordRecord;
 }
 
 export function useDeleteWordRecord() {
   const deleteWordRecord = useCallback(async (word: string, dict: string) => {
     try {
-      const deletedCount = await db.wordRecords.where({ word, dict }).delete()
-      return deletedCount
+      const deletedCount = await db.wordRecords.where({ word, dict }).delete();
+      return deletedCount;
     } catch (error) {
-      console.error(`删除单词记录时出错：`, error)
+      console.error(`删除单词记录时出错：`, error);
     }
-  }, [])
+  }, []);
 
-  return { deleteWordRecord }
+  return { deleteWordRecord };
 }

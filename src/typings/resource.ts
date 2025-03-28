@@ -1,51 +1,51 @@
-import type { LanguageCategoryType, LanguageType, PronunciationType } from '.'
+import type { LanguageCategoryType, LanguageType, PronunciationType } from ".";
 
 export type DictionaryResource = {
-  id: string
-  name: string
-  description: string
-  category: string
-  tags: string[]
-  url: string
-  length: number
-  language: LanguageType
-  languageCategory: LanguageCategoryType
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  tags: string[];
+  url: string;
+  length: number;
+  language: LanguageType;
+  languageCategory: LanguageCategoryType;
   //override default pronunciation when not undefined
-  defaultPronIndex?: number
-}
+  defaultPronIndex?: number;
+};
 
 export type Dictionary = {
-  id: string
-  name: string
-  description: string
-  category: string
-  tags: string[]
-  url: string
-  length: number
-  language: LanguageType
-  languageCategory: LanguageCategoryType
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  tags: string[];
+  url: string;
+  length: number;
+  language: LanguageType;
+  languageCategory: LanguageCategoryType;
   // calculated in the store
-  chapterCount: number
+  chapterCount: number;
   //override default pronunciation when not undefined
-  defaultPronIndex?: number
-}
+  defaultPronIndex?: number;
+};
 
 export type PronunciationConfig = {
-  name: string
-  pron: PronunciationType
-}
+  name: string;
+  pron: PronunciationType;
+};
 
 export type LanguagePronunciationMapConfig = {
-  defaultPronIndex: number
-  pronunciation: PronunciationConfig[]
-}
+  defaultPronIndex: number;
+  pronunciation: PronunciationConfig[];
+};
 
 export type LanguagePronunciationMap = {
-  [key in LanguageType]: LanguagePronunciationMapConfig
-}
+  [key in LanguageType]: LanguagePronunciationMapConfig;
+};
 
 export type SoundResource = {
-  key: string
-  name: string
-  filename: string
-}
+  key: string;
+  name: string;
+  filename: string;
+};

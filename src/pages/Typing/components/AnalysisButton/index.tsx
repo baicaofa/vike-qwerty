@@ -1,13 +1,13 @@
-import { recordAnalysisAction } from '@/utils'
-import { useCallback } from 'react'
-import { navigate } from 'vike/client/router'
-import ChartPie from '~icons/heroicons/chart-pie-solid'
+import { recordAnalysisAction } from "@/utils";
+import { useCallback } from "react";
+import { navigate } from "vike/client/router";
+import ChartPie from "~icons/heroicons/chart-pie-solid";
 
 const AnalysisButton = () => {
   const toAnalysis = useCallback(() => {
-    navigate('/analysis')
-    recordAnalysisAction('open')
-  }, [])
+    navigate("/analysis");
+    recordAnalysisAction("open");
+  }, []);
 
   return (
     <button
@@ -18,7 +18,7 @@ const AnalysisButton = () => {
     >
       <ChartPie className="icon" />
     </button>
-  )
-}
+  );
+};
 
-export default AnalysisButton
+export default AnalysisButton;

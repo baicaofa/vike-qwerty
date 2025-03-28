@@ -3,5 +3,5 @@ export default async function onBeforeRender() {
     pageContext: {
       isHydration: false,
     },
-  }
+  };
 }

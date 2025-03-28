@@ -1,30 +1,30 @@
-import { Dialog, Transition } from '@headlessui/react'
-import classNames from 'classnames'
-import { Fragment } from 'react'
+import { Dialog, Transition } from "@headlessui/react";
+import classNames from "classnames";
+import { Fragment } from "react";
 
-export type Placement = 'left' | 'top' | 'right' | 'bottom'
+export type Placement = "left" | "top" | "right" | "bottom";
 
 interface DrawerProps {
-  open?: boolean
-  placement?: Placement
-  onClose?: () => void
-  children?: React.ReactNode
-  classNames?: string
+  open?: boolean;
+  placement?: Placement;
+  onClose?: () => void;
+  children?: React.ReactNode;
+  classNames?: string;
 }
 
 const transitionDirectionMap = {
-  left: '-translate-x-full',
-  right: 'translate-x-full',
-  top: '-translate-y-full',
-  bottom: 'translate-y-full',
-}
+  left: "-translate-x-full",
+  right: "translate-x-full",
+  top: "-translate-y-full",
+  bottom: "translate-y-full",
+};
 export default function Drawer(props: DrawerProps) {
-  const { open = false, placement = 'left', onClose, children } = props
+  const { open = false, placement = "left", onClose, children } = props;
 
   function onCloseDrawer() {
-    onClose?.()
+    onClose?.();
   }
-  const transitionDirection = transitionDirectionMap[placement]
+  const transitionDirection = transitionDirectionMap[placement];
 
   return (
     <Transition show={open} appear as={Fragment}>
@@ -54,8 +54,8 @@ export default function Drawer(props: DrawerProps) {
             <Dialog.Panel
               className={classNames(
                 `${placement}-0`,
-                props.classNames || '',
-                'absolute flex h-full w-[35rem] flex-col drop-shadow-2xl transition-all duration-300 ease-out',
+                props.classNames || "",
+                "absolute flex h-full w-[35rem] flex-col drop-shadow-2xl transition-all duration-300 ease-out"
               )}
             >
               {children}
@@ -64,5 +64,5 @@ export default function Drawer(props: DrawerProps) {
         </div>
       </Dialog>
     </Transition>
-  )
+  );
 }

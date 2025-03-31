@@ -1,4 +1,5 @@
 import { TypingContext, initialState } from "../pages/Typing/store";
+import { ClientWrapper } from "./ClientWrapper";
 import "./PageLayout.css";
 import { Provider as JotaiProvider, createStore } from "jotai";
 import type React from "react";
@@ -33,7 +34,9 @@ export function onRenderClient(pageContext: PageContext) {
     container,
     <JotaiProvider store={store}>
       <TypingContext.Provider value={typingContextValue}>
-        <Page pageContext={pageContext} />
+        <ClientWrapper pageContext={pageContext}>
+          <Page pageContext={pageContext} />
+        </ClientWrapper>
       </TypingContext.Provider>
     </JotaiProvider>
   );

@@ -60,11 +60,10 @@ export default defineConfig(async ({ mode }) => {
       },
     },
     build: {
-      
       outDir: "build",
- 
+
       sourcemap: true, // 启用 sourcemap
-      minify: false,   // 禁用压缩
+      minify: false, // 禁用压缩
     },
     esbuild: {
       drop: mode === "development" ? [] : ["console", "debugger"],

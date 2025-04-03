@@ -41,6 +41,68 @@ class RecordDB extends Dexie {
       chapterRecords: "++id,timeStamp,dict,chapter,time,[dict+chapter]",
       reviewRecords: "++id,dict,createTime,isFinished",
     });
+    this.version(4)
+      .stores({
+        // 为 wordRecords 添加同步字段
+        wordRecords:
+          "++id, &uuid, word, timeStamp, dict, chapter, wrongCount, [dict+chapter], sync_status, last_modified",
+        // 为 chapterRecords 添加同步字段
+        chapterRecords:
+          "++id, &uuid, timeStamp, dict, chapter, time, [dict+chapter], sync_status, last_modified",
+        // 为 reviewRecords 添加同步字段
+        reviewRecords:
+          "++id, &uuid, dict, createTime, isFinished, sync_status, last_modified",
+        // revision* 表保持不变 (假设它们不需要同步)
+      })
+      .upgrade((tx) => {
+        console.log("Upgrading Dexie schema to version 4...");
+        const now = Date.now();
+        // 必须返回一个 Promise，确保所有修改完成
+        return Promise.all([
+          // 1. 迁移 wordRecords
+          tx
+            .table("wordRecords")
+            .toCollection()
+            .modify((record) => {
+              if (record.uuid === undefined) record.uuid = crypto.randomUUID();
+              if (record.sync_status === undefined)
+                record.sync_status = "synced";
+              if (record.last_modified === undefined)
+                record.last_modified = record.timeStamp || now; // 使用 timeStamp 或当前时间
+            }),
+          // 2. 迁移 chapterRecords
+          tx
+            .table("chapterRecords")
+            .toCollection()
+            .modify((record) => {
+              if (record.uuid === undefined) record.uuid = crypto.randomUUID();
+              if (record.sync_status === undefined)
+                record.sync_status = "synced";
+              if (record.last_modified === undefined)
+                record.last_modified = record.timeStamp || now; // 使用 timeStamp 或当前时间
+            }),
+          // 3. 迁移 reviewRecords
+          tx
+            .table("reviewRecords")
+            .toCollection()
+            .modify((record) => {
+              if (record.uuid === undefined) record.uuid = crypto.randomUUID();
+              if (record.sync_status === undefined)
+                record.sync_status = "synced";
+              if (record.last_modified === undefined)
+                record.last_modified = record.createTime || now; // 使用 createTime 或当前时间
+            }),
+        ])
+          .then(() => {
+            console.log(
+              "Dexie schema upgrade to version 4 completed successfully."
+            );
+          })
+          .catch((err) => {
+            console.error("Failed to upgrade Dexie schema to version 4:", err);
+            throw err; // 抛出错误
+          });
+      });
   }
 }
 

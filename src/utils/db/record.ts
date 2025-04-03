@@ -1,8 +1,15 @@
 import { getUTCUnixTimestamp } from "../index";
 import type { Word } from "@/typings";
 
+export type SyncStatus =
+  | "synced"
+  | "local_new"
+  | "local_modified"
+  | "local_deleted";
+
 export interface IWordRecord {
   word: string;
+  uuid: string; // 新增：全局唯一 ID，用于同步
   timeStamp: number;
   // 正常章节为 dictKey, 其他功能则为对应的类型
   dict: string;
@@ -14,6 +21,8 @@ export interface IWordRecord {
   wrongCount: number;
   // 每个字母被错误输入成什么, index 为字母的索引, 数组内为错误的 e.key
   mistakes: LetterMistakes;
+  sync_status: SyncStatus; // 新增：同步状态
+  last_modified: number; // 新增：本地最后修改时间戳
 }
 
 export interface LetterMistakes {
@@ -22,6 +31,8 @@ export interface LetterMistakes {
 }
 
 export class WordRecord implements IWordRecord {
+  uuid: string;
+
   word: string;
   timeStamp: number;
   dict: string;
@@ -29,6 +40,8 @@ export class WordRecord implements IWordRecord {
   timing: number[];
   wrongCount: number;
   mistakes: LetterMistakes;
+  sync_status: SyncStatus;
+  last_modified: number;
 
   constructor(
     word: string,
@@ -38,6 +51,7 @@ export class WordRecord implements IWordRecord {
     wrongCount: number,
     mistakes: LetterMistakes
   ) {
+    this.uuid = crypto.randomUUID(); // 新增: 初始化 UUID
     this.word = word;
     this.timeStamp = getUTCUnixTimestamp();
     this.dict = dict;
@@ -45,6 +59,8 @@ export class WordRecord implements IWordRecord {
     this.timing = timing;
     this.wrongCount = wrongCount;
     this.mistakes = mistakes;
+    this.sync_status = "local_new"; // 新增: 初始化同步状态
+    this.last_modified = Date.now(); // 新增: 初始化修改时间
   }
 
   get totalTime() {
@@ -53,6 +69,7 @@ export class WordRecord implements IWordRecord {
 }
 
 export interface IChapterRecord {
+  uuid: string; // 新增：全局唯一 ID
   // 正常章节为 dictKey, 其他功能则为对应的类型
   dict: string;
   // 在错题场景中为 -1
@@ -72,9 +89,12 @@ export interface IChapterRecord {
   wordNumber: number;
   // 单词 record 的 id 列表
   wordRecordIds: number[];
+  sync_status: SyncStatus; // 新增：同步状态
+  last_modified: number; // 新增：本地最后修改时间戳
 }
 
 export class ChapterRecord implements IChapterRecord {
+  uuid: string;
   dict: string;
   chapter: number | null;
   timeStamp: number;
@@ -85,6 +105,8 @@ export class ChapterRecord implements IChapterRecord {
   correctWordIndexes: number[];
   wordNumber: number;
   wordRecordIds: number[];
+  sync_status: SyncStatus;
+  last_modified: number;
 
   constructor(
     dict: string,
@@ -97,6 +119,7 @@ export class ChapterRecord implements IChapterRecord {
     wordNumber: number,
     wordRecordIds: number[]
   ) {
+    this.uuid = crypto.randomUUID(); // 新增: 初始化 UUID
     this.dict = dict;
     this.chapter = chapter;
     this.timeStamp = getUTCUnixTimestamp();
@@ -107,6 +130,8 @@ export class ChapterRecord implements IChapterRecord {
     this.correctWordIndexes = correctWordIndexes;
     this.wordNumber = wordNumber;
     this.wordRecordIds = wordRecordIds;
+    this.sync_status = "local_new"; // 新增: 初始化同步状态
+    this.last_modified = Date.now(); // 新增: 初始化修改时间
   }
 
   get wpm() {

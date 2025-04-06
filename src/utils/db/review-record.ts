@@ -1,4 +1,4 @@
-import { db } from ".";
+import { db } from "./index";
 import { ReviewRecord } from "./record";
 import type { TErrorWordData } from "@/pages/Gallery-N/hooks/useErrorWords";
 import type { Word } from "@/typings";
@@ -81,5 +81,13 @@ export async function generateNewWordReviewRecord(
 }
 
 export async function putWordReviewRecord(record: ReviewRecord) {
-  db.reviewRecords.put(record);
+  // 更新last_modified字段
+  record.last_modified = Date.now();
+
+  // 如果记录已存在，则更新sync_status为local_modified
+  if (record.id) {
+    record.sync_status = "local_modified";
+  }
+
+  await db.reviewRecords.put(record);
 }

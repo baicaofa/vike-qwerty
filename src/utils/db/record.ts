@@ -2,9 +2,13 @@ import { getUTCUnixTimestamp } from "../index";
 import type { Word } from "@/typings";
 
 export type SyncStatus =
+  // 已同步到服务器
   | "synced"
+  // 本地新建，未同步
   | "local_new"
+  // 本地修改，未同步
   | "local_modified"
+  // 本地删除，未同步
   | "local_deleted";
 
 export interface IWordRecord {
@@ -151,6 +155,7 @@ export class ChapterRecord implements IChapterRecord {
 
 export interface IReviewRecord {
   id?: number;
+  uuid: string; // 新增：全局唯一 ID，用于同步
   dict: string;
   // 当前练习进度
   index: number;
@@ -160,22 +165,30 @@ export interface IReviewRecord {
   isFinished: boolean;
   // 单词列表, 根据复习算法生成和修改，可能会有重复值
   words: Word[];
+  sync_status: SyncStatus; // 新增：同步状态
+  last_modified: number; // 新增：本地最后修改时间戳
 }
 
 export class ReviewRecord implements IReviewRecord {
   id?: number;
+  uuid: string;
   dict: string;
   index: number;
   createTime: number;
   isFinished: boolean;
   words: Word[];
+  sync_status: SyncStatus;
+  last_modified: number;
 
   constructor(dict: string, words: Word[]) {
+    this.uuid = crypto.randomUUID(); // 新增: 初始化 UUID
     this.dict = dict;
     this.index = 0;
     this.createTime = getUTCUnixTimestamp();
     this.words = words;
     this.isFinished = false;
+    this.sync_status = "local_new"; // 新增: 初始化同步状态
+    this.last_modified = Date.now(); // 新增: 初始化修改时间
   }
 }
 

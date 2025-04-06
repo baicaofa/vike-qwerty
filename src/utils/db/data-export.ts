@@ -79,6 +79,31 @@ export async function importDatabase(
       },
     });
 
+    // 导入后更新所有记录的sync_status和last_modified字段
+    const now = Date.now();
+
+    // 更新wordRecords
+    await db.wordRecords.toCollection().modify((record) => {
+      if (!record.uuid) record.uuid = crypto.randomUUID();
+      if (!record.sync_status) record.sync_status = "synced";
+      if (!record.last_modified) record.last_modified = record.timeStamp || now;
+    });
+
+    // 更新chapterRecords
+    await db.chapterRecords.toCollection().modify((record) => {
+      if (!record.uuid) record.uuid = crypto.randomUUID();
+      if (!record.sync_status) record.sync_status = "synced";
+      if (!record.last_modified) record.last_modified = record.timeStamp || now;
+    });
+
+    // 更新reviewRecords
+    await db.reviewRecords.toCollection().modify((record) => {
+      if (!record.uuid) record.uuid = crypto.randomUUID();
+      if (!record.sync_status) record.sync_status = "synced";
+      if (!record.last_modified)
+        record.last_modified = record.createTime || now;
+    });
+
     const [wordCount, chapterCount] = await Promise.all([
       db.wordRecords.count(),
       db.chapterRecords.count(),

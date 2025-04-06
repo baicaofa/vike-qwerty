@@ -14,18 +14,7 @@
 <img  src="docs/Screenshot.png"/>
 </div>
 
-<br />
 
-## 快速部署
-
-### Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRealKai42%2Fqwerty-learner)
-
-#### 部署步骤
-
-1. 更新 `Vercel Build & Development Settings` -> `Output Directory`："build"
-2. Click Deploy Button
 
 <br />
 
@@ -43,9 +32,7 @@
 
 内置了程序员工作常用单词的词库，方便练习工作中常用的单词、提高输入速度。也内置了诸多语言的 API 的练习，帮助以程序员快速熟悉常用的 API，更多语言的 API 正在逐步添加中...
 
-<div align=center>
-<img  src="https://github.com/Realkai42/qwerty-learner/blob/master/docs/coder.png"/>
-</div>
+
 
 <br />
 <br />
@@ -62,19 +49,14 @@
 
 方便用户在记忆单词时，同时记忆读音与音标。
 
-<div align=center>
-<img  src="https://github.com/Realkai42/qwerty-learner/blob/master/docs/phonetic.jpeg"/>
-</div>
-<br />
+
 <br />
 
 ### 默写模式
 
 在用户完成一个章节的练习后，会弹出选项是否默写本章，方便用户巩固本章学习的单词。
 
-<div align=center>
-<img  src="https://github.com/Realkai42/qwerty-learner/blob/master/docs/dictation.png"/>
-</div>
+
 <br />
 <br />
 
@@ -82,9 +64,7 @@
 
 量化用户输入的速度和输入的正确率，让用户有感知的了解自己技能的提升
 
-<div align=center>
-<img  src="https://github.com/Realkai42/qwerty-learner/blob/master/docs/speed.jpeg"/>
-</div>
+
 <br />
 <br />
 

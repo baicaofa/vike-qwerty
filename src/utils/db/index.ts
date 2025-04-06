@@ -118,7 +118,7 @@ export function useSaveChapterRecord() {
   const dictID = useAtomValue(currentDictIdAtom);
 
   const saveChapterRecord = useCallback(
-    (typingState: TypingState) => {
+    async (typingState: TypingState) => {
       const {
         chapterData: {
           correctCount,
@@ -145,7 +145,11 @@ export function useSaveChapterRecord() {
         words.length,
         wordRecordIds ?? []
       );
-      db.chapterRecords.add(chapterRecord);
+
+      // 确保last_modified字段是最新的
+      chapterRecord.last_modified = Date.now();
+
+      await db.chapterRecords.add(chapterRecord);
     },
     [currentChapter, dictID, isRevision]
   );
@@ -219,10 +223,21 @@ export function useSaveWordRecord() {
 export function useDeleteWordRecord() {
   const deleteWordRecord = useCallback(async (word: string, dict: string) => {
     try {
-      const deletedCount = await db.wordRecords.where({ word, dict }).delete();
-      return deletedCount;
+      // 先查找记录
+      const records = await db.wordRecords.where({ word, dict }).toArray();
+
+      // 更新记录的sync_status为local_deleted
+      for (const record of records) {
+        record.sync_status = "local_deleted";
+        record.last_modified = Date.now();
+        await db.wordRecords.put(record);
+      }
+
+      // 返回更新的记录数量
+      return records.length;
     } catch (error) {
       console.error(`删除单词记录时出错：`, error);
+      return 0;
     }
   }, []);
 

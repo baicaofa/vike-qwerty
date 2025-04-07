@@ -1,0 +1,50 @@
+.sync-status-container {
+  display: inline-block;
+}
+
+.sync-status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+}
+
+.sync-status-indicator.clickable {
+  cursor: pointer;
+}
+
+.sync-status-indicator.clickable:hover {
+  background-color: #e0e0e0;
+}
+
+.offline-icon {
+  color: #ff4d4f;
+}
+
+.syncing-icon {
+  animation: spin 1s linear infinite;
+}
+
+.success-icon {
+  color: #52c41a;
+}
+
+.error-icon {
+  color: #ff4d4f;
+}
+
+.pending-icon {
+  color: #faad14;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

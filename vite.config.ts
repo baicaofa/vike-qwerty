@@ -1,4 +1,4 @@
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react"; 
 import { promises as fs } from "fs";
 import { getLastCommit } from "git-last-commit";
 import jotaiDebugLabel from "jotai/babel/plugin-debug-label";
@@ -40,6 +40,16 @@ export default defineConfig(async ({ mode }) => {
     ],
     server: {
       proxy: {
+        "/api/auth": {
+          target: "http://localhost:5000",
+          changeOrigin: true,
+          secure: false,
+        },
+        "/api/sync": {
+          target: "http://localhost:5000",
+          changeOrigin: true,
+          secure: false,
+        },
         "/api/pronunciation": {
           target: "https://dict.youdao.com",
           changeOrigin: true,

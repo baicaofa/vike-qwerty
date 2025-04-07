@@ -1,6 +1,9 @@
 import axios from "axios";
 import { create } from "zustand";
 
+// 配置 axios 默认值
+axios.defaults.baseURL = "http://localhost:5000";
+
 interface User {
   _id: string;
   username: string;
@@ -27,39 +30,31 @@ const useAuthStore = create<AuthState>((set) => ({
   isAuthenticated: false,
 
   login: async (email: string, password: string) => {
-    try {
-      const response = await axios.post("/api/auth/login", { email, password });
-      const { token, ...user } = response.data;
+    const response = await axios.post("/api/auth/login", { email, password });
+    const { token, ...user } = response.data;
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(user));
 
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-      set({ user, token, isAuthenticated: true });
-    } catch (error) {
-      throw error;
-    }
+    set({ user, token, isAuthenticated: true });
   },
 
   register: async (username: string, email: string, password: string) => {
-    try {
-      const response = await axios.post("/api/auth/register", {
-        username,
-        email,
-        password,
-      });
-      const { token, ...user } = response.data;
+    const response = await axios.post("/api/auth/register", {
+      username,
+      email,
+      password,
+    });
+    const { token, ...user } = response.data;
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(user));
 
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-      set({ user, token, isAuthenticated: true });
-    } catch (error) {
-      throw error;
-    }
+    set({ user, token, isAuthenticated: true });
   },
 
   logout: () => {

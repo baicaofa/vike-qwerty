@@ -1,5 +1,6 @@
 import connectDB from "./config/db";
 import authRoutes from "./routes/auth";
+import syncRoutes from "./routes/sync";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
@@ -17,6 +18,7 @@ app.use(express.json());
 
 // 路由
 app.use("/api/auth", authRoutes);
+app.use("/api/sync", syncRoutes);
 
 const PORT = process.env.PORT || 5000;
 

@@ -1,4 +1,4 @@
-import react from "@vitejs/plugin-react"; 
+import react from "@vitejs/plugin-react";
 import { promises as fs } from "fs";
 import { getLastCommit } from "git-last-commit";
 import jotaiDebugLabel from "jotai/babel/plugin-debug-label";

@@ -1,11 +1,7 @@
-import {
-  syncData,
-  hasPendingChanges,
-  SyncState,
-  SyncResult,
-} from "@/services/syncService";
+import type { SyncResult, SyncState } from "@/services/syncService";
+import { hasPendingChanges, syncData } from "@/services/syncService";
 import useAuthStore from "@/store/auth";
-import { useState, useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 // 同步配置
 const SYNC_INTERVAL = 5 * 60 * 1000; // 5分钟

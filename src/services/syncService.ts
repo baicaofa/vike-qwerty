@@ -1,5 +1,5 @@
 import { db } from "@/utils/db";
-import { SyncStatus } from "@/utils/db/record";
+import type { SyncStatus } from "@/utils/db/record";
 import axios from "axios";
 
 // 同步状态类型

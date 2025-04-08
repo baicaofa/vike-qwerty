@@ -1,4 +1,5 @@
-import mongoose, { Schema, Document } from "mongoose";
+import type { Document } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 export interface IReviewRecord extends Document {
   uuid: string;

@@ -1,16 +1,14 @@
 import User from "../models/User";
-import { Request, Response, NextFunction } from "express";
+import type { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
 
 interface JwtPayload {
   id: string;
 }
 
-declare global {
-  namespace Express {
-    interface Request {
-      user?: any;
-    }
+declare module "express" {
+  interface Request {
+    user?: any;
   }
 }
 

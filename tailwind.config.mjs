@@ -2,12 +2,15 @@ import headlessui from "@headlessui/tailwindcss";
 import forms from "@tailwindcss/forms";
 import animate from "tailwindcss-animate";
 
-
-
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html",'!./node_modules/**','!./src/server/node_modules/**'],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./index.html",
+    "!./node_modules/**",
+    "!./src/server/node_modules/**",
+  ],
   theme: {
     extend: {
       colors: {

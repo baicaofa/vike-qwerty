@@ -1,6 +1,6 @@
 import "./SyncStatusIndicator.css";
 import { useSync } from "@/hooks/useSync";
-import React from "react";
+import type React from "react";
 
 export const SyncStatusIndicator: React.FC = () => {
   const { syncState, lastSyncResult, hasChanges, isOnline, triggerSync } =

@@ -4,7 +4,8 @@
  * Schema 用于定义 MongoDB 文档的结构
  * Document 是 Mongoose 中表示文档的接口
  */
-import mongoose, { Document, Schema } from "mongoose";
+import type { Document } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 /**
  * 定义 IWordRecord 接口，继承自 Mongoose 的 Document 接口

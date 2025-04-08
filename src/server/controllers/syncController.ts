@@ -1,7 +1,7 @@
 import ChapterRecord from "../models/ChapterRecord";
 import ReviewRecord from "../models/ReviewRecord";
 import WordRecord from "../models/WordRecord";
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import mongoose from "mongoose";
 
 // Define types for sync request and response

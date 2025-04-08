@@ -40,6 +40,27 @@ export default defineConfig(async ({ mode }) => {
     ],
     server: {
       proxy: {
+        "/api/auth": {
+          target: "http://localhost:5000",
+          changeOrigin: true,
+          secure: false,
+        },
+        "/api/sync": {
+          target: "http://localhost:5000",
+          changeOrigin: true,
+          secure: false,
+          configure: (proxy, options) => {
+            proxy.on("error", (err, req, res) => {
+              console.error("Sync proxy error:", err);
+            });
+            proxy.on("proxyReq", (proxyReq, req, res) => {
+              console.log("Proxying sync request:", req.method, req.url);
+            });
+            proxy.on("proxyRes", (proxyRes, req, res) => {
+              console.log("Received sync response:", proxyRes.statusCode);
+            });
+          },
+        },
         "/api/pronunciation": {
           target: "https://dict.youdao.com",
           changeOrigin: true,

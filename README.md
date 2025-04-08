@@ -103,14 +103,7 @@
 
 > 此脚本依赖于 `homebrew`，请确保自己电脑上可以执行`brew`命令
 
-## 🏆 荣誉
 
-- Github 全球趋势榜上榜项目
-- V2EX 全站热搜项目
-- Gitee 全站推荐项目
-- [少数派首页推荐](https://sspai.com/post/67535)
-- GitCode 开源摘星计划-毕业项目（[G-Star 计划](https://gitcode.com/g-star)）
-- Gitee 最有价值开源项目（[GVP](https://gitee.com/gvp)）
 
 ## 📕 词库列表
 

@@ -1,5 +1,6 @@
 import { db } from ".";
 import { getCurrentDate, recordDataAction } from "..";
+import { syncData } from "@/services/syncService";
 
 export type ExportProgress = {
   totalRows?: number;
@@ -36,7 +37,7 @@ export async function exportDatabase(
   const compressed = pako.gzip(json);
   const compressedBlob = new Blob([compressed]);
   const currentDate = getCurrentDate();
-  saveAs(compressedBlob, `Qwerty-Learner-User-Data-${currentDate}.gz`);
+  saveAs(compressedBlob, `keybr-Learner-User-Data-${currentDate}.gz`);
   recordDataAction({
     type: "export",
     size: compressedBlob.size,
@@ -85,35 +86,27 @@ export async function importDatabase(
     // 更新wordRecords
     await db.wordRecords.toCollection().modify((record) => {
       if (!record.uuid) record.uuid = crypto.randomUUID();
-      if (!record.sync_status) record.sync_status = "synced";
+      if (!record.sync_status) record.sync_status = "local_new";
       if (!record.last_modified) record.last_modified = record.timeStamp || now;
     });
 
     // 更新chapterRecords
     await db.chapterRecords.toCollection().modify((record) => {
       if (!record.uuid) record.uuid = crypto.randomUUID();
-      if (!record.sync_status) record.sync_status = "synced";
+      if (!record.sync_status) record.sync_status = "local_new";
       if (!record.last_modified) record.last_modified = record.timeStamp || now;
     });
 
     // 更新reviewRecords
     await db.reviewRecords.toCollection().modify((record) => {
       if (!record.uuid) record.uuid = crypto.randomUUID();
-      if (!record.sync_status) record.sync_status = "synced";
+      if (!record.sync_status) record.sync_status = "local_new";
       if (!record.last_modified)
         record.last_modified = record.createTime || now;
     });
 
-    const [wordCount, chapterCount] = await Promise.all([
-      db.wordRecords.count(),
-      db.chapterRecords.count(),
-    ]);
-    recordDataAction({
-      type: "import",
-      size: file.size,
-      wordCount,
-      chapterCount,
-    });
+    // 导入完成后触发同步
+    await syncData();
   });
 
   input.click();

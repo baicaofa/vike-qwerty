@@ -155,15 +155,10 @@ export const DonateCard = () => {
                         {dayFromQwerty}{" "}
                       </HighlightedText>{" "}
                       天，
-                      我们的目标是为所有学习者提供一个高效、便捷、无干扰的学习环境。我们诚挚地邀请您考虑进行捐赠，捐赠将直接用于维持
-                      Qwerty 的日常运营以及未来发展，让 Qwerty 与您一起成长。
+                      我们的目标是为所有学习者提供一个高效、便捷、无干扰的学习环境。让
+                      KEYBR 与您一起成长。
                     </p>
-                    <p className="mx-auto px-4 indent-4 ">
-                      为了感谢您的慷慨，单次 50 rmb 及以上的捐赠， 我们将回赠
-                      Qwerty 的定制贴纸 5 枚
-                      <span className="text-xs">（仅限大陆地区）</span>
-                      ，希望您可以跟朋友分享您的快乐
-                    </p>
+
                     <div className="flex items-center justify-center">
                       <StickerButton />
                     </div>
@@ -176,19 +171,10 @@ export const DonateCard = () => {
                   <div className="flex w-full justify-between  px-14 pb-3 pt-0">
                     <button
                       type="button"
-                      className={`my-btn-primary ${
-                        !amount && "invisible"
-                      } w-36 bg-amber-500 font-medium transition-all`}
-                      onClick={onClickHasDonated}
-                    >
-                      我已捐赠
-                    </button>
-                    <button
-                      type="button"
                       className="my-btn-primary w-36 font-medium"
                       onClick={onClickRemindMeLater}
                     >
-                      之后提醒我
+                      关闭
                     </button>
                   </div>
                 </div>

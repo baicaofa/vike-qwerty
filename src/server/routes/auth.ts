@@ -1,6 +1,7 @@
-import { register, login, getProfile } from "../controllers/auth";
+import { getProfile, login, register } from "../controllers/auth";
 import { protect } from "../middleware/auth";
-import express, { RequestHandler } from "express";
+import type { RequestHandler } from "express";
+import express from "express";
 
 const router = express.Router();
 

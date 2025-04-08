@@ -1,5 +1,5 @@
 import User from "../models/User";
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 
 const generateToken = (id: string) => {

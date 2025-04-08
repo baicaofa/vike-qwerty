@@ -28,16 +28,12 @@ const useAuthStore = create<AuthState>((set) => ({
 
   login: async (email: string, password: string) => {
     try {
-      const response = await axios.post("/api/auth/login", { email, password });
-      const { token, ...user } = response.data;
-
-      localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(user));
-
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-
-      set({ user, token, isAuthenticated: true });
+      const response = await axios.post("/api/auth/login", {
+        email,
+        password,
+      });
     } catch (error) {
+      console.error("Login failed:", error);
       throw error;
     }
   },
@@ -58,6 +54,7 @@ const useAuthStore = create<AuthState>((set) => ({
 
       set({ user, token, isAuthenticated: true });
     } catch (error) {
+      console.error("注册失败:", error);
       throw error;
     }
   },

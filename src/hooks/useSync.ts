@@ -1,13 +1,18 @@
 import type { SyncResult, SyncState } from "@/services/syncService";
-import { hasPendingChanges, syncData } from "@/services/syncService";
+import {
+  hasPendingChanges,
+  syncFromCloud,
+  syncToCloud,
+} from "@/services/syncService";
 import useAuthStore from "@/store/auth";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 // 同步配置
 const SYNC_INTERVAL = 5 * 60 * 1000; // 5分钟
-const SYNC_ONLINE_INTERVAL = 3000 * 1000; // 30秒
+const SYNC_ONLINE_INTERVAL = 60 * 1000; // 60秒
 const MAX_RETRY_COUNT = 3; // 最大重试次数
 const RETRY_DELAY = 5000; // 重试延迟（毫秒）
+const DEBOUNCE_DELAY = 1000; // 防抖延迟（毫秒）
 
 export const useSync = () => {
   const { isAuthenticated } = useAuthStore();
@@ -16,6 +21,12 @@ export const useSync = () => {
   const [hasChanges, setHasChanges] = useState<boolean>(false);
   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
   const [retryCount, setRetryCount] = useState<number>(0);
+  const [initialSyncDone, setInitialSyncDone] = useState<boolean>(false);
+
+  // 使用 ref 跟踪定时器和防抖状态
+  const intervalIdRef = useRef<number | null>(null);
+  const timeoutIdRef = useRef<number | null>(null);
+  const isSyncPendingRef = useRef<boolean>(false);
 
   // 检查网络状态
   useEffect(() => {
@@ -33,126 +44,175 @@ export const useSync = () => {
 
   // 检查是否有待同步的变更
   const checkPendingChanges = useCallback(async () => {
-    if (isAuthenticated) {
-      const pending = await hasPendingChanges();
-      setHasChanges(pending);
-    }
+    if (!isAuthenticated) return;
+    const pending = await hasPendingChanges();
+    setHasChanges(pending);
   }, [isAuthenticated]);
 
-  // 执行同步
-  const triggerSync = useCallback(async (): Promise<SyncResult> => {
-    // 如果用户未登录或正在同步中，则不执行同步
-    if (!isAuthenticated || syncState === "syncing") {
-      return {
-        success: false,
-        error: {
-          message: !isAuthenticated ? "用户未登录" : "同步正在进行中",
-        },
-      };
+  // 执行本地到云端的同步
+  const performUploadSync = useCallback(async (): Promise<SyncResult> => {
+    console.log("执行本地到云端同步", new Date().toISOString());
+    if (!isAuthenticated) {
+      return { success: false, error: { message: "用户未登录" } };
+    }
+    if (syncState === "syncing" || isSyncPendingRef.current) {
+      return { success: false, error: { message: "同步正在进行中" } };
     }
 
+    isSyncPendingRef.current = true;
     setSyncState("syncing");
 
     try {
-      const result = await syncData();
+      const result = await syncToCloud();
+      console.log("本地到云端同步结果:", result.success ? "成功" : "失败");
       setLastSyncResult(result);
       setSyncState(result.success ? "success" : "error");
-
-      // 如果同步成功，重置重试计数
-      if (result.success) {
-        setRetryCount(0);
-      } else {
-        // 如果同步失败，增加重试计数
-        setRetryCount((prev) => prev + 1);
-      }
-
-      // 同步完成后，重新检查是否有待同步的变更
-      await checkPendingChanges();
-
+      setRetryCount(result.success ? 0 : retryCount + 1);
+      await checkPendingChanges(); // 同步后检查剩余变更
       return result;
     } catch (error) {
       const errorResult: SyncResult = {
         success: false,
         error: {
-          message:
-            error instanceof Error ? error.message : "同步过程中发生未知错误",
+          message: error instanceof Error ? error.message : "同步失败",
         },
       };
       setLastSyncResult(errorResult);
       setSyncState("error");
-
-      // 增加重试计数
       setRetryCount((prev) => prev + 1);
-
       return errorResult;
+    } finally {
+      isSyncPendingRef.current = false;
     }
-  }, [isAuthenticated, syncState, checkPendingChanges]);
+  }, [isAuthenticated, syncState, retryCount, checkPendingChanges]);
 
-  // 初始化同步
-  useEffect(() => {
-    if (isAuthenticated) {
-      console.log("用户已登录，初始化同步...");
-      checkPendingChanges();
-      triggerSync();
+  // 执行云端到本地的同步
+  const performDownloadSync = useCallback(async (): Promise<SyncResult> => {
+    console.log("执行云端到本地同步", new Date().toISOString());
+    if (!isAuthenticated) {
+      return { success: false, error: { message: "用户未登录" } };
     }
-  }, [isAuthenticated, checkPendingChanges, triggerSync]);
-
-  // 定期同步
-  useEffect(() => {
-    let intervalId: number | null = null;
-    let retryTimeoutId: number | null = null;
-
-    // 如果用户已登录，设置定期同步
-    if (isAuthenticated) {
-      // 设置定期同步
-      const interval = isOnline ? SYNC_ONLINE_INTERVAL : SYNC_INTERVAL;
-      intervalId = window.setInterval(async () => {
-        // 如果有待同步的变更，执行同步
-        if (hasChanges) {
-          // 如果重试次数超过限制，不再重试
-          if (retryCount >= MAX_RETRY_COUNT) {
-            console.log("达到最大重试次数，停止同步");
-            return;
-          }
-
-          const result = await triggerSync();
-
-          // 如果同步失败，设置延迟重试
-          if (!result.success && retryCount < MAX_RETRY_COUNT) {
-            retryTimeoutId = window.setTimeout(() => {
-              triggerSync();
-            }, RETRY_DELAY);
-          }
-        } else {
-          // 即使没有变更，也定期检查一次
-          await checkPendingChanges();
-        }
-      }, interval);
+    if (syncState === "syncing" || isSyncPendingRef.current) {
+      return { success: false, error: { message: "同步正在进行中" } };
     }
 
-    return () => {
-      if (intervalId) {
-        clearInterval(intervalId);
+    isSyncPendingRef.current = true;
+    setSyncState("syncing");
+
+    try {
+      const result = await syncFromCloud();
+      console.log("云端到本地同步结果:", result.success ? "成功" : "失败");
+      setLastSyncResult(result);
+      setSyncState(result.success ? "success" : "error");
+      setInitialSyncDone(true); // 标记初始同步已完成
+      return result;
+    } catch (error) {
+      const errorResult: SyncResult = {
+        success: false,
+        error: {
+          message: error instanceof Error ? error.message : "同步失败",
+        },
+      };
+      setLastSyncResult(errorResult);
+      setSyncState("error");
+      return errorResult;
+    } finally {
+      isSyncPendingRef.current = false;
+    }
+  }, [isAuthenticated, syncState]);
+
+  // 手动触发同步（供外部调用）
+  const triggerSync = useCallback(
+    async (direction: "upload" | "download" | "both" = "both") => {
+      if (isSyncPendingRef.current) return lastSyncResult;
+
+      if (direction === "upload") {
+        return performUploadSync();
+      } else if (direction === "download") {
+        return performDownloadSync();
+      } else {
+        // 先下载再上传
+        const downloadResult = await performDownloadSync();
+        if (!downloadResult.success) return downloadResult;
+        return performUploadSync();
       }
-      if (retryTimeoutId) {
-        clearTimeout(retryTimeoutId);
+    },
+    [performUploadSync, performDownloadSync, lastSyncResult]
+  );
+
+  // 初始化时执行一次云端到本地同步
+  useEffect(() => {
+    if (isAuthenticated && isOnline && !initialSyncDone) {
+      console.log("初始化同步：从云端到本地");
+      performDownloadSync();
+    }
+  }, [isAuthenticated, isOnline, initialSyncDone, performDownloadSync]);
+
+  // 定时执行本地到云端同步
+  useEffect(() => {
+    // 清理现有定时器
+    const cleanup = () => {
+      if (intervalIdRef.current) {
+        clearInterval(intervalIdRef.current);
+        intervalIdRef.current = null;
+      }
+      if (timeoutIdRef.current) {
+        clearTimeout(timeoutIdRef.current);
+        timeoutIdRef.current = null;
       }
     };
+
+    // 如果未认证，停止所有同步
+    if (!isAuthenticated) {
+      cleanup();
+      setSyncState("idle");
+      setRetryCount(0);
+      return;
+    }
+
+    // 初始化时检查变更
+    checkPendingChanges();
+
+    // 定义本地到云端同步循环
+    const startSyncLoop = () => {
+      cleanup(); // 确保只有一个定时器
+
+      const interval = isOnline ? SYNC_ONLINE_INTERVAL : SYNC_INTERVAL;
+      intervalIdRef.current = window.setInterval(async () => {
+        console.log("定时触发本地到云端同步检查", {
+          state: syncState,
+          isPending: isSyncPendingRef.current,
+          time: new Date().toISOString(),
+        });
+
+        // 基础条件判断
+        if (!isSyncPendingRef.current && isAuthenticated) {
+          // 检查是否有本地变更需要同步
+          const hasLocalChanges = await hasPendingChanges();
+          if (hasLocalChanges) {
+            await performUploadSync(); // 只在有本地变更时执行上传
+          }
+        }
+      }, interval);
+    };
+
+    // 启动同步循环
+    startSyncLoop();
+
+    // 网络状态变化时重新调整同步间隔
+    if (isOnline && !intervalIdRef.current) {
+      startSyncLoop();
+    }
+
+    // 清理函数
+    return cleanup;
   }, [
     isAuthenticated,
     isOnline,
-    hasChanges,
     retryCount,
-    triggerSync,
+    performUploadSync,
     checkPendingChanges,
   ]);
-
-  // 网络状态变化时，如果从离线变为在线，立即检查并同步
-  useEffect(() => {
-    if (isOnline && isAuthenticated) {
-      checkPendingChanges();
-    }
-  }, [isOnline, isAuthenticated, checkPendingChanges]);
 
   return {
     syncState,
@@ -161,5 +221,6 @@ export const useSync = () => {
     isOnline,
     triggerSync,
     checkPendingChanges,
+    initialSyncDone,
   };
 };

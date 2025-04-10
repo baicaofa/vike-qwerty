@@ -147,8 +147,43 @@ const getLocalChanges = async () => {
 const applyServerChanges = async (serverChanges: any[]) => {
   let changesApplied = 0;
 
-  for (const change of serverChanges) {
+  console.log("开始应用服务器变更，总数:", serverChanges.length);
+
+  // 验证服务器变更数据格式
+  const invalidChanges = serverChanges.filter(
+    (change) =>
+      !change.table ||
+      !change.action ||
+      !change.data ||
+      !change.data.uuid ||
+      !["wordRecords", "chapterRecords", "reviewRecords"].includes(
+        change.table
+      ) ||
+      !["create", "update", "delete"].includes(change.action)
+  );
+
+  if (invalidChanges.length > 0) {
+    console.error("发现无效的服务器变更数据:", invalidChanges);
+    console.log("将跳过这些无效变更");
+  }
+
+  const validChanges = serverChanges.filter(
+    (change) =>
+      change.table &&
+      change.action &&
+      change.data &&
+      change.data.uuid &&
+      ["wordRecords", "chapterRecords", "reviewRecords"].includes(
+        change.table
+      ) &&
+      ["create", "update", "delete"].includes(change.action)
+  );
+
+  console.log("有效变更数:", validChanges.length);
+
+  for (const change of validChanges) {
     const { table, action, data } = change;
+    console.log(`处理服务器变更: ${table} - ${action}`, data);
 
     // 根据表名选择对应的数据库表
     let dbTable;
@@ -173,6 +208,11 @@ const applyServerChanges = async (serverChanges: any[]) => {
       .equals(data.uuid)
       .first()) as IRecord | undefined;
 
+    console.log(`本地记录(${data.uuid})存在:`, !!localRecord);
+    if (localRecord) {
+      console.log("本地记录详情:", localRecord);
+    }
+
     if (action === "delete") {
       // 如果是删除操作，且本地记录存在
       if (localRecord) {
@@ -182,6 +222,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
           localRecord.last_modified > new Date(data.serverModifiedAt).getTime()
         ) {
           // 保留本地修改，但更新其他字段
+          console.log("本地修改时间晚于服务器，保留本地修改");
           await dbTable.update(localRecord.id!, {
             ...data,
             sync_status: "synced" as SyncStatus,
@@ -189,6 +230,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
           });
         } else {
           // 否则，物理删除记录
+          console.log("执行服务器删除操作");
           await dbTable.delete(localRecord.id!);
         }
         changesApplied++;
@@ -202,6 +244,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
           localRecord.last_modified > new Date(data.serverModifiedAt).getTime()
         ) {
           // 保留本地修改，但更新其他字段
+          console.log("本地修改时间晚于服务器，保留本地修改");
           await dbTable.update(localRecord.id!, {
             ...data,
             sync_status: "synced" as SyncStatus,
@@ -209,6 +252,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
           });
         } else {
           // 否则，接受服务器更新
+          console.log("接受服务器更新");
           await dbTable.update(localRecord.id!, {
             ...data,
             sync_status: "synced" as SyncStatus,
@@ -217,6 +261,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
         }
       } else {
         // 如果本地记录不存在，创建新记录
+        console.log("本地不存在，创建新记录");
         await dbTable.add({
           ...data,
           sync_status: "synced" as SyncStatus,
@@ -227,6 +272,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
     }
   }
 
+  console.log("服务器变更应用完成，总共:", changesApplied);
   return changesApplied;
 };
 
@@ -271,18 +317,10 @@ const updateLocalRecordStatus = async (changes: any[]) => {
   }
 };
 
-// 执行同步
-export const syncData = async (): Promise<SyncResult> => {
+// 初始化时执行的云端到本地同步
+export const syncFromCloud = async (): Promise<SyncResult> => {
   try {
-    console.log("开始同步...");
-    // 获取本地变更
-    const changes = await getLocalChanges();
-    console.log("本地变更:", changes);
-    // 如果没有变更，直接返回成功
-    if (changes.length === 0) {
-      console.log("没有需要同步的变更");
-      return { success: true, changesApplied: 0, serverChanges: 0 };
-    }
+    console.log("开始从云端同步到本地...");
 
     // 获取上次同步时间戳
     const lastSyncTimestamp = getLastSyncTimestamp();
@@ -294,60 +332,166 @@ export const syncData = async (): Promise<SyncResult> => {
       console.log("未找到认证令牌");
       return {
         success: false,
-        error: {
-          message: "用户未登录",
-        },
+        error: { message: "用户未登录" },
       };
     }
-    console.log("发送同步请求...");
-    // 调用同步 API
-    try {
-      const response = await axios.post(
-        "/api/sync",
-        {
-          lastSyncTimestamp,
-          changes,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      console.log("同步请求响应:", response.data);
-      const { newSyncTimestamp, serverChanges } = response.data;
 
-      // 应用服务器变更
-      const changesApplied = await applyServerChanges(serverChanges);
-      console.log("服务器变更应用:", changesApplied);
-      // 更新本地记录状态
-      await updateLocalRecordStatus(changes);
-      console.log("本地记录状态更新:", changes);
-
-      // 保存新的同步时间戳
-      saveLastSyncTimestamp(newSyncTimestamp);
-      console.log("新的同步时间戳保存:", newSyncTimestamp);
-
-      return {
-        success: true,
-        changesApplied,
-        serverChanges: serverChanges.length,
-      };
-    } catch (axiosError) {
-      console.error("同步请求失败:", axiosError);
-      if (axios.isAxiosError(axiosError)) {
-        console.error("状态码:", axiosError.response?.status);
-        console.error("响应数据:", axiosError.response?.data);
+    // 从云端获取变更
+    console.log("请求服务器变更...");
+    const response = await axios.post(
+      "/api/sync",
+      {
+        lastSyncTimestamp,
+        changes: [], // 空数组表示只获取服务器变更
+      },
+      {
+        headers: { Authorization: `Bearer ${token}` },
       }
-      throw axiosError;
+    );
+
+    console.log("服务器响应状态:", response.status);
+
+    const { newSyncTimestamp, serverChanges } = response.data;
+    console.log("服务器变更数量:", serverChanges?.length || 0);
+
+    if (!serverChanges || !Array.isArray(serverChanges)) {
+      console.error("服务器返回的变更数据无效");
+      return {
+        success: false,
+        error: { message: "服务器返回的变更数据无效" },
+      };
     }
+
+    // 应用服务器变更到本地
+    const changesApplied = await applyServerChanges(serverChanges);
+    console.log("应用的服务器变更数:", changesApplied);
+
+    // 保存新的同步时间戳
+    saveLastSyncTimestamp(newSyncTimestamp);
+    console.log("同步完成，保存新时间戳:", newSyncTimestamp);
+
+    return {
+      success: true,
+      changesApplied,
+      serverChanges: serverChanges.length,
+    };
+  } catch (error) {
+    console.error("从云端同步失败:", error);
+    if (axios.isAxiosError(error)) {
+      console.error("Axios错误:", {
+        status: error.response?.status,
+        data: error.response?.data,
+        message: error.message,
+      });
+    }
+    return {
+      success: false,
+      error: {
+        message: error instanceof Error ? error.message : "未知错误",
+      },
+    };
+  }
+};
+
+// 定时执行的本地到云端同步
+export const syncToCloud = async (): Promise<SyncResult> => {
+  try {
+    console.log("开始从本地同步到云端...");
+
+    // 获取本地变更
+    const localChanges = await getLocalChanges();
+    console.log("本地变更数量:", localChanges.length);
+
+    // 如果没有本地变更，跳过同步
+    if (localChanges.length === 0) {
+      console.log("没有需要同步的本地变更");
+      return { success: true, changesApplied: 0, serverChanges: 0 };
+    }
+
+    // 获取上次同步时间戳
+    const lastSyncTimestamp = getLastSyncTimestamp();
+
+    // 获取认证令牌
+    const token = getLocalStorageItem("token");
+    if (!token) {
+      return {
+        success: false,
+        error: { message: "用户未登录" },
+      };
+    }
+
+    // 发送本地变更到云端
+    console.log("发送本地变更到云端...");
+    const response = await axios.post(
+      "/api/sync",
+      {
+        lastSyncTimestamp,
+        changes: localChanges,
+      },
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+
+    const { newSyncTimestamp } = response.data;
+
+    // 更新本地记录状态
+    await updateLocalRecordStatus(localChanges);
+    console.log("本地记录状态已更新");
+
+    // 保存新的同步时间戳
+    saveLastSyncTimestamp(newSyncTimestamp);
+    console.log("同步完成，保存新时间戳:", newSyncTimestamp);
+
+    return {
+      success: true,
+      changesApplied: localChanges.length,
+      serverChanges: 0,
+    };
+  } catch (error) {
+    console.error("同步到云端失败:", error);
+    if (axios.isAxiosError(error)) {
+      console.error("Axios错误:", {
+        status: error.response?.status,
+        data: error.response?.data,
+        message: error.message,
+      });
+    }
+    return {
+      success: false,
+      error: {
+        message: error instanceof Error ? error.message : "未知错误",
+      },
+    };
+  }
+};
+
+// 为保持兼容性，保留原始的syncData函数，但内部根据条件调用新函数
+export const syncData = async (): Promise<SyncResult> => {
+  try {
+    // 先从云端同步到本地（仅在需要时），再从本地同步到云端
+    const localChanges = await getLocalChanges();
+
+    // 如果有本地变更，只执行本地到云端的同步
+    if (localChanges.length > 0) {
+      return syncToCloud();
+    }
+
+    // 如果没有本地变更，则执行完整的双向同步
+    const cloudResult = await syncFromCloud();
+
+    // 如果从云端同步失败，直接返回结果
+    if (!cloudResult.success) {
+      return cloudResult;
+    }
+
+    return cloudResult;
   } catch (error) {
     console.error("同步失败:", error);
     return {
       success: false,
       error: {
         message: error instanceof Error ? error.message : "未知错误",
-        code: axios.isAxiosError(error) ? error.code : undefined,
       },
     };
   }

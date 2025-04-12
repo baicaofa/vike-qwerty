@@ -1,11 +1,11 @@
 import {
+  forgotPassword,
   getProfile,
   login,
   register,
+  resetPassword,
   sendVerificationCode,
   verifyEmail,
-  forgotPassword,
-  resetPassword,
 } from "../controllers/auth";
 import { protect } from "../middleware/auth";
 import type { RequestHandler } from "express";

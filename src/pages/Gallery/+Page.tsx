@@ -1,3 +1,4 @@
+//gallery/+Page.tsx
 import DictionaryGroup from "./CategoryDicts";
 import DictRequest from "./DictRequest";
 import { LanguageTabSwitcher } from "./LanguageTabSwitcher";
@@ -16,8 +17,20 @@ import { navigate } from "vike/client/router";
 import IconInfo from "~icons/ic/outline-info";
 import IconX from "~icons/tabler/x";
 
-export default function Page() {
-  const [galleryState, setGalleryState] = useImmer(initialGalleryState);
+interface PageProps {
+  initialDictionaries?: Dictionary[];
+  initialLanguage?: LanguageCategoryType;
+}
+
+export default function Page({
+  initialDictionaries,
+  initialLanguage,
+}: PageProps) {
+  const [galleryState, setGalleryState] = useImmer({
+    ...initialGalleryState,
+    currentLanguageTab:
+      initialLanguage || initialGalleryState.currentLanguageTab,
+  });
   const currentDictInfo = useAtomValue(currentDictInfoAtom);
 
   console.log("Page galleryState:", galleryState);

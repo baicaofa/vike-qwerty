@@ -1,4 +1,4 @@
-// Gallery-N-Page.tsx
+// /gallery/@id/Page.tsx
 import { DictChapterButton } from "../../Typing/components/DictChapterButton";
 import PronunciationSwitcher from "../../Typing/components/PronunciationSwitcher";
 import StartButton from "../../Typing/components/StartButton";

@@ -1,6 +1,7 @@
 import { syncData } from "../controllers/syncController";
 import { protect, requireEmailVerified } from "../middleware/auth";
-import express, { RequestHandler } from "express";
+import type { RequestHandler } from "express";
+import express from "express";
 
 const router = express.Router();
 

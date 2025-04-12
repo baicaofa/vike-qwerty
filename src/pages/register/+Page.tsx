@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import useAuthStore from "@/store/auth";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Page() {
   const [username, setUsername] = useState("");

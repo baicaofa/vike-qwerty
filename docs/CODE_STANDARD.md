@@ -10,6 +10,7 @@
 ## 2. 文件组织
 
 ### 2.1 目录结构
+
 ```
 src/
 ├── pages/           # 页面组件，基于文件的路由
@@ -47,18 +48,19 @@ src/
 - 有状态逻辑的组件使用 hooks 分离关注点
 - 使用 memo、useCallback、useMemo 优化性能
 - 组件文件结构:
+
   ```typescript
   import { /* ... */ } from 'react'
-  
+
   interface Props {
     // props 类型定义
   }
-  
+
   export default function ComponentName({ prop1, prop2 }: Props) {
     // hooks 调用
-    
+
     // 事件处理函数
-    
+
     // 渲染
     return (
       // JSX
@@ -86,14 +88,16 @@ src/
 ### 4.1 Git 规范
 
 - 提交信息格式:
+
   ```
   <type>(<scope>): <subject>
 
   <body>
   ```
+
 - type 分类:
   - feat: 新功能
-  - fix: 修复bug
+  - fix: 修复 bug
   - docs: 文档更新
   - style: 代码格式调整
   - refactor: 重构

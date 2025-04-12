@@ -1,10 +1,10 @@
 import User from "../models/User";
 import {
-  generateVerificationCode,
-  verifyCode,
-  sendVerificationEmail,
   generatePasswordResetToken,
+  generateVerificationCode,
   sendPasswordResetEmail,
+  sendVerificationEmail,
+  verifyCode,
 } from "../services/emailService";
 import type { Request, Response } from "express";
 import jwt from "jsonwebtoken";

@@ -1,10 +1,11 @@
+// /gallery/@id/+config.ts
 import Page from "./+Page";
 import { dictionaries } from "@/resources/dictionary";
 import type { Config } from "vike/types";
 
 export default {
   // 动态路由，支持词典 ID 参数
-  route: "/gallery/:id",
+  route: "/gallery/@id",
   // 页面组件
   Page,
   // 启用客户端路由
@@ -13,5 +14,4 @@ export default {
   hydrationCanBeAborted: true,
   // 传递路由参数到客户端
   passToClient: ["pageProps", "routeParams", "urlPathname"],
-  // 使用指针导入处理路由
 } satisfies Config;

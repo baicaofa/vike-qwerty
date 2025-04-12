@@ -1,3 +1,4 @@
+// /gallery/@id/+onBeforeRender.ts
 import { dictionaries } from "@/resources/dictionary";
 import { wordListFetcher } from "@/utils/wordListFetcher";
 import type { PageContext } from "vike/types";

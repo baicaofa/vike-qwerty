@@ -57,3 +57,28 @@ export const protect = async (
     next(error);
   }
 };
+
+// 检查邮箱验证状态的中间件
+export const requireEmailVerified = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const user = await User.findById(req.user._id);
+
+    if (!user) {
+      res.status(404).json({ message: "用户不存在" });
+      return;
+    }
+
+    if (!user.isEmailVerified) {
+      res.status(403).json({ message: "请先验证邮箱" });
+      return;
+    }
+
+    next();
+  } catch (error) {
+    res.status(500).json({ message: "服务器错误" });
+  }
+};

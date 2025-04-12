@@ -1,7 +1,7 @@
 {
   "name": "vike-qwerty-server",
   "version": "1.0.0",
-  "description": "Vike Qwerty 后端服务器",
+  "description": "Keybr 后端服务器",
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
@@ -15,7 +15,8 @@
     "dotenv": "^16.0.3",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.13.2"
+    "mongoose": "^8.13.2",
+    "nodemailer": "^6.10.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^3.0.0",
@@ -23,6 +24,7 @@
     "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "18.14.6",
+    "@types/nodemailer": "^6.4.17",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"

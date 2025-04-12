@@ -1,6 +1,6 @@
-# Vike Qwerty 后端服务器
+# Keybr 后端服务器
 
-这是 Vike Qwerty 项目的后端服务器部分，提供用户认证和 API 服务。
+这是 Keybr 项目的后端服务器部分，提供用户认证和 API 服务。
 
 ## 功能
 

@@ -1,4 +1,5 @@
 import { TypingContext, initialState } from "../pages/Typing/store";
+import { getPageTDK } from "../resources/tdk";
 import "animate.css";
 import { Provider as JotaiProvider, createStore } from "jotai";
 import type React from "react";
@@ -9,13 +10,18 @@ import type { PageContextServer } from "vike/types";
 // https://vike.dev/onRenderHtml
 export { onRenderHtml };
 
+// 扩展PageContextServer接口
 interface PageContext extends PageContextServer {
-  Page: React.ComponentType;
+  Page: React.ComponentType<any>;
   urlPathname: string;
+  routeParams: Record<string, string>;
 }
 
 async function onRenderHtml(pageContext: PageContext) {
-  const { Page } = pageContext;
+  const { Page, urlPathname, routeParams } = pageContext;
+
+  // 获取当前页面的TDK
+  const tdk = getPageTDK(urlPathname, routeParams);
 
   // 创建一个空的 dispatch 函数用于服务端渲染
   const typingContextValue = {
@@ -32,12 +38,13 @@ async function onRenderHtml(pageContext: PageContext) {
     renderToString(
       <JotaiProvider store={store}>
         <TypingContext.Provider value={typingContextValue}>
-          <Page pageContext={pageContext} />
+          <Page />
         </TypingContext.Provider>
       </JotaiProvider>
     )
   );
 
+  // 使用escapeInject返回HTML
   return escapeInject`<!DOCTYPE html>
 <html lang="zh-Hans">
   <head>
@@ -102,12 +109,12 @@ async function onRenderHtml(pageContext: PageContext) {
       })(window.location)
     </script>
 
-    <title>Keybr — 为键盘工作者设计的单词与肌肉记忆锻炼软件</title>
+    <title>${dangerouslySkipEscape(tdk.title)}</title>
     <meta
       name="description"
-      content="Keybr, 为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件 / Words learning and English muscle memory training software designed for keyboard workers"
+      content="${dangerouslySkipEscape(tdk.description)}"
     />
-    <meta name="keywords" content="Keybr, 打字练习软件, 单词记忆工具, 英语学习, 背单词, 英语肌肉记忆锻炼, 键盘工作者, 免费背单词软件" />
+    <meta name="keywords" content="${dangerouslySkipEscape(tdk.keywords)}" />
 
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -132,11 +139,7 @@ async function onRenderHtml(pageContext: PageContext) {
       <div>You need to enable JavaScript to run Keybr.</div>
       <div>你需要启用 JavaScript 来运行 Keybr。</div>
     </noscript>
-    <div id="root">${dangerouslySkipEscape(pageHtml)}</div>
-
+    <div id="root">${pageHtml}</div>
   </body>
-</html>
-
-
-  `;
+</html>`;
 }

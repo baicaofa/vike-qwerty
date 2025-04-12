@@ -1,4 +1,11 @@
 import User from "../models/User";
+import {
+  generateVerificationCode,
+  verifyCode,
+  sendVerificationEmail,
+  generatePasswordResetToken,
+  sendPasswordResetEmail,
+} from "../services/emailService";
 import type { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 
@@ -24,14 +31,21 @@ export const register = async (req: Request, res: Response): Promise<void> => {
       username,
       email,
       password,
+      isEmailVerified: false, // 默认邮箱未验证
     });
 
     if (user) {
+      // 生成验证码并发送验证邮件
+      const verificationCode = generateVerificationCode(email);
+      await sendVerificationEmail(email, verificationCode);
+
       res.status(201).json({
         _id: user._id.toString(),
         username: user.username,
         email: user.email,
+        isEmailVerified: user.isEmailVerified,
         token: generateToken(user._id.toString()),
+        message: "注册成功，请查收验证邮件",
       });
     }
   } catch (error) {
@@ -50,17 +64,57 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
+    // 检查账户是否被锁定
+    if (user.lockUntil && user.lockUntil > new Date()) {
+      const lockTime = Math.ceil(
+        (user.lockUntil.getTime() - Date.now()) / 60000
+      );
+      res.status(401).json({
+        message: `账户已被锁定，请${lockTime}分钟后再试`,
+        locked: true,
+        lockTime,
+      });
+      return;
+    }
+
     // 验证密码
     const isMatch = await user.comparePassword(password);
     if (!isMatch) {
-      res.status(401).json({ message: "邮箱或密码错误" });
+      // 增加登录失败次数
+      await user.incrementLoginAttempts();
+
+      // 如果账户被锁定，返回锁定信息
+      if (user.lockUntil && user.lockUntil > new Date()) {
+        const lockTime = Math.ceil(
+          (user.lockUntil.getTime() - Date.now()) / 60000
+        );
+        res.status(401).json({
+          message: `密码错误，账户已被锁定，请${lockTime}分钟后再试`,
+          locked: true,
+          lockTime,
+        });
+        return;
+      }
+
+      res.status(401).json({
+        message: "邮箱或密码错误",
+        attemptsLeft: 5 - user.loginAttempts,
+      });
       return;
     }
+
+    // 登录成功，重置登录尝试次数
+    await user.resetLoginAttempts();
+
+    // 更新最后登录时间
+    user.lastLogin = new Date();
+    await user.save();
 
     res.json({
       _id: user._id.toString(),
       username: user.username,
       email: user.email,
+      isEmailVerified: user.isEmailVerified,
       token: generateToken(user._id.toString()),
     });
   } catch (error) {
@@ -75,6 +129,148 @@ export const getProfile = async (
   try {
     const user = await User.findById(req.user._id).select("-password");
     res.json(user);
+  } catch (error) {
+    res.status(500).json({ message: "服务器错误" });
+  }
+};
+
+// 发送验证码
+export const sendVerificationCode = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { email } = req.body;
+
+    // 检查用户是否存在
+    const user = await User.findOne({ email });
+    if (!user) {
+      res.status(404).json({ message: "用户不存在" });
+      return;
+    }
+
+    // 如果邮箱已验证，直接返回
+    if (user.isEmailVerified) {
+      res.status(200).json({ message: "邮箱已验证" });
+      return;
+    }
+
+    // 生成验证码并发送
+    const verificationCode = generateVerificationCode(email);
+    const sent = await sendVerificationEmail(email, verificationCode);
+
+    if (sent) {
+      res.status(200).json({ message: "验证码已发送，请查收邮件" });
+    } else {
+      res.status(500).json({ message: "验证码发送失败，请稍后再试" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: "服务器错误" });
+  }
+};
+
+// 验证邮箱
+export const verifyEmail = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { email, code } = req.body;
+
+    // 检查用户是否存在
+    const user = await User.findOne({ email });
+    if (!user) {
+      res.status(404).json({ message: "用户不存在" });
+      return;
+    }
+
+    // 如果邮箱已验证，直接返回
+    if (user.isEmailVerified) {
+      res.status(200).json({ message: "邮箱已验证" });
+      return;
+    }
+
+    // 验证验证码
+    const isValid = verifyCode(email, code);
+    if (!isValid) {
+      res.status(400).json({ message: "验证码无效或已过期" });
+      return;
+    }
+
+    // 更新用户邮箱验证状态
+    user.isEmailVerified = true;
+    await user.save();
+
+    res.status(200).json({ message: "邮箱验证成功" });
+  } catch (error) {
+    res.status(500).json({ message: "服务器错误" });
+  }
+};
+
+// 请求密码重置
+export const forgotPassword = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { email } = req.body;
+
+    // 检查用户是否存在
+    const user = await User.findOne({ email });
+    if (!user) {
+      // 为了安全，即使用户不存在也返回成功
+      res.status(200).json({ message: "如果邮箱存在，重置链接将发送到该邮箱" });
+      return;
+    }
+
+    // 生成重置令牌
+    const token = generatePasswordResetToken(email);
+
+    // 更新用户的重置令牌和过期时间
+    user.passwordResetToken = token;
+    user.passwordResetExpires = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24小时
+    await user.save();
+
+    // 发送重置邮件
+    const sent = await sendPasswordResetEmail(email, token);
+
+    if (sent) {
+      res.status(200).json({ message: "如果邮箱存在，重置链接将发送到该邮箱" });
+    } else {
+      res.status(500).json({ message: "邮件发送失败，请稍后再试" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: "服务器错误" });
+  }
+};
+
+// 重置密码
+export const resetPassword = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { token, email, password } = req.body;
+
+    // 检查用户是否存在
+    const user = await User.findOne({
+      email,
+      passwordResetToken: token,
+      passwordResetExpires: { $gt: Date.now() },
+    });
+
+    if (!user) {
+      res.status(400).json({ message: "密码重置链接无效或已过期" });
+      return;
+    }
+
+    // 更新密码
+    user.password = password;
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save();
+
+    res.status(200).json({ message: "密码重置成功" });
   } catch (error) {
     res.status(500).json({ message: "服务器错误" });
   }

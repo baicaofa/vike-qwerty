@@ -5,12 +5,14 @@ interface User {
   _id: string;
   username: string;
   email: string;
+  isEmailVerified: boolean;
 }
 
 interface AuthState {
   user: User | null;
   token: string | null;
   isAuthenticated: boolean;
+  isEmailVerified: boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (
     username: string,
@@ -19,6 +21,14 @@ interface AuthState {
   ) => Promise<void>;
   logout: () => void;
   checkAuth: () => void;
+  sendVerificationCode: (email: string) => Promise<void>;
+  verifyEmail: (email: string, code: string) => Promise<void>;
+  forgotPassword: (email: string) => Promise<void>;
+  resetPassword: (
+    token: string,
+    email: string,
+    password: string
+  ) => Promise<void>;
 }
 
 // 检查是否在浏览器环境中
@@ -50,6 +60,7 @@ const useAuthStore = create<AuthState>((set) => ({
   user: null,
   token: getLocalStorageItem("token"),
   isAuthenticated: !!getLocalStorageItem("token"),
+  isEmailVerified: false,
 
   login: async (email: string, password: string) => {
     const response = await axios.post("/api/auth/login", { email, password });
@@ -57,7 +68,12 @@ const useAuthStore = create<AuthState>((set) => ({
 
     setLocalStorageItem("token", token);
     setLocalStorageItem("user", JSON.stringify(user));
-    set({ user, token, isAuthenticated: true });
+    set({
+      user,
+      token,
+      isAuthenticated: true,
+      isEmailVerified: user.isEmailVerified,
+    });
   },
 
   register: async (username: string, email: string, password: string) => {
@@ -70,7 +86,12 @@ const useAuthStore = create<AuthState>((set) => ({
 
     setLocalStorageItem("token", token);
     setLocalStorageItem("user", JSON.stringify(user));
-    set({ user, token, isAuthenticated: true });
+    set({
+      user,
+      token,
+      isAuthenticated: true,
+      isEmailVerified: user.isEmailVerified,
+    });
   },
 
   logout: () => {
@@ -92,6 +113,35 @@ const useAuthStore = create<AuthState>((set) => ({
         isAuthenticated: true,
       });
     }
+  },
+
+  // 发送验证码
+  sendVerificationCode: async (email: string) => {
+    await axios.post("/api/auth/send-verification-code", { email });
+  },
+
+  // 验证邮箱
+  verifyEmail: async (email: string, code: string) => {
+    await axios.post("/api/auth/verify-email", { email, code });
+
+    // 更新本地用户状态
+    const user = getLocalStorageItem("user");
+    if (user) {
+      const userData = JSON.parse(user);
+      userData.isEmailVerified = true;
+      setLocalStorageItem("user", JSON.stringify(userData));
+      set({ user: userData });
+    }
+  },
+
+  // 忘记密码
+  forgotPassword: async (email: string) => {
+    await axios.post("/api/auth/forgot-password", { email });
+  },
+
+  // 重置密码
+  resetPassword: async (token: string, email: string, password: string) => {
+    await axios.post("/api/auth/reset-password", { token, email, password });
   },
 }));
 

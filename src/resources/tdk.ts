@@ -1,0 +1,112 @@
+import { dictionaries } from "./dictionary";
+
+// 定义TDK接口
+export interface TDK {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+// 默认TDK
+export const defaultTDK: TDK = {
+  title: "Keybr — 为键盘工作者设计的单词与肌肉记忆锻炼软件",
+  description:
+    "Keybr, 为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件 / Words learning and English muscle memory training software designed for keyboard workers",
+  keywords:
+    "Keybr, 打字练习软件, 单词记忆工具, 英语学习, 背单词, 英语肌肉记忆锻炼, 键盘工作者, 免费背单词软件",
+};
+
+// 页面TDK配置
+export const pageTDK: Record<string, TDK> = {
+  // 首页
+  "/": defaultTDK,
+
+  // 登录页
+  "/login": {
+    title: "登录 - Keybr",
+    description: "登录Keybr，开始您的单词记忆与英语肌肉记忆锻炼之旅",
+    keywords: "Keybr, 登录, 用户登录, 单词记忆, 英语学习",
+  },
+
+  // 注册页
+  "/register": {
+    title: "注册 - Keybr",
+    description: "注册Keybr账号，开始您的单词记忆与英语肌肉记忆锻炼之旅",
+    keywords: "Keybr, 注册, 用户注册, 单词记忆, 英语学习",
+  },
+
+  // 个人资料页
+  "/profile": {
+    title: "个人资料 - Keybr",
+    description: "管理您的Keybr个人资料和设置",
+    keywords: "Keybr, 个人资料, 用户设置, 单词记忆, 英语学习",
+  },
+
+  // 打字练习页
+  "/typing": {
+    title: "打字练习 - Keybr",
+    description: "使用Keybr进行打字练习，提高您的打字速度和准确性",
+    keywords: "Keybr, 打字练习, 打字速度, 打字准确性, 英语学习",
+  },
+
+  // 分析页
+  "/analysis": {
+    title: "数据分析 - Keybr",
+    description: "查看您的Keybr学习数据和分析",
+    keywords: "Keybr, 数据分析, 学习统计, 进度跟踪, 英语学习",
+  },
+
+  // 错误本页
+  "/error-book": {
+    title: "错误本 - Keybr",
+    description: "查看和管理您的Keybr错误记录",
+    keywords: "Keybr, 错误本, 错误记录, 单词记忆, 英语学习",
+  },
+
+  // 友情链接页
+  "/friend-links": {
+    title: "友情链接 - Keybr",
+    description: "Keybr的合作伙伴和友情链接",
+    keywords: "Keybr, 友情链接, 合作伙伴, 相关网站",
+  },
+
+  // 移动版页
+  "/mobile": {
+    title: "移动版 - Keybr",
+    description: "Keybr移动版，随时随地学习英语单词",
+    keywords: "Keybr, 移动版, 手机应用, 单词记忆, 英语学习",
+  },
+
+  // 词典页面
+  "/gallery": {
+    title: "词典列表 - Keybr",
+    description: "浏览Keybr提供的各种英语词典，选择适合您的学习内容",
+    keywords: "Keybr, 词典列表, 英语词典, 单词记忆, 英语学习, 打字练习",
+  },
+};
+
+// 动态生成词典页面的TDK
+export function getDictionaryTDK(dictionaryId: string): TDK {
+  const dictionary = dictionaries.find((dict) => dict.id === dictionaryId);
+
+  if (!dictionary) {
+    return defaultTDK;
+  }
+
+  return {
+    title: `${dictionary.name} - Keybr词典`,
+    description: `使用Keybr学习${dictionary.name}，提高您的英语词汇量和打字速度`,
+    keywords: `Keybr, ${dictionary.name}, 词典, 单词记忆, 英语学习, 打字练习`,
+  };
+}
+
+// 获取页面TDK
+export function getPageTDK(path: string, params?: Record<string, string>): TDK {
+  // 处理词典页面
+  if (path.startsWith("/gallery/") && params?.id) {
+    return getDictionaryTDK(params.id);
+  }
+
+  // 处理其他页面
+  return pageTDK[path] || defaultTDK;
+}

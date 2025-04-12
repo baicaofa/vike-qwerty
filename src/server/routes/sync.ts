@@ -1,10 +1,10 @@
 import { syncData } from "../controllers/syncController";
-import { protect } from "../middleware/auth";
-import express from "express";
+import { protect, requireEmailVerified } from "../middleware/auth";
+import express, { RequestHandler } from "express";
 
 const router = express.Router();
 
 // Sync endpoint - protected route that requires authentication
-router.post("/", protect, syncData);
+router.post("/sync", protect, requireEmailVerified, syncData as RequestHandler);
 
 export default router;

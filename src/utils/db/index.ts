@@ -28,28 +28,39 @@ class RecordDB extends Dexie {
 
   constructor() {
     super("RecordDB");
+    // 版本1的数据库模式定义
     this.version(1).stores({
+      // wordRecords表结构定义
       wordRecords: "++id,word,timeStamp,dict,chapter,errorCount,[dict+chapter]",
+      // chapterRecords表结构定义
       chapterRecords: "++id,timeStamp,dict,chapter,time,[dict+chapter]",
     });
+
+    // 版本2的数据库模式更新
     this.version(2).stores({
+      // 将errorCount字段重命名为wrongCount
       wordRecords: "++id,word,timeStamp,dict,chapter,wrongCount,[dict+chapter]",
       chapterRecords: "++id,timeStamp,dict,chapter,time,[dict+chapter]",
     });
+
+    // 版本3的数据库模式更新
     this.version(3).stores({
       wordRecords: "++id,word,timeStamp,dict,chapter,wrongCount,[dict+chapter]",
       chapterRecords: "++id,timeStamp,dict,chapter,time,[dict+chapter]",
+      // 新增reviewRecords表
       reviewRecords: "++id,dict,createTime,isFinished",
     });
+
+    // 版本4的数据库模式更新（添加同步相关字段）
     this.version(4)
       .stores({
-        // 为 wordRecords 添加同步字段
+        // wordRecords表添加uuid、sync_status和last_modified字段
         wordRecords:
           "++id, &uuid, word, timeStamp, dict, chapter, wrongCount, [dict+chapter], sync_status, last_modified",
-        // 为 chapterRecords 添加同步字段
+        // chapterRecords表添加uuid、sync_status和last_modified字段
         chapterRecords:
           "++id, &uuid, timeStamp, dict, chapter, time, [dict+chapter], sync_status, last_modified",
-        // 为 reviewRecords 添加同步字段
+        // reviewRecords表添加uuid、sync_status和last_modified字段
         reviewRecords:
           "++id, &uuid, dict, createTime, isFinished, sync_status, last_modified",
         // revision* 表保持不变 (假设它们不需要同步)
@@ -57,40 +68,47 @@ class RecordDB extends Dexie {
       .upgrade((tx) => {
         console.log("Upgrading Dexie schema to version 4...");
         const now = Date.now();
-        // 必须返回一个 Promise，确保所有修改完成
+        // 返回Promise确保所有迁移操作完成
         return Promise.all([
-          // 1. 迁移 wordRecords
+          // 1. 迁移wordRecords表数据
           tx
-            .table("wordRecords")
-            .toCollection()
+            .table("wordRecords") // 获取wordRecords表的操作句柄
+            .toCollection() // 获取表中所有记录的集合
             .modify((record) => {
+              // 对每条记录进行修改
+              // 如果记录没有uuid字段，则生成一个新的随机UUID
               if (record.uuid === undefined) record.uuid = crypto.randomUUID();
+
+              // 如果记录没有sync_status字段，则设置为"local_new"(本地新建)
+              // 这表示该记录是本地创建的，尚未同步到服务器
               if (record.sync_status === undefined)
-                record.sync_status = "synced";
+                record.sync_status = "local_new";
+
+              // 如果记录没有last_modified字段，则使用记录的timeStamp或当前时间
               if (record.last_modified === undefined)
-                record.last_modified = record.timeStamp || now; // 使用 timeStamp 或当前时间
+                record.last_modified = record.timeStamp || now;
             }),
-          // 2. 迁移 chapterRecords
+          // 2. 迁移chapterRecords表数据
           tx
             .table("chapterRecords")
             .toCollection()
             .modify((record) => {
               if (record.uuid === undefined) record.uuid = crypto.randomUUID();
               if (record.sync_status === undefined)
-                record.sync_status = "synced";
+                record.sync_status = "local_new";
               if (record.last_modified === undefined)
-                record.last_modified = record.timeStamp || now; // 使用 timeStamp 或当前时间
+                record.last_modified = record.timeStamp || now; // 使用timeStamp或当前时间
             }),
-          // 3. 迁移 reviewRecords
+          // 3. 迁移reviewRecords表数据
           tx
             .table("reviewRecords")
             .toCollection()
             .modify((record) => {
               if (record.uuid === undefined) record.uuid = crypto.randomUUID();
               if (record.sync_status === undefined)
-                record.sync_status = "synced";
+                record.sync_status = "local_new";
               if (record.last_modified === undefined)
-                record.last_modified = record.createTime || now; // 使用 createTime 或当前时间
+                record.last_modified = record.createTime || now; // 使用createTime或当前时间
             }),
         ])
           .then(() => {

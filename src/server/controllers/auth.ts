@@ -6,10 +6,14 @@ import {
   sendVerificationEmail,
   verifyCode,
 } from "../services/emailService";
+import {
+  verifyAndGetRegistrationData,
+  storeVerificationData,
+} from "../utils/verification";
 import type { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 
-const generateToken = (id: string) => {
+export const generateToken = (id: string) => {
   return jwt.sign({ id }, process.env.JWT_SECRET || "your-secret-key", {
     expiresIn: "30d",
   });
@@ -17,7 +21,7 @@ const generateToken = (id: string) => {
 
 export const register = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password, code } = req.body;
 
     // 检查用户是否已存在
     const userExists = await User.findOne({ $or: [{ email }, { username }] });
@@ -26,29 +30,32 @@ export const register = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    // 创建新用户
+    // 验证验证码
+    const isValid = verifyCode(email, code);
+    if (!isValid) {
+      res.status(400).json({ message: "验证码无效或已过期" });
+      return;
+    }
+
+    // 创建用户
     const user = await User.create({
       username,
       email,
       password,
-      isEmailVerified: false, // 默认邮箱未验证
+      isEmailVerified: true,
     });
 
-    if (user) {
-      // 生成验证码并发送验证邮件
-      const verificationCode = generateVerificationCode(email);
-      await sendVerificationEmail(email, verificationCode);
-
-      res.status(201).json({
-        _id: user._id.toString(),
-        username: user.username,
-        email: user.email,
-        isEmailVerified: user.isEmailVerified,
-        token: generateToken(user._id.toString()),
-        message: "注册成功，请查收验证邮件",
-      });
-    }
+    // 返回注册成功信息和 token
+    res.status(201).json({
+      _id: user._id.toString(),
+      username: user.username,
+      email: user.email,
+      isEmailVerified: true,
+      token: generateToken(user._id.toString()),
+      message: "注册成功",
+    });
   } catch (error) {
+    console.error("注册错误:", error);
     res.status(500).json({ message: "服务器错误" });
   }
 };
@@ -142,19 +149,6 @@ export const sendVerificationCode = async (
   try {
     const { email } = req.body;
 
-    // 检查用户是否存在
-    const user = await User.findOne({ email });
-    if (!user) {
-      res.status(404).json({ message: "用户不存在" });
-      return;
-    }
-
-    // 如果邮箱已验证，直接返回
-    if (user.isEmailVerified) {
-      res.status(200).json({ message: "邮箱已验证" });
-      return;
-    }
-
     // 生成验证码并发送
     const verificationCode = generateVerificationCode(email);
     const sent = await sendVerificationEmail(email, verificationCode);
@@ -165,6 +159,7 @@ export const sendVerificationCode = async (
       res.status(500).json({ message: "验证码发送失败，请稍后再试" });
     }
   } catch (error) {
+    console.error("发送验证码错误:", error);
     res.status(500).json({ message: "服务器错误" });
   }
 };
@@ -177,19 +172,6 @@ export const verifyEmail = async (
   try {
     const { email, code } = req.body;
 
-    // 检查用户是否存在
-    const user = await User.findOne({ email });
-    if (!user) {
-      res.status(404).json({ message: "用户不存在" });
-      return;
-    }
-
-    // 如果邮箱已验证，直接返回
-    if (user.isEmailVerified) {
-      res.status(200).json({ message: "邮箱已验证" });
-      return;
-    }
-
     // 验证验证码
     const isValid = verifyCode(email, code);
     if (!isValid) {
@@ -197,12 +179,9 @@ export const verifyEmail = async (
       return;
     }
 
-    // 更新用户邮箱验证状态
-    user.isEmailVerified = true;
-    await user.save();
-
-    res.status(200).json({ message: "邮箱验证成功" });
+    res.status(200).json({ message: "验证码验证成功" });
   } catch (error) {
+    console.error("验证邮箱错误:", error);
     res.status(500).json({ message: "服务器错误" });
   }
 };
@@ -272,6 +251,53 @@ export const resetPassword = async (
 
     res.status(200).json({ message: "密码重置成功" });
   } catch (error) {
+    res.status(500).json({ message: "服务器错误" });
+  }
+};
+
+// 第二步：验证邮箱并完成注册
+export const completeRegistration = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { email, code } = req.body;
+
+    // 1. 验证验证码并获取注册数据
+    const registrationData = await verifyAndGetRegistrationData(email, code);
+    if (!registrationData) {
+      res.status(400).json({ message: "验证码无效或已过期" });
+      return;
+    }
+
+    const { username, password } = registrationData;
+
+    // 2. 再次检查用户是否已存在（防止在发送验证码后有人注册了相同用户名或邮箱）
+    const userExists = await User.findOne({ $or: [{ email }, { username }] });
+    if (userExists) {
+      res.status(400).json({ message: "用户名或邮箱已被注册" });
+      return;
+    }
+
+    // 3. 创建已验证的用户
+    const user = await User.create({
+      username,
+      email,
+      password,
+      isEmailVerified: true,
+    });
+
+    // 4. 返回注册成功信息和 token
+    res.status(201).json({
+      _id: user._id.toString(),
+      username: user.username,
+      email: user.email,
+      isEmailVerified: true,
+      token: generateToken(user._id.toString()),
+      message: "注册成功",
+    });
+  } catch (error) {
+    console.error("完成注册错误:", error);
     res.status(500).json({ message: "服务器错误" });
   }
 };

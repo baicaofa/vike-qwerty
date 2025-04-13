@@ -11,7 +11,8 @@ export default function Page() {
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
   const [countdown, setCountdown] = useState(0);
-  const { sendVerificationCode, verifyEmail } = useAuthStore();
+  const { sendVerificationCode, verifyEmail, completeRegistration } =
+    useAuthStore();
 
   useEffect(() => {
     // 从URL参数中获取邮箱
@@ -43,7 +44,13 @@ export default function Page() {
       setSuccess("验证码已发送，请查收邮件");
       setCountdown(60); // 60秒倒计时
     } catch (error: any) {
-      setError(error.response?.data?.message || "发送验证码失败");
+      if (error.response?.data?.message) {
+        setError(error.response.data.message);
+      } else if (error.message) {
+        setError(error.message);
+      } else {
+        setError("发送验证码失败，请重试");
+      }
     } finally {
       setLoading(false);
     }
@@ -60,15 +67,54 @@ export default function Page() {
     try {
       setLoading(true);
       setError("");
-      await verifyEmail(email, code);
-      setSuccess("邮箱验证成功");
+
+      // 获取临时存储的注册信息
+      const pendingRegistration = localStorage.getItem("pendingRegistration");
+      console.log("获取到的临时注册信息:", pendingRegistration);
+
+      if (!pendingRegistration) {
+        setError("注册信息已过期，请重新注册");
+        return;
+      }
+
+      const { username, password } = JSON.parse(pendingRegistration);
+      console.log("解析后的注册信息:", { username, email, code });
+
+      // 完成注册流程
+      console.log("开始调用 completeRegistration...");
+      const result = await completeRegistration(
+        username,
+        email,
+        password,
+        code
+      );
+      console.log("completeRegistration 调用结果:", result);
+
+      // 清除临时存储的注册信息
+      localStorage.removeItem("pendingRegistration");
+
+      setSuccess("注册成功！正在跳转到首页...");
 
       // 3秒后跳转到首页
       setTimeout(() => {
         window.location.href = "/";
       }, 3000);
     } catch (error: any) {
-      setError(error.response?.data?.message || "验证失败");
+      console.error("验证失败:", error);
+
+      if (error.response) {
+        // 服务器返回了错误响应
+        console.error("服务器响应:", error.response.data);
+        setError(error.response.data.message || "验证失败");
+      } else if (error.request) {
+        // 请求已发送但没有收到响应
+        console.error("没有收到响应:", error.request);
+        setError("无法连接到服务器，请检查网络连接");
+      } else {
+        // 请求设置时出错
+        console.error("请求错误:", error.message);
+        setError("请求过程中发生错误");
+      }
     } finally {
       setLoading(false);
     }

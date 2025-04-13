@@ -1,4 +1,3 @@
-// /gallery/@id/+onBeforePrerenderStart.ts
 import { dictionaries } from "@/resources/dictionary";
 import type { OnBeforePrerenderStartSync } from "vike/types";
 

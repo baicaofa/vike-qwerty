@@ -6,6 +6,6 @@ import express from "express";
 const router = express.Router();
 
 // Sync endpoint - protected route that requires authentication
-router.post("/sync", protect, requireEmailVerified, syncData as RequestHandler);
+router.post("/", protect, requireEmailVerified, syncData as RequestHandler);
 
 export default router;

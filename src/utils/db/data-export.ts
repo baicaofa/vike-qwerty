@@ -1,5 +1,6 @@
 import { db } from ".";
 import { getCurrentDate, recordDataAction } from "..";
+import { generateUUID } from "../uuid";
 import { syncData } from "@/services/syncService";
 
 export type ExportProgress = {
@@ -85,21 +86,21 @@ export async function importDatabase(
 
     // 更新wordRecords
     await db.wordRecords.toCollection().modify((record) => {
-      if (!record.uuid) record.uuid = crypto.randomUUID();
+      if (!record.uuid) record.uuid = generateUUID();
       if (!record.sync_status) record.sync_status = "local_new";
       if (!record.last_modified) record.last_modified = record.timeStamp || now;
     });
 
     // 更新chapterRecords
     await db.chapterRecords.toCollection().modify((record) => {
-      if (!record.uuid) record.uuid = crypto.randomUUID();
+      if (!record.uuid) record.uuid = generateUUID();
       if (!record.sync_status) record.sync_status = "local_new";
       if (!record.last_modified) record.last_modified = record.timeStamp || now;
     });
 
     // 更新reviewRecords
     await db.reviewRecords.toCollection().modify((record) => {
-      if (!record.uuid) record.uuid = crypto.randomUUID();
+      if (!record.uuid) record.uuid = generateUUID();
       if (!record.sync_status) record.sync_status = "local_new";
       if (!record.last_modified)
         record.last_modified = record.createTime || now;

@@ -29,7 +29,6 @@ src/
 ### 2.2 命名规范
 
 - 文件夹使用小写字母，单词间用连字符(-)分隔
-- 组件文件使用 PascalCase 命名，如 `WordPanel.tsx`
 - 工具函数文件使用 camelCase 命名，如 `wordListFetcher.ts`
 - 类型定义文件使用 camelCase，如 `resource.ts`
 - 配置文件使用小写，如 `vite.config.ts`

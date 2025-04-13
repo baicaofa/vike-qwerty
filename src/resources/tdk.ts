@@ -42,13 +42,6 @@ export const pageTDK: Record<string, TDK> = {
     keywords: "Keybr, 个人资料, 用户设置, 单词记忆, 英语学习",
   },
 
-  // 打字练习页
-  "/typing": {
-    title: "打字练习 - Keybr",
-    description: "使用Keybr进行打字练习，提高您的打字速度和准确性",
-    keywords: "Keybr, 打字练习, 打字速度, 打字准确性, 英语学习",
-  },
-
   // 分析页
   "/analysis": {
     title: "数据分析 - Keybr",
@@ -94,8 +87,8 @@ export function getDictionaryTDK(dictionaryId: string): TDK {
   }
 
   return {
-    title: `${dictionary.name} - Keybr词典`,
-    description: `使用Keybr学习${dictionary.name}，提高您的英语词汇量和打字速度`,
+    title: `${dictionary.name}单词大纲 -${dictionary.description}- Keybr词典`,
+    description: `使用Keybr学习${dictionary.description}，提高您的英语词汇量和打字速度`,
     keywords: `Keybr, ${dictionary.name}, 词典, 单词记忆, 英语学习, 打字练习`,
   };
 }

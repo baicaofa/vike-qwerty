@@ -145,9 +145,13 @@ export default function WordComponent({
 
   useEffect(() => {
     if (wordState.inputWord.length === 0 && state.isTyping) {
-      setTimeout(() => {
-        wordPronunciationIconRef.current?.play();
-      }, 0);
+      // 检查当前是否在打字练习页面
+      const currentPath = window.location.pathname;
+      if (currentPath === "/" || currentPath.startsWith("/typing")) {
+        setTimeout(() => {
+          wordPronunciationIconRef.current?.play();
+        }, 0);
+      }
     }
   }, [state.isTyping, wordState.inputWord.length]);
 
@@ -324,7 +328,13 @@ export default function WordComponent({
       <InputHandler updateInput={updateInput} />
       <div
         lang={
-          currentLanguageCategory !== "code" ? currentLanguageCategory : "en"
+          currentLanguageCategory !== "code"
+            ? currentLanguageCategory === "en"
+              ? "en"
+              : currentLanguageCategory === "de"
+              ? "de"
+              : "en"
+            : "en"
         }
         className="flex flex-col items-center justify-center pb-1 pt-4"
       >

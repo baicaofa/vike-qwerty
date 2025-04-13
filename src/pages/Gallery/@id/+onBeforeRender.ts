@@ -4,23 +4,23 @@ import { wordListFetcher } from "@/utils/wordListFetcher";
 import type { PageContext } from "vike/types";
 
 export async function onBeforeRender(pageContext: PageContext) {
-  const { id } = pageContext.routeParams;
+  const routeParams = pageContext.routeParams;
+  const dictionary = dictionaries.find((dict) => dict.id === routeParams?.id);
 
-  // 1. 查找词典
-  const dictionary = dictionaries.find((dict) => dict.id === id);
   if (!dictionary) {
     return {
       pageContext: {
-        redirectTo: "/404",
+        pageProps: {
+          error: "词典未找到",
+          dictionary: null,
+          words: [],
+        },
       },
     };
   }
 
   try {
-    // 2. 加载单词列表
     const words = await wordListFetcher(dictionary.url);
-
-    // 3. 返回数据，注入到组件的 props
     return {
       pageContext: {
         pageProps: {
@@ -30,13 +30,12 @@ export async function onBeforeRender(pageContext: PageContext) {
       },
     };
   } catch (error) {
-    console.error("Failed to load dictionary:", error);
     return {
       pageContext: {
         pageProps: {
+          error: "加载词典数据失败",
           dictionary,
           words: [],
-          error: "Failed to load dictionary words",
         },
       },
     };

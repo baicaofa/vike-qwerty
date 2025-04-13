@@ -38,7 +38,7 @@ async function onRenderHtml(pageContext: PageContext) {
     renderToString(
       <JotaiProvider store={store}>
         <TypingContext.Provider value={typingContextValue}>
-          <Page />
+          <Page pageContext={pageContext} />
         </TypingContext.Provider>
       </JotaiProvider>
     )

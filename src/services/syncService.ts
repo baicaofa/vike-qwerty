@@ -336,6 +336,9 @@ export const syncFromCloud = async (): Promise<SyncResult> => {
       };
     }
 
+    // 设置请求头
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
     // 从云端获取变更
     console.log("请求服务器变更...");
     const response = await axios.post(
@@ -383,6 +386,17 @@ export const syncFromCloud = async (): Promise<SyncResult> => {
         data: error.response?.data,
         message: error.message,
       });
+
+      // 处理特定的错误情况
+      if (error.response?.status === 403) {
+        return {
+          success: false,
+          error: {
+            message: "需要验证邮箱才能同步数据",
+            code: "EMAIL_NOT_VERIFIED",
+          },
+        };
+      }
     }
     return {
       success: false,
@@ -420,6 +434,9 @@ export const syncToCloud = async (): Promise<SyncResult> => {
       };
     }
 
+    // 设置请求头
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
     // 发送本地变更到云端
     console.log("发送本地变更到云端...");
     const response = await axios.post(
@@ -456,6 +473,17 @@ export const syncToCloud = async (): Promise<SyncResult> => {
         data: error.response?.data,
         message: error.message,
       });
+
+      // 处理特定的错误情况
+      if (error.response?.status === 403) {
+        return {
+          success: false,
+          error: {
+            message: "需要验证邮箱才能同步数据",
+            code: "EMAIL_NOT_VERIFIED",
+          },
+        };
+      }
     }
     return {
       success: false,

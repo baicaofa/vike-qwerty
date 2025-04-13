@@ -100,6 +100,12 @@ export function Page() {
   useEffect(() => {
     if (!state.isTyping) {
       const onKeyDown = (e: KeyboardEvent) => {
+        // 检查当前是否在打字练习相关页面
+        const currentPath = window.location.pathname;
+        if (currentPath !== "/" && !currentPath.startsWith("/typing")) {
+          return;
+        }
+
         if (
           !isLoading &&
           e.key !== "Enter" &&
@@ -127,7 +133,7 @@ export function Page() {
 
       return () => {
         if (keydownHandlerRef.current === onKeyDown) {
-          window.removeEventListener("keydown", onKeyDown);
+          window.removeEventListener("keydown", keydownHandlerRef.current);
           keydownHandlerRef.current = null;
         }
       };

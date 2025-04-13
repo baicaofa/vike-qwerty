@@ -101,9 +101,6 @@ export default function Page({ pageContext }: Props) {
           <p className="text-sm text-gray-400 mt-2">
             ID: {routeParams?.id || "未提供"}
           </p>
-          <p className="text-sm text-gray-400 mt-2">
-            Available IDs: {dictionaries.map((d) => d.id).join(", ")}
-          </p>
         </div>
       </Layout>
     );

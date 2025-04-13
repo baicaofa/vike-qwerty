@@ -1,4 +1,5 @@
 import {
+  completeRegistration,
   forgotPassword,
   getProfile,
   login,
@@ -15,6 +16,7 @@ const router = express.Router();
 
 // 基本认证路由
 router.post("/register", register as RequestHandler);
+router.post("/complete-registration", completeRegistration as RequestHandler);
 router.post("/login", login as RequestHandler);
 router.get("/profile", protect as RequestHandler, getProfile as RequestHandler);
 

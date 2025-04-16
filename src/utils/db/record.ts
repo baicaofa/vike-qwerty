@@ -182,7 +182,7 @@ export class ReviewRecord implements IReviewRecord {
   last_modified: number;
 
   constructor(dict: string, words: Word[]) {
-    this.uuid = crypto.randomUUID(); // 新增: 初始化 UUID
+    this.uuid = generateUUID(); // 使用 generateUUID 函数替代 crypto.randomUUID
     this.dict = dict;
     this.index = 0;
     this.createTime = getUTCUnixTimestamp();

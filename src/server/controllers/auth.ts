@@ -7,8 +7,8 @@ import {
   verifyCode,
 } from "../services/emailService";
 import {
-  verifyAndGetRegistrationData,
   storeVerificationData,
+  verifyAndGetRegistrationData,
 } from "../utils/verification";
 import type { Request, Response } from "express";
 import jwt from "jsonwebtoken";

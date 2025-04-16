@@ -14,7 +14,7 @@ import type { Dictionary } from "@/typings";
 import { calcChapterCount } from "@/utils";
 import * as Progress from "@radix-ui/react-progress";
 import { useAtomValue } from "jotai";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 
 interface Props {
   dictionary: Dictionary;
@@ -22,6 +22,7 @@ interface Props {
 
 export default function DictionaryComponent({ dictionary }: Props) {
   const currentDictID = useAtomValue(currentDictIdAtom);
+  const [open, setOpen] = useState(false);
 
   const divRef = useRef<HTMLDivElement>(null);
   const entry = useIntersectionObserver(divRef, {});
@@ -41,7 +42,7 @@ export default function DictionaryComponent({ dictionary }: Props) {
   );
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <div
           ref={divRef}
@@ -124,7 +125,7 @@ export default function DictionaryComponent({ dictionary }: Props) {
         </div>
       </DialogTrigger>
       <DialogContent className="w-[60rem] max-w-none !rounded-[20px]">
-        <DictDetail dictionary={dictionary} />
+        <DictDetail dictionary={dictionary} onOpenChange={setOpen} />
       </DialogContent>
     </Dialog>
   );

@@ -1,3 +1,4 @@
+import { generateUUID } from "../uuid";
 import type {
   IChapterRecord,
   IReviewRecord,
@@ -77,7 +78,7 @@ class RecordDB extends Dexie {
             .modify((record) => {
               // 对每条记录进行修改
               // 如果记录没有uuid字段，则生成一个新的随机UUID
-              if (record.uuid === undefined) record.uuid = crypto.randomUUID();
+              if (record.uuid === undefined) record.uuid = generateUUID();
 
               // 如果记录没有sync_status字段，则设置为"local_new"(本地新建)
               // 这表示该记录是本地创建的，尚未同步到服务器
@@ -93,7 +94,7 @@ class RecordDB extends Dexie {
             .table("chapterRecords")
             .toCollection()
             .modify((record) => {
-              if (record.uuid === undefined) record.uuid = crypto.randomUUID();
+              if (record.uuid === undefined) record.uuid = generateUUID();
               if (record.sync_status === undefined)
                 record.sync_status = "local_new";
               if (record.last_modified === undefined)
@@ -104,7 +105,7 @@ class RecordDB extends Dexie {
             .table("reviewRecords")
             .toCollection()
             .modify((record) => {
-              if (record.uuid === undefined) record.uuid = crypto.randomUUID();
+              if (record.uuid === undefined) record.uuid = generateUUID();
               if (record.sync_status === undefined)
                 record.sync_status = "local_new";
               if (record.last_modified === undefined)

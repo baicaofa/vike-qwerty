@@ -1,4 +1,5 @@
 import { getUTCUnixTimestamp } from "../index";
+import { generateUUID } from "../uuid";
 import type { Word } from "@/typings";
 
 export type SyncStatus =
@@ -55,7 +56,7 @@ export class WordRecord implements IWordRecord {
     wrongCount: number,
     mistakes: LetterMistakes
   ) {
-    this.uuid = crypto.randomUUID(); // 新增: 初始化 UUID
+    this.uuid = generateUUID(); // 使用新的 generateUUID 函数
     this.word = word;
     this.timeStamp = getUTCUnixTimestamp();
     this.dict = dict;
@@ -123,7 +124,7 @@ export class ChapterRecord implements IChapterRecord {
     wordNumber: number,
     wordRecordIds: number[]
   ) {
-    this.uuid = crypto.randomUUID(); // 新增: 初始化 UUID
+    this.uuid = generateUUID(); // 使用新的 generateUUID 函数
     this.dict = dict;
     this.chapter = chapter;
     this.timeStamp = getUTCUnixTimestamp();
@@ -181,7 +182,7 @@ export class ReviewRecord implements IReviewRecord {
   last_modified: number;
 
   constructor(dict: string, words: Word[]) {
-    this.uuid = crypto.randomUUID(); // 新增: 初始化 UUID
+    this.uuid = generateUUID(); // 使用 generateUUID 函数替代 crypto.randomUUID
     this.dict = dict;
     this.index = 0;
     this.createTime = getUTCUnixTimestamp();

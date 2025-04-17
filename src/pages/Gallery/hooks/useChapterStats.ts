@@ -1,11 +1,13 @@
-import { currentDictIdAtom } from "@/store";
+import { toFixedNumber } from "@/utils";
 import { db } from "@/utils/db";
 import type { IChapterRecord } from "@/utils/db/record";
-import { useAtomValue } from "jotai";
 import { useEffect, useState } from "react";
 
-export function useChapterStats(chapter: number, isStartLoad: boolean) {
-  const dictID = useAtomValue(currentDictIdAtom);
+export function useChapterStats(
+  chapter: number,
+  dictID: string,
+  isStartLoad: boolean
+) {
   const [chapterStats, setChapterStats] = useState<IChapterStats | null>(null);
 
   useEffect(() => {
@@ -25,7 +27,8 @@ export function useChapterStats(chapter: number, isStartLoad: boolean) {
 
 interface IChapterStats {
   exerciseCount: number;
-  avgWrongCount: number;
+  avgWrongWordCount: number;
+  avgWrongInputCount: number;
 }
 
 async function getChapterStats(
@@ -37,11 +40,24 @@ async function getChapterStats(
     .toArray();
 
   const exerciseCount = records.length;
-  const totalWrongCount = records.reduce(
-    (total, { wrongCount }) => total + (wrongCount || 0),
+  const totalWrongWordCount = records.reduce(
+    (total, { wordNumber, correctWordIndexes }) =>
+      total + (wordNumber - correctWordIndexes.length),
     0
   );
-  const avgWrongCount = exerciseCount > 0 ? totalWrongCount / exerciseCount : 0;
+  const avgWrongWordCount =
+    exerciseCount > 0
+      ? toFixedNumber(totalWrongWordCount / exerciseCount, 2)
+      : 0;
 
-  return { exerciseCount, avgWrongCount };
+  const totalWrongInputCount = records.reduce(
+    (total, { wrongCount }) => total + (wrongCount ?? 0),
+    0
+  );
+  const avgWrongInputCount =
+    exerciseCount > 0
+      ? toFixedNumber(totalWrongInputCount / exerciseCount, 2)
+      : 0;
+
+  return { exerciseCount, avgWrongWordCount, avgWrongInputCount };
 }

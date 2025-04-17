@@ -32,7 +32,7 @@ import { useSaveChapterRecord } from "@/utils/db";
 import { useMixPanelChapterLogUploader } from "@/utils/mixpanel";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import type React from "react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useImmerReducer } from "use-immer";
 
 export function Page() {
@@ -51,6 +51,9 @@ export function Page() {
 
   const reviewModeInfo = useAtomValue(reviewModeInfoAtom);
   const isReviewMode = useAtomValue(isReviewModeAtom);
+
+  // 存储事件处理函数的引用
+  const keydownHandlerRef = useRef<((e: KeyboardEvent) => void) | null>(null);
 
   useEffect(() => {
     // 检测用户设备
@@ -97,6 +100,12 @@ export function Page() {
   useEffect(() => {
     if (!state.isTyping) {
       const onKeyDown = (e: KeyboardEvent) => {
+        // 检查当前是否在打字练习相关页面
+        const currentPath = window.location.pathname;
+        if (currentPath !== "/" && !currentPath.startsWith("/typing")) {
+          return;
+        }
+
         if (
           !isLoading &&
           e.key !== "Enter" &&
@@ -112,9 +121,22 @@ export function Page() {
           });
         }
       };
+
+      // 清理之前的事件监听器
+      if (keydownHandlerRef.current) {
+        window.removeEventListener("keydown", keydownHandlerRef.current);
+      }
+
+      // 设置新的事件监听器
+      keydownHandlerRef.current = onKeyDown;
       window.addEventListener("keydown", onKeyDown);
 
-      return () => window.removeEventListener("keydown", onKeyDown);
+      return () => {
+        if (keydownHandlerRef.current === onKeyDown) {
+          window.removeEventListener("keydown", keydownHandlerRef.current);
+          keydownHandlerRef.current = null;
+        }
+      };
     }
   }, [state.isTyping, isLoading, dispatch]);
 
@@ -155,6 +177,16 @@ export function Page() {
   }, [state.isTyping, dispatch]);
 
   useConfetti(state.isFinished);
+
+  // 确保在组件卸载时清理所有键盘事件监听器
+  useEffect(() => {
+    return () => {
+      if (keydownHandlerRef.current) {
+        window.removeEventListener("keydown", keydownHandlerRef.current);
+        keydownHandlerRef.current = null;
+      }
+    };
+  }, []);
 
   return (
     <TypingContext.Provider value={{ state: state, dispatch }}>

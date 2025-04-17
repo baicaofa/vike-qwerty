@@ -6,8 +6,16 @@ export interface IUser extends mongoose.Document {
   username: string;
   email: string;
   password: string;
+  isEmailVerified: boolean;
+  passwordResetToken?: string;
+  passwordResetExpires?: Date;
+  lastLogin?: Date;
+  loginAttempts: number;
+  lockUntil?: Date;
   createdAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
+  incrementLoginAttempts(): Promise<void>;
+  resetLoginAttempts(): Promise<void>;
 }
 
 const userSchema = new mongoose.Schema({
@@ -34,6 +42,18 @@ const userSchema = new mongoose.Schema({
     required: [true, "密码是必需的"],
     minlength: [6, "密码至少需要6个字符"],
   },
+  isEmailVerified: {
+    type: Boolean,
+    default: false,
+  },
+  passwordResetToken: String,
+  passwordResetExpires: Date,
+  lastLogin: Date,
+  loginAttempts: {
+    type: Number,
+    default: 0,
+  },
+  lockUntil: Date,
   createdAt: {
     type: Date,
     default: Date.now,
@@ -58,6 +78,31 @@ userSchema.methods.comparePassword = async function (
   candidatePassword: string
 ): Promise<boolean> {
   return bcrypt.compare(candidatePassword, this.password);
+};
+
+// 增加登录尝试次数
+userSchema.methods.incrementLoginAttempts = async function (): Promise<void> {
+  // 如果账户已锁定且锁定时间未过期，则不增加尝试次数
+  if (this.lockUntil && this.lockUntil > new Date()) {
+    return;
+  }
+
+  // 增加尝试次数
+  this.loginAttempts += 1;
+
+  // 如果尝试次数达到5次，锁定账户30分钟
+  if (this.loginAttempts >= 5) {
+    this.lockUntil = new Date(Date.now() + 30 * 60 * 1000); // 30分钟
+  }
+
+  await this.save();
+};
+
+// 重置登录尝试次数
+userSchema.methods.resetLoginAttempts = async function (): Promise<void> {
+  this.loginAttempts = 0;
+  this.lockUntil = undefined;
+  await this.save();
 };
 
 export default mongoose.model<IUser>("User", userSchema);

@@ -63,7 +63,6 @@ export default function usePronunciationSound(word: string, isLoop?: boolean) {
 
   const soundUrl = useMemo(() => {
     const url = generateWordSoundSrc(word, pronunciationConfig.type);
-    console.log("Generated sound URL:", url);
     return url;
   }, [word, pronunciationConfig.type]);
 
@@ -74,7 +73,6 @@ export default function usePronunciationSound(word: string, isLoop?: boolean) {
     volume: pronunciationConfig.volume,
     rate: pronunciationConfig.rate,
     onplayerror: (id, error) => {
-      console.error("Sound play error:", error);
       setError(error);
       setIsPlaying(false);
     },
@@ -92,26 +90,22 @@ export default function usePronunciationSound(word: string, isLoop?: boolean) {
 
     unListens.push(
       addHowlListener(sound, "play", () => {
-        console.log("Sound started playing");
         setIsPlaying(true);
         setError(null);
       })
     );
     unListens.push(
       addHowlListener(sound, "end", () => {
-        console.log("Sound finished playing");
         setIsPlaying(false);
       })
     );
     unListens.push(
       addHowlListener(sound, "pause", () => {
-        console.log("Sound paused");
         setIsPlaying(false);
       })
     );
     unListens.push(
       addHowlListener(sound, "playerror", (id, error) => {
-        console.error("Sound play error:", error);
         setError(error);
         setIsPlaying(false);
       })

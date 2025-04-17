@@ -3,7 +3,7 @@ import ReviewRecord from "../models/ReviewRecord";
 import WordRecord from "../models/WordRecord";
 import type { Request, Response } from "express";
 import mongoose from "mongoose";
-import { Model } from "mongoose";
+import type { Model } from "mongoose";
 
 // Define types for sync request and response
 interface SyncChange {
@@ -60,9 +60,6 @@ const safeParseDate = (dateValue: any): Date | undefined => {
 };
 
 export const syncData = async (req: Request, res: Response) => {
-  const session = await mongoose.startSession();
-  session.startTransaction();
-
   try {
     console.log("收到同步请求:", req.body);
     const { lastSyncTimestamp, changes } = req.body as SyncRequest;
@@ -106,7 +103,6 @@ export const syncData = async (req: Request, res: Response) => {
 
           await Model.findOneAndUpdate(query, updateData, {
             upsert: true,
-            session,
           });
           console.log(
             `成功${action === "create" ? "创建" : "更新"}记录:`,
@@ -118,13 +114,13 @@ export const syncData = async (req: Request, res: Response) => {
         }
       } else if (action === "delete") {
         try {
-          const record = await Model.findOne(query).session(session);
+          const record = await Model.findOne(query);
           if (record) {
             record.isDeleted = true;
             record.clientModifiedAt =
               safeParseDate(data.clientModifiedAt) || new Date();
             record.serverModifiedAt = new Date();
-            await record.save({ session });
+            await record.save();
             console.log("成功删除记录:", data.uuid);
           } else {
             console.log("未找到要删除的记录:", data.uuid);
@@ -147,11 +143,12 @@ export const syncData = async (req: Request, res: Response) => {
     for (const table of tables) {
       try {
         const Model = getModel(table);
+
+        // 查询所有更新的记录，包括已删除和未删除的
         const changes = await Model.find({
           userId,
           serverModifiedAt: { $gt: new Date(lastSyncTimestamp) },
-          isDeleted: false,
-        }).session(session);
+        });
 
         console.log(`从${table}获取到${changes.length}条变更`);
 
@@ -164,33 +161,31 @@ export const syncData = async (req: Request, res: Response) => {
       }
     }
 
-    // Commit transaction
-    await session.commitTransaction();
-    console.log("事务已提交");
-
     // Send response
+    const deletedCount = serverChanges.filter(
+      (c) => c.action === "delete"
+    ).length;
+    const updateCount = serverChanges.filter(
+      (c) => c.action === "update"
+    ).length;
+
     console.log("发送响应:", {
       newSyncTimestamp: new Date().toISOString(),
-      serverChanges: serverChanges.length,
+      totalChanges: serverChanges.length,
+      statistics: {
+        deleted: deletedCount,
+        updated: updateCount,
+      },
     });
     res.json({
       newSyncTimestamp: new Date().toISOString(),
       serverChanges,
     });
   } catch (error) {
-    // Abort transaction on error
-    if (session) {
-      await session.abortTransaction();
-    }
-
     console.error("Sync error:", error);
     res.status(500).json({
       message: "同步失败",
       error: error instanceof Error ? error.message : "未知错误",
     });
-  } finally {
-    if (session) {
-      session.endSession();
-    }
   }
 };

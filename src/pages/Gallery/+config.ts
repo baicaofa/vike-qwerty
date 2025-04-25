@@ -1,4 +1,4 @@
-import Page from "./+Page.tsx";
+import Page from "./+Page";
 
 export default {
   route: "/gallery", // 将此页面映射到根路径 /

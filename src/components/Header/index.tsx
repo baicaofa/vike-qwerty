@@ -17,8 +17,20 @@ const Header: React.FC<PropsWithChildren> = ({ children }) => {
           <h1>Keybr</h1>
         </a>
         <nav className="my-card on element flex w-auto content-center items-center justify-end space-x-3 rounded-xl bg-white p-4 transition-colors duration-300 dark:bg-gray-800">
-          <SyncStatusIndicator />
+          <div className="relative">
+            <a
+              href="https://typing.keybr.com.cn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="rounded-lg bg-blue-500 text-white font-black px-4 py-2 text-lg transition-all hover:bg-blue-400 hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100">
+                👉打字练习👈
+              </button>
+            </a>
+          </div>
+
           {children}
+          <SyncStatusIndicator />
         </nav>
       </div>
     </header>

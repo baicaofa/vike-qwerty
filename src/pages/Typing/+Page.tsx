@@ -5,6 +5,7 @@ import ResultScreen from "./components/ResultScreen";
 import Speed from "./components/Speed";
 import StartButton from "./components/StartButton";
 import Switcher from "./components/Switcher";
+import { UserAuthMenu } from "./components/UserAuthMenu";
 import WordList from "./components/WordList";
 import WordPanel from "./components/WordPanel";
 import { useConfetti } from "./hooks/useConfetti";
@@ -199,6 +200,7 @@ export function Page() {
           <PronunciationSwitcher />
           <Switcher />
           <StartButton isLoading={isLoading} />
+          <UserAuthMenu />
           <Tooltip content="跳过该词">
             <button
               className={`${

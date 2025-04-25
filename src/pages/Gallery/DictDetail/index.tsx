@@ -66,7 +66,7 @@ export default function DictDetail({
       setCurrentChapter(index);
       setReviewModeInfo((old) => ({ ...old, isReviewMode: false }));
       onOpenChange?.(false);
-      navigate("/");
+      window.location.href = "/";
     },
     [
       dict.id,

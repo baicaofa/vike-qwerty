@@ -1,0 +1,70 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 代码规范指南
+
+## TypeScript 规范
+- 必须定义明确的类型，禁止使用 any
+- 使用 interface 定义对象类型
+- 使用 type 定义联合类型或工具类型
+- 使用 type import 导入类型
+- 导出类型使用 export type
+- 避免使用 namespace
+
+## React 组件规范
+- 使用函数组件和 Hooks
+- Props 类型必须显式定义
+- 组件必须是纯函数
+- 使用 hooks 分离状态逻辑
+- 不使用 react-router-dom,路由需要遵循vike规则
+- 使用 memo、useCallback、useMemo 优化性能
+
+## 组件文件结构
+```typescript
+import { /* ... */ } from 'react'
+
+interface Props {
+  // props 类型定义
+}
+
+export default function ComponentName({ prop1, prop2 }: Props) {
+  // hooks 调用
+  
+  // 事件处理函数
+  
+  // 渲染
+  return (
+    // JSX
+  )
+}
+```
+
+## 样式规范
+- 使用 Tailwind CSS
+- 复杂组件可抽取常用类名
+- Dark Mode 使用 dark: 变体
+- 自定义样式使用 CSS Modules
+- 避免内联样式
+- 增加新代码，新功能调用库优先使用现有的
+
+## 状态管理
+- 使用 Jotai
+- atom 命名：xxxAtom
+- 相关 atom 放在同一文件
+- 复杂状态使用 atom family 或 atomWithStorage
+
+
+
+
+
+
+
+
+
+
+
+
+
+

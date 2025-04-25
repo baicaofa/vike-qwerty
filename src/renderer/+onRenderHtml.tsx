@@ -69,6 +69,8 @@ async function onRenderHtml(pageContext: PageContext) {
 
       gtag('config', 'G-8W6SFWEMG1')
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4796148218742064"
+     crossorigin="anonymous"></script>
     <script type="text/javascript">
       ;(function (c, l, a, r, i, t, y) {
         c[a] =

@@ -1,0 +1,30 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 项目结构指南
+
+## 目录结构
+项目采用以下目录结构：
+
+- `src/pages/`: 页面组件，基于文件的路由
+- `src/components/`: 通用组件
+- `src/renderer/`: Vike SSR 渲染配置
+- `src/store/`: 全局状态管理(Jotai)
+- `src/utils/`: 工具函数
+- `src/resources/`: 静态资源和配置
+- `src/typings/`: TypeScript 类型定义
+
+## 关键文件
+- `vite.config.ts`: Vite 配置文件
+- `tailwind.config.js`: Tailwind CSS 配置
+- `tsconfig.json`: TypeScript 配置
+- `.eslintrc.json`: ESLint 配置
+- `.prettierrc`: Prettier 配置
+
+## 命名规范
+- 文件夹：小写字母，单词间用连字符(-)分隔
+- 工具函数文件：camelCase，如 `wordListFetcher.ts`
+- 类型定义文件：camelCase，如 `resource.ts`
+- 配置文件：小写，如 `vite.config.ts`

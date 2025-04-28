@@ -231,3 +231,32 @@ export class RevisionWordRecord implements IRevisionWordRecord {
     this.errorCount = errorCount;
   }
 }
+
+export interface IFamiliarWord {
+  id?: number;
+  uuid: string;
+  word: string;
+  dict: string;
+  isFamiliar: boolean;
+  sync_status: SyncStatus;
+  last_modified: number;
+}
+
+export class FamiliarWord implements IFamiliarWord {
+  id?: number;
+  uuid: string;
+  word: string;
+  dict: string;
+  isFamiliar: boolean;
+  sync_status: SyncStatus;
+  last_modified: number;
+
+  constructor(word: string, dict: string, isFamiliar: boolean) {
+    this.uuid = generateUUID();
+    this.word = word;
+    this.dict = dict;
+    this.isFamiliar = isFamiliar;
+    this.sync_status = "local_new";
+    this.last_modified = Date.now();
+  }
+}

@@ -75,6 +75,7 @@ export default function WordPanel() {
         reloadCurrentWordComponent();
       } else {
         setCurrentWordExerciseCount(0);
+        // 即使单词被标记为熟词，也继续在当前章节练习
         if (isReviewMode) {
           dispatch({
             type: TypingStateActionType.NEXT_WORD,
@@ -103,11 +104,10 @@ export default function WordPanel() {
     state.chapterData.words.length,
     currentWordExerciseCount,
     loopWordTimes,
-    dispatch,
-    reloadCurrentWordComponent,
     isReviewMode,
+    dispatch,
     updateReviewRecord,
-    setReviewModeInfo,
+    reloadCurrentWordComponent,
   ]);
 
   const onSkipWord = useCallback(

@@ -1,5 +1,6 @@
 import Layout from "../../components/Layout";
 import { DictChapterButton } from "./components/DictChapterButton";
+import MarkWordButton from "./components/MarkWordButton";
 import PronunciationSwitcher from "./components/PronunciationSwitcher";
 import ResultScreen from "./components/ResultScreen";
 import Speed from "./components/Speed";
@@ -9,6 +10,7 @@ import { UserAuthMenu } from "./components/UserAuthMenu";
 import WordList from "./components/WordList";
 import WordPanel from "./components/WordPanel";
 import { useConfetti } from "./hooks/useConfetti";
+import useMarkedWords from "./hooks/useMarkedWords";
 import { useWordList } from "./hooks/useWordList";
 import {
   TypingContext,
@@ -16,6 +18,7 @@ import {
   initialState,
   typingReducer,
 } from "./store";
+import { markedWordsAtom } from "./store/markedWordsAtom";
 import { DonateCard } from "@/components/DonateCard";
 import Header from "@/components/Header";
 import StarCard from "@/components/StarCard";
@@ -52,6 +55,9 @@ export function Page() {
 
   const reviewModeInfo = useAtomValue(reviewModeInfoAtom);
   const isReviewMode = useAtomValue(isReviewModeAtom);
+
+  const [markedWords, setMarkedWords] = useAtom(markedWordsAtom);
+  const { isWordMarked, filterUnmarkedWords } = useMarkedWords();
 
   // 存储事件处理函数的引用
   const keydownHandlerRef = useRef<((e: KeyboardEvent) => void) | null>(null);
@@ -148,13 +154,18 @@ export function Page() {
           ? reviewModeInfo.reviewRecord.index
           : 0;
 
+      const filteredWords = filterUnmarkedWords(words);
       dispatch({
         type: TypingStateActionType.SETUP_CHAPTER,
-        payload: { words, shouldShuffle: randomConfig.isOpen, initialIndex },
+        payload: {
+          words: filteredWords,
+          shouldShuffle: randomConfig.isOpen,
+          initialIndex,
+        },
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [words]);
+  }, [words, markedWords]);
 
   useEffect(() => {
     // 当用户完成章节后且完成 word Record 数据保存，记录 chapter Record 数据,
@@ -225,7 +236,14 @@ export function Page() {
                   ></div>
                 </div>
               ) : (
-                !state.isFinished && <WordPanel />
+                !state.isFinished && (
+                  <WordPanel>
+                    <MarkWordButton
+                      word={state.currentWord}
+                      isMarked={isWordMarked(state.currentWord)}
+                    />
+                  </WordPanel>
+                )
               )}
             </div>
             <Speed />

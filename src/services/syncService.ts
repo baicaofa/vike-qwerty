@@ -140,6 +140,25 @@ const getLocalChanges = async () => {
     });
   }
 
+  // 获取 familiarWords 的变更
+  const familiarWords = await db.familiarWords
+    .where("sync_status")
+    .anyOf(["local_new", "local_modified", "local_deleted"])
+    .toArray();
+
+  for (const record of familiarWords) {
+    changes.push({
+      table: "familiarWords",
+      action:
+        record.sync_status === "local_deleted"
+          ? "delete"
+          : record.sync_status === "local_new"
+          ? "create"
+          : "update",
+      data: record,
+    });
+  }
+
   return changes;
 };
 
@@ -292,6 +311,9 @@ const updateLocalRecordStatus = async (changes: any[]) => {
         break;
       case "reviewRecords":
         dbTable = db.reviewRecords;
+        break;
+      case "familiarWords":
+        dbTable = db.familiarWords;
         break;
       default:
         continue;
@@ -542,5 +564,16 @@ export const hasPendingChanges = async (): Promise<boolean> => {
     .anyOf(["local_new", "local_modified", "local_deleted"])
     .count();
 
-  return wordRecordsCount + chapterRecordsCount + reviewRecordsCount > 0;
+  const familiarWordsCount = await db.familiarWords
+    .where("sync_status")
+    .anyOf(["local_new", "local_modified", "local_deleted"])
+    .count();
+
+  return (
+    wordRecordsCount +
+      chapterRecordsCount +
+      reviewRecordsCount +
+      familiarWordsCount >
+    0
+  );
 };

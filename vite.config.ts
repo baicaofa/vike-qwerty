@@ -75,7 +75,7 @@ export default defineConfig(async ({ mode }) => {
       minify: false, // 禁用压缩
     },
     esbuild: {
-      drop: mode === "development" ? [] : ["console", "debugger"],
+      drop: mode === "development" ? [] : ["debugger"],
     },
     define: {
       REACT_APP_DEPLOY_ENV: JSON.stringify(process.env.REACT_APP_DEPLOY_ENV),

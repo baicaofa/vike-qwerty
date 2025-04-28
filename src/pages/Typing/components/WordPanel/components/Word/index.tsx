@@ -1,6 +1,7 @@
 import type { WordUpdateAction } from "../InputHandler";
 import InputHandler from "../InputHandler";
 import Letter from "./Letter";
+import MarkFamiliarButton from "./MarkFamiliarButton";
 import Notation from "./Notation";
 import { TipAlert } from "./TipAlert";
 import style from "./index.module.css";
@@ -11,6 +12,7 @@ import type { WordPronunciationIconRef } from "@/components/WordPronunciationIco
 import { WordPronunciationIcon } from "@/components/WordPronunciationIcon";
 import { EXPLICIT_SPACE } from "@/constants";
 import useKeySounds from "@/hooks/useKeySounds";
+import { useFamiliarWords } from "@/pages/Typing/hooks/useFamiliarWords";
 import { TypingContext, TypingStateActionType } from "@/pages/Typing/store";
 import {
   currentChapterAtom,
@@ -64,6 +66,9 @@ export default function WordComponent({
 
   const [showTipAlert, setShowTipAlert] = useState(false);
   const wordPronunciationIconRef = useRef<WordPronunciationIconRef>(null);
+
+  const { isFamiliar } = useFamiliarWords();
+  const isWordFamiliar = isFamiliar(word);
 
   useEffect(() => {
     // run only when word changes
@@ -364,6 +369,7 @@ export default function WordComponent({
                 />
               );
             })}
+            <MarkFamiliarButton word={word} isFamiliar={isWordFamiliar} />
           </div>
           {pronunciationIsOpen && (
             <div className="absolute -right-12 top-1/2 h-9 w-9 -translate-y-1/2 transform ">

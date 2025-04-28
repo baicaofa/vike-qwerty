@@ -5,8 +5,14 @@ import type {
   IRevisionDictRecord,
   IWordRecord,
   LetterMistakes,
+  IFamiliarWord,
 } from "./record";
-import { ChapterRecord, ReviewRecord, WordRecord } from "./record";
+import {
+  ChapterRecord,
+  ReviewRecord,
+  WordRecord,
+  FamiliarWord,
+} from "./record";
 import { TypingContext, TypingStateActionType } from "@/pages/Typing/store";
 import type { TypingState } from "@/pages/Typing/store/type";
 import {
@@ -23,7 +29,7 @@ class RecordDB extends Dexie {
   wordRecords!: Table<IWordRecord, number>;
   chapterRecords!: Table<IChapterRecord, number>;
   reviewRecords!: Table<IReviewRecord, number>;
-
+  familiarWords!: Table<IFamiliarWord, number>;
   revisionDictRecords!: Table<IRevisionDictRecord, number>;
   revisionWordRecords!: Table<IWordRecord, number>;
 
@@ -122,6 +128,20 @@ class RecordDB extends Dexie {
             throw err; // 抛出错误
           });
       });
+
+    // 版本5的数据库模式更新（添加熟词表）
+    this.version(5).stores({
+      wordRecords:
+        "++id, &uuid, word, timeStamp, dict, chapter, wrongCount, [dict+chapter], sync_status, last_modified",
+      chapterRecords:
+        "++id, &uuid, timeStamp, dict, chapter, time, [dict+chapter], sync_status, last_modified",
+      reviewRecords:
+        "++id, &uuid, dict, createTime, isFinished, sync_status, last_modified",
+      familiarWords:
+        "++id, &uuid, word, dict, isFamiliar, sync_status, last_modified, [dict+word]",
+      revisionDictRecords: "++id",
+      revisionWordRecords: "++id",
+    });
   }
 }
 
@@ -130,6 +150,7 @@ export const db = new RecordDB();
 db.wordRecords.mapToClass(WordRecord);
 db.chapterRecords.mapToClass(ChapterRecord);
 db.reviewRecords.mapToClass(ReviewRecord);
+db.familiarWords.mapToClass(FamiliarWord);
 
 export function useSaveChapterRecord() {
   const currentChapter = useAtomValue(currentChapterAtom);
@@ -261,4 +282,83 @@ export function useDeleteWordRecord() {
   }, []);
 
   return { deleteWordRecord };
+}
+
+export function useMarkFamiliarWord() {
+  const markFamiliarWord = useCallback(
+    async (word: string, dict: string, isFamiliar: boolean) => {
+      try {
+        // 查找是否已存在记录
+        const existingRecord = await db.familiarWords
+          .where("[dict+word]")
+          .equals([dict, word])
+          .first();
+
+        if (existingRecord) {
+          // 更新现有记录
+          existingRecord.isFamiliar = isFamiliar;
+          existingRecord.sync_status = "local_modified";
+          existingRecord.last_modified = Date.now();
+          await db.familiarWords.put(existingRecord);
+          return existingRecord;
+        } else {
+          // 创建新记录
+          const newRecord = new FamiliarWord(word, dict, isFamiliar);
+          const id = await db.familiarWords.add(newRecord);
+          newRecord.id = id;
+          return newRecord;
+        }
+      } catch (error) {
+        console.error("标记熟词时出错：", error);
+        throw error;
+      }
+    },
+    []
+  );
+
+  return { markFamiliarWord };
+}
+
+export function useDeleteFamiliarWord() {
+  const deleteFamiliarWord = useCallback(async (word: string, dict: string) => {
+    try {
+      // 查找记录
+      const record = await db.familiarWords
+        .where("[dict+word]")
+        .equals([dict, word])
+        .first();
+
+      if (record) {
+        // 更新记录的sync_status为local_deleted
+        record.sync_status = "local_deleted";
+        record.last_modified = Date.now();
+        await db.familiarWords.put(record);
+        return true;
+      }
+      return false;
+    } catch (error) {
+      console.error("删除熟词记录时出错：", error);
+      throw error;
+    }
+  }, []);
+
+  return { deleteFamiliarWord };
+}
+
+export function useGetFamiliarWords() {
+  const getFamiliarWords = useCallback(async (dict: string) => {
+    try {
+      return await db.familiarWords
+        .where("dict")
+        .equals(dict)
+        .and((record) => record.sync_status !== "local_deleted")
+        .and((record) => record.isFamiliar === true)
+        .toArray();
+    } catch (error) {
+      console.error("获取熟词列表时出错：", error);
+      throw error;
+    }
+  }, []);
+
+  return { getFamiliarWords };
 }

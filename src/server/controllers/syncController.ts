@@ -1,4 +1,5 @@
 import ChapterRecord from "../models/ChapterRecord";
+import FamiliarWord from "../models/FamiliarWord";
 import ReviewRecord from "../models/ReviewRecord";
 import WordRecord from "../models/WordRecord";
 import type { Request, Response } from "express";
@@ -7,7 +8,7 @@ import type { Model } from "mongoose";
 
 // Define types for sync request and response
 interface SyncChange {
-  table: "wordRecords" | "chapterRecords" | "reviewRecords";
+  table: "wordRecords" | "chapterRecords" | "reviewRecords" | "familiarWords";
   action: "create" | "update" | "delete";
   data: any;
 }
@@ -31,6 +32,8 @@ const getModel = (table: string): Model<any> => {
       return ChapterRecord;
     case "reviewRecords":
       return ReviewRecord;
+    case "familiarWords":
+      return FamiliarWord;
     default:
       throw new Error(`Unknown table: ${table}`);
   }
@@ -39,7 +42,11 @@ const getModel = (table: string): Model<any> => {
 // Helper function to format a record for sync response
 const formatRecordForSync = (record: any, table: string): SyncChange => {
   return {
-    table: table as "wordRecords" | "chapterRecords" | "reviewRecords",
+    table: table as
+      | "wordRecords"
+      | "chapterRecords"
+      | "reviewRecords"
+      | "familiarWords",
     action: record.isDeleted ? "delete" : "update",
     data: record.toObject(),
   };
@@ -134,11 +141,12 @@ export const syncData = async (req: Request, res: Response) => {
 
     // Query server changes since last sync
     const serverChanges: SyncChange[] = [];
-    const tables: ("wordRecords" | "chapterRecords" | "reviewRecords")[] = [
-      "wordRecords",
-      "chapterRecords",
-      "reviewRecords",
-    ];
+    const tables: (
+      | "wordRecords"
+      | "chapterRecords"
+      | "reviewRecords"
+      | "familiarWords"
+    )[] = ["wordRecords", "chapterRecords", "reviewRecords", "familiarWords"];
 
     for (const table of tables) {
       try {

@@ -175,3 +175,4 @@
 
 JS API 来自于[react-code-game](https://github.com/webzhd/react-code-game) ，感谢项目对 JS API 的爬取与预处理。
 <br/><br/>
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/baicaofa/vike-qwerty)

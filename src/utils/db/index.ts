@@ -1,17 +1,18 @@
 import { generateUUID } from "../uuid";
 import type {
   IChapterRecord,
+  IFamiliarWord,
+  IPerformanceEntry,
   IReviewRecord,
   IRevisionDictRecord,
   IWordRecord,
-  LetterMistakes,
-  IFamiliarWord,
+  LetterMistakes, // 如果 IPerformanceEntry 也在此文件中使用，确保它也被导入
 } from "./record";
 import {
   ChapterRecord,
+  FamiliarWord,
   ReviewRecord,
   WordRecord,
-  FamiliarWord,
 } from "./record";
 import { TypingContext, TypingStateActionType } from "@/pages/Typing/store";
 import type { TypingState } from "@/pages/Typing/store/type";
@@ -26,7 +27,7 @@ import { useAtomValue } from "jotai";
 import { useCallback, useContext } from "react";
 
 class RecordDB extends Dexie {
-  wordRecords!: Table<IWordRecord, number>;
+  wordRecords!: Table<IWordRecord, number>; // id is the primary key (number)
   chapterRecords!: Table<IChapterRecord, number>;
   reviewRecords!: Table<IReviewRecord, number>;
   familiarWords!: Table<IFamiliarWord, number>;
@@ -142,6 +143,137 @@ class RecordDB extends Dexie {
       revisionDictRecords: "++id",
       revisionWordRecords: "++id",
     });
+    // 新版本，用于 WordRecord 结构调整
+    this.version(6)
+      .stores({
+        // wordRecords 的主键仍然是 ++id，uuid 是唯一索引。
+        // 添加 [dict+word] 复合索引用于快速查找特定单词记录。
+        // lastPracticedAt 用于按练习时间排序或查询。
+        wordRecords:
+          "++id, &uuid, &[dict+word], dict, word, lastPracticedAt, sync_status, last_modified",
+        // 其他表结构保持不变，但需要在这里重新声明，否则它们会被移除
+        chapterRecords:
+          "++id, &uuid, dict, chapter, timeStamp, sync_status, last_modified",
+        reviewRecords:
+          "++id, &uuid, dict, timeStamp, sync_status, last_modified",
+        familiarWords: "++id, &uuid, dict, word, sync_status, last_modified",
+      })
+      .upgrade(async (tx) => {
+        console.log(
+          "Upgrading Dexie schema to version 6 for WordRecord restructuring..."
+        );
+        // 明确指定事务中的表类型
+        const oldWordRecordsTable = tx.table<IWordRecord, number>(
+          "wordRecords"
+        );
+        const oldRecordsArray = await oldWordRecordsTable.toArray();
+
+        const newWordRecordsMap = new Map<string, IWordRecord>();
+
+        for (const oldRecord of oldRecordsArray) {
+          // 确保旧记录中的字段存在，以避免运行时错误
+          const word = oldRecord.word;
+          const dict = oldRecord.dict;
+          const timeStamp = oldRecord.timeStamp; // 旧字段
+          const chapter = oldRecord.chapter; // 旧字段
+          const timing = oldRecord.timing; // 旧字段
+          const wrongCount = oldRecord.wrongCount; // 旧字段
+          const mistakes = oldRecord.mistakes; // 旧字段
+          const uuid = oldRecord.uuid;
+          const sync_status = oldRecord.sync_status;
+          const last_modified = oldRecord.last_modified;
+
+          if (
+            word === undefined ||
+            dict === undefined ||
+            timeStamp === undefined
+          ) {
+            console.warn(
+              "Skipping old record due to missing essential fields:",
+              oldRecord
+            );
+            continue;
+          }
+
+          const key = `${dict}-${word}`;
+
+          const performanceEntry: IPerformanceEntry = {
+            timeStamp: timeStamp,
+            chapter: chapter !== undefined ? chapter : null,
+            timing: timing || [],
+            wrongCount: wrongCount || 0,
+            mistakes: mistakes || {},
+          };
+
+          let newRecord = newWordRecordsMap.get(key);
+
+          if (newRecord) {
+            newRecord.performanceHistory.push(performanceEntry);
+            // 更新 lastPracticedAt (取最新的)
+            if (timeStamp > (newRecord.lastPracticedAt || 0)) {
+              newRecord.lastPracticedAt = timeStamp;
+            }
+            // 更新 firstSeenAt (取最早的)
+            if (
+              newRecord.firstSeenAt === undefined ||
+              timeStamp < newRecord.firstSeenAt
+            ) {
+              newRecord.firstSeenAt = timeStamp;
+            }
+            // 对于 uuid, sync_status, last_modified，通常选择最新的记录的值
+            if (last_modified > newRecord.last_modified) {
+              newRecord.last_modified = last_modified;
+              newRecord.uuid = uuid; // 使用最新记录的 uuid
+              newRecord.sync_status = sync_status; // 使用最新记录的 sync_status
+            }
+          } else {
+            // 创建一个新的 WordRecord 实例
+            // 注意：这里的 WordRecord 构造函数是更新后的版本
+            newRecord = new WordRecord(word, dict); // 构造函数会生成新的 uuid 和默认 sync_status
+            newRecord.performanceHistory.push(performanceEntry);
+            newRecord.firstSeenAt = timeStamp;
+            newRecord.lastPracticedAt = timeStamp;
+            // 初始时，使用当前记录的 uuid, sync_status, last_modified
+            newRecord.uuid = uuid;
+            newRecord.sync_status = sync_status;
+            newRecord.last_modified = last_modified;
+
+            newWordRecordsMap.set(key, newRecord);
+          }
+        }
+
+        // 清空旧表并插入新数据
+        await oldWordRecordsTable.clear();
+
+        const recordsToPut: IWordRecord[] = [];
+        Array.from(newWordRecordsMap.values()).forEach((record) => {
+          // 确保 performanceHistory 按时间戳排序
+          record.performanceHistory.sort((a, b) => a.timeStamp - b.timeStamp);
+          // 重新设置 firstSeenAt 和 lastPracticedAt 以确保正确性
+          if (record.performanceHistory.length > 0) {
+            record.firstSeenAt = record.performanceHistory[0].timeStamp;
+            record.lastPracticedAt =
+              record.performanceHistory[
+                record.performanceHistory.length - 1
+              ].timeStamp;
+          } else {
+            // 如果没有历史记录，这些字段可以为 undefined 或特定值
+            delete record.firstSeenAt;
+            delete record.lastPracticedAt;
+          }
+          // 确保 sync_status 和 last_modified 是合理的
+          // 如果合并了多个记录，我们已尝试保留最新的状态
+          // 如果是 WordRecord 构造函数创建的，它有默认值
+          recordsToPut.push(record);
+        }); // <--- 在这里添加了缺失的圆括号
+
+        if (recordsToPut.length > 0) {
+          await oldWordRecordsTable.bulkPut(recordsToPut);
+        }
+        console.log(
+          `Dexie schema upgrade to version 6 completed. Migrated ${recordsToPut.length} WordRecord(s).`
+        );
+      });
   }
 }
 
@@ -227,27 +359,76 @@ export function useSaveWordRecord() {
         timing.push(diff);
       }
 
-      const wordRecord = new WordRecord(
-        word,
-        dictID,
-        isRevision ? -1 : currentChapter,
-        timing,
-        wrongCount,
-        letterMistake
-      );
+      // 1. 创建 IPerformanceEntry
+      const performanceEntry: IPerformanceEntry = {
+        timeStamp: Date.now(), // 使用当前时间戳
+        chapter: isRevision ? null : currentChapter, // 根据是否复习模式设置章节
+        timing: timing,
+        wrongCount: wrongCount,
+        mistakes: letterMistake,
+      };
 
       let dbID = -1;
       try {
-        dbID = await db.wordRecords.add(wordRecord);
+        // 2. 查找现有的 WordRecord
+        const existingRecord = await db.wordRecords
+          .where({ dict: dictID, word: word })
+          .first();
+
+        if (existingRecord) {
+          // 3. 如果存在，更新记录
+          // 添加新的性能记录到历史记录中
+          existingRecord.performanceHistory.push(performanceEntry);
+          // 更新最后练习时间
+          existingRecord.lastPracticedAt = performanceEntry.timeStamp;
+          // 如果是首次记录或更早的记录，更新首次见到时间
+          if (
+            !existingRecord.firstSeenAt ||
+            performanceEntry.timeStamp < existingRecord.firstSeenAt
+          ) {
+            existingRecord.firstSeenAt = performanceEntry.timeStamp;
+          }
+          // 确保 sync_status 正确更新
+          if (existingRecord.sync_status === "synced") {
+            existingRecord.sync_status = "local_modified";
+          }
+          existingRecord.last_modified = Date.now();
+          if (existingRecord.id !== undefined) {
+            // 确保 id 存在才更新
+            await db.wordRecords.put(existingRecord);
+            dbID = existingRecord.id;
+          } else {
+            // 如果 existingRecord.id 未定义，这通常不应该发生，但作为回退
+            console.warn(
+              "Existing record found without an ID, attempting to add as new:",
+              existingRecord
+            );
+            const newWordRecord = new WordRecord(
+              word,
+              dictID,
+              performanceEntry
+            );
+            dbID = await db.wordRecords.add(newWordRecord);
+          }
+        } else {
+          // 4. 如果不存在，创建新记录
+          const newWordRecord = new WordRecord(word, dictID, performanceEntry);
+          // newWordRecord 的构造函数已设置 sync_status = LOCAL_NEW 和 last_modified
+          dbID = await db.wordRecords.add(newWordRecord);
+        }
       } catch (e) {
-        console.error(e);
+        console.error("Error saving word record:", e);
       }
+
+      // 5. 更新 UI
       if (dispatch) {
-        dbID > 0 &&
+        if (dbID > 0) {
+          // 确保 dbID 有效
           dispatch({
             type: TypingStateActionType.ADD_WORD_RECORD_ID,
-            payload: dbID,
+            payload: dbID, // 这个 payload 可能需要重新考虑其含义，因为现在是更新或创建
           });
+        }
         dispatch({
           type: TypingStateActionType.SET_IS_SAVING_RECORD,
           payload: false,
@@ -263,18 +444,19 @@ export function useSaveWordRecord() {
 export function useDeleteWordRecord() {
   const deleteWordRecord = useCallback(async (word: string, dict: string) => {
     try {
-      // 先查找记录
-      const records = await db.wordRecords.where({ word, dict }).toArray();
+      // 查找记录，因为 [dict+word] 是唯一索引，所以最多只会有一条记录
+      const record = await db.wordRecords
+        .where({ dict: dict, word: word })
+        .first();
 
-      // 更新记录的sync_status为local_deleted
-      for (const record of records) {
-        record.sync_status = "local_deleted";
+      if (record && record.id !== undefined) {
+        // 更新记录的sync_status为local_deleted
+        record.sync_status = "local_deleted"; // 使用字符串常量表示同步状态
         record.last_modified = Date.now();
         await db.wordRecords.put(record);
+        return 1; // 表示成功标记了一条记录
       }
-
-      // 返回更新的记录数量
-      return records.length;
+      return 0; // 没有找到记录或记录没有id
     } catch (error) {
       console.error(`删除单词记录时出错：`, error);
       return 0;

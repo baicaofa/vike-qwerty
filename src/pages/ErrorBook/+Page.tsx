@@ -6,7 +6,8 @@ import RowDetail from "./RowDetail";
 import { currentRowDetailAtom } from "./store";
 import type { groupedWordRecords } from "./type";
 import { db, useDeleteWordRecord } from "@/utils/db";
-import type { WordRecord } from "@/utils/db/record";
+import type { IWordRecord, WordRecord } from "@/utils/db/record";
+// 确保 IWordRecord 被导入或 WordRecord 类型可用
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import { useAtomValue } from "jotai";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -66,13 +67,20 @@ export function Page() {
 
   useEffect(() => {
     db.wordRecords
-      .where("wrongCount")
-      .above(0)
-      .toArray()
-      .then((records) => {
+      .toArray() // 获取所有 wordRecords
+      .then((allWordRecords: IWordRecord[]) => {
+        // 明确类型为 IWordRecord[]
+        // 筛选出包含错误练习的记录
+        const errorRecords = allWordRecords.filter(
+          (record) =>
+            record.performanceHistory &&
+            record.performanceHistory.some((perf) => perf.wrongCount > 0)
+        );
+
         const groups: groupedWordRecords[] = [];
 
-        records.forEach((record) => {
+        errorRecords.forEach((record) => {
+          // record 类型是 IWordRecord
           let group = groups.find(
             (g) => g.word === record.word && g.dict === record.dict
           );
@@ -80,19 +88,30 @@ export function Page() {
             group = {
               word: record.word,
               dict: record.dict,
-              records: [],
+              records: [], // records 数组将存储 IWordRecord 对象
               wrongCount: 0,
             };
             groups.push(group);
           }
-          group.records.push(record as WordRecord);
+          // groupedWordRecords.records 类型是 WordRecord[], 但我们推入的是 IWordRecord
+          // 如果后续只访问属性，这是可以的。或者将 groupedWordRecords.records 改为 IWordRecord[]
+          group.records.push(record as WordRecord); // 保持原有类型断言，但注意实际是 IWordRecord
         });
 
         groups.forEach((group) => {
-          group.wrongCount = group.records.reduce((acc, cur) => {
-            acc += cur.wrongCount;
-            return acc;
-          }, 0);
+          // group.records 中的每个 'curRecord' 实际上是 IWordRecord
+          group.wrongCount = group.records.reduce(
+            (accWrongCountInGroup, curRecord) => {
+              const wrongsInCurrentRecord = curRecord.performanceHistory.reduce(
+                (accPerfWrongCount, perfEntry) => {
+                  return accPerfWrongCount + perfEntry.wrongCount;
+                },
+                0
+              );
+              return accWrongCountInGroup + wrongsInCurrentRecord;
+            },
+            0
+          );
         });
 
         setGroupedRecords(groups);

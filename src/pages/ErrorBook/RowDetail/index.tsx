@@ -10,6 +10,7 @@ import { WordPronunciationIcon } from "@/components/WordPronunciationIcon";
 import Phonetic from "@/pages/Typing/components/WordPanel/components/Phonetic";
 import Letter from "@/pages/Typing/components/WordPanel/components/Word/Letter";
 import { idDictionaryMap } from "@/resources/dictionary";
+import type { IPerformanceEntry, IWordRecord } from "@/utils/db/record";
 import { useSetAtom } from "jotai";
 import { useCallback, useMemo, useRef } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
@@ -18,6 +19,8 @@ import CheckCircle from "~icons/heroicons/check-circle-20-solid";
 import ClockIcon from "~icons/heroicons/clock-20-solid";
 import XCircle from "~icons/heroicons/x-circle-20-solid";
 import IconX from "~icons/tabler/x";
+
+// 确保 IPerformanceEntry 被导入
 
 type RowDetailProps = {
   currentRowDetail: groupedWordRecords;
@@ -38,19 +41,39 @@ const RowDetail: React.FC<RowDetailProps> = ({
   const wordPronunciationIconRef = useRef<WordPronunciationIconRef>(null);
 
   const rowDetailData: RowDetailData = useMemo(() => {
-    const time =
-      currentRowDetail.records.length > 0
-        ? currentRowDetail.records.reduce(
-            (acc, cur) => acc + cur.totalTime,
-            0
-          ) / currentRowDetail.records.length
+    let totalPracticeTime = 0;
+    let totalPerformanceEntries = 0;
+    let correctPerformanceEntries = 0;
+
+    // currentRowDetail.records 是 WordRecord[] (类型上), 实际是 IWordRecord[]
+    (currentRowDetail.records as IWordRecord[]).forEach((record) => {
+      if (record.performanceHistory) {
+        record.performanceHistory.forEach((perfEntry) => {
+          totalPracticeTime += perfEntry.timing.reduce((sum, t) => sum + t, 0);
+          totalPerformanceEntries++;
+          if (perfEntry.wrongCount === 0) {
+            correctPerformanceEntries++;
+          }
+        });
+      }
+    });
+
+    const averageTimePerEntry =
+      totalPerformanceEntries > 0
+        ? totalPracticeTime / totalPerformanceEntries
         : 0;
-    const timeStr = (time / 1000).toFixed(2);
-    const correctCount = currentRowDetail.records.length;
-    const wrongCount = currentRowDetail.wrongCount;
-    const sumCount = correctCount + wrongCount;
-    return { time: timeStr, sumCount, correctCount, wrongCount };
-  }, [currentRowDetail.records, currentRowDetail.wrongCount]);
+    const timeStr = (averageTimePerEntry / 1000).toFixed(2);
+
+    const wrongCount = currentRowDetail.wrongCount; // 这个是聚合后的总错误次数
+    const sumCount = totalPerformanceEntries; // 总练习次数
+
+    return {
+      time: timeStr,
+      sumCount,
+      correctCount: correctPerformanceEntries,
+      wrongCount,
+    };
+  }, [currentRowDetail]);
 
   const onClose = useCallback(() => {
     setCurrentRowDetail(null);

@@ -1,100 +1,92 @@
-/**
- * 引入 Mongoose 库及其相关类型
- * mongoose 是用于连接和操作 MongoDB 数据库的 Node.js 库
- * Schema 用于定义 MongoDB 文档的结构
- * Document 是 Mongoose 中表示文档的接口
- */
+import type { IUser } from "./User";
 import type { Document } from "mongoose";
 import mongoose, { Schema } from "mongoose";
 
-/**
- * 定义 IWordRecord 接口，继承自 Mongoose 的 Document 接口
- * 该接口描述了 WordRecord 文档的结构
- */
-export interface IWordRecord extends Document {
-  // 唯一标识符，用于标识每个单词记录
-  uuid: string;
-  // 用户 ID，关联到 User 模型，使用 Mongoose 的 ObjectId 类型
-  userId: mongoose.Types.ObjectId;
-  // 单词内容
-  word: string;
-  // 时间戳
-  timeStamp: Date;
-  // 词典ID
-  dict: string;
-  // 章节ID
+// 修改: 将 UserDocument 修改为 IUser
+
+// 与客户端一致的 IPerformanceEntry，但 timeStamp 使用 Date 类型
+export interface IPerformanceEntry {
+  timeStamp: Date; // 服务端通常用 Date 类型
   chapter: number | null;
-  // 正确次数中输入每个字母的时间差
   timing: number[];
-  // 错误次数
   wrongCount: number;
-  // 每个字母被错误输入成什么
-  mistakes: { [index: number]: string[] };
-  // 同步状态
-  sync_status: string;
-  // 最后修改时间
-  last_modified: number;
-  // 客户端最后修改时间
-  clientModifiedAt: Date;
-  // 服务器最后修改时间
-  serverModifiedAt: Date;
-  // 记录是否已删除的标志
+  mistakes: { [index: number]: string[] }; // 与客户端 LetterMistakes 一致
+  // entryUuid?: string; // 可选：为每个 performance entry 添加唯一ID，便于精确操作和去重
+}
+
+export interface IWordRecord extends Document {
+  uuid: string; // 全局唯一 ID，用于同步，标识这个 (word, dict, userId) 的组合
+  userId: mongoose.Types.ObjectId | IUser; // 修改: 将 UserDocument 修改为 IUser // 关联到 User 模型
+  word: string;
+  dict: string;
+  // timeStamp: Date; // 移除
+  // chapter: number | null; // 移除
+  // timing: number[]; // 移除
+  // wrongCount: number; // 移除
+  // mistakes: { [index: number]: string[] }; // 移除
+
+  performanceHistory: IPerformanceEntry[]; // 新增：历史表现记录
+
+  firstSeenAt?: Date; // 新增：首次记录该单词的时间戳
+  lastPracticedAt?: Date; // 新增：最近一次练习该单词的时间戳
+
+  sync_status: string; // 同步状态，主要由客户端维护，服务器可记录
+  last_modified: number; // 客户端记录的最后修改时间戳 (Unix timestamp)
+  clientModifiedAt: Date; // 客户端记录的最后修改时间 (Date object)
+  // serverModifiedAt: Date; // Mongoose timestamps 会自动添加 updatedAt，可作为此用途
   isDeleted: boolean;
-  // 记录创建时间，由 Mongoose 自动管理
+
+  // Mongoose Timestamps
   createdAt: Date;
-  // 记录更新时间，由 Mongoose 自动管理
   updatedAt: Date;
 }
 
-/**
- * 定义 WordRecordSchema，用于描述 WordRecord 文档的结构
- * 该模式包含了文档的字段定义和验证规则
- */
-const WordRecordSchema: Schema = new Schema(
+const PerformanceEntrySchema: Schema<IPerformanceEntry> = new Schema(
   {
-    // 唯一标识符，字符串类型，必需且唯一
-    uuid: { type: String, required: true, unique: true },
-    // 用户 ID，关联到 User 模型，使用 Mongoose 的 ObjectId 类型，必需
-    userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
-    // 单词内容，字符串类型，必需
-    word: { type: String, required: true },
-    // 时间戳，日期类型，必需
     timeStamp: { type: Date, required: true },
-    // 词典ID，字符串类型，必需
-    dict: { type: String, required: true },
-    // 章节ID，数字类型，可以为null
     chapter: { type: Number, default: null },
-    // 正确次数中输入每个字母的时间差，数组类型，必需
     timing: { type: [Number], required: true },
-    // 错误次数，数字类型，必需
     wrongCount: { type: Number, required: true },
-    // 每个字母被错误输入成什么，对象类型，必需
-    mistakes: { type: Schema.Types.Mixed, required: true },
-    // 同步状态，字符串类型，默认值为 "synced"
-    sync_status: { type: String, default: "synced" },
-    // 最后修改时间，数字类型，必需
-    last_modified: { type: Number, required: true },
-    // 客户端最后修改时间，日期类型，必需
-    clientModifiedAt: { type: Date, required: true },
-    // 服务器最后修改时间，日期类型，必需
-    serverModifiedAt: { type: Date, required: true },
-    // 记录是否已删除的标志，布尔类型，默认值为 false
-    isDeleted: { type: Boolean, default: false },
+    mistakes: { type: Schema.Types.Mixed, required: true }, // Schema.Types.Mixed 用于灵活的对象结构
+    // entryUuid: { type: String, unique: true, sparse: true }, // 如果添加，确保唯一性
   },
-  { timestamps: true } // 启用 Mongoose 的时间戳功能，自动管理 createdAt 和 updatedAt 字段
+  { _id: false }
+); // _id: false 表示子文档不自动生成 _id
+
+const WordRecordSchema: Schema<IWordRecord> = new Schema(
+  {
+    uuid: { type: String, required: true, unique: true, index: true }, // 保持 uuid 唯一性并索引
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+      index: true,
+    },
+    word: { type: String, required: true },
+    dict: { type: String, required: true, index: true },
+
+    performanceHistory: { type: [PerformanceEntrySchema], default: [] },
+
+    firstSeenAt: { type: Date },
+    lastPracticedAt: { type: Date },
+
+    sync_status: { type: String, default: "synced" }, // 服务器端默认为 synced
+    last_modified: { type: Number, required: true }, // 客户端时间戳
+    clientModifiedAt: { type: Date, required: true },
+    isDeleted: { type: Boolean, default: false, index: true },
+  },
+  { timestamps: true } // 自动管理 createdAt 和 updatedAt (作为 serverModifiedAt)
 );
 
-// 创建索引以提高查询效率
-// 按 userId 和 updatedAt 字段创建复合索引
-WordRecordSchema.index({ userId: 1, updatedAt: 1 });
+// 关键索引：确保 (userId, dict, word) 的组合是唯一的
+// 这将强制每个用户在每个词典中对每个单词只有一个 WordRecord 文档
+WordRecordSchema.index({ userId: 1, dict: 1, word: 1 }, { unique: true });
 
-// 按 dict 和 chapter 字段创建复合索引
-WordRecordSchema.index({ dict: 1, chapter: 1 });
+// 可选：为常用的查询字段添加索引
+WordRecordSchema.index({ userId: 1, updatedAt: 1 }); // 用于按用户和最后更新时间查询
+WordRecordSchema.index({ userId: 1, lastPracticedAt: 1 }); // 用于按用户和最后练习时间查询
 
-/**
- * 创建并导出 WordRecord 模型
- * 使用 IWordRecord 接口来定义模型的文档类型
- * "WordRecord" 是模型的名称，对应 MongoDB 中的集合名称
- * WordRecordSchema 是用于定义文档结构的模式
- */
+// 移除旧的 chapter 索引，因为它不再是顶级字段
+// WordRecordSchema.index({ dict: 1, chapter: 1 });
+
 export default mongoose.model<IWordRecord>("WordRecord", WordRecordSchema);

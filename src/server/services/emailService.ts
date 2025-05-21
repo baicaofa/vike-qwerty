@@ -6,15 +6,6 @@ import path from "path";
 // 加载环境变量
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
-// 打印环境变量，用于调试
-console.log("Email Service Environment Variables:");
-console.log("EMAIL_HOST:", process.env.EMAIL_HOST);
-console.log("EMAIL_PORT:", process.env.EMAIL_PORT);
-console.log("EMAIL_SECURE:", process.env.EMAIL_SECURE);
-console.log("EMAIL_USER:", process.env.EMAIL_USER);
-console.log("EMAIL_FROM:", process.env.EMAIL_FROM);
-console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
-
 // 创建验证码存储
 const verificationCodes: Record<string, { code: string; expireTime: number }> =
   {};

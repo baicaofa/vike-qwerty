@@ -88,7 +88,10 @@ export async function importDatabase(
     await db.wordRecords.toCollection().modify((record) => {
       if (!record.uuid) record.uuid = generateUUID();
       if (!record.sync_status) record.sync_status = "local_new";
-      if (!record.last_modified) record.last_modified = record.timeStamp || now;
+      // 修改下面这行
+      if (!record.last_modified)
+        record.last_modified =
+          record.lastPracticedAt || record.firstSeenAt || now; // 或者根据业务逻辑选择更合适的字段
     });
 
     // 更新chapterRecords

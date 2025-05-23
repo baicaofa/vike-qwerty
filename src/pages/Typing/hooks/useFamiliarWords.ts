@@ -59,3 +59,47 @@ export function useFamiliarWords() {
     removeFamiliarWord,
   };
 }
+
+/**
+ * 查找下一个未被标记为熟词的单词索引
+ * @param words 单词数组
+ * @param familiarSet 熟词集合（Set<string>）
+ * @param currentIndex 当前索引
+ * @returns 下一个非熟词索引，若没有则返回-1
+ */
+export function findNextUnfamiliarIndex(
+  words: { name: string }[],
+  familiarSet: Set<string>,
+  currentIndex: number
+): number {
+  let idx = currentIndex + 1;
+  while (idx < words.length) {
+    if (!familiarSet.has(words[idx].name)) {
+      return idx;
+    }
+    idx++;
+  }
+  return -1;
+}
+
+/**
+ * 查找上一个未被标记为熟词的单词索引
+ * @param words 单词数组
+ * @param familiarSet 熟词集合（Set<string>）
+ * @param currentIndex 当前索引
+ * @returns 上一个非熟词索引，若没有则返回-1
+ */
+export function findPrevUnfamiliarIndex(
+  words: { name: string }[],
+  familiarSet: Set<string>,
+  currentIndex: number
+): number {
+  let idx = currentIndex - 1;
+  while (idx >= 0) {
+    if (!familiarSet.has(words[idx].name)) {
+      return idx;
+    }
+    idx--;
+  }
+  return -1;
+}

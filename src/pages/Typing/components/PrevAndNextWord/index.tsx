@@ -1,3 +1,8 @@
+import {
+  findNextUnfamiliarIndex,
+  findPrevUnfamiliarIndex,
+  useFamiliarWords,
+} from "../../hooks/useFamiliarWords";
 import { TypingContext, TypingStateActionType } from "../../store";
 import Tooltip from "@/components/Tooltip";
 import { currentDictInfoAtom, wordDictationConfigAtom } from "@/store";
@@ -25,15 +30,39 @@ export default function PrevAndNextWord({ type }: LastAndNextWordProps) {
     [type]
   );
   const currentLanguage = useAtomValue(currentDictInfoAtom).language;
+  const { familiarWords } = useFamiliarWords();
 
   const onClickWord = useCallback(() => {
     if (!word) return;
-
-    if (type === "prev")
-      dispatch({ type: TypingStateActionType.SKIP_2_WORD_INDEX, newIndex });
-    if (type === "next")
-      dispatch({ type: TypingStateActionType.SKIP_2_WORD_INDEX, newIndex });
-  }, [type, dispatch, newIndex, word]);
+    let targetIndex = -1;
+    if (type === "prev") {
+      targetIndex = findPrevUnfamiliarIndex(
+        state.chapterData.words,
+        familiarWords,
+        state.chapterData.index
+      );
+    }
+    if (type === "next") {
+      targetIndex = findNextUnfamiliarIndex(
+        state.chapterData.words,
+        familiarWords,
+        state.chapterData.index
+      );
+    }
+    if (targetIndex !== -1) {
+      dispatch({
+        type: TypingStateActionType.SKIP_2_WORD_INDEX,
+        newIndex: targetIndex,
+      });
+    }
+  }, [
+    type,
+    dispatch,
+    word,
+    state.chapterData.words,
+    familiarWords,
+    state.chapterData.index,
+  ]);
 
   const headWord = useMemo(() => {
     if (!word) return "";

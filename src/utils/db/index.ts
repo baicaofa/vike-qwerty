@@ -156,7 +156,8 @@ class RecordDB extends Dexie {
           "++id, &uuid, dict, chapter, timeStamp, sync_status, last_modified",
         reviewRecords:
           "++id, &uuid, dict, timeStamp, sync_status, last_modified",
-        familiarWords: "++id, &uuid, dict, word, sync_status, last_modified",
+        familiarWords:
+          "++id, &uuid, dict, word, sync_status, last_modified,[dict+word]",
       })
       .upgrade(async (tx) => {
         console.log(

@@ -1,9 +1,10 @@
 import type { IUser } from "../server/models/User";
 // 确保 WordRecordModel 和 IUser 的路径正确
-import WordRecordModel, {
+import type {
   IPerformanceEntry,
   IWordRecord,
 } from "../server/models/WordRecord";
+import WordRecordModel from "../server/models/WordRecord";
 import mongoose from "mongoose";
 
 // 如果 WordRecord.userId 是 IUser 类型
@@ -166,20 +167,22 @@ async function migrateWordRecords() {
           userId: group.userId,
           dict: group.dict,
           word: group.word,
+          performanceHistory: { $exists: true },
         });
 
         if (existingMigratedRecord) {
-          console.warn(`已存在针对分组 ${key} 的迁移后记录。将尝试合并/更新。`);
-          // 更新逻辑：例如合并 performanceHistory，更新时间戳等
-          // 注意：合并 performanceHistory 需要仔细处理，避免重复项
-          // existingMigratedRecord.performanceHistory = mergeHistories(existingMigratedRecord.performanceHistory, performanceHistory);
-          // existingMigratedRecord.firstSeenAt = newRecordData.firstSeenAt < existingMigratedRecord.firstSeenAt ? newRecordData.firstSeenAt : existingMigratedRecord.firstSeenAt;
-          // existingMigratedRecord.lastPracticedAt = newRecordData.lastPracticedAt > existingMigratedRecord.lastPracticedAt ? newRecordData.lastPracticedAt : existingMigratedRecord.lastPracticedAt;
-          // existingMigratedRecord.last_modified = newRecordData.last_modified;
-          // existingMigratedRecord.clientModifiedAt = newRecordData.clientModifiedAt;
-          // await existingMigratedRecord.save();
-          // 当前简单跳过，如果需要更新，请实现上述合并逻辑
+          console.warn(`已存在针对分组 ${key} 的新结构记录，跳过。`);
+          // 这里可以考虑合并 performanceHistory（如有需要）
+          continue;
         } else {
+          // 先删除所有旧结构
+          await WordRecordModel.deleteMany({
+            userId: group.userId,
+            dict: group.dict,
+            word: group.word,
+            performanceHistory: { $exists: false },
+          });
+          // 再写入新结构
           await WordRecordModel.create(newRecordData as IWordRecord);
           console.log(`为分组 ${key} 创建了新的聚合记录。`);
         }

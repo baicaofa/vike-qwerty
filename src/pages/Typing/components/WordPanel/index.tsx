@@ -1,3 +1,8 @@
+import {
+  findNextUnfamiliarIndex,
+  findPrevUnfamiliarIndex,
+  useFamiliarWords,
+} from "../../hooks/useFamiliarWords";
 import { TypingContext, TypingStateActionType } from "../../store";
 import type { TypingState } from "../../store/type";
 import PrevAndNextWord from "../PrevAndNextWord";
@@ -63,6 +68,8 @@ export default function WordPanel() {
     [setReviewModeInfo]
   );
 
+  const { familiarWords } = useFamiliarWords();
+
   const onFinish = useCallback(() => {
     if (
       state.chapterData.index < state.chapterData.words.length - 1 ||
@@ -75,16 +82,35 @@ export default function WordPanel() {
         reloadCurrentWordComponent();
       } else {
         setCurrentWordExerciseCount(0);
-        // 即使单词被标记为熟词，也继续在当前章节练习
+        // 跳过熟词，找到下一个未被标记为熟词的单词
+        const nextIndex = findNextUnfamiliarIndex(
+          state.chapterData.words,
+          familiarWords,
+          state.chapterData.index
+        );
+        // 如果没有未熟词，直接完成章节
+        if (nextIndex === -1) {
+          dispatch({ type: TypingStateActionType.FINISH_CHAPTER });
+          if (isReviewMode) {
+            setReviewModeInfo((old) => ({
+              ...old,
+              reviewRecord: old.reviewRecord
+                ? { ...old.reviewRecord, isFinished: true }
+                : undefined,
+            }));
+          }
+          return;
+        }
         if (isReviewMode) {
           dispatch({
-            type: TypingStateActionType.NEXT_WORD,
-            payload: {
-              updateReviewRecord,
-            },
+            type: TypingStateActionType.SKIP_2_WORD_INDEX,
+            newIndex: nextIndex,
           });
         } else {
-          dispatch({ type: TypingStateActionType.NEXT_WORD });
+          dispatch({
+            type: TypingStateActionType.SKIP_2_WORD_INDEX,
+            newIndex: nextIndex,
+          });
         }
       }
     } else {
@@ -101,6 +127,7 @@ export default function WordPanel() {
     }
   }, [
     state.chapterData.index,
+    state.chapterData.words,
     state.chapterData.words.length,
     currentWordExerciseCount,
     loopWordTimes,
@@ -108,25 +135,35 @@ export default function WordPanel() {
     dispatch,
     updateReviewRecord,
     reloadCurrentWordComponent,
+    familiarWords,
+    setReviewModeInfo,
   ]);
 
   const onSkipWord = useCallback(
     (type: "prev" | "next") => {
+      let newIndex = -1;
       if (type === "prev") {
-        dispatch({
-          type: TypingStateActionType.SKIP_2_WORD_INDEX,
-          newIndex: prevIndex,
-        });
+        newIndex = findPrevUnfamiliarIndex(
+          state.chapterData.words,
+          familiarWords,
+          state.chapterData.index
+        );
       }
-
       if (type === "next") {
+        newIndex = findNextUnfamiliarIndex(
+          state.chapterData.words,
+          familiarWords,
+          state.chapterData.index
+        );
+      }
+      if (newIndex !== -1) {
         dispatch({
           type: TypingStateActionType.SKIP_2_WORD_INDEX,
-          newIndex: nextIndex,
+          newIndex,
         });
       }
     },
-    [dispatch, prevIndex, nextIndex]
+    [dispatch, familiarWords, state.chapterData.words, state.chapterData.index]
   );
 
   useHotkeys(

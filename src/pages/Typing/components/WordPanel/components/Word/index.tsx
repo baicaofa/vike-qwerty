@@ -369,7 +369,6 @@ export default function WordComponent({
                 />
               );
             })}
-            <MarkFamiliarButton word={word} isFamiliar={isWordFamiliar} />
           </div>
           {pronunciationIsOpen && (
             <div className="absolute -right-12 top-1/2 h-9 w-9 -translate-y-1/2 transform ">
@@ -381,6 +380,7 @@ export default function WordComponent({
                   className="h-full w-full"
                 />
               </Tooltip>
+              <MarkFamiliarButton word={word} isFamiliar={isWordFamiliar} />
             </div>
           )}
         </div>

@@ -152,3 +152,8 @@ export const dismissStartCardDateAtom = atomWithStorage<Date | null>(
 
 // for dev test
 //   dismissStartCardDateAtom = atom<Date | null>(new Date())
+
+export const isSkipFamiliarWordAtom = atomWithStorage(
+  "isSkipFamiliarWord",
+  true
+);

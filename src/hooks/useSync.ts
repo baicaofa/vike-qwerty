@@ -14,12 +14,20 @@ const MAX_RETRY_COUNT = 3; // 最大重试次数
 const RETRY_DELAY = 5000; // 重试延迟（毫秒）
 const DEBOUNCE_DELAY = 1000; // 防抖延迟（毫秒）
 
+// SSR安全获取初始网络状态
+const getInitialOnline = () => {
+  if (typeof window !== "undefined" && typeof navigator !== "undefined") {
+    return navigator.onLine;
+  }
+  return true; // SSR时假定在线，避免mismatch
+};
+
 export const useSync = () => {
   const { isAuthenticated } = useAuthStore();
   const [syncState, setSyncState] = useState<SyncState>("idle");
   const [lastSyncResult, setLastSyncResult] = useState<SyncResult | null>(null);
   const [hasChanges, setHasChanges] = useState<boolean>(false);
-  const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
+  const [isOnline, setIsOnline] = useState<boolean>(getInitialOnline());
   const [retryCount, setRetryCount] = useState<number>(0);
   const [initialSyncDone, setInitialSyncDone] = useState<boolean>(false);
 

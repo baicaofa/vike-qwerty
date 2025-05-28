@@ -371,16 +371,20 @@ export default function WordComponent({
             })}
           </div>
           {pronunciationIsOpen && (
-            <div className="absolute -right-12 top-1/2 h-9 w-9 -translate-y-1/2 transform ">
-              <Tooltip content={`快捷键${CTRL} + J`}>
-                <WordPronunciationIcon
-                  word={word}
-                  lang={currentLanguage}
-                  ref={wordPronunciationIconRef}
-                  className="h-full w-full"
-                />
-              </Tooltip>
-              <MarkFamiliarButton word={word} isFamiliar={isWordFamiliar} />
+            <div>
+              <div className="absolute -right-12 top-1/2 h-9 w-9 -translate-y-1/2 transform ">
+                <Tooltip content={`快捷键${CTRL} + J`}>
+                  <WordPronunciationIcon
+                    word={word}
+                    lang={currentLanguage}
+                    ref={wordPronunciationIconRef}
+                    className="h-full w-full"
+                  />
+                </Tooltip>
+              </div>
+              <div className="absolute -right-24 top-1/2 h-9 w-9 -translate-y-1/2 transform ">
+                <MarkFamiliarButton word={word} isFamiliar={isWordFamiliar} />
+              </div>
             </div>
           )}
         </div>

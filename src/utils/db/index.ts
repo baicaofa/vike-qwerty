@@ -275,6 +275,17 @@ class RecordDB extends Dexie {
           `Dexie schema upgrade to version 6 completed. Migrated ${recordsToPut.length} WordRecord(s).`
         );
       });
+
+    // familiarWords 表加上 [dict+word] 复合索引的第7版
+    this.version(7).stores({
+      wordRecords:
+        "++id, &uuid, &[dict+word], dict, word, lastPracticedAt, sync_status, last_modified",
+      chapterRecords:
+        "++id, &uuid, dict, chapter, timeStamp, sync_status, last_modified",
+      reviewRecords: "++id, &uuid, dict, timeStamp, sync_status, last_modified",
+      familiarWords:
+        "++id, &uuid, dict, word, sync_status, last_modified, [dict+word]",
+    });
   }
 }
 

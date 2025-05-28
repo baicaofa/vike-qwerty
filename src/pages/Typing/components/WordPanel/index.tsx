@@ -14,13 +14,14 @@ import { usePrefetchPronunciationSound } from "@/hooks/usePronunciation";
 import {
   isReviewModeAtom,
   isShowPrevAndNextWordAtom,
+  isSkipFamiliarWordAtom,
   loopWordConfigAtom,
   phoneticConfigAtom,
   reviewModeInfoAtom,
 } from "@/store";
 import type { Word } from "@/typings";
 import { useAtomValue, useSetAtom } from "jotai";
-import { useCallback, useContext, useMemo, useState } from "react";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 
 export default function WordPanel() {
@@ -38,6 +39,7 @@ export default function WordPanel() {
 
   const setReviewModeInfo = useSetAtom(reviewModeInfoAtom);
   const isReviewMode = useAtomValue(isReviewModeAtom);
+  const isSkipFamiliarWord = useAtomValue(isSkipFamiliarWordAtom);
 
   const prevIndex = useMemo(() => {
     const newIndex = state.chapterData.index - 1;
@@ -82,13 +84,22 @@ export default function WordPanel() {
         reloadCurrentWordComponent();
       } else {
         setCurrentWordExerciseCount(0);
-        // 跳过熟词，找到下一个未被标记为熟词的单词
-        const nextIndex = findNextUnfamiliarIndex(
-          state.chapterData.words,
-          familiarWords,
-          state.chapterData.index
-        );
-        // 如果没有未熟词，直接完成章节
+        let nextIndex;
+        if (isSkipFamiliarWord) {
+          // 跳过熟词，找到下一个未被标记为熟词的单词
+          nextIndex = findNextUnfamiliarIndex(
+            state.chapterData.words,
+            familiarWords,
+            state.chapterData.index
+          );
+        } else {
+          // 不跳过熟词，顺序下一个
+          nextIndex =
+            state.chapterData.index + 1 < state.chapterData.words.length
+              ? state.chapterData.index + 1
+              : -1;
+        }
+        // 如果没有未熟词或到达末尾，直接完成章节
         if (nextIndex === -1) {
           dispatch({ type: TypingStateActionType.FINISH_CHAPTER });
           if (isReviewMode) {
@@ -101,17 +112,10 @@ export default function WordPanel() {
           }
           return;
         }
-        if (isReviewMode) {
-          dispatch({
-            type: TypingStateActionType.SKIP_2_WORD_INDEX,
-            newIndex: nextIndex,
-          });
-        } else {
-          dispatch({
-            type: TypingStateActionType.SKIP_2_WORD_INDEX,
-            newIndex: nextIndex,
-          });
-        }
+        dispatch({
+          type: TypingStateActionType.SKIP_2_WORD_INDEX,
+          newIndex: nextIndex,
+        });
       }
     } else {
       // 用户完成当前章节
@@ -137,33 +141,48 @@ export default function WordPanel() {
     reloadCurrentWordComponent,
     familiarWords,
     setReviewModeInfo,
+    isSkipFamiliarWord,
   ]);
 
   const onSkipWord = useCallback(
     (type: "prev" | "next") => {
       let newIndex = -1;
       if (type === "prev") {
-        newIndex = findPrevUnfamiliarIndex(
-          state.chapterData.words,
-          familiarWords,
-          state.chapterData.index
-        );
+        if (isSkipFamiliarWord) {
+          newIndex = findPrevUnfamiliarIndex(
+            state.chapterData.words,
+            familiarWords,
+            state.chapterData.index
+          );
+        } else {
+          newIndex = state.chapterData.index - 1;
+        }
       }
       if (type === "next") {
-        newIndex = findNextUnfamiliarIndex(
-          state.chapterData.words,
-          familiarWords,
-          state.chapterData.index
-        );
+        if (isSkipFamiliarWord) {
+          newIndex = findNextUnfamiliarIndex(
+            state.chapterData.words,
+            familiarWords,
+            state.chapterData.index
+          );
+        } else {
+          newIndex = state.chapterData.index + 1;
+        }
       }
-      if (newIndex !== -1) {
+      if (newIndex !== -1 && newIndex < state.chapterData.words.length) {
         dispatch({
           type: TypingStateActionType.SKIP_2_WORD_INDEX,
           newIndex,
         });
       }
     },
-    [dispatch, familiarWords, state.chapterData.words, state.chapterData.index]
+    [
+      dispatch,
+      familiarWords,
+      state.chapterData.words,
+      state.chapterData.index,
+      isSkipFamiliarWord,
+    ]
   );
 
   useHotkeys(
@@ -210,6 +229,37 @@ export default function WordPanel() {
   const shouldShowTranslation = useMemo(() => {
     return isShowTranslation || state.isTransVisible;
   }, [isShowTranslation, state.isTransVisible]);
+
+  // 自动跳过当前为熟词的单词（防止异步加载时机错过）
+  useEffect(() => {
+    if (
+      isSkipFamiliarWord &&
+      state.chapterData.words.length > 0 &&
+      familiarWords.has(state.chapterData.words[state.chapterData.index]?.name)
+    ) {
+      // 找到下一个未被标记为熟词的单词
+      const nextIndex = findNextUnfamiliarIndex(
+        state.chapterData.words,
+        familiarWords,
+        state.chapterData.index
+      );
+      if (nextIndex !== -1 && nextIndex < state.chapterData.words.length) {
+        dispatch({
+          type: TypingStateActionType.SKIP_2_WORD_INDEX,
+          newIndex: nextIndex,
+        });
+      } else {
+        // 如果全是熟词，直接完成章节
+        dispatch({ type: TypingStateActionType.FINISH_CHAPTER });
+      }
+    }
+  }, [
+    isSkipFamiliarWord,
+    state.chapterData.index,
+    state.chapterData.words,
+    familiarWords,
+    dispatch,
+  ]);
 
   return (
     <div className="container flex h-full w-full flex-col items-center justify-center">

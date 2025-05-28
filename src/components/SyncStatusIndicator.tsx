@@ -54,7 +54,7 @@ export const SyncStatusIndicator: React.FC = () => {
     <div className="sync-status-container">
       <div
         className={`sync-status-indicator ${hasChanges ? "clickable" : ""}`}
-        onClick={hasChanges ? triggerSync : undefined}
+        onClick={hasChanges ? () => triggerSync() : undefined}
         title={getStatusText()}
       >
         {getStatusIcon()}

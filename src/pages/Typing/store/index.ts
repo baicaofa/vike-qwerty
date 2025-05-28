@@ -68,6 +68,8 @@ export type TypingStateAction =
         words: WordWithIndex[];
         shouldShuffle: boolean;
         initialIndex?: number;
+        familiarWords?: string[];
+        isSkipFamiliarWord?: boolean;
       };
     }
   | { type: TypingStateActionType.SET_IS_SKIP; payload: boolean }
@@ -110,8 +112,15 @@ export const typingReducer = (
         ? shuffle(action.payload.words)
         : action.payload.words;
       let initialIndex = action.payload.initialIndex ?? 0;
-      if (initialIndex >= words.length) {
-        initialIndex = 0;
+      if (action.payload.familiarWords && action.payload.isSkipFamiliarWord) {
+        const familiarSet = new Set(action.payload.familiarWords);
+        while (
+          initialIndex < words.length &&
+          familiarSet.has(words[initialIndex].name)
+        ) {
+          initialIndex++;
+        }
+        if (initialIndex >= words.length) initialIndex = 0;
       }
       newState.chapterData.index = initialIndex;
       newState.chapterData.words = words;

@@ -1,9 +1,10 @@
 import type { IUser } from "../server/models/User";
 // 确保 WordRecordModel 和 IUser 的路径正确
-import WordRecordModel, {
+import type {
   IPerformanceEntry,
   IWordRecord,
 } from "../server/models/WordRecord";
+import WordRecordModel from "../server/models/WordRecord";
 import mongoose from "mongoose";
 
 // 如果 WordRecord.userId 是 IUser 类型

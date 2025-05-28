@@ -3,6 +3,7 @@ import {
   isIgnoreCaseAtom,
   isShowAnswerOnHoverAtom,
   isShowPrevAndNextWordAtom,
+  isSkipFamiliarWordAtom,
   isTextSelectableAtom,
   randomConfigAtom,
 } from "@/store";
@@ -21,7 +22,9 @@ export default function AdvancedSetting() {
   const [isShowAnswerOnHover, setIsShowAnswerOnHover] = useAtom(
     isShowAnswerOnHoverAtom
   );
-
+  const [isSkipFamiliarWord, setIsSkipFamiliarWord] = useAtom(
+    isSkipFamiliarWordAtom
+  );
   const onToggleRandom = useCallback(
     (checked: boolean) => {
       setRandomConfig((prev) => ({
@@ -59,10 +62,43 @@ export default function AdvancedSetting() {
     [setIsShowAnswerOnHover]
   );
 
+  const onToggleSkipFamiliarWord = useCallback(
+    (checked: boolean) => {
+      setIsSkipFamiliarWord(checked);
+    },
+    [setIsSkipFamiliarWord]
+  );
+
   return (
     <ScrollArea.Root className="flex-1 select-none overflow-y-auto ">
       <ScrollArea.Viewport className="h-full w-full px-3">
         <div className={styles.tabContent}>
+          <div className={styles.section}>
+            <span className={styles.sectionLabel}>是否跳过熟词</span>
+            <span className={styles.sectionDescription}>
+              开启后，练习时会自动跳过已被标记为熟词的单词
+            </span>
+            <div className={styles.switchBlock}>
+              <Switch
+                checked={isSkipFamiliarWord}
+                onChange={onToggleSkipFamiliarWord}
+                className="switch-root"
+              >
+                <span aria-hidden="true" className="switch-thumb" />
+              </Switch>
+              <span className="text-right text-xs font-normal leading-tight text-gray-600">{`跳过熟词已${
+                isSkipFamiliarWord ? "开启" : "关闭"
+              }`}</span>
+            </div>
+            <a
+              className="my-btn-primary ml-4 disabled:bg-gray-300"
+              href="/familiar"
+              target="_blank"
+              title="查看熟词"
+            >
+              查看熟词
+            </a>
+          </div>
           <div className={styles.section}>
             <span className={styles.sectionLabel}>章节乱序</span>
             <span className={styles.sectionDescription}>
@@ -104,7 +140,7 @@ export default function AdvancedSetting() {
           <div className={styles.section}>
             <span className={styles.sectionLabel}>是否忽略大小写</span>
             <span className={styles.sectionDescription}>
-              开启后，输入时不区分大小写，如输入“hello”和“Hello”都会被认为是正确的
+              开启后，输入时不区分大小写，如输入&quot;hello&quot;和&quot;Hello&quot;都会被认为是正确的
             </span>
             <div className={styles.switchBlock}>
               <Switch

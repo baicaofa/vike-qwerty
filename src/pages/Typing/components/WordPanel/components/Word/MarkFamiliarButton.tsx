@@ -51,15 +51,15 @@ export default function MarkFamiliarButton({
     <Tooltip content={isFamiliar ? "取消熟词标记" : "标记为熟词"}>
       <button
         onClick={handleMarkFamiliar}
-        className={`absolute right-4 top-1/2 -translate-y-1/2 transform ${
+        className={`h-full w-full transform ${
           isFamiliar ? "text-yellow-400" : "text-gray-400"
         } hover:text-yellow-400`}
         disabled={isMarking}
       >
         {isFamiliar ? (
-          <IconStar className="h-6 w-6" />
+          <IconStar className="w-9 h-9" />
         ) : (
-          <IconStarOutline className="h-6 w-6" />
+          <IconStarOutline className="w-9 h-9" />
         )}
       </button>
     </Tooltip>

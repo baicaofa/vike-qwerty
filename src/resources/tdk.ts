@@ -9,7 +9,7 @@ export interface TDK {
 
 // 默认TDK
 export const defaultTDK: TDK = {
-  title: "Keybr — 为键盘工作者设计的单词与肌肉记忆锻炼软件",
+  title: "Keybr—keybr打字软件-keybr在线打字-单词肌肉记忆锻炼软件",
   description:
     "Keybr, 为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件 / Words learning and English muscle memory training software designed for keyboard workers",
   keywords:

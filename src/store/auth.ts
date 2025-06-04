@@ -126,17 +126,30 @@ const useAuthStore = create<AuthState>((set) => ({
     set({ user: null, token: null, isAuthenticated: false });
   },
 
-  checkAuth: () => {
+  checkAuth: async () => {
     const token = localStorage.getItem("token");
-    const user = localStorage.getItem("user");
-
-    if (token && user) {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-      set({
-        token,
-        user: JSON.parse(user),
-        isAuthenticated: true,
+    if (!token) {
+      set({ user: null, token: null, isAuthenticated: false });
+      return;
+    }
+    try {
+      // 向后端请求校验 token
+      const response = await axios.get("/api/auth/profile", {
+        headers: { Authorization: `Bearer ${token}` },
       });
+      const user = response.data;
+      set({
+        user,
+        token,
+        isAuthenticated: true,
+        isEmailVerified: user.isEmailVerified,
+      });
+      setLocalStorageItem("user", JSON.stringify(user));
+    } catch (error) {
+      // token 无效或过期，自动登出
+      removeLocalStorageItem("token");
+      removeLocalStorageItem("user");
+      set({ user: null, token: null, isAuthenticated: false });
     }
   },
 

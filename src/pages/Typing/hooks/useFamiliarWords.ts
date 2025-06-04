@@ -1,7 +1,7 @@
 import { currentDictIdAtom } from "@/store";
 import type { Word } from "@/typings";
 import { useGetFamiliarWords } from "@/utils/db";
-import { useAtomValue, atom, useAtom } from "jotai";
+import { atom, useAtom, useAtomValue } from "jotai";
 import { useCallback, useEffect } from "react";
 
 const familiarWordsAtom = atom<Set<string>>(new Set<string>());

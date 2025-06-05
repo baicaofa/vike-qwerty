@@ -104,7 +104,7 @@ export default function UpdatesPage() {
         </p>
       </div>
 
-      <div className="flex justify-center  px-2">
+      <div className="flex justify-center  px-2 py-6">
         <div className="mx-auto" style={{ maxWidth: "768px", width: "100%" }}>
           {/* 顶部标题（滚动时固定） */}
 
@@ -129,7 +129,7 @@ export default function UpdatesPage() {
                   }}
                 >
                   <span
-                    className="text-xs text-gray-400"
+                    className="text-s text-gray-400"
                     style={{ whiteSpace: "nowrap" }}
                   >
                     {item.date}

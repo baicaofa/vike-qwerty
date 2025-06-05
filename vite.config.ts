@@ -10,18 +10,26 @@ import { fileURLToPath } from "url";
 import vike from "vike/plugin";
 import { defineConfig } from "vite";
 import type { PluginOption } from "vite";
+import sitemapPlugin from "./vite-plugin-sitemap";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// https://vitejs.dev/config/
-export default defineConfig(async ({ mode }) => {
-  const latestCommitHash = await new Promise<string>((resolve) => {
-    return getLastCommit((err, commit) =>
-      err ? "unknown" : resolve(commit.shortHash)
-    );
-  });
+// 定义需要包含在sitemap中的重要路由及其优先级
+const sitemapRoutes = [
+  { path: "/", priority: 1.0, changefreq: "daily" },
+  { path: "/gallery", priority: 0.9, changefreq: "daily" },
+  { path: "/analysis", priority: 0.8, changefreq: "weekly" },
+  { path: "/error-book", priority: 0.8, changefreq: "weekly" },
+  { path: "/mobile", priority: 0.7, changefreq: "monthly" },
+  { path: "/friend-links", priority: 0.5, changefreq: "monthly" },
+  { path: "/familiar", priority: 0.6, changefreq: "monthly" },
+  { path: "/updates", priority: 0.4, changefreq: "monthly" },
+  // 用户相关页面不需要添加到sitemap中
+];
 
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => {
   return {
     plugins: [
       react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),
@@ -37,7 +45,19 @@ export default defineConfig(async ({ mode }) => {
           },
         },
       }),
+      sitemapPlugin({
+        baseUrl: "https://www.keybr.com.cn",
+        routes: sitemapRoutes,
+        autoDetect: true,
+        excludePatterns: [
+          '/api/', '/_', '/assets/', '/favicon', '/manifest', '/dicts/',
+          '/login', '/register', '/profile', '/forgot-password', '/reset-password', '/verify-email'
+        ],
+        changefreq: "daily",
+        priority: 0.5,
+      }),
     ],
+    publicDir: "public",
     server: {
       proxy: {
         "/api/auth": {
@@ -79,10 +99,7 @@ export default defineConfig(async ({ mode }) => {
     },
     define: {
       REACT_APP_DEPLOY_ENV: JSON.stringify(process.env.REACT_APP_DEPLOY_ENV),
-      LATEST_COMMIT_HASH: JSON.stringify(
-        latestCommitHash +
-          (process.env.NODE_ENV === "production" ? "" : " (dev)")
-      ),
+      LATEST_COMMIT_HASH: JSON.stringify("dev"),
     },
     resolve: {
       alias: {

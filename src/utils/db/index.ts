@@ -131,18 +131,37 @@ class RecordDB extends Dexie {
       });
 
     // 版本5的数据库模式更新（添加熟词表）
-    this.version(5).stores({
-      wordRecords:
-        "++id, &uuid, word, timeStamp, dict, chapter, wrongCount, [dict+chapter], sync_status, last_modified",
-      chapterRecords:
-        "++id, &uuid, timeStamp, dict, chapter, time, [dict+chapter], sync_status, last_modified",
-      reviewRecords:
-        "++id, &uuid, dict, createTime, isFinished, sync_status, last_modified",
-      familiarWords:
-        "++id, &uuid, word, dict, isFamiliar, sync_status, last_modified, [dict+word]",
-      revisionDictRecords: "++id",
-      revisionWordRecords: "++id",
-    });
+    this.version(5)
+      .stores({
+        wordRecords:
+          "++id, &uuid, word, timeStamp, dict, chapter, wrongCount, [dict+chapter], sync_status, last_modified",
+        chapterRecords:
+          "++id, &uuid, timeStamp, dict, chapter, time, [dict+chapter], sync_status, last_modified",
+        reviewRecords:
+          "++id, &uuid, dict, createTime, isFinished, sync_status, last_modified",
+        familiarWords:
+          "++id, &uuid, word, dict, isFamiliar, sync_status, last_modified, [dict+word]",
+        revisionDictRecords: "++id",
+        revisionWordRecords: "++id",
+      })
+      .upgrade((tx) => {
+        console.log("Upgrading Dexie schema to version 5...");
+        // 版本5主要是添加了familiarWords表，不需要迁移现有数据
+        // 但我们需要确保升级过程被正确记录
+        return Promise.resolve()
+          .then(() => {
+            console.log(
+              "Dexie schema upgrade to version 5 completed successfully."
+            );
+            console.log(
+              "Added familiarWords table for storing familiar word records."
+            );
+          })
+          .catch((err) => {
+            console.error("Failed to upgrade Dexie schema to version 5:", err);
+            throw err;
+          });
+      });
     // 新版本，用于 WordRecord 结构调整
     this.version(6)
       .stores({
@@ -295,6 +314,71 @@ db.wordRecords.mapToClass(WordRecord);
 db.chapterRecords.mapToClass(ChapterRecord);
 db.reviewRecords.mapToClass(ReviewRecord);
 db.familiarWords.mapToClass(FamiliarWord);
+
+// 数据库版本检查和升级工具
+export async function checkAndUpgradeDatabase() {
+  try {
+    // 打开数据库，这会触发自动升级
+    await db.open();
+
+    const currentVersion = db.verno;
+    console.log(`数据库当前版本: ${currentVersion}`);
+
+    // 检查是否是最新版本
+    const expectedVersion = 7; // 当前最新版本
+    if (currentVersion < expectedVersion) {
+      console.warn(
+        `数据库版本过旧 (当前: ${currentVersion}, 期望: ${expectedVersion})`
+      );
+      console.log("尝试强制升级数据库...");
+
+      // 关闭数据库
+      db.close();
+
+      // 重新打开，强制触发升级
+      await db.open();
+
+      const newVersion = db.verno;
+      if (newVersion === expectedVersion) {
+        console.log(`数据库升级成功! 新版本: ${newVersion}`);
+      } else {
+        console.error(
+          `数据库升级失败! 当前版本: ${newVersion}, 期望版本: ${expectedVersion}`
+        );
+      }
+    } else {
+      console.log("数据库版本正常");
+    }
+
+    return {
+      success: true,
+      currentVersion: db.verno,
+      expectedVersion,
+    };
+  } catch (error) {
+    console.error("数据库检查/升级失败:", error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : String(error),
+    };
+  }
+}
+
+// 重置数据库（仅在紧急情况下使用）
+export async function resetDatabase() {
+  try {
+    console.warn("正在重置数据库...");
+    await db.delete();
+    console.log("数据库已删除，将在下次访问时重新创建");
+    return { success: true };
+  } catch (error) {
+    console.error("重置数据库失败:", error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : String(error),
+    };
+  }
+}
 
 export function useSaveChapterRecord() {
   const currentChapter = useAtomValue(currentChapterAtom);

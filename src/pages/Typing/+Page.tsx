@@ -23,6 +23,7 @@ import { DonateCard } from "@/components/DonateCard";
 import Header from "@/components/Header";
 import StarCard from "@/components/StarCard";
 import Tooltip from "@/components/Tooltip";
+import UpdateNotification from "@/components/UpdateNotification";
 import { idDictionaryMap } from "@/resources/dictionary";
 import {
   currentChapterAtom,
@@ -205,6 +206,7 @@ export function Page() {
       <StarCard />
       {state.isFinished && <DonateCard />}
       {state.isFinished && <ResultScreen />}
+      <UpdateNotification />
       <Layout>
         <Header>
           <DictChapterButton />

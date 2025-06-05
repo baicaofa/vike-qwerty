@@ -9,42 +9,42 @@ interface NewsItem {
   btn?: string;
 }
 
-const newsList: NewsItem[] = [
+export const newsList: NewsItem[] = [
   {
-    date: "2025年5月13日",
-    title: "「语音通话」模型升级，对话更智能流畅",
-    tag: "电脑版",
-    desc: "电脑版「语音通话」模型升级，对话如真人般自然流畅。你可以通过首页按钮...",
+    date: "2025年4月15日",
+    title: "新增熟词标记功能",
+    tag: "新功能",
+    desc: "现在可以标记熟词，联系过程中可以跳过熟词，提高学习效率。",
     images: [
-      "https://www.mwexk.cn/uploads/allimg/20240516/3-2405161P213261.jpg",
-    ],
-    btn: "下载电脑版",
-  },
-  {
-    date: "2025年5月13日",
-    title: "电脑版支持切换搜索引擎",
-    tag: "电脑版",
-    desc: "只需打开新标签页，即可在地址栏自由切换默认搜索引擎，享受个性化搜索体验。",
-    images: [
-      "https://www.mwexk.cn/uploads/allimg/20240516/3-2405161P213261.jpg",
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/06/QQ20250605-154621.jpg",
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/06/QQ20250605-155001.jpg",
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/06/QQ20250605-155027.png",
     ],
   },
   {
-    date: "2025年5月13日",
-    title: "「帮我写作」文档编辑器支持自动续写",
-    tag: "试一试",
-    desc: "开启「自动续写」功能后，只需将光标在编辑器内停留3秒，豆包将根据上下文...",
+    date: "2025年1月10日",
+    title: "优化打字体验",
+    tag: "优化",
+    desc: "改进了键盘响应速度和准确率计算，让打字练习更加流畅自然。",
     images: [
       "https://www.mwexk.cn/uploads/allimg/20240516/3-2405161P213261.jpg",
     ],
   },
   {
-    date: "2025年5月8日",
-    title: "「AI 云盘」支持视频问答、脑图和摘要",
-    tag: "试一试",
-    desc: "「AI 云盘」升级，支持视频总结与问答。只需上传视频至云盘，点击「问问豆包」...",
+    date: "2025年1月5日",
+    title: "新增词典分类",
+    tag: "新功能",
+    desc: "添加了更多专业词典，包括编程术语、医学词汇等，满足不同用户需求。",
     images: [
       "https://www.mwexk.cn/uploads/allimg/20240516/3-2405161P213261.jpg",
+    ],
+  },
+  {
+    date: "2024年12月28日",
+    title: "数据分析功能上线",
+    tag: "新功能",
+    desc: "新增详细的练习数据分析，包括热力图、进度统计等，帮助您更好地了解学习情况。",
+    images: [
       "https://www.mwexk.cn/uploads/allimg/20240516/3-2405161P213261.jpg",
       "https://www.mwexk.cn/uploads/allimg/20240516/3-2405161P213261.jpg",
     ],

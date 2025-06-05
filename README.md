@@ -1,3 +1,20 @@
+
+**原作者：** [RealKai42](https://github.com/RealKai42) | [原始项目](https://github.com/RealKai42/qwerty-learner) ⭐  
+**分支版本：** [vike-qwerty](https://github.com/baicaofa/vike-qwerty) 
+
+## 🌟 主要新功能
+
+### 用户系统
+- **支持登录**：本地、云端保存数据，换设备保持数据不变
+
+
+### 🎨 熟词标记
+- **熟词标记**：对于熟词进行标记
+- **熟词过滤**：自定义开关，过滤熟词
+- **熟词管理**：查看熟词，管理熟词
+
+
+
 <div align=center>
 <img  src="src/assets/logo.svg"/>
 </div>
@@ -63,10 +80,7 @@
 
 ## 如何贡献
 
-### 贡献代码
 
-[Call for Contributor](https://github.com/Realkai42/qwerty-learner/issues/390)
-[贡献准则](./docs/CONTRIBUTING.md)
 
 ### 贡献词库
 

@@ -5,8 +5,6 @@ import type React from "react";
 import { useState } from "react";
 
 const Header: React.FC<PropsWithChildren> = ({ children }) => {
-  const [showBubble, setShowBubble] = useState(true);
-
   return (
     <header className="container z-20 mx-auto w-full px-10 py-6">
       <div className="flex w-full flex-col items-center justify-between space-y-3 lg:flex-row lg:space-y-0">

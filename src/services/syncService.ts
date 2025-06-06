@@ -1,4 +1,3 @@
-import useAuthStore from "@/store/auth";
 import { db } from "@/utils/db";
 import type { SyncStatus } from "@/utils/db/record";
 import axios from "axios";

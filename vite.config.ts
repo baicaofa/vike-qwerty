@@ -1,7 +1,6 @@
 import sitemapPlugin from "./vite-plugin-sitemap";
 import react from "@vitejs/plugin-react";
 import { promises as fs } from "fs";
-import { getLastCommit } from "git-last-commit";
 import jotaiDebugLabel from "jotai/babel/plugin-debug-label";
 import jotaiReactRefresh from "jotai/babel/plugin-react-refresh";
 import { dirname, resolve } from "path";

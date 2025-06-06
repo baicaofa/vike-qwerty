@@ -1,28 +1,11 @@
 // /gallery/@id/Page.tsx
 import { DictChapterButton } from "../../Typing/components/DictChapterButton";
-import StartButton from "../../Typing/components/StartButton";
-import bookCover from "@/assets/book-cover.png";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-import Tooltip from "@/components/Tooltip";
-import { WordPronunciationIcon } from "@/components/WordPronunciationIcon";
 import type { WordPronunciationIconRef } from "@/components/WordPronunciationIcon";
 import { dictionaries } from "@/resources/dictionary";
-import {
-  currentChapterAtom,
-  currentDictInfoAtom,
-  isIgnoreCaseAtom,
-  isShowAnswerOnHoverAtom,
-  isTextSelectableAtom,
-  pronunciationIsOpenAtom,
-  wordDictationConfigAtom,
-} from "@/store";
+import { currentDictInfoAtom } from "@/store";
 import type { Dictionary } from "@/typings";
-import {
-  CTRL,
-  getUtcStringForMixpanel,
-  useMixPanelWordLogUploader,
-} from "@/utils";
 import { wordListFetcher } from "@/utils/wordListFetcher";
 import { useAtomValue } from "jotai";
 import { useEffect, useRef, useState } from "react";

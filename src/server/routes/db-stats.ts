@@ -1,5 +1,6 @@
 import DbStats from "../models/DbStats";
-import express, { Request, Response } from "express";
+import type { Request, Response } from "express";
+import express from "express";
 
 const router = express.Router();
 

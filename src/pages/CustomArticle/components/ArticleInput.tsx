@@ -105,7 +105,7 @@ export default function ArticleInput() {
         </button>
         <button
           type="button"
-          className="my-btn-primary"
+          className="my-btn-primary hover:bg-blue-600"
           onClick={handleNext}
           disabled={isError || state.articleText.trim().length === 0}
         >

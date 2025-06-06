@@ -253,6 +253,34 @@ export function Page() {
         </div>
       </Layout>
       <WordList />
+
+      {/* 自定义文章悬浮按钮 */}
+      <Tooltip
+        content="自定义文章练习"
+        placement="top"
+        className="!absolute right-5 top-[60%] z-20"
+      >
+        <a
+          href="/custom-article"
+          title="自定义文章练习"
+          aria-label="自定义文章练习"
+          className="fixed right-6 top-[60%] z-20 rounded-lg bg-green-50 px-3 py-3 text-lg hover:bg-green-200 focus:outline-none dark:bg-green-900 dark:hover:bg-green-800 transition-colors duration-200 shadow-lg"
+        >
+          <svg
+            className="h-6 w-6 text-green-600 dark:text-green-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+            />
+          </svg>
+        </a>
+      </Tooltip>
     </TypingContext.Provider>
   );
 }

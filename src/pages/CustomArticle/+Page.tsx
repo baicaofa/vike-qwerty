@@ -2,41 +2,25 @@ import ArticleHistory from "./components/ArticleHistory";
 import ArticleInput from "./components/ArticleInput";
 import ArticlePractice from "./components/ArticlePractice";
 import ArticlePreprocess from "./components/ArticlePreprocess";
+import UserGuide from "./components/UserGuide";
 import { ArticleContext, articleReducer, initialState } from "./store";
 import { ArticleActionType } from "./store/type";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-import { RecordDB } from "@/utils/db";
-import { initArticleTable } from "@/utils/db/article";
-import { useEffect } from "react";
 import { useImmerReducer } from "use-immer";
 
 export function Page() {
   // 使用 useImmerReducer 管理状态
   const [state, dispatch] = useImmerReducer(articleReducer, initialState);
 
-  // 初始化数据库表
-  useEffect(() => {
-    const initDb = async () => {
-      try {
-        const db = new RecordDB();
-        initArticleTable(db);
-      } catch (error) {
-        console.error("初始化文章数据库失败:", error);
-      }
-    };
-
-    initDb();
-  }, []);
-
-  // 显示历史记录
+  // 显示保存的文章
   const handleViewHistory = () => {
     dispatch({ type: ArticleActionType.SET_VIEW_HISTORY, payload: true });
   };
 
   // 根据当前步骤渲染对应组件
   const renderStep = () => {
-    // 如果显示历史记录
+    // 如果显示保存的文章列表
     if (state.viewHistory) {
       return <ArticleHistory />;
     }
@@ -56,7 +40,7 @@ export function Page() {
 
   // 渲染步骤指示器
   const renderStepIndicator = () => {
-    // 在历史记录视图中不显示步骤指示器
+    // 在保存文章列表视图中不显示步骤指示器
     if (state.viewHistory) {
       return null;
     }
@@ -134,15 +118,7 @@ export function Page() {
       <Layout>
         <Header>
           <div className="flex-1 flex justify-end">
-            {!state.viewHistory && state.currentStep === 1 && (
-              <button
-                type="button"
-                className="my-btn-secondary"
-                onClick={handleViewHistory}
-              >
-                历史记录
-              </button>
-            )}
+            {/* 移除原来的保存文章按钮，改为悬浮按钮 */}
           </div>
         </Header>
         <div className="container mx-auto py-8 px-4">
@@ -150,6 +126,34 @@ export function Page() {
           {renderStepIndicator()}
           {renderStep()}
         </div>
+
+        {/* 使用指南 - 只在非历史记录视图中显示 */}
+        {!state.viewHistory && <UserGuide />}
+
+        {/* 悬浮的保存文章按钮 */}
+        {!state.viewHistory && (
+          <button
+            type="button"
+            className="fixed right-6 top-1/2 transform -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg shadow-lg transition-all duration-200 z-50 flex items-center space-x-2"
+            onClick={handleViewHistory}
+            title="查看保存的文章"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            <span className="text-sm font-medium">保存的文章</span>
+          </button>
+        )}
       </Layout>
     </ArticleContext.Provider>
   );

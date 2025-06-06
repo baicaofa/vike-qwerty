@@ -10,8 +10,6 @@ export const initialState: ArticleState = {
 
   // 预处理设置
   preprocessSettings: {
-    repetitionEnabled: false,
-    repetitionCount: 1,
     removePunctuation: false,
   },
 
@@ -19,6 +17,8 @@ export const initialState: ArticleState = {
   isTyping: false,
   isPaused: false,
   isFinished: false,
+  enableSound: false, // 默认不启用声音
+  hasWrong: false, // 默认没有输入错误
 
   // 练习数据
   words: [],
@@ -49,6 +49,9 @@ export const initialState: ArticleState = {
 
   // 历史记录视图
   viewHistory: false,
+
+  // 是否从历史记录进入练习
+  fromHistory: false,
 };
 
 // 移除标点符号
@@ -96,20 +99,6 @@ const processText = (state: ArticleState): ArticleState => {
 
   // 将文本转换为单词数组
   let words = textToWords(processedText);
-
-  // 如果启用重复练习，对每个单词重复指定次数
-  if (
-    preprocessSettings.repetitionEnabled &&
-    preprocessSettings.repetitionCount > 1
-  ) {
-    const repeatedWords: ArticleWord[] = [];
-    for (const word of words) {
-      for (let i = 0; i < preprocessSettings.repetitionCount; i++) {
-        repeatedWords.push({ ...word });
-      }
-    }
-    words = repeatedWords;
-  }
 
   return {
     ...state,
@@ -275,6 +264,7 @@ export const articleReducer = (
         ...state,
         errors: state.errors + 1,
         errorPositions: [...state.errorPositions, action.payload],
+        hasWrong: true,
       };
 
     case ArticleActionType.TICK_TIMER: {
@@ -327,6 +317,9 @@ export const articleReducer = (
       return {
         ...state,
         currentStep: (state.currentStep - 1) as 1 | 2 | 3,
+        // 返回上一步时重置保存状态和历史记录标志
+        isSaved: false,
+        fromHistory: state.currentStep === 2 ? false : state.fromHistory,
       };
 
     case ArticleActionType.SET_SAVING:
@@ -341,10 +334,32 @@ export const articleReducer = (
         isSaved: action.payload,
       };
 
+    case ArticleActionType.SET_ENABLE_SOUND:
+      return {
+        ...state,
+        enableSound: action.payload,
+      };
+
+    case ArticleActionType.RESET_WRONG_INPUT:
+      return {
+        ...state,
+        userInput: "",
+        letterStates: new Array(
+          state.words[state.currentWordIndex]?.name.length || 0
+        ).fill("normal"),
+        hasWrong: false,
+      };
+
     case ArticleActionType.SET_VIEW_HISTORY:
       return {
         ...state,
         viewHistory: action.payload,
+      };
+
+    case ArticleActionType.SET_FROM_HISTORY:
+      return {
+        ...state,
+        fromHistory: action.payload,
       };
 
     default:

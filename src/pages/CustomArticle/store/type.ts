@@ -19,8 +19,6 @@ export interface ArticleWord
 }
 
 export interface PreprocessSettings {
-  repetitionEnabled: boolean;
-  repetitionCount: number;
   removePunctuation: boolean;
 }
 
@@ -36,6 +34,8 @@ export interface ArticleState {
   isTyping: boolean;
   isPaused: boolean;
   isFinished: boolean;
+  enableSound: boolean; // 是否启用声音
+  hasWrong: boolean; // 是否有输入错误
 
   // 练习数据
   words: ArticleWord[];
@@ -66,6 +66,9 @@ export interface ArticleState {
 
   // 历史记录视图
   viewHistory: boolean;
+
+  // 是否从历史记录进入练习
+  fromHistory: boolean;
 }
 
 export enum ArticleActionType {
@@ -82,6 +85,8 @@ export enum ArticleActionType {
   RESUME_TYPING = "RESUME_TYPING",
   FINISH_TYPING = "FINISH_TYPING",
   RESET_TYPING = "RESET_TYPING",
+  SET_ENABLE_SOUND = "SET_ENABLE_SOUND", // 设置是否启用声音
+  RESET_WRONG_INPUT = "RESET_WRONG_INPUT", // 重置错误输入
 
   // 练习数据更新
   UPDATE_USER_INPUT = "UPDATE_USER_INPUT",
@@ -103,6 +108,9 @@ export enum ArticleActionType {
 
   // 历史记录视图
   SET_VIEW_HISTORY = "SET_VIEW_HISTORY",
+
+  // 设置是否从历史记录进入
+  SET_FROM_HISTORY = "SET_FROM_HISTORY",
 }
 
 export type ArticleAction =
@@ -117,6 +125,8 @@ export type ArticleAction =
   | { type: ArticleActionType.RESUME_TYPING }
   | { type: ArticleActionType.FINISH_TYPING }
   | { type: ArticleActionType.RESET_TYPING }
+  | { type: ArticleActionType.SET_ENABLE_SOUND; payload: boolean } // 设置是否启用声音的action
+  | { type: ArticleActionType.RESET_WRONG_INPUT }
   | { type: ArticleActionType.UPDATE_USER_INPUT; payload: string }
   | { type: ArticleActionType.NEXT_WORD }
   | { type: ArticleActionType.ADD_ERROR; payload: number }
@@ -130,4 +140,5 @@ export type ArticleAction =
   | { type: ArticleActionType.PREV_STEP }
   | { type: ArticleActionType.SET_SAVING; payload: boolean }
   | { type: ArticleActionType.SET_SAVED; payload: boolean }
-  | { type: ArticleActionType.SET_VIEW_HISTORY; payload: boolean };
+  | { type: ArticleActionType.SET_VIEW_HISTORY; payload: boolean }
+  | { type: ArticleActionType.SET_FROM_HISTORY; payload: boolean };

@@ -34,6 +34,7 @@ yarn install
 MONGODB_URI=mongodb://localhost:27017/vike-qwerty
 JWT_SECRET=your-super-secret-jwt-key
 PORT=5000
+FRONTEND_URL=https://www.keybr.com.cn # 前端应用的基础URL，用于重置密码等功能的链接生成
 ```
 
 ## 运行

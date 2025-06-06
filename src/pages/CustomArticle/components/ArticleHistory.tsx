@@ -31,6 +31,12 @@ export default function ArticleHistory() {
       payload: article.content,
     });
 
+    // 设置从历史记录进入的标志
+    dispatch({
+      type: ArticleActionType.SET_FROM_HISTORY,
+      payload: true,
+    });
+
     // 直接设置处理后的文本，避免再次处理
     dispatch({
       type: ArticleActionType.SET_VIEW_HISTORY,
@@ -154,7 +160,7 @@ export default function ArticleHistory() {
   return (
     <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
       <div className="w-full flex justify-between items-center mb-6">
-        <h2 className="text-xl font-bold">文章历史</h2>
+        <h2 className="text-xl font-bold">保存的文章</h2>
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <label htmlFor="sort-by" className="text-sm text-gray-600">

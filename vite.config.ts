@@ -80,6 +80,11 @@ export default defineConfig(({ mode }) => {
           changeOrigin: true,
           secure: false,
         },
+        "/api/db-stats": {
+          target: "http://localhost:5000",
+          changeOrigin: true,
+          secure: false,
+        },
         "/api/pronunciation": {
           target: "https://dict.youdao.com",
           changeOrigin: true,

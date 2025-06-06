@@ -33,6 +33,7 @@ export class RecordDB extends Dexie {
   familiarWords!: Table<IFamiliarWord, number>;
   revisionDictRecords!: Table<IRevisionDictRecord, number>;
   revisionWordRecords!: Table<IWordRecord, number>;
+  articleRecords!: Table<any, number>; // 添加文章记录表
 
   constructor() {
     super("RecordDB");
@@ -305,6 +306,19 @@ export class RecordDB extends Dexie {
       familiarWords:
         "++id, &uuid, dict, word, sync_status, last_modified, [dict+word]",
     });
+
+    // 添加自定义文章表的第8版
+    this.version(8).stores({
+      wordRecords:
+        "++id, &uuid, &[dict+word], dict, word, lastPracticedAt, sync_status, last_modified",
+      chapterRecords:
+        "++id, &uuid, dict, chapter, timeStamp, sync_status, last_modified",
+      reviewRecords: "++id, &uuid, dict, timeStamp, sync_status, last_modified",
+      familiarWords:
+        "++id, &uuid, dict, word, sync_status, last_modified, [dict+word]",
+      // 添加文章记录表
+      articleRecords: "++id, &uuid, title, content, createdAt, lastPracticedAt",
+    });
   }
 }
 
@@ -325,7 +339,7 @@ export async function checkAndUpgradeDatabase() {
     console.log(`数据库当前版本: ${currentVersion}`);
 
     // 检查是否是最新版本
-    const expectedVersion = 7; // 当前最新版本
+    const expectedVersion = 8; // 当前最新版本
     if (currentVersion < expectedVersion) {
       console.warn(
         `数据库版本过旧 (当前: ${currentVersion}, 期望: ${expectedVersion})`

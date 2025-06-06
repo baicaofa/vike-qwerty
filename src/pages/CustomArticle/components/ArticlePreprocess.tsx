@@ -1,12 +1,15 @@
 import { ArticleContext } from "../store";
 import type { PreprocessSettings } from "../store/type";
 import { ArticleActionType } from "../store/type";
+import { useSaveArticle } from "@/utils/db/article";
 import { useContext, useEffect, useState } from "react";
 
 export default function ArticlePreprocess() {
   const { state, dispatch } = useContext(ArticleContext);
   const [previewText, setPreviewText] = useState("");
   const [wordCount, setWordCount] = useState(0);
+  const [isSaving, setIsSaving] = useState(false);
+  const saveArticle = useSaveArticle();
 
   // 处理设置变更
   const handleSettingChange = <K extends keyof PreprocessSettings>(
@@ -19,21 +22,6 @@ export default function ArticlePreprocess() {
     });
   };
 
-  // 重复练习开关
-  const handleRepetitionToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleSettingChange("repetitionEnabled", e.target.checked);
-  };
-
-  // 重复次数变更
-  const handleRepetitionCountChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const value = parseInt(e.target.value, 10);
-    if (!isNaN(value) && value > 0) {
-      handleSettingChange("repetitionCount", value);
-    }
-  };
-
   // 移除标点符号开关
   const handleRemovePunctuationToggle = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -41,9 +29,45 @@ export default function ArticlePreprocess() {
     handleSettingChange("removePunctuation", e.target.checked);
   };
 
+  // 启用声音开关
+  const handleEnableSoundToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch({
+      type: ArticleActionType.SET_ENABLE_SOUND,
+      payload: e.target.checked,
+    });
+  };
+
   // 返回上一步
   const handleBack = () => {
     dispatch({ type: ArticleActionType.PREV_STEP });
+  };
+
+  // 保存文章
+  const handleSave = async () => {
+    if (isSaving) return;
+
+    setIsSaving(true);
+    try {
+      // 生成文章标题（取前30个字符，如果超过则添加省略号）
+      const title =
+        state.articleText.length > 30
+          ? state.articleText.substring(0, 30) + "..."
+          : state.articleText.substring(0, 30);
+
+      await saveArticle({
+        title: title.trim() || "未命名文章",
+        content: state.articleText, // 保存原始文章内容
+        createdAt: Date.now(),
+      });
+
+      dispatch({ type: ArticleActionType.SET_SAVED, payload: true });
+      alert("文章已保存成功！");
+    } catch (error) {
+      console.error("保存文章失败:", error);
+      alert("保存文章失败，请重试。");
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   // 进入下一步
@@ -73,14 +97,6 @@ export default function ArticlePreprocess() {
       .split(/\s+/)
       .filter((word) => word.length > 0).length;
     setWordCount(wordCount);
-
-    // 如果启用重复练习，显示重复次数
-    if (
-      state.preprocessSettings.repetitionEnabled &&
-      state.preprocessSettings.repetitionCount > 1
-    ) {
-      setWordCount(wordCount * state.preprocessSettings.repetitionCount);
-    }
   }, [state.articleText, state.preprocessSettings]);
 
   return (
@@ -91,63 +107,54 @@ export default function ArticlePreprocess() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {/* 左侧：设置选项 */}
         <div className="space-y-4">
-          <div className="flex items-center">
-            <input
-              id="repetition-enabled"
-              type="checkbox"
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-              checked={state.preprocessSettings.repetitionEnabled}
-              onChange={handleRepetitionToggle}
-              aria-label="启用重复练习"
-              title="对每个单词重复练习"
-            />
-            <label
-              htmlFor="repetition-enabled"
-              className="ml-2 block text-sm text-gray-700"
-            >
-              启用重复练习
-            </label>
-          </div>
-
-          {state.preprocessSettings.repetitionEnabled && (
-            <div>
-              <label
-                htmlFor="repetition-count"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                重复次数
-              </label>
+          <div className="flex items-start">
+            <div className="flex items-center h-5">
               <input
-                id="repetition-count"
-                type="number"
-                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                value={state.preprocessSettings.repetitionCount}
-                onChange={handleRepetitionCountChange}
-                min={1}
-                max={10}
-                aria-label="重复次数"
-                title="设置每个单词重复练习的次数"
-                placeholder="输入重复次数"
+                id="remove-punctuation"
+                type="checkbox"
+                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                checked={state.preprocessSettings.removePunctuation}
+                onChange={handleRemovePunctuationToggle}
+                aria-label="移除标点符号"
+                title="从文本中移除所有标点符号"
               />
             </div>
-          )}
+            <div className="ml-3 text-sm">
+              <label
+                htmlFor="remove-punctuation"
+                className="font-medium text-gray-700"
+              >
+                移除标点符号
+              </label>
+              <p className="text-gray-500">
+                移除文本中的标点符号，专注于单词训练，提高打字效率
+              </p>
+            </div>
+          </div>
 
-          <div className="flex items-center">
-            <input
-              id="remove-punctuation"
-              type="checkbox"
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-              checked={state.preprocessSettings.removePunctuation}
-              onChange={handleRemovePunctuationToggle}
-              aria-label="移除标点符号"
-              title="从文本中移除所有标点符号"
-            />
-            <label
-              htmlFor="remove-punctuation"
-              className="ml-2 block text-sm text-gray-700"
-            >
-              移除标点符号
-            </label>
+          <div className="flex items-start">
+            <div className="flex items-center h-5">
+              <input
+                id="enable-sound"
+                type="checkbox"
+                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                checked={state.enableSound}
+                onChange={handleEnableSoundToggle}
+                aria-label="播放单词读音"
+                title="练习时播放当前单词的读音"
+              />
+            </div>
+            <div className="ml-3 text-sm">
+              <label
+                htmlFor="enable-sound"
+                className="font-medium text-gray-700"
+              >
+                播放单词读音
+              </label>
+              <p className="text-gray-500">
+                默认关闭，练习较快不建议开启，读音会加载不及时
+              </p>
+            </div>
           </div>
         </div>
 
@@ -167,9 +174,28 @@ export default function ArticlePreprocess() {
         <button type="button" className="my-btn-secondary" onClick={handleBack}>
           返回
         </button>
-        <button type="button" className="my-btn-primary" onClick={handleNext}>
-          开始练习
-        </button>
+
+        <div className="flex space-x-3">
+          {/* 只有在不是从历史记录进入时才显示保存按钮 */}
+          {!state.fromHistory && (
+            <button
+              type="button"
+              className="my-btn-secondary"
+              onClick={handleSave}
+              disabled={isSaving || state.isSaved}
+            >
+              {isSaving ? "保存中..." : state.isSaved ? "已保存" : "保存文章"}
+            </button>
+          )}
+
+          <button
+            type="button"
+            className="my-btn-primary hover:bg-blue-600"
+            onClick={handleNext}
+          >
+            开始练习
+          </button>
+        </div>
       </div>
     </div>
   );

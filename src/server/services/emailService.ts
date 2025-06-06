@@ -135,7 +135,14 @@ export const sendPasswordResetEmail = async (
   email: string,
   token: string
 ): Promise<boolean> => {
-  const resetUrl = `http://localhost:3000/reset-password?token=${token}&email=${encodeURIComponent(
+  // 根据环境确定基础URL
+  const baseUrl =
+    process.env.FRONTEND_URL ||
+    (process.env.NODE_ENV === "production"
+      ? "https://www.keybr.com.cn"
+      : "http://localhost:3000");
+
+  const resetUrl = `${baseUrl}/reset-password?token=${token}&email=${encodeURIComponent(
     email
   )}`;
 

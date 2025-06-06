@@ -2,15 +2,12 @@ import { ArticleContext } from "../store";
 import { ArticleActionType } from "../store/type";
 import useKeySounds from "@/hooks/useKeySounds";
 import { isChineseSymbol, isLegal } from "@/utils";
-import { useSaveArticle } from "@/utils/db/article";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 
 export default function ArticlePractice() {
   const { state, dispatch } = useContext(ArticleContext);
   const [isCompleted, setIsCompleted] = useState(false);
-  const [isSaving, setIsSaving] = useState(false);
   const keydownHandlerRef = useRef<((e: KeyboardEvent) => void) | null>(null);
-  const saveArticle = useSaveArticle();
   const [playKeySound, playBeepSound, playHintSound] = useKeySounds();
 
   // 当前单词
@@ -37,7 +34,10 @@ export default function ArticlePractice() {
         const inputChar = char;
         const correctChar = currentWord.name[state.userInput.length];
 
-        if (inputChar === correctChar) {
+        // 使用大小写不敏感的比较
+        const isEqual = inputChar.toLowerCase() === correctChar.toLowerCase();
+
+        if (isEqual) {
           // 输入正确
           dispatch({
             type: ArticleActionType.UPDATE_LETTER_STATE,
@@ -158,6 +158,21 @@ export default function ArticlePractice() {
     }
   }, [state.isTyping, isCompleted, dispatch, handleInput]);
 
+  // 错误后重置输入
+  useEffect(() => {
+    if (state.hasWrong) {
+      const timer = setTimeout(() => {
+        dispatch({
+          type: ArticleActionType.RESET_WRONG_INPUT,
+        });
+      }, 300); // 300毫秒后重置
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [state.hasWrong, dispatch]);
+
   // 暂停练习
   const handlePause = () => {
     dispatch({ type: ArticleActionType.PAUSE_TYPING });
@@ -180,31 +195,9 @@ export default function ArticlePractice() {
     dispatch({ type: ArticleActionType.PREV_STEP });
   };
 
-  // 保存文章
-  const handleSave = async () => {
-    if (isSaving) return;
-
-    setIsSaving(true);
-    try {
-      await saveArticle({
-        title: state.articleText.substring(0, 30) + "...",
-        content: state.processedText,
-        createdAt: Date.now(),
-      });
-
-      dispatch({ type: ArticleActionType.SET_SAVED, payload: true });
-      alert("文章已保存成功！");
-    } catch (error) {
-      console.error("保存文章失败:", error);
-      alert("保存文章失败，请重试。");
-    } finally {
-      setIsSaving(false);
-    }
-  };
-
   // 播放当前单词发音
   const playCurrentWordSound = () => {
-    if (currentWord && state.isTyping && !state.isPaused) {
+    if (currentWord && state.isTyping && !state.isPaused && state.enableSound) {
       // 使用浏览器的语音合成API
       const utterance = new SpeechSynthesisUtterance(currentWord.name);
       utterance.lang = "en-US";
@@ -214,7 +207,12 @@ export default function ArticlePractice() {
 
   // 自动播放当前单词发音
   useEffect(() => {
-    if (state.isTyping && !state.isPaused && state.userInput.length === 0) {
+    if (
+      state.isTyping &&
+      !state.isPaused &&
+      state.userInput.length === 0 &&
+      state.enableSound
+    ) {
       playCurrentWordSound();
     }
   }, [
@@ -222,6 +220,7 @@ export default function ArticlePractice() {
     state.isTyping,
     state.isPaused,
     state.userInput.length,
+    state.enableSound,
   ]);
 
   // 计时器
@@ -325,28 +324,6 @@ export default function ArticlePractice() {
                 return <span key={index}>{char}</span>;
               })}
             </span>
-
-            {/* 发音按钮 */}
-            <button
-              className="absolute -right-8 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500 focus:outline-none"
-              onClick={playCurrentWordSound}
-              title="播放发音"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
-                />
-              </svg>
-            </button>
           </span>
           <span className="text-gray-500">{afterWord}</span>
         </div>
@@ -402,13 +379,8 @@ export default function ArticlePractice() {
             再次练习
           </button>
 
-          <button
-            type="button"
-            className="my-btn-primary"
-            onClick={handleSave}
-            disabled={isSaving || state.isSaved}
-          >
-            {isSaving ? "保存中..." : state.isSaved ? "已保存" : "保存文章"}
+          <button type="button" className="my-btn-primary" onClick={handleBack}>
+            返回设置
           </button>
         </div>
       </div>

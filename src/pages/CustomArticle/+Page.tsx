@@ -1,7 +1,9 @@
+import ArticleHistory from "./components/ArticleHistory";
 import ArticleInput from "./components/ArticleInput";
 import ArticlePractice from "./components/ArticlePractice";
 import ArticlePreprocess from "./components/ArticlePreprocess";
 import { ArticleContext, articleReducer, initialState } from "./store";
+import { ArticleActionType } from "./store/type";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import { RecordDB } from "@/utils/db";
@@ -27,8 +29,19 @@ export function Page() {
     initDb();
   }, []);
 
+  // 显示历史记录
+  const handleViewHistory = () => {
+    dispatch({ type: ArticleActionType.SET_VIEW_HISTORY, payload: true });
+  };
+
   // 根据当前步骤渲染对应组件
   const renderStep = () => {
+    // 如果显示历史记录
+    if (state.viewHistory) {
+      return <ArticleHistory />;
+    }
+
+    // 正常的步骤流程
     switch (state.currentStep) {
       case 1:
         return <ArticleInput />;
@@ -43,6 +56,11 @@ export function Page() {
 
   // 渲染步骤指示器
   const renderStepIndicator = () => {
+    // 在历史记录视图中不显示步骤指示器
+    if (state.viewHistory) {
+      return null;
+    }
+
     return (
       <div className="flex justify-center mb-8">
         <div className="flex items-center">
@@ -93,6 +111,14 @@ export function Page() {
 
   // 渲染步骤标题
   const renderStepTitle = () => {
+    if (state.viewHistory) {
+      return (
+        <div className="flex justify-center mb-6">
+          <h1 className="text-2xl font-bold">自定义文章练习</h1>
+        </div>
+      );
+    }
+
     const titles = ["添加文本", "文本预处理", "开始练习"];
     return (
       <div className="flex justify-center mb-6">
@@ -107,7 +133,17 @@ export function Page() {
     <ArticleContext.Provider value={{ state, dispatch }}>
       <Layout>
         <Header>
-          <div className="flex-1"></div>
+          <div className="flex-1 flex justify-end">
+            {!state.viewHistory && state.currentStep === 1 && (
+              <button
+                type="button"
+                className="my-btn-secondary"
+                onClick={handleViewHistory}
+              >
+                历史记录
+              </button>
+            )}
+          </div>
         </Header>
         <div className="container mx-auto py-8 px-4">
           {renderStepTitle()}

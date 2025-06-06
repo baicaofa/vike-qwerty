@@ -1,3 +1,4 @@
+import sitemapPlugin from "./vite-plugin-sitemap";
 import react from "@vitejs/plugin-react";
 import { promises as fs } from "fs";
 import { getLastCommit } from "git-last-commit";
@@ -10,7 +11,6 @@ import { fileURLToPath } from "url";
 import vike from "vike/plugin";
 import { defineConfig } from "vite";
 import type { PluginOption } from "vite";
-import sitemapPlugin from "./vite-plugin-sitemap";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -50,8 +50,18 @@ export default defineConfig(({ mode }) => {
         routes: sitemapRoutes,
         autoDetect: true,
         excludePatterns: [
-          '/api/', '/_', '/assets/', '/favicon', '/manifest', '/dicts/',
-          '/login', '/register', '/profile', '/forgot-password', '/reset-password', '/verify-email'
+          "/api/",
+          "/_",
+          "/assets/",
+          "/favicon",
+          "/manifest",
+          "/dicts/",
+          "/login",
+          "/register",
+          "/profile",
+          "/forgot-password",
+          "/reset-password",
+          "/verify-email",
         ],
         changefreq: "daily",
         priority: 0.5,

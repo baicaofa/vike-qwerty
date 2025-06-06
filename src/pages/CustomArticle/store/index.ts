@@ -1,4 +1,4 @@
-import type { ArticleAction, ArticleState, SegmentationType } from "./type";
+import type { ArticleAction, ArticleState, ArticleWord } from "./type";
 import { ArticleActionType } from "./type";
 import { createContext } from "react";
 
@@ -10,13 +10,9 @@ export const initialState: ArticleState = {
 
   // 预处理设置
   preprocessSettings: {
-    segmentationType: "paragraph" as SegmentationType,
-    customSegmentLength: 100,
     repetitionEnabled: false,
     repetitionCount: 1,
-    speedTarget: undefined,
-    focusMode: false,
-    simplifyPunctuation: false,
+    removePunctuation: false,
   },
 
   // 练习状态
@@ -25,12 +21,16 @@ export const initialState: ArticleState = {
   isFinished: false,
 
   // 练习数据
-  segments: [],
-  currentSegmentIndex: 0,
-  currentPosition: 0,
+  words: [],
+  currentWordIndex: 0,
   userInput: "",
   errors: 0,
   errorPositions: [],
+
+  // 当前单词状态
+  currentLetterIndex: 0,
+  letterStates: [],
+  letterTimeArray: [],
 
   // 计时和统计
   startTime: 0,
@@ -46,92 +46,76 @@ export const initialState: ArticleState = {
   // 保存状态
   isSaving: false,
   isSaved: false,
+
+  // 历史记录视图
+  viewHistory: false,
 };
 
-// 文本分段处理函数
-const segmentText = (
-  text: string,
-  type: SegmentationType,
-  customLength?: number
-): string[] => {
-  switch (type) {
-    case "sentence":
-      // 按句子分割（以句号、问号、感叹号结尾）
-      return text.split(/(?<=[.!?])\s+/);
-    case "paragraph":
-      // 按段落分割（以换行符分割）
-      return text.split(/\n+/).filter((p) => p.trim().length > 0);
-    case "custom": {
-      if (!customLength || customLength <= 0) return [text];
-      // 按自定义长度分割
-      const segments: string[] = [];
-      for (let i = 0; i < text.length; i += customLength) {
-        segments.push(text.substring(i, i + customLength));
-      }
-      return segments;
-    }
-    default:
-      return [text];
-  }
-};
-
-// 处理标点符号
-const simplifyPunctuation = (text: string): string => {
-  // 简化连续的标点符号，保留基本标点
+// 移除标点符号
+const removePunctuation = (text: string): string => {
+  // 保留字母、数字、空格，移除所有标点符号
   return text
-    .replace(/[""]/g, '"')
-    .replace(/['']/g, "'")
-    .replace(/[…]/g, "...")
-    .replace(/[—–]/g, "-")
+    .replace(/[^\w\s]/g, "")
     .replace(/\s+/g, " ")
     .trim();
 };
 
-// 处理文本，生成分段
+// 将文本转换为单词数组
+const textToWords = (text: string): ArticleWord[] => {
+  // 使用正则表达式匹配单词（包括标点符号）
+  const wordRegex = /\S+/g;
+  const words: ArticleWord[] = [];
+  let match: RegExpExecArray | null;
+  let index = 0;
+
+  while ((match = wordRegex.exec(text)) !== null) {
+    const word = match[0];
+    words.push({
+      name: word,
+      translation: "", // 替代trans字段
+      phonetic: "", // 替代usphone和ukphone
+      originalIndex: index,
+      startPosition: match.index,
+      endPosition: match.index + word.length,
+    });
+    index++;
+  }
+
+  return words;
+};
+
+// 处理文本，生成单词数组
 const processText = (state: ArticleState): ArticleState => {
   const { articleText, preprocessSettings } = state;
   let processedText = articleText;
 
-  // 如果需要简化标点
-  if (preprocessSettings.simplifyPunctuation) {
-    processedText = simplifyPunctuation(processedText);
+  // 如果需要移除标点符号
+  if (preprocessSettings.removePunctuation) {
+    processedText = removePunctuation(processedText);
   }
 
-  // 分段处理
-  const textSegments = segmentText(
-    processedText,
-    preprocessSettings.segmentationType,
-    preprocessSettings.customSegmentLength
-  );
+  // 将文本转换为单词数组
+  let words = textToWords(processedText);
 
-  // 创建段落对象数组
-  const segments = textSegments.map((text, index) => ({
-    text,
-    index,
-  }));
-
-  // 如果启用重复练习，对每个段落重复指定次数
+  // 如果启用重复练习，对每个单词重复指定次数
   if (
     preprocessSettings.repetitionEnabled &&
     preprocessSettings.repetitionCount > 1
   ) {
-    const repeatedSegments = [];
-    for (const segment of segments) {
+    const repeatedWords: ArticleWord[] = [];
+    for (const word of words) {
       for (let i = 0; i < preprocessSettings.repetitionCount; i++) {
-        repeatedSegments.push({ ...segment });
+        repeatedWords.push({ ...word });
       }
     }
-    return {
-      ...state,
-      processedText,
-      segments: repeatedSegments,
-    };
+    words = repeatedWords;
   }
 
   return {
     ...state,
     processedText,
-    segments,
+    words,
+    letterStates: new Array(words[0]?.name.length || 0).fill("normal"),
   };
 };
 
@@ -158,13 +142,9 @@ export const articleReducer = (
 ): ArticleState => {
   let currentTime: number;
   let totalTime: number;
-  let currentSegment: any;
-  let targetText: string;
-  let newErrors: number;
-  let newErrorPositions: number[];
+  let currentWord: ArticleWord | undefined;
   let now: number;
   let elapsed: number;
-  let typedText: string;
 
   switch (action.type) {
     case ArticleActionType.SET_ARTICLE_TEXT:
@@ -228,8 +208,12 @@ export const articleReducer = (
         isTyping: false,
         isPaused: false,
         isFinished: false,
-        currentSegmentIndex: 0,
-        currentPosition: 0,
+        currentWordIndex: 0,
+        currentLetterIndex: 0,
+        letterStates: new Array(state.words[0]?.name.length || 0).fill(
+          "normal"
+        ),
+        letterTimeArray: [],
         userInput: "",
         errors: 0,
         errorPositions: [],
@@ -242,45 +226,49 @@ export const articleReducer = (
       };
 
     case ArticleActionType.UPDATE_USER_INPUT:
-      currentSegment = state.segments[state.currentSegmentIndex];
-      targetText =
-        currentSegment?.text.substring(0, action.payload.length) || "";
-
-      // 计算错误
-      newErrors = state.errors;
-      newErrorPositions = [...state.errorPositions];
-
-      for (let i = 0; i < action.payload.length; i++) {
-        if (action.payload[i] !== targetText[i]) {
-          if (!newErrorPositions.includes(i)) {
-            newErrorPositions.push(i);
-            newErrors++;
-          }
-        }
-      }
+      currentWord = state.words[state.currentWordIndex];
+      if (!currentWord) return state;
 
       return {
         ...state,
         userInput: action.payload,
-        errors: newErrors,
-        errorPositions: newErrorPositions,
+        currentLetterIndex: action.payload.length,
       };
 
-    case ArticleActionType.NEXT_SEGMENT:
-      if (state.currentSegmentIndex >= state.segments.length - 1) {
-        // 已完成所有段落
+    case ArticleActionType.UPDATE_LETTER_STATE: {
+      const newLetterStates = [...state.letterStates];
+      newLetterStates[action.payload.index] = action.payload.state;
+
+      return {
+        ...state,
+        letterStates: newLetterStates,
+        letterTimeArray:
+          action.payload.state === "correct"
+            ? [...state.letterTimeArray, Date.now()]
+            : state.letterTimeArray,
+      };
+    }
+
+    case ArticleActionType.NEXT_WORD: {
+      if (state.currentWordIndex >= state.words.length - 1) {
+        // 已完成所有单词
         return {
           ...state,
           isFinished: true,
         };
       }
 
+      const nextWord = state.words[state.currentWordIndex + 1];
+
       return {
         ...state,
-        currentSegmentIndex: state.currentSegmentIndex + 1,
-        currentPosition: 0,
+        currentWordIndex: state.currentWordIndex + 1,
+        currentLetterIndex: 0,
+        letterStates: new Array(nextWord?.name.length || 0).fill("normal"),
+        letterTimeArray: [],
         userInput: "",
       };
+    }
 
     case ArticleActionType.ADD_ERROR:
       return {
@@ -289,23 +277,26 @@ export const articleReducer = (
         errorPositions: [...state.errorPositions, action.payload],
       };
 
-    case ArticleActionType.TICK_TIMER:
+    case ArticleActionType.TICK_TIMER: {
       if (!state.isTyping || state.isPaused) return state;
 
       now = Date.now();
       elapsed = (now - state.startTime - state.totalPausedTime) / 1000;
-      typedText =
-        state.segments
-          .slice(0, state.currentSegmentIndex)
-          .map((s) => s.text)
-          .join("") + state.userInput;
+
+      // 计算已输入的文本长度
+      let typedChars = 0;
+      for (let i = 0; i < state.currentWordIndex; i++) {
+        typedChars += state.words[i].name.length;
+      }
+      typedChars += state.userInput.length;
 
       return {
         ...state,
         elapsedTime: elapsed,
-        speed: calculateSpeed(typedText, elapsed),
-        accuracy: calculateAccuracy(state.errors, typedText.length),
+        speed: calculateSpeed(" ".repeat(typedChars), elapsed), // 使用空格替代实际文本，只计算字符数
+        accuracy: calculateAccuracy(state.errors, typedChars),
       };
+    }
 
     case ArticleActionType.SET_STEP:
       return {
@@ -348,6 +339,12 @@ export const articleReducer = (
       return {
         ...state,
         isSaved: action.payload,
+      };
+
+    case ArticleActionType.SET_VIEW_HISTORY:
+      return {
+        ...state,
+        viewHistory: action.payload,
       };
 
     default:

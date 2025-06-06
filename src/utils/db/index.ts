@@ -26,7 +26,7 @@ import Dexie from "dexie";
 import { useAtomValue } from "jotai";
 import { useCallback, useContext } from "react";
 
-class RecordDB extends Dexie {
+export class RecordDB extends Dexie {
   wordRecords!: Table<IWordRecord, number>; // id is the primary key (number)
   chapterRecords!: Table<IChapterRecord, number>;
   reviewRecords!: Table<IReviewRecord, number>;

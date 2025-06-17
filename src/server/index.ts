@@ -1,6 +1,7 @@
 import connectDB from "./config/db";
 import authRoutes from "./routes/auth";
 import dbStatsRoutes from "./routes/db-stats";
+import feedbackRoutes from "./routes/feedback";
 import syncRoutes from "./routes/sync";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/sync", syncRoutes);
 app.use("/api/db-stats", dbStatsRoutes);
+app.use("/api/feedback", feedbackRoutes);
 
 const PORT = process.env.PORT || 5000;
 

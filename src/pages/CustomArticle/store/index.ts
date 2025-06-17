@@ -98,7 +98,7 @@ const processText = (state: ArticleState): ArticleState => {
   }
 
   // 将文本转换为单词数组
-  let words = textToWords(processedText);
+  const words = textToWords(processedText);
 
   return {
     ...state,

@@ -1,5 +1,6 @@
 import { DonatingCard } from "../DonatingCard";
 import { StickerButton } from "../DonatingCard/components/StickerButton";
+import { FeedbackDialog } from "../FeedbackDialog";
 import redBookCode from "@/assets/redBook-code.jpg";
 import InfoPanel from "@/components/InfoPanel";
 import Tooltip from "@/components/Tooltip";
@@ -61,6 +62,18 @@ const Footer: React.FC = () => {
         >
           赣ICP备2020012444号
         </a>
+        <a
+          href="https://github.com/baicaofa/vike-qwerty"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="前往 GitHub 项目主页"
+        >
+          <IconGithub
+            fontSize={15}
+            className="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-100"
+          />
+        </a>
+        <FeedbackDialog buttonClassName="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200" />
       </footer>
     </>
   );

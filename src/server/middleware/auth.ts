@@ -82,3 +82,30 @@ export const requireEmailVerified = async (
     res.status(500).json({ message: "服务器错误" });
   }
 };
+
+// 检查管理员权限的中间件
+export const isAdmin = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const user = await User.findById(req.user._id);
+
+    if (!user) {
+      res.status(404).json({ message: "用户不存在" });
+      return;
+    }
+
+    // 检查用户是否具有管理员权限
+    // 注意：需要在User模型中添加isAdmin字段
+    if (!user.isAdmin) {
+      res.status(403).json({ message: "需要管理员权限" });
+      return;
+    }
+
+    next();
+  } catch (error) {
+    res.status(500).json({ message: "服务器错误" });
+  }
+};

@@ -1,3 +1,4 @@
+import { ToastProvider } from "../hooks/useToast";
 import { TypingContext, initialState } from "../pages/Typing/store";
 import { getPageTDK } from "../resources/tdk";
 import "animate.css";
@@ -38,7 +39,9 @@ async function onRenderHtml(pageContext: PageContext) {
     renderToString(
       <JotaiProvider store={store}>
         <TypingContext.Provider value={typingContextValue}>
-          <Page pageContext={pageContext} />
+          <ToastProvider>
+            <Page pageContext={pageContext} />
+          </ToastProvider>
         </TypingContext.Provider>
       </JotaiProvider>
     )

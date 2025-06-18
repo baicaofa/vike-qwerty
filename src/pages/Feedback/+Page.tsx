@@ -4,7 +4,7 @@ import { VoteButtons } from "../../components/VoteButtons";
 import { useToast } from "../../hooks/useToast";
 import { getPublicFeedback } from "../../services/feedbackService";
 import * as LucideIcons from "lucide-react";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // 反馈类型和状态标签映射
 const typeLabels: Record<string, string> = {

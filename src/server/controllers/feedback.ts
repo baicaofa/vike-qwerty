@@ -1,5 +1,5 @@
 import Feedback from "../models/Feedback";
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 
 // 提交新的反馈
 export const submitFeedback = async (req: Request, res: Response) => {

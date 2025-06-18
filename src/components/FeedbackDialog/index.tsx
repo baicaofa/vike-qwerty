@@ -1,6 +1,7 @@
 import { FeedbackForm } from "../FeedbackForm";
 import * as Dialog from "@radix-ui/react-dialog";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import IconMessageCircle from "~icons/tabler/message-circle";
 
 interface FeedbackDialogProps {

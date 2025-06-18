@@ -1,11 +1,11 @@
 import {
-  submitFeedback,
   getAllFeedback,
-  updateFeedbackStatus,
   getPublicFeedback,
+  submitFeedback,
+  updateFeedbackStatus,
   voteFeedback,
 } from "../controllers/feedback";
-import { protect, isAdmin } from "../middleware/auth";
+import { isAdmin, protect } from "../middleware/auth";
 import express from "express";
 import type { RequestHandler } from "express";
 

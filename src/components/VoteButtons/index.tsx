@@ -2,7 +2,8 @@ import { useAuth } from "../../hooks/useAuth";
 import { useToast } from "../../hooks/useToast";
 import { voteFeedback } from "../../services/feedbackService";
 import * as LucideIcons from "lucide-react";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 
 interface VoteButtonsProps {
   feedbackId: string;

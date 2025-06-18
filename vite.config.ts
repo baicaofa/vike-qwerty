@@ -93,10 +93,17 @@ export default defineConfig(({ mode }) => {
               console.error("Proxy error:", err);
             });
             proxy.on("proxyReq", (proxyReq, req, res) => {
-              console.log("Proxying specific feedback request:", req.method, req.url);
+              console.log(
+                "Proxying specific feedback request:",
+                req.method,
+                req.url
+              );
             });
             proxy.on("proxyRes", (proxyRes, req, res) => {
-              console.log("Received specific feedback response:", proxyRes.statusCode);
+              console.log(
+                "Received specific feedback response:",
+                proxyRes.statusCode
+              );
             });
           },
         },

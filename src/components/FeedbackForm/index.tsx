@@ -1,8 +1,10 @@
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/useToast";
-import { submitFeedback, FeedbackFormData } from "@/services/feedbackService";
+import type { FeedbackFormData } from "@/services/feedbackService";
+import { submitFeedback } from "@/services/feedbackService";
 import * as Dialog from "@radix-ui/react-dialog";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import IconMessageCircle from "~icons/tabler/message-circle";
 import IconX from "~icons/tabler/x";
 

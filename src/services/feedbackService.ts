@@ -7,6 +7,12 @@ export interface FeedbackFormData {
   contactInfo?: string;
 }
 
+// 投票数据接口
+export interface VoteData {
+  vote: "up" | "down" | "remove";
+  deviceId?: string; // 匿名用户的设备指纹
+}
+
 // 提交反馈
 export const submitFeedback = async (feedbackData: FeedbackFormData) => {
   try {
@@ -29,7 +35,7 @@ export const getAllFeedback = async (
   try {
     const token = localStorage.getItem("token");
     if (!token) {
-      throw new Error("未授权，请先登录");
+      throw new Error("111未授权，请先登录");
     }
 
     const params = new URLSearchParams({
@@ -61,7 +67,7 @@ export const updateFeedbackStatus = async (
   try {
     const token = localStorage.getItem("token");
     if (!token) {
-      throw new Error("未授权，请先登录");
+      throw new Error("1111未授权，请先登录");
     }
 
     const response = await axios.patch(`/api/feedback/${id}`, data, {
@@ -118,29 +124,38 @@ export const getPublicFeedback = async (
   }
 };
 
-// 需要登录：为反馈投票
-export const voteFeedback = async (
-  id: string,
-  vote: "up" | "down" | "remove"
-) => {
+// 为反馈投票（统一使用设备ID）
+export const voteFeedback = async (id: string, voteData: VoteData) => {
   try {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      throw new Error("未授权，请先登录");
-    }
+    console.log("发送投票请求:", {
+      url: `/api/feedback/${id}/vote`,
+      data: voteData,
+    });
 
-    const response = await axios.post(
+    // 创建一个干净的axios实例，不使用任何默认头部
+    const cleanAxios = axios.create();
+    delete cleanAxios.defaults.headers.common["Authorization"]; // 确保没有认证头部
+
+    const response = await cleanAxios.post(
       `/api/feedback/${id}/vote`,
-      { vote },
+      voteData,
       {
         headers: {
-          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       }
     );
 
+    console.log("投票响应成功:", response.data);
     return response.data;
   } catch (error: any) {
+    // 详细记录错误
+    console.error("投票请求失败:", {
+      status: error.response?.status,
+      message: error.response?.data?.message || error.message,
+      error,
+    });
+
     // 处理错误
     const message = error.response?.data?.message || "投票时出错，请稍后再试";
     throw new Error(message);

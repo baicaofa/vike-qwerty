@@ -4,7 +4,7 @@ import { VoteButtons } from "../../components/VoteButtons";
 import { useToast } from "../../hooks/useToast";
 import { getPublicFeedback } from "../../services/feedbackService";
 import * as LucideIcons from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // 反馈类型和状态标签映射
 const typeLabels: Record<string, string> = {
@@ -65,34 +65,33 @@ export default function FeedbackPage() {
   const [filterStatus, setFilterStatus] = useState("");
   const [sortOption, setSortOption] = useState<"newest" | "upvotes">("newest");
 
-  // 加载反馈数据
-  const loadFeedbacks = async () => {
-    try {
-      setLoading(true);
-
-      // 构建筛选参数
-      const filters: Record<string, string> = {};
-      if (filterType) filters.type = filterType;
-      if (filterStatus) filters.status = filterStatus;
-
-      const response = await getPublicFeedback(
-        currentPage,
-        10,
-        filters,
-        sortOption
-      );
-
-      setFeedbacks(response.data);
-      setTotalPages(response.pages);
-      setLoading(false);
-    } catch (error: any) {
-      setError(error.message);
-      setLoading(false);
-    }
-  };
-
   // 监听筛选、排序和分页变化
   useEffect(() => {
+    const loadFeedbacks = async () => {
+      try {
+        setLoading(true);
+
+        // 构建筛选参数
+        const filters: Record<string, string> = {};
+        if (filterType) filters.type = filterType;
+        if (filterStatus) filters.status = filterStatus;
+
+        const response = await getPublicFeedback(
+          currentPage,
+          10,
+          filters,
+          sortOption
+        );
+
+        setFeedbacks(response.data);
+        setTotalPages(response.pages);
+        setLoading(false);
+      } catch (error) {
+        setError(error instanceof Error ? error.message : "加载反馈数据时出错");
+        setLoading(false);
+      }
+    };
+
     loadFeedbacks();
   }, [currentPage, filterType, filterStatus, sortOption]);
 
@@ -138,6 +137,7 @@ export default function FeedbackPage() {
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
               key={page}
+              type="button"
               onClick={() => handlePageChange(page)}
               className={`rounded-md px-3 py-1.5 text-sm font-medium ${
                 currentPage === page
@@ -297,6 +297,7 @@ export default function FeedbackPage() {
                           }
                         />
                         <button
+                          type="button"
                           onClick={() => handleViewDetails(feedback)}
                           className="rounded-md px-3 py-1 text-sm font-medium text-blue-600 hover:bg-blue-50 hover:text-blue-700 dark:text-blue-400 dark:hover:bg-blue-900/20 dark:hover:text-blue-300"
                         >
@@ -324,6 +325,7 @@ export default function FeedbackPage() {
                   反馈详情
                 </h2>
                 <button
+                  type="button"
                   onClick={handleCloseDetails}
                   className="rounded-full p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                   aria-label="关闭"
@@ -380,6 +382,7 @@ export default function FeedbackPage() {
             </div>
             <div className="bg-gray-50 px-6 py-4 dark:bg-gray-700">
               <button
+                type="button"
                 onClick={handleCloseDetails}
                 className="w-full rounded-md bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >

@@ -191,43 +191,71 @@ export const getPublicFeedback = async (req: Request, res: Response) => {
   }
 };
 
-// 投票功能（需要登录）
+// 投票功能（统一使用设备ID标识）
 export const voteFeedback = async (req: Request, res: Response) => {
   try {
-    if (!req.user) {
-      return res.status(401).json({
-        success: false,
-        message: "请先登录后再投票",
-      });
-    }
+    console.log("收到投票请求:", {
+      method: req.method,
+      url: req.originalUrl,
+      headers: req.headers,
+      body: req.body,
+      params: req.params,
+      ip: req.ip,
+    });
 
     const { id } = req.params;
-    const { vote } = req.body;
+    const { vote, deviceId } = req.body;
 
     // 验证投票类型
     if (vote !== "up" && vote !== "down" && vote !== "remove") {
+      console.log("投票类型无效:", vote);
       return res.status(400).json({
         success: false,
         message: "投票类型无效，必须是 'up'、'down' 或 'remove'",
       });
     }
 
+    // 验证设备ID
+    if (!deviceId) {
+      console.log("缺少设备标识");
+      return res.status(400).json({
+        success: false,
+        message: "缺少设备标识",
+      });
+    }
+
+    console.log("开始查找反馈:", id);
     const feedback = await Feedback.findById(id);
 
     if (!feedback) {
+      console.log("未找到反馈:", id);
       return res.status(404).json({
         success: false,
         message: "未找到该反馈",
       });
     }
 
-    // 检查用户是否已经投票
+    console.log("找到反馈:", {
+      id: feedback._id,
+      title: feedback.title,
+      upvotes: feedback.upvotes,
+      downvotes: feedback.downvotes,
+    });
+
+    // 查找现有投票（只通过deviceId）
     const voterIndex = feedback.voters.findIndex(
-      (voter) => voter.userId.toString() === req.user._id.toString()
+      (voter) => voter.deviceId === deviceId
     );
 
     const hasVoted = voterIndex !== -1;
     const previousVote = hasVoted ? feedback.voters[voterIndex].vote : null;
+
+    console.log("投票状态:", {
+      hasVoted,
+      previousVote,
+      newVote: vote,
+      deviceId,
+    });
 
     // 处理投票逻辑
     if (vote === "remove") {
@@ -263,8 +291,9 @@ export const voteFeedback = async (req: Request, res: Response) => {
       } else {
         // 新增投票
         feedback.voters.push({
-          userId: req.user._id,
+          deviceId,
           vote,
+          createdAt: new Date(),
         });
 
         // 更新计数

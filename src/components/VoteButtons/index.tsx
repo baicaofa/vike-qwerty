@@ -1,6 +1,6 @@
-import { useAuth } from "../../hooks/useAuth";
 import { useToast } from "../../hooks/useToast";
 import { voteFeedback } from "../../services/feedbackService";
+import { getDeviceFingerprint } from "../../utils/deviceFingerprint";
 import * as LucideIcons from "lucide-react";
 import type React from "react";
 import { useState } from "react";
@@ -24,7 +24,6 @@ export const VoteButtons: React.FC<VoteButtonsProps> = ({
   userVote,
   onVoteChange,
 }) => {
-  const { isAuthenticated } = useAuth();
   const toast = useToast();
   const [isVoting, setIsVoting] = useState(false);
   const [currentUpvotes, setCurrentUpvotes] = useState(upvotes);
@@ -32,18 +31,28 @@ export const VoteButtons: React.FC<VoteButtonsProps> = ({
   const [currentUserVote, setCurrentUserVote] = useState(userVote);
 
   const handleVote = async (vote: "up" | "down") => {
-    if (!isAuthenticated) {
-      toast.error("请先登录后再投票");
-      return;
-    }
-
     if (isVoting) return;
 
     try {
       setIsVoting(true);
-      // 如果用户已经投了相同的票，则取消投票
+
+      // 准备投票数据
       const voteAction = currentUserVote === vote ? "remove" : vote;
-      const response = await voteFeedback(feedbackId, voteAction);
+      const deviceId = getDeviceFingerprint(); // 统一使用设备指纹
+
+      // 添加调试信息
+      console.log("投票请求数据:", {
+        feedbackId,
+        voteAction,
+        deviceId,
+      });
+
+      const voteData = {
+        vote: voteAction,
+        deviceId,
+      };
+
+      const response = await voteFeedback(feedbackId, voteData);
 
       // 更新状态
       setCurrentUpvotes(response.data.upvotes);
@@ -58,8 +67,19 @@ export const VoteButtons: React.FC<VoteButtonsProps> = ({
           userVote: response.data.userVote,
         });
       }
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error) {
+      // 添加详细错误日志
+      console.error("投票失败详情:", error);
+      if (error instanceof Error) {
+        console.error("错误消息:", error.message);
+      }
+      if (error instanceof Response || (error as any).response) {
+        const response = (error as any).response || error;
+        console.error("错误状态码:", response.status);
+        console.error("错误响应:", response.data);
+      }
+
+      toast.error(error instanceof Error ? error.message : "投票失败");
     } finally {
       setIsVoting(false);
     }
@@ -68,6 +88,7 @@ export const VoteButtons: React.FC<VoteButtonsProps> = ({
   return (
     <div className="flex items-center space-x-4">
       <button
+        type="button"
         onClick={() => handleVote("up")}
         disabled={isVoting}
         className={`flex items-center space-x-1 rounded-md px-2 py-1 text-sm transition-colors ${
@@ -82,6 +103,7 @@ export const VoteButtons: React.FC<VoteButtonsProps> = ({
       </button>
 
       <button
+        type="button"
         onClick={() => handleVote("down")}
         disabled={isVoting}
         className={`flex items-center space-x-1 rounded-md px-2 py-1 text-sm transition-colors ${

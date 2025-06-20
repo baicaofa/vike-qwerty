@@ -27,8 +27,8 @@ console.log("Registered route: GET /api/feedback");
 router.patch("/:id", protect, isAdmin, updateFeedbackStatus as RequestHandler);
 console.log("Registered route: PATCH /api/feedback/:id");
 
-// 投票功能 - 需要登录
-router.post("/:id/vote", protect, voteFeedback as RequestHandler);
+// 投票功能 - 完全开放，使用设备ID识别用户
+router.post("/:id/vote", voteFeedback as RequestHandler);
 console.log("Registered route: POST /api/feedback/:id/vote");
 
 // 添加测试路由 - 直接在路由器中定义

@@ -1,17 +1,11 @@
-import { FeedbackDialog } from "../FeedbackDialog";
-import { SyncStatusIndicator } from "../SyncStatusIndicator";
 import logo from "@/assets/logo.svg";
+import { UserAuthMenu } from "@/pages/Typing/components/UserAuthMenu";
 import type { PropsWithChildren } from "react";
 import type React from "react";
 import { useState } from "react";
-import { navigate } from "vike/client/router";
 
 const Header: React.FC<PropsWithChildren> = ({ children }) => {
   const [showBubble, setShowBubble] = useState(true);
-
-  const handleFeedbackPage = () => {
-    navigate("/feedback");
-  };
 
   return (
     <header className="container z-20 mx-auto w-full px-10 py-6">
@@ -38,16 +32,10 @@ const Header: React.FC<PropsWithChildren> = ({ children }) => {
             </a>
           </div>
 
-          <button
-            onClick={handleFeedbackPage}
-            className="rounded-lg px-3 py-1.5 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
-          >
-            用户反馈
-          </button>
-
           {children}
-          <SyncStatusIndicator />
         </nav>
+
+        <UserAuthMenu />
       </div>
     </header>
   );

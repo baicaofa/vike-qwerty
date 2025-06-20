@@ -6,6 +6,7 @@ interface RouteConfig {
   path: string;
   priority?: number;
   changefreq?: string;
+  lastmod?: string;
 }
 
 interface SitemapOptions {
@@ -15,6 +16,7 @@ interface SitemapOptions {
   priority?: number;
   autoDetect?: boolean;
   excludePatterns?: string[];
+  addLastmod?: boolean;
 }
 
 export default function sitemapPlugin(options: SitemapOptions): Plugin {
@@ -24,12 +26,18 @@ export default function sitemapPlugin(options: SitemapOptions): Plugin {
     changefreq = "daily",
     priority = 0.8,
     autoDetect = true,
-    excludePatterns = ["/api/", "/_", "/assets/", "/favicon", "/manifest"],
+    excludePatterns = ["/api/", "/_", "/assets/", "/favicon", "/manifest","/Admin/" ,"/login","/register","/profile","/forgot-password","/reset-password","/verify-email"],
+    addLastmod = true,
   } = options;
 
+  // 将日期格式化为W3C格式 (YYYY-MM-DD)
+  function formatDate(date: Date): string {
+    return date.toISOString().split('T')[0];
+  }
+
   // 自动检测build目录中的HTML文件
-  function detectRoutesFromBuild(buildDir: string): string[] {
-    const detectedRoutes: string[] = [];
+  function detectRoutesFromBuild(buildDir: string): RouteConfig[] {
+    const detectedRoutes: RouteConfig[] = [];
 
     try {
       function scanDirectory(dir: string, basePath = ""): void {
@@ -45,7 +53,7 @@ export default function sitemapPlugin(options: SitemapOptions): Plugin {
           } else if (item === "index.html") {
             // 找到index.html文件，生成对应的路由
             const route =
-              basePath === "" ? "/" : `/${basePath.replace(/\\/g, "/")}`;
+              basePath === "" ? "/" : `/${basePath.replace(/\\/g, "/")}/`;
 
             // 检查是否应该排除这个路由
             const shouldExclude = excludePatterns.some((pattern) =>
@@ -53,7 +61,11 @@ export default function sitemapPlugin(options: SitemapOptions): Plugin {
             );
 
             if (!shouldExclude) {
-              detectedRoutes.push(route);
+              // 添加路由，包括文件的最后修改时间
+              detectedRoutes.push({
+                path: route,
+                lastmod: addLastmod ? formatDate(stat.mtime) : undefined,
+              });
             }
           }
         }
@@ -105,8 +117,11 @@ export default function sitemapPlugin(options: SitemapOptions): Plugin {
         // 过滤掉已经手动配置的路由
         const manualPaths = allRoutes.map((r) => r.path);
         const newRoutes = detectedRoutes
-          .filter((path) => !manualPaths.includes(path))
-          .map((path) => normalizeRoute(path));
+          .filter((route) => !manualPaths.includes(route.path))
+          .map((route) => ({
+            ...normalizeRoute(route.path),
+            lastmod: route.lastmod,
+          }));
 
         allRoutes = [...allRoutes, ...newRoutes];
       }
@@ -126,11 +141,16 @@ export default function sitemapPlugin(options: SitemapOptions): Plugin {
         });
 
       const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 ${uniqueRoutes
   .map(
     (route) => `  <url>
-    <loc>${baseUrl}${route.path}</loc>
+    <loc>${baseUrl}${route.path}</loc>${
+      route.lastmod ? `\n    <lastmod>${route.lastmod}</lastmod>` : ''
+    }
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
   </url>`
@@ -146,7 +166,9 @@ ${uniqueRoutes
         `✅ Sitemap generated at ${sitemapPath} with ${uniqueRoutes.length} routes:`
       );
       uniqueRoutes.forEach((route) => {
-        console.log(`   ${route.path} (priority: ${route.priority})`);
+        console.log(`   ${route.path} (priority: ${route.priority}${
+          route.lastmod ? `, lastmod: ${route.lastmod}` : ''
+        })`);
       });
     },
   };

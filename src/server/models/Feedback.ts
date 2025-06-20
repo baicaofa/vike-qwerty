@@ -12,9 +12,11 @@ export interface IFeedback extends mongoose.Document {
   upvotes: number; // 点赞数量
   downvotes: number; // 踩数量
   voters: {
-    userId: mongoose.Types.ObjectId;
+    userId?: mongoose.Types.ObjectId; // 已登录用户ID（可选）
+    deviceId?: string; // 设备指纹ID（可选）
     vote: "up" | "down";
-  }[]; // 投票用户列表
+    createdAt: Date;
+  }[]; // 投票用户列表（支持已登录用户和匿名用户）
   createdAt: Date;
   updatedAt: Date;
 }
@@ -72,12 +74,20 @@ const feedbackSchema = new mongoose.Schema(
         userId: {
           type: mongoose.Schema.Types.ObjectId,
           ref: "User",
-          required: true,
+          required: false, // 已登录用户ID（可选）
+        },
+        deviceId: {
+          type: String,
+          required: false, // 设备指纹ID（可选）
         },
         vote: {
           type: String,
           enum: ["up", "down"],
           required: true,
+        },
+        createdAt: {
+          type: Date,
+          default: Date.now,
         },
       },
     ],
@@ -86,5 +96,19 @@ const feedbackSchema = new mongoose.Schema(
     timestamps: true, // 自动添加 createdAt 和 updatedAt 字段
   }
 );
+
+// 添加复合索引优化查询性能
+feedbackSchema.index({ "voters.userId": 1, "voters.deviceId": 1 });
+
+// 添加验证逻辑：确保userId和deviceId至少有一个存在
+feedbackSchema.pre("save", function (next) {
+  // 验证每个voter都有userId或deviceId
+  for (const voter of this.voters) {
+    if (!voter.userId && !voter.deviceId) {
+      return next(new Error("投票记录必须包含userId或deviceId"));
+    }
+  }
+  next();
+});
 
 export default mongoose.model<IFeedback>("Feedback", feedbackSchema);

@@ -440,84 +440,76 @@ export async function checkAndUpgradeDatabase() {
   let lastError: Error | null = null;
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    // 检查升级状态
+    const upgradeStatus = UpgradeStatusChecker.getUpgradeStatus();
+    if (upgradeStatus?.status === "started") {
+      UpgradeStatusChecker.clearUpgradeStatus();
+    }
+
+    // 打开数据库，这会触发自动升级
     try {
-      // 检查升级状态
-      const upgradeStatus = UpgradeStatusChecker.getUpgradeStatus();
-      if (upgradeStatus?.status === "started") {
-        UpgradeStatusChecker.clearUpgradeStatus();
-      }
+      await db.open();
+    } catch (openError) {
+      // 使用诊断功能分析错误
+      if (openError instanceof Error) {
+        const diagnosis = diagnoseDatabaseError(openError);
 
-      // 打开数据库，这会触发自动升级
-      try {
-        await db.open();
-      } catch (openError) {
-        // 使用诊断功能分析错误
-        if (openError instanceof Error) {
-          const diagnosis = diagnoseDatabaseError(openError);
-
-          if (
-            diagnosis.canAutoFix &&
-            (diagnosis.type === "index" || diagnosis.type === "version")
-          ) {
-            try {
-              const resetSuccess = await fullDatabaseReset();
-              if (resetSuccess) {
-                await db.open();
-              } else {
-                await db.delete();
-                await db.open();
-              }
-            } catch (resetError) {
-              throw resetError;
+        if (
+          diagnosis.canAutoFix &&
+          (diagnosis.type === "index" || diagnosis.type === "version")
+        ) {
+          try {
+            const resetSuccess = await fullDatabaseReset();
+            if (resetSuccess) {
+              await db.open();
+            } else {
+              await db.delete();
+              await db.open();
             }
-          } else {
-            throw openError;
+          } catch (resetError) {
+            lastError =
+              resetError instanceof Error
+                ? resetError
+                : new Error(String(resetError));
+            continue;
           }
         } else {
-          throw openError;
+          lastError = openError;
+          continue;
         }
-      }
-
-      const currentVersion = db.verno;
-      const expectedVersion = 9; // 当前最新版本
-
-      if (currentVersion < expectedVersion) {
-        // 关闭数据库
-        db.close();
-        // 重新打开，强制触发升级
-        await db.open();
-
-        const newVersion = db.verno;
-
-        if (newVersion === expectedVersion) {
-          UpgradeStatusChecker.clearUpgradeStatus(); // 清除升级状态
-        } else {
-          throw new Error(
-            `数据库升级失败: 期望版本 ${expectedVersion}, 实际版本 ${newVersion}`
-          );
-        }
-      }
-
-      return {
-        success: true,
-        currentVersion: db.verno,
-        expectedVersion,
-      };
-    } catch (error) {
-      lastError = error instanceof Error ? error : new Error(String(error));
-
-      // 如果不是最后一次尝试，等待一段时间后重试
-      if (attempt < maxRetries) {
-        await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
-
-        // 确保数据库已关闭
-        try {
-          db.close();
-        } catch (closeError) {
-          // 忽略关闭错误
-        }
+      } else {
+        lastError =
+          openError instanceof Error ? openError : new Error(String(openError));
+        continue;
       }
     }
+
+    const currentVersion = db.verno;
+    const expectedVersion = 9; // 当前最新版本
+
+    if (currentVersion < expectedVersion) {
+      // 关闭数据库
+      db.close();
+      // 重新打开，强制触发升级
+      await db.open();
+
+      const newVersion = db.verno;
+
+      if (newVersion === expectedVersion) {
+        UpgradeStatusChecker.clearUpgradeStatus(); // 清除升级状态
+      } else {
+        lastError = new Error(
+          `数据库升级失败: 期望版本 ${expectedVersion}, 实际版本 ${newVersion}`
+        );
+        continue;
+      }
+    }
+
+    return {
+      success: true,
+      currentVersion: db.verno,
+      expectedVersion,
+    };
   }
 
   // 所有重试都失败了
@@ -744,30 +736,25 @@ export function useDeleteWordRecord() {
 export function useMarkFamiliarWord() {
   const markFamiliarWord = useCallback(
     async (word: string, dict: string, isFamiliar: boolean) => {
-      try {
-        // 查找是否已存在记录
-        const existingRecord = await db.familiarWords
-          .where("[dict+word]")
-          .equals([dict, word])
-          .first();
+      // 查找是否已存在记录
+      const existingRecord = await db.familiarWords
+        .where("[dict+word]")
+        .equals([dict, word])
+        .first();
 
-        if (existingRecord) {
-          // 更新现有记录
-          existingRecord.isFamiliar = isFamiliar;
-          existingRecord.sync_status = "local_modified";
-          existingRecord.last_modified = Date.now();
-          await db.familiarWords.put(existingRecord);
-          return existingRecord;
-        } else {
-          // 创建新记录
-          const newRecord = new FamiliarWord(word, dict, isFamiliar);
-          const id = await db.familiarWords.add(newRecord);
-          newRecord.id = id;
-          return newRecord;
-        }
-      } catch (error) {
-        console.error("标记熟词时出错：", error);
-        throw error;
+      if (existingRecord) {
+        // 更新现有记录
+        existingRecord.isFamiliar = isFamiliar;
+        existingRecord.sync_status = "local_modified";
+        existingRecord.last_modified = Date.now();
+        await db.familiarWords.put(existingRecord);
+        return existingRecord;
+      } else {
+        // 创建新记录
+        const newRecord = new FamiliarWord(word, dict, isFamiliar);
+        const id = await db.familiarWords.add(newRecord);
+        newRecord.id = id;
+        return newRecord;
       }
     },
     []

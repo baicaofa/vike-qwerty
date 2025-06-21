@@ -56,7 +56,11 @@ function TypingPractice({
 }: {
   typingWords: string[];
   onWordComplete: (word: string, isCorrect: boolean) => void;
-  onTypingComplete: (stats: any) => void;
+  onTypingComplete: (stats: {
+    accuracy: number;
+    wpm: number;
+    time: number;
+  }) => void;
 }) {
   // 每次typingWords变化时，重新创建一个key，强制重新渲染TypingProvider
   const [providerKey, setProviderKey] = useState(0);
@@ -85,26 +89,25 @@ function TypingContent({
   onTypingComplete,
 }: {
   onWordComplete: (word: string, isCorrect: boolean) => void;
-  onTypingComplete: (stats: any) => void;
+  onTypingComplete: (stats: {
+    accuracy: number;
+    wpm: number;
+    time: number;
+  }) => void;
 }) {
   // 使用useContext获取打字上下文
   const typingContext = useContext(TypingContext);
-  const [hasStarted, setHasStarted] = useState(false);
 
   // 如果上下文不存在，提供默认值
   const {
     state = { isTyping: false },
-    dispatch = () => {},
+    dispatch = () => {
+      /* 空实现用于默认值 */
+    },
     words = [],
     stats = { accuracy: 0, wpm: 0, time: 0 },
     index = 0,
-    currentWord = null,
     isCompleted = false,
-    errors = [],
-    restart = () => {
-      // 提供一个空的实现，而不是直接使用空箭头函数
-      console.log("Restart not implemented");
-    },
   } = typingContext || {};
 
   // 监听isCompleted状态，当完成所有单词时触发onTypingComplete
@@ -151,7 +154,7 @@ function TypingContent({
 
   // 处理单词完成事件
   const handleWordFinish = useCallback(
-    (word: WordWithIndex, isCorrect: boolean, responseTime: number) => {
+    (word: WordWithIndex, isCorrect: boolean, _responseTime: number) => {
       if (!word) return;
 
       // 提取单词名称
@@ -303,7 +306,6 @@ export default function ReviewPracticePage() {
   // 界面状态
   const [selectedTab, setSelectedTab] = useState("unpracticed"); // 当前选中的标签：已练习/未练习
   const [typingWords, setTypingWords] = useState<string[]>([]); // 转换为打字组件格式的单词列表
-  const [wordMetadata, setWordMetadata] = useState<IWordReviewRecord[]>([]); // 保留原始单词数据
   const [isLoading, setIsLoading] = useState(true); // 加载状态
   const [showCompleted, setShowCompleted] = useState(false); // 是否显示完成弹窗
   const [practicedParam, setPracticedParam] = useState<string | null>(null); // URL参数中的practiced值
@@ -387,7 +389,6 @@ export default function ReviewPracticePage() {
       // 将单词记录转换为打字组件使用的格式
       const adaptedWords = adaptReviewWordsToTypingWords(targetWords);
       setTypingWords(adaptedWords);
-      setWordMetadata(targetWords);
     } catch (error) {
       console.error("加载练习单词失败:", error);
       setError("加载练习单词失败，请刷新页面重试");
@@ -413,7 +414,7 @@ export default function ReviewPracticePage() {
    * @param isCorrect - 是否正确输入
    */
   const handleWordComplete = useCallback(
-    async (word: string, isCorrect: boolean) => {
+    async (word: string, _isCorrect: boolean) => {
       try {
         if (!word) return;
 
@@ -446,7 +447,7 @@ export default function ReviewPracticePage() {
    * @param stats - 打字统计信息
    */
   const handleTypingComplete = useCallback(
-    async (stats: any) => {
+    async (stats: { accuracy: number; wpm: number; time: number }) => {
       try {
         setShowCompleted(true);
         // 刷新今日复习数据

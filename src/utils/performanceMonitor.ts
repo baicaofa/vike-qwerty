@@ -8,7 +8,7 @@ interface PerformanceMetric {
   value: number;
   timestamp: number;
   category: "memory" | "timing" | "database" | "render" | "network";
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
 }
 
 interface SystemHealth {
@@ -53,20 +53,22 @@ class PerformanceMonitor {
     try {
       // 监控长任务
       if ("PerformanceObserver" in window) {
-        const longTaskObserver = new PerformanceObserver((list) => {
-          for (const entry of list.getEntries()) {
-            this.recordMetric({
-              name: "long-task",
-              value: entry.duration,
-              timestamp: Date.now(),
-              category: "timing",
-              metadata: {
-                startTime: entry.startTime,
-                name: entry.name,
-              },
-            });
+        const longTaskObserver = new PerformanceObserver(
+          (list: PerformanceObserverEntryList) => {
+            for (const entry of list.getEntries()) {
+              this.recordMetric({
+                name: "long-task",
+                value: entry.duration,
+                timestamp: Date.now(),
+                category: "timing",
+                metadata: {
+                  startTime: entry.startTime,
+                  name: entry.name,
+                },
+              });
+            }
           }
-        });
+        );
 
         try {
           longTaskObserver.observe({ entryTypes: ["longtask"] });
@@ -76,20 +78,23 @@ class PerformanceMonitor {
         }
 
         // 监控导航性能
-        const navigationObserver = new PerformanceObserver((list) => {
-          for (const entry of list.getEntries()) {
-            this.recordMetric({
-              name: "navigation",
-              value: entry.duration,
-              timestamp: Date.now(),
-              category: "timing",
-              metadata: {
-                type: entry.type,
-                redirectCount: (entry as any).redirectCount,
-              },
-            });
+        const navigationObserver = new PerformanceObserver(
+          (list: PerformanceObserverEntryList) => {
+            for (const entry of list.getEntries()) {
+              this.recordMetric({
+                name: "navigation",
+                value: entry.duration,
+                timestamp: Date.now(),
+                category: "timing",
+                metadata: {
+                  type: (entry as PerformanceNavigationTiming).type,
+                  redirectCount: (entry as PerformanceNavigationTiming)
+                    .redirectCount,
+                },
+              });
+            }
           }
-        });
+        );
 
         try {
           navigationObserver.observe({ entryTypes: ["navigation"] });
@@ -256,10 +261,15 @@ class PerformanceMonitor {
     if (typeof window === "undefined" || !("performance" in window)) return;
 
     try {
-      // @ts-ignore - memory API可能不存在
-      const memory = (performance as any).memory;
-      if (memory) {
-        const usage = memory.usedJSHeapSize / memory.totalJSHeapSize;
+      const perf = window.performance as Performance & {
+        memory?: {
+          usedJSHeapSize: number;
+          totalJSHeapSize: number;
+          jsHeapSizeLimit: number;
+        };
+      };
+      if (perf.memory) {
+        const usage = perf.memory.usedJSHeapSize / perf.memory.totalJSHeapSize;
 
         this.recordMetric({
           name: "memory-usage",
@@ -267,9 +277,9 @@ class PerformanceMonitor {
           timestamp: Date.now(),
           category: "memory",
           metadata: {
-            used: memory.usedJSHeapSize,
-            total: memory.totalJSHeapSize,
-            limit: memory.jsHeapSizeLimit,
+            used: perf.memory.usedJSHeapSize,
+            total: perf.memory.totalJSHeapSize,
+            limit: perf.memory.jsHeapSizeLimit,
           },
         });
       }
@@ -318,9 +328,16 @@ class PerformanceMonitor {
 
     return {
       memoryUsage: {
-        used: latestMemory?.metadata?.used || 0,
-        total: latestMemory?.metadata?.total || 0,
-        percentage: latestMemory?.value || 0,
+        used:
+          typeof latestMemory?.metadata?.used === "number"
+            ? latestMemory.metadata.used
+            : 0,
+        total:
+          typeof latestMemory?.metadata?.total === "number"
+            ? latestMemory.metadata.total
+            : 0,
+        percentage:
+          typeof latestMemory?.value === "number" ? latestMemory.value : 0,
       },
       databasePerformance: {
         averageQueryTime: avgDbTime,

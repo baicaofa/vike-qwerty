@@ -266,4 +266,18 @@ export const typingReducer = (
 export const TypingContext = createContext<{
   state: TypingState;
   dispatch: Dispatch;
+  words?: string[];
+  stats?: {
+    accuracy: number;
+    wpm: number;
+    time: number;
+  };
+  index?: number;
+  currentWord?: WordWithIndex | null;
+  isCompleted?: boolean;
+  errors?: number[];
+  restart?: () => void;
+  input?: string;
 } | null>(null);
+
+export { TypingProvider } from "./TypingProvider";

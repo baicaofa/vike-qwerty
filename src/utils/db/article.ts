@@ -1,5 +1,5 @@
 import { generateUUID } from "../uuid";
-import { RecordDB } from "./index";
+import { db } from "./index";
 import type { CustomArticle } from "@/pages/CustomArticle/store/type";
 import { useCallback } from "react";
 
@@ -7,7 +7,6 @@ import { useCallback } from "react";
 export function useSaveArticle() {
   return useCallback(async (article: Omit<CustomArticle, "id" | "uuid">) => {
     try {
-      const db = new RecordDB();
       const uuid = generateUUID();
       const now = Date.now();
 
@@ -30,7 +29,6 @@ export function useSaveArticle() {
 export function useUpdateArticle() {
   return useCallback(async (article: CustomArticle) => {
     try {
-      const db = new RecordDB();
       const now = Date.now();
 
       await db.articleRecords.update(article.id!, {
@@ -50,8 +48,6 @@ export function useUpdateArticle() {
 export function useGetArticles() {
   return useCallback(async () => {
     try {
-      const db = new RecordDB();
-
       // 按最后练习时间降序排列
       const articles = await db.articleRecords
         .orderBy("lastPracticedAt")
@@ -70,7 +66,6 @@ export function useGetArticles() {
 export function useGetArticle() {
   return useCallback(async (id: number) => {
     try {
-      const db = new RecordDB();
       const article = await db.articleRecords.get(id);
       return article || null;
     } catch (error) {
@@ -84,7 +79,6 @@ export function useGetArticle() {
 export function useDeleteArticle() {
   return useCallback(async (id: number) => {
     try {
-      const db = new RecordDB();
       await db.articleRecords.delete(id);
       return true;
     } catch (error) {

@@ -4,19 +4,15 @@ import { AuthorButton } from "./AuthorButton";
 import ConclusionBar from "./ConclusionBar";
 import RemarkRing from "./RemarkRing";
 import WordChip from "./WordChip";
-import styles from "./index.module.css";
 import Tooltip from "@/components/Tooltip";
 import {
   currentChapterAtom,
   currentDictInfoAtom,
-  infoPanelStateAtom,
   isReviewModeAtom,
   randomConfigAtom,
   reviewModeInfoAtom,
   wordDictationConfigAtom,
 } from "@/store";
-import type { InfoPanelType } from "@/typings";
-import { recordOpenInfoPanelAction } from "@/utils";
 import { Transition } from "@headlessui/react";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { useCallback, useContext, useEffect, useMemo } from "react";
@@ -32,7 +28,7 @@ const ResultScreen = () => {
   const setWordDictationConfig = useSetAtom(wordDictationConfigAtom);
   const currentDictInfo = useAtomValue(currentDictInfoAtom);
   const [currentChapter, setCurrentChapter] = useAtom(currentChapterAtom);
-  const setInfoPanelState = useSetAtom(infoPanelStateAtom);
+
   const randomConfig = useAtomValue(randomConfigAtom);
 
   const setReviewModeInfo = useSetAtom(reviewModeInfoAtom);
@@ -211,14 +207,6 @@ const ResultScreen = () => {
       dictationButtonHandler();
     },
     { preventDefault: true }
-  );
-
-  const handleOpenInfoPanel = useCallback(
-    (modalType: InfoPanelType) => {
-      recordOpenInfoPanelAction(modalType, "resultScreen");
-      setInfoPanelState((state) => ({ ...state, [modalType]: true }));
-    },
-    [setInfoPanelState]
   );
 
   return (

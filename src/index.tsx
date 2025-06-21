@@ -1,10 +1,10 @@
 // src/index.tsx
 import { isOpenDarkModeAtom } from "@/store";
 import "animate.css";
-import { Provider, useAtomValue } from "jotai";
+import { useAtomValue } from "jotai";
 import mixpanel from "mixpanel-browser";
 import process from "process";
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "react-app-polyfill/stable";
 
 if (process.env.NODE_ENV === "production") {

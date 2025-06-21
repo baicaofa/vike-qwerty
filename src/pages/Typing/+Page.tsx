@@ -57,7 +57,7 @@ export function Page() {
   const reviewModeInfo = useAtomValue(reviewModeInfoAtom);
   const isReviewMode = useAtomValue(isReviewModeAtom);
 
-  const [markedWords, setMarkedWords] = useAtom(markedWordsAtom);
+  const [markedWords] = useAtom(markedWordsAtom);
   const { isWordMarked, filterUnmarkedWords } = useMarkedWords();
 
   // 存储事件处理函数的引用

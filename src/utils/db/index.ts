@@ -1,3 +1,4 @@
+import { syncWordPracticeToReview } from "../spaced-repetition/scheduleGenerator";
 import { generateUUID } from "../uuid";
 import type {
   IChapterRecord,
@@ -14,6 +15,18 @@ import {
   ReviewRecord,
   WordRecord,
 } from "./record";
+import { fullDatabaseReset } from "./resetDB";
+import type { IReviewConfig } from "./reviewConfig";
+import { ReviewConfig } from "./reviewConfig";
+import type { IReviewHistory } from "./reviewHistory";
+import { ReviewHistory } from "./reviewHistory";
+import {
+  UpgradeStatusChecker,
+  diagnoseDatabaseError,
+  safeUpgradeOperation,
+} from "./upgradeHelper";
+import type { IWordReviewRecord } from "./wordReviewRecord";
+import { WordReviewRecord } from "./wordReviewRecord";
 import { TypingContext, TypingStateActionType } from "@/pages/Typing/store";
 import type { TypingState } from "@/pages/Typing/store/type";
 import {
@@ -33,7 +46,11 @@ export class RecordDB extends Dexie {
   familiarWords!: Table<IFamiliarWord, number>;
   revisionDictRecords!: Table<IRevisionDictRecord, number>;
   revisionWordRecords!: Table<IWordRecord, number>;
-  articleRecords!: Table<any, number>; // 添加文章记录表
+  articleRecords!: Table<unknown, number>; // any -> unknown
+  // 新增复习相关表
+  wordReviewRecords!: Table<IWordReviewRecord, number>;
+  reviewHistories!: Table<IReviewHistory, number>;
+  reviewConfigs!: Table<IReviewConfig, number>;
 
   constructor() {
     super("RecordDB");
@@ -53,6 +70,7 @@ export class RecordDB extends Dexie {
     });
 
     // 版本3的数据库模式更新
+    console.log("📝 定义数据库版本3模式");
     this.version(3).stores({
       wordRecords: "++id,word,timeStamp,dict,chapter,wrongCount,[dict+chapter]",
       chapterRecords: "++id,timeStamp,dict,chapter,time,[dict+chapter]",
@@ -61,6 +79,7 @@ export class RecordDB extends Dexie {
     });
 
     // 版本4的数据库模式更新（添加同步相关字段）
+    console.log("📝 定义数据库版本4模式");
     this.version(4)
       .stores({
         // wordRecords表添加uuid、sync_status和last_modified字段
@@ -75,7 +94,7 @@ export class RecordDB extends Dexie {
         // revision* 表保持不变 (假设它们不需要同步)
       })
       .upgrade((tx) => {
-        console.log("Upgrading Dexie schema to version 4...");
+        console.log("🔄 开始升级到版本4...");
         const now = Date.now();
         // 返回Promise确保所有迁移操作完成
         return Promise.all([
@@ -84,6 +103,7 @@ export class RecordDB extends Dexie {
             .table("wordRecords") // 获取wordRecords表的操作句柄
             .toCollection() // 获取表中所有记录的集合
             .modify((record) => {
+              console.log("🔄 正在迁移wordRecord:", record.word);
               // 对每条记录进行修改
               // 如果记录没有uuid字段，则生成一个新的随机UUID
               if (record.uuid === undefined) record.uuid = generateUUID();
@@ -145,7 +165,7 @@ export class RecordDB extends Dexie {
         revisionDictRecords: "++id",
         revisionWordRecords: "++id",
       })
-      .upgrade((tx) => {
+      .upgrade(() => {
         console.log("Upgrading Dexie schema to version 5...");
         // 版本5主要是添加了familiarWords表，不需要迁移现有数据
         // 但我们需要确保升级过程被正确记录
@@ -192,17 +212,24 @@ export class RecordDB extends Dexie {
         const newWordRecordsMap = new Map<string, IWordRecord>();
 
         for (const oldRecord of oldRecordsArray) {
-          // 确保旧记录中的字段存在，以避免运行时错误
-          const word = oldRecord.word;
-          const dict = oldRecord.dict;
-          const timeStamp = oldRecord.timeStamp; // 旧字段
-          const chapter = oldRecord.chapter; // 旧字段
-          const timing = oldRecord.timing; // 旧字段
-          const wrongCount = oldRecord.wrongCount; // 旧字段
-          const mistakes = oldRecord.mistakes; // 旧字段
-          const uuid = oldRecord.uuid;
-          const sync_status = oldRecord.sync_status;
-          const last_modified = oldRecord.last_modified;
+          // 兼容旧表结构，允许访问旧字段
+          const legacyRecord = oldRecord as IWordRecord & {
+            timeStamp?: number;
+            chapter?: number;
+            timing?: number[];
+            wrongCount?: number;
+            mistakes?: Record<string, unknown>;
+          };
+          const word = legacyRecord.word;
+          const dict = legacyRecord.dict;
+          const timeStamp = legacyRecord.timeStamp; // 旧字段
+          const chapter = legacyRecord.chapter; // 旧字段
+          const timing = legacyRecord.timing; // 旧字段
+          const wrongCount = legacyRecord.wrongCount; // 旧字段
+          const mistakes = legacyRecord.mistakes; // 旧字段
+          const uuid = legacyRecord.uuid;
+          const sync_status = legacyRecord.sync_status;
+          const last_modified = legacyRecord.last_modified;
 
           if (
             word === undefined ||
@@ -223,7 +250,7 @@ export class RecordDB extends Dexie {
             chapter: chapter !== undefined ? chapter : null,
             timing: timing || [],
             wrongCount: wrongCount || 0,
-            mistakes: mistakes || {},
+            mistakes: (mistakes || {}) as LetterMistakes,
           };
 
           let newRecord = newWordRecordsMap.get(key);
@@ -319,74 +346,193 @@ export class RecordDB extends Dexie {
       // 添加文章记录表
       articleRecords: "++id, &uuid, title, content, createdAt, lastPracticedAt",
     });
+
+    // 添加智能复习系统的第9版
+    console.log("📝 定义数据库版本9模式");
+    this.version(9)
+      .stores({
+        // 现有表保持不变
+        wordRecords:
+          "++id, &uuid, &[dict+word], dict, word, lastPracticedAt, sync_status, last_modified",
+        chapterRecords:
+          "++id, &uuid, dict, chapter, timeStamp, sync_status, last_modified",
+        reviewRecords:
+          "++id, &uuid, dict, timeStamp, sync_status, last_modified",
+        familiarWords:
+          "++id, &uuid, dict, word, sync_status, last_modified, [dict+word]",
+        articleRecords:
+          "++id, &uuid, title, content, createdAt, lastPracticedAt",
+
+        // 新增复习相关表 - 整合版本10的表结构
+        wordReviewRecords:
+          "++id, &uuid, word, nextReviewAt, currentIntervalIndex, isGraduated, todayPracticeCount, lastPracticedAt, lastReviewDate, sync_status, last_modified",
+        reviewHistories:
+          "++id, &uuid, wordReviewRecordId, word, reviewedAt, sync_status, last_modified",
+        reviewConfigs: "++id, &uuid, userId, sync_status, last_modified",
+      })
+      .upgrade(async (tx) => {
+        return safeUpgradeOperation(
+          async () => {
+            console.log("🔄 开始升级到版本9: 添加间隔重复系统...");
+
+            // 检查升级状态，避免重复升级
+            const upgradeStatus = UpgradeStatusChecker.getUpgradeStatus();
+            if (
+              upgradeStatus?.version === 9 &&
+              upgradeStatus?.status === "completed"
+            ) {
+              console.log("✅ 版本9升级已完成，跳过...");
+              return;
+            }
+
+            // 获取新创建的表
+            console.log("📋 获取reviewConfigs表...");
+            const reviewConfigsTable = tx.table("reviewConfigs");
+
+            // 检查是否已经有默认配置（避免重复创建）
+            console.log("🔍 检查现有配置数量...");
+            const existingConfigs = await reviewConfigsTable.count();
+            console.log(`📊 现有配置数量: ${existingConfigs}`);
+
+            if (existingConfigs === 0) {
+              console.log("➕ 创建默认复习配置...");
+              // 创建默认复习配置（整合版本10的简化配置）
+              await reviewConfigsTable.add({
+                uuid: generateUUID(),
+                userId: "default", // 全局默认配置
+                baseIntervals: [1, 3, 7, 15, 30, 60],
+                dailyReviewTarget: 50,
+                maxReviewsPerDay: 100,
+                enableNotifications: true,
+                notificationTime: "09:00",
+                sync_status: "local_new",
+                last_modified: Date.now(),
+              });
+              console.log("✅ 默认复习配置创建成功");
+            } else {
+              console.log("ℹ️ 默认复习配置已存在，跳过创建");
+            }
+
+            // 确保这是最新的升级版本，直接包含版本10的功能
+            console.log("✅ 版本9升级完成 - 已包含复习系统优化");
+          },
+          "Version 9 upgrade",
+          9
+        );
+      });
   }
 }
 
 export const db = new RecordDB();
 
+// 映射数据库表到类
 db.wordRecords.mapToClass(WordRecord);
 db.chapterRecords.mapToClass(ChapterRecord);
 db.reviewRecords.mapToClass(ReviewRecord);
 db.familiarWords.mapToClass(FamiliarWord);
+db.wordReviewRecords.mapToClass(WordReviewRecord);
+db.reviewHistories.mapToClass(ReviewHistory);
+db.reviewConfigs.mapToClass(ReviewConfig);
 
 // 数据库版本检查和升级工具
 export async function checkAndUpgradeDatabase() {
-  try {
-    // 打开数据库，这会触发自动升级
-    await db.open();
+  const maxRetries = 3;
+  let lastError: Error | null = null;
 
-    const currentVersion = db.verno;
-    console.log(`数据库当前版本: ${currentVersion}`);
-
-    // 检查是否是最新版本
-    const expectedVersion = 8; // 当前最新版本
-    if (currentVersion < expectedVersion) {
-      console.warn(
-        `数据库版本过旧 (当前: ${currentVersion}, 期望: ${expectedVersion})`
-      );
-      console.log("尝试强制升级数据库...");
-
-      // 关闭数据库
-      db.close();
-
-      // 重新打开，强制触发升级
-      await db.open();
-
-      const newVersion = db.verno;
-      if (newVersion === expectedVersion) {
-        console.log(`数据库升级成功! 新版本: ${newVersion}`);
-      } else {
-        console.error(
-          `数据库升级失败! 当前版本: ${newVersion}, 期望版本: ${expectedVersion}`
-        );
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      // 检查升级状态
+      const upgradeStatus = UpgradeStatusChecker.getUpgradeStatus();
+      if (upgradeStatus?.status === "started") {
+        UpgradeStatusChecker.clearUpgradeStatus();
       }
-    } else {
-      console.log("数据库版本正常");
-    }
 
-    return {
-      success: true,
-      currentVersion: db.verno,
-      expectedVersion,
-    };
-  } catch (error) {
-    console.error("数据库检查/升级失败:", error);
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : String(error),
-    };
+      // 打开数据库，这会触发自动升级
+      try {
+        await db.open();
+      } catch (openError) {
+        // 使用诊断功能分析错误
+        if (openError instanceof Error) {
+          const diagnosis = diagnoseDatabaseError(openError);
+
+          if (
+            diagnosis.canAutoFix &&
+            (diagnosis.type === "index" || diagnosis.type === "version")
+          ) {
+            try {
+              const resetSuccess = await fullDatabaseReset();
+              if (resetSuccess) {
+                await db.open();
+              } else {
+                await db.delete();
+                await db.open();
+              }
+            } catch (resetError) {
+              throw resetError;
+            }
+          } else {
+            throw openError;
+          }
+        } else {
+          throw openError;
+        }
+      }
+
+      const currentVersion = db.verno;
+      const expectedVersion = 9; // 当前最新版本
+
+      if (currentVersion < expectedVersion) {
+        // 关闭数据库
+        db.close();
+        // 重新打开，强制触发升级
+        await db.open();
+
+        const newVersion = db.verno;
+
+        if (newVersion === expectedVersion) {
+          UpgradeStatusChecker.clearUpgradeStatus(); // 清除升级状态
+        } else {
+          throw new Error(
+            `数据库升级失败: 期望版本 ${expectedVersion}, 实际版本 ${newVersion}`
+          );
+        }
+      }
+
+      return {
+        success: true,
+        currentVersion: db.verno,
+        expectedVersion,
+      };
+    } catch (error) {
+      lastError = error instanceof Error ? error : new Error(String(error));
+
+      // 如果不是最后一次尝试，等待一段时间后重试
+      if (attempt < maxRetries) {
+        await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
+
+        // 确保数据库已关闭
+        try {
+          db.close();
+        } catch (closeError) {
+          // 忽略关闭错误
+        }
+      }
+    }
   }
+
+  // 所有重试都失败了
+  return {
+    success: false,
+    error: lastError?.message || "数据库初始化失败",
+  };
 }
 
 // 重置数据库（仅在紧急情况下使用）
 export async function resetDatabase() {
   try {
-    console.warn("正在重置数据库...");
     await db.delete();
-    console.log("数据库已删除，将在下次访问时重新创建");
     return { success: true };
   } catch (error) {
-    console.error("重置数据库失败:", error);
     return {
       success: false,
       error: error instanceof Error ? error.message : String(error),
@@ -530,7 +676,26 @@ export function useSaveWordRecord() {
         console.error("Error saving word record:", e);
       }
 
-      // 5. 更新 UI
+      // 5. 同步到复习系统
+      try {
+        // 计算练习结果
+        const isCorrect = wrongCount === 0;
+        const totalTime =
+          letterTimeArray.length > 1
+            ? letterTimeArray[letterTimeArray.length - 1] - letterTimeArray[0]
+            : 3000; // 默认3秒
+
+        await syncWordPracticeToReview(word, dictID, {
+          isCorrect,
+          responseTime: totalTime,
+          timestamp: Date.now(),
+        });
+      } catch (error) {
+        console.error("Failed to sync to review system:", error);
+        // 不阻塞主流程，只记录错误
+      }
+
+      // 6. 更新 UI
       if (dispatch) {
         if (dbID > 0) {
           // 确保 dbID 有效

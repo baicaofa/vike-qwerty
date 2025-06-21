@@ -1,6 +1,5 @@
 // /gallery/@id/+config.ts
 import Page from "./+Page";
-import { dictionaries } from "@/resources/dictionary";
 import type { Config } from "vike/types";
 
 export default {

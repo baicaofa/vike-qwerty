@@ -8,7 +8,7 @@ import { RotateCcw, Settings } from "lucide-react";
 import { useState } from "react";
 
 export default function NotificationSettings() {
-  const [config, setConfig] = useAtom(notificationConfigAtom);
+  const [config] = useAtom(notificationConfigAtom);
   const updatePreferences = useSetAtom(updateNotificationPreferencesAtom);
   const resetConfig = useSetAtom(resetNotificationConfigAtom);
   const [isOpen, setIsOpen] = useState(false);

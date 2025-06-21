@@ -24,11 +24,7 @@ import {
   wordDictationConfigAtom,
 } from "@/store";
 import type { Word } from "@/typings";
-import {
-  CTRL,
-  getUtcStringForMixpanel,
-  useMixPanelWordLogUploader,
-} from "@/utils";
+import { CTRL, useMixPanelWordLogUploader } from "@/utils";
 import { useSaveWordRecord } from "@/utils/db";
 import { useAtomValue } from "jotai";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
@@ -42,7 +38,7 @@ export default function WordComponent({
   onFinish,
 }: {
   word: Word;
-  onFinish: () => void;
+  onFinish: (isCorrect?: boolean, responseTime?: number) => void;
 }) {
   // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
   const { state, dispatch } = useContext(TypingContext)!;
@@ -84,7 +80,7 @@ export default function WordComponent({
     const newWordState = structuredClone(initialWordState);
     newWordState.displayWord = headword;
     newWordState.letterStates = new Array(headword.length).fill("normal");
-    newWordState.startTime = getUtcStringForMixpanel();
+    newWordState.startTime = performance.now();
     newWordState.randomLetterVisible = headword
       .split("")
       .map(() => Math.random() > 0.4);
@@ -150,9 +146,13 @@ export default function WordComponent({
 
   useEffect(() => {
     if (wordState.inputWord.length === 0 && state.isTyping) {
-      // 检查当前是否在打字练习页面
+      // 检查当前是否在打字练习页面或复习练习页面
       const currentPath = window.location.pathname;
-      if (currentPath === "/" || currentPath.startsWith("/typing")) {
+      if (
+        currentPath === "/" ||
+        currentPath.startsWith("/typing") ||
+        currentPath.startsWith("/review/practice")
+      ) {
         setTimeout(() => {
           wordPronunciationIconRef.current?.play();
         }, 0);
@@ -232,7 +232,7 @@ export default function WordComponent({
         setWordState((state) => {
           state.letterStates[inputLength - 1] = "correct";
           state.isFinished = true;
-          state.endTime = getUtcStringForMixpanel();
+          state.endTime = performance.now();
         });
         playHintSound();
       } else {
@@ -304,8 +304,14 @@ export default function WordComponent({
 
       wordLogUploader({
         headword: word.name,
-        timeStart: wordState.startTime,
-        timeEnd: wordState.endTime,
+        timeStart: new Date(wordState.startTime)
+          .toISOString()
+          .substring(0, 19)
+          .replace("T", " "),
+        timeEnd: new Date(wordState.endTime)
+          .toISOString()
+          .substring(0, 19)
+          .replace("T", " "),
         countInput: wordState.correctCount + wordState.wrongCount,
         countCorrect: wordState.correctCount,
         countTypo: wordState.wrongCount,
@@ -317,7 +323,11 @@ export default function WordComponent({
         letterMistake: wordState.letterMistake,
       });
 
-      onFinish();
+      // 计算响应时间和正确性
+      const responseTime = Math.round(wordState.endTime - wordState.startTime);
+      const isCorrect = wordState.wrongCount === 0;
+
+      onFinish(isCorrect, responseTime);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wordState.isFinished]);

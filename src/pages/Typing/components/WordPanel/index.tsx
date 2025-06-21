@@ -19,12 +19,24 @@ import {
   phoneticConfigAtom,
   reviewModeInfoAtom,
 } from "@/store";
-import type { Word } from "@/typings";
+import type { Word, WordWithIndex } from "@/typings";
 import { useAtomValue, useSetAtom } from "jotai";
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 
-export default function WordPanel() {
+export interface WordPanelProps {
+  mode?: "typing" | "review";
+  onWordComplete?: (
+    word: WordWithIndex,
+    isCorrect: boolean,
+    responseTime: number
+  ) => void;
+}
+
+export default function WordPanel({
+  mode = "typing",
+  onWordComplete,
+}: WordPanelProps = {}) {
   // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
   const { state, dispatch } = useContext(TypingContext)!;
   const phoneticConfig = useAtomValue(phoneticConfigAtom);
@@ -40,17 +52,6 @@ export default function WordPanel() {
   const setReviewModeInfo = useSetAtom(reviewModeInfoAtom);
   const isReviewMode = useAtomValue(isReviewModeAtom);
   const isSkipFamiliarWord = useAtomValue(isSkipFamiliarWordAtom);
-
-  const prevIndex = useMemo(() => {
-    const newIndex = state.chapterData.index - 1;
-    return newIndex < 0 ? 0 : newIndex;
-  }, [state.chapterData.index]);
-  const nextIndex = useMemo(() => {
-    const newIndex = state.chapterData.index + 1;
-    return newIndex > state.chapterData.words.length - 1
-      ? state.chapterData.words.length - 1
-      : newIndex;
-  }, [state.chapterData.index, state.chapterData.words.length]);
 
   usePrefetchPronunciationSound(nextWord?.name);
 
@@ -72,77 +73,88 @@ export default function WordPanel() {
 
   const { familiarWords } = useFamiliarWords();
 
-  const onFinish = useCallback(() => {
-    if (
-      state.chapterData.index < state.chapterData.words.length - 1 ||
-      currentWordExerciseCount < loopWordTimes - 1
-    ) {
-      // 用户完成当前单词
-      if (currentWordExerciseCount < loopWordTimes - 1) {
-        setCurrentWordExerciseCount((old) => old + 1);
-        dispatch({ type: TypingStateActionType.LOOP_CURRENT_WORD });
-        reloadCurrentWordComponent();
-      } else {
-        setCurrentWordExerciseCount(0);
-        let nextIndex;
-        if (isSkipFamiliarWord) {
-          // 跳过熟词，找到下一个未被标记为熟词的单词
-          nextIndex = findNextUnfamiliarIndex(
-            state.chapterData.words,
-            familiarWords,
-            state.chapterData.index
-          );
+  // 复习模式的特殊逻辑
+  const isInReviewMode = mode === "review";
+
+  const onFinish = useCallback(
+    (isCorrect?: boolean, responseTime?: number) => {
+      // 复习模式下的特殊处理
+      if (isInReviewMode && onWordComplete) {
+        onWordComplete(currentWord, isCorrect || false, responseTime || 0);
+        return;
+      }
+      if (
+        state.chapterData.index < state.chapterData.words.length - 1 ||
+        currentWordExerciseCount < loopWordTimes - 1
+      ) {
+        // 用户完成当前单词
+        if (currentWordExerciseCount < loopWordTimes - 1) {
+          setCurrentWordExerciseCount((old) => old + 1);
+          dispatch({ type: TypingStateActionType.LOOP_CURRENT_WORD });
+          reloadCurrentWordComponent();
         } else {
-          // 不跳过熟词，顺序下一个
-          nextIndex =
-            state.chapterData.index + 1 < state.chapterData.words.length
-              ? state.chapterData.index + 1
-              : -1;
-        }
-        // 如果没有未熟词或到达末尾，直接完成章节
-        if (nextIndex === -1) {
-          dispatch({ type: TypingStateActionType.FINISH_CHAPTER });
-          if (isReviewMode) {
-            setReviewModeInfo((old) => ({
-              ...old,
-              reviewRecord: old.reviewRecord
-                ? { ...old.reviewRecord, isFinished: true }
-                : undefined,
-            }));
+          setCurrentWordExerciseCount(0);
+          let nextIndex;
+          if (isSkipFamiliarWord) {
+            // 跳过熟词，找到下一个未被标记为熟词的单词
+            nextIndex = findNextUnfamiliarIndex(
+              state.chapterData.words,
+              familiarWords,
+              state.chapterData.index
+            );
+          } else {
+            // 不跳过熟词，顺序下一个
+            nextIndex =
+              state.chapterData.index + 1 < state.chapterData.words.length
+                ? state.chapterData.index + 1
+                : -1;
           }
-          return;
+          // 如果没有未熟词或到达末尾，直接完成章节
+          if (nextIndex === -1) {
+            dispatch({ type: TypingStateActionType.FINISH_CHAPTER });
+            if (isReviewMode) {
+              setReviewModeInfo((old) => ({
+                ...old,
+                reviewRecord: old.reviewRecord
+                  ? { ...old.reviewRecord, isFinished: true }
+                  : undefined,
+              }));
+            }
+            return;
+          }
+          dispatch({
+            type: TypingStateActionType.SKIP_2_WORD_INDEX,
+            newIndex: nextIndex,
+          });
         }
-        dispatch({
-          type: TypingStateActionType.SKIP_2_WORD_INDEX,
-          newIndex: nextIndex,
-        });
+      } else {
+        // 用户完成当前章节
+        dispatch({ type: TypingStateActionType.FINISH_CHAPTER });
+        if (isReviewMode) {
+          setReviewModeInfo((old) => ({
+            ...old,
+            reviewRecord: old.reviewRecord
+              ? { ...old.reviewRecord, isFinished: true }
+              : undefined,
+          }));
+        }
       }
-    } else {
-      // 用户完成当前章节
-      dispatch({ type: TypingStateActionType.FINISH_CHAPTER });
-      if (isReviewMode) {
-        setReviewModeInfo((old) => ({
-          ...old,
-          reviewRecord: old.reviewRecord
-            ? { ...old.reviewRecord, isFinished: true }
-            : undefined,
-        }));
-      }
-    }
-  }, [
-    state.chapterData.index,
-    state.chapterData.words,
-    state.chapterData.words.length,
-    currentWordExerciseCount,
-    loopWordTimes,
-    isReviewMode,
-    dispatch,
-    updateReviewRecord,
-    reloadCurrentWordComponent,
-    familiarWords,
-    setReviewModeInfo,
-    isSkipFamiliarWord,
-  ]);
+    },
+    [
+      state.chapterData.index,
+      state.chapterData.words,
+      state.chapterData.words.length,
+      currentWordExerciseCount,
+      loopWordTimes,
+      isReviewMode,
+      dispatch,
+      updateReviewRecord,
+      reloadCurrentWordComponent,
+      familiarWords,
+      setReviewModeInfo,
+      isSkipFamiliarWord,
+    ]
+  );
 
   const onSkipWord = useCallback(
     (type: "prev" | "next") => {
@@ -227,8 +239,16 @@ export default function WordPanel() {
   );
 
   const shouldShowTranslation = useMemo(() => {
+    // 复习模式下不显示翻译
+    if (isInReviewMode) return false;
     return isShowTranslation || state.isTransVisible;
-  }, [isShowTranslation, state.isTransVisible]);
+  }, [isShowTranslation, state.isTransVisible, isInReviewMode]);
+
+  const shouldShowPhonetic = useMemo(() => {
+    // 复习模式下不显示音标
+    if (isInReviewMode) return false;
+    return phoneticConfig.isOpen;
+  }, [phoneticConfig.isOpen, isInReviewMode]);
 
   // 自动跳过当前为熟词的单词（防止异步加载时机错过）
   useEffect(() => {
@@ -289,7 +309,7 @@ export default function WordPanel() {
                 onFinish={onFinish}
                 key={wordComponentKey}
               />
-              {phoneticConfig.isOpen && <Phonetic word={currentWord} />}
+              {shouldShowPhonetic && <Phonetic word={currentWord} />}
               <Translation
                 trans={currentWord.trans.join("；")}
                 showTrans={shouldShowTranslation}

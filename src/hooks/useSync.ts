@@ -10,9 +10,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 // 同步配置
 const SYNC_INTERVAL = 5 * 60 * 1000; // 5分钟
 const SYNC_ONLINE_INTERVAL = 60 * 1000; // 60秒
-const MAX_RETRY_COUNT = 3; // 最大重试次数
-const RETRY_DELAY = 5000; // 重试延迟（毫秒）
-const DEBOUNCE_DELAY = 1000; // 防抖延迟（毫秒）
 
 // SSR安全获取初始网络状态
 const getInitialOnline = () => {

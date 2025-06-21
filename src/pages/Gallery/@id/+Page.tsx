@@ -2,13 +2,10 @@
 import { DictChapterButton } from "../../Typing/components/DictChapterButton";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-import type { WordPronunciationIconRef } from "@/components/WordPronunciationIcon";
 import { dictionaries } from "@/resources/dictionary";
-import { currentDictInfoAtom } from "@/store";
 import type { Dictionary } from "@/typings";
 import { wordListFetcher } from "@/utils/wordListFetcher";
-import { useAtomValue } from "jotai";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { navigate } from "vike/client/router";
 import type { PageContext } from "vike/types";
 import IconBack from "~icons/ic/outline-arrow-back";
@@ -27,11 +24,8 @@ interface Props {
 
 export default function Page({ pageContext }: Props) {
   const routeParams = pageContext?.routeParams || {};
-  const {
-    dictionary: initialDictionary,
-    words: initialWords,
-    error,
-  } = pageContext?.pageProps || {};
+  const { dictionary: initialDictionary, words: initialWords } =
+    pageContext?.pageProps || {};
   const [dictionary, setDictionary] = useState<Dictionary | null>(
     initialDictionary || null
   );
@@ -39,8 +33,6 @@ export default function Page({ pageContext }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const wordsPerPage = 100;
   const [isLoading, setIsLoading] = useState<boolean>(!initialWords);
-  const currentLanguage = useAtomValue(currentDictInfoAtom).language;
-  const wordPronunciationIconRef = useRef<WordPronunciationIconRef>(null);
 
   useEffect(() => {
     if (!routeParams?.id) {

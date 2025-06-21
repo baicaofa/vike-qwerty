@@ -1,8 +1,8 @@
+import { ReviewStatusIndicator } from "../ReviewStatusIndicator";
 import { SyncStatusIndicator } from "../SyncStatusIndicator";
 import logo from "@/assets/logo.svg";
 import type { PropsWithChildren } from "react";
 import type React from "react";
-import { useState } from "react";
 
 const Header: React.FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -24,13 +24,28 @@ const Header: React.FC<PropsWithChildren> = ({ children }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="rounded-lg bg-blue-500 text-white font-black px-4 py-2 text-lg transition-all hover:bg-blue-400 hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100">
+              <button
+                type="button"
+                className="rounded-lg bg-blue-500 text-white font-black px-4 py-2 text-lg transition-all hover:bg-blue-400 hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
+              >
                 👉打字练习👈
               </button>
             </a>
           </div>
 
+          <div className="relative">
+            <a href="/review/dashboard">
+              <button
+                type="button"
+                className="rounded-lg bg-green-500 text-white font-medium px-4 py-2 text-sm transition-all hover:bg-green-400 focus:outline-none"
+              >
+                🧠 智能复习
+              </button>
+            </a>
+          </div>
+
           {children}
+          <ReviewStatusIndicator />
           <SyncStatusIndicator />
         </nav>
       </div>

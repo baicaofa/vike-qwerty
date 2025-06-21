@@ -16,6 +16,8 @@ interface ClientWrapperProps {
 export function ClientWrapper({ pageContext, children }: ClientWrapperProps) {
   const darkMode = useAtomValue(isOpenDarkModeAtom); // 从 Jotai 获取 darkMode
   const { checkAuth } = useAuthStore(); // 获取认证状态检查函数
+  const [dbError, setDbError] = useState<string | null>(null);
+  const [isDbReady, setIsDbReady] = useState(false);
 
   useEffect(() => {
     // 检查用户认证状态
@@ -31,6 +33,9 @@ export function ClientWrapper({ pageContext, children }: ClientWrapperProps) {
 
         // 上报数据库版本信息
         if (result.success) {
+          setIsDbReady(true);
+          setDbError(null);
+
           // 生成一个匿名的用户ID，使用localStorage确保同一设备不会重复上报
           let deviceId = localStorage.getItem("device_id");
           if (!deviceId) {
@@ -52,9 +57,14 @@ export function ClientWrapper({ pageContext, children }: ClientWrapperProps) {
             // 静默失败，不影响用户体验
             console.error("数据库版本信息上报失败:", error);
           }
+        } else {
+          setDbError(result.error || "数据库初始化失败");
+          setIsDbReady(false);
         }
       } catch (error) {
         console.error("数据库版本检查失败:", error);
+        setDbError(error instanceof Error ? error.message : String(error));
+        setIsDbReady(false);
       }
     };
 

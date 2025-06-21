@@ -1,14 +1,9 @@
-import { WordPronunciationIcon } from "@/components/WordPronunciationIcon";
-import type { WordPronunciationIconRef } from "@/components/WordPronunciationIcon";
 import { currentDictIdAtom } from "@/store";
 import { useGetFamiliarWords } from "@/utils/db";
 import { useMarkFamiliarWord } from "@/utils/db";
 import { useAtomValue } from "jotai";
 import { useEffect, useState } from "react";
-import { useRef } from "react";
 import IconStar from "~icons/ic/outline-star";
-import IconStarOutline from "~icons/ic/outline-star-border";
-import IconX from "~icons/tabler/x";
 
 interface FamiliarWord {
   word: string;
@@ -147,8 +142,6 @@ function FamiliarWordCard({
   onCheck: (checked: boolean) => void;
   onUnmark: () => void;
 }) {
-  const wordPronunciationIconRef = useRef<WordPronunciationIconRef>(null);
-
   return (
     <div className="flex items-center justify-between rounded-xl bg-white p-4 shadow dark:bg-gray-700">
       <div className="flex items-center gap-2 flex-1">

@@ -22,10 +22,7 @@ interface PageProps {
   initialLanguage?: LanguageCategoryType;
 }
 
-export default function Page({
-  initialDictionaries,
-  initialLanguage,
-}: PageProps) {
+export default function Page({ initialLanguage }: PageProps) {
   const [galleryState, setGalleryState] = useImmer({
     ...initialGalleryState,
     currentLanguageTab:

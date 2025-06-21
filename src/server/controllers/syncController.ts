@@ -1,10 +1,13 @@
 import ChapterRecord from "../models/ChapterRecord";
 import FamiliarWord from "../models/FamiliarWord";
+import ReviewConfigModel from "../models/ReviewConfig";
+import ReviewHistoryModel from "../models/ReviewHistory";
 import ReviewRecord from "../models/ReviewRecord";
 import WordRecordModel, { // 统一使用这个导入
   type IWordRecord,
   type IPerformanceEntry as ServerPerformanceEntry,
 } from "../models/WordRecord";
+import WordReviewRecordModel from "../models/WordReviewRecord";
 // WordRecord 将从下面的 WordRecordModel 导入中统一处理
 import type { Request, Response } from "express";
 import mongoose from "mongoose";
@@ -12,7 +15,14 @@ import type { Model } from "mongoose";
 
 // Define types for sync request and response
 interface SyncChange {
-  table: "wordRecords" | "chapterRecords" | "reviewRecords" | "familiarWords";
+  table:
+    | "wordRecords"
+    | "chapterRecords"
+    | "reviewRecords"
+    | "familiarWords"
+    | "wordReviewRecords"
+    | "reviewHistories"
+    | "reviewConfigs";
   action: "create" | "update" | "delete";
   data: any;
 }
@@ -38,6 +48,12 @@ const getModel = (table: string): Model<any> => {
       return ReviewRecord;
     case "familiarWords":
       return FamiliarWord;
+    case "wordReviewRecords":
+      return WordReviewRecordModel;
+    case "reviewHistories":
+      return ReviewHistoryModel;
+    case "reviewConfigs":
+      return ReviewConfigModel;
     default:
       throw new Error(`Unknown table: ${table}`);
   }
@@ -310,7 +326,18 @@ export const syncData = async (req: Request, res: Response) => {
       | "chapterRecords"
       | "reviewRecords"
       | "familiarWords"
-    )[] = ["wordRecords", "chapterRecords", "reviewRecords", "familiarWords"];
+      | "wordReviewRecords"
+      | "reviewHistories"
+      | "reviewConfigs"
+    )[] = [
+      "wordRecords",
+      "chapterRecords",
+      "reviewRecords",
+      "familiarWords",
+      "wordReviewRecords",
+      "reviewHistories",
+      "reviewConfigs",
+    ];
 
     for (const table of tables) {
       const Model = getModel(table);
@@ -346,7 +373,14 @@ export const syncData = async (req: Request, res: Response) => {
 // 将 Date 对象转换为客户端期望的 number (Unix timestamp)
 function formatRecordForSync(
   record: any,
-  table: "wordRecords" | "chapterRecords" | "reviewRecords" | "familiarWords"
+  table:
+    | "wordRecords"
+    | "chapterRecords"
+    | "reviewRecords"
+    | "familiarWords"
+    | "wordReviewRecords"
+    | "reviewHistories"
+    | "reviewConfigs"
 ): SyncChange {
   const data = { ...record };
   delete data._id; // Remove MongoDB _id

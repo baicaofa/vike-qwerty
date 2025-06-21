@@ -3,7 +3,6 @@ import {
   removeMarkedWordAtom,
 } from "../store/markedWordsAtom";
 import { useAtom } from "jotai";
-import React from "react";
 
 interface MarkWordButtonProps {
   word: string;

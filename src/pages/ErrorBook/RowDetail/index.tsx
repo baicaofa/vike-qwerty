@@ -10,7 +10,7 @@ import { WordPronunciationIcon } from "@/components/WordPronunciationIcon";
 import Phonetic from "@/pages/Typing/components/WordPanel/components/Phonetic";
 import Letter from "@/pages/Typing/components/WordPanel/components/Word/Letter";
 import { idDictionaryMap } from "@/resources/dictionary";
-import type { IPerformanceEntry, IWordRecord } from "@/utils/db/record";
+import type { IWordRecord } from "@/utils/db/record";
 import { useSetAtom } from "jotai";
 import { useCallback, useMemo, useRef } from "react";
 import { useHotkeys } from "react-hotkeys-hook";

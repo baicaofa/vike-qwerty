@@ -76,6 +76,20 @@ export const pageTDK: Record<string, TDK> = {
     description: "浏览Keybr提供的各种英语词典，选择适合您的学习内容",
     keywords: "Keybr, 词典列表, 英语词典, 单词记忆, 英语学习, 打字练习",
   },
+
+  // 公共反馈页面
+  "/feedback": {
+    title: "用户反馈 - Keybr",
+    description: "查看和评价用户反馈，帮助我们改进Keybr",
+    keywords: "Keybr, 用户反馈, 功能建议, 问题反馈, 社区互动",
+  },
+
+  // 管理员反馈页面
+  "/admin/feedback": {
+    title: "用户反馈管理 - Keybr",
+    description: "管理和回复用户反馈",
+    keywords: "Keybr, 用户反馈, 管理系统, 问题反馈, 建议管理",
+  },
 };
 
 // 动态生成词典页面的TDK

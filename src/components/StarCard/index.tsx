@@ -106,7 +106,7 @@ export default function StarCard() {
         ) : (
           <div className="flex pb-0 pt-6">
             <button
-              className="rounded-lg bg-indigo-600 px-6 py-2 text-lg text-white transition-colors duration-300 focus:outline-none"
+              className="rounded-lg bg-blue-500 px-6 py-2 text-lg text-white transition-colors duration-300 focus:outline-none"
               type="button"
               onClick={onClickWantStar}
               title="我想收藏"

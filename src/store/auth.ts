@@ -63,11 +63,33 @@ const removeLocalStorageItem = (key: string): void => {
   }
 };
 
+// 初始化时设置axios的Authorization请求头
+const token = getLocalStorageItem("token");
+if (token) {
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+}
+
+// 从localStorage获取用户数据
+const getUserFromLocalStorage = (): User | null => {
+  const userString = getLocalStorageItem("user");
+  if (userString) {
+    try {
+      return JSON.parse(userString);
+    } catch (e) {
+      console.error("解析用户数据失败:", e);
+      return null;
+    }
+  }
+  return null;
+};
+
+const initialUser = getUserFromLocalStorage();
+
 const useAuthStore = create<AuthState>((set) => ({
-  user: null,
+  user: initialUser,
   token: getLocalStorageItem("token"),
   isAuthenticated: !!getLocalStorageItem("token"),
-  isEmailVerified: false,
+  isEmailVerified: initialUser?.isEmailVerified || false,
 
   login: async (email: string, password: string) => {
     const response = await axios.post("/api/auth/login", { email, password });
@@ -75,6 +97,10 @@ const useAuthStore = create<AuthState>((set) => ({
 
     setLocalStorageItem("token", token);
     setLocalStorageItem("user", JSON.stringify(user));
+
+    // 设置请求头中的Authorization
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
     set({
       user,
       token,
@@ -105,6 +131,10 @@ const useAuthStore = create<AuthState>((set) => ({
 
       setLocalStorageItem("token", token);
       setLocalStorageItem("user", JSON.stringify(user));
+
+      // 设置请求头中的Authorization
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
       set({
         user,
         token,
@@ -133,6 +163,9 @@ const useAuthStore = create<AuthState>((set) => ({
       return;
     }
     try {
+      // 设置默认请求头中的Authorization
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
       // 向后端请求校验 token
       const response = await axios.get("/api/auth/profile", {
         headers: { Authorization: `Bearer ${token}` },
@@ -149,6 +182,7 @@ const useAuthStore = create<AuthState>((set) => ({
       // token 无效或过期，自动登出
       removeLocalStorageItem("token");
       removeLocalStorageItem("user");
+      delete axios.defaults.headers.common["Authorization"];
       set({ user: null, token: null, isAuthenticated: false });
     }
   },
@@ -200,6 +234,9 @@ const useAuthStore = create<AuthState>((set) => ({
       console.log("设置本地存储和状态...");
       setLocalStorageItem("token", token);
       setLocalStorageItem("user", JSON.stringify(user));
+
+      // 设置请求头中的Authorization
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
       set({
         user,

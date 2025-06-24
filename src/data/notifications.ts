@@ -3,6 +3,19 @@ import type { NotificationItem } from "@/store/updateNotification";
 // 通知数据源
 export const notificationsList: NotificationItem[] = [
   {
+    id: "update-2025-06-20",
+    type: "update",
+    date: "2025年6月20日",
+    title: "增加反馈功能",
+    tag: "新功能",
+    desc: "增加问题反馈按钮，使用过程中有反馈问题可以及时反馈，BUG,建议,功能需求等",
+    images: [
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/06/QQ20250620-174823.jpg",
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/06/QQ20250620-174723.png",
+    ],
+    priority: "high",
+  },
+  {
     id: "update-2025-05-12",
     type: "update",
     date: "2025年5月12日",

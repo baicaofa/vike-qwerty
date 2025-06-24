@@ -206,13 +206,13 @@ export function Page() {
       <StarCard />
       {state.isFinished && <DonateCard />}
       {state.isFinished && <ResultScreen />}
-      <UpdateNotification />
+
       <Layout>
         <Header>
           <DictChapterButton />
           <CustomArticleButton />
           <StartButton isLoading={isLoading} />
-          <UserAuthMenu />
+
           <Tooltip content="跳过该词">
             <button
               type="button"

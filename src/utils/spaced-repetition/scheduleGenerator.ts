@@ -1,10 +1,16 @@
 import { db } from "../db";
 import type { IReviewConfig } from "../db/reviewConfig";
+import { ReviewHistory } from "../db/reviewHistory";
 import type { IWordReviewRecord } from "../db/wordReviewRecord";
 import { toWordReviewRecord } from "../db/wordReviewRecord";
 import { getReviewConfig } from "./config";
 import { AlgorithmUtils } from "./index";
 import { filterDueWords, filterUrgentWords } from "./priorityCalculator";
+
+/**
+ * 复习优先级类型
+ */
+export type ReviewPriorityType = "urgency" | "difficulty" | "random";
 
 /**
  * 复习统计接口
@@ -22,6 +28,7 @@ export interface ReviewStatistics {
     date: string;
     reviewed: number;
     target: number;
+    accuracy: number;
   }[];
   monthlyStats: {
     totalReviews: number;
@@ -245,7 +252,7 @@ export async function getReviewStatistics(
       dueWords,
       urgentWords,
       overdueWords,
-      averageProgress,
+      averageMemoryStrength: averageProgress,
       completionRate,
       streakDays,
       weeklyProgress,
@@ -373,11 +380,15 @@ export async function syncWordPracticeToReview(
  * @param word 单词
  * @param timestamp 复习时间戳
  * @param isFirstReviewOfRound 是否为当前轮次的首次复习，默认为true
+ * @param reviewResult 复习结果，"correct"或"incorrect"，默认为"correct"
+ * @param responseTime 响应时间(毫秒)，默认为2000ms
  */
 export async function completeWordReview(
   word: string,
   timestamp: number = Date.now(),
-  isFirstReviewOfRound = true
+  isFirstReviewOfRound = true,
+  reviewResult: "correct" | "incorrect" = "correct",
+  responseTime: number = 2000
 ): Promise<void> {
   try {
     // 查找对应的WordReviewRecord
@@ -395,6 +406,13 @@ export async function completeWordReview(
     const { toWordReviewRecord } = await import("../db/wordReviewRecord");
     const wordRecord = toWordReviewRecord(wordReviewRecord);
 
+    // 保存复习前的间隔索引和进度
+    const intervalIndexBefore = wordRecord.currentIntervalIndex;
+    // 简化的进度计算：基于间隔索引
+    const intervalProgressBefore = wordRecord.isGraduated
+      ? 1
+      : wordRecord.currentIntervalIndex / wordRecord.intervalSequence.length;
+
     if (isFirstReviewOfRound) {
       // 首次复习，完全更新（包括间隔推进）
       wordRecord.completeReview(timestamp);
@@ -410,6 +428,30 @@ export async function completeWordReview(
 
     // 保存到数据库
     await updateWordReviewSchedule(wordRecord);
+
+    // 计算复习后的间隔进度
+    const intervalProgressAfter = wordRecord.isGraduated
+      ? 1
+      : wordRecord.currentIntervalIndex / wordRecord.intervalSequence.length;
+
+    // 创建复习历史记录
+    if (isFirstReviewOfRound) {
+      const reviewHistory = new ReviewHistory(
+        wordRecord.id || 0,
+        word,
+        wordRecord.preferredDict || "",
+        reviewResult,
+        responseTime,
+        intervalProgressBefore,
+        intervalProgressAfter,
+        intervalIndexBefore,
+        wordRecord.currentIntervalIndex,
+        "scheduled"
+      );
+
+      // 保存复习历史记录到数据库
+      await db.reviewHistories.add(reviewHistory);
+    }
 
     console.log(
       `Completed review for word: ${word}, new interval index: ${wordRecord.currentIntervalIndex}`
@@ -512,6 +554,7 @@ async function generateWeeklyProgress(): Promise<
     date: string;
     reviewed: number;
     target: number;
+    accuracy: number;
   }>
 > {
   try {
@@ -527,15 +570,29 @@ async function generateWeeklyProgress(): Promise<
       const dayEnd = new Date(date);
       dayEnd.setHours(23, 59, 59, 999);
 
-      const reviewed = await db.reviewHistories
+      // 获取当天的所有复习记录
+      const dayReviews = await db.reviewHistories
         .where("reviewedAt")
         .between(dayStart.getTime(), dayEnd.getTime())
-        .count();
+        .toArray();
+
+      const reviewed = dayReviews.length;
+
+      // 计算准确率
+      const correctReviews = dayReviews.filter(
+        (review) => review.reviewResult === "correct"
+      ).length;
+      const accuracy =
+        reviewed > 0 ? Math.round((correctReviews / reviewed) * 100) : 0;
 
       weeklyProgress.push({
-        date: date.toISOString().split("T")[0],
+        date: date.toLocaleDateString("zh-CN", {
+          month: "numeric",
+          day: "numeric",
+        }),
         reviewed,
         target: config.dailyReviewTarget,
+        accuracy,
       });
     }
 

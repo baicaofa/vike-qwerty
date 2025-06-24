@@ -1,3 +1,4 @@
+import { ToastProvider } from "@/hooks/useToast";
 import { isOpenDarkModeAtom } from "@/store";
 import useAuthStore from "@/store/auth";
 import { checkAndUpgradeDatabase } from "@/utils/db";
@@ -85,5 +86,5 @@ export function ClientWrapper({ pageContext, children }: ClientWrapperProps) {
       : document.documentElement.classList.remove("dark");
   }, [darkMode]);
 
-  return <>{children}</>;
+  return <ToastProvider>{children}</ToastProvider>;
 }

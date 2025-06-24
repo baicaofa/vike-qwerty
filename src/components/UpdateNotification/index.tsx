@@ -1,4 +1,5 @@
 import NotificationSettings from "./NotificationSettings";
+import Tooltip from "@/components/Tooltip";
 import { notificationsList } from "@/data/notifications";
 import {
   type NotificationItem,
@@ -95,22 +96,22 @@ export default function UpdateNotification() {
 
   return (
     <>
-      {/* 铃铛图标 - 固定在右下角 */}
-      <div className="fixed bottom-6 right-6 z-[60]">
-        <button
-          type="button"
-          onClick={handleOpen}
-          className="relative bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-105"
-          aria-label="查看更新通知"
-        >
-          <Bell size={24} />
-          {/* 小红点 */}
-          {hasNewUpdates && (
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-white"></div>
-          )}
-        </button>
-      </div>
-
+      <Tooltip content="动态更新">
+        <div className="">
+          <button
+            type="button"
+            onClick={handleOpen}
+            className="relative  hover:bg-blue-500 hover:text-white text-black p-3 rounded-full  transition-all duration-200 hover:scale-105"
+            aria-label="查看更新通知"
+          >
+            <Bell size={18} />
+            {/* 小红点 */}
+            {hasNewUpdates && (
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-white"></div>
+            )}
+          </button>
+        </div>
+      </Tooltip>
       {/* 更新内容弹窗 */}
       {isOpen && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center">

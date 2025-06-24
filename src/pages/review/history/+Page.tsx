@@ -4,7 +4,7 @@ import { useReviewHistory } from "@/hooks/useSpacedRepetition";
 import type { IWordReviewRecord } from "@/utils/db/wordReviewRecord";
 import { WordReviewRecord } from "@/utils/db/wordReviewRecord";
 import type React from "react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 // 辅助函数：将IWordReviewRecord转换为WordReviewRecord实例
 const toWordRecord = (word: IWordReviewRecord): WordReviewRecord => {
@@ -12,9 +12,10 @@ const toWordRecord = (word: IWordReviewRecord): WordReviewRecord => {
     word.word,
     word.sourceDicts,
     word.preferredDict,
-    word.firstSeenAt,
-    word.lastReviewedAt
+    word.intervalSequence,
+    word.firstSeenAt
   );
+  // 确保所有属性都被复制到新实例中
   Object.assign(record, word);
   return record;
 };
@@ -35,7 +36,7 @@ const TimeRangeSelector: React.FC<{
       aria-label="选择时间范围"
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      className="border border-gray-300 rounded-md  py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
@@ -78,8 +79,12 @@ const HistoryChart: React.FC<{
 const WordHistoryCard: React.FC<{
   word: IWordReviewRecord;
 }> = ({ word }) => {
-  // 使用lastReviewDate作为最后复习时间
-  const lastReviewTime = word.lastReviewDate;
+  // 使用lastReviewDate作为最后复习时间，如果不存在则使用lastReviewedAt，都不存在则显示"未复习"
+  const lastReviewTime = word.lastReviewDate
+    ? new Date(word.lastReviewDate)
+    : word.lastReviewedAt
+    ? new Date(word.lastReviewedAt)
+    : null;
 
   const getLevelColor = (level: number) => {
     if (level >= 5) return "text-green-600 bg-green-50";
@@ -104,22 +109,26 @@ const WordHistoryCard: React.FC<{
       <div className="grid grid-cols-2 gap-4 text-sm">
         <div>
           <span className="text-gray-600">复习次数:</span>
-          <span className="ml-2 font-medium">{word.reviewLevel}</span>
+          <span className="ml-2 font-medium">
+            {word.reviewHistory?.length || 0}
+          </span>
         </div>
         <div>
           <span className="text-gray-600">当前等级:</span>
-          <span className="ml-2 font-medium">Lv.{word.reviewLevel}</span>
+          <span className="ml-2 font-medium">
+            Lv.{word.currentIntervalIndex}
+          </span>
         </div>
         <div>
           <span className="text-gray-600">连续正确:</span>
-          <span className="ml-2 font-medium">{word.consecutiveCorrect}</span>
+          <span className="ml-2 font-medium">
+            {word.consecutiveCorrect || 0}
+          </span>
         </div>
         <div>
           <span className="text-gray-600">最后复习:</span>
           <span className="ml-2 font-medium">
-            {lastReviewTime
-              ? new Date(lastReviewTime).toLocaleDateString()
-              : "未复习"}
+            {lastReviewTime ? lastReviewTime.toLocaleDateString() : "未复习"}
           </span>
         </div>
       </div>
@@ -165,6 +174,125 @@ export default function ReviewHistory() {
   >("recent");
   const { history, stats, loading } = useReviewHistory(timeRange);
 
+  // 从历史记录中生成图表数据
+  const chartData = useMemo(() => {
+    if (!history || history.length === 0) {
+      return Array.from({ length: 7 }, (_, i) => {
+        const date = new Date();
+        date.setDate(date.getDate() - (6 - i));
+        return {
+          date: date.toLocaleDateString("zh-CN", {
+            month: "numeric",
+            day: "numeric",
+          }),
+          reviewed: 0,
+          accuracy: 0,
+        };
+      });
+    }
+
+    // 计算最近7天的数据
+    const result = [];
+    const today = new Date();
+    today.setHours(23, 59, 59, 999);
+
+    // 收集7天的复习数据
+    for (let i = 6; i >= 0; i--) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+      const dateStr = date.toLocaleDateString("zh-CN", {
+        month: "numeric",
+        day: "numeric",
+      });
+
+      // 当天的开始时间
+      const dayStart = new Date(date);
+      dayStart.setHours(0, 0, 0, 0);
+
+      // 计算这一天的复习数量和准确率
+      let totalReviews = 0;
+      let correctReviews = 0;
+
+      // 遍历所有单词的复习历史
+      history.forEach((word) => {
+        // 根据复习历史判断
+        let reviews: Array<{ timestamp: number; isCorrect: boolean }> = [];
+
+        if (word.reviewHistory && word.reviewHistory.length > 0) {
+          reviews = word.reviewHistory.filter((review) => {
+            const reviewDate = new Date(review.timestamp);
+            return reviewDate >= dayStart && reviewDate <= date;
+          });
+        }
+        // 如果没有reviewHistory但有lastReviewedAt，手动创建一个复习记录
+        else if (word.lastReviewedAt) {
+          const reviewDate = new Date(word.lastReviewedAt);
+          if (reviewDate >= dayStart && reviewDate <= date) {
+            reviews = [
+              {
+                timestamp: word.lastReviewedAt,
+                isCorrect: word.consecutiveCorrect
+                  ? word.consecutiveCorrect > 0
+                  : true, // 假设连续正确>0则为正确
+              },
+            ];
+          }
+        }
+
+        totalReviews += reviews.length;
+        correctReviews += reviews.filter((review) => review.isCorrect).length;
+      });
+
+      const accuracy =
+        totalReviews > 0
+          ? Math.round((correctReviews / totalReviews) * 100)
+          : 0;
+
+      result.push({
+        date: dateStr,
+        reviewed: totalReviews,
+        accuracy: accuracy,
+      });
+    }
+
+    return result;
+  }, [history]);
+
+  // 排序单词函数
+  const getSortedWords = useMemo(() => {
+    if (!history) return [];
+
+    const sorted = [...history];
+    switch (sortBy) {
+      case "recent":
+        return sorted.sort((a, b) => {
+          const aTime = a.lastReviewedAt || 0;
+          const bTime = b.lastReviewedAt || 0;
+          return bTime - aTime;
+        });
+      case "frequency":
+        return sorted.sort(
+          (a, b) =>
+            (b.reviewHistory?.length || 0) - (a.reviewHistory?.length || 0)
+        );
+      case "strength":
+        return sorted.sort((a, b) => {
+          const aRecord = toWordRecord(a);
+          const bRecord = toWordRecord(b);
+          return (
+            bRecord.getCurrentMemoryStrength() -
+            aRecord.getCurrentMemoryStrength()
+          );
+        });
+      case "level":
+        return sorted.sort(
+          (a, b) => b.currentIntervalIndex - a.currentIntervalIndex
+        );
+      default:
+        return sorted;
+    }
+  }, [history, sortBy]);
+
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -177,45 +305,6 @@ export default function ReviewHistory() {
       </div>
     );
   }
-
-  // 生成图表数据（模拟数据，实际应该从历史记录中计算）
-  const chartData = Array.from({ length: 7 }, (_, i) => {
-    const date = new Date();
-    date.setDate(date.getDate() - (6 - i));
-    return {
-      date: date.toLocaleDateString("zh-CN", {
-        month: "numeric",
-        day: "numeric",
-      }),
-      reviewed: Math.floor(Math.random() * 50) + 10,
-      accuracy: Math.floor(Math.random() * 30) + 70,
-    };
-  });
-
-  const getSortedWords = () => {
-    if (!history) return [];
-
-    const sorted = [...history];
-    switch (sortBy) {
-      case "recent":
-        return sorted.sort((a, b) => b.lastReviewedAt - a.lastReviewedAt);
-      case "frequency":
-        return sorted.sort((a, b) => b.reviewLevel - a.reviewLevel);
-      case "strength":
-        return sorted.sort((a, b) => {
-          const aRecord = toWordRecord(a);
-          const bRecord = toWordRecord(b);
-          return (
-            bRecord.getCurrentMemoryStrength() -
-            aRecord.getCurrentMemoryStrength()
-          );
-        });
-      case "level":
-        return sorted.sort((a, b) => b.reviewLevel - a.reviewLevel);
-      default:
-        return sorted;
-    }
-  };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -253,7 +342,7 @@ export default function ReviewHistory() {
                     | "level"
                 )
               }
-              className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="border border-gray-300 rounded-md  py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="recent">按最近复习排序</option>
               <option value="frequency">按复习频次排序</option>
@@ -322,7 +411,7 @@ export default function ReviewHistory() {
 
         {history && history.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {getSortedWords().map((word) => (
+            {getSortedWords.map((word) => (
               <WordHistoryCard key={word.id} word={word} />
             ))}
           </div>

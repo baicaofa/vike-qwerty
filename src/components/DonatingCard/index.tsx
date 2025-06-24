@@ -28,42 +28,6 @@ export const DonatingCard = ({
         className && className
       }`}
     >
-      <h2 className="self-start pl-10 font-bold text-gray-800 dark:text-gray-300">
-        选择您的捐赠金额：
-      </h2>
-      <div className="mt-2 flex gap-3">
-        {displayAmount.map((a) => {
-          return (
-            <Amount
-              active={a === amount}
-              key={a}
-              amount={a}
-              onClick={onClickAmount}
-            />
-          );
-        })}
-      </div>
-
-      <div
-        className={`mt-3 flex w-full  flex-col  overflow-hidden px-11 transition-[height] duration-500 ${
-          amount ? "h-44" : "h-0"
-        }`}
-      >
-        {amount && (
-          <div className="flex w-full justify-between">
-            <img
-              src={AmountImageMap[amount][0]}
-              alt="alipay"
-              className=" h-44"
-            />
-            <img
-              src={AmountImageMap[amount][1]}
-              alt="weChat"
-              className=" h-44"
-            />
-          </div>
-        )}
-      </div>
       {amount && (amount >= 50 || amount === -1) && (
         <span>
           <a

@@ -11,13 +11,6 @@ import {
 } from "@/hooks/useSpacedRepetition";
 import type { IWordReviewRecord } from "@/utils/db/wordReviewRecord";
 import {
-  createReviewRecordsFromPractice,
-  createTestReviewData,
-  debugReviewData,
-  resetReviewTimes,
-  testReviewQuery,
-} from "@/utils/debugReviewData";
-import {
   areAllWordsPracticed,
   getPracticeStats,
   getPracticedWords,
@@ -292,38 +285,6 @@ export default function ReviewTodayPage() {
       <div className="bg-white rounded-lg shadow-md p-4">
         {renderWordList()}
       </div>
-
-      {/* 开发工具按钮 */}
-      {process.env.NODE_ENV !== "production" && (
-        <div className="mt-8 border-t pt-4">
-          <details>
-            <summary className="cursor-pointer text-gray-500 mb-2">
-              开发工具
-            </summary>
-            <div className="space-y-2">
-              <Button
-                onClick={resetReviewTimes}
-                size="sm"
-                variant="outline"
-                className="mr-2"
-              >
-                重置复习时间
-              </Button>
-              <Button
-                onClick={createTestReviewData}
-                size="sm"
-                variant="outline"
-                className="mr-2"
-              >
-                生成测试数据
-              </Button>
-              <Button onClick={testReviewQuery} size="sm" variant="outline">
-                测试查询
-              </Button>
-            </div>
-          </details>
-        </div>
-      )}
     </div>
   );
 }

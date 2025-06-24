@@ -131,7 +131,7 @@ export default function ReviewDashboard() {
   }
 
   // 生成最近7天的复习数据（使用真实统计数据或模拟数据）
-  const recentProgress = (
+  const recentProgress =
     stats?.weeklyProgress ||
     Array.from({ length: 7 }, (_, i) => {
       const date = new Date();
@@ -141,15 +141,11 @@ export default function ReviewDashboard() {
           month: "numeric",
           day: "numeric",
         }),
-        reviewed:
-          Math.floor(Math.random() * (config?.dailyReviewTarget || 50)) + 10,
+        reviewed: 0,
         target: config?.dailyReviewTarget || 50,
+        accuracy: 0, // 默认准确率为0
       };
-    })
-  ).map((item) => ({
-    ...item,
-    accuracy: Math.floor(Math.random() * 30) + 70, // 添加模拟准确率数据
-  }));
+    });
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -238,14 +234,6 @@ export default function ReviewDashboard() {
                 {stats?.totalWords && stats?.dueWords
                   ? stats.totalWords - stats.dueWords
                   : 0}
-              </span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">平均准确率</span>
-              <span className="font-semibold">
-                {stats?.monthlyStats?.averageAccuracy
-                  ? `${stats.monthlyStats.averageAccuracy.toFixed(1)}%`
-                  : "N/A"}
               </span>
             </div>
             <div className="flex justify-between items-center">

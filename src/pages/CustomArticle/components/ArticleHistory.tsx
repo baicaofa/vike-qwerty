@@ -168,7 +168,7 @@ export default function ArticleHistory() {
             </label>
             <select
               id="sort-by"
-              className="text-sm border rounded px-2 py-1"
+              className="text-sm border rounded  py-1"
               value={sortBy}
               onChange={handleSortChange}
             >

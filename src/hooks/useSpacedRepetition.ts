@@ -385,9 +385,11 @@ export function useReviewHistory(timeRange = "30d") {
       const allWords = await db.wordReviewRecords.toArray();
       const wordsWithHistory = allWords.filter(
         (word) =>
-          word.reviewHistory?.length > 0 &&
+          (word.reviewHistory?.length > 0 || word.totalReviews > 0) &&
           (timeRange === "all" ||
-            word.reviewHistory.some((h) => h.timestamp >= startTime))
+            (word.reviewHistory &&
+              word.reviewHistory.some((h) => h.timestamp >= startTime)) ||
+            (word.lastReviewedAt && word.lastReviewedAt >= startTime))
       );
 
       setHistory(wordsWithHistory);
@@ -397,7 +399,9 @@ export function useReviewHistory(timeRange = "30d") {
         (sum, word) =>
           sum +
           (word.reviewHistory?.filter((h) => h.timestamp >= startTime)
-            ?.length || 0),
+            ?.length ||
+            word.totalReviews ||
+            0),
         0
       );
 
@@ -416,11 +420,14 @@ export function useReviewHistory(timeRange = "30d") {
           : 0;
 
       const studyDaysSet = new Set(
-        wordsWithHistory.flatMap((word) =>
-          (word.reviewHistory || [])
+        wordsWithHistory.flatMap((word) => [
+          ...(word.reviewHistory || [])
             .filter((h) => h.timestamp >= startTime)
-            .map((h) => new Date(h.timestamp).toDateString())
-        )
+            .map((h) => new Date(h.timestamp).toDateString()),
+          ...(word.lastReviewedAt && word.lastReviewedAt >= startTime
+            ? [new Date(word.lastReviewedAt).toDateString()]
+            : []),
+        ])
       );
 
       const masteredWords = wordsWithHistory.filter((word) => {

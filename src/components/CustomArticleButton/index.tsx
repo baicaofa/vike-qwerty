@@ -18,6 +18,7 @@ const CustomArticleButton: React.FC = () => {
             clipRule="evenodd"
           />
         </svg>
+        文章
       </a>
     </Tooltip>
   );

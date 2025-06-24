@@ -2,6 +2,13 @@ import { getUTCUnixTimestamp } from "../index";
 import { generateUUID } from "../uuid";
 import type { SyncStatus } from "./record";
 
+// 定义每次复习记录的接口
+export interface IReviewHistoryEntry {
+  timestamp: number;
+  isCorrect: boolean;
+  responseTime?: number;
+}
+
 /**
  * 简化的单词复习记录接口
  * 基于固定间隔序列的渐进式复习系统
@@ -19,6 +26,11 @@ export interface IWordReviewRecord {
   totalReviews: number; // 总复习次数
   todayReviewCount: number; // 今日复习次数
   isGraduated: boolean; // 是否已完成所有间隔
+
+  // 复习历史
+  reviewHistory?: IReviewHistoryEntry[]; // 复习历史记录
+  consecutiveCorrect?: number; // 连续正确次数
+  lastReviewedAt?: number; // 最后复习时间戳
 
   // 新增：轮次练习相关
   todayPracticeCount: number; // 今日练习次数，用于轮次控制
@@ -51,6 +63,9 @@ export class WordReviewRecord implements IWordReviewRecord {
   totalReviews: number;
   todayReviewCount: number;
   isGraduated: boolean;
+  reviewHistory?: IReviewHistoryEntry[];
+  consecutiveCorrect?: number;
+  lastReviewedAt?: number;
   todayPracticeCount: number;
   lastPracticedAt: number;
   sourceDicts: string[];
@@ -76,10 +91,13 @@ export class WordReviewRecord implements IWordReviewRecord {
     this.isGraduated = false;
     this.sourceDicts = [...sourceDicts]; // 复制数组
     this.preferredDict = preferredDict;
+    this.reviewHistory = [];
+    this.consecutiveCorrect = 0;
 
     // 新增字段初始化
     this.todayPracticeCount = 0;
     this.lastPracticedAt = Date.now();
+    this.lastReviewedAt = Date.now();
 
     const now = getUTCUnixTimestamp();
     this.firstSeenAt = firstSeenAt || now;
@@ -246,6 +264,18 @@ export class WordReviewRecord implements IWordReviewRecord {
 
     return { current, total, percentage };
   }
+
+  /**
+   * 获取当前记忆强度
+   * 简化实现：基于当前间隔索引计算
+   */
+  getCurrentMemoryStrength(): number {
+    if (this.isGraduated) return 1.0;
+    return Math.min(
+      0.95,
+      this.currentIntervalIndex / this.intervalSequence.length
+    );
+  }
 }
 
 /**
@@ -270,6 +300,9 @@ export function toWordReviewRecord(obj: IWordReviewRecord): WordReviewRecord {
   record.totalReviews = obj.totalReviews;
   record.todayReviewCount = obj.todayReviewCount;
   record.isGraduated = obj.isGraduated;
+  record.reviewHistory = obj.reviewHistory;
+  record.consecutiveCorrect = obj.consecutiveCorrect;
+  record.lastReviewedAt = obj.lastReviewedAt;
   record.todayPracticeCount = obj.todayPracticeCount;
   record.lastPracticedAt = obj.lastPracticedAt;
   record.lastReviewDate = obj.lastReviewDate;

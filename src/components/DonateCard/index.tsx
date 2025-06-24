@@ -145,17 +145,13 @@ export const DonateCard = () => {
                       <br />
                     </p>
                     <p className="mx-auto px-4 indent-4">
-                      Keybr 已经坚持{" "}
-                      <span className="font-medium ">
-                        开放源码、无广告、无商业化
-                      </span>{" "}
-                      运营
+                      Keybr 已经坚持运营
                       <HighlightedText className="text-blue-500">
                         {" "}
                         {dayFromQwerty}{" "}
                       </HighlightedText>{" "}
                       天，
-                      我们的目标是为所有学习者提供一个高效、便捷、无干扰的学习环境。让
+                      我们的目标是为所有学习者提供一个高效、便捷的学习环境。让
                       KEYBR 与您一起成长。
                     </p>
 
@@ -164,10 +160,6 @@ export const DonateCard = () => {
                     </div>
                   </div>
 
-                  <DonatingCard
-                    className="mt-2"
-                    onAmountChange={onAmountChange}
-                  />
                   <div className="flex w-full justify-between  px-14 pb-3 pt-0">
                     <button
                       type="button"

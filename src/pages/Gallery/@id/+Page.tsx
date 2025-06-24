@@ -2,7 +2,9 @@
 import { DictChapterButton } from "../../Typing/components/DictChapterButton";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
+import type { WordPronunciationIconRef } from "@/components/WordPronunciationIcon";
 import { dictionaries } from "@/resources/dictionary";
+import { currentDictInfoAtom } from "@/store";
 import type { Dictionary } from "@/typings";
 import { wordListFetcher } from "@/utils/wordListFetcher";
 import { useEffect, useState } from "react";

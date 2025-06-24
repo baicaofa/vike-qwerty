@@ -7,6 +7,7 @@ export interface IUser extends mongoose.Document {
   email: string;
   password: string;
   isEmailVerified: boolean;
+  isAdmin: boolean;
   passwordResetToken?: string;
   passwordResetExpires?: Date;
   lastLogin?: Date;
@@ -43,6 +44,10 @@ const userSchema = new mongoose.Schema({
     minlength: [6, "密码至少需要6个字符"],
   },
   isEmailVerified: {
+    type: Boolean,
+    default: false,
+  },
+  isAdmin: {
     type: Boolean,
     default: false,
   },

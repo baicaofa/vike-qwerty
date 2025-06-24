@@ -1,6 +1,7 @@
 import { ReviewStatusIndicator } from "../ReviewStatusIndicator";
 import { SyncStatusIndicator } from "../SyncStatusIndicator";
 import logo from "@/assets/logo.svg";
+import { UserAuthMenu } from "@/pages/Typing/components/UserAuthMenu";
 import type { PropsWithChildren } from "react";
 import type React from "react";
 
@@ -33,21 +34,11 @@ const Header: React.FC<PropsWithChildren> = ({ children }) => {
             </a>
           </div>
 
-          <div className="relative">
-            <a href="/review/dashboard">
-              <button
-                type="button"
-                className="rounded-lg bg-green-500 text-white font-medium px-4 py-2 text-sm transition-all hover:bg-green-400 focus:outline-none"
-              >
-                🧠 智能复习
-              </button>
-            </a>
-          </div>
-
           {children}
           <ReviewStatusIndicator />
-          <SyncStatusIndicator />
         </nav>
+
+        <UserAuthMenu />
       </div>
     </header>
   );

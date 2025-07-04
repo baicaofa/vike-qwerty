@@ -1,5 +1,5 @@
 import ReviewNav from "@/components/ReviewNav";
-import React from "react";
+import type React from "react";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (

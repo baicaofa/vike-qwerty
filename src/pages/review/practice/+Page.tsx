@@ -15,7 +15,6 @@
  * - TypingProvider/TypingContext: 提供打字状态和控制功能的上下文
  * - useTodayReviews: 获取今日需要复习的单词
  */
-import ReviewNav from "@/components/ReviewNav";
 import { Link } from "@/components/ui/Link";
 // 导入 UI 组件
 import { Badge } from "@/components/ui/badge";
@@ -529,7 +528,6 @@ export default function ReviewPracticePage() {
   if (isLoading) {
     return (
       <div className="flex flex-col h-screen">
-        <ReviewNav />
         <div className="flex items-center justify-between px-4 py-2 border-b">
           <div className="flex items-center">
             <Link
@@ -559,7 +557,6 @@ export default function ReviewPracticePage() {
   if (error) {
     return (
       <div className="flex flex-col h-screen">
-        <ReviewNav />
         <div className="flex items-center justify-between px-4 py-2 border-b">
           <div className="flex items-center">
             <Link
@@ -608,7 +605,6 @@ export default function ReviewPracticePage() {
   if (typingWords.length === 0) {
     return (
       <div className="flex flex-col h-screen">
-        <ReviewNav />
         <div className="flex items-center justify-between px-4 py-2 border-b">
           <div className="flex items-center">
             <Link
@@ -647,9 +643,6 @@ export default function ReviewPracticePage() {
         fadeIn ? "opacity-100" : "opacity-0"
       }`}
     >
-      {/* 导航栏 */}
-      <ReviewNav />
-
       {/* 顶部导航栏 */}
       <div className="flex items-center justify-between px-4 py-2 border-b">
         <div className="flex items-center">

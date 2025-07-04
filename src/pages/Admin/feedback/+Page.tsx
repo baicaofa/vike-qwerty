@@ -1,8 +1,8 @@
 import Layout from "@/components/Layout";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/useToast";
+import type { FeedbackReply } from "@/services/feedbackService";
 import {
-  FeedbackReply,
   getAllFeedback,
   replyToFeedback,
   updateFeedbackStatus,

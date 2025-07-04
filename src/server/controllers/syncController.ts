@@ -150,6 +150,7 @@ export const syncData = async (req: Request, res: Response) => {
           clientPerformanceHistoryData || []
         ).map((entry) => ({
           ...entry,
+          mistakes: entry.mistakes ?? [], // 如果客户端没有传，设为空数组，避免 validation 错误
           timeStamp: safeParseDate(entry.timeStamp) || new Date(), // 转换时间戳
         }));
 
@@ -260,60 +261,69 @@ export const syncData = async (req: Request, res: Response) => {
           }
         }
       } else {
+        // Generic handling for other tables
         const Model = getModel(table);
-        if (!Model) {
-          console.warn(`No model found for table: ${table}. Skipping change.`);
-          continue;
-        }
-        // 移除 @ts-ignore，改为正确处理类型
-        const queryOtherTables = { uuid: clientRecordData.uuid, userId };
+        const { uuid } = clientRecordData;
+        const query = { userId, uuid };
 
         if (action === "create" || action === "update") {
-          const updateData = {
-            ...clientRecordData,
-            userId,
+          // Use a flexible data object, excluding reserved fields from client
+          const { _id, ...updateData } = clientRecordData;
 
-            clientModifiedAt:
-              safeParseDate(
-                clientRecordData.clientModifiedAt ||
-                  clientRecordData.last_modified
-              ) || new Date(),
-            // serverModifiedAt 会由 timestamps: true 自动处理
+          // 特殊处理 ReviewHistory 表中的 wordReviewRecordId 字段
+          if (table === "reviewHistories" && updateData.wordReviewRecordId) {
+            // 检查 wordReviewRecordId 是否是数字或不是有效的 ObjectId
+            if (
+              typeof updateData.wordReviewRecordId === "number" ||
+              (typeof updateData.wordReviewRecordId === "string" &&
+                !mongoose.isValidObjectId(updateData.wordReviewRecordId))
+            ) {
+              // 查找相应的 WordReviewRecord，获取其正确的 ObjectId
+              try {
+                const wordReviewRecord = await WordReviewRecordModel.findOne({
+                  userId,
+                  word: updateData.word,
+                });
 
-            last_modified: clientRecordData.last_modified || Date.now(),
-          };
-
-          if (clientRecordData.timeStamp) {
-            updateData.timeStamp = safeParseDate(clientRecordData.timeStamp);
+                if (wordReviewRecord) {
+                  // 使用找到的记录的 ObjectId
+                  updateData.wordReviewRecordId = wordReviewRecord._id;
+                  console.log(
+                    `找到并转换 wordReviewRecordId: ${updateData.word} -> ${wordReviewRecord._id}`
+                  );
+                } else {
+                  console.warn(
+                    `找不到 WordReviewRecord，无法转换 wordReviewRecordId，word: ${updateData.word}`
+                  );
+                  // 可选：跳过此记录
+                  continue;
+                }
+              } catch (err) {
+                console.error(`查找 WordReviewRecord 时出错: ${err}`);
+                // 可选：跳过此记录
+                continue;
+              }
+            }
           }
 
-          if (clientRecordData.createTime) {
-            updateData.createTime = safeParseDate(clientRecordData.createTime);
-          }
-          // 移除 undefined 字段，防止 Mongoose 报错
-          Object.keys(updateData).forEach(
-            (key) => updateData[key] === undefined && delete updateData[key]
+          await Model.findOneAndUpdate(
+            query,
+            { ...updateData, userId },
+            {
+              upsert: true, // Create if doesn't exist
+              new: true, // Return the updated document
+              setDefaultsOnInsert: true,
+            }
           );
-
-          await Model.findOneAndUpdate(queryOtherTables, updateData, {
-            upsert: true,
-            new: true,
-            runValidators: true,
-          });
         } else if (action === "delete") {
-          const record = await Model.findOne(queryOtherTables);
-          if (record) {
-            record.isDeleted = true;
-
-            record.clientModifiedAt =
-              safeParseDate(
-                clientRecordData.clientModifiedAt ||
-                  clientRecordData.last_modified
-              ) || new Date();
-
-            record.last_modified = clientRecordData.last_modified || Date.now();
-            // serverModifiedAt 会自动更新
-            await record.save();
+          // For most tables, we physically delete. For tables with `isDeleted`, we mark them.
+          if ("isDeleted" in Model.schema.paths) {
+            await Model.findOneAndUpdate(query, {
+              isDeleted: true,
+              last_modified: clientRecordData.last_modified || Date.now(),
+            });
+          } else {
+            await Model.findOneAndDelete(query);
           }
         }
       }
@@ -398,10 +408,32 @@ function formatRecordForSync(
       })
     );
   }
+
+  // 特殊处理 ReviewHistories 表中的 wordReviewRecordId 字段
+  if (table === "reviewHistories" && data.wordReviewRecordId) {
+    // 将 ObjectId 转换为字符串，客户端可以在下次同步时使用
+    data.wordReviewRecordId = data.wordReviewRecordId.toString();
+  }
+
   // Convert other Date fields to Unix timestamps (numbers) for client
   for (const key in data) {
     if (data[key] instanceof Date) {
       data[key] = data[key].getTime();
+    } else if (data[key] instanceof mongoose.Types.ObjectId) {
+      // 将所有 ObjectId 类型转换为字符串
+      data[key] = data[key].toString();
+    } else if (data[key] && typeof data[key] === "object") {
+      // 递归处理嵌套对象中的日期或ObjectId
+      if (Array.isArray(data[key])) {
+        data[key] = data[key].map((item: any) => {
+          if (item instanceof Date) {
+            return item.getTime();
+          } else if (item instanceof mongoose.Types.ObjectId) {
+            return item.toString();
+          }
+          return item;
+        });
+      }
     }
   }
 

@@ -1,3 +1,4 @@
+import { generateUUID } from "../../utils/uuid";
 import { db } from "../db";
 import type { IReviewConfig } from "../db/reviewConfig";
 import { ReviewHistory } from "../db/reviewHistory";
@@ -306,16 +307,15 @@ export async function getDueWordsForReview(
 }
 
 /**
- * 同步WordRecord变化到WordReviewRecord
- * 当用户练习单词时，自动更新复习状态
+ * 将单词练习结果同步到复习系统，并更新或创建单词的复习记录。
  *
- * @param word 单词
- * @param dict 词典
+ * @param word 练习的单词
+ * @param dictId 单词所在的词典ID
  * @param practiceResult 练习结果
  */
 export async function syncWordPracticeToReview(
   word: string,
-  dict: string,
+  dictId: string,
   practiceResult: {
     isCorrect: boolean;
     responseTime: number;
@@ -323,53 +323,113 @@ export async function syncWordPracticeToReview(
   }
 ): Promise<void> {
   try {
-    // 查找对应的WordReviewRecord
-    let wordReviewRecord = await db.wordReviewRecords
-      .where("word")
-      .equals(word)
-      .first();
+    await updateWordReviewRecord(word, dictId, practiceResult.isCorrect);
+  } catch (error) {
+    console.error(`Failed to sync practice for word "${word}":`, error);
+    // 根据需要决定是否向上抛出异常
+  }
+}
 
-    if (!wordReviewRecord) {
-      // 如果不存在，创建新的复习记录
-      const config = await getReviewConfig();
-      const { WordReviewRecord } = await import("../db/wordReviewRecord");
+/**
+ * 根据练习结果更新单词的复习记录。
+ * 此函数确保每个单词只有一个复习记录。
+ *
+ * @param word 要更新的单词
+ * @param dictId 单词当前所属的词典ID（用于记录，不用于查询）
+ * @param isCorrect 本次练习是否正确
+ */
+async function updateWordReviewRecord(
+  word: string,
+  dictId: string,
+  isCorrect: boolean
+): Promise<void> {
+  const config = await getReviewConfig();
+  // 修改这里，不再使用 new 操作符，因为 AlgorithmUtils 是对象而非构造函数
+  // const algorithm = new AlgorithmUtils(config);
 
-      wordReviewRecord = new WordReviewRecord(
-        word,
-        [dict],
-        dict,
-        config.baseIntervals,
-        practiceResult.timestamp
-      );
+  // 只按 word 查找，确保全局唯一性
+  const record = await db.wordReviewRecords.where({ word }).first();
 
-      await db.wordReviewRecords.add(wordReviewRecord);
-      console.log(`Created new review record for word: ${word}`);
-    } else {
-      // 更新现有记录的词典信息
-      if (!wordReviewRecord.sourceDicts.includes(dict)) {
-        wordReviewRecord.sourceDicts.push(dict);
+  if (record) {
+    // 记录存在，更新它
+    // 直接使用 record 的方法更新记录
+    const updatedRecord = { ...record };
 
-        // 更新同步状态
-        if (wordReviewRecord.sync_status === "synced") {
-          wordReviewRecord.sync_status = "local_modified";
-        }
-        wordReviewRecord.last_modified = Date.now();
-
-        // 保存更新
-        if (wordReviewRecord.id) {
-          await db.wordReviewRecords.update(wordReviewRecord.id, {
-            sourceDicts: wordReviewRecord.sourceDicts,
-            sync_status: wordReviewRecord.sync_status,
-            last_modified: wordReviewRecord.last_modified,
-          });
-        }
+    // 更新复习记录
+    if (isCorrect) {
+      // 如果回答正确，增加间隔
+      if (
+        updatedRecord.currentIntervalIndex <
+        updatedRecord.intervalSequence.length - 1
+      ) {
+        updatedRecord.currentIntervalIndex++;
       }
 
-      console.log(`Updated existing review record for word: ${word}`);
+      // 更新下次复习时间
+      const nextInterval =
+        updatedRecord.intervalSequence[updatedRecord.currentIntervalIndex];
+      updatedRecord.nextReviewAt =
+        Date.now() + AlgorithmUtils.daysToMilliseconds(nextInterval);
+
+      // 如果已经达到最大间隔，标记为已毕业
+      if (
+        updatedRecord.currentIntervalIndex ===
+        updatedRecord.intervalSequence.length - 1
+      ) {
+        updatedRecord.isGraduated = true;
+      }
+    } else {
+      // 如果回答错误，重置间隔
+      updatedRecord.currentIntervalIndex = Math.max(
+        0,
+        updatedRecord.currentIntervalIndex - 1
+      );
+      const nextInterval =
+        updatedRecord.intervalSequence[updatedRecord.currentIntervalIndex];
+      updatedRecord.nextReviewAt =
+        Date.now() + AlgorithmUtils.daysToMilliseconds(nextInterval);
+      updatedRecord.isGraduated = false;
     }
-  } catch (error) {
-    console.error("Failed to sync word practice to review:", error);
-    throw error;
+
+    // 更新其他字段
+    updatedRecord.lastReviewDate = new Date().toISOString().split("T")[0];
+    updatedRecord.totalReviews++;
+    updatedRecord.todayReviewCount = (updatedRecord.todayReviewCount || 0) + 1;
+
+    await db.wordReviewRecords.update(record.id!, {
+      ...updatedRecord,
+      sync_status: "local_modified",
+      last_modified: Date.now(),
+    });
+  } else {
+    // 记录不存在，创建新的
+    // 使用config.baseIntervals替代intervalSequence
+    const intervalSequence = config.baseIntervals || [1, 3, 7, 15, 30, 60];
+    const currentIntervalIndex = isCorrect ? 1 : 0; // 如果第一次就是正确的，直接从第二个间隔开始
+    const nextInterval = intervalSequence[currentIntervalIndex];
+    const now = Date.now();
+
+    const newRecord: IWordReviewRecord = {
+      word,
+      uuid: generateUUID(),
+      intervalSequence,
+      currentIntervalIndex,
+      nextReviewAt: now + AlgorithmUtils.daysToMilliseconds(nextInterval),
+      isGraduated: false,
+      totalReviews: 1,
+      todayReviewCount: 1,
+      lastReviewDate: new Date().toISOString().split("T")[0],
+      sync_status: "local_new",
+      last_modified: now,
+      // 添加IWordReviewRecord要求的其他必填字段
+      todayPracticeCount: 1,
+      lastPracticedAt: now,
+      sourceDicts: [dictId], // 使用dictId作为源词典
+      preferredDict: dictId, // 设置为首选词典
+      firstSeenAt: now,
+    };
+
+    await db.wordReviewRecords.add(newRecord);
   }
 }
 
@@ -388,7 +448,7 @@ export async function completeWordReview(
   timestamp: number = Date.now(),
   isFirstReviewOfRound = true,
   reviewResult: "correct" | "incorrect" = "correct",
-  responseTime: number = 2000
+  responseTime = 2000
 ): Promise<void> {
   try {
     // 查找对应的WordReviewRecord
@@ -403,12 +463,10 @@ export async function completeWordReview(
     }
 
     // 转换为类实例并完成复习
-    const { toWordReviewRecord } = await import("../db/wordReviewRecord");
     const wordRecord = toWordReviewRecord(wordReviewRecord);
 
     // 保存复习前的间隔索引和进度
     const intervalIndexBefore = wordRecord.currentIntervalIndex;
-    // 简化的进度计算：基于间隔索引
     const intervalProgressBefore = wordRecord.isGraduated
       ? 1
       : wordRecord.currentIntervalIndex / wordRecord.intervalSequence.length;
@@ -423,7 +481,12 @@ export async function completeWordReview(
       }
       wordRecord.todayPracticeCount++;
       wordRecord.lastPracticedAt = timestamp;
-      wordRecord.last_modified = Date.now();
+    }
+
+    // 设置同步字段
+    wordRecord.last_modified = Date.now();
+    if (wordRecord.sync_status === "synced") {
+      wordRecord.sync_status = "local_modified";
     }
 
     // 保存到数据库
@@ -448,6 +511,11 @@ export async function completeWordReview(
         wordRecord.currentIntervalIndex,
         "scheduled"
       );
+
+      // 为 reviewHistory 添加同步字段
+      reviewHistory.uuid = generateUUID();
+      reviewHistory.sync_status = "local_new";
+      reviewHistory.last_modified = Date.now();
 
       // 保存复习历史记录到数据库
       await db.reviewHistories.add(reviewHistory);

@@ -70,7 +70,7 @@ export class RecordDB extends Dexie {
     });
 
     // 版本3的数据库模式更新
-    console.log("📝 定义数据库版本3模式");
+
     this.version(3).stores({
       wordRecords: "++id,word,timeStamp,dict,chapter,wrongCount,[dict+chapter]",
       chapterRecords: "++id,timeStamp,dict,chapter,time,[dict+chapter]",
@@ -79,7 +79,7 @@ export class RecordDB extends Dexie {
     });
 
     // 版本4的数据库模式更新（添加同步相关字段）
-    console.log("📝 定义数据库版本4模式");
+
     this.version(4)
       .stores({
         // wordRecords表添加uuid、sync_status和last_modified字段
@@ -94,7 +94,6 @@ export class RecordDB extends Dexie {
         // revision* 表保持不变 (假设它们不需要同步)
       })
       .upgrade((tx) => {
-        console.log("🔄 开始升级到版本4...");
         const now = Date.now();
         // 返回Promise确保所有迁移操作完成
         return Promise.all([
@@ -348,7 +347,7 @@ export class RecordDB extends Dexie {
     });
 
     // 添加智能复习系统的第9版
-    console.log("📝 定义数据库版本9模式");
+
     this.version(9)
       .stores({
         // 现有表保持不变
@@ -363,9 +362,9 @@ export class RecordDB extends Dexie {
         articleRecords:
           "++id, &uuid, title, content, createdAt, lastPracticedAt",
 
-        // 新增复习相关表 - 整合版本10的表结构
+        // 新增复习相关表 -
         wordReviewRecords:
-          "++id, &uuid, word, nextReviewAt, currentIntervalIndex, isGraduated, todayPracticeCount, lastPracticedAt, lastReviewDate, sync_status, last_modified",
+          "++id, &uuid, &word, nextReviewAt, currentIntervalIndex, isGraduated, todayPracticeCount, lastPracticedAt, lastReviewDate, sync_status, last_modified",
         reviewHistories:
           "++id, &uuid, wordReviewRecordId, word, reviewedAt, sync_status, last_modified",
         reviewConfigs: "++id, &uuid, userId, sync_status, last_modified",
@@ -440,82 +439,65 @@ export async function checkAndUpgradeDatabase() {
   let lastError: Error | null = null;
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    // 检查升级状态
-    const upgradeStatus = UpgradeStatusChecker.getUpgradeStatus();
-    if (upgradeStatus?.status === "started") {
-      UpgradeStatusChecker.clearUpgradeStatus();
-    }
-
-    // 打开数据库，这会触发自动升级
     try {
-      await db.open();
-    } catch (openError) {
-      // 使用诊断功能分析错误
-      if (openError instanceof Error) {
-        const diagnosis = diagnoseDatabaseError(openError);
-
-        if (
-          diagnosis.canAutoFix &&
-          (diagnosis.type === "index" || diagnosis.type === "version")
-        ) {
-          try {
-            const resetSuccess = await fullDatabaseReset();
-            if (resetSuccess) {
-              await db.open();
-            } else {
-              await db.delete();
-              await db.open();
-            }
-          } catch (resetError) {
-            lastError =
-              resetError instanceof Error
-                ? resetError
-                : new Error(String(resetError));
-            continue;
-          }
-        } else {
-          lastError = openError;
-          continue;
-        }
-      } else {
-        lastError =
-          openError instanceof Error ? openError : new Error(String(openError));
-        continue;
+      if (!db.isOpen()) {
+        await db.open();
       }
-    }
 
-    const currentVersion = db.verno;
-    const expectedVersion = 9; // 当前最新版本
-
-    if (currentVersion < expectedVersion) {
-      // 关闭数据库
-      db.close();
-      // 重新打开，强制触发升级
-      await db.open();
-
-      const newVersion = db.verno;
-
-      if (newVersion === expectedVersion) {
-        UpgradeStatusChecker.clearUpgradeStatus(); // 清除升级状态
-      } else {
-        lastError = new Error(
-          `数据库升级失败: 期望版本 ${expectedVersion}, 实际版本 ${newVersion}`
+      // 检查并处理可能的 IndexedDB 错误
+      const status = await Dexie.getDatabaseNames();
+      if (!status.includes("RecordDB")) {
+        console.warn(
+          "Database 'RecordDB' not found. This might be a fresh install."
         );
-        continue;
+        // 对于新安装，不需要执行升级检查
+        return;
+      }
+
+      const upgradeChecker = new UpgradeStatusChecker();
+
+      // 获取数据库版本和期望版本
+      const currentVersion = db.verno;
+      const expectedVersion = 9; // 当前最新版本
+
+      if (currentVersion < expectedVersion) {
+        console.warn(
+          `Database version ${currentVersion} is lower than expected version ${expectedVersion}. An upgrade might be pending or failed.`
+        );
+        // 关闭数据库
+        db.close();
+        // 重新打开，强制触发升级
+        await db.open();
+
+        const newVersion = db.verno;
+
+        if (newVersion === expectedVersion) {
+          UpgradeStatusChecker.clearUpgradeStatus(); // 清除升级状态
+        } else {
+          throw new Error(
+            `数据库升级失败: 期望版本 ${expectedVersion}, 实际版本 ${newVersion}`
+          );
+        }
+      }
+
+      return {
+        success: true,
+        currentVersion: db.verno,
+        expectedVersion,
+      };
+    } catch (error) {
+      lastError = error instanceof Error ? error : new Error(String(error));
+      console.error(`Attempt ${attempt} failed:`, error);
+      if (attempt < maxRetries) {
+        console.log(`Retrying in 5 seconds...`);
+        await new Promise((resolve) => setTimeout(resolve, 5000));
       }
     }
-
-    return {
-      success: true,
-      currentVersion: db.verno,
-      expectedVersion,
-    };
   }
 
-  // 所有重试都失败了
   return {
     success: false,
-    error: lastError?.message || "数据库初始化失败",
+    error: lastError?.message || "Unknown error",
   };
 }
 

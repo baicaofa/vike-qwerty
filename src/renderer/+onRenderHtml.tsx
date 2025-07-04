@@ -16,10 +16,16 @@ interface PageContext extends PageContextServer {
   Page: React.ComponentType<any>;
   urlPathname: string;
   routeParams: Record<string, string>;
+  config: {
+    Layout?:
+      | React.ComponentType<{ children: React.ReactNode }>
+      | React.ComponentType<{ children: React.ReactNode }>[];
+  };
 }
 
 async function onRenderHtml(pageContext: PageContext) {
-  const { Page, urlPathname, routeParams } = pageContext;
+  const { Page, urlPathname, routeParams, config } = pageContext;
+  const { Layout } = config;
 
   // 获取当前页面的TDK
   const tdk = getPageTDK(urlPathname, routeParams);
@@ -35,13 +41,23 @@ async function onRenderHtml(pageContext: PageContext) {
   // 创建一个 Jotai store 实例用于服务端渲染
   const store = createStore();
 
+  let pageView = <Page pageContext={pageContext} />;
+  if (Layout) {
+    if (Array.isArray(Layout)) {
+      pageView = Layout.reduceRight(
+        (children, L) => <L>{children}</L>,
+        pageView
+      );
+    } else {
+      pageView = <Layout>{pageView}</Layout>;
+    }
+  }
+
   const pageHtml = dangerouslySkipEscape(
     renderToString(
       <JotaiProvider store={store}>
         <TypingContext.Provider value={typingContextValue}>
-          <ToastProvider>
-            <Page pageContext={pageContext} />
-          </ToastProvider>
+          <ToastProvider>{pageView}</ToastProvider>
         </TypingContext.Provider>
       </JotaiProvider>
     )

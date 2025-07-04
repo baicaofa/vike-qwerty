@@ -7,12 +7,21 @@ import { hydrateRoot } from "react-dom/client";
 import type { PageContextClient } from "vike/types";
 
 interface PageContext extends PageContextClient {
-  Page: React.ComponentType;
+  Page: React.ComponentType<any>;
   urlPathname: string;
+  config: {
+    Layout?:
+      | React.ComponentType<{ children: React.ReactNode }>
+      | React.ComponentType<{ children: React.ReactNode }>[];
+  };
 }
 
+// 缓存 root 实例，避免重复 hydrate
+let root: ReturnType<typeof hydrateRoot> | null = null;
+
 export function onRenderClient(pageContext: PageContext) {
-  const { Page } = pageContext;
+  const { Page, config } = pageContext;
+  const { Layout } = config;
   const container = document.getElementById("root");
 
   if (!container) {
@@ -30,14 +39,29 @@ export function onRenderClient(pageContext: PageContext) {
   // 创建一个 Jotai store 实例用于客户端渲染
   const store = createStore();
 
-  hydrateRoot(
-    container,
+  let pageView = <Page pageContext={pageContext} />;
+  if (Layout) {
+    if (Array.isArray(Layout)) {
+      pageView = Layout.reduceRight(
+        (children, L) => <L>{children}</L>,
+        pageView
+      );
+    } else {
+      pageView = <Layout>{pageView}</Layout>;
+    }
+  }
+
+  const app = (
     <JotaiProvider store={store}>
       <TypingContext.Provider value={typingContextValue}>
-        <ClientWrapper pageContext={pageContext}>
-          <Page pageContext={pageContext} />
-        </ClientWrapper>
+        <ClientWrapper pageContext={pageContext}>{pageView}</ClientWrapper>
       </TypingContext.Provider>
     </JotaiProvider>
   );
+
+  if (!root) {
+    root = hydrateRoot(container, app);
+  } else {
+    root.render(app);
+  }
 }

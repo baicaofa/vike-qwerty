@@ -4,6 +4,7 @@
  */
 import { db } from "./db";
 import type { IWordReviewRecord } from "./db/wordReviewRecord";
+import { getDueWordsForReview } from "./spaced-repetition/scheduleGenerator";
 
 // 本地存储键
 const LAST_RESET_DATE_KEY = "lastResetDate";
@@ -120,40 +121,59 @@ export function getPracticedWords(
  * @returns Promise<IWordReviewRecord[]> 今日需要复习的单词列表
  */
 export async function initializeTodayReviews(): Promise<IWordReviewRecord[]> {
-  try {
-    // 获取今日需要复习的单词
-    const todayWords = await db.wordReviewRecords
-      .filter((word) => !word.isGraduated && Date.now() >= word.nextReviewAt)
-      .toArray();
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
 
-    // 检查是否为新的一天
-    const today = new Date().setHours(0, 0, 0, 0);
-    const lastResetDate = Number(
-      localStorage.getItem(LAST_RESET_DATE_KEY) || 0
-    );
+  // 1. 获取今天仍然到期的单词
+  const dueWords = await getDueWordsForReview(undefined, "urgency");
 
-    if (lastResetDate < today) {
-      console.log("新的一天，重置所有单词的练习计数");
-      const updatedWords: IWordReviewRecord[] = [];
+  // 2. 获取今天所有练习历史
+  const practicedHistory = await db.reviewHistories
+    .where("reviewedAt")
+    .aboveOrEqual(todayStart.getTime())
+    .toArray();
 
-      for (const word of todayWords) {
-        word.todayPracticeCount = 0;
-        updatedWords.push(word);
-      }
-
-      // 批量更新数据库
-      if (updatedWords.length > 0) {
-        await db.wordReviewRecords.bulkPut(updatedWords);
-      }
-
-      localStorage.setItem(LAST_RESET_DATE_KEY, today.toString());
-    }
-
-    return todayWords;
-  } catch (error) {
-    console.error("初始化今日复习数据失败:", error);
-    return [];
+  // 3. 如果没有练习历史，直接返回到期单词，并确保它们练习次数为0
+  if (practicedHistory.length === 0) {
+    return dueWords.map((word) => ({ ...word, todayPracticeCount: 0 }));
   }
+
+  // 4. 统计练习次数，并获取已练习单词的完整记录
+  const practiceCounts = new Map<string, number>();
+  practicedHistory.forEach((history) => {
+    const count = practiceCounts.get(history.word) || 0;
+    practiceCounts.set(history.word, count + 1);
+  });
+
+  const practicedWordNames = Array.from(practiceCounts.keys());
+  const practicedWordRecords = await db.wordReviewRecords
+    .where("word")
+    .anyOf(practicedWordNames)
+    .toArray();
+
+  // 5. 合并列表，确保唯一性和数据准确性
+  const todayWordsMap = new Map<string, IWordReviewRecord>();
+
+  // 首先处理已练习的单词
+  practicedWordRecords.forEach((record) => {
+    todayWordsMap.set(record.word, {
+      ...record,
+      todayPracticeCount: practiceCounts.get(record.word) || 0,
+    });
+  });
+
+  // 然后处理到期但今天未练习的单词，如果已存在则忽略
+  dueWords.forEach((record) => {
+    if (!todayWordsMap.has(record.word)) {
+      todayWordsMap.set(record.word, {
+        ...record,
+        todayPracticeCount: 0,
+      });
+    }
+  });
+
+  // 6. 返回合并后的数组
+  return Array.from(todayWordsMap.values());
 }
 
 /**

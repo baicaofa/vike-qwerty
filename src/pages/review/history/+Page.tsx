@@ -1,5 +1,6 @@
-import ReviewNav from "@/components/ReviewNav";
 import { Link } from "@/components/ui/Link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { useReviewHistory } from "@/hooks/useSpacedRepetition";
 import type { IWordReviewRecord } from "@/utils/db/wordReviewRecord";
 import { WordReviewRecord } from "@/utils/db/wordReviewRecord";
@@ -308,9 +309,6 @@ export default function ReviewHistory() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <ReviewNav />
-
-      {/* 页面标题 */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-3xl font-bold text-gray-900">复习历史</h1>
@@ -324,7 +322,6 @@ export default function ReviewHistory() {
         <p className="text-gray-600">查看您的复习记录和学习进展</p>
       </div>
 
-      {/* 控制面板 */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
           <div className="flex items-center space-x-4">
@@ -357,7 +354,6 @@ export default function ReviewHistory() {
         </div>
       </div>
 
-      {/* 统计概览 */}
       {stats && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <StatCard
@@ -385,7 +381,6 @@ export default function ReviewHistory() {
         </div>
       )}
 
-      {/* 复习趋势图表 */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <h2 className="text-xl font-semibold text-gray-900 mb-4">复习趋势</h2>
         <HistoryChart data={chartData} />
@@ -403,7 +398,6 @@ export default function ReviewHistory() {
         </div>
       </div>
 
-      {/* 单词历史列表 */}
       <div className="bg-white rounded-lg shadow-md p-6">
         <h2 className="text-xl font-semibold text-gray-900 mb-4">
           单词复习记录

@@ -26,13 +26,26 @@ export default function sitemapPlugin(options: SitemapOptions): Plugin {
     changefreq = "daily",
     priority = 0.8,
     autoDetect = true,
-    excludePatterns = ["/api/", "/_", "/assets/", "/favicon", "/manifest","/Admin/" ,"/login","/register","/profile","/forgot-password","/reset-password","/verify-email"],
+    excludePatterns = [
+      "/api/",
+      "/_",
+      "/assets/",
+      "/favicon",
+      "/manifest",
+      "/Admin/",
+      "/login",
+      "/register",
+      "/profile",
+      "/forgot-password",
+      "/reset-password",
+      "/verify-email",
+    ],
     addLastmod = true,
   } = options;
 
   // 将日期格式化为W3C格式 (YYYY-MM-DD)
   function formatDate(date: Date): string {
-    return date.toISOString().split('T')[0];
+    return date.toISOString().split("T")[0];
   }
 
   // 自动检测build目录中的HTML文件
@@ -149,7 +162,7 @@ ${uniqueRoutes
   .map(
     (route) => `  <url>
     <loc>${baseUrl}${route.path}</loc>${
-      route.lastmod ? `\n    <lastmod>${route.lastmod}</lastmod>` : ''
+      route.lastmod ? `\n    <lastmod>${route.lastmod}</lastmod>` : ""
     }
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
@@ -166,9 +179,11 @@ ${uniqueRoutes
         `✅ Sitemap generated at ${sitemapPath} with ${uniqueRoutes.length} routes:`
       );
       uniqueRoutes.forEach((route) => {
-        console.log(`   ${route.path} (priority: ${route.priority}${
-          route.lastmod ? `, lastmod: ${route.lastmod}` : ''
-        })`);
+        console.log(
+          `   ${route.path} (priority: ${route.priority}${
+            route.lastmod ? `, lastmod: ${route.lastmod}` : ""
+          })`
+        );
       });
     },
   };

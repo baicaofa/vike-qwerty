@@ -1,5 +1,7 @@
 import type { Config } from "vike/types";
 
+// import vikeReact from "vike-react/config";
+
 // https://vike.dev/config
 export default {
   // https://vike.dev/clientRouting
@@ -14,10 +16,15 @@ export default {
     description: {
       env: { server: true },
     },
+    Layout: {
+      env: { server: true, client: true },
+      cumulative: true,
+    },
   },
   hydrationCanBeAborted: true,
   // 添加必要的配置
-  passToClient: ["pageProps", "routeParams"],
+  passToClient: ["pageProps", "routeParams", "title"],
   // 预渲染设置
   prerender: true,
+  // extends: vikeReact,
 } satisfies Config;

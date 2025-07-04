@@ -142,7 +142,7 @@ export const sendPasswordResetEmail = async (
       ? "https://www.keybr.com.cn"
       : "http://localhost:3000");
 
-  const resetUrl = `${baseUrl}/reset-password?token=${token}&email=${encodeURIComponent(
+  const resetUrl = `${baseUrl}/login?mode=resetPassword&token=${token}&email=${encodeURIComponent(
     email
   )}`;
 

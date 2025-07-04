@@ -3,10 +3,8 @@ import FeedbackNav from "../../components/FeedbackNav";
 import Layout from "../../components/Layout";
 import { VoteButtons } from "../../components/VoteButtons";
 import { useToast } from "../../hooks/useToast";
-import {
-  FeedbackReply,
-  getPublicFeedback,
-} from "../../services/feedbackService";
+import type { FeedbackReply } from "../../services/feedbackService";
+import { getPublicFeedback } from "../../services/feedbackService";
 import * as LucideIcons from "lucide-react";
 import { useEffect, useState } from "react";
 

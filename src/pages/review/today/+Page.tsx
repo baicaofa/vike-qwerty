@@ -1,7 +1,6 @@
 import ReviewProgressBar from "./components/ReviewProgressBar";
 import ReviewSummary from "./components/ReviewSummary";
 import WordCard from "./components/WordCard";
-import ReviewNav from "@/components/ReviewNav";
 import { Link } from "@/components/ui/Link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -154,8 +153,6 @@ export default function ReviewTodayPage() {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <ReviewNav />
-
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">今日复习</h1>
         <div>

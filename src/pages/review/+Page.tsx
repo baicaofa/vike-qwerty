@@ -1,10 +1,9 @@
-import { Link } from "../../../components/ui/Link";
+import { Link } from "../../components/ui/Link";
 import {
   useDailyReviewPlan,
   useReviewConfig,
   useReviewStatistics,
-} from "../../../hooks/useSpacedRepetition";
-import ReviewNav from "@/components/ReviewNav";
+} from "../../hooks/useSpacedRepetition";
 import type React from "react";
 
 // 图表组件（简化版，可以后续替换为更复杂的图表库）
@@ -106,7 +105,7 @@ const StatCard: React.FC<{
   );
 };
 
-export default function ReviewDashboard() {
+export function Page() {
   const { stats, loading: statsLoading } = useReviewStatistics();
   const { config, loading: configLoading } = useReviewConfig();
   const { plan, loading: planLoading } = useDailyReviewPlan();
@@ -149,8 +148,6 @@ export default function ReviewDashboard() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <ReviewNav />
-
       {/* 页面标题 */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">复习仪表板</h1>
@@ -247,102 +244,25 @@ export default function ReviewDashboard() {
                   : 0}
               </span>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* 今日复习计划 */}
-      {plan && (
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            今日复习计划
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="text-center p-4 bg-blue-50 rounded-lg">
-              <div className="text-2xl font-bold text-blue-600">
-                {plan.urgentWords?.length || 0}
-              </div>
-              <div className="text-sm text-blue-800">紧急复习</div>
-              <div className="text-xs text-blue-600 mt-1">需要立即复习</div>
-            </div>
-            <div className="text-center p-4 bg-yellow-50 rounded-lg">
-              <div className="text-2xl font-bold text-yellow-600">
-                {plan.normalWords?.length || 0}
-              </div>
-              <div className="text-sm text-yellow-800">正常复习</div>
-              <div className="text-xs text-yellow-600 mt-1">按计划复习</div>
-            </div>
-            <div className="text-center p-4 bg-green-50 rounded-lg">
-              <div className="text-2xl font-bold text-green-600">
-                {plan.reviewWords?.length || 0}
-              </div>
-              <div className="text-sm text-green-800">复习单词</div>
-              <div className="text-xs text-green-600 mt-1">巩固记忆</div>
-            </div>
-            <div className="text-center p-4 bg-purple-50 rounded-lg">
-              <div className="text-2xl font-bold text-purple-600">
-                {plan.estimatedTime}
-              </div>
-              <div className="text-sm text-purple-800">预估时间</div>
-              <div className="text-xs text-purple-600 mt-1">分钟</div>
-            </div>
-          </div>
-          <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-            <p className="text-sm text-gray-600">
-              <span className="font-medium">难度等级:</span>
-              <span
-                className={`ml-2 px-2 py-1 rounded text-xs font-medium ${
-                  plan.difficulty === "easy"
-                    ? "bg-green-100 text-green-800"
-                    : plan.difficulty === "normal"
-                    ? "bg-blue-100 text-blue-800"
-                    : "bg-red-100 text-red-800"
-                }`}
-              >
-                {plan.difficulty === "easy"
-                  ? "轻松"
-                  : plan.difficulty === "normal"
-                  ? "适中"
-                  : "困难"}
+            <div className="flex justify-between items-center">
+              <span className="text-gray-600">平均准确率</span>
+              <span className="font-semibold">
+                {stats?.monthlyStats?.averageAccuracy
+                  ? `${(stats.monthlyStats.averageAccuracy * 100).toFixed(1)}%`
+                  : "N/A"}
               </span>
-            </p>
-            <p className="text-sm text-gray-600 mt-2">
-              {plan.loadRecommendation}
-            </p>
+            </div>
+
+            <div className="mt-6">
+              <Link
+                href="/review/history"
+                className="text-blue-600 hover:underline"
+              >
+                查看详细历史记录 &rarr;
+              </Link>
+            </div>
           </div>
         </div>
-      )}
-
-      {/* 快速操作 */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Link
-          href="/review/today"
-          className="block p-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center"
-        >
-          <div className="text-2xl mb-2">📖</div>
-          <h3 className="text-lg font-semibold mb-1">开始今日复习</h3>
-          <p className="text-sm opacity-90">
-            复习 {stats?.dueWords || 0} 个到期单词
-          </p>
-        </Link>
-
-        <Link
-          href="/review/settings"
-          className="block p-6 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-center"
-        >
-          <div className="text-2xl mb-2">⚙️</div>
-          <h3 className="text-lg font-semibold mb-1">复习设置</h3>
-          <p className="text-sm opacity-90">调整复习参数和偏好</p>
-        </Link>
-
-        <Link
-          href="/review/history"
-          className="block p-6 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
-        >
-          <div className="text-2xl mb-2">📊</div>
-          <h3 className="text-lg font-semibold mb-1">复习历史</h3>
-          <p className="text-sm opacity-90">查看详细的复习记录</p>
-        </Link>
       </div>
     </div>
   );

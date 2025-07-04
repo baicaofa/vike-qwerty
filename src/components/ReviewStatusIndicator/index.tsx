@@ -125,7 +125,7 @@ export const ReviewStatusIndicator: React.FC = () => {
                 </a>
               ) : (
                 <a
-                  href="/review/dashboard"
+                  href="/review/"
                   className="block w-full bg-gray-600 text-white text-center py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm"
                 >
                   查看仪表板
@@ -134,16 +134,16 @@ export const ReviewStatusIndicator: React.FC = () => {
 
               <div className="flex space-x-2">
                 <a
-                  href="/review/dashboard"
+                  href="/review/"
                   className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-center py-1 rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                 >
                   统计
                 </a>
                 <a
-                  href="/review/settings"
+                  href="/review/history"
                   className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-center py-1 rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                 >
-                  设置
+                  复习历史
                 </a>
               </div>
             </div>

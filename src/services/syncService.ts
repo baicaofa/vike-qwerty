@@ -82,80 +82,35 @@ type IRecord = IWordRecord | IChapterRecord | IReviewRecord;
 const getLocalChanges = async () => {
   const changes = [];
 
-  // 获取 wordRecords 的变更
-  const wordRecords = await db.wordRecords
-    .where("sync_status")
-    .anyOf(["local_new", "local_modified", "local_deleted"])
-    .toArray();
+  const tablesToSync = [
+    "wordRecords",
+    "chapterRecords",
+    "reviewRecords",
+    "familiarWords",
+    "wordReviewRecords",
+    "reviewHistories",
+    "reviewConfigs",
+  ];
 
-  for (const record of wordRecords) {
-    changes.push({
-      table: "wordRecords",
-      action:
-        record.sync_status === "local_deleted"
-          ? "delete"
-          : record.sync_status === "local_new"
-          ? "create"
-          : "update",
-      data: record,
-    });
-  }
+  for (const tableName of tablesToSync) {
+    const table = db.table(tableName);
+    const records = await table
+      .where("sync_status")
+      .anyOf(["local_new", "local_modified", "local_deleted"])
+      .toArray();
 
-  // 获取 chapterRecords 的变更
-  const chapterRecords = await db.chapterRecords
-    .where("sync_status")
-    .anyOf(["local_new", "local_modified", "local_deleted"])
-    .toArray();
-
-  for (const record of chapterRecords) {
-    changes.push({
-      table: "chapterRecords",
-      action:
-        record.sync_status === "local_deleted"
-          ? "delete"
-          : record.sync_status === "local_new"
-          ? "create"
-          : "update",
-      data: record,
-    });
-  }
-
-  // 获取 reviewRecords 的变更
-  const reviewRecords = await db.reviewRecords
-    .where("sync_status")
-    .anyOf(["local_new", "local_modified", "local_deleted"])
-    .toArray();
-
-  for (const record of reviewRecords) {
-    changes.push({
-      table: "reviewRecords",
-      action:
-        record.sync_status === "local_deleted"
-          ? "delete"
-          : record.sync_status === "local_new"
-          ? "create"
-          : "update",
-      data: record,
-    });
-  }
-
-  // 获取 familiarWords 的变更
-  const familiarWords = await db.familiarWords
-    .where("sync_status")
-    .anyOf(["local_new", "local_modified", "local_deleted"])
-    .toArray();
-
-  for (const record of familiarWords) {
-    changes.push({
-      table: "familiarWords",
-      action:
-        record.sync_status === "local_deleted"
-          ? "delete"
-          : record.sync_status === "local_new"
-          ? "create"
-          : "update",
-      data: record,
-    });
+    for (const record of records) {
+      changes.push({
+        table: tableName,
+        action:
+          record.sync_status === "local_deleted"
+            ? "delete"
+            : record.sync_status === "local_new"
+            ? "create"
+            : "update",
+        data: record,
+      });
+    }
   }
 
   return changes;
@@ -174,9 +129,15 @@ const applyServerChanges = async (serverChanges: any[]) => {
       !change.action ||
       !change.data ||
       !change.data.uuid ||
-      !["wordRecords", "chapterRecords", "reviewRecords"].includes(
-        change.table
-      ) ||
+      ![
+        "wordRecords",
+        "chapterRecords",
+        "reviewRecords",
+        "familiarWords",
+        "wordReviewRecords",
+        "reviewHistories",
+        "reviewConfigs",
+      ].includes(change.table) ||
       !["create", "update", "delete"].includes(change.action)
   );
 
@@ -191,9 +152,15 @@ const applyServerChanges = async (serverChanges: any[]) => {
       change.action &&
       change.data &&
       change.data.uuid &&
-      ["wordRecords", "chapterRecords", "reviewRecords"].includes(
-        change.table
-      ) &&
+      [
+        "wordRecords",
+        "chapterRecords",
+        "reviewRecords",
+        "familiarWords",
+        "wordReviewRecords",
+        "reviewHistories",
+        "reviewConfigs",
+      ].includes(change.table) &&
       ["create", "update", "delete"].includes(change.action)
   );
 
@@ -214,6 +181,18 @@ const applyServerChanges = async (serverChanges: any[]) => {
         break;
       case "reviewRecords":
         dbTable = db.reviewRecords;
+        break;
+      case "familiarWords":
+        dbTable = db.familiarWords;
+        break;
+      case "wordReviewRecords":
+        dbTable = db.wordReviewRecords;
+        break;
+      case "reviewHistories":
+        dbTable = db.reviewHistories;
+        break;
+      case "reviewConfigs":
+        dbTable = db.reviewConfigs;
         break;
       default:
         console.warn(`未知的表名: ${table}`);
@@ -313,6 +292,15 @@ const updateLocalRecordStatus = async (changes: any[]) => {
         break;
       case "familiarWords":
         dbTable = db.familiarWords;
+        break;
+      case "wordReviewRecords":
+        dbTable = db.wordReviewRecords;
+        break;
+      case "reviewHistories":
+        dbTable = db.reviewHistories;
+        break;
+      case "reviewConfigs":
+        dbTable = db.reviewConfigs;
         break;
       default:
         continue;
@@ -548,31 +536,27 @@ export const syncData = async (): Promise<SyncResult> => {
 
 // 检查是否有需要同步的数据
 export const hasPendingChanges = async (): Promise<boolean> => {
-  const wordRecordsCount = await db.wordRecords
-    .where("sync_status")
-    .anyOf(["local_new", "local_modified", "local_deleted"])
-    .count();
+  const tablesToSync = [
+    "wordRecords",
+    "chapterRecords",
+    "reviewRecords",
+    "familiarWords",
+    "wordReviewRecords",
+    "reviewHistories",
+    "reviewConfigs",
+  ];
 
-  const chapterRecordsCount = await db.chapterRecords
-    .where("sync_status")
-    .anyOf(["local_new", "local_modified", "local_deleted"])
-    .count();
+  for (const tableName of tablesToSync) {
+    const count = await db
+      .table(tableName)
+      .where("sync_status")
+      .anyOf(["local_new", "local_modified", "local_deleted"])
+      .count();
 
-  const reviewRecordsCount = await db.reviewRecords
-    .where("sync_status")
-    .anyOf(["local_new", "local_modified", "local_deleted"])
-    .count();
+    if (count > 0) {
+      return true;
+    }
+  }
 
-  const familiarWordsCount = await db.familiarWords
-    .where("sync_status")
-    .anyOf(["local_new", "local_modified", "local_deleted"])
-    .count();
-
-  return (
-    wordRecordsCount +
-      chapterRecordsCount +
-      reviewRecordsCount +
-      familiarWordsCount >
-    0
-  );
+  return false;
 };

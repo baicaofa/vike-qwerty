@@ -352,11 +352,16 @@ export default function ReviewPracticePage() {
    * 如果一种类型没有单词，会自动切换到另一种类型
    */
   useEffect(() => {
-    // 如果没有复习数据，不进行处理
-    if (reviews.length === 0) return;
-
     setIsLoading(true);
     setError(null);
+
+    // 如果没有复习数据，直接设置加载完成并返回
+    if (reviews.length === 0) {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 300);
+      return;
+    }
 
     try {
       let targetWords: IWordReviewRecord[] = [];

@@ -7,17 +7,22 @@ import { TypingContext, TypingStateActionType } from "../../store";
 import type { TypingState } from "../../store/type";
 import PrevAndNextWord from "../PrevAndNextWord";
 import Progress from "../Progress";
+import DetailedTranslation from "./components/DetailedTranslation";
 import Phonetic from "./components/Phonetic";
+import Sentences from "./components/Sentences";
 import Translation from "./components/Translation";
 import WordComponent from "./components/Word";
 import { usePrefetchPronunciationSound } from "@/hooks/usePronunciation";
 import {
+  detailedTranslationsConfigAtom,
   isReviewModeAtom,
   isShowPrevAndNextWordAtom,
   isSkipFamiliarWordAtom,
   loopWordConfigAtom,
   phoneticConfigAtom,
   reviewModeInfoAtom,
+  sentencesConfigAtom,
+  useDetailedTransInBasicAtom,
 } from "@/store";
 import type { Word, WordWithIndex } from "@/typings";
 import { useAtomValue, useSetAtom } from "jotai";
@@ -48,6 +53,11 @@ export default function WordPanel({
   const nextWord = state.chapterData.words[state.chapterData.index + 1] as
     | Word
     | undefined;
+  const sentencesConfig = useAtomValue(sentencesConfigAtom);
+  const detailedTranslationsConfig = useAtomValue(
+    detailedTranslationsConfigAtom
+  );
+  const useDetailedTransInBasic = useAtomValue(useDetailedTransInBasicAtom);
 
   const setReviewModeInfo = useSetAtom(reviewModeInfoAtom);
   const isReviewMode = useAtomValue(isReviewModeAtom);
@@ -303,19 +313,61 @@ export default function WordPanel({
                 </div>
               </div>
             )}
-            <div className="relative">
-              <WordComponent
-                word={currentWord}
-                onFinish={onFinish}
-                key={wordComponentKey}
-              />
-              {shouldShowPhonetic && <Phonetic word={currentWord} />}
-              <Translation
-                trans={currentWord.trans.join("；")}
-                showTrans={shouldShowTranslation}
-                onMouseEnter={() => handleShowTranslation(true)}
-                onMouseLeave={() => handleShowTranslation(false)}
-              />
+            <div className="flex w-full flex-col md:flex-row md:justify-between">
+              <div className="flex-1 md:mr-4">
+                <div className="relative">
+                  <WordComponent
+                    word={currentWord}
+                    onFinish={onFinish}
+                    key={wordComponentKey}
+                  />
+                  {shouldShowPhonetic && <Phonetic word={currentWord} />}
+                  {/* 根据是否有详细翻译数据决定显示哪个组件 */}
+                  {!isInReviewMode &&
+                  currentWord.detailed_translations &&
+                  Array.isArray(currentWord.detailed_translations) &&
+                  currentWord.detailed_translations.length > 0 &&
+                  detailedTranslationsConfig.isOpen ? (
+                    <DetailedTranslation
+                      word={currentWord}
+                      showDetailedTranslation={shouldShowTranslation}
+                      onMouseEnter={() => handleShowTranslation(true)}
+                      onMouseLeave={() => handleShowTranslation(false)}
+                    />
+                  ) : (
+                    <Translation
+                      trans={(() => {
+                        // 回退到使用trans
+                        return Array.isArray(currentWord.trans)
+                          ? currentWord.trans
+                              .map((t) =>
+                                typeof t === "string"
+                                  ? t
+                                  : typeof t === "object" && t !== null
+                                  ? (t as any).chinese ||
+                                    (t as any).english ||
+                                    JSON.stringify(t)
+                                  : String(t)
+                              )
+                              .join("；")
+                          : "";
+                      })()}
+                      showTrans={shouldShowTranslation}
+                      onMouseEnter={() => handleShowTranslation(true)}
+                      onMouseLeave={() => handleShowTranslation(false)}
+                    />
+                  )}
+                </div>
+              </div>
+              {!isInReviewMode &&
+                sentencesConfig.isOpen &&
+                currentWord.sentences &&
+                Array.isArray(currentWord.sentences) &&
+                currentWord.sentences.length > 0 && (
+                  <div className="mt-4 md:mt-0 md:w-2/5 lg:w-1/2">
+                    <Sentences word={currentWord} showSentences={true} />
+                  </div>
+                )}
             </div>
           </div>
         )}

@@ -29,6 +29,16 @@ export default function ViewSetting() {
     [setFontsizeConfig]
   );
 
+  const onChangeSentenceForeignFontSize = useCallback(
+    (value: [number]) => {
+      setFontsizeConfig((prev) => ({
+        ...prev,
+        sentenceForeignFont: value[0],
+      }));
+    },
+    [setFontsizeConfig]
+  );
+
   const onResetFontSize = useCallback(() => {
     setFontsizeConfig({ ...defaultFontSizeConfig });
   }, [setFontsizeConfig]);
@@ -79,6 +89,28 @@ export default function ViewSetting() {
                 </Slider.Root>
                 <span className="ml-4 w-10 text-xs font-normal text-gray-600">
                   {fontSizeConfig.translateFont}px
+                </span>
+              </div>
+            </div>
+
+            <div className={styles.block}>
+              <span className={styles.blockLabel}>例句英文字体</span>
+              <div className="flex h-5 w-full items-center justify-between">
+                <Slider.Root
+                  value={[fontSizeConfig.sentenceForeignFont]}
+                  max={40}
+                  min={14}
+                  step={2}
+                  className="slider"
+                  onValueChange={onChangeSentenceForeignFontSize}
+                >
+                  <Slider.Track>
+                    <Slider.Range />
+                  </Slider.Track>
+                  <Slider.Thumb />
+                </Slider.Root>
+                <span className="ml-4 w-10 text-xs font-normal text-gray-600">
+                  {fontSizeConfig.sentenceForeignFont}px
                 </span>
               </div>
             </div>

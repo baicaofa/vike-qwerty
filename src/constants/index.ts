@@ -15,4 +15,5 @@ export const CONFETTI_DEFAULTS = {
 export const defaultFontSizeConfig = {
   foreignFont: 48,
   translateFont: 18,
+  sentenceForeignFont: 18, // 用于控制例句和详细翻译中的英文部分
 };

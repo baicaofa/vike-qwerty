@@ -48,10 +48,17 @@ export const PRONUNCIATION_PHONETIC_MAP: Pronunciation2PhoneticMap = {
 
 export type Word = {
   name: string;
-  trans: string[];
+  trans: (string | { chinese?: string; english?: string })[];
   usphone: string;
   ukphone: string;
   notation?: string;
+  sentences?: (string | { chinese?: string; english?: string })[];
+  detailed_translations?: {
+    pos: string;
+    chinese?: string;
+    english?: string;
+    translations?: (string | { chinese?: string; english?: string })[];
+  }[];
 };
 
 export type WordWithIndex = Word & {

@@ -1,20 +1,134 @@
+import RecommendedArticlesDialog from "../components/RecommendedArticlesDialog";
+import UploadArticleDialog from "../components/UploadArticleDialog";
 import { ArticleContext } from "../store";
 import { ArticleActionType } from "../store/type";
 import useKeySounds from "@/hooks/useKeySounds";
 import { isChineseSymbol, isLegal } from "@/utils";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import {
+  memo,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+
+// 当前单词组件，使用memo优化渲染
+const CurrentWord = memo(
+  ({
+    word,
+    userInput,
+    letterStates,
+    wordRef,
+  }: {
+    word: { name: string };
+    userInput: string;
+    letterStates: string[];
+    wordRef: React.RefObject<HTMLSpanElement>;
+  }) => {
+    if (!word) return null;
+
+    return (
+      <span
+        ref={wordRef}
+        className="bg-blue-100 font-bold relative"
+        id="current-word"
+      >
+        {word.name.split("").map((char, charIndex) => {
+          const charKey = `current-char-${charIndex}`;
+
+          // 已输入的字符
+          if (charIndex < userInput.length) {
+            // 错误的字符
+            if (letterStates[charIndex] === "wrong") {
+              return (
+                <span key={charKey} className="bg-red-200 text-red-800">
+                  {char}
+                </span>
+              );
+            }
+            // 正确的字符
+            return (
+              <span key={charKey} className="bg-green-100 text-green-800">
+                {char}
+              </span>
+            );
+          }
+          // 当前需要输入的字符
+          if (charIndex === userInput.length) {
+            return (
+              <span
+                key={charKey}
+                className="bg-blue-200 text-blue-800 animate-pulse"
+              >
+                {char}
+              </span>
+            );
+          }
+          // 未输入的字符
+          return <span key={charKey}>{char}</span>;
+        })}{" "}
+      </span>
+    );
+  }
+);
+
+// 添加displayName
+CurrentWord.displayName = "CurrentWord";
 
 export default function ArticlePractice() {
   const { state, dispatch } = useContext(ArticleContext);
   const [isCompleted, setIsCompleted] = useState(false);
-  const keydownHandlerRef = useRef<((e: KeyboardEvent) => void) | null>(null);
   const [playKeySound, playBeepSound, playHintSound] = useKeySounds();
+
+  // 弹窗状态
+  const [showRecommendedDialog, setShowRecommendedDialog] = useState(false);
+  const [showUploadDialog, setShowUploadDialog] = useState(false);
+
+  // 打开推荐文章弹窗
+  const handleOpenRecommendedDialog = () => {
+    // 暂停当前练习
+    if (state.isTyping && !state.isPaused) {
+      safeDispatch({ type: ArticleActionType.PAUSE_TYPING });
+    }
+    setShowRecommendedDialog(true);
+  };
+
+  // 打开上传文章弹窗
+  const handleOpenUploadDialog = () => {
+    // 暂停当前练习
+    if (state.isTyping && !state.isPaused) {
+      safeDispatch({ type: ArticleActionType.PAUSE_TYPING });
+    }
+    setShowUploadDialog(true);
+  };
+
+  // 查看保存的文章
+  const handleViewHistory = () => {
+    safeDispatch({ type: ArticleActionType.SET_VIEW_HISTORY, payload: true });
+  };
+
+  // 使用ref跟踪当前单词元素
+  const currentWordRef = useRef<HTMLSpanElement>(null);
+
+  // 使用ref跟踪组件是否已卸载
+  const isMountedRef = useRef(true);
 
   // 当前单词
   const currentWord = state.words[state.currentWordIndex];
 
   // 计算进度
   const progress = (state.currentWordIndex / (state.words.length || 1)) * 100;
+
+  // 安全地分发action，确保组件仍然挂载
+  const safeDispatch = useCallback(
+    (action: any) => {
+      if (isMountedRef.current) {
+        dispatch(action);
+      }
+    },
+    [dispatch]
+  );
 
   // 处理键盘输入
   const handleInput = useCallback(
@@ -24,7 +138,7 @@ export default function ArticlePractice() {
       const input = state.userInput + char;
 
       // 更新用户输入
-      dispatch({
+      safeDispatch({
         type: ArticleActionType.UPDATE_USER_INPUT,
         payload: input,
       });
@@ -39,7 +153,7 @@ export default function ArticlePractice() {
 
         if (isEqual) {
           // 输入正确
-          dispatch({
+          safeDispatch({
             type: ArticleActionType.UPDATE_LETTER_STATE,
             payload: { index: state.userInput.length, state: "correct" },
           });
@@ -47,26 +161,23 @@ export default function ArticlePractice() {
 
           // 检查是否完成当前单词
           if (input.length === currentWord.name.length) {
-            // 完成单词
-            setTimeout(() => {
-              // 移动到下一个单词
-              dispatch({ type: ArticleActionType.NEXT_WORD });
+            // 完成单词 - 立即处理，不使用setTimeout
+            safeDispatch({ type: ArticleActionType.NEXT_WORD });
 
-              // 如果是最后一个单词，完成练习
-              if (state.currentWordIndex >= state.words.length - 1) {
-                dispatch({ type: ArticleActionType.FINISH_TYPING });
-                setIsCompleted(true);
-                playHintSound();
-              }
-            }, 100);
+            // 如果是最后一个单词，完成练习
+            if (state.currentWordIndex >= state.words.length - 1) {
+              safeDispatch({ type: ArticleActionType.FINISH_TYPING });
+              setIsCompleted(true);
+              playHintSound();
+            }
           }
         } else {
           // 输入错误
-          dispatch({
+          safeDispatch({
             type: ArticleActionType.UPDATE_LETTER_STATE,
             payload: { index: state.userInput.length, state: "wrong" },
           });
-          dispatch({
+          safeDispatch({
             type: ArticleActionType.ADD_ERROR,
             payload: state.userInput.length,
           });
@@ -74,95 +185,71 @@ export default function ArticlePractice() {
         }
       }
     },
-    [state, dispatch, currentWord, playKeySound, playBeepSound, playHintSound]
+    [
+      state,
+      safeDispatch,
+      currentWord,
+      playKeySound,
+      playBeepSound,
+      playHintSound,
+    ]
   );
 
-  // 键盘事件处理
+  // 统一的键盘事件处理
   useEffect(() => {
-    if (!state.isTyping) {
-      const onKeyDown = (e: KeyboardEvent) => {
-        const char = e.key;
+    const onKeyDown = (e: KeyboardEvent) => {
+      const char = e.key;
 
-        if (isChineseSymbol(char)) {
-          alert("您正在使用输入法，请关闭输入法。");
-          return;
-        }
+      if (isChineseSymbol(char)) {
+        alert("您正在使用输入法，请关闭输入法。");
+        return;
+      }
 
-        if (
-          !isCompleted &&
-          e.key !== "Enter" &&
-          (isLegal(e.key) || e.key === " ") &&
-          !e.altKey &&
-          !e.ctrlKey &&
-          !e.metaKey
-        ) {
-          e.preventDefault();
+      // 如果已经完成，不处理键盘事件
+      if (isCompleted) return;
+
+      // 只处理合法的按键，并且不是组合键
+      if (
+        (isLegal(char) || char === " ") &&
+        !e.altKey &&
+        !e.ctrlKey &&
+        !e.metaKey
+      ) {
+        e.preventDefault();
+
+        if (!state.isTyping) {
           // 开始练习
-          dispatch({
+          safeDispatch({
             type: ArticleActionType.START_TYPING,
           });
-        }
-      };
-
-      // 清理之前的事件监听器
-      if (keydownHandlerRef.current) {
-        window.removeEventListener("keydown", keydownHandlerRef.current);
-      }
-
-      // 设置新的事件监听器
-      keydownHandlerRef.current = onKeyDown;
-      window.addEventListener("keydown", onKeyDown);
-
-      return () => {
-        if (keydownHandlerRef.current === onKeyDown) {
-          window.removeEventListener("keydown", keydownHandlerRef.current);
-          keydownHandlerRef.current = null;
-        }
-      };
-    } else {
-      // 如果已经在练习中，处理输入
-      const onKeyDown = (e: KeyboardEvent) => {
-        const char = e.key;
-
-        if (isChineseSymbol(char)) {
-          alert("您正在使用输入法，请关闭输入法。");
-          return;
-        }
-
-        if (
-          (isLegal(char) || char === " ") &&
-          !e.altKey &&
-          !e.ctrlKey &&
-          !e.metaKey
-        ) {
-          e.preventDefault();
+        } else if (!state.isPaused && !state.isFinished) {
+          // 处理输入
           handleInput(char);
         }
-      };
-
-      // 清理之前的事件监听器
-      if (keydownHandlerRef.current) {
-        window.removeEventListener("keydown", keydownHandlerRef.current);
       }
+    };
 
-      // 设置新的事件监听器
-      keydownHandlerRef.current = onKeyDown;
-      window.addEventListener("keydown", onKeyDown);
+    // 设置事件监听器
+    window.addEventListener("keydown", onKeyDown);
 
-      return () => {
-        if (keydownHandlerRef.current === onKeyDown) {
-          window.removeEventListener("keydown", keydownHandlerRef.current);
-          keydownHandlerRef.current = null;
-        }
-      };
-    }
-  }, [state.isTyping, isCompleted, dispatch, handleInput]);
+    // 清理事件监听器
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [
+    state.isTyping,
+    state.isPaused,
+    state.isFinished,
+    isCompleted,
+    safeDispatch,
+    handleInput,
+  ]);
 
   // 错误后重置输入
   useEffect(() => {
     if (state.hasWrong) {
       const timer = setTimeout(() => {
-        dispatch({
+        safeDispatch({
           type: ArticleActionType.RESET_WRONG_INPUT,
         });
       }, 300); // 300毫秒后重置
@@ -171,39 +258,42 @@ export default function ArticlePractice() {
         clearTimeout(timer);
       };
     }
-  }, [state.hasWrong, dispatch]);
+  }, [state.hasWrong, safeDispatch]);
 
   // 暂停练习
-  const handlePause = () => {
-    dispatch({ type: ArticleActionType.PAUSE_TYPING });
-  };
+  const handlePause = useCallback(() => {
+    safeDispatch({ type: ArticleActionType.PAUSE_TYPING });
+  }, [safeDispatch]);
 
   // 恢复练习
-  const handleResume = () => {
-    dispatch({ type: ArticleActionType.RESUME_TYPING });
-  };
+  const handleResume = useCallback(() => {
+    safeDispatch({ type: ArticleActionType.RESUME_TYPING });
+  }, [safeDispatch]);
 
   // 重新开始
-  const handleRestart = () => {
-    dispatch({ type: ArticleActionType.RESET_TYPING });
+  const handleRestart = useCallback(() => {
+    safeDispatch({ type: ArticleActionType.RESET_TYPING });
     setIsCompleted(false);
-  };
+  }, [safeDispatch]);
 
   // 返回上一步
-  const handleBack = () => {
-    dispatch({ type: ArticleActionType.RESET_TYPING });
-    dispatch({ type: ArticleActionType.PREV_STEP });
-  };
+  const handleBack = useCallback(() => {
+    safeDispatch({ type: ArticleActionType.RESET_TYPING });
+    // 不再需要返回上一步，因为现在是直接进入练习页面
+    // safeDispatch({ type: ArticleActionType.PREV_STEP });
+    // 改为显示历史记录
+    safeDispatch({ type: ArticleActionType.SET_VIEW_HISTORY, payload: true });
+  }, [safeDispatch]);
 
   // 播放当前单词发音
-  const playCurrentWordSound = () => {
+  const playCurrentWordSound = useCallback(() => {
     if (currentWord && state.isTyping && !state.isPaused && state.enableSound) {
       // 使用浏览器的语音合成API
       const utterance = new SpeechSynthesisUtterance(currentWord.name);
       utterance.lang = "en-US";
       window.speechSynthesis.speak(utterance);
     }
-  };
+  }, [currentWord, state.isTyping, state.isPaused, state.enableSound]);
 
   // 自动播放当前单词发音
   useEffect(() => {
@@ -221,6 +311,7 @@ export default function ArticlePractice() {
     state.isPaused,
     state.userInput.length,
     state.enableSound,
+    playCurrentWordSound,
   ]);
 
   // 计时器
@@ -229,7 +320,7 @@ export default function ArticlePractice() {
 
     if (state.isTyping && !state.isPaused && !state.isFinished) {
       timerId = window.setInterval(() => {
-        dispatch({ type: ArticleActionType.TICK_TIMER });
+        safeDispatch({ type: ArticleActionType.TICK_TIMER });
       }, 1000);
     }
 
@@ -238,94 +329,81 @@ export default function ArticlePractice() {
         clearInterval(timerId);
       }
     };
-  }, [state.isTyping, state.isPaused, state.isFinished, dispatch]);
+  }, [state.isTyping, state.isPaused, state.isFinished, safeDispatch]);
 
-  // 确保在组件卸载时清理所有键盘事件监听器
+  // 安全的滚动到当前单词位置
+  const scrollToCurrentWord = useCallback(() => {
+    if (state.isTyping && !state.isPaused) {
+      // 使用requestAnimationFrame确保DOM已更新
+      requestAnimationFrame(() => {
+        if (currentWordRef.current) {
+          currentWordRef.current.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+      });
+    }
+  }, [state.isTyping, state.isPaused]);
+
+  // 自动滚动到当前单词位置
+  useEffect(() => {
+    // 当单词索引变化时滚动
+    if (state.isTyping && !state.isPaused) {
+      // 添加短暂延迟确保DOM已更新
+      const scrollTimer = setTimeout(() => {
+        scrollToCurrentWord();
+      }, 10);
+
+      return () => clearTimeout(scrollTimer);
+    }
+  }, [state.currentWordIndex, scrollToCurrentWord]);
+
+  // 组件卸载时更新ref
   useEffect(() => {
     return () => {
-      if (keydownHandlerRef.current) {
-        window.removeEventListener("keydown", keydownHandlerRef.current);
-        keydownHandlerRef.current = null;
-      }
+      isMountedRef.current = false;
     };
   }, []);
 
-  // 渲染文章上下文，高亮当前单词
-  const renderArticleContent = () => {
+  // 渲染全文，高亮当前单词
+  const renderFullArticle = useCallback(() => {
     if (!state.words.length) return null;
-
-    // 获取当前单词在原文中的位置
-    const currentPosition = currentWord?.startPosition || 0;
-
-    // 创建一个包含前后文的片段
-    let startPos = Math.max(0, currentPosition - 100);
-    let endPos = Math.min(
-      state.processedText.length,
-      currentPosition + currentWord?.name.length + 100
-    );
-
-    // 调整以确保不会截断单词
-    while (startPos > 0 && /\S/.test(state.processedText[startPos - 1])) {
-      startPos--;
-    }
-
-    while (
-      endPos < state.processedText.length &&
-      /\S/.test(state.processedText[endPos])
-    ) {
-      endPos++;
-    }
-
-    // 将上下文分成三部分：前文、当前单词、后文
-    const beforeWord = state.processedText.substring(startPos, currentPosition);
-    const afterWord = state.processedText.substring(
-      currentPosition + currentWord?.name.length,
-      endPos
-    );
 
     return (
       <div className="flex flex-col items-center">
-        {/* 文章上下文 */}
-        <div className="text-lg leading-relaxed mb-4">
-          <span className="text-gray-500">{beforeWord}</span>
-          <span className="bg-blue-100 font-bold relative">
-            {/* 当前单词，带有输入状态显示 */}
-            <span className="relative">
-              {currentWord?.name.split("").map((char, index) => {
-                // 已输入的字符
-                if (index < state.userInput.length) {
-                  // 错误的字符
-                  if (state.letterStates[index] === "wrong") {
-                    return (
-                      <span key={index} className="bg-red-200 text-red-800">
-                        {char}
-                      </span>
-                    );
-                  }
-                  // 正确的字符
-                  return (
-                    <span key={index} className="bg-green-100 text-green-800">
-                      {char}
-                    </span>
-                  );
-                }
-                // 当前需要输入的字符
-                if (index === state.userInput.length) {
-                  return (
-                    <span
-                      key={index}
-                      className="bg-blue-200 text-blue-800 animate-pulse"
-                    >
-                      {char}
-                    </span>
-                  );
-                }
-                // 未输入的字符
-                return <span key={index}>{char}</span>;
-              })}
-            </span>
-          </span>
-          <span className="text-gray-500">{afterWord}</span>
+        {/* 文章全文 */}
+        <div className="text-base leading-relaxed mb-4 w-full whitespace-pre-wrap">
+          {state.words.map((word, index) => {
+            const isCurrentWord = index === state.currentWordIndex;
+            const isPastWord = index < state.currentWordIndex;
+
+            // 为每个单词创建一个唯一的key
+            const wordKey = `word-${index}`;
+
+            if (isCurrentWord) {
+              // 当前单词，使用memo组件
+              return (
+                <CurrentWord
+                  key={wordKey}
+                  word={word}
+                  userInput={state.userInput}
+                  letterStates={state.letterStates}
+                  wordRef={currentWordRef}
+                />
+              );
+            }
+
+            // 其他单词
+            return (
+              <span
+                key={wordKey}
+                className={isPastWord ? "text-gray-400" : "text-gray-700"}
+              >
+                {word.name}{" "}
+              </span>
+            );
+          })}
         </div>
 
         {/* 提示信息 */}
@@ -336,13 +414,22 @@ export default function ArticlePractice() {
         )}
       </div>
     );
-  };
+  }, [
+    state.words,
+    state.currentWordIndex,
+    state.userInput,
+    state.letterStates,
+    state.isTyping,
+  ]);
 
   // 渲染结果
-  const renderResult = () => {
+  const renderResult = useCallback(() => {
     return (
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-2xl">
-        <h2 className="text-2xl font-bold mb-4 text-center">练习完成！</h2>
+        <h2 className="text-2xl font-bold mb-2 text-center">练习完成！</h2>
+        <h3 className="text-lg font-medium mb-4 text-center text-gray-600">
+          {state.articleTitle || "自定义文章"}
+        </h3>
 
         <div className="grid grid-cols-2 gap-4 mb-6">
           <div className="bg-gray-50 p-3 rounded">
@@ -380,15 +467,68 @@ export default function ArticlePractice() {
           </button>
 
           <button type="button" className="my-btn-primary" onClick={handleBack}>
-            返回设置
+            返回文章列表
           </button>
         </div>
       </div>
     );
-  };
+  }, [
+    state.elapsedTime,
+    state.speed,
+    state.accuracy,
+    state.errors,
+    state.articleTitle,
+    handleRestart,
+    handleBack,
+  ]);
 
   return (
     <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
+      {/* 页面顶部的操作按钮 */}
+      <div className="flex justify-center mb-6 space-x-4 w-full">
+        <button
+          type="button"
+          onClick={handleOpenRecommendedDialog}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+        >
+          文章库
+        </button>
+        <button
+          type="button"
+          onClick={handleViewHistory}
+          className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center space-x-1"
+        >
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+          <span>个人文章</span>
+        </button>
+        <button
+          type="button"
+          onClick={handleOpenUploadDialog}
+          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+        >
+          上传文章
+        </button>
+      </div>
+
+      {/* 文章标题 */}
+      <div className="w-full mb-4 text-center">
+        <h3 className="text-l  text-gray-800">
+          来源：{state.articleTitle || "自定义文章"}
+        </h3>
+      </div>
+
       {!state.isFinished ? (
         <>
           <div className="w-full mb-4">
@@ -415,8 +555,8 @@ export default function ArticlePractice() {
           </div>
 
           {/* 文章内容显示区域 */}
-          <div className="w-full bg-white p-6 rounded-lg shadow-md mb-4">
-            {renderArticleContent()}
+          <div className="w-full bg-white p-6 rounded-lg shadow-md mb-4 max-h-[60vh] overflow-auto font-mono text-base">
+            {renderFullArticle()}
           </div>
 
           {/* 控制按钮 */}
@@ -455,14 +595,56 @@ export default function ArticlePractice() {
               className="my-btn-secondary"
               onClick={handleBack}
             >
-              返回设置
+              返回文章列表
             </button>
+
+            {state.isTyping && (
+              <button
+                type="button"
+                className="my-btn-secondary"
+                onClick={scrollToCurrentWord}
+              >
+                返回当前位置
+              </button>
+            )}
           </div>
         </>
       ) : (
         // 练习完成后显示结果
-        renderResult()
+        <>
+          {isCompleted && (
+            <div className="mt-8 flex justify-center space-x-4">
+              <button
+                type="button"
+                className="my-btn-primary"
+                onClick={handleRestart}
+              >
+                再次练习
+              </button>
+              <button
+                type="button"
+                className="my-btn-secondary"
+                onClick={handleBack}
+              >
+                返回文章列表
+              </button>
+            </div>
+          )}
+          {renderResult()}
+        </>
       )}
+
+      {/* 推荐文章弹窗 */}
+      <RecommendedArticlesDialog
+        open={showRecommendedDialog}
+        onOpenChange={setShowRecommendedDialog}
+      />
+
+      {/* 上传自定义文章弹窗 */}
+      <UploadArticleDialog
+        open={showUploadDialog}
+        onOpenChange={setShowUploadDialog}
+      />
     </div>
   );
 }

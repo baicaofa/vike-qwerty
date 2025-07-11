@@ -15,6 +15,7 @@ export function useSaveArticle() {
         uuid,
         createdAt: now,
         lastPracticedAt: now,
+        isOfficial: article.isOfficial || false, // 确保设置isOfficial字段，默认为false
       });
 
       return { id, uuid };
@@ -34,6 +35,7 @@ export function useUpdateArticle() {
       await db.articleRecords.update(article.id!, {
         ...article,
         lastPracticedAt: now,
+        isOfficial: article.isOfficial || false, // 确保设置isOfficial字段，默认为false
       });
 
       return true;

@@ -7,6 +7,7 @@ export interface CustomArticle {
   content: string;
   createdAt: number;
   lastPracticedAt?: number;
+  isOfficial?: boolean; // 标记是否为官方文章
 }
 
 export interface ArticleWord
@@ -26,6 +27,7 @@ export interface ArticleState {
   // 文章内容
   articleText: string;
   processedText: string;
+  articleTitle: string; // 文章标题
 
   // 预处理设置
   preprocessSettings: PreprocessSettings;
@@ -58,11 +60,7 @@ export interface ArticleState {
   accuracy: number;
 
   // 步骤控制
-  currentStep: 1 | 2 | 3;
-
-  // 保存状态
-  isSaving: boolean;
-  isSaved: boolean;
+  currentStep: number;
 
   // 历史记录视图
   viewHistory: boolean;
@@ -75,6 +73,7 @@ export enum ArticleActionType {
   // 文本相关
   SET_ARTICLE_TEXT = "SET_ARTICLE_TEXT",
   PROCESS_TEXT = "PROCESS_TEXT",
+  SET_ARTICLE_TITLE = "SET_ARTICLE_TITLE", // 设置文章标题
 
   // 预处理设置
   UPDATE_PREPROCESS_SETTINGS = "UPDATE_PREPROCESS_SETTINGS",
@@ -91,6 +90,7 @@ export enum ArticleActionType {
   // 练习数据更新
   UPDATE_USER_INPUT = "UPDATE_USER_INPUT",
   NEXT_WORD = "NEXT_WORD",
+  SET_CURRENT_WORD_INDEX = "SET_CURRENT_WORD_INDEX", // 设置当前单词索引
   ADD_ERROR = "ADD_ERROR",
   UPDATE_LETTER_STATE = "UPDATE_LETTER_STATE",
 
@@ -102,10 +102,6 @@ export enum ArticleActionType {
   NEXT_STEP = "NEXT_STEP",
   PREV_STEP = "PREV_STEP",
 
-  // 保存状态
-  SET_SAVING = "SET_SAVING",
-  SET_SAVED = "SET_SAVED",
-
   // 历史记录视图
   SET_VIEW_HISTORY = "SET_VIEW_HISTORY",
 
@@ -116,6 +112,7 @@ export enum ArticleActionType {
 export type ArticleAction =
   | { type: ArticleActionType.SET_ARTICLE_TEXT; payload: string }
   | { type: ArticleActionType.PROCESS_TEXT }
+  | { type: ArticleActionType.SET_ARTICLE_TITLE; payload: string }
   | {
       type: ArticleActionType.UPDATE_PREPROCESS_SETTINGS;
       payload: Partial<PreprocessSettings>;
@@ -129,6 +126,7 @@ export type ArticleAction =
   | { type: ArticleActionType.RESET_WRONG_INPUT }
   | { type: ArticleActionType.UPDATE_USER_INPUT; payload: string }
   | { type: ArticleActionType.NEXT_WORD }
+  | { type: ArticleActionType.SET_CURRENT_WORD_INDEX; payload: number }
   | { type: ArticleActionType.ADD_ERROR; payload: number }
   | {
       type: ArticleActionType.UPDATE_LETTER_STATE;
@@ -138,7 +136,5 @@ export type ArticleAction =
   | { type: ArticleActionType.SET_STEP; payload: 1 | 2 | 3 }
   | { type: ArticleActionType.NEXT_STEP }
   | { type: ArticleActionType.PREV_STEP }
-  | { type: ArticleActionType.SET_SAVING; payload: boolean }
-  | { type: ArticleActionType.SET_SAVED; payload: boolean }
   | { type: ArticleActionType.SET_VIEW_HISTORY; payload: boolean }
   | { type: ArticleActionType.SET_FROM_HISTORY; payload: boolean };

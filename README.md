@@ -117,24 +117,7 @@
 4. 执行`yarn start`来启动项目，项目默认地址为`http://localhost:5173/`
 5. 在浏览器中打开`http://localhost:5173/`来访问项目。
 
-### 脚本执行
 
-对于 Windows 用户，可以直接执行 [install.ps1](scripts/install.ps1) 脚本，来一键安装依赖并启动项目。
-
-1. 打开 powershell，定位到项目根目录中的`scripts`目录
-2. 在命令行中，执行`.\install.ps1`
-3. 等待脚本完成。
-
-> 备注
-> 脚本依赖`winget`来安装 node，仅在 Windows 10 1709（版本 16299）或更高版本上受支持！
-
-对于 MacOS 用户，可以直接执行 [install.sh](scripts/install.sh) 脚本来一键安装依赖并启动项目
-
-1. 打开终端，并进入此项目文件夹
-2. 在命令行中执行 `scripts/install.sh`
-3. 等待脚本完成
-
-> 此脚本依赖于 `homebrew`，请确保自己电脑上可以执行`brew`命令
 
 ## 📕 词库列表
 

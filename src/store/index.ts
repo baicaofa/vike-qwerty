@@ -157,3 +157,21 @@ export const isSkipFamiliarWordAtom = atomWithStorage(
   "isSkipFamiliarWord",
   true
 );
+
+// 控制是否在基本翻译中使用详细翻译
+export const useDetailedTransInBasicAtom = atomWithStorage(
+  "useDetailedTransInBasic",
+  true
+);
+
+// 新增两个配置
+export const sentencesConfigAtom = atomForConfig("sentencesConfig", {
+  isOpen: false,
+});
+
+export const detailedTranslationsConfigAtom = atomForConfig(
+  "detailedTranslationsConfig",
+  {
+    isOpen: false,
+  }
+);

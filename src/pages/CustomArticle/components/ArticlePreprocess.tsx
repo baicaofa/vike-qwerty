@@ -1,15 +1,12 @@
 import { ArticleContext } from "../store";
 import type { PreprocessSettings } from "../store/type";
 import { ArticleActionType } from "../store/type";
-import { useSaveArticle } from "@/utils/db/article";
 import { useContext, useEffect, useState } from "react";
 
 export default function ArticlePreprocess() {
   const { state, dispatch } = useContext(ArticleContext);
   const [previewText, setPreviewText] = useState("");
   const [wordCount, setWordCount] = useState(0);
-  const [isSaving, setIsSaving] = useState(false);
-  const saveArticle = useSaveArticle();
 
   // 处理设置变更
   const handleSettingChange = <K extends keyof PreprocessSettings>(
@@ -40,34 +37,6 @@ export default function ArticlePreprocess() {
   // 返回上一步
   const handleBack = () => {
     dispatch({ type: ArticleActionType.PREV_STEP });
-  };
-
-  // 保存文章
-  const handleSave = async () => {
-    if (isSaving) return;
-
-    setIsSaving(true);
-    try {
-      // 生成文章标题（取前30个字符，如果超过则添加省略号）
-      const title =
-        state.articleText.length > 30
-          ? state.articleText.substring(0, 30) + "..."
-          : state.articleText.substring(0, 30);
-
-      await saveArticle({
-        title: title.trim() || "未命名文章",
-        content: state.articleText, // 保存原始文章内容
-        createdAt: Date.now(),
-      });
-
-      dispatch({ type: ArticleActionType.SET_SAVED, payload: true });
-      alert("文章已保存成功！");
-    } catch (error) {
-      console.error("保存文章失败:", error);
-      alert("保存文章失败，请重试。");
-    } finally {
-      setIsSaving(false);
-    }
   };
 
   // 进入下一步
@@ -175,27 +144,13 @@ export default function ArticlePreprocess() {
           返回
         </button>
 
-        <div className="flex space-x-3">
-          {/* 只有在不是从历史记录进入时才显示保存按钮 */}
-          {!state.fromHistory && (
-            <button
-              type="button"
-              className="my-btn-secondary"
-              onClick={handleSave}
-              disabled={isSaving || state.isSaved}
-            >
-              {isSaving ? "保存中..." : state.isSaved ? "已保存" : "保存文章"}
-            </button>
-          )}
-
-          <button
-            type="button"
-            className="my-btn-primary hover:bg-blue-600"
-            onClick={handleNext}
-          >
-            开始练习
-          </button>
-        </div>
+        <button
+          type="button"
+          className="my-btn-primary hover:bg-blue-600"
+          onClick={handleNext}
+        >
+          开始练习
+        </button>
       </div>
     </div>
   );

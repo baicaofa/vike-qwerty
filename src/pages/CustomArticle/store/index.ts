@@ -7,6 +7,7 @@ export const initialState: ArticleState = {
   // 文章内容
   articleText: "",
   processedText: "",
+  articleTitle: "自定义文章", // 默认文章标题
 
   // 预处理设置
   preprocessSettings: {
@@ -42,10 +43,6 @@ export const initialState: ArticleState = {
 
   // 步骤控制
   currentStep: 1,
-
-  // 保存状态
-  isSaving: false,
-  isSaved: false,
 
   // 历史记录视图
   viewHistory: false,
@@ -140,6 +137,12 @@ export const articleReducer = (
       return {
         ...state,
         articleText: action.payload,
+      };
+
+    case ArticleActionType.SET_ARTICLE_TITLE:
+      return {
+        ...state,
+        articleTitle: action.payload,
       };
 
     case ArticleActionType.PROCESS_TEXT:
@@ -259,6 +262,24 @@ export const articleReducer = (
       };
     }
 
+    case ArticleActionType.SET_CURRENT_WORD_INDEX: {
+      // 确保索引在有效范围内
+      const index = Math.max(
+        0,
+        Math.min(action.payload, state.words.length - 1)
+      );
+      const currentWord = state.words[index];
+
+      return {
+        ...state,
+        currentWordIndex: index,
+        currentLetterIndex: 0,
+        letterStates: new Array(currentWord?.name.length || 0).fill("normal"),
+        letterTimeArray: [],
+        userInput: "",
+      };
+    }
+
     case ArticleActionType.ADD_ERROR:
       return {
         ...state,
@@ -308,7 +329,7 @@ export const articleReducer = (
 
       return {
         ...state,
-        currentStep: (state.currentStep + 1) as 1 | 2 | 3,
+        currentStep: state.currentStep + 1,
       };
 
     case ArticleActionType.PREV_STEP:
@@ -316,22 +337,9 @@ export const articleReducer = (
 
       return {
         ...state,
-        currentStep: (state.currentStep - 1) as 1 | 2 | 3,
-        // 返回上一步时重置保存状态和历史记录标志
-        isSaved: false,
+        currentStep: state.currentStep - 1,
+        // 返回上一步时重置历史记录标志
         fromHistory: state.currentStep === 2 ? false : state.fromHistory,
-      };
-
-    case ArticleActionType.SET_SAVING:
-      return {
-        ...state,
-        isSaving: action.payload,
-      };
-
-    case ArticleActionType.SET_SAVED:
-      return {
-        ...state,
-        isSaved: action.payload,
       };
 
     case ArticleActionType.SET_ENABLE_SOUND:

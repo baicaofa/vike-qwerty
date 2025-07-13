@@ -7,10 +7,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import type { OfficialArticle } from "@/data/officialArticles";
 import {
   ARTICLE_CATEGORIES,
   DIFFICULTY_DESCRIPTIONS,
-  OfficialArticle,
   getAllOfficialArticles,
   getOfficialArticlesByCategory,
 } from "@/data/officialArticles";

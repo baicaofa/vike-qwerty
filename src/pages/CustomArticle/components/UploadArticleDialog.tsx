@@ -1,12 +1,13 @@
 import { ArticleContext } from "../store";
-import { ArticleActionType, PreprocessSettings } from "../store/type";
+import type { PreprocessSettings } from "../store/type";
+import { ArticleActionType } from "../store/type";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogFooter,
 } from "@/components/ui/dialog";
 import { useSaveArticle } from "@/utils/db/article";
 import { useContext, useEffect, useState } from "react";

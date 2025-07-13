@@ -117,8 +117,6 @@
 4. 执行`yarn start`来启动项目，项目默认地址为`http://localhost:5173/`
 5. 在浏览器中打开`http://localhost:5173/`来访问项目。
 
-
-
 ## 📕 词库列表
 
 - CET-4

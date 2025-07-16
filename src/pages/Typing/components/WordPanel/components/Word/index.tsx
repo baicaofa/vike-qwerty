@@ -21,8 +21,8 @@ import {
   isShowAnswerOnHoverAtom,
   isTextSelectableAtom,
   pronunciationIsOpenAtom,
-  wordDictationConfigAtom,
   showWordAfterCompletionAtom,
+  wordDictationConfigAtom,
 } from "@/store";
 import type { Word } from "@/typings";
 import { CTRL, useMixPanelWordLogUploader } from "@/utils";

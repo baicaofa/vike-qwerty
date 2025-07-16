@@ -1,4 +1,4 @@
-import { wordDictationConfigAtom, showWordAfterCompletionAtom } from "@/store";
+import { showWordAfterCompletionAtom, wordDictationConfigAtom } from "@/store";
 import type { WordDictationType } from "@/typings";
 import { Listbox, Popover, Switch, Transition } from "@headlessui/react";
 import { useAtom } from "jotai";

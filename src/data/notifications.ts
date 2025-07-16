@@ -3,8 +3,44 @@ import type { NotificationItem } from "@/store/updateNotification";
 // 通知数据源
 export const notificationsList: NotificationItem[] = [
   {
-    id: "update-2025-06-20",
+    id: "update-2025-07-07",
+    type: "feature",
+    date: "2025年7月7日",
+    title: "增加复习功能",
+    tag: "新功能",
+    desc: "基于科学的间隔重复算法，根据每日联系规划每日复习计划。支持进度追踪、准确率统计。配备清晰的数据面板，帮助您持续有效地巩固单词记忆。",
+    images: [
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/07/1-1.jpg",
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/07/2.png",
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/07/3.png",
+    ],
+    priority: "high",
+  },
+  {
+    id: "update-2025-07-02",
+    type: "feature",
+    date: "2025年7月2日",
+    title: "默写增加显示功能",
+    tag: "新功能",
+    desc: "默写完单词，可以完整展示单词的释义、例句一两秒的时间。提供一个控制按钮是否开启",
+    images: ["https://www.keybr.com.cn/keybr/wp-content/uploads/2025/07/0.jpg"],
+    priority: "high",
+  },
+  {
+    id: "update-2025-06-30",
     type: "update",
+    date: "2025年6月30日",
+    title: "词典增加词性、例句、英文释义",
+    tag: "产品更新",
+    desc: "词典增加词性、例句，方便用户学习单词；目前已经更新的词典：6级，4级，专升本，雅思wang C3",
+    images: [
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/07/QQ20250716-151246.png",
+    ],
+    priority: "high",
+  },
+  {
+    id: "update-2025-06-20",
+    type: "feature",
     date: "2025年6月20日",
     title: "增加反馈功能",
     tag: "新功能",

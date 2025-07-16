@@ -14,15 +14,12 @@ import Translation from "./components/Translation";
 import WordComponent from "./components/Word";
 import { usePrefetchPronunciationSound } from "@/hooks/usePronunciation";
 import {
-  detailedTranslationsConfigAtom,
   isReviewModeAtom,
   isShowPrevAndNextWordAtom,
   isSkipFamiliarWordAtom,
   loopWordConfigAtom,
   phoneticConfigAtom,
   reviewModeInfoAtom,
-  sentencesConfigAtom,
-  useDetailedTransInBasicAtom,
 } from "@/store";
 import type { Word, WordWithIndex } from "@/typings";
 import { useAtomValue, useSetAtom } from "jotai";
@@ -53,11 +50,6 @@ export default function WordPanel({
   const nextWord = state.chapterData.words[state.chapterData.index + 1] as
     | Word
     | undefined;
-  const sentencesConfig = useAtomValue(sentencesConfigAtom);
-  const detailedTranslationsConfig = useAtomValue(
-    detailedTranslationsConfigAtom
-  );
-  const useDetailedTransInBasic = useAtomValue(useDetailedTransInBasicAtom);
 
   const setReviewModeInfo = useSetAtom(reviewModeInfoAtom);
   const isReviewMode = useAtomValue(isReviewModeAtom);
@@ -326,8 +318,7 @@ export default function WordPanel({
                   {!isInReviewMode &&
                   currentWord.detailed_translations &&
                   Array.isArray(currentWord.detailed_translations) &&
-                  currentWord.detailed_translations.length > 0 &&
-                  detailedTranslationsConfig.isOpen ? (
+                  currentWord.detailed_translations.length > 0 ? (
                     <DetailedTranslation
                       word={currentWord}
                       showDetailedTranslation={shouldShowTranslation}
@@ -360,7 +351,6 @@ export default function WordPanel({
                 </div>
               </div>
               {!isInReviewMode &&
-                sentencesConfig.isOpen &&
                 currentWord.sentences &&
                 Array.isArray(currentWord.sentences) &&
                 currentWord.sentences.length > 0 &&

@@ -158,24 +158,6 @@ export const isSkipFamiliarWordAtom = atomWithStorage(
   true
 );
 
-// 控制是否在基本翻译中使用详细翻译
-export const useDetailedTransInBasicAtom = atomWithStorage(
-  "useDetailedTransInBasic",
-  true
-);
-
-// 新增两个配置
-export const sentencesConfigAtom = atomForConfig("sentencesConfig", {
-  isOpen: false,
-});
-
-export const detailedTranslationsConfigAtom = atomForConfig(
-  "detailedTranslationsConfig",
-  {
-    isOpen: false,
-  }
-);
-
 // 添加新的配置：控制单词完成后是否展示单词和发音
 export const showWordAfterCompletionAtom = atomWithStorage(
   "showWordAfterCompletion",

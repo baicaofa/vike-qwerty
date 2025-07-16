@@ -1,14 +1,11 @@
 import styles from "./index.module.css";
 import {
-  detailedTranslationsConfigAtom,
   isIgnoreCaseAtom,
   isShowAnswerOnHoverAtom,
   isShowPrevAndNextWordAtom,
   isSkipFamiliarWordAtom,
   isTextSelectableAtom,
   randomConfigAtom,
-  sentencesConfigAtom,
-  useDetailedTransInBasicAtom,
 } from "@/store";
 import { Switch } from "@headlessui/react";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
@@ -28,13 +25,7 @@ export default function AdvancedSetting() {
   const [isSkipFamiliarWord, setIsSkipFamiliarWord] = useAtom(
     isSkipFamiliarWordAtom
   );
-  const [sentencesConfig, setSentencesConfig] = useAtom(sentencesConfigAtom);
-  const [detailedTranslationsConfig, setDetailedTranslationsConfig] = useAtom(
-    detailedTranslationsConfigAtom
-  );
-  const [useDetailedTransInBasic, setUseDetailedTransInBasic] = useAtom(
-    useDetailedTransInBasicAtom
-  );
+
   const onToggleRandom = useCallback(
     (checked: boolean) => {
       setRandomConfig((prev) => ({
@@ -79,33 +70,6 @@ export default function AdvancedSetting() {
     [setIsSkipFamiliarWord]
   );
 
-  const onToggleSentences = useCallback(
-    (checked: boolean) => {
-      setSentencesConfig((prev) => ({
-        ...prev,
-        isOpen: checked,
-      }));
-    },
-    [setSentencesConfig]
-  );
-
-  const onToggleDetailedTranslations = useCallback(
-    (checked: boolean) => {
-      setDetailedTranslationsConfig((prev) => ({
-        ...prev,
-        isOpen: checked,
-      }));
-    },
-    [setDetailedTranslationsConfig]
-  );
-
-  const onToggleUseDetailedTransInBasic = useCallback(
-    (checked: boolean) => {
-      setUseDetailedTransInBasic(checked);
-    },
-    [setUseDetailedTransInBasic]
-  );
-
   return (
     <ScrollArea.Root className="flex-1 select-none overflow-y-auto ">
       <ScrollArea.Viewport className="h-full w-full px-3">
@@ -135,65 +99,6 @@ export default function AdvancedSetting() {
             >
               查看熟词
             </a>
-          </div>
-
-          <div className={styles.section}>
-            <span className={styles.sectionLabel}>是否显示例句</span>
-            <span className={styles.sectionDescription}>
-              开启后，如果词典中包含例句，会在单词下方显示例句
-            </span>
-            <div className={styles.switchBlock}>
-              <Switch
-                checked={sentencesConfig.isOpen}
-                onChange={onToggleSentences}
-                className="switch-root"
-              >
-                <span aria-hidden="true" className="switch-thumb" />
-              </Switch>
-              <span className="text-right text-xs font-normal leading-tight text-gray-600">{`例句显示已${
-                sentencesConfig.isOpen ? "开启" : "关闭"
-              }`}</span>
-            </div>
-          </div>
-
-          <div className={styles.section}>
-            <span className={styles.sectionLabel}>是否显示详细翻译</span>
-            <span className={styles.sectionDescription}>
-              开启后，如果词典中包含详细翻译信息，会显示词性和多个释义
-            </span>
-            <div className={styles.switchBlock}>
-              <Switch
-                checked={detailedTranslationsConfig.isOpen}
-                onChange={onToggleDetailedTranslations}
-                className="switch-root"
-              >
-                <span aria-hidden="true" className="switch-thumb" />
-              </Switch>
-              <span className="text-right text-xs font-normal leading-tight text-gray-600">{`详细翻译已${
-                detailedTranslationsConfig.isOpen ? "开启" : "关闭"
-              }`}</span>
-            </div>
-          </div>
-
-          <div className={styles.section}>
-            <span className={styles.sectionLabel}>
-              在基本翻译中使用详细翻译
-            </span>
-            <span className={styles.sectionDescription}>
-              开启后，如果词典中包含详细翻译，会在基本翻译中显示详细翻译的内容
-            </span>
-            <div className={styles.switchBlock}>
-              <Switch
-                checked={useDetailedTransInBasic}
-                onChange={onToggleUseDetailedTransInBasic}
-                className="switch-root"
-              >
-                <span aria-hidden="true" className="switch-thumb" />
-              </Switch>
-              <span className="text-right text-xs font-normal leading-tight text-gray-600">{`优先使用详细翻译已${
-                useDetailedTransInBasic ? "开启" : "关闭"
-              }`}</span>
-            </div>
           </div>
 
           <div className={styles.section}>

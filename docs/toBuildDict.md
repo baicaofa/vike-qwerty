@@ -8,7 +8,6 @@
 
 我们推荐你加入 Keybr 社区群，在群中反映你的需求，我们的开发者会帮助你导入词典。
 
-![groupQRcode](../public/weChat-group.jpg)
 
 ### 0.2 如果你不会编程，但会使用 github🐙
 
@@ -21,29 +20,143 @@
 词典的文件格式是 `词典名.json` ，其内容结构应当是:
 
 ```json
+
 [
-    {
-        "name" : "xxx" ,
-        "trans" : ["xxx", "xxx",...]
-    },
-    ...
-]
+  {
+    "name": "explosive",
+    "usphone": "ɪk'splosɪv; ɪk'splozɪv",
+    "ukphone": "ɪk'spləusɪv",
+    "sentences": [
+      {
+        "english": "Because the gas is highly explosive, it needs to be kept in high-pressure containers.",
+        "chinese": "由于这种气体极易爆炸，因此需要保存在高压容器内。"
+      },
+      {
+        "english": "A small explosive device (= bomb ) was set off outside the UN headquarters today.",
+        "chinese": "今天有一枚小型炸弹在联合国总部外爆炸。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 爆炸的； 极易引起争论的",
+        "english": "able or likely to explode"
+      },
+      {
+        "pos": "n",
+        "chinese": "炸药",
+        "english": "a substance that can cause an explosion"
+      }
+    ]
+  }
+ ]
 ```
 
-例如:
+其中name字段是必须要的，其余字段越全，练习体验越好。例如:
 
 ```json
-  { "name": "file", "trans": ["n. 档案,公文箱,锉刀,[计算机] 文件 vt. 列队行进,归档,申请"] },
-  {
-    "name": "command",
-    "trans": [
-      "n.命令，指挥； 司令部，指挥部； [计算机]指令； 控制力 vt.指挥，控制，命令； 命令； 应得，值得 vi.给出命令； 命令，指令 adj.指挥的，根据命令（或要求）而作的"
+{
+    "name": "cancel",
+    "usphone": "'kænsl",
+    "ukphone": "'kænsl",
+    "sentences": [
+      {
+        "english": "Our flight was cancelled.",
+        "chinese": "我们的航班取消了。"
+      },
+      {
+        "english": "I’m afraid I’ll have to cancel our meeting tomorrow.",
+        "chinese": "恐怕我得取消我们明天的会议。"
+      },
+      {
+        "english": "You’ll just have to ring John and cancel.",
+        "chinese": "你只能打电话给约翰取消了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": " 取消， 撤销； 删去",
+        "english": "to decide that something that was officially planned will not happen"
+      }
     ]
   },
-  { "name": "use", "trans": ["n. 运用,用法,使用权,适用 vt. 使用,利用,对待 vi. 吸毒"] },
-  { "name": "program", "trans": ["n. 节目(单),程序,计划 vt. 规划,拟定计划,制作节目"] },
-  { "name": "line", "trans": ["n. 行,线,航线,场界,皱纹,家族 vt. &vi. 用做衬里,排成一行,顺...排列 vi. 排成一行,顺...排列,划线于"] },
-  { "name": "if", "trans": ["conj. 如果，是否，即使 n. 条件,设想"] },
+  {
+    "name": "explosive",
+    "usphone": "ɪk'splosɪv; ɪk'splozɪv",
+    "ukphone": "ɪk'spləusɪv",
+    "sentences": [
+      {
+        "english": "Because the gas is highly explosive, it needs to be kept in high-pressure containers.",
+        "chinese": "由于这种气体极易爆炸，因此需要保存在高压容器内。"
+      },
+      {
+        "english": "A small explosive device (= bomb ) was set off outside the UN headquarters today.",
+        "chinese": "今天有一枚小型炸弹在联合国总部外爆炸。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 爆炸的； 极易引起争论的",
+        "english": "able or likely to explode"
+      },
+      {
+        "pos": "n",
+        "chinese": "炸药",
+        "english": "a substance that can cause an explosion"
+      }
+    ]
+  },
+  {
+    "name": "numerous",
+    "usphone": "'numərəs",
+    "ukphone": "'njuːmərəs",
+    "sentences": [
+      {
+        "english": "Numerous attempts have been made to hide the truth.",
+        "chinese": "为掩盖事实作了很多尝试。"
+      },
+      {
+        "english": "The two leaders have worked together on numerous occasions.",
+        "chinese": "那两位领导人已经多次合作。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 众多的",
+        "english": "many"
+      }
+    ]
+  },
+  {
+    "name": "govern",
+    "usphone": "'ɡʌvɚn",
+    "ukphone": "'gʌvn",
+    "sentences": [
+      {
+        "english": "the leaders who govern the country",
+        "chinese": "治理这个国家的领导人"
+      },
+      {
+        "english": "The party had been governing for seven months.",
+        "chinese": "该党执政已经有七个月了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 居支配地位， 占优势",
+        "english": ""
+      },
+      {
+        "pos": "vt",
+        "chinese": "统治，治理，支配",
+        "english": "to officially and legally control a country and make all the decisions about taxes, laws, public services etc"
+      }
+    ]
+  },
 
 ```
 
@@ -112,7 +225,7 @@
 
 ### 1.4 测试 🧪
 
-使用 yarn 指令安装依赖，然后使用 yarn dev 启动开发服务器，访问 "http://localhost:5173"
+使用 yarn 指令安装依赖，然后使用 yarn dev 启动开发服务器，访问 "http://localhost:3000"
 
 如果你的词典已经成功导入，你将在词典列表中看到你的词典。🎉
 

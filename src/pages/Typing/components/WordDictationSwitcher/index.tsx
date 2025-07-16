@@ -1,4 +1,4 @@
-import { wordDictationConfigAtom } from "@/store";
+import { wordDictationConfigAtom, showWordAfterCompletionAtom } from "@/store";
 import type { WordDictationType } from "@/typings";
 import { Listbox, Popover, Switch, Transition } from "@headlessui/react";
 import { useAtom } from "jotai";
@@ -32,6 +32,9 @@ export default function WordDictationSwitcher() {
   const [wordDictationConfig, setWordDictationConfig] = useAtom(
     wordDictationConfigAtom
   );
+  const [showWordAfterCompletion, setShowWordAfterCompletion] = useAtom(
+    showWordAfterCompletionAtom
+  );
   const [currentType, setCurrentType] = useState(wordDictationTypeList[0]);
 
   const onToggleWordDictation = () => {
@@ -48,6 +51,10 @@ export default function WordDictationSwitcher() {
     setWordDictationConfig((old) => {
       return { ...old, type: value };
     });
+  };
+
+  const toggleShowWordAfterCompletion = () => {
+    setShowWordAfterCompletion((prev) => !prev);
   };
 
   useEffect(() => {
@@ -95,7 +102,7 @@ export default function WordDictationSwitcher() {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-            <Popover.Panel className="absolute left-1/2 z-10 mt-2 flex max-w-max -translate-x-1/2 px-4 ">
+            <Popover.Panel className="absolute bottom-full  left-1/2 z-10 mb-2 flex max-w-max -translate-x-1/2 px-4 ">
               <div className="shadow-upper box-border flex w-60 select-none flex-col items-center justify-center gap-4 rounded-xl bg-white p-4 drop-shadow dark:bg-gray-800">
                 <div className="flex w-full  flex-col  items-start gap-2 py-0">
                   <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
@@ -169,6 +176,27 @@ export default function WordDictationSwitcher() {
                           </Transition>
                         </div>
                       </Listbox>
+                    </div>
+                  </div>
+
+                  {/* 添加新的设置选项 */}
+                  <div className="flex w-full flex-col items-start gap-2 py-0">
+                    <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
+                      完成后展示
+                    </span>
+                    <div className="flex w-full flex-row items-center justify-between">
+                      <Switch
+                        checked={showWordAfterCompletion}
+                        onChange={toggleShowWordAfterCompletion}
+                        className="switch-root"
+                      >
+                        <span aria-hidden="true" className="switch-thumb" />
+                      </Switch>
+                      <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                        {`完成后展示已${
+                          showWordAfterCompletion ? "开启" : "关闭"
+                        }`}
+                      </span>
                     </div>
                   </div>
                 </Transition>

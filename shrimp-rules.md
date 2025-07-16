@@ -9,11 +9,11 @@
 
 ### 1.2 多文件联动
 
-- 修改`README.md`时，必须同步更新`docs/README_EN.md`、`docs/README_JP.md`等多语言文档
+- 修改`README.md`时，必须同步更新相关文档和引用
 - 修改`tailwind.config.mjs`、`postcss.config.mjs`等配置文件时，必须检查相关依赖文件是否需同步调整
-- 修改`components.json`、`feature-tracking.mdc`等元数据文件时，必须同步更新相关文档和引用
+- 修改`components.json`等元数据文件时，必须同步更新相关文档和引用
 - 修改`LICENSE`时，必须检查所有合规性相关文件
-- 修改`TESTING_PLAN.md`时，必须同步检查测试相关脚本和文档
+- 修改测试相关文档时，必须同步检查测试相关脚本和文档
 
 ### 1.3 敏感目录与文件
 
@@ -42,7 +42,16 @@
 - 服务层：`src/services/`
 - 类型定义：`src/typings/`
 - 配置文件：项目根目录
-- 文档：`docs/`、`doc/`、`issues/`
+- 文档：`doc/`、`issues/`
+
+### 2.3 Vike框架特定文件
+
+- `+Page.tsx`: 页面主组件
+- `+config.ts`: 页面配置
+- `+onRenderClient.tsx`: 客户端渲染逻辑
+- `+onRenderHtml.tsx`: 服务端渲染逻辑
+- `+onBeforeRender.ts`: 渲染前逻辑
+- `+onHydrationEnd.ts`: 页面水合完成后逻辑
 
 ## 3. 功能实现与数据流
 
@@ -51,6 +60,7 @@
 - 全局状态必须用 Jotai，持久化用 atomWithStorage，统一放在`src/store/`
 - 页面级复杂状态用 useImmerReducer+Context API，放在页面目录下
 - 组件内部简单状态用 useState/useRef
+- 对于任何需要跨组件、跨模块共享的状态（如用户信息、主题设置、全局通知等），都应优先考虑使用 Jotai 来管理
 
 ### 3.2 API 与数据库
 
@@ -62,10 +72,21 @@
 - 新增/删除资源文件时，必须同步检查引用和依赖
 - 资源文件命名必须唯一、规范
 
+### 3.4 客户端路由与导航
+
+- 检查项目中所有模块的导航，凡是未使用客户端路由的地方，都应逐步改造为标准的 `<a>` 链接或使用 Vike 的 navigate 函数
+- 禁止直接使用 `window.location.href` 进行页面跳转
+
+### 3.5 生命周期钩子使用规范
+
+- `onRenderClient`: 用于执行必须在页面渲染前完成的核心逻辑，它是渲染流程的一部分，会阻塞页面显示
+- `onHydrationEnd`: 用于执行仅需在首次加载时运行一次的非核心逻辑，它在页面可交互后异步执行，不阻塞渲染
+- `useEffect` (在持久化布局中) 或 `onPageTransitionStart`: 用于处理每次页面切换都需要执行的逻辑，例如上报页面浏览事件、更新页面标题、重置某些状态等
+
 ## 4. 框架与依赖
 
 - 禁止随意升级或替换核心依赖（如 Vike、React、Tailwind 等）
-- 新增依赖必须在`package.json`、`README.md`、`docs/`中同步登记
+- 新增依赖必须在`package.json`、`README.md`等文档中同步登记
 - 配置变更需同步更新相关文档
 
 ## 5. 工作流与多文件协调
@@ -80,7 +101,7 @@
 
 | 操作对象            | 必须同步的文件/目录                  |
 | ------------------- | ------------------------------------ |
-| README.md           | docs/README_EN.md, docs/README_JP.md |
+| README.md           | 相关文档和引用                       |
 | tailwind.config.mjs | postcss.config.mjs, 相关 CSS 文件    |
 | store/atom          | 所有引用该 atom 的组件               |
 | 资源文件            | 所有引用、导入该资源的文件           |
@@ -111,14 +132,14 @@
 - 禁止直接引用跨页面组件 state
 - 禁止重构现有目录结构和命名约定
 - 禁止直接修改 build/、public/dicts/、assets.json 等敏感目录和文件
-- 禁止删除或覆盖合规性、元数据、配置文件（如 LICENSE、components.json、feature-tracking.mdc）
+- 禁止删除或覆盖合规性、元数据、配置文件（如 LICENSE、components.json）
 
 ## 8. 示例
 
 ### 应该做的
 
 - 新增页面时，递归检查并同步更新所有相关配置、文档
-- 新增依赖时，登记于 package.json、README.md、docs/
+- 新增依赖时，登记于 package.json、README.md等文档
 - 新增资源文件时，检查所有引用点并规范命名
 
 ### 不应该做的
@@ -138,3 +159,19 @@
 
 - 所有规则必须以列表、表格等结构化方式呈现，便于 AI 解析
 - 所有禁止事项、警告必须高亮显示
+
+## 11. 项目特定规范
+
+### 11.1 项目概述
+
+- 项目名称：Keybr（vike-qwerty）
+- 项目用途：单词记忆与英语肌肉记忆锻炼软件
+- 核心功能：打字练习、单词学习、熟词标记、用户系统
+- 技术栈：Vike、React、TypeScript、Tailwind CSS、Jotai/Zustand
+
+### 11.2 代码规范
+
+- 遵循DRY原则
+- 创建新的功能文件、逻辑代码时，需要简单注释页面实现了什么功能
+- 所有不影响页面首次渲染（First Paint）的、且只需要在应用加载时执行一次的客户端脚本，都应该通过 onHydrationEnd 钩子来加载和执行
+- 在编写 onHydrationEnd.ts 文件时，必须从 vike/types 导入 OnHydrationEndAsync 类型，并为函数添加明确的返回类型 ReturnType<OnHydrationEndAsync>

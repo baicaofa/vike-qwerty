@@ -175,3 +175,9 @@ export const detailedTranslationsConfigAtom = atomForConfig(
     isOpen: false,
   }
 );
+
+// 添加新的配置：控制单词完成后是否展示单词和发音
+export const showWordAfterCompletionAtom = atomWithStorage(
+  "showWordAfterCompletion",
+  false
+);

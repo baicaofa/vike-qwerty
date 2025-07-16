@@ -33,9 +33,6 @@
   为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件
 </p>
 
-<div align=center>
-<img  src="docs/Screenshot.png"/>
-</div>
 
 <br />
 

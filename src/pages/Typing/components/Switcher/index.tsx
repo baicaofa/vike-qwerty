@@ -55,7 +55,7 @@ export default function Switcher() {
       </Tooltip>
       <Tooltip
         className="h-7 w-7"
-        content={`开关释义显示（${CTRL} + Shift + V）`}
+        content={`开关释义和例句显示（${CTRL} + Shift + V）`}
       >
         <button
           className={`p-[2px] ${
@@ -66,7 +66,7 @@ export default function Switcher() {
             changeTransVisibleState();
             e.currentTarget.blur();
           }}
-          aria-label={`开关释义显示（${CTRL} + Shift + V）`}
+          aria-label={`开关释义和例句显示（${CTRL} + Shift + V）`}
         >
           {state?.isTransVisible ? <IconLanguage /> : <IconLanguageOff />}
         </button>

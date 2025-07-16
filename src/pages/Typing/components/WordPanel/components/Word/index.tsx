@@ -22,6 +22,7 @@ import {
   isTextSelectableAtom,
   pronunciationIsOpenAtom,
   wordDictationConfigAtom,
+  showWordAfterCompletionAtom,
 } from "@/store";
 import type { Word } from "@/typings";
 import { CTRL, useMixPanelWordLogUploader } from "@/utils";
@@ -50,6 +51,7 @@ export default function WordComponent({
   const isTextSelectable = useAtomValue(isTextSelectableAtom);
   const isIgnoreCase = useAtomValue(isIgnoreCaseAtom);
   const isShowAnswerOnHover = useAtomValue(isShowAnswerOnHoverAtom);
+  const showWordAfterCompletion = useAtomValue(showWordAfterCompletionAtom);
   const saveWordRecord = useSaveWordRecord();
   const wordLogUploader = useMixPanelWordLogUploader(state);
   const [playKeySound, playBeepSound, playHintSound] = useKeySounds();
@@ -61,6 +63,8 @@ export default function WordComponent({
   const currentChapter = useAtomValue(currentChapterAtom);
 
   const [showTipAlert, setShowTipAlert] = useState(false);
+  // 添加状态来控制完成后的展示
+  const [showCompletedWord, setShowCompletedWord] = useState(false);
   const wordPronunciationIconRef = useRef<WordPronunciationIconRef>(null);
 
   const { isFamiliar } = useFamiliarWords();
@@ -162,6 +166,9 @@ export default function WordComponent({
 
   const getLetterVisible = useCallback(
     (index: number) => {
+      // 如果单词已完成且启用了完成后展示功能，则显示所有字母
+      if (showCompletedWord) return true;
+
       if (
         wordState.letterStates[index] === "correct" ||
         (isShowAnswerOnHover && isHoveringWord)
@@ -185,6 +192,7 @@ export default function WordComponent({
       return true;
     },
     [
+      showCompletedWord,
       isHoveringWord,
       isShowAnswerOnHover,
       wordDictationConfig.isOpen,
@@ -302,6 +310,65 @@ export default function WordComponent({
         payload: true,
       });
 
+      // 如果启用了完成后展示功能，则在单词完成后播放发音并显示单词和翻译
+      if (showWordAfterCompletion && wordDictationConfig.isOpen) {
+        setShowCompletedWord(true);
+        // 设置翻译可见
+        dispatch({
+          type: TypingStateActionType.SET_TRANS_VISIBLE,
+          payload: true,
+        });
+
+        // 播放单词发音
+        setTimeout(() => {
+          wordPronunciationIconRef.current?.play();
+
+          // 设置定时器，几秒后继续
+          setTimeout(() => {
+            setShowCompletedWord(false);
+            // 恢复翻译不可见（如果之前是不可见的）
+            if (!state.isTransVisible) {
+              dispatch({
+                type: TypingStateActionType.SET_TRANS_VISIBLE,
+                payload: false,
+              });
+            }
+
+            wordLogUploader({
+              headword: word.name,
+              timeStart: new Date(wordState.startTime)
+                .toISOString()
+                .substring(0, 19)
+                .replace("T", " "),
+              timeEnd: new Date(wordState.endTime)
+                .toISOString()
+                .substring(0, 19)
+                .replace("T", " "),
+              countInput: wordState.correctCount + wordState.wrongCount,
+              countCorrect: wordState.correctCount,
+              countTypo: wordState.wrongCount,
+            });
+            saveWordRecord({
+              word: word.name,
+              wrongCount: wordState.wrongCount,
+              letterTimeArray: wordState.letterTimeArray,
+              letterMistake: wordState.letterMistake,
+            });
+
+            // 计算响应时间和正确性
+            const responseTime = Math.round(
+              wordState.endTime - wordState.startTime
+            );
+            const isCorrect = wordState.wrongCount === 0;
+
+            onFinish(isCorrect, responseTime);
+          }, 2000); // 停留2秒
+        }, 0);
+
+        return;
+      }
+
+      // 原有的逻辑
       wordLogUploader({
         headword: word.name,
         timeStart: new Date(wordState.startTime)
@@ -358,7 +425,7 @@ export default function WordComponent({
         )}
         <div
           className={`tooltip-info relative w-fit bg-transparent p-0 leading-normal shadow-none dark:bg-transparent ${
-            wordDictationConfig.isOpen ? "tooltip" : ""
+            wordDictationConfig.isOpen && !showCompletedWord ? "tooltip" : ""
           }`}
           data-tip="按 Tab 快捷键显示完整单词"
         >

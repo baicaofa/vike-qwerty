@@ -1,9 +1,7 @@
 import Page from "./+Page";
 
 export default {
-  route: "/gallery", // 将此页面映射到根路径 /
-  Page, // 指定页面组件
-  // 添加客户端水合配置
-  hydrationCanBeAborted: true,
-  clientRouting: true,
+  route: "/gallery",
+  Page,
+  // vike-react 全局配置已处理 hydrationCanBeAborted 和 clientRouting
 };

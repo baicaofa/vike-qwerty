@@ -16,7 +16,9 @@ connectDB();
 
 // 中间件
 app.use(cors());
-app.use(express.json());
+// 增加请求体大小限制为50MB
+app.use(express.json({ limit: "20mb" }));
+app.use(express.urlencoded({ limit: "20mb", extended: true }));
 
 // 路由
 app.use("/api/auth", authRoutes);

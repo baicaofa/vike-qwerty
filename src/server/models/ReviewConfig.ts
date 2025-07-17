@@ -122,6 +122,6 @@ ReviewConfigSchema.index({ userId: 1 }, { unique: true, sparse: true });
 ReviewConfigSchema.index({ userId: 1, updatedAt: 1 });
 
 export default mongoose.model<IReviewConfig>(
-  "ReviewConfig",
+  "reviewConfigs", // 将模型名称从"ReviewConfig"改为"reviewConfigs"
   ReviewConfigSchema
 );

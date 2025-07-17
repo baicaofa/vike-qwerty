@@ -146,6 +146,6 @@ WordReviewRecordSchema.index({ userId: 1, lastReviewedAt: 1 }); // 按最后复�
 WordReviewRecordSchema.index({ userId: 1, updatedAt: 1 }); // 同步查询
 
 export default mongoose.model<IWordReviewRecord>(
-  "WordReviewRecord",
+  "wordReviewRecords", // 将模型名称从"WordReviewRecord"改为"wordReviewRecords"
   WordReviewRecordSchema
 );

@@ -1,12 +1,12 @@
+import vikeReact from "vike-react/config";
 import type { Config } from "vike/types";
-
-// import vikeReact from "vike-react/config";
 
 // https://vike.dev/config
 export default {
   // https://vike.dev/clientRouting
   clientRouting: true,
-  // https://vike.dev/meta
+
+  // 保持现有的自定义meta配置，与vike-react兼容
   meta: {
     // Define new setting 'title'
     title: {
@@ -21,10 +21,13 @@ export default {
       cumulative: true,
     },
   },
+
   hydrationCanBeAborted: true,
   // 添加必要的配置
-  passToClient: ["pageProps", "routeParams", "title"],
+  passToClient: ["pageProps", "routeParams", "title", "data"],
   // 预渲染设置
   prerender: true,
-  // extends: vikeReact,
+
+  // 启用vike-react
+  extends: [vikeReact],
 } satisfies Config;

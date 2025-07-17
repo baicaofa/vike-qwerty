@@ -6,7 +6,6 @@ import MarkWordButton from "./components/MarkWordButton";
 import ResultScreen from "./components/ResultScreen";
 import Speed from "./components/Speed";
 import StartButton from "./components/StartButton";
-import { UserAuthMenu } from "./components/UserAuthMenu";
 import WordList from "./components/WordList";
 import WordPanel from "./components/WordPanel";
 import { useConfetti } from "./hooks/useConfetti";
@@ -21,9 +20,10 @@ import {
 import { markedWordsAtom } from "./store/markedWordsAtom";
 import { DonateCard } from "@/components/DonateCard";
 import Header from "@/components/Header";
+import { ReviewStatusIndicator } from "@/components/ReviewStatusIndicator";
 import StarCard from "@/components/StarCard";
 import Tooltip from "@/components/Tooltip";
-import UpdateNotification from "@/components/UpdateNotification";
+import TypingPracticeButton from "@/components/TypingPracticeButton";
 import { idDictionaryMap } from "@/resources/dictionary";
 import {
   currentChapterAtom,
@@ -209,6 +209,7 @@ export function Page() {
 
       <Layout>
         <Header>
+          <TypingPracticeButton />
           <DictChapterButton />
           <CustomArticleButton />
           <StartButton isLoading={isLoading} />
@@ -226,6 +227,7 @@ export function Page() {
               Skip
             </button>
           </Tooltip>
+          <ReviewStatusIndicator />
         </Header>
         <div className="container mx-auto flex h-full flex-1 flex-col items-center justify-center pb-5">
           <div className="container relative mx-auto flex h-full flex-col items-center">

@@ -17,12 +17,14 @@ import type { Model } from "mongoose";
 interface SyncChange {
   table:
     | "wordRecords"
+    | "wordrecords" // 添加小写版本
     | "chapterRecords"
     | "reviewRecords"
     | "familiarWords"
     | "wordReviewRecords"
     | "reviewHistories"
-    | "reviewConfigs";
+    | "reviewConfigs"
+    | "reviewconfigs"; // 添加小写版本
   action: "create" | "update" | "delete";
   data: any;
 }
@@ -41,6 +43,7 @@ interface SyncResponse {
 const getModel = (table: string): Model<any> => {
   switch (table) {
     case "wordRecords":
+    case "wordrecords": // 添加小写版本
       return WordRecordModel; // <--- 确保使用 WordRecordModel
     case "chapterRecords":
       return ChapterRecord;
@@ -53,6 +56,7 @@ const getModel = (table: string): Model<any> => {
     case "reviewHistories":
       return ReviewHistoryModel;
     case "reviewConfigs":
+    case "reviewconfigs": // 添加小写版本
       return ReviewConfigModel;
     default:
       throw new Error(`Unknown table: ${table}`);
@@ -333,20 +337,22 @@ export const syncData = async (req: Request, res: Response) => {
     const serverChangesResponse: SyncChange[] = [];
     const tables: (
       | "wordRecords"
+      | "wordrecords"
       | "chapterRecords"
       | "reviewRecords"
       | "familiarWords"
       | "wordReviewRecords"
       | "reviewHistories"
       | "reviewConfigs"
+      | "reviewconfigs"
     )[] = [
-      "wordRecords",
+      "wordrecords", // 使用数据库中实际存在的小写集合名称
       "chapterRecords",
       "reviewRecords",
       "familiarWords",
       "wordReviewRecords",
       "reviewHistories",
-      "reviewConfigs",
+      "reviewconfigs", // 使用数据库中实际存在的小写集合名称
     ];
 
     for (const table of tables) {
@@ -385,12 +391,14 @@ function formatRecordForSync(
   record: any,
   table:
     | "wordRecords"
+    | "wordrecords"
     | "chapterRecords"
     | "reviewRecords"
     | "familiarWords"
     | "wordReviewRecords"
     | "reviewHistories"
     | "reviewConfigs"
+    | "reviewconfigs"
 ): SyncChange {
   const data = { ...record };
   delete data._id; // Remove MongoDB _id

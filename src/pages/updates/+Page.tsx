@@ -9,7 +9,7 @@ interface NewsItem {
   btn?: string;
 }
 
-export const newsList: NewsItem[] = [
+const newsList: NewsItem[] = [
   {
     date: "2025年4月15日",
     title: "新增熟词标记功能",

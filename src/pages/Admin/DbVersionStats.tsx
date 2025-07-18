@@ -15,6 +15,8 @@ interface DbStatsResponse {
   stats: DbStat[];
   versionCounts: Record<number, number>;
   totalDevices: number;
+  totalStatsPages: number;
+  currentStatsPage: number;
 }
 
 export default function DbVersionStats() {
@@ -25,17 +27,23 @@ export default function DbVersionStats() {
     {}
   );
   const [totalDevices, setTotalDevices] = useState(0);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const limit = 10;
 
   useEffect(() => {
     const fetchStats = async () => {
       try {
         setLoading(true);
-        const response = await axios.get<DbStatsResponse>("/api/db-stats");
+        const response = await axios.get<DbStatsResponse>(
+          `/api/db-stats?dataType=summary&page=${page}&limit=${limit}`
+        );
 
         if (response.data.success) {
-          setStats(response.data.stats);
-          setVersionCounts(response.data.versionCounts);
-          setTotalDevices(response.data.totalDevices);
+          setStats(response.data.stats || []);
+          setVersionCounts(response.data.versionCounts || {});
+          setTotalDevices(response.data.totalDevices || 0);
+          setTotalPages(response.data.totalStatsPages || 1);
         } else {
           setError("获取数据库版本统计信息失败");
         }
@@ -48,16 +56,19 @@ export default function DbVersionStats() {
     };
 
     fetchStats();
-  }, []);
+  }, [page]);
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setPage(newPage);
+    }
+  };
 
   // 计算最新版本的用户比例
   const calculateLatestVersionPercentage = () => {
     if (totalDevices === 0) return 0;
-
-    // 假设最高的版本号就是最新版本
     const latestVersion = Math.max(...Object.keys(versionCounts).map(Number));
     const latestVersionCount = versionCounts[latestVersion] || 0;
-
     return (latestVersionCount / totalDevices) * 100;
   };
 
@@ -143,36 +154,64 @@ export default function DbVersionStats() {
               </tr>
             </thead>
             <tbody>
-              {stats.map((stat) => (
-                <tr key={stat._id}>
-                  <td className="px-4 py-2">{stat.deviceId}</td>
-                  <td className="px-4 py-2">
-                    {stat.currentVersion}
-                    {stat.currentVersion < stat.expectedVersion && (
-                      <span className="ml-2 text-xs bg-red-100 text-red-800 px-2 py-1 rounded">
-                        需升级
-                      </span>
-                    )}
-                    {stat.currentVersion === stat.expectedVersion && (
-                      <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
-                        最新
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-4 py-2">{stat.expectedVersion}</td>
-                  <td className="px-4 py-2">
-                    {new Date(stat.timestamp).toLocaleString()}
-                  </td>
-                  <td
-                    className="px-4 py-2 truncate max-w-xs"
-                    title={stat.userAgent}
-                  >
-                    {stat.userAgent}
+              {stats.length === 0 ? (
+                <tr>
+                  <td colSpan={5} className="text-center py-2">
+                    暂无数据
                   </td>
                 </tr>
-              ))}
+              ) : (
+                stats.map((stat) => (
+                  <tr key={stat._id}>
+                    <td className="px-4 py-2">{stat.deviceId}</td>
+                    <td className="px-4 py-2">
+                      {stat.currentVersion}
+                      {stat.currentVersion < stat.expectedVersion && (
+                        <span className="ml-2 text-xs bg-red-100 text-red-800 px-2 py-1 rounded">
+                          需升级
+                        </span>
+                      )}
+                      {stat.currentVersion === stat.expectedVersion && (
+                        <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
+                          最新
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-4 py-2">{stat.expectedVersion}</td>
+                    <td className="px-4 py-2">
+                      {new Date(stat.timestamp).toLocaleString()}
+                    </td>
+                    <td
+                      className="px-4 py-2 truncate max-w-xs"
+                      title={stat.userAgent}
+                    >
+                      {stat.userAgent}
+                    </td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
+        </div>
+        {/* 分页控件 */}
+        <div className="mt-4 flex justify-center gap-2">
+          <button
+            className="px-4 py-1 bg-blue-500 text-white rounded disabled:bg-gray-300"
+            onClick={() => handlePageChange(page - 1)}
+            disabled={page === 1}
+          >
+            上一页
+          </button>
+          <span>
+            第 {page} 页 / 共 {totalPages} 页
+          </span>
+          <button
+            className="px-4 py-1 bg-blue-500 text-white rounded disabled:bg-gray-300"
+            onClick={() => handlePageChange(page + 1)}
+            disabled={page === totalPages}
+          >
+            下一页
+          </button>
         </div>
       </div>
     </div>

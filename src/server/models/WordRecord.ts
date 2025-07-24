@@ -55,15 +55,15 @@ const PerformanceEntrySchema: Schema<IPerformanceEntry> = new Schema(
 
 const WordRecordSchema: Schema<IWordRecord> = new Schema(
   {
-    uuid: { type: String, required: true, unique: true, index: true }, // 保持 uuid 唯一性并索引
+    uuid: { type: String, required: true, unique: true }, // uuid 唯一性通过 unique: true 保证
     userId: {
       type: Schema.Types.ObjectId,
       ref: "User",
       required: true,
-      index: true,
+      // 移除 index: true，使用 Schema 级别的索引定义
     },
     word: { type: String, required: true },
-    dict: { type: String, required: true, index: true },
+    dict: { type: String, required: true }, // 移除 index: true，dict 索引包含在复合索引中
 
     performanceHistory: { type: [PerformanceEntrySchema], default: [] },
 
@@ -73,7 +73,7 @@ const WordRecordSchema: Schema<IWordRecord> = new Schema(
     sync_status: { type: String, default: "synced" }, // 服务器端默认为 synced
     last_modified: { type: Number, required: true }, // 客户端时间戳
     clientModifiedAt: { type: Date, required: true },
-    isDeleted: { type: Boolean, default: false, index: true },
+    isDeleted: { type: Boolean, default: false }, // 移除 index: true，isDeleted 索引不是必需的
   },
   { timestamps: true } // 自动管理 createdAt 和 updatedAt (作为 serverModifiedAt)
 );

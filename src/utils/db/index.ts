@@ -15,16 +15,11 @@ import {
   ReviewRecord,
   WordRecord,
 } from "./record";
-import { fullDatabaseReset } from "./resetDB";
 import type { IReviewConfig } from "./reviewConfig";
 import { ReviewConfig } from "./reviewConfig";
 import type { IReviewHistory } from "./reviewHistory";
 import { ReviewHistory } from "./reviewHistory";
-import {
-  UpgradeStatusChecker,
-  diagnoseDatabaseError,
-  safeUpgradeOperation,
-} from "./upgradeHelper";
+import { UpgradeStatusChecker, safeUpgradeOperation } from "./upgradeHelper";
 import type { IWordReviewRecord } from "./wordReviewRecord";
 import { WordReviewRecord } from "./wordReviewRecord";
 import { TypingContext, TypingStateActionType } from "@/pages/Typing/store";

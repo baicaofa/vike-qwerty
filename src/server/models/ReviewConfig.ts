@@ -43,7 +43,7 @@ const ReviewConfigSchema: Schema<IReviewConfig> = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
       default: null,
-      index: true,
+      // 移除 index: true，使用 Schema 级别的索引定义
     },
 
     // 基础配置

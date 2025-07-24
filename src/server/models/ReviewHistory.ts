@@ -42,24 +42,24 @@ const ReviewHistorySchema: Schema<IReviewHistory> = new Schema(
       type: String,
       required: true,
       unique: true,
-      index: true,
+      // 移除 index: true，unique: true 已经创建了索引
     },
     userId: {
       type: Schema.Types.ObjectId,
       ref: "User",
       required: true,
-      index: true,
+      // 移除 index: true，使用 Schema 级别的索引定义
     },
     wordReviewRecordId: {
       type: Schema.Types.ObjectId,
       ref: "WordReviewRecord",
       required: true,
-      index: true,
+      // 移除 index: true，使用 Schema 级别的索引定义
     },
     word: {
       type: String,
       required: true,
-      index: true,
+      // 移除 index: true，使用 Schema 级别的索引定义
     },
     dict: {
       type: String,
@@ -70,13 +70,13 @@ const ReviewHistorySchema: Schema<IReviewHistory> = new Schema(
     reviewedAt: {
       type: Date,
       required: true,
-      index: true,
+      // 移除 index: true，使用 Schema 级别的复合索引
     },
     reviewResult: {
       type: String,
       enum: ["correct", "incorrect"],
       required: true,
-      index: true,
+      // 移除 index: true，使用 Schema 级别的复合索引
     },
     responseTime: {
       type: Number,

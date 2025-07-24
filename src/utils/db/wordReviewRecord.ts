@@ -146,6 +146,9 @@ export class WordReviewRecord implements IWordReviewRecord {
     this.todayReviewCount++;
     this.lastReviewDate = today;
 
+    // 更新最后复习时间
+    this.lastReviewedAt = currentTime;
+
     // 更新轮次练习相关字段
     if (this.todayPracticeCount === undefined) {
       this.todayPracticeCount = 0;

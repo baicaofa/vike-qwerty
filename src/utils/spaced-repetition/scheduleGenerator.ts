@@ -167,6 +167,7 @@ export async function updateWordReviewSchedule(
         todayReviewCount: wordReviewRecord.todayReviewCount,
         isGraduated: wordReviewRecord.isGraduated,
         lastReviewDate: wordReviewRecord.lastReviewDate,
+        lastReviewedAt: wordReviewRecord.lastReviewedAt, // 添加最后复习时间更新
         sync_status:
           wordReviewRecord.sync_status === "synced"
             ? "local_modified"
@@ -347,7 +348,7 @@ async function updateWordReviewRecord(
   // 修改这里，不再使用 new 操作符，因为 AlgorithmUtils 是对象而非构造函数
   // const algorithm = new AlgorithmUtils(config);
 
-  // 只按 word 查找，确保全局唯一性
+  // 按 word 查找，确保全局唯一性（跨词典统一）
   const record = await db.wordReviewRecords.where({ word }).first();
 
   if (record) {
@@ -424,12 +425,15 @@ async function updateWordReviewRecord(
       // 添加IWordReviewRecord要求的其他必填字段
       todayPracticeCount: 1,
       lastPracticedAt: now,
+      lastReviewedAt: now, // 设置最后复习时间
       sourceDicts: [dictId], // 使用dictId作为源词典
       preferredDict: dictId, // 设置为首选词典
       firstSeenAt: now,
     };
 
-    await db.wordReviewRecords.add(newRecord);
+    // 使用 put 而不是 add，避免重复创建
+    // 如果已存在相同 word 的记录，put 会更新而不是创建新记录
+    await db.wordReviewRecords.put(newRecord);
   }
 }
 

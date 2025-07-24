@@ -42,18 +42,18 @@ const WordReviewRecordSchema: Schema<IWordReviewRecord> = new Schema(
       type: String,
       required: true,
       unique: true,
-      index: true,
+      // 移除 index: true，unique: true 已经创建了索引
     },
     userId: {
       type: Schema.Types.ObjectId,
       ref: "User",
       required: true,
-      index: true,
+      // 移除 index: true，使用 Schema 级别的索引定义
     },
     word: {
       type: String,
       required: true,
-      index: true,
+      // 移除 index: true，word 索引包含在复合索引中
     },
 
     // 复习状态
@@ -67,7 +67,7 @@ const WordReviewRecordSchema: Schema<IWordReviewRecord> = new Schema(
     nextReviewAt: {
       type: Date,
       required: true,
-      index: true,
+      // 移除 index: true，使用 Schema 级别的复合索引
     },
     reviewLevel: {
       type: Number,
@@ -130,7 +130,7 @@ const WordReviewRecordSchema: Schema<IWordReviewRecord> = new Schema(
     isDeleted: {
       type: Boolean,
       default: false,
-      index: true,
+      // 移除 index: true，isDeleted 索引不是必需的
     },
   },
   { timestamps: true }

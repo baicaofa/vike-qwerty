@@ -264,6 +264,152 @@ export const syncData = async (req: Request, res: Response) => {
             );
           }
         }
+      } else if (table === "wordReviewRecords") {
+        // 特殊处理 WordReviewRecord 表，使用 (userId, word) 作为唯一标识
+        // 需要进行字段映射和类型转换
+        const {
+          uuid,
+          word,
+          // 时间戳字段（需要转换 number → Date）
+          firstSeenAt: clientFirstSeenAt,
+          lastReviewedAt: clientLastReviewedAt,
+          nextReviewAt: clientNextReviewAt,
+          lastPracticedAt: clientLastPracticedAt,
+          // 其他字段
+          sourceDicts,
+          preferredDict,
+          consecutiveCorrect,
+          last_modified: clientLastModified,
+          sync_status: clientSyncStatus,
+          isDeleted: clientIsDeleted,
+          // 客户端独有字段（忽略）
+          // intervalSequence, currentIntervalIndex, totalReviews, etc.
+        } = clientRecordData;
+
+        const query = { userId, word };
+
+        if (action === "create" || action === "update") {
+          // 时间戳转换和默认值处理
+          const firstSeenAtDate =
+            safeParseDate(clientFirstSeenAt) || new Date();
+          const lastReviewedAtDate =
+            safeParseDate(clientLastReviewedAt) ||
+            safeParseDate(clientLastPracticedAt) ||
+            firstSeenAtDate;
+          const nextReviewAtDate =
+            safeParseDate(clientNextReviewAt) || new Date();
+
+          // 必需字段默认值
+          const forgettingFactor = 0.5;
+          const reviewLevel = 0;
+          const consecutiveCorrectValue = consecutiveCorrect || 0;
+          const lastReviewResult = null;
+
+          let serverRecord = await WordReviewRecordModel.findOne(query);
+
+          if (serverRecord) {
+            // 更新现有记录
+            serverRecord.uuid = uuid || serverRecord.uuid;
+            serverRecord.firstSeenAt = firstSeenAtDate;
+            serverRecord.lastReviewedAt = lastReviewedAtDate;
+            serverRecord.nextReviewAt = nextReviewAtDate;
+            serverRecord.forgettingFactor = forgettingFactor;
+            serverRecord.reviewLevel = reviewLevel;
+            serverRecord.consecutiveCorrect = consecutiveCorrectValue;
+            serverRecord.lastReviewResult = lastReviewResult;
+            serverRecord.sourceDicts =
+              sourceDicts || serverRecord.sourceDicts || [];
+            serverRecord.preferredDict =
+              preferredDict || serverRecord.preferredDict || "";
+            serverRecord.sync_status = "synced";
+            serverRecord.last_modified = clientLastModified || Date.now();
+            serverRecord.clientModifiedAt =
+              safeParseDate(clientLastModified) || new Date();
+            serverRecord.isDeleted = clientIsDeleted || false;
+
+            await serverRecord.save();
+          } else {
+            // 创建新记录
+            serverRecord = new WordReviewRecordModel({
+              ...query, // userId, word
+              uuid: uuid,
+              firstSeenAt: firstSeenAtDate,
+              lastReviewedAt: lastReviewedAtDate,
+              nextReviewAt: nextReviewAtDate,
+              forgettingFactor,
+              reviewLevel,
+              consecutiveCorrect: consecutiveCorrectValue,
+              lastReviewResult,
+              sourceDicts: sourceDicts || [],
+              preferredDict: preferredDict || "",
+              sync_status: "synced",
+              last_modified: clientLastModified || Date.now(),
+              clientModifiedAt: safeParseDate(clientLastModified) || new Date(),
+              isDeleted: clientIsDeleted || false,
+            });
+
+            await serverRecord.save();
+          }
+        } else if (action === "delete") {
+          const serverRecord = await WordReviewRecordModel.findOne(query);
+          if (serverRecord) {
+            if ("isDeleted" in WordReviewRecordModel.schema.paths) {
+              serverRecord.isDeleted = true;
+              serverRecord.last_modified =
+                clientRecordData.last_modified || Date.now();
+              serverRecord.clientModifiedAt =
+                safeParseDate(clientRecordData.last_modified) || new Date();
+              await serverRecord.save();
+            } else {
+              await WordReviewRecordModel.findOneAndDelete(query);
+            }
+          }
+        }
+      } else if (table === "familiarWords") {
+        // 特殊处理 FamiliarWord 表，使用 (userId, dict, word) 作为唯一标识
+        const { word, dict, uuid } = clientRecordData;
+        const query = { userId, dict, word };
+
+        if (action === "create" || action === "update") {
+          const { _id, ...updateData } = clientRecordData;
+
+          let serverRecord = await FamiliarWord.findOne(query);
+
+          if (serverRecord) {
+            // 更新现有记录，保持原有的 uuid
+            Object.assign(serverRecord, updateData);
+            serverRecord.last_modified =
+              clientRecordData.last_modified || Date.now();
+            serverRecord.clientModifiedAt =
+              safeParseDate(clientRecordData.last_modified) || new Date();
+            await serverRecord.save();
+          } else {
+            // 创建新记录，使用客户端的 uuid
+            serverRecord = new FamiliarWord({
+              ...query, // userId, dict, word
+              uuid: uuid, // 使用客户端的 uuid
+              ...updateData,
+              last_modified: clientRecordData.last_modified || Date.now(),
+              clientModifiedAt:
+                safeParseDate(clientRecordData.last_modified) || new Date(),
+            });
+            await serverRecord.save();
+          }
+        } else if (action === "delete") {
+          const serverRecord = await FamiliarWord.findOne(query);
+          if (serverRecord) {
+            if ("isDeleted" in FamiliarWord.schema.paths) {
+              serverRecord.isDeleted = true;
+              serverRecord.last_modified =
+                clientRecordData.last_modified || Date.now();
+              serverRecord.clientModifiedAt =
+                safeParseDate(clientRecordData.last_modified) || new Date();
+              await serverRecord.save();
+            } else {
+              await FamiliarWord.findOneAndDelete(query);
+            }
+          }
+        }
       } else {
         // Generic handling for other tables
         const Model = getModel(table);
@@ -346,13 +492,13 @@ export const syncData = async (req: Request, res: Response) => {
       | "reviewConfigs"
       | "reviewconfigs"
     )[] = [
-      "wordrecords", // 使用数据库中实际存在的小写集合名称
+      "wordRecords",
       "chapterRecords",
       "reviewRecords",
       "familiarWords",
       "wordReviewRecords",
       "reviewHistories",
-      "reviewconfigs", // 使用数据库中实际存在的小写集合名称
+      "reviewConfigs",
     ];
 
     for (const table of tables) {

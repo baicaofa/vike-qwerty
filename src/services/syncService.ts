@@ -122,6 +122,203 @@ const applyServerChanges = async (serverChanges: any[]) => {
 
   console.log("开始应用服务器变更，总数:", serverChanges.length);
 
+  // 操作统计
+  const stats = {
+    total: 0,
+    updated: 0,
+    created: 0,
+    errors: 0,
+    constraintErrors: 0,
+    fallbackSuccess: 0,
+    startTime: Date.now(),
+  };
+
+  // 错误诊断辅助函数
+  const diagnoseSyncError = (error: any, table: string, data: any) => {
+    const errorMessage = error.message?.toLowerCase() || "";
+    const errorName = error.name || "UnknownError";
+
+    if (
+      errorName === "ConstraintError" ||
+      errorMessage.includes("constrainterror")
+    ) {
+      return {
+        type: "constraint",
+        severity: "warning",
+        suggestion: `表 ${table} 存在唯一约束冲突，将尝试回退策略`,
+        canAutoFix: true,
+      };
+    }
+
+    if (errorMessage.includes("database") && errorMessage.includes("locked")) {
+      return {
+        type: "database_locked",
+        severity: "error",
+        suggestion: "数据库被锁定，请稍后重试",
+        canAutoFix: false,
+      };
+    }
+
+    if (errorMessage.includes("quota") || errorMessage.includes("storage")) {
+      return {
+        type: "storage_quota",
+        severity: "error",
+        suggestion: "存储空间不足，请清理数据或增加存储空间",
+        canAutoFix: false,
+      };
+    }
+
+    return {
+      type: "unknown",
+      severity: "error",
+      suggestion: "未知错误，请检查数据格式和网络连接",
+      canAutoFix: false,
+    };
+  };
+
+  // 增强的 upsert 辅助函数：处理不同表的插入逻辑
+  const upsertRecord = async (
+    table: string,
+    data: any,
+    dbTable: any
+  ): Promise<void> => {
+    const startTime = Date.now();
+    const dataIdentifier =
+      table === "wordRecords" || table === "familiarWords"
+        ? `${data.dict}/${data.word}`
+        : data.uuid;
+
+    stats.total++;
+
+    console.log(`[UPSERT] 开始处理: ${table} - ${dataIdentifier}`);
+
+    try {
+      // 特殊处理需要复合索引查询的表
+      if (table === "wordRecords" || table === "familiarWords") {
+        // 使用 [dict+word] 复合索引查询现有记录
+        const queryStartTime = Date.now();
+        const existingRecord = await dbTable
+          .where("[dict+word]")
+          .equals([data.dict, data.word])
+          .first();
+
+        const queryTime = Date.now() - queryStartTime;
+        console.log(`[UPSERT] 查询耗时: ${queryTime}ms - ${table}`);
+
+        if (existingRecord) {
+          // 更新现有记录
+          const updateStartTime = Date.now();
+          await dbTable.update(existingRecord.id!, {
+            ...data,
+            sync_status: "synced" as SyncStatus,
+            last_modified: Date.now(),
+          });
+          const updateTime = Date.now() - updateStartTime;
+          stats.updated++;
+          console.log(
+            `[UPSERT] ✅ 更新成功 (${updateTime}ms): ${table} - ${dataIdentifier}`
+          );
+        } else {
+          // 创建新记录
+          const createStartTime = Date.now();
+          await dbTable.add({
+            ...data,
+            sync_status: "synced" as SyncStatus,
+            last_modified: Date.now(),
+          });
+          const createTime = Date.now() - createStartTime;
+          stats.created++;
+          console.log(
+            `[UPSERT] ✅ 创建成功 (${createTime}ms): ${table} - ${dataIdentifier}`
+          );
+        }
+      } else {
+        // 其他表保持原有逻辑（基于 uuid 查询）
+        const createStartTime = Date.now();
+        await dbTable.add({
+          ...data,
+          sync_status: "synced" as SyncStatus,
+          last_modified: Date.now(),
+        });
+        const createTime = Date.now() - createStartTime;
+        stats.created++;
+        console.log(
+          `[UPSERT] ✅ 标准插入成功 (${createTime}ms): ${table} - ${dataIdentifier}`
+        );
+      }
+
+      const totalTime = Date.now() - startTime;
+      console.log(`[UPSERT] 操作完成，总耗时: ${totalTime}ms`);
+    } catch (error) {
+      const totalTime = Date.now() - startTime;
+      stats.errors++;
+
+      // 使用错误诊断函数
+      const diagnosis = diagnoseSyncError(error, table, data);
+
+      if (diagnosis.type === "constraint" && diagnosis.canAutoFix) {
+        stats.constraintErrors++;
+        console.warn(
+          `[UPSERT] 🔄 ${diagnosis.suggestion}: ${table} - ${dataIdentifier}`
+        );
+
+        try {
+          // 回退策略：强制查询并更新
+          const fallbackStartTime = Date.now();
+          const existingRecord = await dbTable
+            .where("[dict+word]")
+            .equals([data.dict, data.word])
+            .first();
+
+          if (existingRecord) {
+            await dbTable.update(existingRecord.id!, {
+              ...data,
+              sync_status: "synced" as SyncStatus,
+              last_modified: Date.now(),
+            });
+            const fallbackTime = Date.now() - fallbackStartTime;
+            stats.fallbackSuccess++;
+            stats.errors--; // 回退成功，减少错误计数
+            console.log(
+              `[UPSERT] ✅ 回退策略成功 (${fallbackTime}ms): ${table} - ${dataIdentifier}`
+            );
+          } else {
+            console.error(
+              `[UPSERT] ❌ 回退策略失败，无法找到冲突记录 (${totalTime}ms): ${table} - ${dataIdentifier}`,
+              {
+                error: error.message,
+                data: { dict: data.dict, word: data.word, uuid: data.uuid },
+              }
+            );
+            throw error;
+          }
+        } catch (fallbackError) {
+          console.error(
+            `[UPSERT] ❌ 回退策略执行失败 (${totalTime}ms): ${table} - ${dataIdentifier}`,
+            {
+              originalError: error.message,
+              fallbackError: fallbackError.message,
+              data: { dict: data.dict, word: data.word, uuid: data.uuid },
+            }
+          );
+          throw fallbackError;
+        }
+      } else {
+        console.error(
+          `[UPSERT] ❌ ${diagnosis.severity.toUpperCase()} (${totalTime}ms): ${table} - ${dataIdentifier}`,
+          {
+            type: diagnosis.type,
+            suggestion: diagnosis.suggestion,
+            canAutoFix: diagnosis.canAutoFix,
+            error: error.message,
+            data: { dict: data.dict, word: data.word, uuid: data.uuid },
+          }
+        );
+        throw error;
+      }
+    }
+  };
+
   // 验证服务器变更数据格式
   const invalidChanges = serverChanges.filter(
     (change) =>
@@ -257,19 +454,38 @@ const applyServerChanges = async (serverChanges: any[]) => {
           });
         }
       } else {
-        // 如果本地记录不存在，创建新记录
-        console.log("本地不存在，创建新记录");
-        await dbTable.add({
-          ...data,
-          sync_status: "synced" as SyncStatus,
-          last_modified: Date.now(),
-        });
+        // 如果本地记录不存在，使用 upsert 逻辑创建新记录
+        console.log("本地不存在，使用 upsert 创建记录");
+        await upsertRecord(table, data, dbTable);
       }
       changesApplied++;
     }
   }
 
-  console.log("服务器变更应用完成，总共:", changesApplied);
+  // 输出详细的操作统计
+  const totalTime = Date.now() - stats.startTime;
+  const successRate =
+    stats.total > 0
+      ? (((stats.total - stats.errors) / stats.total) * 100).toFixed(1)
+      : "100.0";
+
+  console.log("=== 服务器变更应用完成 ===");
+  console.log(`📊 操作统计:`);
+  console.log(`  • 总处理数: ${stats.total}`);
+  console.log(`  • 更新记录: ${stats.updated}`);
+  console.log(`  • 创建记录: ${stats.created}`);
+  console.log(`  • 错误数量: ${stats.errors}`);
+  console.log(`  • 约束冲突: ${stats.constraintErrors}`);
+  console.log(`  • 回退成功: ${stats.fallbackSuccess}`);
+  console.log(`  • 成功率: ${successRate}%`);
+  console.log(`  • 总耗时: ${totalTime}ms`);
+  console.log(
+    `  • 平均耗时: ${
+      stats.total > 0 ? (totalTime / stats.total).toFixed(1) : "0"
+    }ms/操作`
+  );
+  console.log("========================");
+
   return changesApplied;
 };
 

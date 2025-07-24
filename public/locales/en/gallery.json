@@ -1,0 +1,60 @@
+{
+  "title": "Dictionary Gallery",
+  "subtitle": "Browse and select suitable dictionaries",
+  "categories": {
+    "all": "All",
+    "exam": "Exam Vocabulary",
+    "business": "Business English",
+    "daily": "Daily Language",
+    "technical": "Technical Vocabulary",
+    "academic": "Academic Vocabulary"
+  },
+  "dictionary": {
+    "name": "Dictionary Name",
+    "description": "Description",
+    "category": "Category",
+    "wordCount": "Word Count",
+    "difficulty": "Difficulty",
+    "language": "Language",
+    "lastUpdated": "Last Updated",
+    "select": "Select Dictionary",
+    "preview": "Preview",
+    "download": "Download"
+  },
+  "difficulty": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "expert": "Expert"
+  },
+  "filters": {
+    "title": "Filters",
+    "category": "Filter by Category",
+    "difficulty": "Filter by Difficulty",
+    "language": "Filter by Language",
+    "wordCount": "Filter by Word Count",
+    "clear": "Clear Filters",
+    "apply": "Apply Filters"
+  },
+  "search": {
+    "placeholder": "Search dictionary name or description",
+    "noResults": "No matching dictionaries found",
+    "resultsCount": "Found {{count}} dictionaries"
+  },
+  "sort": {
+    "title": "Sort By",
+    "name": "Sort by Name",
+    "wordCount": "Sort by Word Count",
+    "difficulty": "Sort by Difficulty",
+    "lastUpdated": "Sort by Last Updated",
+    "ascending": "Ascending",
+    "descending": "Descending"
+  },
+  "actions": {
+    "startPractice": "Start Practice",
+    "viewDetails": "View Details",
+    "addToFavorites": "Add to Favorites",
+    "removeFromFavorites": "Remove from Favorites",
+    "share": "Share Dictionary"
+  }
+}

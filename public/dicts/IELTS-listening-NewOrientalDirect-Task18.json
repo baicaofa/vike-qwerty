@@ -1,224 +1,890 @@
 [
-    {
-        "name": "emperor",
-        "trans": [
-            "n. 皇帝"
-        ]
-    },
-    {
-        "name": "colonist",
-        "trans": [
-            "n. 殖民者"
-        ]
-    },
-    {
-        "name": "the upper class(es)",
-        "trans": [
-            "N. phrase 上流社会"
-        ]
-    },
-    {
-        "name": "royal",
-        "trans": [
-            "adj. 王室的"
-        ]
-    },
-    {
-        "name": "labor/labour",
-        "trans": [
-            "n. 劳工"
-        ]
-    },
-    {
-        "name": "peasant",
-        "trans": [
-            "n. 贫农"
-        ]
-    },
-    {
-        "name": "farmer",
-        "trans": [
-            "n. 农民，农场主"
-        ]
-    },
-    {
-        "name": "slave",
-        "trans": [
-            "n. 奴隶"
-        ]
-    },
-    {
-        "name": "plantation",
-        "trans": [
-            "n. 种植园"
-        ]
-    },
-    {
-        "name": "settlement",
-        "trans": [
-            "n. 定居处"
-        ]
-    },
-    {
-        "name": "site",
-        "trans": [
-            "n. 地址，现场"
-        ]
-    },
-    {
-        "name": "remains",
-        "trans": [
-            "n. 遗址、遗迹、遗骸"
-        ]
-    },
-    {
-        "name": "monument",
-        "trans": [
-            "n. 纪念碑、纪念馆"
-        ]
-    },
-    {
-        "name": "wreck",
-        "trans": [
-            "n. 严重损坏的交通工具(汽车或飞机等)"
-        ]
-    },
-    {
-        "name": "aboriginal",
-        "trans": [
-            "adj. 土著的、原始的"
-        ]
-    },
-    {
-        "name": "custom",
-        "trans": [
-            "n. 风俗、惯例"
-        ]
-    },
-    {
-        "name": "ritual",
-        "trans": [
-            "n. 仪式、老规矩"
-        ]
-    },
-    {
-        "name": "artefact/artifact",
-        "trans": [
-            "n. 手工艺品"
-        ]
-    },
-    {
-        "name": "rock art",
-        "trans": [
-            "N. phrase 岩石艺术"
-        ]
-    },
-    {
-        "name": "engraving",
-        "trans": [
-            "n. 雕刻"
-        ]
-    },
-    {
-        "name": "pattern",
-        "trans": [
-            "n. 图案"
-        ]
-    },
-    {
-        "name": "image",
-        "trans": [
-            "n. 图像"
-        ]
-    },
-    {
-        "name": "figure",
-        "trans": [
-            "n. 人像、数字、身材"
-        ]
-    },
-    {
-        "name": "population",
-        "trans": [
-            "n. 人口"
-        ]
-    },
-    {
-        "name": "trade",
-        "trans": [
-            "n. 贸易"
-        ]
-    },
-    {
-        "name": "goods",
-        "trans": [
-            "n. 货物"
-        ]
-    },
-    {
-        "name": "crops",
-        "trans": [
-            "n. 农作物"
-        ]
-    },
-    {
-        "name": "livestock",
-        "trans": [
-            "n. 牲口、牲畜"
-        ]
-    },
-    {
-        "name": "archaeology",
-        "trans": [
-            "n. 考古学"
-        ]
-    },
-    {
-        "name": "excavation",
-        "trans": [
-            "n. 挖掘"
-        ]
-    },
-    {
-        "name": "technology",
-        "trans": [
-            "n. 技术"
-        ]
-    },
-    {
-        "name": "compass",
-        "trans": [
-            "n. 指南针"
-        ]
-    },
-    {
-        "name": "map",
-        "trans": [
-            "n. 地图"
-        ]
-    },
-    {
-        "name": "satellite",
-        "trans": [
-            "n. 人造卫星"
-        ]
-    },
-    {
-        "name": "sensor",
-        "trans": [
-            "n. 传感器"
-        ]
-    },
-    {
-        "name": "sonar",
-        "trans": [
-            "n. 声呐"
-        ]
-    },
-    {
-        "name": "radar",
-        "trans": [
-            "n. 雷达"
-        ]
-    }
+  {
+    "name": "emperor",
+    "trans": [
+      "n. 皇帝"
+    ],
+    "usphone": "'ɛmpərɚ",
+    "ukphone": "'emp(ə)rə",
+    "sentences": [
+      {
+        "english": "They  bowed before the emperor as he entered the court.",
+        "chinese": "皇帝进入朝廷时他们都向他鞠躬致敬。"
+      },
+      {
+        "english": "The daughter of an emperor does not worry about finding a husband.",
+        "chinese": "皇帝女儿不愁嫁。"
+      },
+      {
+        "english": "The old chancellor who had offended against the emperor was relegated to the distant boundaries of the country.",
+        "chinese": "触犯了皇帝的老宰相被流放到遥远的边疆。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "皇帝",
+        "english": "the man who is the ruler of an empire"
+      }
+    ]
+  },
+  {
+    "name": "colonist",
+    "trans": [
+      "n. 殖民者"
+    ],
+    "usphone": "'kɑlənɪst",
+    "ukphone": "'kɒlənɪst",
+    "sentences": [
+      {
+        "english": "The colonists struggled through their first winter.",
+        "chinese": "这些殖民地居民艰难地度过了第一个冬天。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "移民；殖民地居民",
+        "english": "someone who settles in a new colony"
+      }
+    ]
+  },
+  {
+    "name": "the upper class(es)",
+    "trans": [
+      "N. phrase 上流社会"
+    ]
+  },
+  {
+    "name": "royal",
+    "trans": [
+      "adj. 王室的"
+    ],
+    "usphone": "'rɔɪəl",
+    "ukphone": "'rɒɪəl",
+    "sentences": [
+      {
+        "english": "the royal palace",
+        "chinese": "王宫"
+      },
+      {
+        "english": "the royal family",
+        "chinese": "王室"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "王的；皇家的",
+        "english": "relating to or belonging to a king or queen"
+      }
+    ]
+  },
+  {
+    "name": "labor/labour",
+    "trans": [
+      "n. 劳工"
+    ]
+  },
+  {
+    "name": "peasant",
+    "trans": [
+      "n. 贫农"
+    ],
+    "usphone": "'pɛznt",
+    "ukphone": "'pez(ə)nt",
+    "sentences": [
+      {
+        "english": "Most villagers are peasant farmers.",
+        "chinese": "大多数村民是农民。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "农民",
+        "english": "a poor farmer who owns or rents a small amount of land, either in past times or in poor countries"
+      }
+    ]
+  },
+  {
+    "name": "farmer",
+    "trans": [
+      "n. 农民，农场主"
+    ],
+    "usphone": "'fɑmɚ",
+    "ukphone": "'fɑːmə",
+    "sentences": [
+      {
+        "english": "She dickered with the farmer for the best fruit.",
+        "chinese": "她要买最好的水果而跟农民讨价还价。"
+      },
+      {
+        "english": "The farmer peddled his fruit from house to house.",
+        "chinese": "那个农民挨家挨户兜售他的水果。"
+      },
+      {
+        "english": "As a farmer, you should learn how to yoke the oxen together.",
+        "chinese": "作为农民，你应该学会怎样把一对牛用轭连起来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "农夫，农民",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "slave",
+    "trans": [
+      "n. 奴隶"
+    ],
+    "usphone": "sleɪv",
+    "ukphone": "sleɪv",
+    "sentences": [
+      {
+        "english": "a slave to fashion",
+        "chinese": "时尚的奴隶"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "奴隶；从动装置",
+        "english": "someone who is owned by another person and works for them for no money"
+      },
+      {
+        "pos": "v",
+        "chinese": "苦干；拼命工作",
+        "english": "to work very hard with little time to rest"
+      }
+    ]
+  },
+  {
+    "name": "plantation",
+    "trans": [
+      "n. 种植园"
+    ],
+    "usphone": "plæn'teʃən",
+    "ukphone": "plæn'teɪʃ(ə)n; plɑːn-",
+    "sentences": [
+      {
+        "english": "a rubber plantation",
+        "chinese": "橡胶园"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "栽植；殖民；大农场",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "适用于种植园或热带、亚热带国家的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "settlement",
+    "trans": [
+      "n. 定居处"
+    ],
+    "usphone": "'sɛtlmənt",
+    "ukphone": "'setlmənt",
+    "sentences": [
+      {
+        "english": "Union leaders and company bosses will meet tomorrow in an attempt to reach a settlement .",
+        "chinese": "工会领导人和公司老板将于明天举行会议以期达成协议。"
+      },
+      {
+        "english": "His lawyers are understood to be negotiating a settlement .",
+        "chinese": "据说他的律师正在商谈一个协议。"
+      },
+      {
+        "english": "Hopes grew that a workable peace settlement might emerge.",
+        "chinese": "达成一项可行的和平协定的希望越来越大。"
+      },
+      {
+        "english": "She got her home as part of the divorce settlement .",
+        "chinese": "根据离婚协议，她拿到了房子。"
+      },
+      {
+        "english": "The company paid out over $10 million in an out-of-court settlement .",
+        "chinese": "这家公司花了1,000多万美元进行庭外和解。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 解决； 协议； 居留地， 小社区",
+        "english": "an official agreement or decision that ends an argument, a court case, or a fight, or the action of making an agreement"
+      }
+    ]
+  },
+  {
+    "name": "site",
+    "trans": [
+      "n. 地址，现场"
+    ],
+    "usphone": "saɪt",
+    "ukphone": "saɪt",
+    "sentences": [
+      {
+        "english": "an archaeological site",
+        "chinese": "考古现场"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "地点，场所",
+        "english": "a place where something important or interesting happened"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 使坐落在； 设置",
+        "english": "to place or build something in a particular place"
+      }
+    ]
+  },
+  {
+    "name": "remains",
+    "trans": [
+      "n. 遗址、遗迹、遗骸"
+    ],
+    "usphone": "rɪ'menz",
+    "ukphone": "rɪ'meɪnz",
+    "sentences": [
+      {
+        "english": "extensive Roman remains (= of ancient buildings ) at Arles",
+        "chinese": "阿尔勒的一大片古罗马遗迹"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "残余；遗骸",
+        "english": "the parts of something that are left after the rest has been destroyed or has disappeared"
+      }
+    ]
+  },
+  {
+    "name": "monument",
+    "trans": [
+      "n. 纪念碑、纪念馆"
+    ],
+    "usphone": "'mɑnjumənt",
+    "ukphone": "'mɒnjʊm(ə)nt",
+    "sentences": [
+      {
+        "english": "He erected a monument on the spot where his daughter was killed.",
+        "chinese": "他在女儿遇难的地方立了块纪念碑。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "纪念碑；历史遗迹；不朽的作品",
+        "english": "a building,  statue  , or other large structure that is built to remind people of an important event or famous person"
+      },
+      {
+        "pos": "vt",
+        "chinese": "为…树碑",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "wreck",
+    "trans": [
+      "n. 严重损坏的交通工具(汽车或飞机等)"
+    ],
+    "usphone": "rɛk",
+    "ukphone": "rek",
+    "sentences": [
+      {
+        "english": "Divers discovered the wreck of an old German warship.",
+        "chinese": "潜水员发现了一艘沉没的德国旧军舰。"
+      },
+      {
+        "english": "Injury threatened to wreck his sporting career.",
+        "chinese": "伤病可能会毁了他的运动生涯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "沉船，失事船",
+        "english": "a ship that has sunk"
+      },
+      {
+        "pos": "v",
+        "chinese": "破坏",
+        "english": "to completely spoil something so that it cannot continue in a successful way"
+      }
+    ]
+  },
+  {
+    "name": "aboriginal",
+    "trans": [
+      "adj. 土著的、原始的"
+    ],
+    "usphone": ",æbə'rɪdʒənl",
+    "ukphone": "æbə'rɪdʒɪn(ə)l",
+    "sentences": [
+      {
+        "english": "...Aboriginal art.",
+        "chinese": "…土著艺术。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "土著的；原始的",
+        "english": "relating to the Australian aborigines"
+      },
+      {
+        "pos": "n",
+        "chinese": "土著居民；土生生物",
+        "english": "an aborigine"
+      }
+    ]
+  },
+  {
+    "name": "custom",
+    "trans": [
+      "n. 风俗、惯例"
+    ],
+    "usphone": "'kʌstəm",
+    "ukphone": "'kʌstəm",
+    "sentences": [
+      {
+        "english": "She was stopped at customs and questioned.",
+        "chinese": "她在海关被叫住接受问话。"
+      },
+      {
+        "english": "It took ages to clear customs (= be allowed through customs ) but then we were out of the airport quite quickly.",
+        "chinese": "过海关花了很长时间，不过出机场倒是很快。"
+      },
+      {
+        "english": "You won’t be able to take that through customs.",
+        "chinese": "你带着那东西过不了海关的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "海关",
+        "english": "the place where your bags are checked for illegal goods when you go into a country"
+      }
+    ]
+  },
+  {
+    "name": "ritual",
+    "trans": [
+      "n. 仪式、老规矩"
+    ],
+    "usphone": "'rɪtʃuəl",
+    "ukphone": "'rɪtʃʊəl",
+    "sentences": [
+      {
+        "english": "ancient pagan rituals",
+        "chinese": "古老的异教仪式"
+      },
+      {
+        "english": "the importance of religion and ritual in our lives",
+        "chinese": "我们生活中宗教和宗教仪式的重要性"
+      },
+      {
+        "english": "The lady of the house performs the sacred ritual of lighting two candles.",
+        "chinese": "由女主人来完成点燃两根蜡烛的神圣仪式。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "仪式",
+        "english": "a ceremony that is always performed in the same way, in order to mark an important religious or social occasion"
+      }
+    ]
+  },
+  {
+    "name": "artefact/artifact",
+    "trans": [
+      "n. 手工艺品"
+    ]
+  },
+  {
+    "name": "rock art",
+    "trans": [
+      "N. phrase 岩石艺术"
+    ]
+  },
+  {
+    "name": "engraving",
+    "trans": [
+      "n. 雕刻"
+    ],
+    "usphone": "ɪn'ɡrevɪŋ",
+    "ukphone": "ɪn'greɪvɪŋ; en-",
+    "sentences": [
+      {
+        "english": "...a colour engraving of oranges and lemons.",
+        "chinese": "...一副绘有橙子和柠檬的彩色版画。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雕刻术,雕版",
+        "english": "a picture made by cutting a design into metal, putting ink on the metal, and then printing it"
+      }
+    ]
+  },
+  {
+    "name": "pattern",
+    "trans": [
+      "n. 图案"
+    ],
+    "usphone": "'pætɚn",
+    "ukphone": "'pæt(ə)n",
+    "sentences": [
+      {
+        "english": "Weather patterns have changed in recent years.",
+        "chinese": "气候模式近年已经发生了变化。"
+      },
+      {
+        "english": "A general pattern began to emerge .",
+        "chinese": "一个总体模式开始显现。"
+      },
+      {
+        "english": "Their descriptions seemed to follow a set pattern (= always develop in the same way ) .",
+        "chinese": "他们的描述似乎依据固定的模式。"
+      },
+      {
+        "english": "His behavior fits a pattern of violent acts.",
+        "chinese": "他的举动符合暴力行为的模式。"
+      },
+      {
+        "english": "a dress pattern",
+        "chinese": "连衣裙的纸样"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "型，式样；模，模型",
+        "english": "the regular way in which something happens, develops, or is done"
+      }
+    ]
+  },
+  {
+    "name": "image",
+    "trans": [
+      "n. 图像"
+    ],
+    "usphone": "'ɪmɪdʒ",
+    "ukphone": "'imidʒ",
+    "sentences": [
+      {
+        "english": "attempts to improve the image of the police",
+        "chinese": "提升警察形象的努力"
+      },
+      {
+        "english": "He had the clearest image in his mind of his mother and father.",
+        "chinese": "他脑海中对父母的印象极其清晰。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "形象，声誉，；印象",
+        "english": "the opinion people have of a person, organization, product etc, or the way a person, organization etc seems to be to the public"
+      }
+    ]
+  },
+  {
+    "name": "figure",
+    "trans": [
+      "n. 人像、数字、身材"
+    ],
+    "usphone": "'fɪɡjɚ",
+    "ukphone": "'fɪgə",
+    "sentences": [
+      {
+        "english": "Reform now figures high on the agenda.",
+        "chinese": "眼下，改革是当务之急。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "出现；合乎情理",
+        "english": "to be an important part of a process, event, or situation, or to be included in something"
+      },
+      {
+        "pos": "n",
+        "chinese": "数字；人物；算术；体型，风姿；轮廓；画像，塑像；图，图形",
+        "english": "the activity of adding, multiplying etc numbers"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 计算； 认为， 猜想",
+        "english": "to form a particular opinion after thinking about a situation"
+      }
+    ]
+  },
+  {
+    "name": "population",
+    "trans": [
+      "n. 人口"
+    ],
+    "usphone": ",pɑpju'leʃən",
+    "ukphone": "pɒpjʊ'leɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Nearly 70 percent of the population still live in the countryside.",
+        "chinese": "人口中差不多有70%仍住在乡村。"
+      },
+      {
+        "english": "Most of the world’s population doesn’t get enough to eat.",
+        "chinese": "世界上大多数人都吃不饱。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "人口；全体居民",
+        "english": "the number of people living in a particular area, country etc"
+      }
+    ]
+  },
+  {
+    "name": "trade",
+    "trans": [
+      "n. 贸易"
+    ],
+    "usphone": "tred",
+    "ukphone": "treɪd",
+    "sentences": [
+      {
+        "english": "They had to travel into town to trade the produce from their farm.",
+        "chinese": "他们不得不到镇上去出售他们农场的产品。"
+      },
+      {
+        "english": "We traded necklaces.",
+        "chinese": "我们交换了项链。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "做买卖；交换",
+        "english": "to buy and sell goods, services etc as your job or business"
+      }
+    ]
+  },
+  {
+    "name": "goods",
+    "trans": [
+      "n. 货物"
+    ],
+    "usphone": "ɡʊdz",
+    "ukphone": "ɡʊdz",
+    "sentences": [
+      {
+        "english": "a goods train",
+        "chinese": "一列货车"
+      },
+      {
+        "english": "the large market for consumer goods",
+        "chinese": "庞大的消费品市场"
+      },
+      {
+        "english": "Britain’s leading exporter of manufactured goods",
+        "chinese": "英国主要的工业制成品出口商"
+      },
+      {
+        "english": "There will be tax increases on a range of goods and services .",
+        "chinese": "有一些商品和服务将要增税。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "货物；商品",
+        "english": "things which are carried by road, train etc"
+      }
+    ]
+  },
+  {
+    "name": "crops",
+    "trans": [
+      "n. 农作物"
+    ]
+  },
+  {
+    "name": "livestock",
+    "trans": [
+      "n. 牲口、牲畜"
+    ],
+    "usphone": "'laɪvstɑk",
+    "ukphone": "'laɪvstɒk",
+    "sentences": [
+      {
+        "english": "The heavy rains and flooding killed scores of livestock.",
+        "chinese": "大雨和洪水淹死了许多家畜。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "家畜，牲畜",
+        "english": "animals such as cows and sheep that are kept on a farm"
+      }
+    ]
+  },
+  {
+    "name": "archaeology",
+    "trans": [
+      "n. 考古学"
+    ],
+    "usphone": ",ɑrkɪ'ɑlədʒi",
+    "ukphone": ",ɑːkɪ'ɒlədʒɪ",
+    "sentences": [
+      {
+        "english": "He specializes in archaeology.",
+        "chinese": "他专修考古学。"
+      },
+      {
+        "english": "In my recent research, I found that all three come together and, what is more, they help me to show that archaeology has relevance – it is not just old stones and bones.",
+        "chinese": "我在最近的研究中发现，这三点综合发生着作用，除此之外，它们也帮助我发现考古学的重要意义，它不仅仅意味着一堆石头和骨头。"
+      },
+      {
+        "english": "\"There was no access to clean water, there was no access to basic education especially in the rural areas where the archaeology was,\" she says.",
+        "chinese": "在那里的考古学特别是农村地区，我们并没有获得干净的水，有没有基本的教育的机会，“她说。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "考古学",
+        "english": "the study of ancient societies by examining what remains of their buildings,  grave s  , tools etc"
+      }
+    ]
+  },
+  {
+    "name": "excavation",
+    "trans": [
+      "n. 挖掘"
+    ],
+    "usphone": ",ɛkskə'veʃən",
+    "ukphone": "ekskə'veɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "A second excavation, in 1985, lasted a year and was cut short for technical reasons.",
+        "chinese": "第二次挖掘是在1985年，因为技术原因持续了一年就突然停止了。"
+      },
+      {
+        "english": "If he thinks I’m particular about excavation records, you should see him taking pictures!",
+        "chinese": "如果他觉得我对挖掘纪录很挑剔，你应该看看他是怎么拍照的。"
+      },
+      {
+        "english": "Blue flags define the excavation perimeter, while yellow ones mark the location of fossils or stone tools.",
+        "chinese": "蓝旗用来显示发掘地的周长，而黄旗用来标明发掘出化石或石制工具的地点。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "挖掘，发掘",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "technology",
+    "trans": [
+      "n. 技术"
+    ],
+    "usphone": "tɛkˈnɑlədʒɪ",
+    "ukphone": "tek'nɒlədʒi",
+    "sentences": [
+      {
+        "english": "Modern technology makes moving money around much easier than it used to be.",
+        "chinese": "现代科技使货币流动比以前便捷得多。"
+      },
+      {
+        "english": "Advances in technology have improved crop yields by over 30%.",
+        "chinese": "科技的进步使庄稼产量提高了30%以上。"
+      },
+      {
+        "english": "There have been major new developments in satellite technology.",
+        "chinese": "卫星技术有了重大的新发展。"
+      },
+      {
+        "english": "Many people are unwilling to embrace new technologies.",
+        "chinese": "很多人不愿意接受新科技。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 工艺学； 工艺， 技术",
+        "english": "new machines, equipment, and ways of doing things that are based on modern knowledge about science and computers"
+      }
+    ]
+  },
+  {
+    "name": "compass",
+    "trans": [
+      "n. 指南针"
+    ],
+    "usphone": "'kʌmpəs",
+    "ukphone": "'kʌmpəs",
+    "sentences": [
+      {
+        "english": "a map and compass",
+        "chinese": "地图和指南针"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "指南针，罗盘；圆规",
+        "english": "an instrument that shows directions and has a needle that always points north"
+      },
+      {
+        "pos": "v",
+        "chinese": "包围",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "map",
+    "trans": [
+      "n. 地图"
+    ],
+    "usphone": "mæp",
+    "ukphone": "mæp",
+    "sentences": [
+      {
+        "english": "He spent the next fifteen years mapping the Isle of Anglesey.",
+        "chinese": "他在后来的十五年里绘制了安格尔西岛的地图。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "映射；计划；绘制地图；确定基因在染色体中的位置",
+        "english": "to make a map of a particular area"
+      },
+      {
+        "pos": "n",
+        "chinese": "地图；示意图；染色体图",
+        "english": "a drawing of a particular area, for example a city or country, which shows its main features, such as its roads, rivers, mountains etc"
+      }
+    ]
+  },
+  {
+    "name": "satellite",
+    "trans": [
+      "n. 人造卫星"
+    ],
+    "usphone": "'sætəlaɪt",
+    "ukphone": "'sætəlaɪt",
+    "sentences": [
+      {
+        "english": "the launch of a communications and weather satellite",
+        "chinese": "气象通信卫星的发射"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "卫星；人造卫星",
+        "english": "a machine that has been sent into space and goes around the Earth, moon etc, used for radio, television, and other electronic communication"
+      }
+    ]
+  },
+  {
+    "name": "sensor",
+    "trans": [
+      "n. 传感器"
+    ],
+    "usphone": "'sɛnsɚ",
+    "ukphone": "'sensə",
+    "sentences": [
+      {
+        "english": "The latest Japanese vacuum cleaners contain sensors that detect the amount of dust and type of floor.",
+        "chinese": "日本最新款吸尘器装有传感器，能测出灰尘量和地板类型。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "传感器，灵敏元件",
+        "english": "a piece of equipment used for discovering the presence of light, heat, movement etc"
+      }
+    ]
+  },
+  {
+    "name": "sonar",
+    "trans": [
+      "n. 声呐"
+    ],
+    "usphone": "'sonɑr",
+    "ukphone": "'səunɑː",
+    "sentences": [
+      {
+        "english": "What good is a ship armed to the teeth if its radar and sonar are substandard?",
+        "chinese": "如果一艘武装到牙齿的舰船其雷达和声纳是不合格的，那能好到哪里？"
+      },
+      {
+        "english": "In his work to develop radar, sonar and ultrasound he performed all the necessary tests and provided all the proofs required.",
+        "chinese": "在雷达、声纳和超声的开发工作中，他进行了所有的必要测试，并提供了所需的一切论证。"
+      },
+      {
+        "english": "However, a spokesman for the Ministry of Defence said: 'The Royal Navy can confirm that they were not in the area using sonar and have not been for some time.",
+        "chinese": "英国国防部的一位发言人表示：“皇家海军能证明他们并没有在这一海域使用声纳，而且他们在这片水域逗留的时间也不长。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 声纳",
+        "english": "equipment on a ship or  submarine  that uses  sound waves  to find out the position of objects under the water"
+      }
+    ]
+  },
+  {
+    "name": "radar",
+    "trans": [
+      "n. 雷达"
+    ],
+    "usphone": "'redɑr",
+    "ukphone": "'reɪdɑː",
+    "sentences": [
+      {
+        "english": "The coastline can now be monitored by radar.",
+        "chinese": "现在能用雷达监测海岸线了。"
+      },
+      {
+        "english": "We could see the plane quite clearly on the radar screen.",
+        "chinese": "我们在雷达屏幕上可清晰地看到飞机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雷达，无线电探测器",
+        "english": "a piece of equipment that uses radio waves to find the position of things and watch their movement"
+      }
+    ]
+  }
 ]

@@ -1,4 +1,6 @@
+import { initI18n } from "../i18n";
 import { TypingContext, initialState } from "../pages/Typing/store";
+import { detectBrowserLanguage } from "../store/languageAtom";
 import { ClientWrapper } from "./ClientWrapper";
 import "./PageLayout.css";
 import { Provider as JotaiProvider, createStore } from "jotai";
@@ -19,7 +21,7 @@ interface PageContext extends PageContextClient {
 // 缓存 root 实例，避免重复 hydrate
 let root: ReturnType<typeof hydrateRoot> | null = null;
 
-export function onRenderClient(pageContext: PageContext) {
+export async function onRenderClient(pageContext: PageContext) {
   const { Page, config } = pageContext;
   const { Layout } = config;
   const container = document.getElementById("root");
@@ -27,6 +29,10 @@ export function onRenderClient(pageContext: PageContext) {
   if (!container) {
     throw new Error("Root element not found");
   }
+
+  // 初始化i18n（客户端）
+  const browserLanguage = detectBrowserLanguage();
+  await initI18n(browserLanguage);
 
   const typingContextValue = {
     state: initialState,

@@ -1,6 +1,8 @@
 import { ToastProvider } from "../hooks/useToast";
+import { initI18n } from "../i18n";
 import { TypingContext, initialState } from "../pages/Typing/store";
 import { getPageTDK } from "../resources/tdk";
+import type { SupportedLanguage } from "../store/languageAtom";
 import "animate.css";
 import { Provider as JotaiProvider, createStore } from "jotai";
 import type React from "react";
@@ -10,6 +12,26 @@ import type { PageContextServer } from "vike/types";
 
 // https://vike.dev/onRenderHtml
 export { onRenderHtml };
+
+// 语言检测函数
+function detectLanguageFromContext(
+  pageContext: PageContext
+): SupportedLanguage {
+  // 1. 从URL路径检测（如果有语言前缀）
+  const urlPath = pageContext.urlPathname;
+  if (urlPath.startsWith("/en/")) return "en";
+  if (urlPath.startsWith("/zh/")) return "zh";
+
+  // 2. 从Accept-Language头检测
+  const acceptLanguage = pageContext.headers?.["accept-language"];
+  if (acceptLanguage) {
+    if (acceptLanguage.includes("en")) return "en";
+    if (acceptLanguage.includes("zh")) return "zh";
+  }
+
+  // 3. 默认返回中文
+  return "zh";
+}
 
 // 扩展PageContextServer接口
 interface PageContext extends PageContextServer {
@@ -26,6 +48,13 @@ interface PageContext extends PageContextServer {
 async function onRenderHtml(pageContext: PageContext) {
   const { Page, urlPathname, routeParams, config } = pageContext;
   const { Layout } = config;
+
+  // 检测语言（从URL、Accept-Language头或默认值）
+  const detectedLanguage: SupportedLanguage =
+    detectLanguageFromContext(pageContext);
+
+  // 初始化i18n
+  await initI18n(detectedLanguage);
 
   // 获取当前页面的TDK
   const tdk = getPageTDK(urlPathname, routeParams);
@@ -63,9 +92,12 @@ async function onRenderHtml(pageContext: PageContext) {
     )
   );
 
+  // 动态设置语言属性
+  const htmlLang = detectedLanguage === "zh" ? "zh-CN" : "en";
+
   // 使用escapeInject返回HTML
   return escapeInject`<!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="${htmlLang}">
   <head>
     <meta charset="UTF-8" />
     <script>

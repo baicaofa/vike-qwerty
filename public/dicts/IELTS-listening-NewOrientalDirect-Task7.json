@@ -1,236 +1,995 @@
 [
-    {
-        "name": "job agency",
-        "trans": [
-            "n. 求职中介"
-        ]
-    },
-    {
-        "name": "agent",
-        "trans": [
-            "n. 代理人，中介人"
-        ]
-    },
-    {
-        "name": "recruit",
-        "trans": [
-            "v. 招聘，征募"
-        ]
-    },
-    {
-        "name": "available",
-        "trans": [
-            "adj. 可提供的，可获得的"
-        ]
-    },
-    {
-        "name": "vacant",
-        "trans": [
-            "adj. 空缺的"
-        ]
-    },
-    {
-        "name": "applicant",
-        "trans": [
-            "n. 申请人，求职者"
-        ]
-    },
-    {
-        "name": "personnel",
-        "trans": [
-            "n. 人事部门，人员"
-        ]
-    },
-    {
-        "name": "job description",
-        "trans": [
-            "n. 职位描述"
-        ]
-    },
-    {
-        "name": "vouch",
-        "trans": [
-            "v. 担保，证明"
-        ]
-    },
-    {
-        "name": "referee",
-        "trans": [
-            "n. 介绍人；v. 裁判"
-        ]
-    },
-    {
-        "name": "shift",
-        "trans": [
-            "n. 轮班；v. 转换"
-        ]
-    },
-    {
-        "name": "commute",
-        "trans": [
-            "n. 通勤；v. 通勤"
-        ]
-    },
-    {
-        "name": "CV",
-        "trans": [
-            "n. 简历"
-        ]
-    },
-    {
-        "name": "résumé",
-        "trans": [
-            "n. 简历"
-        ]
-    },
-    {
-        "name": "interview",
-        "trans": [
-            "n. 面试"
-        ]
-    },
-    {
-        "name": "candidate",
-        "trans": [
-            "n. 候选人"
-        ]
-    },
-    {
-        "name": "offer",
-        "trans": [
-            "n. 录用通知；v. 提供"
-        ]
-    },
-    {
-        "name": "employer",
-        "trans": [
-            "n. 雇主"
-        ]
-    },
-    {
-        "name": "employee",
-        "trans": [
-            "n. 雇员"
-        ]
-    },
-    {
-        "name": "certificate",
-        "trans": [
-            "n. 证书"
-        ]
-    },
-    {
-        "name": "licence",
-        "trans": [
-            "n. 执照"
-        ]
-    },
-    {
-        "name": "work permit",
-        "trans": [
-            "n. 工作许可证"
-        ]
-    },
-    {
-        "name": "experience",
-        "trans": [
-            "n. 经验"
-        ]
-    },
-    {
-        "name": "quality",
-        "trans": [
-            "n. 品质"
-        ]
-    },
-    {
-        "name": "personality",
-        "trans": [
-            "n. 个性，人格特质"
-        ]
-    },
-    {
-        "name": "education background",
-        "trans": [
-            "n. 教育背景"
-        ]
-    },
-    {
-        "name": "degree",
-        "trans": [
-            "n. 学位"
-        ]
-    },
-    {
-        "name": "major",
-        "trans": [
-            "n. 主修科目"
-        ]
-    },
-    {
-        "name": "bachelor",
-        "trans": [
-            "n. 学士"
-        ]
-    },
-    {
-        "name": "master",
-        "trans": [
-            "n. 硕士"
-        ]
-    },
-    {
-        "name": "suit",
-        "trans": [
-            "n. 套装"
-        ]
-    },
-    {
-        "name": "uniform",
-        "trans": [
-            "n. 制服"
-        ]
-    },
-    {
-        "name": "smart",
-        "trans": [
-            "adj. 讲究时髦的"
-        ]
-    },
-    {
-        "name": "casual",
-        "trans": [
-            "adj. 休闲的"
-        ]
-    },
-    {
-        "name": "salary",
-        "trans": [
-            "n. 薪水"
-        ]
-    },
-    {
-        "name": "tip",
-        "trans": [
-            "n. 小费；n. 建议；v. 给小费"
-        ]
-    },
-    {
-        "name": "pension",
-        "trans": [
-            "n. 退休金，津贴"
-        ]
-    },
-    {
-        "name": "welfare",
-        "trans": [
-            "n. 福利"
-        ]
-    },
-    {
-        "name": "insurance",
-        "trans": [
-            "n. 保险"
-        ]
-    }
+  {
+    "name": "job agency",
+    "trans": [
+      "n. 求职中介"
+    ]
+  },
+  {
+    "name": "agent",
+    "trans": [
+      "n. 代理人，中介人"
+    ],
+    "usphone": "'edʒənt",
+    "ukphone": "'eɪdʒ(ə)nt",
+    "sentences": [
+      {
+        "english": "Our agent in Rio deals with all our Brazilian business.",
+        "chinese": "我们在里约热内卢的业务代表处理我们在巴西的全部业务。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "代理商",
+        "english": "a person or company that represents another person or company, especially in business"
+      }
+    ]
+  },
+  {
+    "name": "recruit",
+    "trans": [
+      "v. 招聘，征募"
+    ],
+    "usphone": "rɪ'krut",
+    "ukphone": "rikru:t",
+    "sentences": [
+      {
+        "english": "We’re having difficulty recruiting enough qualified staff.",
+        "chinese": "我们难以招聘到足够的合格职员。"
+      },
+      {
+        "english": "Many government officials were recruited from private industry.",
+        "chinese": "很多政府官员是从私营企业招募来的。"
+      },
+      {
+        "english": "Drill sergeants have eight weeks to turn fresh recruits into soldiers.",
+        "chinese": "操练军士要在八个星期之内把新兵训练成真正的士兵。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "招募，吸收",
+        "english": "to find new people to work in a company, join an organization, do a job etc"
+      },
+      {
+        "pos": "n",
+        "chinese": "新兵，新成员",
+        "english": "someone who has just joined the army, navy, or  air force"
+      }
+    ]
+  },
+  {
+    "name": "available",
+    "trans": [
+      "adj. 可提供的，可获得的"
+    ],
+    "usphone": "ə'veləbl",
+    "ukphone": "ə'veiləbl",
+    "sentences": [
+      {
+        "english": "Tickets are available from the box office.",
+        "chinese": "售票处有票出售。"
+      },
+      {
+        "english": "Meetings were held to update employees as soon as new information became available .",
+        "chinese": "一有新的信息就开会告诉员工。"
+      },
+      {
+        "english": "Further building can continue when money is made available .",
+        "chinese": "有了资金就可以继续进一步的施工。"
+      },
+      {
+        "english": "Every available space on the wall was covered in pictures.",
+        "chinese": "墙上每一个可用的地方都挂上了画。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "可利用的，现有的；可获得的",
+        "english": "something that is available is able to be used or can easily be bought or found"
+      }
+    ]
+  },
+  {
+    "name": "vacant",
+    "trans": [
+      "adj. 空缺的"
+    ],
+    "usphone": "'vekənt",
+    "ukphone": "'veɪk(ə)nt",
+    "sentences": [
+      {
+        "english": "Only a few apartments were still vacant.",
+        "chinese": "只有几套公寓仍然空着。"
+      },
+      {
+        "english": "There was only a vacant lot (= empty unused area of land in a city ) where her house used to be.",
+        "chinese": "她以前房子所在的地方只剩下一块空地了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "空的；未被占用的",
+        "english": "a vacant seat, building, room or piece of land is empty and available for someone to use"
+      }
+    ]
+  },
+  {
+    "name": "applicant",
+    "trans": [
+      "n. 申请人，求职者"
+    ],
+    "usphone": "'æplɪkənt",
+    "ukphone": "ˈæplɪkənt",
+    "sentences": [
+      {
+        "english": "We have had lots of applicants for these positions.",
+        "chinese": "对这些职位我们已有了很多申请人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "申请者",
+        "english": "someone who has formally asked, usually in writing, for a job, university place etc"
+      }
+    ]
+  },
+  {
+    "name": "personnel",
+    "trans": [
+      "n. 人事部门，人员"
+    ],
+    "usphone": ",pɝsə'nɛl",
+    "ukphone": "pɜːsə'nel",
+    "sentences": [
+      {
+        "english": "All personnel are to receive security badges.",
+        "chinese": "所有人员都将拿到安保徽章。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "全体人员，全体职员",
+        "english": "the people who work in a company, organization, or military force"
+      }
+    ]
+  },
+  {
+    "name": "job description",
+    "trans": [
+      "n. 职位描述"
+    ]
+  },
+  {
+    "name": "vouch",
+    "trans": [
+      "v. 担保，证明"
+    ],
+    "usphone": "vaʊtʃ",
+    "ukphone": "vautʃ",
+    "sentences": [
+      {
+        "english": "I can vouch for his honesty.",
+        "chinese": "我可以为他的诚实做担保。"
+      },
+      {
+        "english": "Can you present any references who might vouch for your character?",
+        "chinese": "你能提供一些可以为你的人格作担保的证明人吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": " 担保， 保证",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "referee",
+    "trans": [
+      "n. 介绍人；v. 裁判"
+    ],
+    "usphone": ",rɛfə'ri",
+    "ukphone": "refə'riː",
+    "sentences": [
+      {
+        "english": "His headmaster agreed to act as his referee.",
+        "chinese": "他的校长同意做他的推荐人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "裁判员；调解人；介绍人",
+        "english": "someone who makes sure that the rules of a sport such as football,  basketball  , or  boxing  , are followed"
+      },
+      {
+        "pos": "v",
+        "chinese": "仲裁；担任裁判",
+        "english": "to be the referee of a game"
+      }
+    ]
+  },
+  {
+    "name": "shift",
+    "trans": [
+      "n. 轮班；v. 转换"
+    ],
+    "usphone": "ʃɪft",
+    "ukphone": "ʃɪft",
+    "sentences": [
+      {
+        "english": "They need to shift from farming to industry, and they need to do so desperately.",
+        "chinese": "他们需要从农业领域转移到工业领域。 他们需要拼命地那么做。"
+      },
+      {
+        "english": "the shift from one type of economic system to another",
+        "chinese": "从一种经济体系向另一种经济体系的转变"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "替换，转移",
+        "english": "to change a situation, discussion etc by giving special attention to one idea or subject instead of to a previous one"
+      },
+      {
+        "pos": "n",
+        "chinese": "转换",
+        "english": "a change in the way people think about something, in the way something is done etc"
+      }
+    ]
+  },
+  {
+    "name": "commute",
+    "trans": [
+      "n. 通勤；v. 通勤"
+    ],
+    "usphone": "kə'mjʊt",
+    "ukphone": "kə'mjuːt",
+    "sentences": [
+      {
+        "english": "Baldry’s 20-year prison sentence was commuted to three years.",
+        "chinese": "鲍德里二十年的刑期被减至三年。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "乘公交车上下班，经常乘车往返于两地",
+        "english": ""
+      },
+      {
+        "pos": "vt",
+        "chinese": " 减； 折合， 折偿； 上下班交通",
+        "english": "to regularly travel a long distance to get to work"
+      }
+    ]
+  },
+  {
+    "name": "CV",
+    "trans": [
+      "n. 简历"
+    ],
+    "usphone": "",
+    "ukphone": ",si: 'vi:",
+    "sentences": [
+      {
+        "english": "Send them a copy of your CV.",
+        "chinese": "给他们寄一份你的简历。"
+      },
+      {
+        "english": "I need to update my CV.",
+        "chinese": "我需要更新我的简历。"
+      },
+      {
+        "english": "Finally, take one more minute to check spelling mistakes or logical flaws of your CV and cover letter before you send them out. Good luck!",
+        "chinese": "最后，在寄出你的简历和求职信之前，多花一分钟时间检查拼写错误或逻辑漏洞，这不会是无用功。祝你好运！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "简历，履历",
+        "english": "a short written document that lists your education and previous jobs, which you send to employers when you are looking for a job"
+      }
+    ]
+  },
+  {
+    "name": "résumé",
+    "trans": [
+      "n. 简历"
+    ]
+  },
+  {
+    "name": "interview",
+    "trans": [
+      "n. 面试"
+    ],
+    "usphone": "'ɪntɚvju",
+    "ukphone": "'intəvju:",
+    "sentences": [
+      {
+        "english": "a portfolio of work presented at interview",
+        "chinese": "在面试时呈递的工作成果样本"
+      },
+      {
+        "english": "a police interview",
+        "chinese": "警方问讯"
+      },
+      {
+        "english": "We’re interviewing six candidates for the job.",
+        "chinese": "这份工作我们要面试六名申请人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "面谈（试）；会见；",
+        "english": "a formal meeting at which someone is asked questions in order to find out whether they are suitable for a job, course of study etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "采访 ；面试",
+        "english": "to ask someone questions during an interview"
+      }
+    ]
+  },
+  {
+    "name": "candidate",
+    "trans": [
+      "n. 候选人"
+    ],
+    "usphone": "ˈkændɪˌdet, -dɪt",
+    "ukphone": "'kændɪdeɪt; -dət",
+    "sentences": [
+      {
+        "english": "a presidential candidate",
+        "chinese": "总统候选人"
+      },
+      {
+        "english": "Candidates are not allowed to use a calculator in this exam.",
+        "chinese": "这次考试的应试者不可以使用计算器。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "候选人；投考者",
+        "english": "someone who is being considered for a job or is competing in an election"
+      }
+    ]
+  },
+  {
+    "name": "offer",
+    "trans": [
+      "n. 录用通知；v. 提供"
+    ],
+    "usphone": "'ɔfɚ",
+    "ukphone": "'ɒfə",
+    "sentences": [
+      {
+        "english": "Can I offer you something to drink?",
+        "chinese": "我给你拿点喝的好吗？"
+      },
+      {
+        "english": "I can’t turn down the offer of a free trip to Milan!",
+        "chinese": "我怎能拒绝免费去米兰旅行的机会！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "提供；提出",
+        "english": "to ask someone if they would like to have something, or to hold something out to them so that they can take it"
+      },
+      {
+        "pos": "n",
+        "chinese": "提供",
+        "english": "a statement saying that you are willing to do something for someone or give them something"
+      }
+    ]
+  },
+  {
+    "name": "employer",
+    "trans": [
+      "n. 雇主"
+    ],
+    "usphone": "ɪm'plɔɪɚ",
+    "ukphone": "ɪm'plɒɪə; em-",
+    "sentences": [
+      {
+        "english": "The shoe factory is the largest employer in this area.",
+        "chinese": "这家制鞋厂是本地区最大的雇主。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雇佣者，雇主",
+        "english": "a person, company, or organization that employs people"
+      }
+    ]
+  },
+  {
+    "name": "employee",
+    "trans": [
+      "n. 雇员"
+    ],
+    "usphone": "ɪm'plɔɪi",
+    "ukphone": "emplɒɪ'iː; em'plɒɪiː; ɪm-",
+    "sentences": [
+      {
+        "english": "a government employee",
+        "chinese": "政府雇员"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "受雇者，雇员，雇工",
+        "english": "someone who is paid to work for someone else"
+      }
+    ]
+  },
+  {
+    "name": "certificate",
+    "trans": [
+      "n. 证书"
+    ],
+    "usphone": "sɚˈtɪfɪkɪt; (for v.,) sɚˈtɪfɪˌket",
+    "ukphone": "səˈtɪfɪkɪt; (for v.,) səˈtɪfɪˌkeɪt",
+    "sentences": [
+      {
+        "english": "birth/death/marriage certificate (=giving details of someone’s birth, death, or marriage)",
+        "chinese": "出生/死亡/结婚证书"
+      },
+      {
+        "english": "a degree certificate",
+        "chinese": "学位证书"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "证书，证件，执照；（毕业）文凭，合格证书",
+        "english": "an official document that states that a fact or facts are true"
+      }
+    ]
+  },
+  {
+    "name": "licence",
+    "trans": [
+      "n. 执照"
+    ],
+    "usphone": "'laɪsəns",
+    "ukphone": "'laɪsəns",
+    "sentences": [
+      {
+        "english": "The dealers applied for an export licence.",
+        "chinese": "经销商申请了出口许可证。"
+      },
+      {
+        "english": "He was arrested for driving without a license.",
+        "chinese": "他因无照驾驶被捕。"
+      },
+      {
+        "english": "The Tennessee Valley Authority applied for a license to operate the facility.",
+        "chinese": "田纳西河谷管理局申请了这个场所的经营执照。"
+      },
+      {
+        "english": "The owner of land could grant a licence to cut and remove timber.",
+        "chinese": "土地所有者可发执照授权砍伐和运走木材。"
+      },
+      {
+        "english": "I forgot to renew my licence.",
+        "chinese": "我忘记去办理执照展期了。"
+      },
+      {
+        "english": "Persistent offenders face losing their licence.",
+        "chinese": "多次违规者将会被没收执照。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "许可证，执照；特许",
+        "english": "an official document giving you permission to own or do something for a period of time"
+      },
+      {
+        "pos": "v",
+        "chinese": "特许，许可；发给执照",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "work permit",
+    "trans": [
+      "n. 工作许可证"
+    ]
+  },
+  {
+    "name": "experience",
+    "trans": [
+      "n. 经验"
+    ],
+    "usphone": "ɪk'spɪrɪəns",
+    "ukphone": "ɪk'spɪərɪəns; ek-",
+    "sentences": [
+      {
+        "english": "The advice in the booklet reflects the practical experience we have gained (= experience gained by actually doing something, rather than knowledge from books etc ).",
+        "chinese": "小册子中的建议反映了我们所获得的实践经验。"
+      },
+      {
+        "english": "I had some experience in fashion design.",
+        "chinese": "我有一些时装设计方面的经验。"
+      },
+      {
+        "english": "She was turned down on the grounds of lack of experience.",
+        "chinese": "她因缺乏经验而被拒绝。"
+      },
+      {
+        "english": "The book is based on personal experience .",
+        "chinese": "本书是根据个人经历写成的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "经验，感受；经历",
+        "english": "knowledge or skill that you gain from doing a job or activity, or the process of doing this"
+      }
+    ]
+  },
+  {
+    "name": "quality",
+    "trans": [
+      "n. 品质"
+    ],
+    "usphone": "'kwɑləti",
+    "ukphone": "'kwɒlɪtɪ",
+    "sentences": [
+      {
+        "english": "Much of the land was of poor quality.",
+        "chinese": "很多地的土质很差。"
+      },
+      {
+        "english": "Use only high quality ingredients.",
+        "chinese": "只使用上等的材料。"
+      },
+      {
+        "english": "the drug’s addictive quality",
+        "chinese": "毒品令人上瘾的特性"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "质量；品质；特性",
+        "english": "how good or bad something is"
+      }
+    ]
+  },
+  {
+    "name": "personality",
+    "trans": [
+      "n. 个性，人格特质"
+    ],
+    "usphone": ",pɝsə'næləti",
+    "ukphone": "ˌpɜ:səˈnæləti",
+    "sentences": [
+      {
+        "english": "Despite their different personalities, they became the best of friends.",
+        "chinese": "尽管个性不同，他们还是成了最好的朋友。"
+      },
+      {
+        "english": "Unfortunately, the illness can lead to changes in personality.",
+        "chinese": "不幸的是，这种病会导致性格变化。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "个性，性格",
+        "english": "someone’s character, especially the way they behave towards other people"
+      }
+    ]
+  },
+  {
+    "name": "education background",
+    "trans": [
+      "n. 教育背景"
+    ]
+  },
+  {
+    "name": "degree",
+    "trans": [
+      "n. 学位"
+    ],
+    "usphone": "dɪ'ɡri",
+    "ukphone": "dɪˈgri:",
+    "sentences": [
+      {
+        "english": "Newspapers vary in the degree to which they emphasize propaganda rather than information.",
+        "chinese": "报纸重宣传轻资讯的程度各不相同。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "程度",
+        "english": "the level or amount of something"
+      }
+    ]
+  },
+  {
+    "name": "major",
+    "trans": [
+      "n. 主修科目"
+    ],
+    "usphone": "'medʒɚ",
+    "ukphone": "'meɪdʒə(r)",
+    "sentences": [
+      {
+        "english": "There are two major political parties in the US.",
+        "chinese": "美国有两大政党。"
+      },
+      {
+        "english": "The government’s major concern is with preventing road accidents.",
+        "chinese": "政府关注的大事是预防道路交通事故。"
+      },
+      {
+        "english": "Smoking is one of the major causes of cancer.",
+        "chinese": "吸烟是引发癌症的元凶之一。"
+      },
+      {
+        "english": "the major developments in computer technology",
+        "chinese": "计算机技术的重大进步"
+      },
+      {
+        "english": "He’s majoring in Political Science.",
+        "chinese": "他主修政治学。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "主要的",
+        "english": "very large or important, when compared to other things or people of a similar kind"
+      },
+      {
+        "pos": "v",
+        "chinese": "主修",
+        "english": "to study something as your main subject at college or university"
+      }
+    ]
+  },
+  {
+    "name": "bachelor",
+    "trans": [
+      "n. 学士"
+    ],
+    "usphone": "'bætʃəlɚ",
+    "ukphone": "'bætʃələ",
+    "sentences": [
+      {
+        "english": "Gerald was 38, and a confirmed bachelor (=  a man who has decided that he will never marry  ) .",
+        "chinese": "杰拉德38岁，抱定主意独身。"
+      },
+      {
+        "english": "a Bachelor of Arts/Engineering/Science",
+        "chinese": "文学士；工程学士；理学士"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "未婚男子；学士",
+        "english": "a man who has never been married"
+      }
+    ]
+  },
+  {
+    "name": "master",
+    "trans": [
+      "n. 硕士"
+    ],
+    "usphone": "'mæstɚ",
+    "ukphone": "'mɑːstə",
+    "sentences": [
+      {
+        "english": "a work of art by a true master",
+        "chinese": "一件真正的大师之作"
+      },
+      {
+        "english": "You’ll have to ask the master’s permission.",
+        "chinese": "你得去请求主人的同意。"
+      },
+      {
+        "english": "You’ll have to ask the master’s permission.",
+        "chinese": "你得去请求主人的同意。"
+      },
+      {
+        "english": "Master of Arts/Science/Education etc",
+        "chinese": "文学/理学/教育学等硕士"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "能手；主人；硕士",
+        "english": "someone who is very skilled at something"
+      }
+    ]
+  },
+  {
+    "name": "suit",
+    "trans": [
+      "n. 套装"
+    ],
+    "usphone": "sut",
+    "ukphone": "sju:t; su:t",
+    "sentences": [
+      {
+        "english": "Johnson has filed suit against her.",
+        "chinese": "约翰逊对她提起了诉讼。"
+      },
+      {
+        "english": "a civil suit",
+        "chinese": "民事诉讼"
+      },
+      {
+        "english": "There are countryside walks to suit everyone.",
+        "chinese": "有适合每个人的乡村步行路径。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "起诉，诉讼",
+        "english": "a problem or complaint that a person or company brings to a court of law to be settled"
+      },
+      {
+        "pos": "v",
+        "chinese": "适合",
+        "english": "to be acceptable, suitable, or  convenient  for a particular person or in a particular situation"
+      }
+    ]
+  },
+  {
+    "name": "uniform",
+    "trans": [
+      "n. 制服"
+    ],
+    "usphone": "'junɪfɔrm",
+    "ukphone": "'juːnɪfɔːm",
+    "sentences": [
+      {
+        "english": "Grade A eggs must be of uniform size.",
+        "chinese": "A 级鸡蛋必须大小相同。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "统一的；一致的；相同的；均衡的；始终如一的",
+        "english": "being the same in all its parts or among all its members"
+      },
+      {
+        "pos": "n",
+        "chinese": "制服",
+        "english": "a particular type of clothing worn by all the members of a group or organization such as the police, the army etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "使穿制服；使成一样",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "smart",
+    "trans": [
+      "adj. 讲究时髦的"
+    ],
+    "usphone": "smɑrt",
+    "ukphone": "smɑːt",
+    "sentences": [
+      {
+        "english": "My eyes were smarting with the smoke.",
+        "chinese": "我的眼睛被烟熏得发痛。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "刺疼，扎疼，剧痛",
+        "english": "to feel a sharp stinging pain in a part of your body"
+      }
+    ]
+  },
+  {
+    "name": "casual",
+    "trans": [
+      "adj. 休闲的"
+    ],
+    "usphone": "'kæʒʊəl",
+    "ukphone": "ˈkæʒuəl",
+    "sentences": [
+      {
+        "english": "a casual manner",
+        "chinese": "漫不经心的态度"
+      },
+      {
+        "english": "His eyes were angry, though he sounded casual.",
+        "chinese": "虽然他的语气满不在乎，但他的眼神充满怒气。"
+      },
+      {
+        "english": "Marsha was quite casual about appearing on TV.",
+        "chinese": "玛莎对于上电视很无所谓。"
+      },
+      {
+        "english": "a casual conversation",
+        "chinese": "随便的谈话"
+      },
+      {
+        "english": "He made some casual remark (= one without thinking much about it ) about her holiday.",
+        "chinese": "他随口提到了她度假的事。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "漫不经心的，随便的；偶然的",
+        "english": "relaxed and not worried, or seeming not to care about something"
+      }
+    ]
+  },
+  {
+    "name": "salary",
+    "trans": [
+      "n. 薪水"
+    ],
+    "usphone": "'sæləri",
+    "ukphone": "'sæləri",
+    "sentences": [
+      {
+        "english": "The average salary for a teacher is $39,000 a year.",
+        "chinese": "教师的平均工资是39,000美元一年。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 薪金， 薪水",
+        "english": "money that you receive as payment from the organization you work for, usually paid to you every month"
+      }
+    ]
+  },
+  {
+    "name": "tip",
+    "trans": [
+      "n. 小费；n. 建议；v. 给小费"
+    ],
+    "usphone": "tɪp",
+    "ukphone": "tɪp",
+    "sentences": [
+      {
+        "english": "He kissed the tip of her nose.",
+        "chinese": "他吻了一下她的鼻尖。"
+      },
+      {
+        "english": "gardening tips",
+        "chinese": "园艺小窍门"
+      },
+      {
+        "english": "Did you leave a tip ?",
+        "chinese": "你留小费了吗？"
+      },
+      {
+        "english": "His helmet had tipped forward and the boy pushed it back.",
+        "chinese": "头盔向前耷拉下来，男孩把它往后推了推。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "尖；尖端；提示；技巧；小费",
+        "english": "the end of something, especially something pointed"
+      },
+      {
+        "pos": "v",
+        "chinese": "倾斜；翻倒",
+        "english": "to move into a sloping position, so that one end or side is higher than the other, or to make something do this"
+      }
+    ]
+  },
+  {
+    "name": "pension",
+    "trans": [
+      "n. 退休金，津贴"
+    ],
+    "usphone": "'pɛnʃən",
+    "ukphone": "'penʃn",
+    "sentences": [
+      {
+        "english": "At what age can you start drawing your pension ?",
+        "chinese": "从多少岁可以开始领取养老金？"
+      },
+      {
+        "english": "If you are self-employed, you should think about taking out a private pension .",
+        "chinese": "如果你是自由职业者，应该考虑办理私人养老金事宜。"
+      },
+      {
+        "english": "Many people find it hard to live on a basic state pension .",
+        "chinese": "许多人发现仅凭国家基本养老金不能养活自己。"
+      },
+      {
+        "english": "She pays a quarter of her salary into a pension plan.",
+        "chinese": "她将每月工资的四分之一用于养老金计划。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "养老金，抚恤金",
+        "english": "an amount of money paid regularly by the government or company to someone who does not work any more, for example because they have reached the age when people stop working or because they are ill"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 发给…养老金",
+        "english": "to grant a pension to "
+      }
+    ]
+  },
+  {
+    "name": "welfare",
+    "trans": [
+      "n. 福利"
+    ],
+    "usphone": "'wɛl'fɛr",
+    "ukphone": "'welfeə(r)",
+    "sentences": [
+      {
+        "english": "Our only concern is the children’s welfare.",
+        "chinese": "我们唯一关心的是孩子们的幸福。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "福利",
+        "english": "someone’s welfare is their health and happiness"
+      }
+    ]
+  },
+  {
+    "name": "insurance",
+    "trans": [
+      "n. 保险"
+    ],
+    "usphone": "ɪn'ʃʊrəns",
+    "ukphone": "ɪn'ʃuərəns",
+    "sentences": [
+      {
+        "english": "Your father took out insurance to cover the mortgage.",
+        "chinese": "你父亲购买了抵押借款保险。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 保险； 保险费",
+        "english": "an arrangement with a company in which you pay them money, especially regularly, and they pay the costs if something bad happens, for example if you become ill or your car is damaged"
+      }
+    ]
+  }
 ]

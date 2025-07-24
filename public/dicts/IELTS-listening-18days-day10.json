@@ -1,134 +1,852 @@
 [
-    {
-        "name": "mammal",
-        "trans": ["哺乳动物"]
-    },
-    {
-        "name": "postpone",
-        "trans": ["推迟"]
-    },
-    {
-        "name": "woodland",
-        "trans": ["林地", "森林"]
-    },
-    {
-        "name": "cave",
-        "trans": ["山洞"]
-    },
-    {
-        "name": "order",
-        "trans": ["订购", "秩序", "命令"]
-    },
-    {
-        "name": "lawyer",
-        "trans": ["律师"]
-    },
-    {
-        "name": "acid",
-        "trans": ["酸的"]
-    },
-    {
-        "name": "beat",
-        "trans": ["（心脏）跳动"]
-    },
-    {
-        "name": "fitness",
-        "trans": ["健康"]
-    },
-    {
-        "name": "necessity",
-        "trans": ["必需品"]
-    },
-    {
-        "name": "church",
-        "trans": ["教堂"]
-    },
-    {
-        "name": "flood",
-        "trans": ["洪水"]
-    },
-    {
-        "name": "publication",
-        "trans": ["出版"]
-    },
-    {
-        "name": "critical",
-        "trans": ["批评的", "关键的"]
-    },
-    {
-        "name": "behavior",
-        "trans": ["行为"]
-    },
-    {
-        "name": "vote",
-        "trans": ["投票"]
-    },
-    {
-        "name": "session",
-        "trans": ["会议", "学期"]
-    },
-    {
-        "name": "crop",
-        "trans": ["农作物"]
-    },
-    {
-        "name": "technique",
-        "trans": ["技巧"]
-    },
-    {
-        "name": "entrant",
-        "trans": ["参与者"]
-    },
-    {
-        "name": "overload",
-        "trans": ["使超载", "超负荷"]
-    },
-    {
-        "name": "council",
-        "trans": ["委员会"]
-    },
-    {
-        "name": "chairman",
-        "trans": ["主席"]
-    },
-    {
-        "name": "railway",
-        "trans": ["铁路"]
-    },
-    {
-        "name": "contract",
-        "trans": ["合同"]
-    },
-    {
-        "name": "rare",
-        "trans": ["稀少的"]
-    },
-    {
-        "name": "common room",
-        "trans": ["公共休息室"]
-    },
-    {
-        "name": "enquiry",
-        "trans": ["咨询"]
-    },
-    {
-        "name": "thick",
-        "trans": ["厚的"]
-    },
-    {
-        "name": "liquid",
-        "trans": ["液体"]
-    },
-    {
-        "name": "dye",
-        "trans": ["染"]
-    },
-    {
-        "name": "rat",
-        "trans": ["老鼠"]
-    },
-    {
-        "name": "measure",
-        "trans": ["测量"]
-    }
+  {
+    "name": "mammal",
+    "trans": [
+      "哺乳动物"
+    ],
+    "usphone": "'mæml",
+    "ukphone": "'mæm(ə)l",
+    "sentences": [
+      {
+        "english": "A whale is a kind of mammal.",
+        "chinese": "鲸是一种哺乳动物。"
+      },
+      {
+        "english": "The whale is a mammal.",
+        "chinese": "鲸鱼是哺乳动物。"
+      },
+      {
+        "english": "The problem with that theory is that no other mammal has resorted to this method of cooling down.",
+        "chinese": "这一理论的问题在于，没有其他的哺乳动物采取了这种降低体温的方式。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "哺乳动物",
+        "english": "a type of animal that drinks milk from its mother’s body when it is young. Humans, dogs, and whales are mammals."
+      }
+    ]
+  },
+  {
+    "name": "postpone",
+    "trans": [
+      "推迟"
+    ],
+    "usphone": "po'spon",
+    "ukphone": "pəʊs(t)'pəʊn; pə'spəʊn",
+    "sentences": [
+      {
+        "english": "The match had to be postponed until next week.",
+        "chinese": "比赛不得不推迟到下周举行。"
+      },
+      {
+        "english": "His trial has been postponed indefinitely (= no one knows when it will happen ) .",
+        "chinese": "对他的审判被无限期推迟了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "延迟，推迟，延缓",
+        "english": "to change the date or time of a planned event or action to a later one"
+      }
+    ]
+  },
+  {
+    "name": "woodland",
+    "trans": [
+      "林地",
+      "森林"
+    ]
+  },
+  {
+    "name": "cave",
+    "trans": [
+      "山洞"
+    ],
+    "usphone": "kev",
+    "ukphone": "keɪv",
+    "sentences": [
+      {
+        "english": "the entrance to a cave",
+        "chinese": "洞穴的入口"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "使凹陷，使塌落；在…挖洞穴",
+        "english": "to hollow out "
+      },
+      {
+        "pos": "n",
+        "chinese": "洞穴，窑洞",
+        "english": "a large natural hole in the side of a cliff or hill, or under the ground"
+      }
+    ]
+  },
+  {
+    "name": "order",
+    "trans": [
+      "订购",
+      "秩序",
+      "命令"
+    ],
+    "usphone": "'ɔrdɚ",
+    "ukphone": "'ɔːdə",
+    "sentences": [
+      {
+        "english": "There seemed to be no logical order to the sections.",
+        "chinese": "这几部分似乎没有逻辑顺序。"
+      },
+      {
+        "english": "Let’s have some order in here.",
+        "chinese": "我们把这里整理一下吧。"
+      },
+      {
+        "english": "The court ordered his release from prison.",
+        "chinese": "法院下令放他出狱。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "次序；整齐",
+        "english": "the way that things or events are arranged in relation to each other, so that one thing is first, another thing is second etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "命令",
+        "english": "to tell someone that they must do something, especially using your official power or authority"
+      }
+    ]
+  },
+  {
+    "name": "lawyer",
+    "trans": [
+      "律师"
+    ],
+    "usphone": "'lɔjɚ",
+    "ukphone": "'lɔːjə; 'lɒɪə",
+    "sentences": [
+      {
+        "english": "Prosecution and defence lawyers are expected to deliver closing arguments next week.",
+        "chinese": "原告律师和被告律师下周将要作终结辩论。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "律师；法学家",
+        "english": "someone whose job is to advise people about laws, write formal agreements, or represent people in court"
+      }
+    ]
+  },
+  {
+    "name": "acid",
+    "trans": [
+      "酸的"
+    ],
+    "usphone": "'æsɪd",
+    "ukphone": "'æsɪd",
+    "sentences": [
+      {
+        "english": "sulphuric acid",
+        "chinese": "硫酸"
+      },
+      {
+        "english": "a juicy apple with a slightly acid flavour",
+        "chinese": "一个多汁、略带酸味的苹果"
+      },
+      {
+        "english": "I was expecting another of his acid remarks, but he remained silent.",
+        "chinese": "我等着他再说一句刻薄的话，但他不吭声了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "酸,酸性物质",
+        "english": "a chemical substance that has a  pH  of less than 7. Strong acids can burn holes in material or damage your skin"
+      },
+      {
+        "pos": "adj",
+        "chinese": "酸的,酸味的；尖刻的",
+        "english": "having a sharp sour taste"
+      }
+    ]
+  },
+  {
+    "name": "beat",
+    "trans": [
+      "（心脏）跳动"
+    ],
+    "usphone": "bit",
+    "ukphone": "biːt",
+    "sentences": [
+      {
+        "english": "Somebody was beating at the door.",
+        "chinese": "有人在打门。"
+      },
+      {
+        "english": "Brazil were beaten 2–1.",
+        "chinese": "巴西队以1比2告负。"
+      },
+      {
+        "english": "Labour easily beat the Conservatives in the last election.",
+        "chinese": "工党在上一届选举中轻松击败保守党。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "打，敲；打败",
+        "english": "to hit sb/sth many times, usually very hard"
+      }
+    ]
+  },
+  {
+    "name": "fitness",
+    "trans": [
+      "健康"
+    ],
+    "usphone": "ˈfɪtnɪs",
+    "ukphone": "'fɪtnəs",
+    "sentences": [
+      {
+        "english": "He questioned McNeil’s fitness for high office.",
+        "chinese": "他质疑麦克尼尔是否适合身居高位。"
+      },
+      {
+        "english": "Running marathons requires a high level of physical fitness.",
+        "chinese": "跑马拉松需要身体十分强健。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "适当，恰当；健康",
+        "english": "the degree to which someone or something is suitable or good enough for a particular situation or purpose"
+      }
+    ]
+  },
+  {
+    "name": "necessity",
+    "trans": [
+      "必需品"
+    ],
+    "usphone": "nə'sɛsəti",
+    "ukphone": "nəˈsesəti",
+    "sentences": [
+      {
+        "english": "I’m afraid it’s become a matter of economic necessity.",
+        "chinese": "恐怕这已成了一个经济需求的问题。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "必须，必要性",
+        "english": "when something is necessary"
+      }
+    ]
+  },
+  {
+    "name": "church",
+    "trans": [
+      "教堂"
+    ],
+    "usphone": "tʃɝtʃ",
+    "ukphone": "tʃɜːtʃ",
+    "sentences": [
+      {
+        "english": "a short church service",
+        "chinese": "简短的教堂礼拜仪式"
+      },
+      {
+        "english": "church bells",
+        "chinese": "教堂的钟"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "教堂；礼拜；教派",
+        "english": "a building where Christians go to worship"
+      },
+      {
+        "pos": "adj",
+        "chinese": "教会的；礼拜的",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "领…到教堂接受宗教仪式",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "flood",
+    "trans": [
+      "洪水"
+    ],
+    "usphone": "flʌd",
+    "ukphone": "flʌd",
+    "sentences": [
+      {
+        "english": "The village was cut off by floods.",
+        "chinese": "那个村子因洪水而与外界中断了联系。"
+      },
+      {
+        "english": "the worst floods for over fifty years",
+        "chinese": "五十多年来最严重的水灾"
+      },
+      {
+        "english": "Towns and cities all over the country have been flooded.",
+        "chinese": "全国各地的城镇都被淹没了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "洪水",
+        "english": "a very large amount of water that covers an area that is usually dry"
+      },
+      {
+        "pos": "v",
+        "chinese": "淹没",
+        "english": "to cover a place with water, or to become covered with water"
+      }
+    ]
+  },
+  {
+    "name": "publication",
+    "trans": [
+      "出版"
+    ],
+    "usphone": ",pʌblɪ'keʃən",
+    "ukphone": ",pʌblɪ'keɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "The guide is being translated into several languages for publication near Christmas.",
+        "chinese": "这本指南正被翻译成好几种语言，准备在圣诞节前后出版。"
+      },
+      {
+        "english": "a delay in the publication of the exam results",
+        "chinese": "考试成绩的延期公布"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "出版；出版物；公布",
+        "english": "the act of printing a book, a magazine, etc. and making it available to the public; a book, a magazine, etc. that has been published"
+      }
+    ]
+  },
+  {
+    "name": "critical",
+    "trans": [
+      "批评的",
+      "关键的"
+    ],
+    "usphone": "'krɪtɪkl",
+    "ukphone": "ˈkrɪtɪkl",
+    "sentences": [
+      {
+        "english": "He made some highly critical remarks.",
+        "chinese": "他发表了一些严厉的批判性言论。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "批评的，爱挑剔的",
+        "english": "if you are critical, you criticize someone or something"
+      }
+    ]
+  },
+  {
+    "name": "behavior",
+    "trans": [
+      "行为"
+    ],
+    "usphone": "bɪ'hevjɚ",
+    "ukphone": "bɪ'heɪvjə",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 行为， 举止， 表现",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "vote",
+    "trans": [
+      "投票"
+    ],
+    "usphone": "vot; voʊt",
+    "ukphone": "vəʊt",
+    "sentences": [
+      {
+        "english": "A vote for us is not a wasted vote.",
+        "chinese": "投我们的票是不会白投的。"
+      },
+      {
+        "english": "The proposal was rejected by 19 votes to 7.",
+        "chinese": "那项提议以19票对7票被否决。"
+      },
+      {
+        "english": "policies designed to win votes in the South",
+        "chinese": "旨在赢取南方选票的各项政策"
+      },
+      {
+        "english": "It’s the club secretary that counts the votes.",
+        "chinese": "俱乐部干事负责清点选票。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "投票，选举；选票；得票数",
+        "english": "an act of voting in an elec­tion or meeting, or the choice that you make when you vote"
+      },
+      {
+        "pos": "v",
+        "chinese": "提议，使投票；投票决定；公认",
+        "english": "to show which person or party you want, or whether you support a plan, by marking a piece of paper, raising your hand etc"
+      }
+    ]
+  },
+  {
+    "name": "session",
+    "trans": [
+      "会议",
+      "学期"
+    ],
+    "usphone": "'sɛʃən",
+    "ukphone": "ˈseʃn",
+    "sentences": [
+      {
+        "english": "Board members met in closed session (= with nobody else present ) .",
+        "chinese": "委员会成员举行了闭门会议。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "会议，学年",
+        "english": "a formal meeting or group of meetings, especially of a law court or parliament"
+      }
+    ]
+  },
+  {
+    "name": "crop",
+    "trans": [
+      "农作物"
+    ],
+    "usphone": "krɑp",
+    "ukphone": "krɒp",
+    "sentences": [
+      {
+        "english": "The main crops were oats and barley.",
+        "chinese": "主要作物是燕麦和大麦。"
+      },
+      {
+        "english": "crops grown for market",
+        "chinese": "为供应市场而种植的作物"
+      },
+      {
+        "english": "Fruit growers are gathering in a bumper crop (= a very large amount of something produced in season ) .",
+        "chinese": "果农正在采摘丰收的果实。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "农作物，庄稼；一熟：一季的收成",
+        "english": "a plant such as wheat, rice, or fruit that is grown by farmers and used as food"
+      }
+    ]
+  },
+  {
+    "name": "technique",
+    "trans": [
+      "技巧"
+    ],
+    "usphone": "tɛk'nik",
+    "ukphone": "tek'ni:k",
+    "sentences": [
+      {
+        "english": "In mathematics, we use many techniques of problem-solving.",
+        "chinese": "在数学中，我们会使用多种方法解题。"
+      },
+      {
+        "english": "He’s a great player, with brilliant technique.",
+        "chinese": "他是个伟大的球员，球技十分精湛。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "技巧，手艺；技术，技能",
+        "english": "a special way of doing something"
+      }
+    ]
+  },
+  {
+    "name": "entrant",
+    "trans": [
+      "参与者"
+    ],
+    "usphone": "'ɛntrənt",
+    "ukphone": "'entr(ə)nt",
+    "sentences": [
+      {
+        "english": "All items entered for the competition must be the entrant's own work.",
+        "chinese": "所有参赛作品必须是参赛者自己的作品。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "进入者；新会员；参加竞赛者；新工作者",
+        "english": "someone who takes part in a competition"
+      }
+    ]
+  },
+  {
+    "name": "overload",
+    "trans": [
+      "使超载",
+      "超负荷"
+    ],
+    "usphone": ",ovɚ'lod",
+    "ukphone": "ˌəʊvə'ləʊd",
+    "sentences": [
+      {
+        "english": "57 percent complained of work overload.",
+        "chinese": "57%的人抱怨工作负担过重。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "负担太重",
+        "english": "too much of sth"
+      }
+    ]
+  },
+  {
+    "name": "council",
+    "trans": [
+      "委员会"
+    ],
+    "usphone": "'kaʊnsl",
+    "ukphone": "'kaʊnsl",
+    "sentences": [
+      {
+        "english": "the council for civil liberties",
+        "chinese": "公民自由委员会"
+      },
+      {
+        "english": "the UN Security Council",
+        "chinese": "联合国安全理事会"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "议会",
+        "english": "a group of people that are chosen to make rules, laws, or decisions, or to give advice"
+      }
+    ]
+  },
+  {
+    "name": "chairman",
+    "trans": [
+      "主席"
+    ],
+    "usphone": "'tʃɛrmən",
+    "ukphone": "'tʃeəmən",
+    "sentences": [
+      {
+        "english": "deputy/vice chairman Barrett serves as vice chairman.",
+        "chinese": "巴雷特担任副主席一职。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "主席；议长，会长",
+        "english": "someone, especially a man, who is in charge of a meeting or directs the work of a committee or an organization"
+      }
+    ]
+  },
+  {
+    "name": "railway",
+    "trans": [
+      "铁路"
+    ],
+    "usphone": "'relwe",
+    "ukphone": "'reɪlweɪ",
+    "sentences": [
+      {
+        "english": "a railway company",
+        "chinese": "铁路公司"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "（英）铁路；轨道；铁道部门",
+        "english": "a system of tracks along which trains run, or a system of trains"
+      },
+      {
+        "pos": "vi",
+        "chinese": "乘火车旅行",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "contract",
+    "trans": [
+      "合同"
+    ],
+    "usphone": "'kɑntrækt",
+    "ukphone": "'kɔntrækt",
+    "sentences": [
+      {
+        "english": "Employees who refuse to relocate are in breach of contract (= have done something not allowed by their contracts ) .",
+        "chinese": "员工拒绝调动岗位是违反合约的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "合同",
+        "english": "an official agreement between two or more people, stating what each will do"
+      }
+    ]
+  },
+  {
+    "name": "rare",
+    "trans": [
+      "稀少的"
+    ],
+    "usphone": "rɛr",
+    "ukphone": "reə(r)",
+    "sentences": [
+      {
+        "english": "This species of plant is becoming increasingly rare.",
+        "chinese": "这种植物越来越罕见。"
+      },
+      {
+        "english": "I only saw Helen on the rare occasions when I went into her shop.",
+        "chinese": "我只有偶尔去海伦店里时才会见到她。"
+      },
+      {
+        "english": "It is very rare for her to miss a day at school.",
+        "chinese": "她很少有哪一天不上学的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "罕有的，少见的",
+        "english": "not seen or found very often, or not happening very often"
+      }
+    ]
+  },
+  {
+    "name": "common room",
+    "trans": [
+      "公共休息室"
+    ]
+  },
+  {
+    "name": "enquiry",
+    "trans": [
+      "咨询"
+    ],
+    "usphone": "ɛnˈkwaɪri, ˈɛnkwəri",
+    "ukphone": "ɪn'kwaɪəri",
+    "sentences": [
+      {
+        "english": "We are pleased to receive your enquiry.",
+        "chinese": "我们很高兴收到您的询问函。"
+      },
+      {
+        "english": "She has taken my enquiry as a personal affront.",
+        "chinese": "她将我的询问当成了人身侮辱。"
+      },
+      {
+        "english": "When fresh supplies come into the market, we can revert to your enquiry.",
+        "chinese": "等新货上市时，我们才能回头考虑你们的询盘。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 询问",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "thick",
+    "trans": [
+      "厚的"
+    ],
+    "usphone": "θɪk",
+    "ukphone": "θɪk",
+    "sentences": [
+      {
+        "english": "a thick oak door",
+        "chinese": "一扇厚实的橡木门"
+      },
+      {
+        "english": "a thick slice of homemade bread",
+        "chinese": "一片厚厚的自制面包"
+      },
+      {
+        "english": "He was wearing thick glasses.",
+        "chinese": "他戴着厚厚的眼镜。"
+      },
+      {
+        "english": "short thick fingers",
+        "chinese": "短粗的手指"
+      },
+      {
+        "english": "thick wool socks (= socks that are heavy and warm )",
+        "chinese": "厚厚的羊毛袜子"
+      },
+      {
+        "english": "If you want a thicker blanket, there are more here in the closet.",
+        "chinese": "如果你想要更厚的毯子，这个柜子里还有。"
+      },
+      {
+        "english": "The meat is done when the thickest part turns from pink to white.",
+        "chinese": "肉最厚的部分从粉红色变成白色，就说明熟了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "厚的,粗的",
+        "english": "if something is thick, there is a large distance or a larger distance than usual between its two opposite surfaces or sides"
+      }
+    ]
+  },
+  {
+    "name": "liquid",
+    "trans": [
+      "液体"
+    ],
+    "usphone": "'lɪkwɪd",
+    "ukphone": "'lɪkwɪd",
+    "sentences": [
+      {
+        "english": "Add a little more liquid to the sauce.",
+        "chinese": "在酱汁中再加一点水。"
+      },
+      {
+        "english": "Children take antibiotics in liquid form.",
+        "chinese": "儿童服用液态抗生素。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "液体",
+        "english": "a substance that is not a solid or a gas, for example water or milk"
+      },
+      {
+        "pos": "adj",
+        "chinese": "液体的",
+        "english": "in the form of a liquid instead of a gas or solid"
+      }
+    ]
+  },
+  {
+    "name": "dye",
+    "trans": [
+      "染"
+    ],
+    "usphone": "daɪ",
+    "ukphone": "daɪ",
+    "sentences": [
+      {
+        "english": "The women prepared, spun, and dyed the wool.",
+        "chinese": "妇女们将羊毛预备、纺线并染色。"
+      },
+      {
+        "english": "hair dye",
+        "chinese": "染发剂"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "染",
+        "english": "to give something a different colour using a dye"
+      },
+      {
+        "pos": "n",
+        "chinese": "染料；染色",
+        "english": "a substance you use to change the colour of your clothes, hair etc"
+      }
+    ]
+  },
+  {
+    "name": "rat",
+    "trans": [
+      "老鼠"
+    ],
+    "usphone": "ræt",
+    "ukphone": "ræt",
+    "sentences": [
+      {
+        "english": "This was demonstrated in a laboratory experiment with rats.",
+        "chinese": "这点通过在实验室中用老鼠做试验得到证明。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "老鼠，耗子",
+        "english": "an animal that looks like a large mouse with a long tail"
+      }
+    ]
+  },
+  {
+    "name": "measure",
+    "trans": [
+      "测量"
+    ],
+    "usphone": "'mɛʒɚ",
+    "ukphone": "ˈmeʒə(r)",
+    "sentences": [
+      {
+        "english": "New safety measures were being demanded after last night’s horrific train crash.",
+        "chinese": "昨晚发生严重的火车相撞事故后，民众要求制定新的安全措施。"
+      },
+      {
+        "english": "The new bridge was erected as a temporary measure to replace the one which was destroyed by floods.",
+        "chinese": "建这座新桥是为了临时代替被洪水毁坏的那座桥。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "措施",
+        "english": "an action, especially an official one, that is intended to deal with a particular problem"
+      }
+    ]
+  }
 ]

@@ -1,1172 +1,3746 @@
 [
-    {
-        "name": "int",
-        "trans": [
-            "n. [计算机] 整型变量；C++ 中的基本数据类型，用于表示整数"
-        ]
-    },
-    {
-        "name": "for",
-        "trans": [
-            "n. [计算机] 循环控制结构，用于多次执行代码块"
-        ]
-    },
-    {
-        "name": "return",
-        "trans": [
-            "vt. [计算机] 返回，函数执行完毕后返回一个值"
-        ]
-    },
-    {
-        "name": "const",
-        "trans": [
-            "adj. [计算机] 常量修饰符，用于声明不可修改的变量"
-        ]
-    },
-    {
-        "name": "std",
-        "trans": [
-            "n. [计算机] 标准命名空间，C++ 中标准库的命名空间"
-        ]
-    },
-    {
-        "name": "void",
-        "trans": [
-            "n. [计算机] 空类型，表示函数没有返回值"
-        ]
-    },
-    {
-        "name": "cur",
-        "trans": [
-            "n. [计算机] 当前，常用于指代当前元素或变量"
-        ]
-    },
-    {
-        "name": "include",
-        "trans": [
-            "n. [计算机] 头文件包含指令，用于引用外部文件"
-        ]
-    },
-    {
-        "name": "vector",
-        "trans": [
-            "n. [计算机] 动态数组容器，C++ 标准库中的数据结构"
-        ]
-    },
-    {
-        "name": "else",
-        "trans": [
-            "conj. [计算机] 条件控制结构中的分支语句"
-        ]
-    },
-    {
-        "name": "size",
-        "trans": [
-            "n. [计算机] 大小，常用于数组、向量等数据结构的长度或容量"
-        ]
-    },
-    {
-        "name": "root",
-        "trans": [
-            "n. [计算机] 树形结构的根节点"
-        ]
-    },
-    {
-        "name": "while",
-        "trans": [
-            "n. [计算机] 循环结构，用于在条件为真时重复执行代码块"
-        ]
-    },
-    {
-        "name": "val",
-        "trans": [
-            "n. [计算机] 值，常用于表示变量的内容"
-        ]
-    },
-    {
-        "name": "ans",
-        "trans": [
-            "n. [计算机] 答案，通常用于表示计算结果"
-        ]
-    },
-    {
-        "name": "cnt",
-        "trans": [
-            "n. [计算机] 计数器，常用于循环或统计次数"
-        ]
-    },
-    {
-        "name": "long",
-        "trans": [
-            "adj. [计算机] C++ 中的基本数据类型，用于表示长整型"
-        ]
-    },
-    {
-        "name": "Node",
-        "trans": [
-            "n. [计算机] 节点，常用于树或链表数据结构"
-        ]
-    },
-    {
-        "name": "mid",
-        "trans": [
-            "n. [计算机] 中间值，常用于二分查找等算法"
-        ]
-    },
-    {
-        "name": "res",
-        "trans": [
-            "n. [计算机] 结果，通常用于存储运算结果"
-        ]
-    },
-    {
-        "name": "code",
-        "trans": [
-            "n. [计算机] 代码，指编写的程序或脚本"
-        ]
-    },
-    {
-        "name": "cout",
-        "trans": [
-            "n. [计算机] 输出流对象，C++ 标准库中的输出流，用于打印信息"
-        ]
-    },
-    {
-        "name": "bool",
-        "trans": [
-            "n. [计算机] 布尔型变量，表示真（true）或假（false）"
-        ]
-    },
-    {
-        "name": "len",
-        "trans": [
-            "n. [计算机] 长度，通常用于表示字符串、数组等的长度"
-        ]
-    },
-    {
-        "name": "docs",
-        "trans": [
-            "n. [计算机] 文档，通常用于存储或描述项目信息"
-        ]
-    },
-    {
-        "name": "cpp",
-        "trans": [
-            "n. [计算机] C++ 文件扩展名，用于保存 C++ 源代码"
-        ]
-    },
-    {
-        "name": "mod",
-        "trans": [
-            "n. [计算机] 取模运算，通常用于求余数"
-        ]
-    },
-    {
-        "name": "key",
-        "trans": [
-            "n. [计算机] 键，常用于字典或键值对结构"
-        ]
-    },
-    {
-        "name": "nullptr",
-        "trans": [
-            "n. [计算机] 空指针，用于表示不指向任何对象的指针"
-        ]
-    },
-    {
-        "name": "main",
-        "trans": [
-            "n. [计算机] 主函数，程序的入口点"
-        ]
-    },
-    {
-        "name": "operator",
-        "trans": [
-            "n. [计算机] 操作符，用于重载 C++ 中的运算符"
-        ]
-    },
-    {
-        "name": "sum",
-        "trans": [
-            "n. [计算机] 和，通常用于累加结果"
-        ]
-    },
-    {
-        "name": "struct",
-        "trans": [
-            "n. [计算机] 结构体，C++ 中用于定义复合数据类型"
-        ]
-    },
-    {
-        "name": "auto",
-        "trans": [
-            "n. [计算机] 自动类型推导关键字，C++11 引入的用于自动推断变量类型"
-        ]
-    },
-    {
-        "name": "node",
-        "trans": [
-            "n. [计算机] 节点，通常用于树形结构或链表中"
-        ]
-    },
-    {
-        "name": "double",
-        "trans": [
-            "n. [计算机] C++ 中的浮点型数据类型，用于表示双精度浮点数"
-        ]
-    },
-    {
-        "name": "push",
-        "trans": [
-            "n. [计算机] 入栈操作，通常用于栈数据结构"
-        ]
-    },
-    {
-        "name": "scanf",
-        "trans": [
-            "n. [计算机] 输入函数，C语言中的标准输入函数"
-        ]
-    },
-    {
-        "name": "printf",
-        "trans": [
-            "n. [计算机] 输出函数，C语言中的标准输出函数"
-        ]
-    },
-    {
-        "name": "break",
-        "trans": [
-            "n. [计算机] 跳出循环或控制结构的语句"
-        ]
-    },
-    {
-        "name": "top",
-        "trans": [
-            "n. [计算机] 栈顶元素，通常用于栈数据结构的操作"
-        ]
-    },
-    {
-        "name": "true",
-        "trans": [
-            "n. [计算机] 布尔值，表示逻辑真"
-        ]
-    },
-    {
-        "name": "vis",
-        "trans": [
-            "n. [计算机] 访问标记，通常用于图算法中表示某个节点是否被访问"
-        ]
-    },
-    {
-        "name": "tmp",
-        "trans": [
-            "n. [计算机] 临时变量，常用于存储临时计算结果"
-        ]
-    },
-    {
-        "name": "poly",
-        "trans": [
-            "n. [计算机] 多项式，通常用于数学计算"
-        ]
-    },
-    {
-        "name": "false",
-        "trans": [
-            "n. [计算机] 布尔值，表示逻辑假"
-        ]
-    },
-    {
-        "name": "siz",
-        "trans": [
-            "n. [计算机] 大小，类似于 size，表示数据结构的长度"
-        ]
-    },
-    {
-        "name": "dis",
-        "trans": [
-            "n. [计算机] 距离，常用于图论算法中的最短路径计算"
-        ]
-    },
-    {
-        "name": "end",
-        "trans": [
-            "n. [计算机] 结束符，C++ 中用于表示标准输出的结束"
-        ]
-    },
-    {
-        "name": "string",
-        "trans": [
-            "n. [计算机] 字符串，C++ 标准库中的字符串类"
-        ]
-    },
-    {
-        "name": "push_back",
-        "trans": [
-            "n. [计算机] 向量尾部插入元素的方法，C++ 标准库中的常用方法"
-        ]
-    },
-    {
-        "name": "first",
-        "trans": [
-            "n. [计算机] 键值对的第一个元素，常用于 pair 类型"
-        ]
-    },
-    {
-        "name": "max",
-        "trans": [
-            "n. [计算机] 最大值，常用于获取一组数中的最大值"
-        ]
-    },
-    {
-        "name": "begin",
-        "trans": [
-            "n. [计算机] 容器的起始迭代器，常用于 C++ 容器类"
-        ]
-    },
-    {
-        "name": "char",
-        "trans": [
-            "n. [计算机] 字符型数据类型，表示单个字符"
-        ]
-    },
-    {
-        "name": "using",
-        "trans": [
-            "n. [计算机] 声明特定命名空间的关键字"
-        ]
-    },
-    {
-        "name": "head",
-        "trans": [
-            "n. [计算机] 链表或树的头节点"
-        ]
-    },
-    {
-        "name": "endl",
-        "trans": [
-            "n. [计算机] 行结束符，C++ 输出流中的换行符"
-        ]
-    },
-    {
-        "name": "data",
-        "trans": [
-            "n. [计算机] 数据，常用于存储某种信息或数组的底层存储"
-        ]
-    },
-    {
-        "name": "swap",
-        "trans": [
-            "n. [计算机] 交换两个变量的值"
-        ]
-    },
-    {
-        "name": "dfs",
-        "trans": [
-            "n. [计算机] 深度优先搜索算法，用于图的遍历"
-        ]
-    },
-    {
-        "name": "merge",
-        "trans": [
-            "n. [计算机] 合并操作，常用于归并排序或合并数据结构"
-        ]
-    },
-    {
-        "name": "update",
-        "trans": [
-            "n. [计算机] 更新操作，常用于修改数据或结构"
-        ]
-    },
-    {
-        "name": "second",
-        "trans": [
-            "n. [计算机] 键值对的第二个元素，常用于 pair 类型"
-        ]
-    },
-    {
-        "name": "sta",
-        "trans": [
-            "n. [计算机] 栈，通常表示堆栈结构"
-        ]
-    },
-    {
-        "name": "add",
-        "trans": [
-            "n. [计算机] 加法运算或添加元素"
-        ]
-    },
-    {
-        "name": "class",
-        "trans": [
-            "n. [计算机] 类，面向对象编程中的基本概念"
-        ]
-    },
-    {
-        "name": "tot",
-        "trans": [
-            "n. [计算机] 总数，常用于累计某个值"
-        ]
-    },
-    {
-        "name": "namespace",
-        "trans": [
-            "n. [计算机] 命名空间，C++ 中用于避免名称冲突"
-        ]
-    },
-    {
-        "name": "sizeof",
-        "trans": [
-            "n. [计算机] 用于获取类型或对象的大小"
-        ]
-    },
-    {
-        "name": "edges",
-        "trans": [
-            "n. [计算机] 图中边的集合，常用于图算法"
-        ]
-    },
-    {
-        "name": "size_t",
-        "trans": [
-            "n. [计算机] 无符号整型，用于表示对象的大小"
-        ]
-    },
-    {
-        "name": "temp",
-        "trans": [
-            "n. [计算机] 临时变量，用于存储中间结果"
-        ]
-    },
-    {
-        "name": "parent",
-        "trans": [
-            "n. [计算机] 父节点，常用于树形结构"
-        ]
-    },
-    {
-        "name": "Key",
-        "trans": [
-            "n. [计算机] 键，常用于表示键值对中的键"
-        ]
-    },
-    {
-        "name": "next",
-        "trans": [
-            "n. [计算机] 指向下一个元素的指针，常用于链表"
-        ]
-    },
-    {
-        "name": "cin",
-        "trans": [
-            "n. [计算机] C++ 中的标准输入流，用于读取输入"
-        ]
-    },
-    {
-        "name": "define",
-        "trans": [
-            "n. [计算机] 预处理指令，用于定义宏"
-        ]
-    },
-    {
-        "name": "now",
-        "trans": [
-            "n. [计算机] 当前时间或状态"
-        ]
-    },
-    {
-        "name": "arr",
-        "trans": [
-            "n. [计算机] 数组，存储多个元素的容器"
-        ]
-    },
-    {
-        "name": "clear",
-        "trans": [
-            "n. [计算机] 清空操作，常用于清空容器中的所有元素"
-        ]
-    },
-    {
-        "name": "MAXN",
-        "trans": [
-            "n. [计算机] 表示数组或数据结构的最大长度"
-        ]
-    },
-    {
-        "name": "iostream",
-        "trans": [
-            "n. [计算机] C++ 标准输入输出流库的头文件"
-        ]
-    },
-    {
-        "name": "this",
-        "trans": [
-            "n. [计算机] 当前对象的指针"
-        ]
-    },
-    {
-        "name": "Point",
-        "trans": [
-            "n. [计算机] 点，通常用于几何算法中表示二维或三维空间的点"
-        ]
-    },
-    {
-        "name": "dep",
-        "trans": [
-            "n. [计算机] 深度，常用于树形结构的深度表示"
-        ]
-    },
-    {
-        "name": "resize",
-        "trans": [
-            "n. [计算机] 调整容器大小，常用于动态数组或向量"
-        ]
-    },
-    {
-        "name": "find",
-        "trans": [
-            "n. [计算机] 查找操作，常用于在容器中查找元素"
-        ]
-    },
-    {
-        "name": "insert",
-        "trans": [
-            "n. [计算机] 插入操作，常用于在容器中插入元素"
-        ]
-    },
-    {
-        "name": "nxt",
-        "trans": [
-            "n. [计算机] 下一项，常用于链表或循环"
-        ]
-    },
-    {
-        "name": "graph",
-        "trans": [
-            "n. [计算机] 图形结构，常用于表示点和边的集合"
-        ]
-    },
-    {
-        "name": "memset",
-        "trans": [
-            "n. [计算机] 内存设置函数，用于初始化数组或块内存"
-        ]
-    },
-    {
-        "name": "tree",
-        "trans": [
-            "n. [计算机] 树形结构，常用于层级数据表示"
-        ]
-    },
-    {
-        "name": "pop",
-        "trans": [
-            "n. [计算机] 出栈操作，常用于栈数据结构中"
-        ]
-    },
-    {
-        "name": "pos",
-        "trans": [
-            "n. [计算机] 位置，常用于表示数组或字符串中的索引"
-        ]
-    },
-    {
-        "name": "query",
-        "trans": [
-            "n. [计算机] 查询操作，常用于检索数据"
-        ]
-    },
-    {
-        "name": "min",
-        "trans": [
-            "n. [计算机] 最小值，常用于获取一组数中的最小值"
-        ]
-    },
-    {
-        "name": "ret",
-        "trans": [
-            "n. [计算机] 返回值，通常用于函数的返回结果"
-        ]
-    },
-    {
-        "name": "son",
-        "trans": [
-            "n. [计算机] 子节点，常用于树形结构中"
-        ]
-    },
-    {
-        "name": "splay",
-        "trans": [
-            "n. [计算机] 伸展树，一种自平衡二叉搜索树"
-        ]
-    },
-    {
-        "name": "empty",
-        "trans": [
-            "n. [计算机] 检查容器是否为空的操作"
-        ]
-    },
-    {
-        "name": "template",
-        "trans": [
-            "n. [计算机] 模板，C++ 中的泛型编程工具"
-        ]
-    },
-    {
-        "name": "state",
-        "trans": [
-            "n. [计算机] 状态，常用于表示程序或系统的运行状态"
-        ]
-    },
-    {
-        "name": "maintain",
-        "trans": [
-            "n. [计算机] 维护，常用于维持数据结构的性质"
-        ]
-    },
-    {
-        "name": "cstdio",
-        "trans": [
-            "n. [计算机] C 标准 I/O 库头文件"
-        ]
-    },
-    {
-        "name": "continue",
-        "trans": [
-            "n. [计算机] 控制结构中的语句，跳过当前循环的剩余部分"
-        ]
-    },
-    {
-        "name": "is_prime",
-        "trans": [
-            "n. [计算机] 判断某个数是否为素数的函数"
-        ]
-    },
-    {
-        "name": "read",
-        "trans": [
-            "n. [计算机] 读取操作，常用于从文件或输入流中读取数据"
-        ]
-    },
-    {
-        "name": "flow",
-        "trans": [
-            "n. [计算机] 流量，常用于图算法中的网络流问题"
-        ]
-    },
-    {
-        "name": "Set",
-        "trans": [
-            "n. [计算机] 集合，C++ 标准库中的集合容器"
-        ]
-    },
-    {
-        "name": "case",
-        "trans": [
-            "n. [计算机] 条件语句中的分支，用于 switch 语句中"
-        ]
-    },
-    {
-        "name": "Big",
-        "trans": [
-            "n. [计算机] 大数，常用于处理超出基本类型范围的大整数"
-        ]
-    },
-    {
-        "name": "split",
-        "trans": [
-            "n. [计算机] 分割操作，常用于字符串或数组的拆分"
-        ]
-    },
-    {
-        "name": "typename",
-        "trans": [
-            "n. [计算机] 用于模板参数中的类型声明"
-        ]
-    },
-    {
-        "name": "left",
-        "trans": [
-            "n. [计算机] 左子节点，常用于树结构中"
-        ]
-    },
-    {
-        "name": "low",
-        "trans": [
-            "n. [计算机] 低位，常用于表示二进制数据的低位部分"
-        ]
-    },
-    {
-        "name": "dist",
-        "trans": [
-            "n. [计算机] 距离，常用于图算法中的路径长度计算"
-        ]
-    },
-    {
-        "name": "cmp",
-        "trans": [
-            "n. [计算机] 比较函数，常用于排序算法中的自定义比较"
-        ]
-    },
-    {
-        "name": "argv",
-        "trans": [
-            "n. [计算机] 命令行参数数组"
-        ]
-    },
-    {
-        "name": "num",
-        "trans": [
-            "n. [计算机] 数字，常用于表示某种计数或数值"
-        ]
-    },
-    {
-        "name": "Edge",
-        "trans": [
-            "n. [计算机] 边，常用于图结构中表示顶点之间的连接"
-        ]
-    },
-    {
-        "name": "last",
-        "trans": [
-            "n. [计算机] 最后一个元素，常用于链表或数组操作"
-        ]
-    },
-    {
-        "name": "trie",
-        "trans": [
-            "n. [计算机] 字典树，一种高效的字符串查找树"
-        ]
-    },
-    {
-        "name": "pri_j",
-        "trans": [
-            "n. [计算机] 素数表，常用于素数筛选算法"
-        ]
-    },
-    {
-        "name": "static",
-        "trans": [
-            "n. [计算机] 静态变量，常用于存储全局唯一的数据"
-        ]
-    },
-    {
-        "name": "dfn",
-        "trans": [
-            "n. [计算机] 深度优先搜索中的访问顺序"
-        ]
-    },
-    {
-        "name": "level",
-        "trans": [
-            "n. [计算机] 层级，常用于树形结构或图结构的深度表示"
-        ]
-    },
-    {
-        "name": "LEN",
-        "trans": [
-            "n. [计算机] 长度，常用于数组或字符串的长度表示"
-        ]
-    },
-    {
-        "name": "pans",
-        "trans": [
-            "n. [计算机] 上一次的答案，常用于多次查询中的结果缓存"
-        ]
-    },
-    {
-        "name": "INF",
-        "trans": [
-            "n. [计算机] 无穷大，常用于表示图中的无法到达的距离"
-        ]
-    },
-    {
-        "name": "print",
-        "trans": [
-            "n. [计算机] 打印输出，常用于显示数据"
-        ]
-    },
-    {
-        "name": "ptr",
-        "trans": [
-            "n. [计算机] 指针，存储变量的内存地址"
-        ]
-    },
-    {
-        "name": "mat",
-        "trans": [
-            "n. [计算机] 矩阵，常用于图形学或数学计算"
-        ]
-    },
-    {
-        "name": "from",
-        "trans": [
-            "n. [计算机] 起始点，常用于表示数据的来源"
-        ]
-    },
-    {
-        "name": "jans",
-        "trans": [
-            "n. [计算机] 记录当前答案的变量"
-        ]
-    },
-    {
-        "name": "sort",
-        "trans": [
-            "n. [计算机] 排序函数，常用于对数组或容器进行排序"
-        ]
-    },
-    {
-        "name": "queue",
-        "trans": [
-            "n. [计算机] 队列，一种先进先出的数据结构"
-        ]
-    },
-    {
-        "name": "pair",
-        "trans": [
-            "n. [计算机] 键值对，常用于存储两个相关联的数据"
-        ]
-    },
-    {
-        "name": "algorithm",
-        "trans": [
-            "n. [计算机] 算法，指某个特定问题的解决步骤"
-        ]
-    },
-    {
-        "name": "typedef",
-        "trans": [
-            "n. [计算机] 类型别名，用于给已有类型定义新名字"
-        ]
-    },
-    {
-        "name": "new",
-        "trans": [
-            "n. [计算机] 动态分配内存的操作"
-        ]
-    },
-    {
-        "name": "front",
-        "trans": [
-            "n. [计算机] 队列的前端元素"
-        ]
-    },
-    {
-        "name": "path",
-        "trans": [
-            "n. [计算机] 路径，常用于图中的最短路径问题"
-        ]
-    },
-    {
-        "name": "weight",
-        "trans": [
-            "n. [计算机] 权重，常用于加权图中的边"
-        ]
-    },
-    {
-        "name": "cursor",
-        "trans": [
-            "n. [计算机] 游标，常用于数据库中的记录指针"
-        ]
-    },
-    {
-        "name": "color",
-        "trans": [
-            "n. [计算机] 颜色，常用于图形学中的像素或节点标记"
-        ]
-    },
-    {
-        "name": "upd_siz",
-        "trans": [
-            "n. [计算机] 更新大小，常用于平衡树中的节点更新"
-        ]
-    },
-    {
-        "name": "count",
-        "trans": [
-            "n. [计算机] 计数器，用于记录某一操作的次数"
-        ]
-    },
-    {
-        "name": "u32",
-        "trans": [
-            "n. [计算机] 32位无符号整数"
-        ]
-    },
-    {
-        "name": "link",
-        "trans": [
-            "n. [计算机] 链接，常用于链表或其他数据结构的连接"
-        ]
-    },
-    {
-        "name": "inf",
-        "trans": [
-            "n. [计算机] 无穷大，常用于表示不可达距离"
-        ]
-    },
-    {
-        "name": "l_tr",
-        "trans": [
-            "n. [计算机] 左子树，常用于二叉树结构中"
-        ]
-    },
-    {
-        "name": "Vector",
-        "trans": [
-            "n. [计算机] 向量，C++ STL 中的动态数组"
-        ]
-    },
-    {
-        "name": "inv",
-        "trans": [
-            "n. [计算机] 逆元，常用于数学运算中的模逆"
-        ]
-    },
-    {
-        "name": "rev",
-        "trans": [
-            "n. [计算机] 反转，常用于数组或字符串的反向操作"
-        ]
-    },
-    {
-        "name": "sibling",
-        "trans": [
-            "n. [计算机] 兄弟节点，常用于树形结构"
-        ]
-    },
-    {
-        "name": "seg",
-        "trans": [
-            "n. [计算机] 线段树，一种高效的区间查询数据结构"
-        ]
-    },
-    {
-        "name": "solve",
-        "trans": [
-            "n. [计算机] 求解函数，通常用于解决某个算法问题"
-        ]
-    },
-    {
-        "name": "build",
-        "trans": [
-            "n. [计算机] 构建操作，常用于构建树或其他数据结构"
-        ]
-    },
-    {
-        "name": "delete",
-        "trans": [
-            "n. [计算机] 删除操作，常用于释放动态分配的内存"
-        ]
-    },
-    {
-        "name": "forward",
-        "trans": [
-            "n. [计算机] 前向声明，常用于提前声明类型"
-        ]
-    },
-    {
-        "name": "cap",
-        "trans": [
-            "n. [计算机] 容量，常用于存储数据结构的容量表示"
-        ]
-    },
-    {
-        "name": "stack",
-        "trans": [
-            "n. [计算机] 栈，后进先出的数据结构"
-        ]
-    },
-    {
-        "name": "FILE",
-        "trans": [
-            "n. [计算机] 文件类型，表示文件流"
-        ]
-    },
-    {
-        "name": "lst",
-        "trans": [
-            "n. [计算机] 列表，常用于链表或容器表示"
-        ]
-    },
-    {
-        "name": "idx",
-        "trans": [
-            "n. [计算机] 索引，常用于数组或字符串中的位置标记"
-        ]
-    },
-    {
-        "name": "father",
-        "trans": [
-            "n. [计算机] 父节点，常用于树形结构中"
-        ]
-    },
-    {
-        "name": "maxs",
-        "trans": [
-            "n. [计算机] 最大值，常用于保存数组或区间的最大值"
-        ]
-    },
-    {
-        "name": "start",
-        "trans": [
-            "n. [计算机] 起始点，常用于表示操作的起点"
-        ]
-    },
-    {
-        "name": "erase",
-        "trans": [
-            "n. [计算机] 擦除操作，常用于容器中的元素删除"
-        ]
-    },
-    {
-        "name": "tag",
-        "trans": [
-            "n. [计算机] 标记，常用于标记数据或节点的状态"
-        ]
-    },
-    {
-        "name": "layer",
-        "trans": [
-            "n. [计算机] 层，常用于表示图或网络中的层次结构"
-        ]
-    },
-    {
-        "name": "not_prime",
-        "trans": [
-            "n. [计算机] 非素数标记，用于素数筛选算法"
-        ]
-    },
-    {
-        "name": "index",
-        "trans": [
-            "n. [计算机] 索引，常用于查找数组或表中的元素"
-        ]
-    },
-    {
-        "name": "pre",
-        "trans": [
-            "n. [计算机] 前一个元素或节点，常用于链表或树形结构"
-        ]
-    },
-    {
-        "name": "rotate",
-        "trans": [
-            "n. [计算机] 旋转操作，常用于自平衡树的平衡调整"
-        ]
-    },
-    {
-        "name": "readInt",
-        "trans": [
-            "n. [计算机] 读取整数值的函数"
-        ]
-    },
-    {
-        "name": "child",
-        "trans": [
-            "n. [计算机] 子节点，常用于树形结构"
-        ]
-    },
-    {
-        "name": "unsigned",
-        "trans": [
-            "n. [计算机] 无符号整数类型"
-        ]
-    },
-    {
-        "name": "prime",
-        "trans": [
-            "n. [计算机] 素数，常用于素数判定或筛选算法"
-        ]
-    },
-    {
-        "name": "fopen",
-        "trans": [
-            "n. [计算机] 文件打开函数"
-        ]
-    },
-    {
-        "name": "flag",
-        "trans": [
-            "n. [计算机] 标志位，常用于标记某种状态或条件"
-        ]
-    },
-    {
-        "name": "right",
-        "trans": [
-            "n. [计算机] 右子树，常用于二叉树结构中"
-        ]
-    },
-    {
-        "name": "out",
-        "trans": [
-            "n. [计算机] 输出流，常用于打印数据或写入文件"
-        ]
-    },
-    {
-        "name": "pushdown",
-        "trans": [
-            "n. [计算机] 递归向下操作，常用于线段树的懒标记更新"
-        ]
-    },
-    {
-        "name": "makeroot",
-        "trans": [
-            "n. [计算机] 设定根节点的操作，常用于动态树结构"
-        ]
-    },
-    {
-        "name": "is_red",
-        "trans": [
-            "n. [计算机] 红黑树中红色节点的判断标记"
-        ]
-    },
-    {
-        "name": "lld",
-        "trans": [
-            "n. [计算机] 长整型数据类型"
-        ]
-    },
-    {
-        "name": "cstring",
-        "trans": [
-            "n. [计算机] C风格的字符串，通常以空字符结尾"
-        ]
-    },
-    {
-        "name": "dir",
-        "trans": [
-            "n. [计算机] 方向，常用于图中的路径查找或递归搜索"
-        ]
-    },
-    {
-        "name": "abs",
-        "trans": [
-            "n. [计算机] 绝对值函数"
-        ]
-    },
-    {
-        "name": "access",
-        "trans": [
-            "n. [计算机] 访问权限或操作"
-        ]
-    },
-    {
-        "name": "adj",
-        "trans": [
-            "n. [计算机] 邻接表，常用于存储图的顶点和边关系"
-        ]
-    },
-    {
-        "name": "make_pair",
-        "trans": [
-            "n. [计算机] 创建一对键值对"
-        ]
-    },
-    {
-        "name": "priority_queue",
-        "trans": [
-            "n. [计算机] 优先队列，一种特殊的队列数据结构"
-        ]
-    }
+  {
+    "name": "int",
+    "trans": [
+      "n. [计算机] 整型变量；C++ 中的基本数据类型，用于表示整数"
+    ]
+  },
+  {
+    "name": "for",
+    "trans": [
+      "n. [计算机] 循环控制结构，用于多次执行代码块"
+    ],
+    "usphone": "fɚ; strong form fɔr",
+    "ukphone": "fə(r); strong form fɔ:(r)",
+    "sentences": [
+      {
+        "english": "I’ve got a present for you.",
+        "chinese": "我有件礼物送给你。"
+      },
+      {
+        "english": "Someone left a message for Vicky.",
+        "chinese": "有人给维基留了言。"
+      },
+      {
+        "english": "an English course for foreign students",
+        "chinese": "为外国学生开的一门英语课程"
+      },
+      {
+        "english": "WWhat did you do that for?",
+        "chinese": "你那样做是为了什么？"
+      },
+      {
+        "english": "We could hardly see for the mist.",
+        "chinese": "由于雾气，我们几乎什么也看不见。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "给；为；因为",
+        "english": "used to say who is intended to get or use something, or where something is intended to be used"
+      }
+    ]
+  },
+  {
+    "name": "return",
+    "trans": [
+      "vt. [计算机] 返回，函数执行完毕后返回一个值"
+    ],
+    "usphone": "rɪ'tɝn",
+    "ukphone": "rɪ'tɜːn",
+    "sentences": [
+      {
+        "english": "It was forty five minutes before she returned.",
+        "chinese": "过了45分钟她才回来。"
+      },
+      {
+        "english": "Alison decided to return home.",
+        "chinese": "艾利森决定回家。"
+      },
+      {
+        "english": "He left his country, never to return.",
+        "chinese": "他离开了祖国，一去不复返。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "返回；报答",
+        "english": "to go or come back to a place where you were before"
+      },
+      {
+        "pos": "n",
+        "chinese": "返回；归还；回球",
+        "english": "the act of returning from somewhere, or your arrival back in a place"
+      },
+      {
+        "pos": "adj",
+        "chinese": "报答的；回程的；返回的",
+        "english": "used or paid for a journey from one place to another and back again"
+      }
+    ]
+  },
+  {
+    "name": "const",
+    "trans": [
+      "adj. [计算机] 常量修饰符，用于声明不可修改的变量"
+    ]
+  },
+  {
+    "name": "std",
+    "trans": [
+      "n. [计算机] 标准命名空间，C++ 中标准库的命名空间"
+    ]
+  },
+  {
+    "name": "void",
+    "trans": [
+      "n. [计算机] 空类型，表示函数没有返回值"
+    ],
+    "usphone": "vɔɪd",
+    "ukphone": "vɔɪd",
+    "sentences": [
+      {
+        "english": "Her eyes were void of all expression.",
+        "chinese": "她的眼神一片茫然。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "无效的；没有的，缺乏的",
+        "english": "a contract or official agreement that is void is not legal and has no effect"
+      },
+      {
+        "pos": "n",
+        "chinese": "空虚感，寂寞感；真空，空白",
+        "english": "a feeling of great sadness that you have when someone you love dies or when something is taken from you"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 使无效",
+        "english": "to make a contract or agreement void so that it has no legal effect"
+      }
+    ]
+  },
+  {
+    "name": "cur",
+    "trans": [
+      "n. [计算机] 当前，常用于指代当前元素或变量"
+    ]
+  },
+  {
+    "name": "include",
+    "trans": [
+      "n. [计算机] 头文件包含指令，用于引用外部文件"
+    ],
+    "usphone": "ɪn'klud",
+    "ukphone": "ɪn'kluːd",
+    "sentences": [
+      {
+        "english": "Does the price include postage?",
+        "chinese": "这个价格包含邮费吗？"
+      },
+      {
+        "english": "His job includes looking after under-21 teams.",
+        "chinese": "他的职责包括照管21岁以下球队。"
+      },
+      {
+        "english": "The curriculum includes courses in computing.",
+        "chinese": "课程内容包括计算机技术。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "包含",
+        "english": "if one thing includes another, the second thing is part of the first"
+      }
+    ]
+  },
+  {
+    "name": "vector",
+    "trans": [
+      "n. [计算机] 动态数组容器，C++ 标准库中的数据结构"
+    ],
+    "usphone": "'vɛktɚ",
+    "ukphone": "'vektə",
+    "sentences": [
+      {
+        "english": "Now, how do we get this unit vector?",
+        "chinese": "那我们怎么得到这单位矢量呢？"
+      },
+      {
+        "english": "This new tutorial will change the way you use vector graphics.",
+        "chinese": "这个新的教程将改变你使用矢量图形的方式。"
+      },
+      {
+        "english": "Multiplies every component of this vector by the same component of scale.",
+        "chinese": "由缩放的相同的组件对应乘以这个矢量的每个组件。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 矢量",
+        "english": "a quantity such as force that has a direction as well as size"
+      }
+    ]
+  },
+  {
+    "name": "else",
+    "trans": [
+      "conj. [计算机] 条件控制结构中的分支语句"
+    ],
+    "usphone": "ɛls",
+    "ukphone": "els",
+    "sentences": [
+      {
+        "english": "There’s something else I’d like to talk about as well.",
+        "chinese": "我还有其他事情要谈一谈。"
+      },
+      {
+        "english": "I’d like you to come, and anyone else who’s free.",
+        "chinese": "我想请你过来，其他人有空也可以来。"
+      },
+      {
+        "english": "He was awake now, as was everyone else.",
+        "chinese": "他现在已经醒了，其他人也都醒了。"
+      },
+      {
+        "english": "Who else was at the party?",
+        "chinese": "还有谁参加了聚会？"
+      },
+      {
+        "english": "‘Two coffees, please.’ ‘Anything else?’ ‘No, thanks.’",
+        "chinese": "“请来两杯咖啡。”“还要别的吗？”“不要了，谢谢。"
+      },
+      {
+        "english": "(= more than any other things ) she was seeking love.",
+        "chinese": "她追求爱情胜过一切。"
+      },
+      {
+        "english": "If I can't make a living at painting, at least I can teach someone else to paint.",
+        "chinese": "如果我不能以画画谋生的话，至少我能教别人画画。"
+      },
+      {
+        "english": "We had nothing else to do on those long trips.",
+        "chinese": "在那些漫长的旅途中我们别无他事可做。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "其它，另外",
+        "english": "besides or in addition to someone or something"
+      },
+      {
+        "pos": "adj",
+        "chinese": "别的",
+        "english": "You use else after words such as \"anywhere,\" \"someone,\" and \"what\" to refer in a vague way to another person, place, or thing"
+      }
+    ]
+  },
+  {
+    "name": "size",
+    "trans": [
+      "n. [计算机] 大小，常用于数组、向量等数据结构的长度或容量"
+    ],
+    "usphone": "saɪz",
+    "ukphone": "saɪz",
+    "sentences": [
+      {
+        "english": "He’s a small boy, about John’s size.",
+        "chinese": "他是个小男孩，个子和约翰差不多。"
+      },
+      {
+        "english": "Jensens’ house is about the same size as ours.",
+        "chinese": "詹森的房子和我们的差不多大。"
+      },
+      {
+        "english": "He’s quite a big dog, but he’s still not full size yet.",
+        "chinese": "这条狗体型很大，但还没有长足。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "大小；尺寸",
+        "english": "how big or small something is"
+      },
+      {
+        "pos": "adj",
+        "chinese": "一定尺寸的",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "依大小排列",
+        "english": "to sort according to size "
+      }
+    ]
+  },
+  {
+    "name": "root",
+    "trans": [
+      "n. [计算机] 树形结构的根节点"
+    ],
+    "usphone": "rut",
+    "ukphone": "ruːt",
+    "sentences": [
+      {
+        "english": "tree roots",
+        "chinese": "树根"
+      },
+      {
+        "english": "These plants produce a number of thin roots.",
+        "chinese": "这些植物会长出一些细根。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "根；根源；词根；祖先",
+        "english": "the part of a plant or tree that grows under the ground and gets water from the soil"
+      },
+      {
+        "pos": "v",
+        "chinese": "生根；根除",
+        "english": "to grow roots"
+      }
+    ]
+  },
+  {
+    "name": "while",
+    "trans": [
+      "n. [计算机] 循环结构，用于在条件为真时重复执行代码块"
+    ],
+    "usphone": "waɪl",
+    "ukphone": "wʌɪl",
+    "sentences": [
+      {
+        "english": "They arrived while we were having dinner.",
+        "chinese": "他们来时我们正在吃饭。"
+      },
+      {
+        "english": "While she was asleep, thieves broke in and stole her handbag.",
+        "chinese": "她睡着的时候，小偷闯进来偷走了她的手提包。"
+      },
+      {
+        "english": "She met Andy while working on a production of Carmen.",
+        "chinese": "排练《卡门》时，她认识了安迪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "虽然；然而；当……的时候",
+        "english": "during the time that something is happening"
+      },
+      {
+        "pos": "n",
+        "chinese": "一会儿；一段时间",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "消磨；轻松地度过",
+        "english": "to spend time in a pleasant and lazy way"
+      }
+    ]
+  },
+  {
+    "name": "val",
+    "trans": [
+      "n. [计算机] 值，常用于表示变量的内容"
+    ]
+  },
+  {
+    "name": "ans",
+    "trans": [
+      "n. [计算机] 答案，通常用于表示计算结果"
+    ]
+  },
+  {
+    "name": "cnt",
+    "trans": [
+      "n. [计算机] 计数器，常用于循环或统计次数"
+    ]
+  },
+  {
+    "name": "long",
+    "trans": [
+      "adj. [计算机] C++ 中的基本数据类型，用于表示长整型"
+    ],
+    "usphone": "lɔŋ",
+    "ukphone": "lɒŋ",
+    "sentences": [
+      {
+        "english": "He longed to see her again.",
+        "chinese": "到那里去要多长时间？"
+      },
+      {
+        "english": "She longed for the chance to speak to him in private.",
+        "chinese": "她渴望有机会和他私下交谈。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "渴望",
+        "english": "to want something very much, especially when it seems unlikely to happen soon"
+      }
+    ]
+  },
+  {
+    "name": "Node",
+    "trans": [
+      "n. [计算机] 节点，常用于树或链表数据结构"
+    ]
+  },
+  {
+    "name": "mid",
+    "trans": [
+      "n. [计算机] 中间值，常用于二分查找等算法"
+    ],
+    "usphone": "mɪd",
+    "ukphone": "mɪd",
+    "sentences": [
+      {
+        "english": "But remember to do your homework before stepping into the conference hall, or you will feel like a rudderless boat in mid-sea.",
+        "chinese": "但是要记得在走进会议大厅之前做好准备工作，否则你会感到就像在大海中间的一艘无舵的小船。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "中间的；中央的",
+        "english": "of, relating to, or denoting a vowel whose articulation lies approximately halfway between high and low, such as e in English bet "
+      },
+      {
+        "pos": "prep",
+        "chinese": "在…之中",
+        "english": "among or in the middle of"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Mid)人名；(柬)米",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "res",
+    "trans": [
+      "n. [计算机] 结果，通常用于存储运算结果"
+    ]
+  },
+  {
+    "name": "code",
+    "trans": [
+      "n. [计算机] 代码，指编写的程序或脚本"
+    ],
+    "usphone": "kod",
+    "ukphone": "kəʊd",
+    "sentences": [
+      {
+        "english": "The spy sent his message in code.",
+        "chinese": "这个间谍用密码发送情报。"
+      },
+      {
+        "english": "But we have not yet implemented this in the code.",
+        "chinese": "但我们在代码中尚未实现此功能。"
+      },
+      {
+        "english": "The hacker came smack up against the company's policy of keeping its records in code.",
+        "chinese": "这个计算机黑客突然碰壁了，因这家公司实行了用密码保存公司纪录的政策。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "代号，密码",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "cout",
+    "trans": [
+      "n. [计算机] 输出流对象，C++ 标准库中的输出流，用于打印信息"
+    ]
+  },
+  {
+    "name": "bool",
+    "trans": [
+      "n. [计算机] 布尔型变量，表示真（true）或假（false）"
+    ]
+  },
+  {
+    "name": "len",
+    "trans": [
+      "n. [计算机] 长度，通常用于表示字符串、数组等的长度"
+    ]
+  },
+  {
+    "name": "docs",
+    "trans": [
+      "n. [计算机] 文档，通常用于存储或描述项目信息"
+    ]
+  },
+  {
+    "name": "cpp",
+    "trans": [
+      "n. [计算机] C++ 文件扩展名，用于保存 C++ 源代码"
+    ]
+  },
+  {
+    "name": "mod",
+    "trans": [
+      "n. [计算机] 取模运算，通常用于求余数"
+    ]
+  },
+  {
+    "name": "key",
+    "trans": [
+      "n. [计算机] 键，常用于字典或键值对结构"
+    ],
+    "usphone": "",
+    "ukphone": "kiː",
+    "sentences": [
+      {
+        "english": "A bunch of keys hung from his belt.",
+        "chinese": "他的皮带上挂着一串钥匙。"
+      },
+      {
+        "english": "Press the ‘Escape’ key to exit.",
+        "chinese": "按退出键退出。"
+      },
+      {
+        "english": "Check your answers in the key at the back of the book.",
+        "chinese": "用书后的解答核对答案。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "钥匙；键；答案",
+        "english": "a small specially shaped piece of metal that you put into a lock and turn in order to lock or unlock a door, start a car etc"
+      }
+    ]
+  },
+  {
+    "name": "nullptr",
+    "trans": [
+      "n. [计算机] 空指针，用于表示不指向任何对象的指针"
+    ]
+  },
+  {
+    "name": "main",
+    "trans": [
+      "n. [计算机] 主函数，程序的入口点"
+    ],
+    "usphone": "",
+    "ukphone": "meɪn",
+    "sentences": [
+      {
+        "english": "The main reason for living in Spain is the weather.",
+        "chinese": "居住在西班牙的主要原因是天气。"
+      },
+      {
+        "english": "What do you consider to be the main problem?",
+        "chinese": "你认为最主要的问题是什么？"
+      },
+      {
+        "english": "Our main concern is that the children are safe.",
+        "chinese": "我们最关心的是保证孩子们的安全。"
+      },
+      {
+        "english": "a summary of the main points of the agreement",
+        "chinese": "协议要点的总结"
+      },
+      {
+        "english": "the main aim of the meeting",
+        "chinese": "会议的要旨"
+      },
+      {
+        "english": "I’ll meet you outside the main entrance.",
+        "chinese": "我在大门外等你。"
+      },
+      {
+        "english": "the main bedroom",
+        "chinese": "主卧室"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "主要的，最重要的",
+        "english": "larger or more important than all other things, ideas etc of the same kind"
+      }
+    ]
+  },
+  {
+    "name": "operator",
+    "trans": [
+      "n. [计算机] 操作符，用于重载 C++ 中的运算符"
+    ],
+    "usphone": "'ɑpəretɚ",
+    "ukphone": "'ɒpəreɪtə",
+    "sentences": [
+      {
+        "english": "Hello, operator? Could you put me through to Room 31?",
+        "chinese": "喂，接线员吗？请帮我接31号房间。"
+      },
+      {
+        "english": "computers which can be used by untrained operators",
+        "chinese": "未经训练的操作者也可使用的电脑"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "接线员；操作人员",
+        "english": "someone who works on a telephone switchboard, who you can call for help"
+      }
+    ]
+  },
+  {
+    "name": "sum",
+    "trans": [
+      "n. [计算机] 和，通常用于累加结果"
+    ],
+    "usphone": "sʌm",
+    "ukphone": "sʌm",
+    "sentences": [
+      {
+        "english": "He owes me a large sum of money .",
+        "chinese": "他欠我一大笔钱。"
+      },
+      {
+        "english": "You will have to pay the sum of the two sets of costs.",
+        "chinese": "你得支付那两笔费用的总和。"
+      },
+      {
+        "english": "I was good at sums at school.",
+        "chinese": "我上学时擅长算术。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "金额；总数；算术题",
+        "english": "an amount of money"
+      }
+    ]
+  },
+  {
+    "name": "struct",
+    "trans": [
+      "n. [计算机] 结构体，C++ 中用于定义复合数据类型"
+    ]
+  },
+  {
+    "name": "auto",
+    "trans": [
+      "n. [计算机] 自动类型推导关键字，C++11 引入的用于自动推断变量类型"
+    ],
+    "usphone": "'ɔto",
+    "ukphone": "'ɔːtəʊ",
+    "sentences": [
+      {
+        "english": "imported autos",
+        "chinese": "进口汽车"
+      },
+      {
+        "english": "the auto industry",
+        "chinese": "汽车工业"
+      },
+      {
+        "english": "auto insurance",
+        "chinese": "汽车保险"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "（口语）汽车",
+        "english": "a car"
+      }
+    ]
+  },
+  {
+    "name": "node",
+    "trans": [
+      "n. [计算机] 节点，通常用于树形结构或链表中"
+    ],
+    "usphone": "nod",
+    "ukphone": "nəʊd",
+    "sentences": [
+      {
+        "english": "Cut them off cleanly through the stem just below the node.",
+        "chinese": "从茎节下面，沿茎干把它们全剪掉。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "节点；瘤；[数] 叉点",
+        "english": "the place on the stem of a plant from which a leaf or branch grows"
+      }
+    ]
+  },
+  {
+    "name": "double",
+    "trans": [
+      "n. [计算机] C++ 中的浮点型数据类型，用于表示双精度浮点数"
+    ],
+    "usphone": "'dʌbl",
+    "ukphone": "'dʌb(ə)l",
+    "sentences": [
+      {
+        "english": "a double sink",
+        "chinese": "双水槽"
+      },
+      {
+        "english": "a double wardrobe",
+        "chinese": "双门衣柜"
+      },
+      {
+        "english": "the great double doors of the cathedral",
+        "chinese": "大教堂宏伟的双开大门"
+      },
+      {
+        "english": "Don’t park your car on double yellow lines.",
+        "chinese": "不可以在双黄线处停车。"
+      },
+      {
+        "english": "The city was enclosed by walls of double thickness.",
+        "chinese": "该城被两倍厚的墙围了起来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "双的；两倍的",
+        "english": "consisting of two parts that are similar or exactly the same"
+      }
+    ]
+  },
+  {
+    "name": "push",
+    "trans": [
+      "n. [计算机] 入栈操作，通常用于栈数据结构"
+    ],
+    "usphone": "pʊʃ",
+    "ukphone": "pʊʃ",
+    "sentences": [
+      {
+        "english": "It didn’t move, so she pushed harder.",
+        "chinese": "它一动不动，因此她加力去推。"
+      },
+      {
+        "english": "I promised to push him on the swings for as long as he wanted.",
+        "chinese": "我答应他想在秋千上荡多久我就推多久。"
+      },
+      {
+        "english": "shoppers pushing their grocery carts",
+        "chinese": "推着购物车的购物者"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "推，逼迫",
+        "english": "to make someone or something move by pressing them with your hands, arms etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "推",
+        "english": "to make someone or something move by pressing them with your hands, arms etc"
+      }
+    ]
+  },
+  {
+    "name": "scanf",
+    "trans": [
+      "n. [计算机] 输入函数，C语言中的标准输入函数"
+    ]
+  },
+  {
+    "name": "printf",
+    "trans": [
+      "n. [计算机] 输出函数，C语言中的标准输出函数"
+    ]
+  },
+  {
+    "name": "break",
+    "trans": [
+      "n. [计算机] 跳出循环或控制结构的语句"
+    ],
+    "usphone": "brek",
+    "ukphone": "breɪk",
+    "sentences": [
+      {
+        "english": "I had to break a window to get into the house.",
+        "chinese": "我只得打破一扇窗户进屋。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "打破；损坏；破坏",
+        "english": "if you break something, you make it separate into two or more pieces, for example by hitting it, dropping it, or bending it"
+      }
+    ]
+  },
+  {
+    "name": "top",
+    "trans": [
+      "n. [计算机] 栈顶元素，通常用于栈数据结构的操作"
+    ],
+    "usphone": "tɑp",
+    "ukphone": "tɒp",
+    "sentences": [
+      {
+        "english": "a low wooden table with a glass top",
+        "chinese": "玻璃桌面的矮木桌"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "顶部，顶端；上部；首席；陀螺",
+        "english": "the highest part of something"
+      },
+      {
+        "pos": "v",
+        "chinese": "高出，超越；结束；达到顶点",
+        "english": "to be higher than a particular amount"
+      },
+      {
+        "pos": "adj",
+        "chinese": "最高的，顶上的；头等的",
+        "english": "nearest to the top of something"
+      }
+    ]
+  },
+  {
+    "name": "true",
+    "trans": [
+      "n. [计算机] 布尔值，表示逻辑真"
+    ],
+    "usphone": "tru",
+    "ukphone": "truː",
+    "sentences": [
+      {
+        "english": "No, honestly, it’s a true story .",
+        "chinese": "不，真的，这是一个真实的故事。"
+      },
+      {
+        "english": "Students decide if statements are true or false .",
+        "chinese": "由学生来判断说法正确还是错误。"
+      },
+      {
+        "english": "It’s generally true to say that fewer people are needed nowadays.",
+        "chinese": "总的来说现在需要的人员少了。"
+      },
+      {
+        "english": "The results appear to hold true (= still be correct ) for other countries.",
+        "chinese": "这些结果在其他国家似乎同样正确。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "真实的；正确的",
+        "english": "based on facts and not imagined or invented"
+      },
+      {
+        "pos": "adv",
+        "chinese": "真实地；准确地",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "真实；准确",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "装准",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "vis",
+    "trans": [
+      "n. [计算机] 访问标记，通常用于图算法中表示某个节点是否被访问"
+    ]
+  },
+  {
+    "name": "tmp",
+    "trans": [
+      "n. [计算机] 临时变量，常用于存储临时计算结果"
+    ]
+  },
+  {
+    "name": "poly",
+    "trans": [
+      "n. [计算机] 多项式，通常用于数学计算"
+    ]
+  },
+  {
+    "name": "false",
+    "trans": [
+      "n. [计算机] 布尔值，表示逻辑假"
+    ],
+    "usphone": "fɔls",
+    "ukphone": "fɔːls; fɒls",
+    "sentences": [
+      {
+        "english": "I don’t want to give you any false hopes .",
+        "chinese": "我不想让你有任何虚假的希望。"
+      },
+      {
+        "english": "The statement gives us a false impression that we understand something when we do not.",
+        "chinese": "这句话使我们产生错觉，以为自己懂了，但其实并没懂。"
+      },
+      {
+        "english": "false assumptions about people of other cultures",
+        "chinese": "对来自其他文化的人的错误假设"
+      },
+      {
+        "english": "{\"GLOSS\":[\"a feeling of being safe when you are not really safe\"],\"COLLOINEXA\":[\"a false sense of security\"]}",
+        "chinese": "虚假的安全感"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "错误的；虚伪的；伪造的",
+        "english": "based on incorrect information or ideas"
+      },
+      {
+        "pos": "adv",
+        "chinese": "欺诈地",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "siz",
+    "trans": [
+      "n. [计算机] 大小，类似于 size，表示数据结构的长度"
+    ]
+  },
+  {
+    "name": "dis",
+    "trans": [
+      "n. [计算机] 距离，常用于图论算法中的最短路径计算"
+    ]
+  },
+  {
+    "name": "end",
+    "trans": [
+      "n. [计算机] 结束符，C++ 中用于表示标准输出的结束"
+    ],
+    "usphone": "ɛnd",
+    "ukphone": "end",
+    "sentences": [
+      {
+        "english": "He wore spectacles perched on the very end of his nose.",
+        "chinese": "他的眼镜架在鼻尖上。"
+      },
+      {
+        "english": "The end of the pencil snapped.",
+        "chinese": "铅笔的笔尖啪的一声断了。"
+      },
+      {
+        "english": "Jo joined the end of the line.",
+        "chinese": "乔排到了队尾。"
+      },
+      {
+        "english": "She’ll do anything to achieve her own ends.",
+        "chinese": "她为了实现自己的目标，什么都会去做。"
+      },
+      {
+        "english": "The road ends here.",
+        "chinese": "这条路到此为止。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "末端；目标",
+        "english": "the part of a place or object that is furthest from its beginning or centre"
+      },
+      {
+        "pos": "v",
+        "chinese": "结束",
+        "english": "to finish; to make sth finish"
+      }
+    ]
+  },
+  {
+    "name": "string",
+    "trans": [
+      "n. [计算机] 字符串，C++ 标准库中的字符串类"
+    ],
+    "usphone": "strɪŋ",
+    "ukphone": "strɪŋ",
+    "sentences": [
+      {
+        "english": "Her key hung on a string around her neck.",
+        "chinese": "她的钥匙穿了根绳子挂在脖子上。"
+      },
+      {
+        "english": "a ball of string",
+        "chinese": "一团细绳"
+      },
+      {
+        "english": "I need a piece of string to tie this package.",
+        "chinese": "我需要一根绳子来捆这个包裹。"
+      },
+      {
+        "english": "a string of pearls",
+        "chinese": "一串珍珠"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "线，细绳；一串",
+        "english": "a strong thread made of several threads twisted together, used for tying or fastening things"
+      }
+    ]
+  },
+  {
+    "name": "push_back",
+    "trans": [
+      "n. [计算机] 向量尾部插入元素的方法，C++ 标准库中的常用方法"
+    ]
+  },
+  {
+    "name": "first",
+    "trans": [
+      "n. [计算机] 键值对的第一个元素，常用于 pair 类型"
+    ],
+    "usphone": "fɝst",
+    "ukphone": "fɜːst",
+    "sentences": [
+      {
+        "english": "These results are firsts in the history of women’s athletics.",
+        "chinese": "这些成绩在女运动员历史上是第一次。"
+      },
+      {
+        "english": "First I had to decide what to wear.",
+        "chinese": "首先我得决定穿什么。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "num",
+        "chinese": "第一",
+        "english": "1st"
+      },
+      {
+        "pos": "adv",
+        "chinese": "最初",
+        "english": "at the beginning"
+      }
+    ]
+  },
+  {
+    "name": "max",
+    "trans": [
+      "n. [计算机] 最大值，常用于获取一组数中的最大值"
+    ]
+  },
+  {
+    "name": "begin",
+    "trans": [
+      "n. [计算机] 容器的起始迭代器，常用于 C++ 容器类"
+    ],
+    "usphone": "bɪ'ɡɪn",
+    "ukphone": "bɪ'gɪn",
+    "sentences": [
+      {
+        "english": "As everybody’s here, let’s begin.",
+        "chinese": "大家都到齐了，我们就开始吧。"
+      },
+      {
+        "english": "In the third year students begin the study of classical Chinese.",
+        "chinese": "学生在三年级开始学古代汉语。"
+      },
+      {
+        "english": "The president begins talks with the prime minister tonight.",
+        "chinese": "总统将于今晚和首相展开会谈。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "开始",
+        "english": "to start doing something"
+      },
+      {
+        "pos": "v",
+        "chinese": "开始",
+        "english": "to start doing something"
+      }
+    ]
+  },
+  {
+    "name": "char",
+    "trans": [
+      "n. [计算机] 字符型数据类型，表示单个字符"
+    ],
+    "usphone": "tʃɑr",
+    "ukphone": "tʃɑː",
+    "sentences": [
+      {
+        "english": "Roast the peppers until the skin begins to char and blister.",
+        "chinese": "把这些辣椒烤到表皮发黑起泡为止。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "烧焦",
+        "english": "to burn something so that its outside becomes black"
+      },
+      {
+        "pos": "n",
+        "chinese": "碳",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "using",
+    "trans": [
+      "n. [计算机] 声明特定命名空间的关键字"
+    ]
+  },
+  {
+    "name": "head",
+    "trans": [
+      "n. [计算机] 链表或树的头节点"
+    ],
+    "usphone": "hɛd",
+    "ukphone": "hed",
+    "sentences": [
+      {
+        "english": "He kissed the top of her head.",
+        "chinese": "他吻了一下她的头顶。"
+      },
+      {
+        "english": "Alan fell asleep as soon as he put his head on the pillow.",
+        "chinese": "艾伦头一挨枕头就睡着了。"
+      },
+      {
+        "english": "They dived head first into the water.",
+        "chinese": "他们一头跳进水中。"
+      },
+      {
+        "english": "She was dressed in black from head to foot (= over all her body ).",
+        "chinese": "她从头到脚穿了一身黑。"
+      },
+      {
+        "english": "He still has a full head of hair (= has all his hair, even though he is getting rather old ).",
+        "chinese": "他依然满头浓发。"
+      },
+      {
+        "english": "Jenny marched proudly at the head of the procession.",
+        "chinese": "珍妮自豪地走在游行队伍的前列。"
+      },
+      {
+        "english": "David was asked to head up the technical team.",
+        "chinese": "戴维被要求领导技术小组。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "头；上端",
+        "english": "the top part of your body that has your face at the front and is supported by your neck"
+      },
+      {
+        "pos": "v",
+        "chinese": "率领",
+        "english": "to be in charge of a team, government, organization etc"
+      }
+    ]
+  },
+  {
+    "name": "endl",
+    "trans": [
+      "n. [计算机] 行结束符，C++ 输出流中的换行符"
+    ]
+  },
+  {
+    "name": "data",
+    "trans": [
+      "n. [计算机] 数据，常用于存储某种信息或数组的底层存储"
+    ],
+    "usphone": "'detə",
+    "ukphone": "'deɪtə",
+    "sentences": [
+      {
+        "english": "The research involves collecting data from two random samples.",
+        "chinese": "该项研究需要从两个随机样本里收集资料。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "数据;",
+        "english": "information or facts"
+      },
+      {
+        "pos": "n",
+        "chinese": "资料",
+        "english": "information or facts"
+      }
+    ]
+  },
+  {
+    "name": "swap",
+    "trans": [
+      "n. [计算机] 交换两个变量的值"
+    ],
+    "usphone": "swɑp",
+    "ukphone": "swɒp",
+    "sentences": [
+      {
+        "english": "a fair swap",
+        "chinese": "公平交换"
+      },
+      {
+        "english": "We can do a swap if you like.",
+        "chinese": "如果你愿意我们可以交换。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "交换；交换之物",
+        "english": "a situation in which you give something to someone and get another thing in return"
+      },
+      {
+        "pos": "v",
+        "chinese": "与交换；以作交换",
+        "english": "to give something to someone and get something in return"
+      }
+    ]
+  },
+  {
+    "name": "dfs",
+    "trans": [
+      "n. [计算机] 深度优先搜索算法，用于图的遍历"
+    ]
+  },
+  {
+    "name": "merge",
+    "trans": [
+      "n. [计算机] 合并操作，常用于归并排序或合并数据结构"
+    ],
+    "usphone": "mɝdʒ",
+    "ukphone": "mɜːdʒ",
+    "sentences": [
+      {
+        "english": "The company plans to merge its subsidiaries in the US.",
+        "chinese": "该公司计划合并其在美国的几家子公司。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "合并；使合并；吞没",
+        "english": "to combine, or to join things together to form one thing"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Merge)人名；(意)梅尔杰",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "update",
+    "trans": [
+      "n. [计算机] 更新操作，常用于修改数据或结构"
+    ],
+    "usphone": ",ʌp'det",
+    "ukphone": "ˌʌp'deɪt",
+    "sentences": [
+      {
+        "english": "The files need updating.",
+        "chinese": "这些档案需要更新。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "更新；使现代化",
+        "english": "to add the most recent information to something"
+      },
+      {
+        "pos": "n",
+        "chinese": " 最新信息",
+        "english": "the most recent news or information about something"
+      }
+    ]
+  },
+  {
+    "name": "second",
+    "trans": [
+      "n. [计算机] 键值对的第二个元素，常用于 pair 类型"
+    ],
+    "usphone": "'sɛkənd",
+    "ukphone": "'sek(ə)nd",
+    "sentences": [
+      {
+        "english": "Any proposal must be seconded by two other members of the committee.",
+        "chinese": "任何提案须有委员会其他两位委员附议。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "支持",
+        "english": "to formally support a suggestion made by another person in a meeting"
+      }
+    ]
+  },
+  {
+    "name": "sta",
+    "trans": [
+      "n. [计算机] 栈，通常表示堆栈结构"
+    ]
+  },
+  {
+    "name": "add",
+    "trans": [
+      "n. [计算机] 加法运算或添加元素"
+    ],
+    "usphone": "æd",
+    "ukphone": "æd",
+    "sentences": [
+      {
+        "english": "If the mixture seems dry, add water.",
+        "chinese": "如果混合物看上去干，加点水。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "添加，附加，掺加",
+        "english": "to put something with something else or with a group of other things"
+      }
+    ]
+  },
+  {
+    "name": "class",
+    "trans": [
+      "n. [计算机] 类，面向对象编程中的基本概念"
+    ],
+    "usphone": "klæs",
+    "ukphone": "klɑːs",
+    "sentences": [
+      {
+        "english": "Gary came top of the class in English.",
+        "chinese": "加里的英文是班里顶尖的。"
+      },
+      {
+        "english": "a member of the landed class",
+        "chinese": "地主阶级的一员"
+      },
+      {
+        "english": "He’s not in the same class (= not as good ) as her at tennis.",
+        "chinese": "他的网球水平并不如她。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "班，班级；阶级；等级",
+        "english": "a group of students who are taught together"
+      }
+    ]
+  },
+  {
+    "name": "tot",
+    "trans": [
+      "n. [计算机] 总数，常用于累计某个值"
+    ]
+  },
+  {
+    "name": "namespace",
+    "trans": [
+      "n. [计算机] 命名空间，C++ 中用于避免名称冲突"
+    ]
+  },
+  {
+    "name": "sizeof",
+    "trans": [
+      "n. [计算机] 用于获取类型或对象的大小"
+    ]
+  },
+  {
+    "name": "edges",
+    "trans": [
+      "n. [计算机] 图中边的集合，常用于图算法"
+    ]
+  },
+  {
+    "name": "size_t",
+    "trans": [
+      "n. [计算机] 无符号整型，用于表示对象的大小"
+    ]
+  },
+  {
+    "name": "temp",
+    "trans": [
+      "n. [计算机] 临时变量，用于存储中间结果"
+    ],
+    "usphone": "tɛmp",
+    "ukphone": "temp",
+    "sentences": [
+      {
+        "english": "She began working for the company as a temp.",
+        "chinese": "她开始在这家公司做临时雇员。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "临时雇员",
+        "english": "an office worker who is only employed temporarily"
+      },
+      {
+        "pos": "v",
+        "chinese": "做临时工作",
+        "english": "to work as a temp"
+      },
+      {
+        "pos": "abbr",
+        "chinese": "温度（temperature）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "parent",
+    "trans": [
+      "n. [计算机] 父节点，常用于树形结构"
+    ],
+    "usphone": "'pɛrənt",
+    "ukphone": "'peər(ə)nt",
+    "sentences": [
+      {
+        "english": "Children under 14 should be accompanied by a parent.",
+        "chinese": "14 岁以下儿童须由一位家长陪同。"
+      },
+      {
+        "english": "The eggs are guarded by both parents.",
+        "chinese": "那些蛋由两只亲鸟共同守护着。"
+      },
+      {
+        "english": "Melissa’s spending the weekend at her parents’ house.",
+        "chinese": "梅利莎正在父母家度周末。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "父亲，母亲，双亲",
+        "english": "the father or mother of a person or animal"
+      }
+    ]
+  },
+  {
+    "name": "Key",
+    "trans": [
+      "n. [计算机] 键，常用于表示键值对中的键"
+    ]
+  },
+  {
+    "name": "next",
+    "trans": [
+      "n. [计算机] 指向下一个元素的指针，常用于链表"
+    ],
+    "usphone": "nɛkst",
+    "ukphone": "nekst",
+    "sentences": [
+      {
+        "english": "The next six months will be the hardest.",
+        "chinese": "接下来的六个月将是最难熬的。"
+      },
+      {
+        "english": "The man in the next chair was asleep.",
+        "chinese": "邻座的男子睡着了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "紧接的；贴近的",
+        "english": "coming straight after sb/sth in time, order or space"
+      }
+    ]
+  },
+  {
+    "name": "cin",
+    "trans": [
+      "n. [计算机] C++ 中的标准输入流，用于读取输入"
+    ]
+  },
+  {
+    "name": "define",
+    "trans": [
+      "n. [计算机] 预处理指令，用于定义宏"
+    ],
+    "usphone": "dɪ'faɪn",
+    "ukphone": "dɪ'faɪn",
+    "sentences": [
+      {
+        "english": "the ability to define clients’ needs",
+        "chinese": "确定客户需求的能力"
+      },
+      {
+        "english": "The duties of the post are difficult to define.",
+        "chinese": "这一职位的职责很难界定。"
+      },
+      {
+        "english": "Define precisely what you mean by ‘crime’.",
+        "chinese": "把你说的 “犯罪” 明确定义一下。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "确定；下定义",
+        "english": "to describe something correctly and thoroughly, and to say what standards, limits, qualities etc it has that make it different from other things"
+      }
+    ]
+  },
+  {
+    "name": "now",
+    "trans": [
+      "n. [计算机] 当前时间或状态"
+    ],
+    "usphone": "naʊ",
+    "ukphone": "naʊ",
+    "sentences": [
+      {
+        "english": "She's a widow now.",
+        "chinese": "她现在是一个寡妇。"
+      },
+      {
+        "english": "But we are now a much more fragmented society.",
+        "chinese": "但是我们现在是一个更加四分五裂的社会。"
+      },
+      {
+        "english": "If we leave now we’ll be there before dark.",
+        "chinese": "如果我们现在出发，天黑之前就能赶到那里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "现在；立刻",
+        "english": "(at) the present time"
+      }
+    ]
+  },
+  {
+    "name": "arr",
+    "trans": [
+      "n. [计算机] 数组，存储多个元素的容器"
+    ]
+  },
+  {
+    "name": "clear",
+    "trans": [
+      "n. [计算机] 清空操作，常用于清空容器中的所有元素"
+    ],
+    "usphone": "klɪr",
+    "ukphone": "klɪə",
+    "sentences": [
+      {
+        "english": "clear instructions",
+        "chinese": "明确的指示"
+      },
+      {
+        "english": "The question wasn’t very clear.",
+        "chinese": "这问题不是很清楚。"
+      },
+      {
+        "english": "It’s the clearest guide I’ve used.",
+        "chinese": "我从没用过这么清晰易懂的指南。"
+      },
+      {
+        "english": "Perhaps I tried to cover too much and didn’t make myself clear (= express myself well ) .",
+        "chinese": "可能是我涉及的内容太多，没有表达清楚。"
+      },
+      {
+        "english": "If you don’t understand, it’s best to say so and get things clear .",
+        "chinese": "如果你不明白，那就最好照直说并把事情弄清楚。"
+      },
+      {
+        "english": "If I catch you smoking again, you’re grounded. Do I make myself clear (= used when you are angry ) ?",
+        "chinese": "如果再让我发现你抽烟，我就罚你不准出门。我的话你听清楚了吗？"
+      },
+      {
+        "english": "Snowplows have been out clearing the roads.",
+        "chinese": "扫雪机已经出动，去清扫路面了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "清晰的",
+        "english": "expressed in a simple and direct way so that people understand"
+      },
+      {
+        "pos": "v",
+        "chinese": "清除",
+        "english": "to make somewhere emptier or tidier by removing things from it"
+      }
+    ]
+  },
+  {
+    "name": "MAXN",
+    "trans": [
+      "n. [计算机] 表示数组或数据结构的最大长度"
+    ]
+  },
+  {
+    "name": "iostream",
+    "trans": [
+      "n. [计算机] C++ 标准输入输出流库的头文件"
+    ]
+  },
+  {
+    "name": "this",
+    "trans": [
+      "n. [计算机] 当前对象的指针"
+    ],
+    "usphone": "ðɪs",
+    "ukphone": "ðɪs",
+    "sentences": [
+      {
+        "english": "The table’s about this high and this wide.",
+        "chinese": "那桌子大约有这么高，这么宽。"
+      },
+      {
+        "english": "You need to cut about this much off the end of the pipe.",
+        "chinese": "你要从管子头上切下大约这么多。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "这；这个；这里",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "这；本；这个；今",
+        "english": ""
+      },
+      {
+        "pos": "adv",
+        "chinese": "这样地；这么",
+        "english": "used to say how big, how much etc, when you are showing the size, amount etc with your hands"
+      },
+      {
+        "pos": "n",
+        "chinese": "(This)人名；(法)蒂斯",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "Point",
+    "trans": [
+      "n. [计算机] 点，通常用于几何算法中表示二维或三维空间的点"
+    ],
+    "usphone": "pɔɪnt",
+    "ukphone": "pɒɪnt",
+    "sentences": [
+      {
+        "english": "He is three points behind the leader.",
+        "chinese": "他落后领先者三分。"
+      },
+      {
+        "english": "Leeds United are now six points clear at the top of the table.",
+        "chinese": "利兹联队现在以六分的优势排名榜首。"
+      },
+      {
+        "english": "She had to win this point .",
+        "chinese": "她必须拿下这一分。"
+      },
+      {
+        "english": "You get three point s for a win and one point for a draw.",
+        "chinese": "赢了得三分，打平得一分。"
+      },
+      {
+        "english": "You lose a point if you do not complete the puzzle on time.",
+        "chinese": "如果你不能按时解出字谜就失一分 。"
+      },
+      {
+        "english": "The fight went the full fifteen rounds, and in the end the American won on points .",
+        "chinese": "比赛进行了整整15个回合，最后美国选手以点数取胜。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "比分",
+        "english": "one of the marks or numbers that shows your score in a game or sport"
+      }
+    ]
+  },
+  {
+    "name": "dep",
+    "trans": [
+      "n. [计算机] 深度，常用于树形结构的深度表示"
+    ]
+  },
+  {
+    "name": "resize",
+    "trans": [
+      "n. [计算机] 调整容器大小，常用于动态数组或向量"
+    ]
+  },
+  {
+    "name": "find",
+    "trans": [
+      "n. [计算机] 查找操作，常用于在容器中查找元素"
+    ],
+    "usphone": "faɪnd",
+    "ukphone": "faɪnd",
+    "sentences": [
+      {
+        "english": "I can’t find the car keys.",
+        "chinese": "我找不到汽车钥匙。"
+      },
+      {
+        "english": "Hold on while I find a pen.",
+        "chinese": "别挂电话，我找支笔。"
+      },
+      {
+        "english": "Her body was later found hidden in the bushes.",
+        "chinese": "后来有人发现她的尸体被藏在了灌木丛里。"
+      },
+      {
+        "english": "I have to find somewhere else to live.",
+        "chinese": "我得另找住处。"
+      },
+      {
+        "english": "She had almost given up hope of finding a husband.",
+        "chinese": "她差不多要放弃找个丈夫的希望了。"
+      },
+      {
+        "english": "Her mother went to the shops, and on her return, Kathleen was nowhere to be found (= could not be found ) .",
+        "chinese": "妈妈去买东西，回来的时候凯思琳找不到了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "找到；发觉；找出",
+        "english": "to discover, see, or get something that you have been searching for"
+      }
+    ]
+  },
+  {
+    "name": "insert",
+    "trans": [
+      "n. [计算机] 插入操作，常用于在容器中插入元素"
+    ],
+    "usphone": "'ɪnsɝt",
+    "ukphone": "ɪn'sɜːt",
+    "sentences": [
+      {
+        "english": "He took a small key from his pocket and slowly inserted it into the lock.",
+        "chinese": "他从衣袋里掏出一把小钥匙，然后缓缓地将其插入锁孔里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "插入；嵌入",
+        "english": "to put something inside or into something else"
+      },
+      {
+        "pos": "n",
+        "chinese": "插入物；管芯；镶块；[机械]刀片",
+        "english": "something that is designed to be put inside something else"
+      }
+    ]
+  },
+  {
+    "name": "nxt",
+    "trans": [
+      "n. [计算机] 下一项，常用于链表或循环"
+    ]
+  },
+  {
+    "name": "graph",
+    "trans": [
+      "n. [计算机] 图形结构，常用于表示点和边的集合"
+    ],
+    "usphone": "ɡræf",
+    "ukphone": "grɑːf; græf",
+    "sentences": [
+      {
+        "english": "Martin showed me a graph of their recent sales.",
+        "chinese": "马丁给我看了他们最近销售情况的图表。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "图表；曲线图",
+        "english": "a drawing that uses a line or lines to show how two or more sets of measurements are related to each other"
+      },
+      {
+        "pos": "v",
+        "chinese": "用曲线图表示",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "memset",
+    "trans": [
+      "n. [计算机] 内存设置函数，用于初始化数组或块内存"
+    ]
+  },
+  {
+    "name": "tree",
+    "trans": [
+      "n. [计算机] 树形结构，常用于层级数据表示"
+    ],
+    "usphone": "tri",
+    "ukphone": "triː",
+    "sentences": [
+      {
+        "english": "As a kid, I loved to climb trees.",
+        "chinese": "小时候，我喜欢爬树。"
+      },
+      {
+        "english": "the trunk of an old oak tree (= the main central part, from which the branches grow )",
+        "chinese": "一棵老橡树的树干"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "树；木料；树状物",
+        "english": "a very tall plant that has branches and leaves, and lives for many years"
+      },
+      {
+        "pos": "v",
+        "chinese": "把赶上树",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "pop",
+    "trans": [
+      "n. [计算机] 出栈操作，常用于栈数据结构中"
+    ],
+    "usphone": "pɑp",
+    "ukphone": "pɒp",
+    "sentences": [
+      {
+        "english": "The window opened and a dog's head popped out.",
+        "chinese": "窗子打开了，冷不防一只狗探出头来。"
+      },
+      {
+        "english": "An idea suddenly popped into his head.",
+        "chinese": "他突然想到了一个主意。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "（意外地）出现",
+        "english": "to suddenly appear, especially when not expected"
+      }
+    ]
+  },
+  {
+    "name": "pos",
+    "trans": [
+      "n. [计算机] 位置，常用于表示数组或字符串中的索引"
+    ]
+  },
+  {
+    "name": "query",
+    "trans": [
+      "n. [计算机] 查询操作，常用于检索数据"
+    ],
+    "usphone": "'kwɪri",
+    "ukphone": "'kwɪərɪ",
+    "sentences": [
+      {
+        "english": "Staff are always available to answer your queries.",
+        "chinese": "员工随时为您解答疑问。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "疑问，质问；疑问号 ；[计] 查询",
+        "english": "a question that you ask to get information, or to check that something is true or correct"
+      },
+      {
+        "pos": "v",
+        "chinese": "询问；对……表示疑问",
+        "english": "to express doubt about whether something is true or correct"
+      }
+    ]
+  },
+  {
+    "name": "min",
+    "trans": [
+      "n. [计算机] 最小值，常用于获取一组数中的最小值"
+    ]
+  },
+  {
+    "name": "ret",
+    "trans": [
+      "n. [计算机] 返回值，通常用于函数的返回结果"
+    ]
+  },
+  {
+    "name": "son",
+    "trans": [
+      "n. [计算机] 子节点，常用于树形结构中"
+    ],
+    "usphone": "sʌn",
+    "ukphone": "sʌn",
+    "sentences": [
+      {
+        "english": "Her son Sean was born in 1983.",
+        "chinese": "她的儿子肖恩出生于 1983 年。"
+      },
+      {
+        "english": "They have three sons and a daughter.",
+        "chinese": "他们有三个儿子和一个女儿。"
+      },
+      {
+        "english": "In those days, the property went to the oldest son.",
+        "chinese": "那时候，财产由长子继承。"
+      },
+      {
+        "english": "their youngest son, George",
+        "chinese": "他们最小的儿子乔治"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "儿子；孩子（对年轻人的称呼）；男性后裔",
+        "english": "someone’s male child"
+      }
+    ]
+  },
+  {
+    "name": "splay",
+    "trans": [
+      "n. [计算机] 伸展树，一种自平衡二叉搜索树"
+    ]
+  },
+  {
+    "name": "empty",
+    "trans": [
+      "n. [计算机] 检查容器是否为空的操作"
+    ],
+    "usphone": "ˈɛmptɪ",
+    "ukphone": "'em(p)tɪ",
+    "sentences": [
+      {
+        "english": "an empty box",
+        "chinese": "空盒子"
+      },
+      {
+        "english": "an empty bottle",
+        "chinese": "空瓶子"
+      },
+      {
+        "english": "an empty space behind the desk",
+        "chinese": "书桌后面的空位"
+      },
+      {
+        "english": "The fuel tank’s almost empty.",
+        "chinese": "燃油箱快要空了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "空的；空洞的",
+        "english": "having nothing inside"
+      }
+    ]
+  },
+  {
+    "name": "template",
+    "trans": [
+      "n. [计算机] 模板，C++ 中的泛型编程工具"
+    ],
+    "usphone": "'tɛmplet",
+    "ukphone": "'templeɪt; -plɪt",
+    "sentences": [
+      {
+        "english": "Open any of the layout templates, insert your text, make any other changes, and print.",
+        "chinese": "打开任何一个设计模板，插入你的文本，做任何其他改动，然后打印。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "模板，样板",
+        "english": "a thin sheet of plastic or metal in a special shape or pattern, used to help cut other materials in a similar shape"
+      }
+    ]
+  },
+  {
+    "name": "state",
+    "trans": [
+      "n. [计算机] 状态，常用于表示程序或系统的运行状态"
+    ],
+    "usphone": "stet",
+    "ukphone": "steɪt",
+    "sentences": [
+      {
+        "english": "She was in an extremely confused state of mind .",
+        "chinese": "她思绪纷乱。"
+      },
+      {
+        "english": "She can’t go home now. Look at the state of her!",
+        "chinese": "她现在不能回家。看看她这副样子！"
+      },
+      {
+        "english": "The country was in a state of war (= officially fighting a war ) .",
+        "chinese": "这个国家正处于战争状态。"
+      },
+      {
+        "english": "Water exists in three states: liquid, gaseous, and solid.",
+        "chinese": "水有三种形态: 液态、气态和固态。"
+      },
+      {
+        "english": "...reform of the state social-security system.",
+        "chinese": "…国家社会保障体制的改革。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "国家；州；情形",
+        "english": "the physical or mental condition that someone or something is in"
+      },
+      {
+        "pos": "v",
+        "chinese": "规定；声明；陈述",
+        "english": "to formally say or write a piece of information or your opinion"
+      },
+      {
+        "pos": "adj",
+        "chinese": "国家的；州的；正式的",
+        "english": "State industries or organizations are financed and organized by the government rather than private companies"
+      }
+    ]
+  },
+  {
+    "name": "maintain",
+    "trans": [
+      "n. [计算机] 维护，常用于维持数据结构的性质"
+    ],
+    "usphone": "men'ten",
+    "ukphone": "meɪn'teɪn",
+    "sentences": [
+      {
+        "english": "Careers Officers maintain contact with young people when they have left school.",
+        "chinese": "年轻人离开学校以后，职业指导员和他们保持联系。"
+      },
+      {
+        "english": "Britain wants to maintain its position as a world power.",
+        "chinese": "英国想保持其世界强国的地位。"
+      },
+      {
+        "english": "A lot depends on building and maintaining a good relationship with your customers.",
+        "chinese": "和顾客建立并保持良好关系很重要，很多事情要取决于此。"
+      },
+      {
+        "english": "The hotel prides itself on maintaining high standards.",
+        "chinese": "这家酒店以保持高标准而自豪。"
+      },
+      {
+        "english": "How can we maintain control of spending?",
+        "chinese": "我们如何保持对开支的控制？"
+      },
+      {
+        "english": "Critics maintain that these reforms will lead to a decline in educational standards.",
+        "chinese": "批评者坚称这些改革会导致教育标准下降。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "维持；主张",
+        "english": "to make something continue in the same way or at the same standard as before"
+      }
+    ]
+  },
+  {
+    "name": "cstdio",
+    "trans": [
+      "n. [计算机] C 标准 I/O 库头文件"
+    ]
+  },
+  {
+    "name": "continue",
+    "trans": [
+      "n. [计算机] 控制结构中的语句，跳过当前循环的剩余部分"
+    ],
+    "usphone": "kən'tɪnju",
+    "ukphone": "kən'tɪnjuː",
+    "sentences": [
+      {
+        "english": "He will be continuing his education in the US.",
+        "chinese": "他将在美国继续求学。"
+      },
+      {
+        "english": "英文例句: I felt too sick to continue.",
+        "chinese": "我感觉很难受，无法继续下去了。"
+      },
+      {
+        "english": "英文例句:The road continues northwards to the border.",
+        "chinese": "中文例句: 这条路往北一直延伸到边境。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "继续，连续；延伸",
+        "english": "to not stop happening, existing, or doing something"
+      }
+    ]
+  },
+  {
+    "name": "is_prime",
+    "trans": [
+      "n. [计算机] 判断某个数是否为素数的函数"
+    ]
+  },
+  {
+    "name": "read",
+    "trans": [
+      "n. [计算机] 读取操作，常用于从文件或输入流中读取数据"
+    ],
+    "usphone": "rid; (read, read) rɛd",
+    "ukphone": "riːd; (read, read) red",
+    "sentences": [
+      {
+        "english": "I can’t read your writing.",
+        "chinese": "我看不懂你写的东西。"
+      },
+      {
+        "english": "She picked up the letter and read it.",
+        "chinese": "她拿起信读了起来。"
+      },
+      {
+        "english": "Read the instructions carefully before you start.",
+        "chinese": "开始前要仔细阅读说明。"
+      },
+      {
+        "english": "children who are just learning to read and write",
+        "chinese": "刚刚开始学习读和写的儿童"
+      },
+      {
+        "english": "Her books are quite widely read (= read by a lot of people ) .",
+        "chinese": "她的书读者很多。"
+      },
+      {
+        "english": "When I was young, I read every one of his books from cover to cover (= read all of something because you are very interested ) .",
+        "chinese": "我小时候，他的每一本书我都从头到尾一页不落地看过。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "读，看懂",
+        "english": "to look at written words and understand what they mean"
+      },
+      {
+        "pos": "v",
+        "chinese": "读",
+        "english": "to look at written words and understand what they mean"
+      }
+    ]
+  },
+  {
+    "name": "flow",
+    "trans": [
+      "n. [计算机] 流量，常用于图算法中的网络流问题"
+    ],
+    "usphone": "flo",
+    "ukphone": "fləʊ",
+    "sentences": [
+      {
+        "english": "a new road system to improve traffic flow through the city centre",
+        "chinese": "疏导市中心车流的新道路系统"
+      },
+      {
+        "english": "These gates regulate the amount of water flowing into the canal.",
+        "chinese": "这些闸门调节流入运河的水量。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "流动",
+        "english": "a smooth steady movement of liquid, gas, or electricity"
+      },
+      {
+        "pos": "v",
+        "chinese": "流动",
+        "english": "when a liquid, gas, or electricity flows, it moves in a steady continuous stream"
+      }
+    ]
+  },
+  {
+    "name": "Set",
+    "trans": [
+      "n. [计算机] 集合，C++ 标准库中的集合容器"
+    ],
+    "usphone": "sɛt",
+    "ukphone": "set",
+    "sentences": [
+      {
+        "english": "a chess set",
+        "chinese": "一副国际象棋"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "（同类事物的）（一）套，（一）副，（一）组",
+        "english": "a group of similar things that belong together or are related in some way"
+      }
+    ]
+  },
+  {
+    "name": "case",
+    "trans": [
+      "n. [计算机] 条件语句中的分支，用于 switch 语句中"
+    ],
+    "usphone": "kes",
+    "ukphone": "keɪs",
+    "sentences": [
+      {
+        "english": "In some cases people have had to wait several weeks for an appointment.",
+        "chinese": "在某些情况下，人们必须等上好几周才能得到约见。"
+      },
+      {
+        "english": "a severe case of typhoid",
+        "chinese": "伤寒重病例"
+      },
+      {
+        "english": "It is simply not the case that prison conditions are improving.",
+        "chinese": "监狱条件得到改善的情况绝非事实。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "情况；病例；事实",
+        "english": "a particular situation or a situation of a particular type"
+      }
+    ]
+  },
+  {
+    "name": "Big",
+    "trans": [
+      "n. [计算机] 大数，常用于处理超出基本类型范围的大整数"
+    ]
+  },
+  {
+    "name": "split",
+    "trans": [
+      "n. [计算机] 分割操作，常用于字符串或数组的拆分"
+    ],
+    "usphone": "splɪt",
+    "ukphone": "splɪt",
+    "sentences": [
+      {
+        "english": "The branch split under their weight.",
+        "chinese": "树枝承受不住他们的重量断裂了。"
+      },
+      {
+        "english": "In a severe gale the ship split in two.",
+        "chinese": "在一次强劲的大风中那艘船断成了两半。"
+      },
+      {
+        "english": "If the chicken is fairly small, you may simply split it in half.",
+        "chinese": "要是鸡不太大，你把它分成两半就行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "劈开",
+        "english": "to divide or separate something into different parts or groups, or to be divided into different parts or groups"
+      },
+      {
+        "pos": "v",
+        "chinese": "被劈开",
+        "english": "If something splits or if you split it, it is divided into two or more parts"
+      }
+    ]
+  },
+  {
+    "name": "typename",
+    "trans": [
+      "n. [计算机] 用于模板参数中的类型声明"
+    ]
+  },
+  {
+    "name": "left",
+    "trans": [
+      "n. [计算机] 左子节点，常用于树结构中"
+    ],
+    "usphone": "lɛft",
+    "ukphone": "left",
+    "sentences": [
+      {
+        "english": "She held out her left hand.",
+        "chinese": "她伸出左手。"
+      },
+      {
+        "english": "a scar on the left side of his face",
+        "chinese": "他左脸上的伤疤"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "左边的",
+        "english": "your left side is the side of your body that contains your heart"
+      },
+      {
+        "pos": "adv",
+        "chinese": "在左边",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "low",
+    "trans": [
+      "n. [计算机] 低位，常用于表示二进制数据的低位部分"
+    ],
+    "usphone": "",
+    "ukphone": "ləʊ",
+    "sentences": [
+      {
+        "english": "a low wall/building/table",
+        "chinese": "矮墙 / 建筑物 / 桌子"
+      },
+      {
+        "english": "low clouds",
+        "chinese": "低云"
+      },
+      {
+        "english": "jobs with low status",
+        "chinese": "社会地位低下的职业"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "低的；矮的；低下的",
+        "english": "not high or tall"
+      }
+    ]
+  },
+  {
+    "name": "dist",
+    "trans": [
+      "n. [计算机] 距离，常用于图算法中的路径长度计算"
+    ]
+  },
+  {
+    "name": "cmp",
+    "trans": [
+      "n. [计算机] 比较函数，常用于排序算法中的自定义比较"
+    ]
+  },
+  {
+    "name": "argv",
+    "trans": [
+      "n. [计算机] 命令行参数数组"
+    ]
+  },
+  {
+    "name": "num",
+    "trans": [
+      "n. [计算机] 数字，常用于表示某种计数或数值"
+    ]
+  },
+  {
+    "name": "Edge",
+    "trans": [
+      "n. [计算机] 边，常用于图结构中表示顶点之间的连接"
+    ]
+  },
+  {
+    "name": "last",
+    "trans": [
+      "n. [计算机] 最后一个元素，常用于链表或数组操作"
+    ],
+    "usphone": "læst",
+    "ukphone": "lɑːst",
+    "sentences": [
+      {
+        "english": "I didn’t read the last chapter of the book.",
+        "chinese": "我没有看这本书的最后一章。"
+      },
+      {
+        "english": "Add the flour last.",
+        "chinese": "最后加面粉。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "最后的",
+        "english": "happening or existing at the end, with no others after"
+      },
+      {
+        "pos": "adv",
+        "chinese": "最后",
+        "english": "after everything or everyone else"
+      }
+    ]
+  },
+  {
+    "name": "trie",
+    "trans": [
+      "n. [计算机] 字典树，一种高效的字符串查找树"
+    ]
+  },
+  {
+    "name": "pri_j",
+    "trans": [
+      "n. [计算机] 素数表，常用于素数筛选算法"
+    ]
+  },
+  {
+    "name": "static",
+    "trans": [
+      "n. [计算机] 静态变量，常用于存储全局唯一的数据"
+    ],
+    "usphone": "'stætɪk",
+    "ukphone": "'stætɪk",
+    "sentences": [
+      {
+        "english": "The number of young people obtaining qualifications has remained static or decreased.",
+        "chinese": "获得各种资格证书的年轻人的数量一直保持不变或者已经减少。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "静态的；静电的；静力的",
+        "english": "Something that is static does not move or change"
+      },
+      {
+        "pos": "n",
+        "chinese": "静电；静电干扰",
+        "english": "noise caused by electricity in the air that blocks or spoils the sound from radio or TV"
+      }
+    ]
+  },
+  {
+    "name": "dfn",
+    "trans": [
+      "n. [计算机] 深度优先搜索中的访问顺序"
+    ]
+  },
+  {
+    "name": "level",
+    "trans": [
+      "n. [计算机] 层级，常用于树形结构或图结构的深度表示"
+    ],
+    "usphone": "'lɛvl",
+    "ukphone": "'lev(ə)l",
+    "sentences": [
+      {
+        "english": "Your arms should be at the same level as your desk.",
+        "chinese": "手臂应该与桌子齐平。"
+      },
+      {
+        "english": "The floors in the old house were not completely level.",
+        "chinese": "老房子的地面不是完全平整的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "水平面",
+        "english": "the height of something in relation to the ground or to another object"
+      },
+      {
+        "pos": "adj",
+        "chinese": "水平的",
+        "english": "flat and not sloping in any direction"
+      }
+    ]
+  },
+  {
+    "name": "LEN",
+    "trans": [
+      "n. [计算机] 长度，常用于数组或字符串的长度表示"
+    ]
+  },
+  {
+    "name": "pans",
+    "trans": [
+      "n. [计算机] 上一次的答案，常用于多次查询中的结果缓存"
+    ]
+  },
+  {
+    "name": "INF",
+    "trans": [
+      "n. [计算机] 无穷大，常用于表示图中的无法到达的距离"
+    ]
+  },
+  {
+    "name": "print",
+    "trans": [
+      "n. [计算机] 打印输出，常用于显示数据"
+    ],
+    "usphone": "prɪnt",
+    "ukphone": "prɪnt",
+    "sentences": [
+      {
+        "english": "Over five million copies of the paper are printed every day.",
+        "chinese": "这份报纸每日印量超过五百万。"
+      },
+      {
+        "english": "When the book was first written no publisher would print it.",
+        "chinese": "这本书刚写成时没有出版商愿意出版。"
+      },
+      {
+        "english": "There was no print at all on the backs of the tickets.",
+        "chinese": "门票背面没有印任何文字。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "印刷",
+        "english": "to produce many printed copies of a book, newspaper etc"
+      },
+      {
+        "pos": "n",
+        "chinese": "印刷的文字",
+        "english": "writing that has been printed, for example in books or newspapers"
+      }
+    ]
+  },
+  {
+    "name": "ptr",
+    "trans": [
+      "n. [计算机] 指针，存储变量的内存地址"
+    ]
+  },
+  {
+    "name": "mat",
+    "trans": [
+      "n. [计算机] 矩阵，常用于图形学或数学计算"
+    ],
+    "usphone": "mæt",
+    "ukphone": "mæt",
+    "sentences": [
+      {
+        "english": "Wipe your feet on the mat.",
+        "chinese": "在地垫上蹭蹭你的鞋底。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "垫；垫子；衬边",
+        "english": "a small piece of thick rough material which covers part of a floor"
+      },
+      {
+        "pos": "v",
+        "chinese": "缠结；铺席于……上",
+        "english": "to tangle or weave or become tangled or woven into a dense mass "
+      },
+      {
+        "pos": "adj",
+        "chinese": "无光泽的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "from",
+    "trans": [
+      "n. [计算机] 起始点，常用于表示数据的来源"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "I'm from Italy.",
+        "chinese": "我是意大利人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "从…来",
+        "english": "used to show what the origin of sb/sth is"
+      }
+    ]
+  },
+  {
+    "name": "jans",
+    "trans": [
+      "n. [计算机] 记录当前答案的变量"
+    ]
+  },
+  {
+    "name": "sort",
+    "trans": [
+      "n. [计算机] 排序函数，常用于对数组或容器进行排序"
+    ],
+    "usphone": "sɔrt",
+    "ukphone": "sɔːt",
+    "sentences": [
+      {
+        "english": "Most of the victims developed psychological problems of one sort or another (= of various different types ).",
+        "chinese": "大多数受害者都出现了这样那样的心理问题。"
+      },
+      {
+        "english": "They do burgers, pizzas, that sort of thing.",
+        "chinese": "他们供应汉堡包、比萨饼什么的。"
+      },
+      {
+        "english": "The eggs are sorted according to size.",
+        "chinese": "这些鸡蛋是按大小分类的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "种类；类别",
+        "english": "a group or class of people, things etc that have similar qualities or features"
+      },
+      {
+        "pos": "v",
+        "chinese": "整理",
+        "english": "to put things in a particular order or arrange them in groups according to size, type etc"
+      }
+    ]
+  },
+  {
+    "name": "queue",
+    "trans": [
+      "n. [计算机] 队列，一种先进先出的数据结构"
+    ],
+    "usphone": "kju",
+    "ukphone": "kjuː",
+    "sentences": [
+      {
+        "english": "You’ll have to join the queue.",
+        "chinese": "你得排队。"
+      },
+      {
+        "english": "Some of the people queuing for tickets had been there since dawn.",
+        "chinese": "购票队伍中有些人天刚亮就来了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "行列",
+        "english": "a line of people waiting to enter a building, buy something etc, or a line of vehicles waiting to move"
+      },
+      {
+        "pos": "v",
+        "chinese": "排队等候",
+        "english": "to form or join a line of people or vehicles waiting to do something or go somewhere"
+      }
+    ]
+  },
+  {
+    "name": "pair",
+    "trans": [
+      "n. [计算机] 键值对，常用于存储两个相关联的数据"
+    ],
+    "usphone": "pɛr",
+    "ukphone": "peə",
+    "sentences": [
+      {
+        "english": "earrings, £5 a pair",
+        "chinese": "耳环，5英镑一副"
+      },
+      {
+        "english": "We were each paired with a newcomer to help with training.",
+        "chinese": "我们每个人都和一名新手组对，帮助他们训练。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "一对",
+        "english": "two things of the same type that are used together"
+      },
+      {
+        "pos": "v",
+        "chinese": "成对，配对",
+        "english": "to put people or things into groups of two, or to form groups of two"
+      }
+    ]
+  },
+  {
+    "name": "algorithm",
+    "trans": [
+      "n. [计算机] 算法，指某个特定问题的解决步骤"
+    ]
+  },
+  {
+    "name": "typedef",
+    "trans": [
+      "n. [计算机] 类型别名，用于给已有类型定义新名字"
+    ]
+  },
+  {
+    "name": "new",
+    "trans": [
+      "n. [计算机] 动态分配内存的操作"
+    ],
+    "usphone": "nu",
+    "ukphone": "njuː",
+    "sentences": [
+      {
+        "english": "the city’s new hospital",
+        "chinese": "市里新建的医院"
+      },
+      {
+        "english": "the new issue of ‘Time’ magazine",
+        "chinese": "新一期《时代周刊》"
+      },
+      {
+        "english": "new products on the market",
+        "chinese": "市场上的新产品"
+      },
+      {
+        "english": "The hardest part of this job is understanding the new technology.",
+        "chinese": "这项工作最难的地方是理解新技术。"
+      },
+      {
+        "english": "a young man with new ideas",
+        "chinese": "一个有新观念的年轻人"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "新的；新近出现的",
+        "english": "recently made, built, invented, written, designed etc"
+      }
+    ]
+  },
+  {
+    "name": "front",
+    "trans": [
+      "n. [计算机] 队列的前端元素"
+    ],
+    "usphone": "frʌnt",
+    "ukphone": "frʌnt",
+    "sentences": [
+      {
+        "english": "Two of his front teeth had been knocked out.",
+        "chinese": "他有两颗门牙被打落了。"
+      },
+      {
+        "english": "the front cover of ‘Hello!’ magazine",
+        "chinese": "《Hello!》杂志的封面"
+      },
+      {
+        "english": "the front wheel of his bicycle",
+        "chinese": "他自行车的前轮"
+      },
+      {
+        "english": "the dog’s front legs",
+        "chinese": "狗的前腿"
+      },
+      {
+        "english": "Ricky stepped forward to the front of the stage and began to sing.",
+        "chinese": "里基走到舞台的最前面，开始唱了起来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "前面的",
+        "english": "at, on, or in the front of something"
+      },
+      {
+        "pos": "n",
+        "chinese": "前部",
+        "english": "the part of something that is furthest forward in the direction that it is facing or moving"
+      }
+    ]
+  },
+  {
+    "name": "path",
+    "trans": [
+      "n. [计算机] 路径，常用于图中的最短路径问题"
+    ],
+    "usphone": "pæθ",
+    "ukphone": "pɑːθ",
+    "sentences": [
+      {
+        "english": "I walked nervously up the garden path towards the front door.",
+        "chinese": "我提心吊胆地沿着花园的小道向前门走去。"
+      },
+      {
+        "english": "a well-worn path across the grass",
+        "chinese": "草地上被踏出的小径"
+      },
+      {
+        "english": "Follow the path along the river to the bridge.",
+        "chinese": "沿着河边的小路走到那座桥。"
+      },
+      {
+        "english": "a path leading to the summer house",
+        "chinese": "通往避暑别墅的小径"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "路，小道；道路",
+        "english": "a track that has been made deliberately or made by many people walking over the same ground"
+      }
+    ]
+  },
+  {
+    "name": "weight",
+    "trans": [
+      "n. [计算机] 权重，常用于加权图中的边"
+    ],
+    "usphone": "wet",
+    "ukphone": "weɪt",
+    "sentences": [
+      {
+        "english": "The average weight of a baby at birth is just over seven pounds.",
+        "chinese": "婴儿的平均出生体重是七磅多一点。"
+      },
+      {
+        "english": "It can be sewn into curtain hems to weight the curtain and so allow it to hang better.",
+        "chinese": "可以把它缝在窗帘的摺边里以增加窗帘的重量，使之更有下垂感。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "重量，重力；负担；砝码；重要性",
+        "english": "how heavy something is when you measure it"
+      },
+      {
+        "pos": "v",
+        "chinese": "加重量于，使变重",
+        "english": "If you weight something, you make it heavier by adding something to it, for example, in order to stop it from moving easily"
+      }
+    ]
+  },
+  {
+    "name": "cursor",
+    "trans": [
+      "n. [计算机] 游标，常用于数据库中的记录指针"
+    ],
+    "usphone": "'kɝsɚ",
+    "ukphone": "ˈkɜ:sə(r)",
+    "sentences": [
+      {
+        "english": "He moves the cursor, clicks the mouse.",
+        "chinese": "他移动光标，点击鼠标。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "光标",
+        "english": "a mark that can be moved around a computer screen to show where you are working"
+      }
+    ]
+  },
+  {
+    "name": "color",
+    "trans": [
+      "n. [计算机] 颜色，常用于图形学中的像素或节点标记"
+    ],
+    "usphone": "'kʌlɚ",
+    "ukphone": "'kʌlə(r)",
+    "sentences": [
+      {
+        "english": "What color dress did you buy?",
+        "chinese": "你买的连衣裙是什么颜色的？"
+      },
+      {
+        "english": "jams that contain no artificial colors or preservatives",
+        "chinese": "不含人工色素和防腐剂的果酱"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "颜色，彩色；颜料",
+        "english": "red, blue, yellow, green, brown, purple etc"
+      }
+    ]
+  },
+  {
+    "name": "upd_siz",
+    "trans": [
+      "n. [计算机] 更新大小，常用于平衡树中的节点更新"
+    ]
+  },
+  {
+    "name": "count",
+    "trans": [
+      "n. [计算机] 计数器，用于记录某一操作的次数"
+    ],
+    "usphone": "kaʊnt",
+    "ukphone": "kaʊnt",
+    "sentences": [
+      {
+        "english": "Davis was found not guilty on all counts .",
+        "chinese": "戴维斯受到指控的各项罪名均不成立。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "起拆理由，罪状",
+        "english": "one of the crimes that someone is charged with"
+      }
+    ]
+  },
+  {
+    "name": "u32",
+    "trans": [
+      "n. [计算机] 32位无符号整数"
+    ]
+  },
+  {
+    "name": "link",
+    "trans": [
+      "n. [计算机] 链接，常用于链表或其他数据结构的连接"
+    ],
+    "usphone": "lɪŋk",
+    "ukphone": "lɪŋk",
+    "sentences": [
+      {
+        "english": "He walked with her, linking arms (= putting his arm around her arm ).",
+        "chinese": "他与她挽臂同行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "有环连接",
+        "english": "to join two things by putting one through the other"
+      },
+      {
+        "pos": "n",
+        "chinese": "环",
+        "english": "each ring of a chain"
+      }
+    ]
+  },
+  {
+    "name": "inf",
+    "trans": [
+      "n. [计算机] 无穷大，常用于表示不可达距离"
+    ]
+  },
+  {
+    "name": "l_tr",
+    "trans": [
+      "n. [计算机] 左子树，常用于二叉树结构中"
+    ]
+  },
+  {
+    "name": "Vector",
+    "trans": [
+      "n. [计算机] 向量，C++ STL 中的动态数组"
+    ]
+  },
+  {
+    "name": "inv",
+    "trans": [
+      "n. [计算机] 逆元，常用于数学运算中的模逆"
+    ]
+  },
+  {
+    "name": "rev",
+    "trans": [
+      "n. [计算机] 反转，常用于数组或字符串的反向操作"
+    ]
+  },
+  {
+    "name": "sibling",
+    "trans": [
+      "n. [计算机] 兄弟节点，常用于树形结构"
+    ],
+    "usphone": "'sɪblɪŋ",
+    "ukphone": "'sɪblɪŋ",
+    "sentences": [
+      {
+        "english": "Most young smokers are influenced by their friends’ and older siblings’ smoking habits.",
+        "chinese": "大多数年轻的吸烟者都是因为他们的朋友或者哥哥姐姐有吸烟习惯而受影响的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "兄弟姊妹；民族成员",
+        "english": "a brother or sister"
+      }
+    ]
+  },
+  {
+    "name": "seg",
+    "trans": [
+      "n. [计算机] 线段树，一种高效的区间查询数据结构"
+    ]
+  },
+  {
+    "name": "solve",
+    "trans": [
+      "n. [计算机] 求解函数，通常用于解决某个算法问题"
+    ],
+    "usphone": "sɔlv",
+    "ukphone": "sɒlv",
+    "sentences": [
+      {
+        "english": "Charlie thinks money will solve all his problems.",
+        "chinese": "查理认为钱能解决他所有的问题。"
+      },
+      {
+        "english": "the best way of solving our dilemma",
+        "chinese": "解决我们两难处境的最佳办法"
+      },
+      {
+        "english": "attempts to solve a mathematical equation",
+        "chinese": "解数学方程式的尝试"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "解决；解答，解释",
+        "english": "to find or provide a way of dealing with a problem"
+      }
+    ]
+  },
+  {
+    "name": "build",
+    "trans": [
+      "n. [计算机] 构建操作，常用于构建树或其他数据结构"
+    ],
+    "usphone": "bɪld",
+    "ukphone": "bɪld",
+    "sentences": [
+      {
+        "english": "The purpose is to build new houses for local people.",
+        "chinese": "目的是要为当地居民建造新的住宅。"
+      },
+      {
+        "english": "The road took many years to build.",
+        "chinese": "这条路修了好几年。"
+      },
+      {
+        "english": "They needed $3 million to build the bridge.",
+        "chinese": "他们需要300万美元来修建这座桥。"
+      },
+      {
+        "english": "It is the female birds that build the nests.",
+        "chinese": "筑巢的是雌鸟。"
+      },
+      {
+        "english": "She had built a reputation as a criminal lawyer.",
+        "chinese": "她已经树立起了刑事诉讼律师的声望。"
+      },
+      {
+        "english": "She’s been busy building her career.",
+        "chinese": "她忙于创建自己的事业。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "建筑；建立；创立",
+        "english": "to make something, especially a building or something large"
+      }
+    ]
+  },
+  {
+    "name": "delete",
+    "trans": [
+      "n. [计算机] 删除操作，常用于释放动态分配的内存"
+    ],
+    "usphone": "dɪ'lit",
+    "ukphone": "dɪ'liːt",
+    "sentences": [
+      {
+        "english": "His name was deleted from the list.",
+        "chinese": "他的名字从名单上删掉了。"
+      },
+      {
+        "english": "I deleted the file by mistake.",
+        "chinese": "我误删了这个文件。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "删除",
+        "english": "to remove something that has been written down or stored in a computer"
+      }
+    ]
+  },
+  {
+    "name": "forward",
+    "trans": [
+      "n. [计算机] 前向声明，常用于提前声明类型"
+    ],
+    "usphone": "'fɔrwɚd",
+    "ukphone": "'fɔːwəd",
+    "sentences": [
+      {
+        "english": "He leaned forward , his elbows resting on the table.",
+        "chinese": "他身体前倾，胳膊肘撑在桌子上。"
+      },
+      {
+        "english": "The crowd surged forwards.",
+        "chinese": "人群向前涌去。"
+      },
+      {
+        "english": "The next scene takes the story forward five years.",
+        "chinese": "下一个场面是描述故事中五年后的情况。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "向前；今后，往后",
+        "english": "towards a place or position that is in front of you"
+      }
+    ]
+  },
+  {
+    "name": "cap",
+    "trans": [
+      "n. [计算机] 容量，常用于存储数据结构的容量表示"
+    ],
+    "usphone": "kæp",
+    "ukphone": "kæp",
+    "sentences": [
+      {
+        "english": "a baseball cap",
+        "chinese": "棒球帽"
+      },
+      {
+        "english": "a bottle cap",
+        "chinese": "瓶盖"
+      },
+      {
+        "english": "a graceful tower capped with a golden dome",
+        "chinese": "一座漂亮的金色圆顶塔"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "便帽,军帽；盖,罩,套",
+        "english": "a type of flat hat that has a curved part sticking out at the front, and is often worn as part of a uniform"
+      },
+      {
+        "pos": "v",
+        "chinese": "覆盖于…顶端",
+        "english": "to have a particular substance on top"
+      }
+    ]
+  },
+  {
+    "name": "stack",
+    "trans": [
+      "n. [计算机] 栈，后进先出的数据结构"
+    ],
+    "usphone": "stæk",
+    "ukphone": "stæk",
+    "sentences": [
+      {
+        "english": "stacks of dirty dishes",
+        "chinese": "一摞摞脏盘子"
+      },
+      {
+        "english": "Mrs. Cathiard was stacking the clean bottles in crates.",
+        "chinese": "卡提亚夫人当时正在把干净的瓶子堆放到板条箱里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "堆，垛",
+        "english": "a neat pile of things"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 堆积， 堆放于",
+        "english": "If you stack a number of things, you arrange them in neat piles"
+      }
+    ]
+  },
+  {
+    "name": "FILE",
+    "trans": [
+      "n. [计算机] 文件类型，表示文件流"
+    ]
+  },
+  {
+    "name": "lst",
+    "trans": [
+      "n. [计算机] 列表，常用于链表或容器表示"
+    ]
+  },
+  {
+    "name": "idx",
+    "trans": [
+      "n. [计算机] 索引，常用于数组或字符串中的位置标记"
+    ]
+  },
+  {
+    "name": "father",
+    "trans": [
+      "n. [计算机] 父节点，常用于树形结构中"
+    ],
+    "usphone": "'fɑðɚ",
+    "ukphone": "'fɑːðə",
+    "sentences": [
+      {
+        "english": "Ask your father to help you.",
+        "chinese": "叫你父亲帮你。"
+      },
+      {
+        "english": "Andrew was very excited about becoming a father.",
+        "chinese": "安德鲁初为人父，非常激动。"
+      },
+      {
+        "english": "I have sinned, Father.",
+        "chinese": "我有罪，神父。"
+      },
+      {
+        "english": "Freud is the father of psychoanalysis.",
+        "chinese": "弗洛伊德是精神分析之父。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "父亲；神父；创始人",
+        "english": "a male parent"
+      }
+    ]
+  },
+  {
+    "name": "maxs",
+    "trans": [
+      "n. [计算机] 最大值，常用于保存数组或区间的最大值"
+    ]
+  },
+  {
+    "name": "start",
+    "trans": [
+      "n. [计算机] 起始点，常用于表示操作的起点"
+    ],
+    "usphone": "stɑrt",
+    "ukphone": "stɑːt",
+    "sentences": [
+      {
+        "english": "There’s so much to do. I don’t know where to start.",
+        "chinese": "有那么多的事情要做，我都不知道从哪里开始。"
+      },
+      {
+        "english": "She wanted to start her own catering business.",
+        "chinese": "她想自己创立一家餐饮公司。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "开动，着手；开设",
+        "english": "to do something that you were not doing before, and continue doing it"
+      }
+    ]
+  },
+  {
+    "name": "erase",
+    "trans": [
+      "n. [计算机] 擦除操作，常用于容器中的元素删除"
+    ],
+    "usphone": "ɪ'res",
+    "ukphone": "ɪ'reɪz",
+    "sentences": [
+      {
+        "english": "The computer crashed, and all our records were erased.",
+        "chinese": "计算机瘫痪了，我们所有的记录都被删除了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "抹去；擦除",
+        "english": "to remove information from a computer memory or recorded sounds from a tape"
+      }
+    ]
+  },
+  {
+    "name": "tag",
+    "trans": [
+      "n. [计算机] 标记，常用于标记数据或节点的状态"
+    ],
+    "usphone": "tæɡ",
+    "ukphone": "tæg",
+    "sentences": [
+      {
+        "english": "You just search for an artist, song, album , or just a random search tag.",
+        "chinese": "你只需要搜索艺术家、歌曲、相册、或者仅仅是一个随机搜索标签。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 尾随",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "附加语；标签",
+        "english": "a small piece of paper, plastic etc attached to something to show what it is, who owns it, what it costs etc"
+      },
+      {
+        "pos": "vt",
+        "chinese": "给…加上标签",
+        "english": "to attach a tag to something"
+      }
+    ]
+  },
+  {
+    "name": "layer",
+    "trans": [
+      "n. [计算机] 层，常用于表示图或网络中的层次结构"
+    ],
+    "usphone": "'leɪr",
+    "ukphone": "'leɪə",
+    "sentences": [
+      {
+        "english": "He pulled off layer upon layer of clothing (= many layers of clothing ).",
+        "chinese": "他把衣服一件件地脱掉。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 层， 层次",
+        "english": "an amount or piece of a material or substance that covers a surface or that is between two other things"
+      }
+    ]
+  },
+  {
+    "name": "not_prime",
+    "trans": [
+      "n. [计算机] 非素数标记，用于素数筛选算法"
+    ]
+  },
+  {
+    "name": "index",
+    "trans": [
+      "n. [计算机] 索引，常用于查找数组或表中的元素"
+    ],
+    "usphone": "'ɪndɛks",
+    "ukphone": "'ɪndeks",
+    "sentences": [
+      {
+        "english": "...the consumer price index.",
+        "chinese": "…消费价格指数。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "指数",
+        "english": "a standard by which the level of something can be judged or measured"
+      }
+    ]
+  },
+  {
+    "name": "pre",
+    "trans": [
+      "n. [计算机] 前一个元素或节点，常用于链表或树形结构"
+    ]
+  },
+  {
+    "name": "rotate",
+    "trans": [
+      "n. [计算机] 旋转操作，常用于自平衡树的平衡调整"
+    ],
+    "usphone": "'rotet",
+    "ukphone": "rə(ʊ)'teɪt",
+    "sentences": [
+      {
+        "english": "The Earth rotates on its axis once every 24 hours.",
+        "chinese": "地球每24小时绕地轴自转一周。"
+      },
+      {
+        "english": "Rotate the pan halfway through the baking time.",
+        "chinese": "烘烤到一半时把盘子转一下。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "旋转",
+        "english": "to turn with a circular movement around a central point, or to make something do this"
+      },
+      {
+        "pos": "v",
+        "chinese": "使旋转",
+        "english": "to turn with a circular movement around a central point, or to make something do this"
+      }
+    ]
+  },
+  {
+    "name": "readInt",
+    "trans": [
+      "n. [计算机] 读取整数值的函数"
+    ]
+  },
+  {
+    "name": "child",
+    "trans": [
+      "n. [计算机] 子节点，常用于树形结构"
+    ],
+    "usphone": "tʃaɪld",
+    "ukphone": "tʃaɪld",
+    "sentences": [
+      {
+        "english": "The hotel is ideal for families with young children.",
+        "chinese": "这家宾馆对带小孩的家庭再合适不过。"
+      },
+      {
+        "english": "The film is not suitable for children under 12.",
+        "chinese": "这部影片不适合12岁以下的儿童观看。"
+      },
+      {
+        "english": "I was very happy as a child (= when I was a child ) .",
+        "chinese": "我小时候很幸福。"
+      },
+      {
+        "english": "a famous writer of children’s books",
+        "chinese": "著名的儿童文学作家"
+      },
+      {
+        "english": "child victims of war",
+        "chinese": "战争受难儿童"
+      },
+      {
+        "english": "I have five children, all happily married.",
+        "chinese": "我有五个孩子，他们的婚姻都很幸福。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "小孩，儿童；儿子/女儿",
+        "english": "someone who is not yet an adult"
+      }
+    ]
+  },
+  {
+    "name": "unsigned",
+    "trans": [
+      "n. [计算机] 无符号整数类型"
+    ]
+  },
+  {
+    "name": "prime",
+    "trans": [
+      "n. [计算机] 素数，常用于素数判定或筛选算法"
+    ],
+    "usphone": "praɪm",
+    "ukphone": "praɪm",
+    "sentences": [
+      {
+        "english": "Smoking is the prime cause of lung disease.",
+        "chinese": "抽烟是引发肺部疾病的首要原因。"
+      },
+      {
+        "english": "Our prime concern is providing jobs for all young school leavers.",
+        "chinese": "我们的头等大事是为所有的年轻毕业生提供工作。"
+      },
+      {
+        "english": "He was named as the prime suspect in the murder investigation.",
+        "chinese": "在那宗谋杀案的调查中他被定为主要嫌疑人。"
+      },
+      {
+        "english": "Good management is of prime importance in business.",
+        "chinese": "良好的经营管理在商业领域尤为重要。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "首要的；最好的",
+        "english": "most important"
+      },
+      {
+        "pos": "n",
+        "chinese": "青春；全盛时期",
+        "english": "the time in your life when you are strongest and most active"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 使准备好",
+        "english": "to prepare someone for a situation so that they know what to do"
+      }
+    ]
+  },
+  {
+    "name": "fopen",
+    "trans": [
+      "n. [计算机] 文件打开函数"
+    ]
+  },
+  {
+    "name": "flag",
+    "trans": [
+      "n. [计算机] 标志位，常用于标记某种状态或条件"
+    ],
+    "usphone": "flæg",
+    "ukphone": "flæg",
+    "sentences": [
+      {
+        "english": "Children waving flags greeted the Russian leader.",
+        "chinese": "孩子们挥舞着旗帜，欢迎俄罗斯领导人。"
+      },
+      {
+        "english": "the flag of Kenya",
+        "chinese": "肯尼亚国旗"
+      },
+      {
+        "english": "the Spanish flag",
+        "chinese": "西班牙国旗"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "旗，旗帜",
+        "english": "a piece of cloth with a coloured pattern or picture on it that represents a country or organization"
+      }
+    ]
+  },
+  {
+    "name": "right",
+    "trans": [
+      "n. [计算机] 右子树，常用于二叉树结构中"
+    ],
+    "usphone": "raɪt",
+    "ukphone": "raɪt",
+    "sentences": [
+      {
+        "english": "Yes, that’s the right answer .",
+        "chinese": "对，回答正确。"
+      },
+      {
+        "english": "Is that the right time ?",
+        "chinese": "那个时间对吗？"
+      },
+      {
+        "english": "I got most of the questions right .",
+        "chinese": "大部分问题我都答对了。"
+      },
+      {
+        "english": "His ideas have now been proved right .",
+        "chinese": "他的观点现已证明是对的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "正确的；直接的；右方的",
+        "english": "a statement or piece of information that is right is correct and based on true facts"
+      },
+      {
+        "pos": "v",
+        "chinese": "复正；恢复平稳",
+        "english": "exactly in a particular position or place"
+      },
+      {
+        "pos": "n",
+        "chinese": "正确；右边；正义",
+        "english": "used to check if what you have said is correct"
+      },
+      {
+        "pos": "adv",
+        "chinese": "正确地；恰当地；彻底地",
+        "english": "exactly in a particular position or place"
+      }
+    ]
+  },
+  {
+    "name": "out",
+    "trans": [
+      "n. [计算机] 输出流，常用于打印数据或写入文件"
+    ],
+    "usphone": "aʊt",
+    "ukphone": "aʊt",
+    "sentences": [
+      {
+        "english": "She opened her suitcase and took out a pair of shoes.",
+        "chinese": "她打开手提箱，拿出一双鞋。"
+      },
+      {
+        "english": "Lock the door on your way out.",
+        "chinese": "你出去时把门锁上。"
+      },
+      {
+        "english": "Charlotte went to the window and looked out.",
+        "chinese": "夏洛特走到窗前往外看。"
+      },
+      {
+        "english": "Out you go (= used to order someone to leave a room )!",
+        "chinese": "你给我出去！"
+      },
+      {
+        "english": "When the sun came out, a rainbow formed in the sky.",
+        "chinese": "太阳出来时，天空中出现了一道彩虹。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "出，在外；现出来",
+        "english": "from inside an object, container, building, or place"
+      }
+    ]
+  },
+  {
+    "name": "pushdown",
+    "trans": [
+      "n. [计算机] 递归向下操作，常用于线段树的懒标记更新"
+    ]
+  },
+  {
+    "name": "makeroot",
+    "trans": [
+      "n. [计算机] 设定根节点的操作，常用于动态树结构"
+    ]
+  },
+  {
+    "name": "is_red",
+    "trans": [
+      "n. [计算机] 红黑树中红色节点的判断标记"
+    ]
+  },
+  {
+    "name": "lld",
+    "trans": [
+      "n. [计算机] 长整型数据类型"
+    ]
+  },
+  {
+    "name": "cstring",
+    "trans": [
+      "n. [计算机] C风格的字符串，通常以空字符结尾"
+    ]
+  },
+  {
+    "name": "dir",
+    "trans": [
+      "n. [计算机] 方向，常用于图中的路径查找或递归搜索"
+    ]
+  },
+  {
+    "name": "abs",
+    "trans": [
+      "n. [计算机] 绝对值函数"
+    ]
+  },
+  {
+    "name": "access",
+    "trans": [
+      "n. [计算机] 访问权限或操作"
+    ],
+    "usphone": "'æksɛs",
+    "ukphone": "'ækses",
+    "sentences": [
+      {
+        "english": "Access is by means of a small door on the right.",
+        "chinese": "入口是右边的一扇小门。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "接近；通道，入口；接近的机会",
+        "english": "the way you use to enter a building or reach a place"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 存取",
+        "english": "to find information, especially on a computer"
+      }
+    ]
+  },
+  {
+    "name": "adj",
+    "trans": [
+      "n. [计算机] 邻接表，常用于存储图的顶点和边关系"
+    ]
+  },
+  {
+    "name": "make_pair",
+    "trans": [
+      "n. [计算机] 创建一对键值对"
+    ]
+  },
+  {
+    "name": "priority_queue",
+    "trans": [
+      "n. [计算机] 优先队列，一种特殊的队列数据结构"
+    ]
+  }
 ]

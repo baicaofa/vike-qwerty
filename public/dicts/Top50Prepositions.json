@@ -1,370 +1,1663 @@
 [
-    {
-        "name": "of",
-        "trans": [
-            "indicating the relationship between a part and a whole."
-        ],
-        "usphone": "ʌv; əv",
-        "ukphone": "ɒv; (ə)v"
-    },
-    {
-        "name": "with",
-        "trans": [
-            "indicating the accompanying presence of someone or something."
-        ],
-        "usphone": "wɪð; wɪθ",
-        "ukphone": "wɪð"
-    },
-    {
-        "name": "at",
-        "trans": [
-            "indicating the location or time of an event."
-        ],
-        "usphone": "æt; ət",
-        "ukphone": "æt; ət"
-    },
-    {
-        "name": "from",
-        "trans": [
-            "indicating the source or origin of something."
-        ],
-        "usphone": "frʌm",
-        "ukphone": "frɒm; frəm"
-    },
-    {
-        "name": "into",
-        "trans": [
-            "indicating movement from the outside to the inside of something."
-        ],
-        "usphone": "ˈɪntu",
-        "ukphone": "'ɪntʊ; 'ɪntə"
-    },
-    {
-        "name": "during",
-        "trans": [
-            "indicating a period of time when an event is taking place."
-        ],
-        "usphone": "'dʊrɪŋ",
-        "ukphone": "'djʊərɪŋ"
-    },
-    {
-        "name": "including",
-        "trans": [
-            "indicating the presence of someone or something as part of a larger group."
-        ],
-        "usphone": "ɪn'klʊdɪŋ",
-        "ukphone": "ɪn'kluːdɪŋ"
-    },
-    {
-        "name": "until",
-        "trans": [
-            "indicating the end of a period of time."
-        ],
-        "usphone": "ən'tɪl",
-        "ukphone": "ən'tɪl"
-    },
-    {
-        "name": "against",
-        "trans": [
-            "indicating physical contact with someone or something."
-        ],
-        "usphone": "əˈɡɛnst;əˈɡenst",
-        "ukphone": "ə'genst; ə'geɪnst"
-    },
-    {
-        "name": "among",
-        "trans": [
-            "indicating being a member of a group or in the midst of something."
-        ],
-        "usphone": "ə'mʌŋ",
-        "ukphone": "ə'mʌŋ"
-    },
-    {
-        "name": "throughout",
-        "trans": [
-            "indicating something that occurs or exists in every part of a place or thing."
-        ],
-        "usphone": "θrʊ'aʊt",
-        "ukphone": "θruː'aʊt"
-    },
-    {
-        "name": "despite",
-        "trans": [
-            "indicating something happening despite a circumstance or obstacle."
-        ],
-        "usphone": "dɪ'spaɪt",
-        "ukphone": "dɪ'spaɪt"
-    },
-    {
-        "name": "towards",
-        "trans": [
-            "indicating movement in the direction of something."
-        ],
-        "usphone": "tɔrdz",
-        "ukphone": "tə'wɔːdz; twɔːdz; 'tɔːdz"
-    },
-    {
-        "name": "upon",
-        "trans": [
-            "indicating something happening immediately after something else."
-        ],
-        "usphone": "ə'pɑn",
-        "ukphone": "ə'pɒn"
-    },
-    {
-        "name": "concerning",
-        "trans": [
-            "indicating something that relates to or is about something."
-        ],
-        "usphone": "kən'sɝnɪŋ",
-        "ukphone": "kən'sɜːnɪŋ"
-    },
-    {
-        "name": "to",
-        "trans": [
-            "indicating the direction or movement towards a place or person."
-        ],
-        "usphone": "tə;tu;tuː",
-        "ukphone": "tə;tu;tuː"
-    },
-    {
-        "name": "in",
-        "trans": [
-            "indicating being located inside an enclosed space."
-        ],
-        "usphone": "ɪn",
-        "ukphone": "ɪn"
-    },
-    {
-        "name": "for",
-        "trans": [
-            "indicating the purpose or intended use of something."
-        ],
-        "usphone": "fɚ; strong form fɔr",
-        "ukphone": "fə(r); strong form fɔ:(r)"
-    },
-    {
-        "name": "on",
-        "trans": [
-            "indicating physical contact with a surface or being positioned on top of something."
-        ],
-        "usphone": "ɑn",
-        "ukphone": "ɒn"
-    },
-    {
-        "name": "by",
-        "trans": [
-            "indicating the means or method of doing something."
-        ],
-        "usphone": "baɪ",
-        "ukphone": "baɪ"
-    },
-    {
-        "name": "about",
-        "trans": [
-            "indicating the topic of something."
-        ],
-        "usphone": "ə'baʊt",
-        "ukphone": "ə'baʊt"
-    },
-    {
-        "name": "like",
-        "trans": [
-            "indicating similarity or resemblance between two things."
-        ],
-        "usphone": "laɪk",
-        "ukphone": "laɪk"
-    },
-    {
-        "name": "through",
-        "trans": [
-            "indicating movement from one side of something to the other side."
-        ],
-        "usphone": "θru",
-        "ukphone": "θruː"
-    },
-    {
-        "name": "over",
-        "trans": [
-            "indicating movement from one side to another side of something."
-        ],
-        "usphone": "'ovɚ",
-        "ukphone": "'əʊvə"
-    },
-    {
-        "name": "before",
-        "trans": [
-            "indicating the time or event occurring earlier than another time or event."
-        ],
-        "usphone": "bɪ'fɔr",
-        "ukphone": "bɪ'fɔː"
-    },
-    {
-        "name": "between",
-        "trans": [
-            "indicating the relationship of two things or people when they are separated by something else."
-        ],
-        "usphone": "bəˈtwin",
-        "ukphone": "bɪ'twiːn"
-    },
-    {
-        "name": "after",
-        "trans": [
-            "indicating the time or event occurring later than another time or event."
-        ],
-        "usphone": "'æftɚ",
-        "ukphone": "'ɑːftə"
-    },
-    {
-        "name": "since",
-        "trans": [
-            "indicating the time period from a past event until now."
-        ],
-        "usphone": "sɪns",
-        "ukphone": "sɪns"
-    },
-    {
-        "name": "without",
-        "trans": [
-            "indicating the absence or lack of something."
-        ],
-        "usphone": "wɪðˈaʊt",
-        "ukphone": "wɪˈðaʊt"
-    },
-    {
-        "name": "under",
-        "trans": [
-            "indicating physical contact with the lower surface of something."
-        ],
-        "usphone": "'ʌndɚ",
-        "ukphone": "'ʌndə"
-    },
-    {
-        "name": "within",
-        "trans": [
-            "indicating being inside or contained within something."
-        ],
-        "usphone": "wɪ'ðɪn",
-        "ukphone": "wɪð'ɪn"
-    },
-    {
-        "name": "along",
-        "trans": [
-            "indicating movement in the same direction as something else."
-        ],
-        "usphone": "ə'lɔŋ",
-        "ukphone": "ə'lɒŋ"
-    },
-    {
-        "name": "following",
-        "trans": [
-            "indicating occurring after something else."
-        ],
-        "usphone": "ˈfɑloʊɪŋ",
-        "ukphone": "'fɒləʊɪŋ"
-    },
-    {
-        "name": "across",
-        "trans": [
-            "indicating movement from one side to the opposite side of something."
-        ],
-        "usphone": "ə'krɔs",
-        "ukphone": "ə'krɒs"
-    },
-    {
-        "name": "behind",
-        "trans": [
-            "indicating being at the back of something or someone."
-        ],
-        "usphone": "bɪ'haɪnd",
-        "ukphone": "bɪ'haɪnd"
-    },
-    {
-        "name": "beyond",
-        "trans": [
-            "indicating something being at or to the further side of something else."
-        ],
-        "usphone": "bɪ'jɑnd",
-        "ukphone": "bɪ'jɒnd"
-    },
-    {
-        "name": "plus",
-        "trans": [
-            "indicating addition or inclusion."
-        ],
-        "usphone": "plʌs",
-        "ukphone": "plʌs"
-    },
-    {
-        "name": "except",
-        "trans": [
-            "indicating exclusion or something that is not included."
-        ],
-        "usphone": "ɪk'sɛpt",
-        "ukphone": "ɪkˈsept"
-    },
-    {
-        "name": "but",
-        "trans": [
-            "indicating a contrast or something that is not part of something else."
-        ],
-        "usphone": "bʌt",
-        "ukphone": "bʌt; bət"
-    },
-    {
-        "name": "up",
-        "trans": [
-            "indicating movement in a higher direction."
-        ],
-        "usphone": "ʌp",
-        "ukphone": "ʌp"
-    },
-    {
-        "name": "out",
-        "trans": [
-            "indicating movement away from the inside of something."
-        ],
-        "usphone": "aʊt",
-        "ukphone": "aʊt"
-    },
-    {
-        "name": "around",
-        "trans": [
-            "indicating movement in a circular direction or surrounding something."
-        ],
-        "usphone": "ə'raʊnd",
-        "ukphone": "ə'raʊnd"
-    },
-    {
-        "name": "down",
-        "trans": [
-            "indicating movement in a lower direction."
-        ],
-        "usphone": "daʊn",
-        "ukphone": "daʊn"
-    },
-    {
-        "name": "off",
-        "trans": [
-            "indicating separation or disconnection."
-        ],
-        "usphone": "ɔf",
-        "ukphone": "ɒf"
-    },
-    {
-        "name": "above",
-        "trans": [
-            "indicating something being at a higher level or position than something else."
-        ],
-        "usphone": "ə'bʌv",
-        "ukphone": "ə'bʌv"
-    },
-    {
-        "name": "near",
-        "trans": [
-            "indicating being close or in proximity to something or someone."
-        ],
-        "usphone": "nɪr",
-        "ukphone": "nɪə"
-    }
+  {
+    "name": "of",
+    "trans": [
+      "indicating the relationship between a part and a whole."
+    ],
+    "usphone": "ʌv; əv",
+    "ukphone": "ɒv; (ə)v",
+    "sentences": [
+      {
+        "english": "the back of the house",
+        "chinese": "房子的后部"
+      },
+      {
+        "english": "the last scene of the movie",
+        "chinese": "电影的最后一个场景"
+      },
+      {
+        "english": "the end of the day",
+        "chinese": "一天的末了"
+      },
+      {
+        "english": "to be proud of sth",
+        "chinese": "为某事自豪"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "…的；由于",
+        "english": "used to show what a part belongs to or comes from"
+      }
+    ]
+  },
+  {
+    "name": "with",
+    "trans": [
+      "indicating the accompanying presence of someone or something."
+    ],
+    "usphone": "wɪð; wɪθ",
+    "ukphone": "wɪð",
+    "sentences": [
+      {
+        "english": "I saw Bob in town with his girlfriend.",
+        "chinese": "我看到鲍勃与他的女朋友一起在镇上。"
+      },
+      {
+        "english": "Put this bag with the others.",
+        "chinese": "把这个包和其他的包放在一起。"
+      },
+      {
+        "english": "I always wear these shoes with this dress.",
+        "chinese": "这双鞋子我总是和这条裙子一起穿。"
+      },
+      {
+        "english": "Mix the powder with boiling water.",
+        "chinese": "用开水把粉调和。"
+      },
+      {
+        "english": "You’d better bring your passport with you.",
+        "chinese": "你最好把护照带着。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "用；随着；支持；和…在一起",
+        "english": "used to say that two or more people or things are together in the same place"
+      },
+      {
+        "pos": "n",
+        "chinese": "(With)人名；(德、芬、丹、瑞典)维特",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "at",
+    "trans": [
+      "indicating the location or time of an event."
+    ],
+    "usphone": "æt; ət",
+    "ukphone": "æt; ət",
+    "sentences": [
+      {
+        "english": "They live at 18 Victoria Street.",
+        "chinese": "他们住在维多利亚街18 号。"
+      },
+      {
+        "english": "Does this train stop at Preston?",
+        "chinese": "这列火车在普雷斯顿停吗？"
+      },
+      {
+        "english": "I was waiting at the bus stop.",
+        "chinese": "我在公共汽车站等着。"
+      },
+      {
+        "english": "Liz and her friend sat down at a corner table.",
+        "chinese": "莉兹和她的朋友在靠角落的一张桌子旁坐下。"
+      },
+      {
+        "english": "Turn left at the church.",
+        "chinese": "在教堂那里朝左转。"
+      },
+      {
+        "english": "We’ll meet at Harry’s (=  at Harry’s house  ) .",
+        "chinese": "我们将在哈里家碰头。"
+      },
+      {
+        "english": "I spent an unpleasant hour at the dentist’s.",
+        "chinese": "我在牙医诊所度过了难熬的一小时。"
+      },
+      {
+        "english": "The film starts at 8 o'clock.",
+        "chinese": "电影8点钟开始。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…里；在…时",
+        "english": "used to say exactly where something or someone is, or where something happens"
+      }
+    ]
+  },
+  {
+    "name": "from",
+    "trans": [
+      "indicating the source or origin of something."
+    ],
+    "usphone": "frʌm",
+    "ukphone": "frɒm; frəm",
+    "sentences": [
+      {
+        "english": "I'm from Italy.",
+        "chinese": "我是意大利人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "从…来",
+        "english": "used to show what the origin of sb/sth is"
+      }
+    ]
+  },
+  {
+    "name": "into",
+    "trans": [
+      "indicating movement from the outside to the inside of something."
+    ],
+    "usphone": "ˈɪntu",
+    "ukphone": "'ɪntʊ; 'ɪntə",
+    "sentences": [
+      {
+        "english": "Come into the office.",
+        "chinese": "到办公室里来。"
+      },
+      {
+        "english": "He thrust his hand into his coat pocket.",
+        "chinese": "他把手插进大衣口袋里。"
+      },
+      {
+        "english": "There must be another way into the cave.",
+        "chinese": "一定有其他的路可以进入洞穴。"
+      },
+      {
+        "english": "Sue got back into bed and pulled the quilt over her head.",
+        "chinese": "休回到床上，拉过被子蒙住头。"
+      },
+      {
+        "english": "I’ve got to go into town this morning.",
+        "chinese": "我今天上午得进城去。"
+      },
+      {
+        "english": "We dived into the sea.",
+        "chinese": "我们跳进海里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "进，入；进入到",
+        "english": "to the inside or inner part of a container, place, area etc"
+      }
+    ]
+  },
+  {
+    "name": "during",
+    "trans": [
+      "indicating a period of time when an event is taking place."
+    ],
+    "usphone": "'dʊrɪŋ",
+    "ukphone": "'djʊərɪŋ",
+    "sentences": [
+      {
+        "english": "During the summer she worked as a lifeguard.",
+        "chinese": "夏天她当过救生员。"
+      },
+      {
+        "english": "He slept calmly during the early part of the night.",
+        "chinese": "他上半夜睡得很安稳。"
+      },
+      {
+        "english": "Foxes remain hidden during the day.",
+        "chinese": "狐狸白天一直躲藏着。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…期间",
+        "english": "from the beginning to the end of a period of time"
+      }
+    ]
+  },
+  {
+    "name": "including",
+    "trans": [
+      "indicating the presence of someone or something as part of a larger group."
+    ],
+    "usphone": "ɪn'klʊdɪŋ",
+    "ukphone": "ɪn'kluːdɪŋ",
+    "sentences": [
+      {
+        "english": "The price is £25.50, including postage and packing.",
+        "chinese": "价钱是25.5英镑，含邮费和包装费。"
+      },
+      {
+        "english": "You’ll need a variety of skills, including leadership and negotiating.",
+        "chinese": "你将需要各种技巧，包括领导能力和协商能力。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "包含，包括",
+        "english": "used to introduce something or someone that is part of a larger group or amount you have just mentioned"
+      }
+    ]
+  },
+  {
+    "name": "until",
+    "trans": [
+      "indicating the end of a period of time."
+    ],
+    "usphone": "ən'tɪl",
+    "ukphone": "ən'tɪl",
+    "sentences": [
+      {
+        "english": "The ticket is valid until March.",
+        "chinese": "这张票的有效期一直到 3 月份。"
+      },
+      {
+        "english": "He waited until she had finished speaking.",
+        "chinese": "他一直等到她讲完。"
+      },
+      {
+        "english": "Until recently, Anna worked as a teacher in Japan.",
+        "chinese": "直到最近，安娜一直在日本当老师。"
+      },
+      {
+        "english": "Up until last year, they didn’t even own a car.",
+        "chinese": "一直到去年，他们连汽车也没有。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "在…之前；直到…时",
+        "english": "if something happens until a particular time, it continues and then stops at that time"
+      },
+      {
+        "pos": "prep",
+        "chinese": "在…之前；到…为止",
+        "english": "if something happens until a particular time, it continues and then stops at that time"
+      }
+    ]
+  },
+  {
+    "name": "against",
+    "trans": [
+      "indicating physical contact with someone or something."
+    ],
+    "usphone": "əˈɡɛnst;əˈɡenst",
+    "ukphone": "ə'genst; ə'geɪnst",
+    "sentences": [
+      {
+        "english": "There was a ladder propped up against the wall.",
+        "chinese": "有一把梯子靠在墙边。"
+      },
+      {
+        "english": "sailing against the wind",
+        "chinese": "逆风航行"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "倚在；逆，对着",
+        "english": "next to and touching an upright surface, especially for support"
+      }
+    ]
+  },
+  {
+    "name": "among",
+    "trans": [
+      "indicating being a member of a group or in the midst of something."
+    ],
+    "usphone": "ə'mʌŋ",
+    "ukphone": "ə'mʌŋ",
+    "sentences": [
+      {
+        "english": "The girl quickly disappeared among the crowd.",
+        "chinese": "女孩转眼消失在人群中。"
+      },
+      {
+        "english": "I could hear voices coming from somewhere among the bushes.",
+        "chinese": "我能听到灌木丛中某个地方传来说话的声音。"
+      },
+      {
+        "english": "We walked among the chestnut woods on the mountain slopes.",
+        "chinese": "我们走在山坡上的栗树林中。"
+      },
+      {
+        "english": "She began rummaging among the books on her desk.",
+        "chinese": "她开始在桌子上的一堆书中乱翻起来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…之中",
+        "english": "in or through the middle of a group of people or things"
+      }
+    ]
+  },
+  {
+    "name": "throughout",
+    "trans": [
+      "indicating something that occurs or exists in every part of a place or thing."
+    ],
+    "usphone": "θrʊ'aʊt",
+    "ukphone": "θruː'aʊt",
+    "sentences": [
+      {
+        "english": "a large organization with offices throughout the world",
+        "chinese": "在世界各地都设有办事处的一家大型机构"
+      },
+      {
+        "english": "The disease spread rapidly throughout Europe.",
+        "chinese": "疾病迅速在整个欧洲蔓延开来。"
+      },
+      {
+        "english": "The house is in excellent condition, with fitted carpets throughout.",
+        "chinese": "这幢房子状况极好，全部铺着地毯。"
+      },
+      {
+        "english": "We are open every weekend throughout the year.",
+        "chinese": "我们全年每个周末都对外开放。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "遍及",
+        "english": "in every part of a particular area, place etc"
+      },
+      {
+        "pos": "adv",
+        "chinese": "到处",
+        "english": "during all of a particular period, from the beginning to the end"
+      }
+    ]
+  },
+  {
+    "name": "despite",
+    "trans": [
+      "indicating something happening despite a circumstance or obstacle."
+    ],
+    "usphone": "dɪ'spaɪt",
+    "ukphone": "dɪ'spaɪt",
+    "sentences": [
+      {
+        "english": "Despite all our efforts to save the school, the authorities decided to close it.",
+        "chinese": "尽管我们竭力想保住这所学校，当局还是决定把它关闭。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "尽管",
+        "english": "used to say that something happens or is true even though something else might have prevented it"
+      }
+    ]
+  },
+  {
+    "name": "towards",
+    "trans": [
+      "indicating movement in the direction of something."
+    ],
+    "usphone": "tɔrdz",
+    "ukphone": "tə'wɔːdz; twɔːdz; 'tɔːdz",
+    "sentences": [
+      {
+        "english": "The money collected will be put towards repairing the church roof.",
+        "chinese": "募集到的钱款将用于修缮教堂屋顶。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "用于，有助于",
+        "english": "money put, saved, or given towards something is used to pay for it"
+      }
+    ]
+  },
+  {
+    "name": "upon",
+    "trans": [
+      "indicating something happening immediately after something else."
+    ],
+    "usphone": "ə'pɑn",
+    "ukphone": "ə'pɒn",
+    "sentences": [
+      {
+        "english": "an honour bestowed upon the association",
+        "chinese": "授予该协会的荣誉"
+      },
+      {
+        "english": "We are completely dependent upon your help.",
+        "chinese": "我们完全依赖你的帮助。"
+      },
+      {
+        "english": "Brandon threw him upon the ground.",
+        "chinese": "布兰登把他摔倒在地。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": " 在…之上",
+        "english": "used to mean ‘on’ or ‘onto’"
+      }
+    ]
+  },
+  {
+    "name": "concerning",
+    "trans": [
+      "indicating something that relates to or is about something."
+    ],
+    "usphone": "kən'sɝnɪŋ",
+    "ukphone": "kən'sɜːnɪŋ",
+    "sentences": [
+      {
+        "english": "calls from young children concerning lost pets",
+        "chinese": "小孩子打来的有关宠物走失的电话"
+      },
+      {
+        "english": "the facts concerning Marr’s car crash",
+        "chinese": "有关马尔撞车事故的事实"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "关于",
+        "english": "about or relating to"
+      }
+    ]
+  },
+  {
+    "name": "to",
+    "trans": [
+      "indicating the direction or movement towards a place or person."
+    ],
+    "usphone": "tə;tu;tuː",
+    "ukphone": "tə;tu;tuː",
+    "sentences": [
+      {
+        "english": "The wind blew the door to.",
+        "chinese": "风把门吹上了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "向前；（门等）关上",
+        "english": "if a door is pushed to, it closes or almost closes"
+      },
+      {
+        "pos": "prep",
+        "chinese": "到；向；（表示时间、方向）朝…方向",
+        "english": "used to say where someone or something goes"
+      },
+      {
+        "pos": "n",
+        "chinese": "(To)人名；(柬)多；(中)脱(普通话·威妥玛)",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "in",
+    "trans": [
+      "indicating being located inside an enclosed space."
+    ],
+    "usphone": "ɪn",
+    "ukphone": "ɪn",
+    "sentences": [
+      {
+        "english": "There’s some sugar in the cupboard.",
+        "chinese": "碗橱里有一些糖。"
+      },
+      {
+        "english": "My mother was in the kitchen.",
+        "chinese": "我母亲在厨房里。"
+      },
+      {
+        "english": "He took us for a drive in his new car.",
+        "chinese": "他开着他的新车载我们去兜风。"
+      },
+      {
+        "english": "I found her sitting up in bed.",
+        "chinese": "我发现她直直地坐在床上。"
+      },
+      {
+        "english": "Manson spent fifteen years in prison.",
+        "chinese": "曼森在监狱里待了15年。"
+      },
+      {
+        "english": "a hole in the ground",
+        "chinese": "地上的一个洞"
+      },
+      {
+        "english": "Mr Fisher is in Boston this week.",
+        "chinese": "费希尔先生本周在波士顿。"
+      },
+      {
+        "english": "My parents live in New Zealand now.",
+        "chinese": "我父母现住在新西兰。"
+      },
+      {
+        "english": "I never went in pubs.",
+        "chinese": "我从不进酒吧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…里；进，入",
+        "english": "used with the name of a container, place, or area to say where someone or something is"
+      }
+    ]
+  },
+  {
+    "name": "for",
+    "trans": [
+      "indicating the purpose or intended use of something."
+    ],
+    "usphone": "fɚ; strong form fɔr",
+    "ukphone": "fə(r); strong form fɔ:(r)",
+    "sentences": [
+      {
+        "english": "I’ve got a present for you.",
+        "chinese": "我有件礼物送给你。"
+      },
+      {
+        "english": "Someone left a message for Vicky.",
+        "chinese": "有人给维基留了言。"
+      },
+      {
+        "english": "an English course for foreign students",
+        "chinese": "为外国学生开的一门英语课程"
+      },
+      {
+        "english": "WWhat did you do that for?",
+        "chinese": "你那样做是为了什么？"
+      },
+      {
+        "english": "We could hardly see for the mist.",
+        "chinese": "由于雾气，我们几乎什么也看不见。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "给；为；因为",
+        "english": "used to say who is intended to get or use something, or where something is intended to be used"
+      }
+    ]
+  },
+  {
+    "name": "on",
+    "trans": [
+      "indicating physical contact with a surface or being positioned on top of something."
+    ],
+    "usphone": "ɑn",
+    "ukphone": "ɒn",
+    "sentences": [
+      {
+        "english": "I wanted to punch him on the nose.",
+        "chinese": "我真想一拳打到他鼻子上。"
+      },
+      {
+        "english": "Matt kissed her on the cheek.",
+        "chinese": "马特亲吻了她的脸颊。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…上",
+        "english": "used to say what part of someone or something is hit or touched"
+      }
+    ]
+  },
+  {
+    "name": "by",
+    "trans": [
+      "indicating the means or method of doing something."
+    ],
+    "usphone": "baɪ",
+    "ukphone": "baɪ",
+    "sentences": [
+      {
+        "english": "She stood by the window.",
+        "chinese": "她站在窗边。"
+      },
+      {
+        "english": "I was attacked by a dog.",
+        "chinese": "我被一条狗袭击。"
+      },
+      {
+        "english": "a church designed by the famous architect, Sir Christopher Wren",
+        "chinese": "著名建筑师克里斯托弗·雷恩爵士设计的一座教堂"
+      },
+      {
+        "english": "We are all alarmed by the rise in violent crime.",
+        "chinese": "我们都对暴力罪案的增加感到忧虑。"
+      },
+      {
+        "english": "interference by the state in the affairs of the Church",
+        "chinese": "国家对教会事务的干预"
+      },
+      {
+        "english": "his appointment by the BBC as a producer",
+        "chinese": "英国广播公司委任他为制片人"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…旁；被，由",
+        "english": "beside or near something"
+      }
+    ]
+  },
+  {
+    "name": "about",
+    "trans": [
+      "indicating the topic of something."
+    ],
+    "usphone": "ə'baʊt",
+    "ukphone": "ə'baʊt",
+    "sentences": [
+      {
+        "english": "a book about politics",
+        "chinese": "一本有关政治的书"
+      },
+      {
+        "english": "She said something about leaving town.",
+        "chinese": "她说了些要离开镇子的话。"
+      },
+      {
+        "english": "He lied about his age.",
+        "chinese": "他谎报年龄。"
+      },
+      {
+        "english": "About that car of yours. How much are you selling it for?",
+        "chinese": "说到你的那辆车，你打算卖什么价钱？"
+      },
+      {
+        "english": "What’s he on about (=  talking about  ) ?",
+        "chinese": "他在说什么呀？"
+      },
+      {
+        "english": "It’s about Tommy, doctor. He’s been sick again.",
+        "chinese": "医生，是汤米，他又病了。"
+      },
+      {
+        "english": "Jo sensed fear and jealousy all about her.",
+        "chinese": "乔感觉她周围充满恐惧和嫉妒。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "关于；在…周围",
+        "english": "concerning or relating to a particular subject"
+      }
+    ]
+  },
+  {
+    "name": "like",
+    "trans": [
+      "indicating similarity or resemblance between two things."
+    ],
+    "usphone": "laɪk",
+    "ukphone": "laɪk",
+    "sentences": [
+      {
+        "english": "I like your jacket.",
+        "chinese": "我喜欢你这件上衣。"
+      },
+      {
+        "english": "I don’t really like classical music.",
+        "chinese": "我不是很喜欢古典音乐。"
+      },
+      {
+        "english": "Do you like this colour?",
+        "chinese": "你喜欢这种颜色吗？"
+      },
+      {
+        "english": "I like my coffee quite weak.",
+        "chinese": "我喜欢喝很淡的咖啡。"
+      },
+      {
+        "english": "I don’t like it when you get angry.",
+        "chinese": "我不喜欢你生气时的样子。"
+      },
+      {
+        "english": "How do you like living in London (= how much do you like it )?",
+        "chinese": "住在伦敦你感觉怎样？"
+      },
+      {
+        "english": "I quite like their new album.",
+        "chinese": "我很喜欢他们的新专辑。"
+      },
+      {
+        "english": "We really liked the film.",
+        "chinese": "我们非常喜欢这部影片。"
+      },
+      {
+        "english": "The time I like best (= like most of all ) is the evening when it’s cool.",
+        "chinese": "我最喜欢的时间是凉爽的傍晚。"
+      },
+      {
+        "english": "I didn’t like the idea of being a single parent.",
+        "chinese": "我可不想当单亲家长。"
+      },
+      {
+        "english": "Would you like a drink?",
+        "chinese": "你想喝一杯吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "喜欢；喜爱；希望",
+        "english": "to enjoy something or think that it is nice or good"
+      }
+    ]
+  },
+  {
+    "name": "through",
+    "trans": [
+      "indicating movement from one side of something to the other side."
+    ],
+    "usphone": "θru",
+    "ukphone": "θruː",
+    "sentences": [
+      {
+        "english": "How many working days were lost through sickness last year?",
+        "chinese": "去年因为员工生病损失了多少个工作日？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "因为，由于",
+        "english": "because of something"
+      }
+    ]
+  },
+  {
+    "name": "over",
+    "trans": [
+      "indicating movement from one side to another side of something."
+    ],
+    "usphone": "'ovɚ",
+    "ukphone": "'əʊvə",
+    "sentences": [
+      {
+        "english": "Will you be home over the summer vacation?",
+        "chinese": "暑假期间你在家吗？"
+      },
+      {
+        "english": "Over a period of ten years he stole a million pounds from the company.",
+        "chinese": "他在10年间从公司偷走了100万英镑。"
+      },
+      {
+        "english": "Can we talk about this over dinner?",
+        "chinese": "我们能否边吃饭边谈这个问题？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在（做）…时",
+        "english": "during"
+      }
+    ]
+  },
+  {
+    "name": "before",
+    "trans": [
+      "indicating the time or event occurring earlier than another time or event."
+    ],
+    "usphone": "bɪ'fɔr",
+    "ukphone": "bɪ'fɔː",
+    "sentences": [
+      {
+        "english": "The new road should be completed before the end of the year.",
+        "chinese": "这条新公路应该在年底前完工。"
+      },
+      {
+        "english": "Let’s meet at our house before the show.",
+        "chinese": "看演出前在我们家碰头吧。"
+      },
+      {
+        "english": "Larry arrived home before me.",
+        "chinese": "拉里在我之前到家。"
+      },
+      {
+        "english": "We only got back from Scotland the day before yesterday (=  two days ago  ) .",
+        "chinese": "我们前天才从苏格兰回来。"
+      },
+      {
+        "english": "Other students joined in the protest, and before long (=  soon  ) there was a crowd of 200 or so.",
+        "chinese": "其他学生也加入了抗议队伍，不久就有200人左右了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…以前",
+        "english": "earlier than something or someone"
+      }
+    ]
+  },
+  {
+    "name": "between",
+    "trans": [
+      "indicating the relationship of two things or people when they are separated by something else."
+    ],
+    "usphone": "bəˈtwin",
+    "ukphone": "bɪ'twiːn",
+    "sentences": [
+      {
+        "english": "He supplements his regular meals by eating between meals.",
+        "chinese": "他在两餐之间吃点东西来补充正餐。"
+      },
+      {
+        "english": "The object of these experiments was to find the connection, if any, between the two phenomena.",
+        "chinese": "这些实验的目的就是探索这两种现象之间的联系，如果存在着任何联系的话。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…中间",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "after",
+    "trans": [
+      "indicating the time or event occurring later than another time or event."
+    ],
+    "usphone": "'æftɚ",
+    "ukphone": "'ɑːftə",
+    "sentences": [
+      {
+        "english": "After the war many soldiers stayed in France.",
+        "chinese": "战后，许多士兵留在法国。"
+      },
+      {
+        "english": "I go swimming every day after work.",
+        "chinese": "我每天下班后都去游泳。"
+      },
+      {
+        "english": "Do you believe in life after death?",
+        "chinese": "你相信人死后还有来生吗？"
+      },
+      {
+        "english": "The first attack started just after midnight.",
+        "chinese": "刚过午夜，第一波进攻开始了。"
+      },
+      {
+        "english": "David went to bed straight after (=  immediately after  ) supper.",
+        "chinese": "戴维一吃完晚饭就去睡觉了。"
+      },
+      {
+        "english": "After you’d called the police, what did you do?",
+        "chinese": "报警之后，你做了些什么？"
+      },
+      {
+        "english": "Zimmerman changed his name after he left Germany.",
+        "chinese": "齐默尔曼离开德国后改了名字。"
+      },
+      {
+        "english": "People still remember the 1958 revolution and what came after (=  happened after it  ) .",
+        "chinese": "人们依然记得1958年的那场革命和之后发生的事。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…以后；次于",
+        "english": "when a particular event or time has happened, or when someone has done something"
+      }
+    ]
+  },
+  {
+    "name": "since",
+    "trans": [
+      "indicating the time period from a past event until now."
+    ],
+    "usphone": "sɪns",
+    "ukphone": "sɪns",
+    "sentences": [
+      {
+        "english": "We’ve been waiting here since two o’clock.",
+        "chinese": "我们从两点钟开始就在这里等了。"
+      },
+      {
+        "english": "I haven’t played rugby since I left university.",
+        "chinese": "我大学毕业后就没打过橄榄球。"
+      },
+      {
+        "english": "She left London ten years ago, and I haven’t seen her since.",
+        "chinese": "她十年前离开伦敦，此后我再没有见过她。"
+      },
+      {
+        "english": "The factory has been here since the 1970s.",
+        "chinese": "这家工厂从 20 世纪 70 年代起就在这里了。"
+      },
+      {
+        "english": "It was exactly five years since her father had died.",
+        "chinese": "从她父亲去世到现在正好满五年。"
+      },
+      {
+        "english": "Since the end of the war, over five thousand prisoners have been released.",
+        "chinese": "自从战争结束以后，已有五千多名战俘获释。"
+      },
+      {
+        "english": "He lost his job five years ago, but has since found other work.",
+        "chinese": "他五年前失去工作，但此后找到了其他工作。"
+      },
+      {
+        "english": "I left school in 1995, and since then I’ve lived in London.",
+        "chinese": "我 1995 年离开学校，此后就在伦敦生活。"
+      },
+      {
+        "english": "About six thousand people were arrested, several hundred of whom have since been released.",
+        "chinese": "约六千人被逮捕，不过他们中有几百人后来被释放了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "因为；由于；既然；自…以来；自…以后",
+        "english": ""
+      },
+      {
+        "pos": "prep",
+        "chinese": "自…以来；自…以后",
+        "english": "from a particular time or event in the past until the present, or in that period of time"
+      },
+      {
+        "pos": "adv",
+        "chinese": "后来",
+        "english": "When you are talking about an event or situation in the past, you use since to indicate that another event happened at some point later in time"
+      }
+    ]
+  },
+  {
+    "name": "without",
+    "trans": [
+      "indicating the absence or lack of something."
+    ],
+    "usphone": "wɪðˈaʊt",
+    "ukphone": "wɪˈðaʊt",
+    "sentences": [
+      {
+        "english": "After the storm we were without electricity for five days.",
+        "chinese": "暴风雨之后我们断电了五天。"
+      },
+      {
+        "english": "a house without a garden",
+        "chinese": "不带花园的房子"
+      },
+      {
+        "english": "We passed two ruined abbeys, one with a tower and one without.",
+        "chinese": "我们路过两座破落的寺院，一座有塔楼，另一座没有。"
+      },
+      {
+        "english": "I’m getting used to managing without a car.",
+        "chinese": "我已经习惯没有汽车了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "没有；超过；在…外面",
+        "english": "not having something, especially something that is basic or necessary"
+      },
+      {
+        "pos": "adv",
+        "chinese": "户外；在外面；没有或不显示某事物",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "外部；外面",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "under",
+    "trans": [
+      "indicating physical contact with the lower surface of something."
+    ],
+    "usphone": "'ʌndɚ",
+    "ukphone": "'ʌndə",
+    "sentences": [
+      {
+        "english": "These toys are not suitable for children under five.",
+        "chinese": "这些玩具不适合五岁以下的儿童玩。"
+      },
+      {
+        "english": "Most of the events listed cost under £60.",
+        "chinese": "所列活动项目的花费大多低于 60 英镑。"
+      },
+      {
+        "english": "I spend just under four hours a day seeing customers.",
+        "chinese": "我一天接待客户所花的时间将近四小时。"
+      },
+      {
+        "english": "He took a deep breath before he went under.",
+        "chinese": "他在钻下水前深深地吸了口气。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "低于，少于；在之下",
+        "english": "less than a particular number, amount, age, or price"
+      },
+      {
+        "pos": "adv",
+        "chinese": "在下面；在下方",
+        "english": "Under is also an adverb"
+      },
+      {
+        "pos": "adj",
+        "chinese": "下面的；从属的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "within",
+    "trans": [
+      "indicating being inside or contained within something."
+    ],
+    "usphone": "wɪ'ðɪn",
+    "ukphone": "wɪð'ɪn",
+    "sentences": [
+      {
+        "english": "We should have the test results back within 24 hours.",
+        "chinese": "我们24小时之内应该可以拿到化验结果。"
+      },
+      {
+        "english": "He fell sick and died within a matter of weeks.",
+        "chinese": "他病倒了，不出几星期就死了。"
+      },
+      {
+        "english": "Within an hour of our arrival Caroline was starting to complain.",
+        "chinese": "我们到达还没有一小时，卡罗琳就开始抱怨了。"
+      },
+      {
+        "english": "The real dangers to these rebels came from within.",
+        "chinese": "对于这些叛乱分子真正的危险来自内部。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…之内",
+        "english": "before a certain period of time has passed"
+      },
+      {
+        "pos": "adv",
+        "chinese": "在内部",
+        "english": "Within is also an adverb"
+      },
+      {
+        "pos": "n",
+        "chinese": "里面",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "along",
+    "trans": [
+      "indicating movement in the same direction as something else."
+    ],
+    "usphone": "ə'lɔŋ",
+    "ukphone": "ə'lɒŋ",
+    "sentences": [
+      {
+        "english": "We were driving along Follyfoot Road.",
+        "chinese": "我们沿着福莱福特路行驶。"
+      },
+      {
+        "english": "She glanced anxiously along the line of faces.",
+        "chinese": "她焦急地扫视着这一排面孔。"
+      },
+      {
+        "english": "He slid his hand along her arm.",
+        "chinese": "他的手顺着她的臂膀滑下。"
+      },
+      {
+        "english": "I was driving along, thinking about Chris.",
+        "chinese": "我一边开车，一边想着克里斯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "沿着",
+        "english": "from one place on something such as a line, road, or edge towards the other end of it"
+      },
+      {
+        "pos": "adv",
+        "chinese": "向前",
+        "english": "going forward"
+      }
+    ]
+  },
+  {
+    "name": "following",
+    "trans": [
+      "indicating occurring after something else."
+    ],
+    "usphone": "ˈfɑloʊɪŋ",
+    "ukphone": "'fɒləʊɪŋ",
+    "sentences": [
+      {
+        "english": "He was sick in the evening, but the following day he was better.",
+        "chinese": "那天晚上他生病了，但第二天就好一些了。"
+      },
+      {
+        "english": "Write down the following information: name of product, type, date purchased and price.",
+        "chinese": "写下以下信息：产品名称、型号、购买日期和价格。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "接着的；下列的",
+        "english": "the next afternoon, month etc"
+      }
+    ]
+  },
+  {
+    "name": "across",
+    "trans": [
+      "indicating movement from one side to the opposite side of something."
+    ],
+    "usphone": "ə'krɔs",
+    "ukphone": "ə'krɒs",
+    "sentences": [
+      {
+        "english": "He walked across the field.",
+        "chinese": "他走过田地。"
+      },
+      {
+        "english": "There's a bank right across the street.",
+        "chinese": "街对面就有一家银行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "横过；在…对面",
+        "english": "from one side to the other side of sth"
+      }
+    ]
+  },
+  {
+    "name": "behind",
+    "trans": [
+      "indicating being at the back of something or someone."
+    ],
+    "usphone": "bɪ'haɪnd",
+    "ukphone": "bɪ'haɪnd",
+    "sentences": [
+      {
+        "english": "I turned to speak to the person standing behind me.",
+        "chinese": "我转身和站在我后面的那人说话。"
+      },
+      {
+        "english": "Someone could easily creep up behind us.",
+        "chinese": "很可能有人跟在我们后面。"
+      },
+      {
+        "english": "The car behind was hooting impatiently.",
+        "chinese": "后面那辆车不耐烦地按着喇叭。"
+      },
+      {
+        "english": "Jane shut the door behind her.",
+        "chinese": "简随手关上身后的门。"
+      },
+      {
+        "english": "The manager was sitting behind a large desk.",
+        "chinese": "经理坐在一张大办公桌的后面。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…后面",
+        "english": "at or towards the back of a thing or person"
+      }
+    ]
+  },
+  {
+    "name": "beyond",
+    "trans": [
+      "indicating something being at or to the further side of something else."
+    ],
+    "usphone": "bɪ'jɑnd",
+    "ukphone": "bɪ'jɒnd",
+    "sentences": [
+      {
+        "english": "They crossed the mountains and headed for the valleys beyond.",
+        "chinese": "他们翻过山，向更远处的山谷进发。"
+      },
+      {
+        "english": "Beyond the river, cattle were grazing.",
+        "chinese": "河的那边，牛在吃草。"
+      },
+      {
+        "english": "She drove through Westport, and stopped a few miles beyond at a wayside inn.",
+        "chinese": "她驱车穿过西港，在几英里外的一个路边旅馆停了下来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…的那边",
+        "english": "on or to the further side of something"
+      }
+    ]
+  },
+  {
+    "name": "plus",
+    "trans": [
+      "indicating addition or inclusion."
+    ],
+    "usphone": "plʌs",
+    "ukphone": "plʌs",
+    "sentences": [
+      {
+        "english": "Three plus six equals nine (3+6=9).",
+        "chinese": "3 加6等于9。"
+      },
+      {
+        "english": "The total cost was $10,000, plus 14% interest.",
+        "chinese": "全部费用是1万美元，外加14%的利息。"
+      },
+      {
+        "english": "Daytime temperatures barely reached plus 5˚.",
+        "chinese": "白天的气温仅零上5度。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "加，加上",
+        "english": "used to show that one number or amount is added to another"
+      },
+      {
+        "pos": "adj",
+        "chinese": "正的",
+        "english": "more than zero – used especially when talking about temperatures"
+      }
+    ]
+  },
+  {
+    "name": "except",
+    "trans": [
+      "indicating exclusion or something that is not included."
+    ],
+    "usphone": "ɪk'sɛpt",
+    "ukphone": "ɪkˈsept",
+    "sentences": [
+      {
+        "english": "They were all there except me.",
+        "chinese": "除了我以外他们都在那里。"
+      },
+      {
+        "english": "We all went except him.",
+        "chinese": "除他以外， 我们都去了。"
+      },
+      {
+        "english": "They all howled with laughter except me.",
+        "chinese": "除了我以外，他们全都哈哈大笑起来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "除…之外",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "but",
+    "trans": [
+      "indicating a contrast or something that is not part of something else."
+    ],
+    "usphone": "bʌt",
+    "ukphone": "bʌt; bət",
+    "sentences": [
+      {
+        "english": "It’s an old car, but it’s very reliable.",
+        "chinese": "这是一辆旧车，但是性能非常可靠。"
+      },
+      {
+        "english": "They rushed to the hospital, but they were too late.",
+        "chinese": "他们急忙赶到医院，但是已经太迟了。"
+      },
+      {
+        "english": "We’ve invited the boss, but she may decide not to come.",
+        "chinese": "我们邀请过老板，但她有可能决定不来。"
+      },
+      {
+        "english": "an expensive but extremely useful book",
+        "chinese": "价钱很贵却是非常有用的一本书"
+      },
+      {
+        "english": "‘Has he got any experience?’ ‘No, but he’s keen to learn.’",
+        "chinese": "“他有经验吗？”“没有，但他非常好学。”"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "但是，可是",
+        "english": "used to connect two statements or phrases when the second one adds something different or seems surprising after the first one"
+      }
+    ]
+  },
+  {
+    "name": "up",
+    "trans": [
+      "indicating movement in a higher direction."
+    ],
+    "usphone": "ʌp",
+    "ukphone": "ʌp",
+    "sentences": [
+      {
+        "english": "We walked slowly up the hill.",
+        "chinese": "我们慢慢地爬上山。"
+      },
+      {
+        "english": "She picked her jacket up off the floor.",
+        "chinese": "她从地板上捡起外套。"
+      },
+      {
+        "english": "paths leading up into the mountains",
+        "chinese": "通往山里的小径"
+      },
+      {
+        "english": "Tim had climbed up a tree to get a better view.",
+        "chinese": "蒂姆爬到了树上，以便看得更清楚。"
+      },
+      {
+        "english": "Put up your hand if you know the answer.",
+        "chinese": "如果知道答案就举手。"
+      },
+      {
+        "english": "The water was getting up my nose.",
+        "chinese": "水已经没到了我的鼻子。"
+      },
+      {
+        "english": "Karen lay on her back, staring up at the ceiling.",
+        "chinese": "卡伦仰卧着，盯着天花板。"
+      },
+      {
+        "english": "Are you sure you should be up?",
+        "chinese": "你肯定你该起床了吗?"
+      },
+      {
+        "english": "These days they were up at the crack of dawn.",
+        "chinese": "这些天他们在破晓时就起床。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "起来；上涨；向上",
+        "english": "towards a higher place or position"
+      },
+      {
+        "pos": "prep",
+        "chinese": "在…之上；向…的较高处",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "涨的；起床的；向上的",
+        "english": "If you are up, you are not in bed"
+      },
+      {
+        "pos": "n",
+        "chinese": "上升；繁荣",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "out",
+    "trans": [
+      "indicating movement away from the inside of something."
+    ],
+    "usphone": "aʊt",
+    "ukphone": "aʊt",
+    "sentences": [
+      {
+        "english": "She opened her suitcase and took out a pair of shoes.",
+        "chinese": "她打开手提箱，拿出一双鞋。"
+      },
+      {
+        "english": "Lock the door on your way out.",
+        "chinese": "你出去时把门锁上。"
+      },
+      {
+        "english": "Charlotte went to the window and looked out.",
+        "chinese": "夏洛特走到窗前往外看。"
+      },
+      {
+        "english": "Out you go (= used to order someone to leave a room )!",
+        "chinese": "你给我出去！"
+      },
+      {
+        "english": "When the sun came out, a rainbow formed in the sky.",
+        "chinese": "太阳出来时，天空中出现了一道彩虹。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "出，在外；现出来",
+        "english": "from inside an object, container, building, or place"
+      }
+    ]
+  },
+  {
+    "name": "around",
+    "trans": [
+      "indicating movement in a circular direction or surrounding something."
+    ],
+    "usphone": "ə'raʊnd",
+    "ukphone": "ə'raʊnd",
+    "sentences": [
+      {
+        "english": "What an inspiration she was to all around her!",
+        "chinese": "她对于她周围所有的人是一种多么大的鼓舞!"
+      },
+      {
+        "english": "All those around him looked at him with amazement.",
+        "chinese": "周围的人都对他投射出惊异的眼光。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…周围",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "down",
+    "trans": [
+      "indicating movement in a lower direction."
+    ],
+    "usphone": "daʊn",
+    "ukphone": "daʊn",
+    "sentences": [
+      {
+        "english": "David bent down to tie his shoelace.",
+        "chinese": "戴维弯腰系鞋带。"
+      },
+      {
+        "english": "Get down off the table.",
+        "chinese": "从桌子上下来。"
+      },
+      {
+        "english": "Tears were streaming down my face.",
+        "chinese": "我泪流满面。"
+      },
+      {
+        "english": "The sun was going down and it would soon be dark.",
+        "chinese": "夕阳西下，天很快就要黑了。"
+      },
+      {
+        "english": "They came running down the stairs.",
+        "chinese": "他们跑下楼来。"
+      },
+      {
+        "english": "She stood on a balcony looking down into the courtyard.",
+        "chinese": "她站在阳台上朝下面的院子望去。"
+      },
+      {
+        "english": "Glancing down the list of runners, I noticed a familiar name.",
+        "chinese": "我往下扫了一眼赛跑选手的名单，注意到了一个熟悉的名字。"
+      },
+      {
+        "english": "Her hair came down to her waist.",
+        "chinese": "她的头发一直垂到腰际。"
+      },
+      {
+        "english": "Ken fell asleep face down (= with his face towards the ground ) on the couch.",
+        "chinese": "肯趴在长沙发上睡着了。"
+      },
+      {
+        "english": "We heard the sound of laughter down below.",
+        "chinese": "我们听到下面有笑声。"
+      },
+      {
+        "english": "The bathroom is down those stairs.",
+        "chinese": "浴室在那段楼梯下面。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "向下；在下面",
+        "english": "to or towards a lower place or position"
+      }
+    ]
+  },
+  {
+    "name": "off",
+    "trans": [
+      "indicating separation or disconnection."
+    ],
+    "usphone": "ɔf",
+    "ukphone": "ɒf",
+    "sentences": [
+      {
+        "english": "He got into his car and drove off.",
+        "chinese": "他上了车，随即开车走了。"
+      },
+      {
+        "english": "Will someone switch the radio off?",
+        "chinese": "谁把收音机关掉好吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "（离）开；（停）止",
+        "english": "away from a place"
+      }
+    ]
+  },
+  {
+    "name": "above",
+    "trans": [
+      "indicating something being at a higher level or position than something else."
+    ],
+    "usphone": "ə'bʌv",
+    "ukphone": "ə'bʌv",
+    "sentences": [
+      {
+        "english": "He lived in a flat above the shop.",
+        "chinese": "他住在那商店上面的一套房间里。"
+      },
+      {
+        "english": "The airliner flew above the clouds.",
+        "chinese": "大型客机在云层上面飞行。"
+      },
+      {
+        "english": "The salaries we offer are well above (= much higher than ) average.",
+        "chinese": "我们提供的薪资远高于平均水平。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…上面；高于",
+        "english": "in a higher position than something else"
+      }
+    ]
+  },
+  {
+    "name": "near",
+    "trans": [
+      "indicating being close or in proximity to something or someone."
+    ],
+    "usphone": "nɪr",
+    "ukphone": "nɪə",
+    "sentences": [
+      {
+        "english": "They live near London.",
+        "chinese": "他们住在伦敦附近。"
+      },
+      {
+        "english": "I’m sure they live somewhere near here.",
+        "chinese": "我肯定他们就住在这附近。"
+      },
+      {
+        "english": "They moved house to be nearer the school.",
+        "chinese": "他们把家搬到离学校近一些。"
+      },
+      {
+        "english": "She told the children not to go near the canal.",
+        "chinese": "她告诉孩子们不要走近运河。"
+      },
+      {
+        "english": "I’m warning you - don’t come any nearer!",
+        "chinese": "我警告你别再靠近！"
+      },
+      {
+        "english": "We heard voices as we drew near the village.",
+        "chinese": "我们走近村子时听见了说话声。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "近，接近",
+        "english": "only a short distance from a person or thing"
+      },
+      {
+        "pos": "adj",
+        "chinese": "近的",
+        "english": "only a short distance away from someone or something"
+      }
+    ]
+  }
 ]

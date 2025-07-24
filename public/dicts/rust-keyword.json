@@ -1,212 +1,906 @@
 [
-    {
-        "name": "as",
-        "trans": [
-            "`as` 用于进行类型转换（类型别名），将一种类型转换为另一种类型，通常用于强制类型转换或者是简化泛型。"
-        ]
-    },
-    {
-        "name": "async",
-        "trans": [
-            "`async` 用于定义异步函数或闭包，表示该函数将返回一个 `Future`，可以通过 `await` 来等待其执行结果。"
-        ]
-    },
-    {
-        "name": "await",
-        "trans": [
-            "`await` 用于在异步上下文中等待异步操作的完成。它只能在 `async` 函数中使用。"
-        ]
-    },
-    {
-        "name": "break",
-        "trans": [
-            "`break` 用于跳出当前的循环或 `match` 语句，终止循环或匹配。"
-        ]
-    },
-    {
-        "name": "const",
-        "trans": [
-            "`const` 用于定义常量，其值在编译时就已经确定，并且值不可变。常量的类型必须显式指定。"
-        ]
-    },
-    {
-        "name": "continue",
-        "trans": [
-            "`continue` 用于跳过当前循环的剩余部分，继续执行下一次循环。"
-        ]
-    },
-    {
-        "name": "crate",
-        "trans": [
-            "`crate` 表示当前包（crate），用于标识模块或外部 crate 的路径。"
-        ]
-    },
-    {
-        "name": "dyn",
-        "trans": [
-            "`dyn` 用于创建 trait 对象，允许在运行时动态调用 trait 中定义的方法。"
-        ]
-    },
-    {
-        "name": "else",
-        "trans": [
-            "`else` 用于与 `if` 语句配合，指定条件不成立时执行的代码块。"
-        ]
-    },
-    {
-        "name": "enum",
-        "trans": [
-            "`enum` 用于定义枚举类型，枚举可以有多个变体，每个变体可以包含不同类型的数据。"
-        ]
-    },
-    {
-        "name": "extern",
-        "trans": [
-            "`extern` 用于声明外部函数或外部库（通常是 C 或其他语言），以便可以在 Rust 代码中调用。"
-        ]
-    },
-    {
-        "name": "fn",
-        "trans": [
-            "`fn` 用于定义函数。函数有一个明确的返回类型（如果有的话），并且可以接受参数。"
-        ]
-    },
-    {
-        "name": "for",
-        "trans": [
-            "`for` 用于创建一个迭代循环，通常用来遍历集合、范围或其他可迭代的类型。"
-        ]
-    },
-    {
-        "name": "if",
-        "trans": [
-            "`if` 用于执行条件判断语句，如果条件为真，则执行对应代码块。"
-        ]
-    },
-    {
-        "name": "impl",
-        "trans": [
-            "`impl` 用于为类型（如结构体、枚举或 trait）实现方法，或者为类型实现某个 trait。"
-        ]
-    },
-    {
-        "name": "in",
-        "trans": [
-            "`in` 用于模式匹配中，表示模式的匹配条件。通常与 `for` 循环一起使用。"
-        ]
-    },
-    {
-        "name": "let",
-        "trans": [
-            "`let` 用于声明变量或常量，常用来进行值绑定，支持可变和不可变绑定。"
-        ]
-    },
-    {
-        "name": "loop",
-        "trans": [
-            "`loop` 用于创建一个无限循环，直到使用 `break` 或其他控制流语句终止。"
-        ]
-    },
-    {
-        "name": "match",
-        "trans": [
-            "`match` 用于模式匹配，根据给定的值匹配多个可能的情况并执行相应的代码块。"
-        ]
-    },
-    {
-        "name": "mod",
-        "trans": [
-            "`mod` 用于定义模块，模块是组织代码的基本单元，包含函数、结构体、枚举等内容。"
-        ]
-    },
-    {
-        "name": "move",
-        "trans": [
-            "`move` 用于捕获闭包中的值时，强制将其所有权转移给闭包，而非通过引用传递。"
-        ]
-    },
-    {
-        "name": "mut",
-        "trans": [
-            "`mut` 用于声明一个可变变量或可变引用，表示该变量的值可以被修改。"
-        ]
-    },
-    {
-        "name": "pub",
-        "trans": [
-            "`pub` 用于将项（如结构体、函数或模块）标记为公有，使得它们可以在模块外部访问。"
-        ]
-    },
-    {
-        "name": "ref",
-        "trans": [
-            "`ref` 用于通过引用模式匹配值，避免值的所有权转移，而是获取一个引用。"
-        ]
-    },
-    {
-        "name": "return",
-        "trans": [
-            "`return` 用于从函数中返回值，终止函数执行并返回控制权给调用者。"
-        ]
-    },
-    {
-        "name": "self",
-        "trans": [
-            "`self` 表示当前实例，在方法定义中引用调用该方法的对象。"
-        ]
-    },
-    {
-        "name": "static",
-        "trans": [
-            "`static` 用于声明具有静态生命周期的变量，这些变量在程序的整个生命周期中都存在。"
-        ]
-    },
-    {
-        "name": "struct",
-        "trans": [
-            "`struct` 用于定义结构体类型，它是一种自定义的数据类型，可以包含多个字段。"
-        ]
-    },
-    {
-        "name": "super",
-        "trans": [
-            "`super` 用于引用父模块，通常用于访问父模块中的函数或类型。"
-        ]
-    },
-    {
-        "name": "trait",
-        "trans": [
-            "`trait` 用于定义 trait，它是一组方法签名，可以被不同的类型实现以提供共享功能。"
-        ]
-    },
-    {
-        "name": "type",
-        "trans": [
-            "`type` 用于定义类型别名，或者在泛型中为类型参数指定约束条件。"
-        ]
-    },
-    {
-        "name": "unsafe",
-        "trans": [
-            "`unsafe` 用于标记不安全的代码块，允许进行一些编译器不检查的操作，如直接操作指针等。"
-        ]
-    },
-    {
-        "name": "use",
-        "trans": [
-            "`use` 用于将模块、函数、类型等引入当前作用域，减少代码冗余并简化访问路径。"
-        ]
-    },
-    {
-        "name": "where",
-        "trans": [
-            "`where` 用于在泛型约束中指定类型约束，通常用于定义函数或结构体时的类型参数约束。"
-        ]
-    },
-    {
-        "name": "while",
-        "trans": [
-            "`while` 用于创建一个基于条件判断的循环，只要条件为真，循环就会继续执行。"
-        ]
-    }
+  {
+    "name": "as",
+    "trans": [
+      "`as` 用于进行类型转换（类型别名），将一种类型转换为另一种类型，通常用于强制类型转换或者是简化泛型。"
+    ],
+    "usphone": "æz,əz",
+    "ukphone": "æz; əz",
+    "sentences": [
+      {
+        "english": "I saw Peter as I was getting off the bus.",
+        "chinese": "我下公共汽车的时候看见了彼得。"
+      },
+      {
+        "english": "As time passed, things seemed to get worse.",
+        "chinese": "随着时间的推移，情况似乎变得更加糟糕了。"
+      },
+      {
+        "english": "Just as the two men were leaving, a message arrived.",
+        "chinese": "那两个男子刚要离开，消息就传来了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "当…的时候",
+        "english": "while or when"
+      }
+    ]
+  },
+  {
+    "name": "async",
+    "trans": [
+      "`async` 用于定义异步函数或闭包，表示该函数将返回一个 `Future`，可以通过 `await` 来等待其执行结果。"
+    ]
+  },
+  {
+    "name": "await",
+    "trans": [
+      "`await` 用于在异步上下文中等待异步操作的完成。它只能在 `async` 函数中使用。"
+    ],
+    "usphone": "ə'wet",
+    "ukphone": "ə'weɪt",
+    "sentences": [
+      {
+        "english": "Several men are awaiting trial for robbery.",
+        "chinese": "几个人因抢劫正在候审。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "等候，期待",
+        "english": "to wait for something"
+      }
+    ]
+  },
+  {
+    "name": "break",
+    "trans": [
+      "`break` 用于跳出当前的循环或 `match` 语句，终止循环或匹配。"
+    ],
+    "usphone": "brek",
+    "ukphone": "breɪk",
+    "sentences": [
+      {
+        "english": "I had to break a window to get into the house.",
+        "chinese": "我只得打破一扇窗户进屋。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "打破；损坏；破坏",
+        "english": "if you break something, you make it separate into two or more pieces, for example by hitting it, dropping it, or bending it"
+      }
+    ]
+  },
+  {
+    "name": "const",
+    "trans": [
+      "`const` 用于定义常量，其值在编译时就已经确定，并且值不可变。常量的类型必须显式指定。"
+    ]
+  },
+  {
+    "name": "continue",
+    "trans": [
+      "`continue` 用于跳过当前循环的剩余部分，继续执行下一次循环。"
+    ],
+    "usphone": "kən'tɪnju",
+    "ukphone": "kən'tɪnjuː",
+    "sentences": [
+      {
+        "english": "He will be continuing his education in the US.",
+        "chinese": "他将在美国继续求学。"
+      },
+      {
+        "english": "英文例句: I felt too sick to continue.",
+        "chinese": "我感觉很难受，无法继续下去了。"
+      },
+      {
+        "english": "英文例句:The road continues northwards to the border.",
+        "chinese": "中文例句: 这条路往北一直延伸到边境。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "继续，连续；延伸",
+        "english": "to not stop happening, existing, or doing something"
+      }
+    ]
+  },
+  {
+    "name": "crate",
+    "trans": [
+      "`crate` 表示当前包（crate），用于标识模块或外部 crate 的路径。"
+    ],
+    "usphone": "kret",
+    "ukphone": "kreɪt",
+    "sentences": [
+      {
+        "english": "Equipment and office supplies were crated and shipped.",
+        "chinese": "设备及办公用品被装箱运走了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "板条箱；篓",
+        "english": "a large box made of wood or plastic that is used for carrying fruit, bottles etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "将某物装入大木箱或板条箱中",
+        "english": "to pack things into a crate"
+      }
+    ]
+  },
+  {
+    "name": "dyn",
+    "trans": [
+      "`dyn` 用于创建 trait 对象，允许在运行时动态调用 trait 中定义的方法。"
+    ]
+  },
+  {
+    "name": "else",
+    "trans": [
+      "`else` 用于与 `if` 语句配合，指定条件不成立时执行的代码块。"
+    ],
+    "usphone": "ɛls",
+    "ukphone": "els",
+    "sentences": [
+      {
+        "english": "There’s something else I’d like to talk about as well.",
+        "chinese": "我还有其他事情要谈一谈。"
+      },
+      {
+        "english": "I’d like you to come, and anyone else who’s free.",
+        "chinese": "我想请你过来，其他人有空也可以来。"
+      },
+      {
+        "english": "He was awake now, as was everyone else.",
+        "chinese": "他现在已经醒了，其他人也都醒了。"
+      },
+      {
+        "english": "Who else was at the party?",
+        "chinese": "还有谁参加了聚会？"
+      },
+      {
+        "english": "‘Two coffees, please.’ ‘Anything else?’ ‘No, thanks.’",
+        "chinese": "“请来两杯咖啡。”“还要别的吗？”“不要了，谢谢。"
+      },
+      {
+        "english": "(= more than any other things ) she was seeking love.",
+        "chinese": "她追求爱情胜过一切。"
+      },
+      {
+        "english": "If I can't make a living at painting, at least I can teach someone else to paint.",
+        "chinese": "如果我不能以画画谋生的话，至少我能教别人画画。"
+      },
+      {
+        "english": "We had nothing else to do on those long trips.",
+        "chinese": "在那些漫长的旅途中我们别无他事可做。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "其它，另外",
+        "english": "besides or in addition to someone or something"
+      },
+      {
+        "pos": "adj",
+        "chinese": "别的",
+        "english": "You use else after words such as \"anywhere,\" \"someone,\" and \"what\" to refer in a vague way to another person, place, or thing"
+      }
+    ]
+  },
+  {
+    "name": "enum",
+    "trans": [
+      "`enum` 用于定义枚举类型，枚举可以有多个变体，每个变体可以包含不同类型的数据。"
+    ]
+  },
+  {
+    "name": "extern",
+    "trans": [
+      "`extern` 用于声明外部函数或外部库（通常是 C 或其他语言），以便可以在 Rust 代码中调用。"
+    ]
+  },
+  {
+    "name": "fn",
+    "trans": [
+      "`fn` 用于定义函数。函数有一个明确的返回类型（如果有的话），并且可以接受参数。"
+    ]
+  },
+  {
+    "name": "for",
+    "trans": [
+      "`for` 用于创建一个迭代循环，通常用来遍历集合、范围或其他可迭代的类型。"
+    ],
+    "usphone": "fɚ; strong form fɔr",
+    "ukphone": "fə(r); strong form fɔ:(r)",
+    "sentences": [
+      {
+        "english": "I’ve got a present for you.",
+        "chinese": "我有件礼物送给你。"
+      },
+      {
+        "english": "Someone left a message for Vicky.",
+        "chinese": "有人给维基留了言。"
+      },
+      {
+        "english": "an English course for foreign students",
+        "chinese": "为外国学生开的一门英语课程"
+      },
+      {
+        "english": "WWhat did you do that for?",
+        "chinese": "你那样做是为了什么？"
+      },
+      {
+        "english": "We could hardly see for the mist.",
+        "chinese": "由于雾气，我们几乎什么也看不见。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "给；为；因为",
+        "english": "used to say who is intended to get or use something, or where something is intended to be used"
+      }
+    ]
+  },
+  {
+    "name": "if",
+    "trans": [
+      "`if` 用于执行条件判断语句，如果条件为真，则执行对应代码块。"
+    ],
+    "usphone": "ɪf",
+    "ukphone": "ɪf",
+    "sentences": [
+      {
+        "english": "We’ll stay at home if it rains.",
+        "chinese": "如果下雨，我们就待在家里。"
+      },
+      {
+        "english": "If you need money, I can lend you some.",
+        "chinese": "如果你需要钱，我能借给你一些。"
+      },
+      {
+        "english": "If I didn’t apologize, I’d feel guilty.",
+        "chinese": "如果我不道歉，我会感到内疚。"
+      },
+      {
+        "english": "If you had worked harder, you would have passed your exams.",
+        "chinese": "要是你再努力一点，就通过考试了。"
+      },
+      {
+        "english": "What would happen to your family if you were to die in an accident?",
+        "chinese": "要是你在意外事故中身亡，你的家人会怎么样呢？"
+      },
+      {
+        "english": "If Dad were here, he would know what to do.",
+        "chinese": "如果爸爸在这儿，他会知道怎么做的。"
+      },
+      {
+        "english": "Taste the soup and add salt and pepper if necessary.",
+        "chinese": "尝一下汤，需要的话加一点盐和胡椒粉。"
+      },
+      {
+        "english": "I want to get back by five o’clock if possible.",
+        "chinese": "如果可能的话，我想5点之前回来。"
+      },
+      {
+        "english": "I think I can fix it tomorrow. If not, you’ll have to wait till Friday.",
+        "chinese": "我想明天我能修好它，如果不行，你只好等到周五了。"
+      },
+      {
+        "english": "Is the book available, and if so, where?",
+        "chinese": "有没有这本书？ 如果有的话，在哪儿？"
+      },
+      {
+        "english": "The missiles can be fired only if the operator types in a six-digit code.",
+        "chinese": "只有在操作员输入一组六位数密码后，导弹才能发射。"
+      },
+      {
+        "english": "We’ll face that problem if and when it comes along (= if it happens or when it happens ).",
+        "chinese": "如果这一问题真的发生了，我们就要面对它。"
+      },
+      {
+        "english": "If by any chance you can’t manage dinner tonight, perhaps we can at least have a drink together.",
+        "chinese": "万一你今晚不能来吃饭，或许我们至少可以一起喝一杯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "假如，如果",
+        "english": "used when talking about something that might happen or be true, or might have happened"
+      }
+    ]
+  },
+  {
+    "name": "impl",
+    "trans": [
+      "`impl` 用于为类型（如结构体、枚举或 trait）实现方法，或者为类型实现某个 trait。"
+    ]
+  },
+  {
+    "name": "in",
+    "trans": [
+      "`in` 用于模式匹配中，表示模式的匹配条件。通常与 `for` 循环一起使用。"
+    ],
+    "usphone": "ɪn",
+    "ukphone": "ɪn",
+    "sentences": [
+      {
+        "english": "There’s some sugar in the cupboard.",
+        "chinese": "碗橱里有一些糖。"
+      },
+      {
+        "english": "My mother was in the kitchen.",
+        "chinese": "我母亲在厨房里。"
+      },
+      {
+        "english": "He took us for a drive in his new car.",
+        "chinese": "他开着他的新车载我们去兜风。"
+      },
+      {
+        "english": "I found her sitting up in bed.",
+        "chinese": "我发现她直直地坐在床上。"
+      },
+      {
+        "english": "Manson spent fifteen years in prison.",
+        "chinese": "曼森在监狱里待了15年。"
+      },
+      {
+        "english": "a hole in the ground",
+        "chinese": "地上的一个洞"
+      },
+      {
+        "english": "Mr Fisher is in Boston this week.",
+        "chinese": "费希尔先生本周在波士顿。"
+      },
+      {
+        "english": "My parents live in New Zealand now.",
+        "chinese": "我父母现住在新西兰。"
+      },
+      {
+        "english": "I never went in pubs.",
+        "chinese": "我从不进酒吧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…里；进，入",
+        "english": "used with the name of a container, place, or area to say where someone or something is"
+      }
+    ]
+  },
+  {
+    "name": "let",
+    "trans": [
+      "`let` 用于声明变量或常量，常用来进行值绑定，支持可变和不可变绑定。"
+    ],
+    "usphone": "lɛt",
+    "ukphone": "let",
+    "sentences": [
+      {
+        "english": "I can’t come out tonight – my dad won’t let me.",
+        "chinese": "今天晚上我不能出来，我爸爸不允许。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "允许，让；使",
+        "english": "to allow someone to do something"
+      }
+    ]
+  },
+  {
+    "name": "loop",
+    "trans": [
+      "`loop` 用于创建一个无限循环，直到使用 `break` 或其他控制流语句终止。"
+    ],
+    "usphone": "lup",
+    "ukphone": "luːp",
+    "sentences": [
+      {
+        "english": "He looped the rope over the wood.",
+        "chinese": "他把绳子打了环系在木头上。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "打环；翻筋斗",
+        "english": "to fly a plane up and around in a circle so that the plane is  upside down  for a time"
+      },
+      {
+        "pos": "n",
+        "chinese": "环；圈；弯曲部分；翻筋斗",
+        "english": "a shape like a curve or a circle made by a line curving back towards itself, or a piece of wire, string etc that has this shape"
+      }
+    ]
+  },
+  {
+    "name": "match",
+    "trans": [
+      "`match` 用于模式匹配，根据给定的值匹配多个可能的情况并执行相应的代码块。"
+    ],
+    "usphone": "mætʃ",
+    "ukphone": "mætʃ",
+    "sentences": [
+      {
+        "english": "It’s our last match of the season.",
+        "chinese": "这是我们本赛季最后一场比赛。"
+      },
+      {
+        "english": "They’re preparing for a big match tomorrow.",
+        "chinese": "他们在为明天的一场大赛做准备。"
+      },
+      {
+        "english": "McClaire’s goal earned him the title of man of the match (= the person in a team who plays best ) .",
+        "chinese": "麦克莱尔的进球为他赢得了“本场最佳球员”的称号。"
+      },
+      {
+        "english": "Carlos was no match for the champion.",
+        "chinese": "卡洛斯根本不是冠军的对手。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "比赛，竞赛；对手",
+        "english": "an organized sports event between two teams or people"
+      }
+    ]
+  },
+  {
+    "name": "mod",
+    "trans": [
+      "`mod` 用于定义模块，模块是组织代码的基本单元，包含函数、结构体、枚举等内容。"
+    ]
+  },
+  {
+    "name": "move",
+    "trans": [
+      "`move` 用于捕获闭包中的值时，强制将其所有权转移给闭包，而非通过引用传递。"
+    ],
+    "usphone": "muv",
+    "ukphone": "muːv",
+    "sentences": [
+      {
+        "english": "Please keep the doors closed while the train is moving.",
+        "chinese": "火车行驶时请保持车门关闭。"
+      },
+      {
+        "english": "‘Come on,’ Sue said. No one moved.",
+        "chinese": "“来吧。”休说。但没有人动。"
+      },
+      {
+        "english": "Could you move your car, please? It’s blocking the road.",
+        "chinese": "你能把车挪一下吗？挡着路了。"
+      },
+      {
+        "english": "Becca moved down the steps and into the yard.",
+        "chinese": "贝卡走下台阶，来到院子里。"
+      },
+      {
+        "english": "The bar was so crowded you could hardly move .",
+        "chinese": "酒吧很挤，人都难以挪动。"
+      },
+      {
+        "english": "His speech moved the audience to tears.",
+        "chinese": "他的演讲让听众感动得落泪。"
+      },
+      {
+        "english": "He made no move to come any nearer.",
+        "chinese": "他没有再靠近。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "移动；感动",
+        "english": "to change from one place or position to another, or to make something do this"
+      },
+      {
+        "pos": "n",
+        "chinese": "动",
+        "english": "when someone moves for a short time in a particular direction"
+      }
+    ]
+  },
+  {
+    "name": "mut",
+    "trans": [
+      "`mut` 用于声明一个可变变量或可变引用，表示该变量的值可以被修改。"
+    ]
+  },
+  {
+    "name": "pub",
+    "trans": [
+      "`pub` 用于将项（如结构体、函数或模块）标记为公有，使得它们可以在模块外部访问。"
+    ],
+    "usphone": "pʌb",
+    "ukphone": "pʌb",
+    "sentences": [
+      {
+        "english": "Do you fancy going to the pub?",
+        "chinese": "你想去酒吧吗？"
+      },
+      {
+        "english": "a pub lunch",
+        "chinese": "酒吧午餐"
+      },
+      {
+        "english": "the pub landlord",
+        "chinese": "酒吧老板"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "酒馆；客栈",
+        "english": "a building in Britain where alcohol can be bought and drunk, and where meals are often served"
+      }
+    ]
+  },
+  {
+    "name": "ref",
+    "trans": [
+      "`ref` 用于通过引用模式匹配值，避免值的所有权转移，而是获取一个引用。"
+    ]
+  },
+  {
+    "name": "return",
+    "trans": [
+      "`return` 用于从函数中返回值，终止函数执行并返回控制权给调用者。"
+    ],
+    "usphone": "rɪ'tɝn",
+    "ukphone": "rɪ'tɜːn",
+    "sentences": [
+      {
+        "english": "It was forty five minutes before she returned.",
+        "chinese": "过了45分钟她才回来。"
+      },
+      {
+        "english": "Alison decided to return home.",
+        "chinese": "艾利森决定回家。"
+      },
+      {
+        "english": "He left his country, never to return.",
+        "chinese": "他离开了祖国，一去不复返。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "返回；报答",
+        "english": "to go or come back to a place where you were before"
+      },
+      {
+        "pos": "n",
+        "chinese": "返回；归还；回球",
+        "english": "the act of returning from somewhere, or your arrival back in a place"
+      },
+      {
+        "pos": "adj",
+        "chinese": "报答的；回程的；返回的",
+        "english": "used or paid for a journey from one place to another and back again"
+      }
+    ]
+  },
+  {
+    "name": "self",
+    "trans": [
+      "`self` 表示当前实例，在方法定义中引用调用该方法的对象。"
+    ],
+    "usphone": "sɛlf",
+    "ukphone": "self",
+    "sentences": [
+      {
+        "english": "a child’s developing sense of self",
+        "chinese": "儿童逐渐形成的自我意识"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "自己，自我；本质；私心",
+        "english": "the type of person you are, your character, your typical behaviour etc"
+      },
+      {
+        "pos": "adj",
+        "chinese": "同一的",
+        "english": ""
+      },
+      {
+        "pos": "vt",
+        "chinese": "使自花授精；使近亲繁殖",
+        "english": ""
+      },
+      {
+        "pos": "vi",
+        "chinese": "自花授精",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "static",
+    "trans": [
+      "`static` 用于声明具有静态生命周期的变量，这些变量在程序的整个生命周期中都存在。"
+    ],
+    "usphone": "'stætɪk",
+    "ukphone": "'stætɪk",
+    "sentences": [
+      {
+        "english": "The number of young people obtaining qualifications has remained static or decreased.",
+        "chinese": "获得各种资格证书的年轻人的数量一直保持不变或者已经减少。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "静态的；静电的；静力的",
+        "english": "Something that is static does not move or change"
+      },
+      {
+        "pos": "n",
+        "chinese": "静电；静电干扰",
+        "english": "noise caused by electricity in the air that blocks or spoils the sound from radio or TV"
+      }
+    ]
+  },
+  {
+    "name": "struct",
+    "trans": [
+      "`struct` 用于定义结构体类型，它是一种自定义的数据类型，可以包含多个字段。"
+    ]
+  },
+  {
+    "name": "super",
+    "trans": [
+      "`super` 用于引用父模块，通常用于访问父模块中的函数或类型。"
+    ],
+    "usphone": "'sʊpɚ",
+    "ukphone": "'suːpə; 'sjuː-",
+    "sentences": [
+      {
+        "english": "an old car in super condition",
+        "chinese": "一辆状况极好的旧车"
+      },
+      {
+        "english": "That sounds super.",
+        "chinese": "那听起来棒极了。"
+      },
+      {
+        "english": "What a super idea!",
+        "chinese": "这个主意太妙了！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "特级的；极好的",
+        "english": "extremely good"
+      },
+      {
+        "pos": "n",
+        "chinese": "特级品，特大号；临时雇员",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "trait",
+    "trans": [
+      "`trait` 用于定义 trait，它是一组方法签名，可以被不同的类型实现以提供共享功能。"
+    ],
+    "usphone": "tret",
+    "ukphone": "treɪt",
+    "sentences": [
+      {
+        "english": "The study found that some alcoholics had clear personality traits showing up early in childhood.",
+        "chinese": "这项研究发现一些酗酒者早在孩童时就表现出明显的个性特征。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "特点",
+        "english": "a particular quality in someone’s character"
+      }
+    ]
+  },
+  {
+    "name": "type",
+    "trans": [
+      "`type` 用于定义类型别名，或者在泛型中为类型参数指定约束条件。"
+    ],
+    "usphone": "taɪp",
+    "ukphone": "taɪp",
+    "sentences": [
+      {
+        "english": "I’ve already seen a few movies of this type.",
+        "chinese": "我已经看过几部这种类型的影片了。"
+      },
+      {
+        "english": "He types with two fingers.",
+        "chinese": "他用两个手指打字。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "型，类型",
+        "english": "one member of a group of people or things that have similar features or qualities"
+      },
+      {
+        "pos": "v",
+        "chinese": "打字",
+        "english": "to write something using a computer or a typewriter"
+      }
+    ]
+  },
+  {
+    "name": "unsafe",
+    "trans": [
+      "`unsafe` 用于标记不安全的代码块，允许进行一些编译器不检查的操作，如直接操作指针等。"
+    ],
+    "usphone": "ʌn'sef",
+    "ukphone": "ʌn'seɪf",
+    "sentences": [
+      {
+        "english": "The building is unsafe.",
+        "chinese": "那栋大楼不安全。"
+      },
+      {
+        "english": "water that’s unsafe to drink",
+        "chinese": "不能安全饮用的水"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "不安全的；危险的；不安稳的",
+        "english": "dangerous or likely to cause harm"
+      }
+    ]
+  },
+  {
+    "name": "use",
+    "trans": [
+      "`use` 用于将模块、函数、类型等引入当前作用域，减少代码冗余并简化访问路径。"
+    ],
+    "usphone": "juz",
+    "ukphone": "juːz",
+    "sentences": [
+      {
+        "english": "Can I use your phone?",
+        "chinese": "我可以用一下你的电话吗？"
+      },
+      {
+        "english": "I’ll show you which room you can use.",
+        "chinese": "我来跟你说一下你可以用哪个房间。"
+      },
+      {
+        "english": "I always use the same shampoo.",
+        "chinese": "我一直用同一种洗发水。"
+      },
+      {
+        "english": "Use your imagination when planning meals.",
+        "chinese": "安排三餐时要动点脑筋。"
+      },
+      {
+        "english": "She booked the flight using a false name.",
+        "chinese": "她用化名预订了航班。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "用，使用；耗费，消费",
+        "english": "if you use a particular tool, method, service, ability etc, you do something with that tool, by means of that method etc, for a particular purpose"
+      },
+      {
+        "pos": "n",
+        "chinese": " 使用， 应用； 用途， 效用",
+        "english": "the action or fact of using something"
+      }
+    ]
+  },
+  {
+    "name": "where",
+    "trans": [
+      "`where` 用于在泛型约束中指定类型约束，通常用于定义函数或结构体时的类型参数约束。"
+    ],
+    "usphone": "wɛr",
+    "ukphone": "weə",
+    "sentences": [
+      {
+        "english": "Where are you going?",
+        "chinese": "你要到哪儿去？"
+      },
+      {
+        "english": "Where do they live?",
+        "chinese": "他们住在哪里？"
+      },
+      {
+        "english": "Do you know where my glasses are?",
+        "chinese": "你知道我的眼镜在哪儿吗？"
+      },
+      {
+        "english": "Where would you like to sit?",
+        "chinese": "你想坐在哪里？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "在哪里",
+        "english": "in or to which place"
+      },
+      {
+        "pos": "pron",
+        "chinese": "哪里",
+        "english": ""
+      },
+      {
+        "pos": "conj",
+        "chinese": "在…的地方",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "地点",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "while",
+    "trans": [
+      "`while` 用于创建一个基于条件判断的循环，只要条件为真，循环就会继续执行。"
+    ],
+    "usphone": "waɪl",
+    "ukphone": "wʌɪl",
+    "sentences": [
+      {
+        "english": "They arrived while we were having dinner.",
+        "chinese": "他们来时我们正在吃饭。"
+      },
+      {
+        "english": "While she was asleep, thieves broke in and stole her handbag.",
+        "chinese": "她睡着的时候，小偷闯进来偷走了她的手提包。"
+      },
+      {
+        "english": "She met Andy while working on a production of Carmen.",
+        "chinese": "排练《卡门》时，她认识了安迪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "虽然；然而；当……的时候",
+        "english": "during the time that something is happening"
+      },
+      {
+        "pos": "n",
+        "chinese": "一会儿；一段时间",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "消磨；轻松地度过",
+        "english": "to spend time in a pleasant and lazy way"
+      }
+    ]
+  }
 ]

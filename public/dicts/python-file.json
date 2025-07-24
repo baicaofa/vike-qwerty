@@ -105,12 +105,63 @@
     "name": "name",
     "trans": [
       "文件名"
+    ],
+    "usphone": "nem",
+    "ukphone": "neɪm",
+    "sentences": [
+      {
+        "english": "Her name is Mandy Wilson.",
+        "chinese": "她的名字是曼迪•威尔逊。"
+      },
+      {
+        "english": "What’s your name?",
+        "chinese": "你叫什么名字？"
+      },
+      {
+        "english": "He didn’t want to do anything to damage the good name of the company.",
+        "chinese": "他不想做任何有损公司良好声誉的事。"
+      },
+      {
+        "english": "They’re a lot better than some airlines I could name.",
+        "chinese": "他们比我叫得上名字的一些航空公司要好得多。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "名字；名誉",
+        "english": "what someone is called"
+      },
+      {
+        "pos": "v",
+        "chinese": "说出",
+        "english": "to say what the name of someone or something is, especially officially"
+      }
     ]
   },
   {
     "name": "mode",
     "trans": [
       "文件打开模式"
+    ],
+    "usphone": "mod",
+    "ukphone": "məʊd",
+    "sentences": [
+      {
+        "english": "the most efficient mode of transport",
+        "chinese": "最高效的运输方式"
+      },
+      {
+        "english": "Set the monitor to 256 colour mode.",
+        "chinese": "把显示器调成256色彩模式。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "方式；样式",
+        "english": "a particular way or style of behaving, living or doing something"
+      }
     ]
   },
   {

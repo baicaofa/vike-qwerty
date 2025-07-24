@@ -7,6 +7,7 @@ import { ArticleActionType } from "./store/type";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import { getRandomArticle } from "@/data/officialArticles";
+import { useNamespaceTranslation } from "@/hooks/useI18n";
 import { useEffect } from "react";
 import { useImmerReducer } from "use-immer";
 
@@ -14,6 +15,9 @@ export function Page() {
   // 使用 useImmerReducer 管理状态
   const [state, dispatch] = useImmerReducer(articleReducer, initialState);
   const { articles, isLoading } = useArticleList();
+
+  // 使用i18n翻译
+  const { t } = useNamespaceTranslation("article");
 
   // 页面加载时，加载最近的文章或默认文章，并直接进入练习步骤
   useEffect(() => {
@@ -104,7 +108,7 @@ export function Page() {
     if (state.viewHistory) {
       return (
         <div className="flex justify-center mb-6">
-          <h1 className="text-2xl font-bold">文章列表</h1>
+          <h1 className="text-2xl font-bold">{t("history.title")}</h1>
         </div>
       );
     }

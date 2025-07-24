@@ -1,342 +1,979 @@
 [
-    {
-        "name": "live",
-        "trans": [
-            "居住",
-            "生活"
-        ],
-        "usphone": "lɪv",
-        "ukphone": "lɪv"
-    },
-    {
-        "name": "quite",
-        "trans": [
-            "很",
-            "相当"
-        ],
-        "usphone": "kwaɪt",
-        "ukphone": "kwaɪt"
-    },
-    {
-        "name": "scarf",
-        "trans": [
-            "围巾"
-        ],
-        "usphone": "skɑːrf",
-        "ukphone": "skɑːrf"
-    },
-    {
-        "name": "airport",
-        "trans": [
-            "机场"
-        ],
-        "usphone": "ˈɛr.pɔːrt",
-        "ukphone": "ˈeə.pɔːt"
-    },
-    {
-        "name": "pupil",
-        "trans": [
-            "小学生"
-        ],
-        "usphone": "ˈpjʊ.əl",
-        "ukphone": "ˈpjuː.pɪl"
-    },
-    {
-        "name": "arrive",
-        "trans": [
-            "到达"
-        ],
-        "usphone": "əˈraɪv",
-        "ukphone": "əˈraɪv"
-    },
-    {
-        "name": "meet",
-        "trans": [
-            "迎接",
-            "遇见",
-            "会面"
-        ],
-        "usphone": "mit",
-        "ukphone": "miːt"
-    },
-    {
-        "name": "wardrobe",
-        "trans": [
-            "衣柜"
-        ],
-        "usphone": "ˈwɔr.droʊb",
-        "ukphone": "ˈwɔː.droʊb"
-    },
-    {
-        "name": "show ... around",
-        "trans": [
-            "带领……参观"
-        ],
-        "usphone": "ʃoʊ əˈraʊnd",
-        "ukphone": "ʃəʊ əˈraʊnd"
-    },
-    {
-        "name": "Queen’s Park",
-        "trans": [
-            "女王公园"
-        ],
-        "usphone": "ˈkwinz pɑːrk",
-        "ukphone": "ˈkwiːnz pɑːk"
-    },
-    {
-        "name": "art gallery",
-        "trans": [
-            "画廊",
-            "艺术馆"
-        ],
-        "usphone": "ɑːrt ˈɡæləri",
-        "ukphone": "ɑːt ˈɡæləri"
-    },
-    {
-        "name": "public library",
-        "trans": [
-            "公共图书馆"
-        ],
-        "usphone": "ˈpʌblɪk ˈlaɪbrəri",
-        "ukphone": "ˈpʌblɪk ˈlaɪbrəri"
-    },
-    {
-        "name": "downtown",
-        "trans": [
-            "闹市区；市中心"
-        ],
-        "usphone": "ˈdaʊnˌtaʊn",
-        "ukphone": "ˈdaʊntaʊn"
-    },
-    {
-        "name": "Lake Ontario",
-        "trans": [
-            "安大略湖"
-        ],
-        "usphone": "leɪk ɒnˈtɛərioʊ",
-        "ukphone": "leɪk ɒnˈtɛərioʊ"
-    },
-    {
-        "name": "stadium",
-        "trans": [
-            "（露天）体育场"
-        ],
-        "usphone": "ˈsteɪ.di.əm",
-        "ukphone": "ˈsteɪ.di.əm"
-    },
-    {
-        "name": "volunteer",
-        "trans": [
-            "志愿者"
-        ],
-        "usphone": "ˌvɑːlənˈtɪr",
-        "ukphone": "ˌvɒlənˈtɪə"
-    },
-    {
-        "name": "sandwich",
-        "trans": [
-            "三明治"
-        ],
-        "usphone": "ˈsæn.wɪtʃ",
-        "ukphone": "ˈsæn.wɪtʃ"
-    },
-    {
-        "name": "top",
-        "trans": [
-            "上边",
-            "上面"
-        ],
-        "usphone": "tɑːp",
-        "ukphone": "tɒp"
-    },
-    {
-        "name": "habit",
-        "trans": [
-            "习惯"
-        ],
-        "usphone": "ˈhæb.ɪt",
-        "ukphone": "ˈhæb.ɪt"
-    },
-    {
-        "name": "idea",
-        "trans": [
-            "主意",
-            "想法",
-            "意见"
-        ],
-        "usphone": "aɪˈdiə",
-        "ukphone": "aɪˈdɪə"
-    },
-    {
-        "name": "less",
-        "trans": [
-            "更少"
-        ],
-        "usphone": "lɛs",
-        "ukphone": "lɛs"
-    },
-    {
-        "name": "at least",
-        "trans": [
-            "至少"
-        ],
-        "usphone": "ət list",
-        "ukphone": "ət li:st"
-    },
-    {
-        "name": "talk about",
-        "trans": [
-            "谈论"
-        ],
-        "usphone": "tɔːk əˈʊt",
-        "ukphone": "tɔːk əˈbaʊt"
-    },
-    {
-        "name": "hockey",
-        "trans": [
-            "曲棍球",
-            "冰上曲棍球"
-        ],
-        "usphone": "ˈhoʊk.i",
-        "ukphone": "ˈhəʊki"
-    },
-    {
-        "name": "together",
-        "trans": [
-            "一起"
-        ],
-        "usphone": "təˈɡeðər",
-        "ukphone": "təˈɡeðər"
-    },
-    {
-        "name": "special",
-        "trans": [
-            "特殊",
-            "特别"
-        ],
-        "usphone": "ˈspɛʃ.əl",
-        "phone": "ˈspɛʃ.əl"
-    },
-    {
-        "name": "beaver",
-        "trans": [
-            "海（河）狸"
-        ],
-        "usphone": "ˈbiːvər",
-        "ukphone": "ˈbiːvə"
-    },
-    {
-        "name": "raccoon",
-        "trans": [
-            "浣熊"
-        ],
-        "usphone": "ˈræk.əʊn",
-        "ukphone": "ˈræk.əʊn"
-    },
-    {
-        "name": "moose",
-        "trans": [
-            "北美麋；驼鹿"
-        ],
-        "usphone": "muːs",
-        "ukphone": "muːs"
-    },
-    {
-        "name": "countryside",
-        "trans": [
-            "农村",
-            "乡下"
-        ],
-        "usphone": "ˈkʌn.tri.saɪd",
-        "ukphone": "ˈkʌn.tri.saɪd"
-    },
-    {
-        "name": "Thanksgiving",
-        "trans": [
-            "感恩节"
-        ],
-        "usphone": "ˌθæŋksˈɡɪv.ɪŋ",
-        "ukphone": "θæŋksˈɡɪv.ɪŋ"
-    },
-    {
-        "name": "roast turkey",
-        "trans": [
-            "烤火鸡"
-        ],
-        "usphone": "roʊst ˈtɝː.ki",
-        "ukphone": "rəʊst ˈtɜː.ki"
-    },
-    {
-        "name": "squirrel",
-        "trans": [
-            "松鼠"
-        ],
-        "usphone": "ˈskwɜːr.əl",
-        "ukphone": "ˈskwɪr.əl"
-    },
-    {
-        "name": "swan",
-        "trans": [
-            "天鹅"
-        ],
-        "usphone": "swɑːn",
-        "ukphone": "swɒn"
-    },
-    {
-        "name": "wild goose",
-        "trans": [
-            "大雁"
-        ],
-        "usphone": "waɪld ɡus",
-        "ukphone": "waɪld ɡuːs"
-    },
-    {
-        "name": "frog",
-        "trans": [
-            "青蛙"
-        ],
-        "usphone": "frɔːɡ",
-        "ukphone": "frɒɡ"
-    },
-    {
-        "name": "English-Chinese dictionary",
-        "trans": [
-            "英汉词典"
-        ],
-        "usphone": "ˈɪŋ.ɡlɪʃ-ˌtʃaɪˈniːz ˈdɪk.ʃəˌner.i",
-        "ukphone": "ˈɪŋ.ɡlɪʃ-ˌtʃaɪˈniːz ˈdɪk.ʃəˌnər.i"
-    },
-    {
-        "name": "shopping centre",
-        "trans": [
-            "购物中心"
-        ],
-        "usphone": "ˈʃɑː.pɪŋ ˌsɛn.tər",
-        "ukphone": "ˈʃɒp.ɪŋ ˌsɛn.tə"
-    },
-    {
-        "name": "shopping mall",
-        "trans": [
-            "大型综合商业中心"
-        ],
-        "usphone": "ˈʃɑː.pɪŋ mɔːl",
-        "ukphone": "ˈʃɒp.ɪŋ mɔːl"
-    },
-    {
-        "name": "amazing",
-        "trans": [
-            "惊人的",
-            "神奇的"
-        ],
-        "usphone": "əˈmeɪ.zɪŋ",
-        "ukphone": "əˈmeɪ.zɪŋ"
-    },
-    {
-        "name": "hot pot",
-        "trans": [
-            "火锅"
-        ],
-        "usphone": "hɑːt pɑːt",
-        "ukphone": "hɒt pɒt"
-    }
+  {
+    "name": "live",
+    "trans": [
+      "居住",
+      "生活"
+    ],
+    "usphone": "lɪv",
+    "ukphone": "lɪv",
+    "sentences": [
+      {
+        "english": "He lives just across the street from me.",
+        "chinese": "他就住在我街对面。"
+      },
+      {
+        "english": "We live only a few miles from the coast.",
+        "chinese": "我们住的地方离海边只有几英里远。"
+      },
+      {
+        "english": "A rather odd family came tolive next door to us.",
+        "chinese": "有一户相当奇怪的人家搬到了我们隔壁。"
+      },
+      {
+        "english": "As soon as I saw the place, I knew I didn’t want to live there.",
+        "chinese": "我一看到那地方，就觉得不想住在那儿。"
+      },
+      {
+        "english": "Does Paul stilllive here?",
+        "chinese": "保罗还住在这儿吗？"
+      },
+      {
+        "english": "We’re still looking for somewhere to live.",
+        "chinese": "我们还在找住的地方。"
+      },
+      {
+        "english": "They’ve finally found a place to live.",
+        "chinese": "他们终于找到了住的地方。"
+      },
+      {
+        "english": "Most seventeen-year-olds still live at home(= live with their parents ).",
+        "chinese": "17 岁的孩子大都还住在家里。"
+      },
+      {
+        "english": "I’m quite happy living alone.",
+        "chinese": "我一个人住很开心。"
+      },
+      {
+        "english": "The house has 3,600 square feet of living space(= the areas of a house you live in ).",
+        "chinese": "这房子有3,600平方英尺的居住空间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "居住；活",
+        "english": "if you live in a place, you have your home there"
+      },
+      {
+        "pos": "adj",
+        "chinese": "活的",
+        "english": "not dead or artificial"
+      }
+    ]
+  },
+  {
+    "name": "quite",
+    "trans": [
+      "很",
+      "相当"
+    ],
+    "usphone": "kwaɪt",
+    "ukphone": "kwaɪt",
+    "sentences": [
+      {
+        "english": "I’m sorry. That’s quite impossible.",
+        "chinese": "我很抱歉，那是完全不可能的。"
+      },
+      {
+        "english": "I felt quite bitter about it at the time.",
+        "chinese": "当时我对此感到相当痛苦。"
+      },
+      {
+        "english": "Well, actually it requires quite a bit of work and research.",
+        "chinese": "呃，实际上这需要相当多的工作和研究。"
+      },
+      {
+        "english": "I can see it quite clearly.",
+        "chinese": "我能清清楚楚地看见它。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "完全；相当；的确",
+        "english": "completely"
+      }
+    ]
+  },
+  {
+    "name": "scarf",
+    "trans": [
+      "围巾"
+    ],
+    "usphone": "skɑːrf",
+    "ukphone": "skɑːrf",
+    "sentences": [
+      {
+        "english": "Hey, your scarf is slipping off.",
+        "chinese": "喂， 你的围巾快掉了。"
+      },
+      {
+        "english": "The scarf flapped her face.",
+        "chinese": "围巾轻拂着她的脸。"
+      },
+      {
+        "english": "She muffled her throat with a scarf.",
+        "chinese": "她用围巾围住脖子。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "围巾",
+        "english": "a piece of cloth that you wear around your neck, head, or shoulders, especially to keep warm"
+      }
+    ]
+  },
+  {
+    "name": "airport",
+    "trans": [
+      "机场"
+    ],
+    "usphone": "ˈɛr.pɔːrt",
+    "ukphone": "ˈeə.pɔːt",
+    "sentences": [
+      {
+        "english": "The plane landed at Heathrow Airport.",
+        "chinese": "飞机降落在希思罗机场。"
+      },
+      {
+        "english": "Her family went to see her off at the airport.",
+        "chinese": "她的家人去机场送她。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "机场，航空站",
+        "english": "a place where planes take off and land, with buildings for passengers to wait in"
+      }
+    ]
+  },
+  {
+    "name": "pupil",
+    "trans": [
+      "小学生"
+    ],
+    "usphone": "ˈpjʊ.əl",
+    "ukphone": "ˈpjuː.pɪl",
+    "sentences": [
+      {
+        "english": "About 20 pupils study music here.",
+        "chinese": "大约20名小学生在这里学习音乐。"
+      },
+      {
+        "english": "staff and pupils",
+        "chinese": "教职员工和学生"
+      },
+      {
+        "english": "a star pupil",
+        "chinese": "一名优秀的小学生"
+      },
+      {
+        "english": "a third-grade pupil",
+        "chinese": "一名三年级小学生"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "学生，小学生",
+        "english": "someone who is being taught, especially a child"
+      }
+    ]
+  },
+  {
+    "name": "arrive",
+    "trans": [
+      "到达"
+    ],
+    "usphone": "əˈraɪv",
+    "ukphone": "əˈraɪv",
+    "sentences": [
+      {
+        "english": "Give me a call to let me know you’ve arrived safely.",
+        "chinese": "打个电话给我，告诉我你已平安到达。"
+      },
+      {
+        "english": "By the time the police arrived on the scene, the burglars had fled.",
+        "chinese": "警方赶到现场时，窃贼已经逃跑了。"
+      },
+      {
+        "english": "When her wedding day arrived, she was really nervous.",
+        "chinese": "到了婚礼那天，她十分紧张。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "到达；来临；达到",
+        "english": "to get to the place you are going to"
+      }
+    ]
+  },
+  {
+    "name": "meet",
+    "trans": [
+      "迎接",
+      "遇见",
+      "会面"
+    ],
+    "usphone": "mit",
+    "ukphone": "miːt",
+    "sentences": [
+      {
+        "english": "You’ll never guess who I met in town.",
+        "chinese": "你绝对猜不出我在镇上碰到谁了。"
+      },
+      {
+        "english": "I was worried I might meet Henry on the bus.",
+        "chinese": "我担心可能会在公共汽车上遇到亨利。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "遇见",
+        "english": "to see someone by chance and talk to them"
+      },
+      {
+        "pos": "v",
+        "chinese": "相遇",
+        "english": "to see someone by chance and talk to them"
+      }
+    ]
+  },
+  {
+    "name": "wardrobe",
+    "trans": [
+      "衣柜"
+    ],
+    "usphone": "ˈwɔr.droʊb",
+    "ukphone": "ˈwɔː.droʊb",
+    "sentences": [
+      {
+        "english": "Can you hang these in the wardrobe, please?",
+        "chinese": "请你把这些衣服挂到衣橱里去好吗？"
+      },
+      {
+        "english": "fitted/built-in wardrobes (=wardrobes built against a wall or fitted between two walls)",
+        "chinese": "固定式/嵌入式衣柜"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "衣柜，衣橱，藏衣室",
+        "english": "a piece of furniture like a large cupboard that you hang clothes in"
+      }
+    ]
+  },
+  {
+    "name": "show ... around",
+    "trans": [
+      "带领……参观"
+    ],
+    "usphone": "ʃoʊ əˈraʊnd",
+    "ukphone": "ʃəʊ əˈraʊnd"
+  },
+  {
+    "name": "Queen’s Park",
+    "trans": [
+      "女王公园"
+    ],
+    "usphone": "ˈkwinz pɑːrk",
+    "ukphone": "ˈkwiːnz pɑːk"
+  },
+  {
+    "name": "art gallery",
+    "trans": [
+      "画廊",
+      "艺术馆"
+    ],
+    "usphone": "ɑːrt ˈɡæləri",
+    "ukphone": "ɑːt ˈɡæləri"
+  },
+  {
+    "name": "public library",
+    "trans": [
+      "公共图书馆"
+    ],
+    "usphone": "ˈpʌblɪk ˈlaɪbrəri",
+    "ukphone": "ˈpʌblɪk ˈlaɪbrəri"
+  },
+  {
+    "name": "downtown",
+    "trans": [
+      "闹市区；市中心"
+    ],
+    "usphone": "ˈdaʊnˌtaʊn",
+    "ukphone": "ˈdaʊntaʊn",
+    "sentences": [
+      {
+        "english": "By day he worked downtown for American Standard.",
+        "chinese": "白天，他在市中心为美国标准公司工作。"
+      },
+      {
+        "english": "...an office in downtown Chicago.",
+        "chinese": "…芝加哥市中心的一间办公室。"
+      },
+      {
+        "english": "...in a large vacant area of the downtown.",
+        "chinese": "…在市中心的一大块空地上。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "往闹市区；在市区",
+        "english": "Downtown is also an adverb"
+      },
+      {
+        "pos": "adj",
+        "chinese": "市中心的",
+        "english": "Downtown places are in or toward the centre of a large town or city, where the stores and places of business are"
+      },
+      {
+        "pos": "n",
+        "chinese": "市中心区；三分线以外",
+        "english": "Downtown is also a noun"
+      }
+    ]
+  },
+  {
+    "name": "Lake Ontario",
+    "trans": [
+      "安大略湖"
+    ],
+    "usphone": "leɪk ɒnˈtɛərioʊ",
+    "ukphone": "leɪk ɒnˈtɛərioʊ"
+  },
+  {
+    "name": "stadium",
+    "trans": [
+      "（露天）体育场"
+    ],
+    "usphone": "ˈsteɪ.di.əm",
+    "ukphone": "ˈsteɪ.di.əm",
+    "sentences": [
+      {
+        "english": "the new Olympic Stadium",
+        "chinese": "新的奥林匹克体育场"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "体育场；露天大型运动场",
+        "english": "a building for public events, especially sports and large rock music concerts, consisting of a playing field surrounded by rows of seats"
+      }
+    ]
+  },
+  {
+    "name": "volunteer",
+    "trans": [
+      "志愿者"
+    ],
+    "usphone": "ˌvɑːlənˈtɪr",
+    "ukphone": "ˌvɒlənˈtɪə",
+    "sentences": [
+      {
+        "english": "Most of the relief work was done by volunteers.",
+        "chinese": "大部分救援工作都由志愿人员完成。"
+      },
+      {
+        "english": "I volunteered my services as a driver.",
+        "chinese": "我主动提出来当司机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "志愿者",
+        "english": "someone who does a job willingly without being paid"
+      },
+      {
+        "pos": "v",
+        "chinese": "志愿",
+        "english": "to offer to do something without expecting any reward, often something that other people do not want to do"
+      }
+    ]
+  },
+  {
+    "name": "sandwich",
+    "trans": [
+      "三明治"
+    ],
+    "usphone": "ˈsæn.wɪtʃ",
+    "ukphone": "ˈsæn.wɪtʃ",
+    "sentences": [
+      {
+        "english": "Carefully split the sponge ring, then sandwich the two halves together with whipped cream.",
+        "chinese": "小心地切开海绵蛋糕圈，然后在两半中间夹上生奶油。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "夹入；挤进；把做成三明治",
+        "english": "If you sandwich two things together with something else, you put that other thing between them. If you sandwich one thing between two other things, you put it between them. "
+      },
+      {
+        "pos": "n",
+        "chinese": "三明治；夹心面包",
+        "english": "two pieces of bread with cheese, meat, cooked egg etc between them"
+      }
+    ]
+  },
+  {
+    "name": "top",
+    "trans": [
+      "上边",
+      "上面"
+    ],
+    "usphone": "tɑːp",
+    "ukphone": "tɒp",
+    "sentences": [
+      {
+        "english": "a low wooden table with a glass top",
+        "chinese": "玻璃桌面的矮木桌"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "顶部，顶端；上部；首席；陀螺",
+        "english": "the highest part of something"
+      },
+      {
+        "pos": "v",
+        "chinese": "高出，超越；结束；达到顶点",
+        "english": "to be higher than a particular amount"
+      },
+      {
+        "pos": "adj",
+        "chinese": "最高的，顶上的；头等的",
+        "english": "nearest to the top of something"
+      }
+    ]
+  },
+  {
+    "name": "habit",
+    "trans": [
+      "习惯"
+    ],
+    "usphone": "ˈhæb.ɪt",
+    "ukphone": "ˈhæb.ɪt",
+    "sentences": [
+      {
+        "english": "Regular exercise is a good habit.",
+        "chinese": "经常锻炼是个好习惯。"
+      },
+      {
+        "english": "Thinking negatively can become a habit.",
+        "chinese": "消极的思维方式会成为一种习惯。"
+      },
+      {
+        "english": "She has a habit of playing with her hair when she’s nervous.",
+        "chinese": "她有一个习惯，一紧张就拨弄自己的头发。"
+      },
+      {
+        "english": "Some people drink alcohol as much from habit as from desire.",
+        "chinese": "有些人喝酒既是因为想喝，也是出于习惯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "习惯；习性",
+        "english": "something that you do regularly or usually, often without thinking about it because you have done it so many times before"
+      }
+    ]
+  },
+  {
+    "name": "idea",
+    "trans": [
+      "主意",
+      "想法",
+      "意见"
+    ],
+    "usphone": "aɪˈdiə",
+    "ukphone": "aɪˈdɪə",
+    "sentences": [
+      {
+        "english": "You should talk to Ken – he's always full of good ideas.",
+        "chinese": "你应该和肯谈谈，他总是满脑子好主意。"
+      },
+      {
+        "english": "I knew it was a bad idea to leave him on his own.",
+        "chinese": "我知道把他独自留下不是个好主意。"
+      },
+      {
+        "english": "It was my wife’s idea to move house.",
+        "chinese": "要搬家是我妻子的主意。"
+      },
+      {
+        "english": "He has some very strange ideas about education.",
+        "chinese": "他对教育有些非常奇怪的看法。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "想法；思想；意见",
+        "english": "a plan or suggestion for a possible course of action, especially one that you think of suddenly"
+      }
+    ]
+  },
+  {
+    "name": "less",
+    "trans": [
+      "更少"
+    ],
+    "usphone": "lɛs",
+    "ukphone": "lɛs",
+    "sentences": [
+      {
+        "english": "Doctors recommend eating less salt.",
+        "chinese": "医生建议少吃盐。"
+      },
+      {
+        "english": "Maybe he would worry less if he understood the situation.",
+        "chinese": "他要是了解情况，也许就不会那么担心了。"
+      },
+      {
+        "english": "In recent years she has appeared in public less frequently.",
+        "chinese": "近年来她在公开场合露面的次数少了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "更少的",
+        "english": "a smaller amount or not as much"
+      },
+      {
+        "pos": "adv",
+        "chinese": "更少地",
+        "english": "not so much or to a smaller degree"
+      }
+    ]
+  },
+  {
+    "name": "at least",
+    "trans": [
+      "至少"
+    ],
+    "usphone": "ət list",
+    "ukphone": "ət li:st",
+    "sentences": [
+      {
+        "english": "Remember, at least you have me.",
+        "chinese": "翀记住，至少你还有我。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "至少",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "talk about",
+    "trans": [
+      "谈论"
+    ],
+    "usphone": "tɔːk əˈʊt",
+    "ukphone": "tɔːk əˈbaʊt"
+  },
+  {
+    "name": "hockey",
+    "trans": [
+      "曲棍球",
+      "冰上曲棍球"
+    ],
+    "usphone": "ˈhoʊk.i",
+    "ukphone": "ˈhəʊki",
+    "sentences": [
+      {
+        "english": "...a new hockey arena.",
+        "chinese": "…一个新的冰球场。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "曲棍球；冰球",
+        "english": "a game played on grass by two teams of 11 players, with sticks and a ball"
+      }
+    ]
+  },
+  {
+    "name": "together",
+    "trans": [
+      "一起"
+    ],
+    "usphone": "təˈɡeðər",
+    "ukphone": "təˈɡeðər",
+    "sentences": [
+      {
+        "english": "We’ve very much enjoyed working together .",
+        "chinese": "我们在一起工作非常开心。"
+      },
+      {
+        "english": "They’ve decided to spend more time together.",
+        "chinese": "他们决定要花更多时间在一起。"
+      },
+      {
+        "english": "He and my father were at school together.",
+        "chinese": "他和我父亲一起上过学。"
+      },
+      {
+        "english": "Together they went back inside the villa.",
+        "chinese": "他们一起回到了别墅里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "一起；同时；相互；连续地；总共",
+        "english": "if two or more people do something together, they do it with each other"
+      },
+      {
+        "pos": "adj",
+        "chinese": "新潮的；情绪稳定的，做事有效率的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "special",
+    "trans": [
+      "特殊",
+      "特别"
+    ],
+    "usphone": "ˈspɛʃ.əl",
+    "phone": "ˈspɛʃ.əl",
+    "ukphone": "'speʃ(ə)l",
+    "sentences": [
+      {
+        "english": "a special place in the classroom for reading",
+        "chinese": "教室里的阅读专区"
+      },
+      {
+        "english": "No one receives special treatment.",
+        "chinese": "没有人享有特殊待遇。"
+      },
+      {
+        "english": "Maria’s special recipe for apple pie",
+        "chinese": "玛丽亚的苹果馅饼秘方"
+      },
+      {
+        "english": "The good china was used only on special occasions .",
+        "chinese": "这些精美瓷器只在特殊场合使用。"
+      },
+      {
+        "english": "Each village has its own special charm.",
+        "chinese": "每一座村子都有其独特的魅力。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "特殊的，特别的",
+        "english": "not ordinary or usual, but different in some way and often better or more important"
+      }
+    ]
+  },
+  {
+    "name": "beaver",
+    "trans": [
+      "海（河）狸"
+    ],
+    "usphone": "ˈbiːvər",
+    "ukphone": "ˈbiːvə",
+    "sentences": [
+      {
+        "english": "...a coat with a huge beaver collar.",
+        "chinese": "…一件带有大海狸毛皮领的大衣。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "海狸(毛皮)",
+        "english": "a North American animal that has thick fur and a wide flat tail, and cuts down trees with its teeth"
+      }
+    ]
+  },
+  {
+    "name": "raccoon",
+    "trans": [
+      "浣熊"
+    ],
+    "usphone": "ˈræk.əʊn",
+    "ukphone": "ˈræk.əʊn",
+    "sentences": [
+      {
+        "english": "a raccoon coat",
+        "chinese": "浣熊皮大衣"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "浣熊；浣熊毛皮",
+        "english": "a small North American animal with black fur around its eyes and black and grey rings on its tail"
+      }
+    ]
+  },
+  {
+    "name": "moose",
+    "trans": [
+      "北美麋；驼鹿"
+    ],
+    "usphone": "muːs",
+    "ukphone": "muːs",
+    "sentences": [
+      {
+        "english": "So did we encounter our bear, or a moose?",
+        "chinese": "那么，我们到底遇到了熊或者麋鹿吗？"
+      },
+      {
+        "english": "On the islands of the Kronotsky river, wild reindeer and moose coexist with bears.",
+        "chinese": "在克罗诺茨基河畔，驼鹿，驯鹿还有棕熊这三种动物和平共处。"
+      },
+      {
+        "english": "Except for the moose wandering down the road.",
+        "chinese": "除了你可以看到麋鹿在马路上游逛。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[动] 驼鹿",
+        "english": "a large brown animal like a  deer  that has very large flat  antler s (= horns that grow like branches )  and lives in North America, northern Europe, and parts of Asia"
+      }
+    ]
+  },
+  {
+    "name": "countryside",
+    "trans": [
+      "农村",
+      "乡下"
+    ],
+    "usphone": "ˈkʌn.tri.saɪd",
+    "ukphone": "ˈkʌn.tri.saɪd",
+    "sentences": [
+      {
+        "english": "The house had lovely views over open countryside .",
+        "chinese": "这房子望出去是开阔的乡村美景。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "农村，乡下；乡下的全体居民",
+        "english": "land that is outside cities and towns"
+      }
+    ]
+  },
+  {
+    "name": "Thanksgiving",
+    "trans": [
+      "感恩节"
+    ],
+    "usphone": "ˌθæŋksˈɡɪv.ɪŋ",
+    "ukphone": "θæŋksˈɡɪv.ɪŋ",
+    "sentences": [
+      {
+        "english": "He said sometimes they would invite some friends to share the happiness of Thanksgiving Day.",
+        "chinese": "他说有时候他们也会邀请一些朋友来一起分享感恩节快乐。"
+      },
+      {
+        "english": "I hear about these people every Thanksgiving, then never think about them again for the next 364 days.",
+        "chinese": "我在每个感恩节都听说过这群人，而后在接下来的364天，就再也没有想起过他们。"
+      },
+      {
+        "english": "It compares with \"Cyber Monday\" in the US - the day after Thanksgiving marketed as a big online shopping day.",
+        "chinese": "它与“网络星期一”在美国，感恩节后的第一天销售作为一个大型网上购物一天。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 感恩节",
+        "english": "a public holiday in the US and in Canada when families have a large meal together to celebrate and be thankful for food, health, families etc"
+      }
+    ]
+  },
+  {
+    "name": "roast turkey",
+    "trans": [
+      "烤火鸡"
+    ],
+    "usphone": "roʊst ˈtɝː.ki",
+    "ukphone": "rəʊst ˈtɜː.ki"
+  },
+  {
+    "name": "squirrel",
+    "trans": [
+      "松鼠"
+    ],
+    "usphone": "ˈskwɜːr.əl",
+    "ukphone": "ˈskwɪr.əl",
+    "sentences": [
+      {
+        "english": "The squirrel makes a store of nuts for the winter.",
+        "chinese": "松鼠贮藏坚果以备过冬。"
+      },
+      {
+        "english": "The squirrel has laid in a store of nuts for the winter.",
+        "chinese": "松鼠已经贮存了许多坚果以备过冬。"
+      },
+      {
+        "english": "It was moving fast like a squirrel, but it was as loud as a bear.",
+        "chinese": "它像松鼠一样快速的移动但那声音却像是熊发出的似的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "松鼠",
+        "english": "a small animal with a long furry tail that climbs trees and eats nuts"
+      }
+    ]
+  },
+  {
+    "name": "swan",
+    "trans": [
+      "天鹅"
+    ],
+    "usphone": "swɑːn",
+    "ukphone": "swɒn",
+    "sentences": [
+      {
+        "english": "You are one of us. You are a swan!",
+        "chinese": "你是我们中的一个。你是一只天鹅！"
+      },
+      {
+        "english": "Hey, you be the swan.",
+        "chinese": "而你是那天鹅。"
+      },
+      {
+        "english": "Toads pursuit of swans, swan disdain said: If I as long as you die!",
+        "chinese": "癞蛤蟆追求天鹅，天鹅不屑地说：我要是长成你这样早去死了！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "天鹅",
+        "english": "a large white bird with a long neck that lives on rivers and lakes"
+      }
+    ]
+  },
+  {
+    "name": "wild goose",
+    "trans": [
+      "大雁"
+    ],
+    "usphone": "waɪld ɡus",
+    "ukphone": "waɪld ɡuːs"
+  },
+  {
+    "name": "frog",
+    "trans": [
+      "青蛙"
+    ],
+    "usphone": "frɔːɡ",
+    "ukphone": "frɒɡ",
+    "sentences": [
+      {
+        "english": "The tadpole has become a frog.",
+        "chinese": "这个蝌蚪已长成青蛙。"
+      },
+      {
+        "english": "A tadpole metamorphoses into a frog.",
+        "chinese": "蝌蚪会变成青蛙。"
+      },
+      {
+        "english": "The frog darted out its tongue to catch a mosquito.",
+        "chinese": "这只青蛙突然伸出舌头捕捉蚊子。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "青蛙；[铁路] 辙叉；饰扣",
+        "english": "a small green animal that lives near water and has long legs for jumping"
+      },
+      {
+        "pos": "v",
+        "chinese": "捕蛙",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "English-Chinese dictionary",
+    "trans": [
+      "英汉词典"
+    ],
+    "usphone": "ˈɪŋ.ɡlɪʃ-ˌtʃaɪˈniːz ˈdɪk.ʃəˌner.i",
+    "ukphone": "ˈɪŋ.ɡlɪʃ-ˌtʃaɪˈniːz ˈdɪk.ʃəˌnər.i"
+  },
+  {
+    "name": "shopping centre",
+    "trans": [
+      "购物中心"
+    ],
+    "usphone": "ˈʃɑː.pɪŋ ˌsɛn.tər",
+    "ukphone": "ˈʃɒp.ɪŋ ˌsɛn.tə"
+  },
+  {
+    "name": "shopping mall",
+    "trans": [
+      "大型综合商业中心"
+    ],
+    "usphone": "ˈʃɑː.pɪŋ mɔːl",
+    "ukphone": "ˈʃɒp.ɪŋ mɔːl"
+  },
+  {
+    "name": "amazing",
+    "trans": [
+      "惊人的",
+      "神奇的"
+    ],
+    "usphone": "əˈmeɪ.zɪŋ",
+    "ukphone": "əˈmeɪ.zɪŋ",
+    "sentences": [
+      {
+        "english": "He’s an amazing player to watch.",
+        "chinese": "看他比赛那才叫精彩呢。"
+      },
+      {
+        "english": "an amazing bargain",
+        "chinese": "令人惊喜的便宜货"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 令人惊异的",
+        "english": "very good, especially in an unexpected way"
+      }
+    ]
+  },
+  {
+    "name": "hot pot",
+    "trans": [
+      "火锅"
+    ],
+    "usphone": "hɑːt pɑːt",
+    "ukphone": "hɒt pɒt"
+  }
 ]

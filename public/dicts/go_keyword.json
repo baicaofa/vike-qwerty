@@ -1,27 +1,634 @@
 [
-	{ "name": "var", "trans": ["n. 用于声明变量"] },
-	{ "name": "break", "trans": ["n. 用于提前结束循环或分支"] },
-	{ "name": "default", "trans": ["n. 用于指定默认分支"] },
-	{ "name": "func", "trans": ["n. 用于定义函数"] },
-	{ "name": "interface", "trans": ["n. 用于定义接口"] },
-	{ "name": "select", "trans": ["n. 用于选择通信操作"] },
-	{ "name": "case", "trans": ["n. 用于指定分支情况"] },
-	{ "name": "defer", "trans": ["n. 用于延迟函数执行"] },
-	{ "name": "go", "trans": ["n. 用于并发执行函数"] },
-	{ "name": "map", "trans": ["n. 用于声明映射数据结构"] },
-	{ "name": "struct", "trans": ["n. 用于定义结构体"] },
-	{ "name": "chan", "trans": ["n. 用于声明通道"] },
-	{ "name": "else", "trans": ["n. 用于条件不成立时执行的分支"] },
-	{ "name": "goto", "trans": ["n. 用于跳转到标签位置"] },
-	{ "name": "package", "trans": ["n. 用于定义包"] },
-	{ "name": "switch", "trans": ["n. 用于多条件选择"] },
-	{ "name": "const", "trans": ["n. 用于声明常量"] },
-	{ "name": "fallthrough", "trans": ["n. 用于执行下一个分支代码"] },
-	{ "name": "if", "trans": ["n. 用于条件判断"] },
-	{ "name": "range", "trans": ["n. 用于在循环中迭代元素"] },
-	{ "name": "type", "trans": ["n. 用于定义自定义类型"] },
-	{ "name": "continue", "trans": ["n. 用于跳过当前迭代"] },
-	{ "name": "for", "trans": ["n. 用于循环"] },
-	{ "name": "import", "trans": ["n. 用于导入外部包"] },
-	{ "name": "return", "trans": ["n. 用于从函数中返回"] }
+  {
+    "name": "var",
+    "trans": [
+      "n. 用于声明变量"
+    ]
+  },
+  {
+    "name": "break",
+    "trans": [
+      "n. 用于提前结束循环或分支"
+    ],
+    "usphone": "brek",
+    "ukphone": "breɪk",
+    "sentences": [
+      {
+        "english": "I had to break a window to get into the house.",
+        "chinese": "我只得打破一扇窗户进屋。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "打破；损坏；破坏",
+        "english": "if you break something, you make it separate into two or more pieces, for example by hitting it, dropping it, or bending it"
+      }
+    ]
+  },
+  {
+    "name": "default",
+    "trans": [
+      "n. 用于指定默认分支"
+    ],
+    "usphone": "dɪ'fɔlt",
+    "ukphone": "dɪ'fɔːlt; 'diːfɔːlt",
+    "sentences": [
+      {
+        "english": "Mortgage defaults have risen in the last year.",
+        "chinese": "按揭借款违约在近一年里呈上升趋势。"
+      },
+      {
+        "english": "to default on a loan/debt",
+        "chinese": "拖欠借款 / 债务"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "不履行义务",
+        "english": "failure to do something that you are supposed to do according to the law or because it is your duty"
+      },
+      {
+        "pos": "v",
+        "chinese": "不履行义务",
+        "english": "to not do something that you are supposed to do, especially that you are legally supposed to do"
+      }
+    ]
+  },
+  {
+    "name": "func",
+    "trans": [
+      "n. 用于定义函数"
+    ]
+  },
+  {
+    "name": "interface",
+    "trans": [
+      "n. 用于定义接口"
+    ],
+    "usphone": "'ɪntɚ'fes",
+    "ukphone": "'ɪntəfeɪs",
+    "sentences": [
+      {
+        "english": "...the development of better user interfaces.",
+        "chinese": "…更好用户界面的开发。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "界面；<计>接口；交界面",
+        "english": "the way in which you see the information from a computer program on a screen, or how you type information into the program"
+      },
+      {
+        "pos": "v",
+        "chinese": "（使通过界面或接口）接合，连接；[计算机]使联系",
+        "english": "if you interface two parts of a computer system, or if they interface, you connect them"
+      }
+    ]
+  },
+  {
+    "name": "select",
+    "trans": [
+      "n. 用于选择通信操作"
+    ],
+    "usphone": "sə'lɛkt",
+    "ukphone": "sɪ'lekt",
+    "sentences": [
+      {
+        "english": "The party was small and select.",
+        "chinese": "团里人员不多，都是经过精心挑选的。"
+      },
+      {
+        "english": "Honorary degrees are handed out to a select few .",
+        "chinese": "荣誉学位颁给挑选出的少数几个人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 精选的， 挑选出来的； 优等的， 第一流的",
+        "english": "a select group of people or things is a small special group that has been chosen carefully"
+      },
+      {
+        "pos": "vt",
+        "chinese": "选择，挑选",
+        "english": "to choose something or someone by thinking carefully about which is the best, most suitable etc"
+      }
+    ]
+  },
+  {
+    "name": "case",
+    "trans": [
+      "n. 用于指定分支情况"
+    ],
+    "usphone": "kes",
+    "ukphone": "keɪs",
+    "sentences": [
+      {
+        "english": "In some cases people have had to wait several weeks for an appointment.",
+        "chinese": "在某些情况下，人们必须等上好几周才能得到约见。"
+      },
+      {
+        "english": "a severe case of typhoid",
+        "chinese": "伤寒重病例"
+      },
+      {
+        "english": "It is simply not the case that prison conditions are improving.",
+        "chinese": "监狱条件得到改善的情况绝非事实。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "情况；病例；事实",
+        "english": "a particular situation or a situation of a particular type"
+      }
+    ]
+  },
+  {
+    "name": "defer",
+    "trans": [
+      "n. 用于延迟函数执行"
+    ],
+    "usphone": "dɪ'fɝ",
+    "ukphone": "dɪ'fɜː",
+    "sentences": [
+      {
+        "english": "The committee deferred their decision .",
+        "chinese": "委员会延期作出决定。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "推迟；延期；服从",
+        "english": "to delay something until a later date"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Defer)人名；(法)德费",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "go",
+    "trans": [
+      "n. 用于并发执行函数"
+    ],
+    "usphone": "go",
+    "ukphone": "gəʊ",
+    "sentences": [
+      {
+        "english": "The plate went crashing to the floor.",
+        "chinese": "盘子哗啦一声掉在地板上。"
+      },
+      {
+        "english": "The bullet went flying over my head.",
+        "chinese": "子弹从我头顶飞过。"
+      },
+      {
+        "english": "John went rushing off down the corridor.",
+        "chinese": "约翰沿走廊飞奔而去。"
+      },
+      {
+        "english": "Her hair is starting to go grey.",
+        "chinese": "她的头发开始变白了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "去；走；变为",
+        "english": "to move in a particular way, or to do something as you are moving"
+      }
+    ]
+  },
+  {
+    "name": "map",
+    "trans": [
+      "n. 用于声明映射数据结构"
+    ],
+    "usphone": "mæp",
+    "ukphone": "mæp",
+    "sentences": [
+      {
+        "english": "He spent the next fifteen years mapping the Isle of Anglesey.",
+        "chinese": "他在后来的十五年里绘制了安格尔西岛的地图。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "映射；计划；绘制地图；确定基因在染色体中的位置",
+        "english": "to make a map of a particular area"
+      },
+      {
+        "pos": "n",
+        "chinese": "地图；示意图；染色体图",
+        "english": "a drawing of a particular area, for example a city or country, which shows its main features, such as its roads, rivers, mountains etc"
+      }
+    ]
+  },
+  {
+    "name": "struct",
+    "trans": [
+      "n. 用于定义结构体"
+    ]
+  },
+  {
+    "name": "chan",
+    "trans": [
+      "n. 用于声明通道"
+    ]
+  },
+  {
+    "name": "else",
+    "trans": [
+      "n. 用于条件不成立时执行的分支"
+    ],
+    "usphone": "ɛls",
+    "ukphone": "els",
+    "sentences": [
+      {
+        "english": "There’s something else I’d like to talk about as well.",
+        "chinese": "我还有其他事情要谈一谈。"
+      },
+      {
+        "english": "I’d like you to come, and anyone else who’s free.",
+        "chinese": "我想请你过来，其他人有空也可以来。"
+      },
+      {
+        "english": "He was awake now, as was everyone else.",
+        "chinese": "他现在已经醒了，其他人也都醒了。"
+      },
+      {
+        "english": "Who else was at the party?",
+        "chinese": "还有谁参加了聚会？"
+      },
+      {
+        "english": "‘Two coffees, please.’ ‘Anything else?’ ‘No, thanks.’",
+        "chinese": "“请来两杯咖啡。”“还要别的吗？”“不要了，谢谢。"
+      },
+      {
+        "english": "(= more than any other things ) she was seeking love.",
+        "chinese": "她追求爱情胜过一切。"
+      },
+      {
+        "english": "If I can't make a living at painting, at least I can teach someone else to paint.",
+        "chinese": "如果我不能以画画谋生的话，至少我能教别人画画。"
+      },
+      {
+        "english": "We had nothing else to do on those long trips.",
+        "chinese": "在那些漫长的旅途中我们别无他事可做。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "其它，另外",
+        "english": "besides or in addition to someone or something"
+      },
+      {
+        "pos": "adj",
+        "chinese": "别的",
+        "english": "You use else after words such as \"anywhere,\" \"someone,\" and \"what\" to refer in a vague way to another person, place, or thing"
+      }
+    ]
+  },
+  {
+    "name": "goto",
+    "trans": [
+      "n. 用于跳转到标签位置"
+    ]
+  },
+  {
+    "name": "package",
+    "trans": [
+      "n. 用于定义包"
+    ],
+    "usphone": "'pækɪdʒ",
+    "ukphone": "'pækɪdʒ",
+    "sentences": [
+      {
+        "english": "There’s a package here for a Miami Lakes address.",
+        "chinese": "这里有一个寄往迈阿密湖的包裹。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "包裹，包装；一揽子交易",
+        "english": "something wrapped in paper, packed in a box, and then sent by mail or delivered"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 把…打包； 包装",
+        "english": "to put food or other goods into a bag, box etc ready to be sold or sent"
+      }
+    ]
+  },
+  {
+    "name": "switch",
+    "trans": [
+      "n. 用于多条件选择"
+    ],
+    "usphone": "swɪtʃ",
+    "ukphone": "swɪtʃ",
+    "sentences": [
+      {
+        "english": "The terrorists will switch tactics .",
+        "chinese": "恐怖分子会改变战术。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "转换",
+        "english": "to change from doing or using one thing to doing or using another"
+      }
+    ]
+  },
+  {
+    "name": "const",
+    "trans": [
+      "n. 用于声明常量"
+    ]
+  },
+  {
+    "name": "fallthrough",
+    "trans": [
+      "n. 用于执行下一个分支代码"
+    ]
+  },
+  {
+    "name": "if",
+    "trans": [
+      "n. 用于条件判断"
+    ],
+    "usphone": "ɪf",
+    "ukphone": "ɪf",
+    "sentences": [
+      {
+        "english": "We’ll stay at home if it rains.",
+        "chinese": "如果下雨，我们就待在家里。"
+      },
+      {
+        "english": "If you need money, I can lend you some.",
+        "chinese": "如果你需要钱，我能借给你一些。"
+      },
+      {
+        "english": "If I didn’t apologize, I’d feel guilty.",
+        "chinese": "如果我不道歉，我会感到内疚。"
+      },
+      {
+        "english": "If you had worked harder, you would have passed your exams.",
+        "chinese": "要是你再努力一点，就通过考试了。"
+      },
+      {
+        "english": "What would happen to your family if you were to die in an accident?",
+        "chinese": "要是你在意外事故中身亡，你的家人会怎么样呢？"
+      },
+      {
+        "english": "If Dad were here, he would know what to do.",
+        "chinese": "如果爸爸在这儿，他会知道怎么做的。"
+      },
+      {
+        "english": "Taste the soup and add salt and pepper if necessary.",
+        "chinese": "尝一下汤，需要的话加一点盐和胡椒粉。"
+      },
+      {
+        "english": "I want to get back by five o’clock if possible.",
+        "chinese": "如果可能的话，我想5点之前回来。"
+      },
+      {
+        "english": "I think I can fix it tomorrow. If not, you’ll have to wait till Friday.",
+        "chinese": "我想明天我能修好它，如果不行，你只好等到周五了。"
+      },
+      {
+        "english": "Is the book available, and if so, where?",
+        "chinese": "有没有这本书？ 如果有的话，在哪儿？"
+      },
+      {
+        "english": "The missiles can be fired only if the operator types in a six-digit code.",
+        "chinese": "只有在操作员输入一组六位数密码后，导弹才能发射。"
+      },
+      {
+        "english": "We’ll face that problem if and when it comes along (= if it happens or when it happens ).",
+        "chinese": "如果这一问题真的发生了，我们就要面对它。"
+      },
+      {
+        "english": "If by any chance you can’t manage dinner tonight, perhaps we can at least have a drink together.",
+        "chinese": "万一你今晚不能来吃饭，或许我们至少可以一起喝一杯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "假如，如果",
+        "english": "used when talking about something that might happen or be true, or might have happened"
+      }
+    ]
+  },
+  {
+    "name": "range",
+    "trans": [
+      "n. 用于在循环中迭代元素"
+    ],
+    "usphone": "rendʒ",
+    "ukphone": "reɪndʒ",
+    "sentences": [
+      {
+        "english": "a temperature range of 72-85˚",
+        "chinese": "72 度到85度之间的温度范围"
+      },
+      {
+        "english": "Even the cheapest property was out of our price range (= too expensive for us ) .",
+        "chinese": "即使是最便宜的房子也超出了我们能承受的价格范围。"
+      },
+      {
+        "english": "There were 120 students whose ages ranged from 10 to 18.",
+        "chinese": "有120名学生，年龄在10至18岁之间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "范围",
+        "english": "the limits within which amounts, quantities, ages etc vary"
+      },
+      {
+        "pos": "v",
+        "chinese": "在范围内变化",
+        "english": "if prices, levels, temperatures etc range from one amount to another, they include both those amounts and anything in between"
+      }
+    ]
+  },
+  {
+    "name": "type",
+    "trans": [
+      "n. 用于定义自定义类型"
+    ],
+    "usphone": "taɪp",
+    "ukphone": "taɪp",
+    "sentences": [
+      {
+        "english": "I’ve already seen a few movies of this type.",
+        "chinese": "我已经看过几部这种类型的影片了。"
+      },
+      {
+        "english": "He types with two fingers.",
+        "chinese": "他用两个手指打字。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "型，类型",
+        "english": "one member of a group of people or things that have similar features or qualities"
+      },
+      {
+        "pos": "v",
+        "chinese": "打字",
+        "english": "to write something using a computer or a typewriter"
+      }
+    ]
+  },
+  {
+    "name": "continue",
+    "trans": [
+      "n. 用于跳过当前迭代"
+    ],
+    "usphone": "kən'tɪnju",
+    "ukphone": "kən'tɪnjuː",
+    "sentences": [
+      {
+        "english": "He will be continuing his education in the US.",
+        "chinese": "他将在美国继续求学。"
+      },
+      {
+        "english": "英文例句: I felt too sick to continue.",
+        "chinese": "我感觉很难受，无法继续下去了。"
+      },
+      {
+        "english": "英文例句:The road continues northwards to the border.",
+        "chinese": "中文例句: 这条路往北一直延伸到边境。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "继续，连续；延伸",
+        "english": "to not stop happening, existing, or doing something"
+      }
+    ]
+  },
+  {
+    "name": "for",
+    "trans": [
+      "n. 用于循环"
+    ],
+    "usphone": "fɚ; strong form fɔr",
+    "ukphone": "fə(r); strong form fɔ:(r)",
+    "sentences": [
+      {
+        "english": "I’ve got a present for you.",
+        "chinese": "我有件礼物送给你。"
+      },
+      {
+        "english": "Someone left a message for Vicky.",
+        "chinese": "有人给维基留了言。"
+      },
+      {
+        "english": "an English course for foreign students",
+        "chinese": "为外国学生开的一门英语课程"
+      },
+      {
+        "english": "WWhat did you do that for?",
+        "chinese": "你那样做是为了什么？"
+      },
+      {
+        "english": "We could hardly see for the mist.",
+        "chinese": "由于雾气，我们几乎什么也看不见。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "给；为；因为",
+        "english": "used to say who is intended to get or use something, or where something is intended to be used"
+      }
+    ]
+  },
+  {
+    "name": "import",
+    "trans": [
+      "n. 用于导入外部包"
+    ],
+    "usphone": "'ɪmpɔt",
+    "ukphone": "ɪm'pɔːt",
+    "sentences": [
+      {
+        "english": "a ban on beef imports",
+        "chinese": "禁止进口牛肉"
+      },
+      {
+        "english": "In 2001, Britain exported more cars than it imported.",
+        "chinese": "2001年英国的汽车出口量大于进口"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "进口",
+        "english": "a product that is brought from one country into another so that it can be sold there, or the business of doing this"
+      },
+      {
+        "pos": "v",
+        "chinese": "进口",
+        "english": "to bring a product from one country into another so that it can be sold there"
+      }
+    ]
+  },
+  {
+    "name": "return",
+    "trans": [
+      "n. 用于从函数中返回"
+    ],
+    "usphone": "rɪ'tɝn",
+    "ukphone": "rɪ'tɜːn",
+    "sentences": [
+      {
+        "english": "It was forty five minutes before she returned.",
+        "chinese": "过了45分钟她才回来。"
+      },
+      {
+        "english": "Alison decided to return home.",
+        "chinese": "艾利森决定回家。"
+      },
+      {
+        "english": "He left his country, never to return.",
+        "chinese": "他离开了祖国，一去不复返。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "返回；报答",
+        "english": "to go or come back to a place where you were before"
+      },
+      {
+        "pos": "n",
+        "chinese": "返回；归还；回球",
+        "english": "the act of returning from somewhere, or your arrival back in a place"
+      },
+      {
+        "pos": "adj",
+        "chinese": "报答的；回程的；返回的",
+        "english": "used or paid for a journey from one place to another and back again"
+      }
+    ]
+  }
 ]

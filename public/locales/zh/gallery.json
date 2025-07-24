@@ -1,0 +1,60 @@
+{
+  "title": "词典展示",
+  "subtitle": "浏览和选择适合的词典",
+  "categories": {
+    "all": "全部",
+    "exam": "考试词汇",
+    "business": "商务英语",
+    "daily": "日常用语",
+    "technical": "技术词汇",
+    "academic": "学术词汇"
+  },
+  "dictionary": {
+    "name": "词典名称",
+    "description": "描述",
+    "category": "分类",
+    "wordCount": "单词数量",
+    "difficulty": "难度",
+    "language": "语言",
+    "lastUpdated": "最后更新",
+    "select": "选择词典",
+    "preview": "预览",
+    "download": "下载"
+  },
+  "difficulty": {
+    "beginner": "初级",
+    "intermediate": "中级",
+    "advanced": "高级",
+    "expert": "专家级"
+  },
+  "filters": {
+    "title": "筛选条件",
+    "category": "按分类筛选",
+    "difficulty": "按难度筛选",
+    "language": "按语言筛选",
+    "wordCount": "按单词数量筛选",
+    "clear": "清除筛选",
+    "apply": "应用筛选"
+  },
+  "search": {
+    "placeholder": "搜索词典名称或描述",
+    "noResults": "未找到匹配的词典",
+    "resultsCount": "找到 {{count}} 个词典"
+  },
+  "sort": {
+    "title": "排序方式",
+    "name": "按名称排序",
+    "wordCount": "按单词数量排序",
+    "difficulty": "按难度排序",
+    "lastUpdated": "按更新时间排序",
+    "ascending": "升序",
+    "descending": "降序"
+  },
+  "actions": {
+    "startPractice": "开始练习",
+    "viewDetails": "查看详情",
+    "addToFavorites": "添加到收藏",
+    "removeFromFavorites": "从收藏中移除",
+    "share": "分享词典"
+  }
+}

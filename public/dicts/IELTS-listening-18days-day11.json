@@ -1,210 +1,1339 @@
 [
-    {
-        "name": "evidence",
-        "trans": ["证据"]
-    },
-    {
-        "name": "alternative",
-        "trans": ["可供选择的"]
-    },
-    {
-        "name": "intention",
-        "trans": ["意图"]
-    },
-    {
-        "name": "relevant",
-        "trans": ["相关的"]
-    },
-    {
-        "name": "outline",
-        "trans": ["轮廓", "大纲"]
-    },
-    {
-        "name": "extinct",
-        "trans": ["灭绝的"]
-    },
-    {
-        "name": "wing",
-        "trans": ["翅膀"]
-    },
-    {
-        "name": "nest",
-        "trans": ["巢", "窝"]
-    },
-    {
-        "name": "interference",
-        "trans": ["干预", "干涉"]
-    },
-    {
-        "name": "standard",
-        "trans": ["标准"]
-    },
-    {
-        "name": "subtopic",
-        "trans": ["副主题"]
-    },
-    {
-        "name": "therapy",
-        "trans": ["治疗", "疗法"]
-    },
-    {
-        "name": "morality",
-        "trans": ["道德"]
-    },
-    {
-        "name": "participation",
-        "trans": ["参加", "参与"]
-    },
-    {
-        "name": "faculty",
-        "trans": ["科", "系", "能力"]
-    },
-    {
-        "name": "fit",
-        "trans": ["健康的"]
-    },
-    {
-        "name": "useful",
-        "trans": ["有用的"]
-    },
-    {
-        "name": "confuse",
-        "trans": ["使混乱"]
-    },
-    {
-        "name": "inconvenient",
-        "trans": ["不便的"]
-    },
-    {
-        "name": "valuable",
-        "trans": ["有价值的"]
-    },
-    {
-        "name": "advisor",
-        "trans": ["顾问"]
-    },
-    {
-        "name": "forget",
-        "trans": ["忘记"]
-    },
-    {
-        "name": "lecturer",
-        "trans": ["讲师"]
-    },
-    {
-        "name": "content",
-        "trans": ["内容"]
-    },
-    {
-        "name": "practical",
-        "trans": ["实际的"]
-    },
-    {
-        "name": "improvement",
-        "trans": ["改进"]
-    },
-    {
-        "name": "repetitive",
-        "trans": ["重复性的"]
-    },
-    {
-        "name": "village",
-        "trans": ["村庄"]
-    },
-    {
-        "name": "mission",
-        "trans": ["使命"]
-    },
-    {
-        "name": "qualification",
-        "trans": ["资格"]
-    },
-    {
-        "name": "curriculum",
-        "trans": ["课程"]
-    },
-    {
-        "name": "training",
-        "trans": ["训练"]
-    },
-    {
-        "name": "colleague",
-        "trans": ["同事"]
-    },
-    {
-        "name": "description",
-        "trans": ["描述"]
-    },
-    {
-        "name": "administration",
-        "trans": ["管理"]
-    },
-    {
-        "name": "farming",
-        "trans": ["农业", "耕作"]
-    },
-    {
-        "name": "damage",
-        "trans": ["损害", "损毁"]
-    },
-    {
-        "name": "checklist",
-        "trans": ["清单", "检查表"]
-    },
-    {
-        "name": "figures",
-        "trans": ["价格", "金额"]
-    },
-    {
-        "name": "presentation",
-        "trans": ["陈述", "展示"]
-    },
-    {
-        "name": "professor",
-        "trans": ["教授", "教师"]
-    },
-    {
-        "name": "seminar",
-        "trans": ["讨论会"]
-    },
-    {
-        "name": "chemistry",
-        "trans": ["化学"]
-    },
-    {
-        "name": "trade",
-        "trans": ["贸易", "交易"]
-    },
-    {
-        "name": "payment",
-        "trans": ["支付"]
-    },
-    {
-        "name": "portable",
-        "trans": ["便携的"]
-    },
-    {
-        "name": "comedy",
-        "trans": ["喜剧"]
-    },
-    {
-        "name": "pattern",
-        "trans": ["模式"]
-    },
-    {
-        "name": "fresh",
-        "trans": ["新鲜的"]
-    },
-    {
-        "name": "application",
-        "trans": ["申请"]
-    },
-    {
-        "name": "employee",
-        "trans": ["雇员"]
-    },
-    {
-        "name": "evaporate",
-        "trans": ["蒸发"]
-    }
+  {
+    "name": "evidence",
+    "trans": [
+      "证据"
+    ],
+    "usphone": "'ɛvɪdəns",
+    "ukphone": "'evɪd(ə)ns",
+    "sentences": [
+      {
+        "english": "We found further scientific evidence for this theory.",
+        "chinese": "我们找到了进一步证实这种理论的科学根据。"
+      },
+      {
+        "english": "I was asked to give evidence (= to say what I knew, describe what I had seen, etc.)",
+        "chinese": "我被要求出庭作证。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "根据；证据，证人",
+        "english": "facts or signs that show clearly that something exists or is true"
+      }
+    ]
+  },
+  {
+    "name": "alternative",
+    "trans": [
+      "可供选择的"
+    ],
+    "usphone": "ɔl'tɝnətɪv",
+    "ukphone": "ɔːl'tɜːnətɪv",
+    "sentences": [
+      {
+        "english": "An alternative route is along the Via Unione.",
+        "chinese": "另一条路线是沿着联合路走。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 两者选一的， 供选择的； 另类的",
+        "english": "an alternative idea, plan etc is different from the one you have and can be used instead"
+      },
+      {
+        "pos": "n",
+        "chinese": "替换物，选择；选择的自由",
+        "english": "something you can choose to do or use instead of something else"
+      }
+    ]
+  },
+  {
+    "name": "intention",
+    "trans": [
+      "意图"
+    ],
+    "usphone": "ɪn'tɛnʃən",
+    "ukphone": "ɪnˈtenʃn",
+    "sentences": [
+      {
+        "english": "They went into town with the intention of visiting the library.",
+        "chinese": "他们进了城，打算参观图书馆。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "打算，意图",
+        "english": "a plan or desire to do something"
+      }
+    ]
+  },
+  {
+    "name": "relevant",
+    "trans": [
+      "相关的"
+    ],
+    "usphone": "'rɛləvənt",
+    "ukphone": "ˈreləvənt",
+    "sentences": [
+      {
+        "english": "Relevant documents were presented in court.",
+        "chinese": "法庭上出示了相关的文件。"
+      },
+      {
+        "english": "We received all the relevant information.",
+        "chinese": "我们收到了所有相关信息。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "相关的",
+        "english": "directly relating to the subject or problem being discussed or considered"
+      }
+    ]
+  },
+  {
+    "name": "outline",
+    "trans": [
+      "轮廓",
+      "大纲"
+    ],
+    "usphone": "'aʊtlaɪn",
+    "ukphone": "'autlaɪn",
+    "sentences": [
+      {
+        "english": "a research proposal outline",
+        "chinese": "研究计划梗概"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "提纲，要点；外形；略图",
+        "english": "the main ideas or facts about something, without the details"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 概述； 描…的外形",
+        "english": "to describe something in a general way, giving the main points but not the details"
+      }
+    ]
+  },
+  {
+    "name": "extinct",
+    "trans": [
+      "灭绝的"
+    ],
+    "usphone": "ɪk'stɪŋkt",
+    "ukphone": "ɪk'stɪŋkt; ek-",
+    "sentences": [
+      {
+        "english": "Dinosaurs have been extinct for millions of years.",
+        "chinese": "恐龙已灭绝数千万年了。"
+      },
+      {
+        "english": "Pandas could become extinct in the wild.",
+        "chinese": "熊猫在野生环境中可能会绝种。"
+      },
+      {
+        "english": "an extinct species",
+        "chinese": "已灭绝的一个物种"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "绝种的",
+        "english": "(of a type of plant, animal, etc.) no longer in existence"
+      }
+    ]
+  },
+  {
+    "name": "wing",
+    "trans": [
+      "翅膀"
+    ],
+    "usphone": "wɪŋ",
+    "ukphone": "wɪŋ",
+    "sentences": [
+      {
+        "english": "a butterfly with beautiful markings on its wings",
+        "chinese": "翅膀上有美丽花纹的蝴蝶"
+      },
+      {
+        "english": "The pheasant flapped its wings vigorously.",
+        "chinese": "野鸡猛烈地拍打翅膀。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "翅膀",
+        "english": "one of the parts of a bird’s or insect’s body that it uses for flying"
+      },
+      {
+        "pos": "v",
+        "chinese": "飞过",
+        "english": "to fly somewhere"
+      }
+    ]
+  },
+  {
+    "name": "nest",
+    "trans": [
+      "巢",
+      "窝"
+    ],
+    "usphone": "nɛst",
+    "ukphone": "nest",
+    "sentences": [
+      {
+        "english": "a bird’s nest",
+        "chinese": "鸟窝"
+      },
+      {
+        "english": "In May the females build a nest and lay their eggs.",
+        "chinese": "雌鸟在5月份筑巢产蛋。"
+      },
+      {
+        "english": "Young eagles leave the nest after only two months.",
+        "chinese": "雏鹰仅仅两个月以后就会飞离鸟巢。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "巢，窝；安乐窝；温床",
+        "english": "a place made or chosen by a bird to lay its eggs in and to live in"
+      },
+      {
+        "pos": "v",
+        "chinese": "筑巢；嵌套",
+        "english": "to build or use a nest"
+      }
+    ]
+  },
+  {
+    "name": "interference",
+    "trans": [
+      "干预",
+      "干涉"
+    ],
+    "usphone": ",ɪntɚ'fɪrəns",
+    "ukphone": "ɪntə'fɪər(ə)ns",
+    "sentences": [
+      {
+        "english": "Industrial relations should be free from state interference.",
+        "chinese": "劳资关系应不受政府干预。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "干涉，干预；阻碍",
+        "english": "an act of interfering"
+      }
+    ]
+  },
+  {
+    "name": "standard",
+    "trans": [
+      "标准"
+    ],
+    "usphone": "'stændɚd",
+    "ukphone": "'stændəd",
+    "sentences": [
+      {
+        "english": "Students have to reach a certain standard or they won’t pass.",
+        "chinese": "学生必须达到某一标准，否则无法通过。"
+      },
+      {
+        "english": "The airline has rigorous safety standards.",
+        "chinese": "这家航空公司有严格的安全标准。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "标准；水准；旗；度量衡标准",
+        "english": "the level that is considered to be acceptable, or the level that someone or something has achieved"
+      },
+      {
+        "pos": "adj",
+        "chinese": "标准的；合规格的；公认为优秀的",
+        "english": "accepted as normal or usual"
+      }
+    ]
+  },
+  {
+    "name": "subtopic",
+    "trans": [
+      "副主题"
+    ]
+  },
+  {
+    "name": "therapy",
+    "trans": [
+      "治疗",
+      "疗法"
+    ],
+    "usphone": "'θɛrəpi",
+    "ukphone": "'θerəpi",
+    "sentences": [
+      {
+        "english": "new drug therapies",
+        "chinese": "新的药物疗法"
+      },
+      {
+        "english": "radiation therapy for cancer treatment",
+        "chinese": "治疗癌症的放射疗法"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "疗法 治疗",
+        "english": "the treatment of an illness or injury over a fairly long period of time"
+      }
+    ]
+  },
+  {
+    "name": "morality",
+    "trans": [
+      "道德"
+    ],
+    "usphone": "məˈræləti",
+    "ukphone": "məˈræləti",
+    "sentences": [
+      {
+        "english": "the decline in standards of personal morality",
+        "chinese": "个人道德标准的下降"
+      },
+      {
+        "english": "The authorities are protectors of public morality.",
+        "chinese": "当权者是公众道德的捍卫者。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "道德，美德，品行",
+        "english": "beliefs or ideas about what is right and wrong and about how people should behave"
+      }
+    ]
+  },
+  {
+    "name": "participation",
+    "trans": [
+      "参加",
+      "参与"
+    ],
+    "usphone": "pɑr,tɪsɪ'peʃən",
+    "ukphone": "pɑː,tɪsɪ'peɪʃn",
+    "sentences": [
+      {
+        "english": "Thank you for your participation.",
+        "chinese": "谢谢你的参与。"
+      },
+      {
+        "english": "entertainment with plenty of audience participation",
+        "chinese": "有许多观众参与的娱乐活动"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "参与；分享；参股",
+        "english": "the act of taking part in an activity or event"
+      }
+    ]
+  },
+  {
+    "name": "faculty",
+    "trans": [
+      "科",
+      "系",
+      "能力"
+    ],
+    "usphone": "'fæklti",
+    "ukphone": "'fækltɪ",
+    "sentences": [
+      {
+        "english": "Both faculty and students oppose the measures.",
+        "chinese": "教师和学生都反对这些措施。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "教工，教员",
+        "english": "all the teachers in a university"
+      }
+    ]
+  },
+  {
+    "name": "fit",
+    "trans": [
+      "健康的"
+    ],
+    "usphone": "fɪt",
+    "ukphone": "fɪt",
+    "sentences": [
+      {
+        "english": "The sash, kimono, and other garments were made to fit a child.",
+        "chinese": "这些腰带、和服和其他衣服都做得适合孩子穿。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "适合；安装",
+        "english": "to put a piece of equipment into a place, or a new part onto a machine, so that it is ready to be used"
+      },
+      {
+        "pos": "v",
+        "chinese": "适合",
+        "english": "if something fits another thing, it is similar to it or suitable for it"
+      }
+    ]
+  },
+  {
+    "name": "useful",
+    "trans": [
+      "有用的"
+    ],
+    "usphone": "'jusfl",
+    "ukphone": "'juːsfʊl; -f(ə)l",
+    "sentences": [
+      {
+        "english": "useful information",
+        "chinese": "有用的信息"
+      },
+      {
+        "english": "A little Japanese can be really useful.",
+        "chinese": "懂一点日语非常有用。"
+      },
+      {
+        "english": "Can you come and make yourself useful(= help people to do something )?",
+        "chinese": "你能不能过来帮点忙？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "有用的，有益的；有帮助的",
+        "english": "helping you to do or get what you want"
+      }
+    ]
+  },
+  {
+    "name": "confuse",
+    "trans": [
+      "使混乱"
+    ],
+    "usphone": "kən'fjʊz",
+    "ukphone": "kənˈfju:z",
+    "sentences": [
+      {
+        "english": "People might well confuse the two products.",
+        "chinese": "人们很容易混淆这两种产品。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "使混淆，迷惑",
+        "english": "to think wrongly that a person or thing is someone or something else"
+      }
+    ]
+  },
+  {
+    "name": "inconvenient",
+    "trans": [
+      "不便的"
+    ],
+    "usphone": ",ɪnkən'vinɪənt",
+    "ukphone": "ɪnkən'viːnɪənt",
+    "sentences": [
+      {
+        "english": "Monday’s a bit inconvenient for me. How about Wednesday?",
+        "chinese": "周一我不太方便，周三如何？"
+      },
+      {
+        "english": "Am I calling at an inconvenient time?",
+        "chinese": "我电话打得不是时候吧？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "不便的；打扰的",
+        "english": "causing problems, often in a way that is annoying"
+      }
+    ]
+  },
+  {
+    "name": "valuable",
+    "trans": [
+      "有价值的"
+    ],
+    "usphone": "ˈvæljuəbəl; ˈvæljə-",
+    "ukphone": "'væljʊəb(ə)l",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "贵重物品，财宝",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "advisor",
+    "trans": [
+      "顾问"
+    ],
+    "usphone": "əd'vaɪzɚ",
+    "ukphone": "əd'vaɪzə",
+    "sentences": [
+      {
+        "english": "This is the role of the coach, advisor, or teacher.",
+        "chinese": "这就是教练、顾问或者老师所扮演的角色。"
+      },
+      {
+        "english": "When you purchase stocks, or equities, as your advisor might put it, you become a part owner of the business.",
+        "chinese": "当你买入股票或者等价物，你的顾问会告诉你说你已经成为了企业的部分所有者。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "顾问",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "forget",
+    "trans": [
+      "忘记"
+    ],
+    "usphone": "fɚ'ɡɛt",
+    "ukphone": "fə'get",
+    "sentences": [
+      {
+        "english": "I’m sorry, I’ve forgotten your name.",
+        "chinese": "对不起，我忘记你的名字了。"
+      },
+      {
+        "english": "I know you told me, but I forgot.",
+        "chinese": "我知道你告诉过我，但是我忘了。"
+      },
+      {
+        "english": "What happened that day will never be forgotten.",
+        "chinese": "那一天的事永远难忘。"
+      },
+      {
+        "english": "He’s someone who never forgets a face (= forgets who someone is ).",
+        "chinese": "他是那种见人一面就不会忘记的人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "忘记，遗忘",
+        "english": "to not remember facts, information, or people or things from the past"
+      }
+    ]
+  },
+  {
+    "name": "lecturer",
+    "trans": [
+      "讲师"
+    ],
+    "usphone": "'lɛktʃərɚ",
+    "ukphone": "'lektʃ(ə)rə",
+    "sentences": [
+      {
+        "english": "She’s a brilliant lecturer.",
+        "chinese": "她是位出色的演讲者。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "讲师，演讲者",
+        "english": "someone who gives lectures, especially in a university"
+      }
+    ]
+  },
+  {
+    "name": "content",
+    "trans": [
+      "内容"
+    ],
+    "usphone": "'kɑntɛnt",
+    "ukphone": "'kɒntent",
+    "sentences": [
+      {
+        "english": "The content of the media course includes scripting, editing and camera work.",
+        "chinese": "大众传媒课程的内容包括稿件写作、剪辑和摄像操作。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "内容",
+        "english": "the ideas, facts, or opinions that are contained in a speech, piece of writing, film, programme etc"
+      }
+    ]
+  },
+  {
+    "name": "practical",
+    "trans": [
+      "实际的"
+    ],
+    "usphone": "'præktɪkl",
+    "ukphone": "ˈpræktɪkl",
+    "sentences": [
+      {
+        "english": "Candidates should have training and practical experience in basic electronics.",
+        "chinese": "应征者应该具备基础电子学方面的培训和实践经验。"
+      },
+      {
+        "english": "the practical problems of old age",
+        "chinese": "老年的实际问题"
+      },
+      {
+        "english": "They provide financial and practical help for disabled students.",
+        "chinese": "他们为残障学生提供经济上的援助以及实际的帮助。"
+      },
+      {
+        "english": "a combination of theoretical and practical training",
+        "chinese": "理论培训和实践培训的结合"
+      },
+      {
+        "english": "They haven’t thought about the practical consequences of the new regulations.",
+        "chinese": "他们没有考虑过新法规会产生什么实际后果。"
+      },
+      {
+        "english": "In practical terms, this means spending more time with each student.",
+        "chinese": "具体地说，这意味着花更多的时间和每个学生在一起。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "实践的；实用的",
+        "english": "relating to real situations and events rather than ideas, emotions etc"
+      }
+    ]
+  },
+  {
+    "name": "improvement",
+    "trans": [
+      "改进"
+    ],
+    "usphone": "ɪm'prʊvmənt",
+    "ukphone": "ɪm'pruːvm(ə)nt",
+    "sentences": [
+      {
+        "english": "Our results have shown some improvement this month.",
+        "chinese": "我们的成绩这个月有所提高。"
+      },
+      {
+        "english": "Are you making some improvements to your home?",
+        "chinese": "你在改善家里的居住条件吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "改进，改善；改进之处",
+        "english": "the act of improving something or the state of being improved"
+      }
+    ]
+  },
+  {
+    "name": "repetitive",
+    "trans": [
+      "重复性的"
+    ],
+    "usphone": "rɪ'pɛtətɪv",
+    "ukphone": "rɪ'petətɪv",
+    "sentences": [
+      {
+        "english": "The song was dreary and repetitive.",
+        "chinese": "这首歌又枯燥又重复。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 重复的， 反复性的",
+        "english": "done many times in the same way, and boring"
+      }
+    ]
+  },
+  {
+    "name": "village",
+    "trans": [
+      "村庄"
+    ],
+    "usphone": "'vɪlɪdʒ",
+    "ukphone": "'vɪlɪdʒ",
+    "sentences": [
+      {
+        "english": "a little fishing village",
+        "chinese": "一座小渔村"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "村庄；村民；（动物的）群落",
+        "english": "a very small town in the countryside"
+      }
+    ]
+  },
+  {
+    "name": "mission",
+    "trans": [
+      "使命"
+    ],
+    "usphone": "'mɪʃən",
+    "ukphone": "'miʃən",
+    "sentences": [
+      {
+        "english": "He was sent on over 200 missions before being killed in action.",
+        "chinese": "在阵亡之前他奉命执行过200多次军事任务。"
+      },
+      {
+        "english": "US troops taking part in the peacekeeping mission",
+        "chinese": "参与维和任务的美军"
+      },
+      {
+        "english": "a British trade mission to Moscow",
+        "chinese": "派往莫斯科的英国贸易代表团"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "使命，任务；代表团",
+        "english": "an important job that involves travelling somewhere, done by a member of the air force, army etc, or by a spacecraft"
+      }
+    ]
+  },
+  {
+    "name": "qualification",
+    "trans": [
+      "资格"
+    ],
+    "usphone": ",kwɑlɪfɪ'keʃən",
+    "ukphone": ",kwɔlifi'keiʃən",
+    "sentences": [
+      {
+        "english": "He left school without any qualifications.",
+        "chinese": "他离校时没有拿到任何文凭。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "资格(证明)，合格证书",
+        "english": "if you have a qualification, you have passed an examination or course to show you have a particular level of skill or knowledge in a subject"
+      }
+    ]
+  },
+  {
+    "name": "curriculum",
+    "trans": [
+      "课程"
+    ],
+    "usphone": "kə'rɪkjələm",
+    "ukphone": "kəˈrɪkjələm",
+    "sentences": [
+      {
+        "english": "Languages are an essential part of the school curriculum.",
+        "chinese": "语言是学校课程中必不可少的部分。"
+      },
+      {
+        "english": "curriculum planning",
+        "chinese": "课程安排"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "课程",
+        "english": "the subjects that are taught by a school, college etc, or the things that are studied in a particular subject"
+      }
+    ]
+  },
+  {
+    "name": "training",
+    "trans": [
+      "训练"
+    ],
+    "usphone": "'trenɪŋ",
+    "ukphone": "'treɪnɪŋ",
+    "sentences": [
+      {
+        "english": "Police drivers have to undergo intensive training .",
+        "chinese": "警察驾驶员都得接受强化训练。"
+      },
+      {
+        "english": "a rigorous training session",
+        "chinese": "一节严格的训练课"
+      },
+      {
+        "english": "On-the-job training will be supplemented by classroom lectures.",
+        "chinese": "除了在职培训，还将有课堂授课作为补充。"
+      },
+      {
+        "english": "The shop opens late on Fridays because of staff training .",
+        "chinese": "因为员工培训，这家商店周五较晚开门营业。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "训练；培养；瞄准；整枝",
+        "english": "the process of teaching or being taught the skills for a particular job or activity"
+      },
+      {
+        "pos": "v",
+        "chinese": "训练；教养（train的ing形式）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "colleague",
+    "trans": [
+      "同事"
+    ],
+    "usphone": "'kɑliɡ",
+    "ukphone": "'kɒliːg",
+    "sentences": [
+      {
+        "english": "a colleague of mine from the bank",
+        "chinese": "我在银行的一位同事"
+      },
+      {
+        "english": "She discussed the idea with some of her colleagues.",
+        "chinese": "她和几位同事讨论了这个想法。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 同事， 同僚",
+        "english": "someone you work with – used especially by professional people"
+      }
+    ]
+  },
+  {
+    "name": "description",
+    "trans": [
+      "描述"
+    ],
+    "usphone": "dɪ'skrɪpʃən",
+    "ukphone": "dɪ'skrɪpʃ(ə)n",
+    "sentences": [
+      {
+        "english": "The booklet gives a brief description of each place.",
+        "chinese": "这本小册子对每一个地方都作了简短的介绍。"
+      },
+      {
+        "english": "Berlin sounds fascinating from your description.",
+        "chinese": "从你的描述来看，柏林是个迷人的城市。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "描述，描写；类型；说明书",
+        "english": "a piece of writing or speech that gives details about what someone or something is like"
+      }
+    ]
+  },
+  {
+    "name": "administration",
+    "trans": [
+      "管理"
+    ],
+    "usphone": "əd,mɪnɪ'streʃən",
+    "ukphone": "ədˌmɪnɪˈstreɪʃn",
+    "sentences": [
+      {
+        "english": "We’re looking for someone with experience in administration.",
+        "chinese": "我们正在寻找一个有管理经验的人。"
+      },
+      {
+        "english": "The health service spends too much on administration.",
+        "chinese": "医疗服务部门在行政方面花费太多。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "管理，政府",
+        "english": "the activities that are involved in managing the work of a company or organization"
+      }
+    ]
+  },
+  {
+    "name": "farming",
+    "trans": [
+      "农业",
+      "耕作"
+    ],
+    "usphone": "'fɑrmɪŋ",
+    "ukphone": "'fɑːmɪŋ",
+    "sentences": [
+      {
+        "english": "the farming industry",
+        "chinese": "农[畜牧]业"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "农业，耕作",
+        "english": "the practice or business of growing crops or keeping animals on a farm"
+      },
+      {
+        "pos": "v",
+        "chinese": "耕种；出租（farm的ing形式）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "damage",
+    "trans": [
+      "损害",
+      "损毁"
+    ],
+    "usphone": "'dæmɪdʒ",
+    "ukphone": "'dæmɪdʒ",
+    "sentences": [
+      {
+        "english": "insects that damage crops",
+        "chinese": "破坏庄稼的昆虫"
+      },
+      {
+        "english": "There may be permanent brain damage.",
+        "chinese": "可能有永久性脑损伤。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "损害，毁坏",
+        "english": "to cause physical harm to something or to part of someone’s body"
+      },
+      {
+        "pos": "n",
+        "chinese": "损害",
+        "english": "physical harm that is done to something or to a part of someone’s body, so that it is broken or injured"
+      }
+    ]
+  },
+  {
+    "name": "checklist",
+    "trans": [
+      "清单",
+      "检查表"
+    ],
+    "usphone": "'tʃɛk'lɪst",
+    "ukphone": "'tʃeklɪst",
+    "sentences": [
+      {
+        "english": "The guide contains a useful checklist of points to look for when buying a car.",
+        "chinese": "手册里有一张很有用的清单，列出买车时要注意的一些事项。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "清单；检查表；备忘录；目录册",
+        "english": "a list that helps you by reminding you of the things you need to do or get for a particular job or activity"
+      }
+    ]
+  },
+  {
+    "name": "figures",
+    "trans": [
+      "价格",
+      "金额"
+    ]
+  },
+  {
+    "name": "presentation",
+    "trans": [
+      "陈述",
+      "展示"
+    ],
+    "usphone": ",prizɛn'teʃən",
+    "ukphone": "ˌprezn'teɪʃn",
+    "sentences": [
+      {
+        "english": "the presentation ceremony",
+        "chinese": "颁奖仪式"
+      },
+      {
+        "english": "Dr Evans thanked him for coming to make the presentations .",
+        "chinese": "埃文斯博士感谢他来颁奖。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 提供， 显示； 外观， 图像； 授予， 赠送； 报告， 介绍； 表演",
+        "english": "the act of giving someone a prize or present at a formal ceremony"
+      }
+    ]
+  },
+  {
+    "name": "professor",
+    "trans": [
+      "教授",
+      "教师"
+    ],
+    "usphone": "prə'fɛsɚ",
+    "ukphone": "prə'fesə",
+    "sentences": [
+      {
+        "english": "The professor improvised a poem in the class.",
+        "chinese": "教授在课堂上即兴创作了一首诗。"
+      },
+      {
+        "english": "The professor lambasted me for my careless mistake.",
+        "chinese": "教授严厉批评了我的粗心错误。"
+      },
+      {
+        "english": "We were laughing about that absent-minded professor.",
+        "chinese": "我们都在笑那个心不在焉的教授。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "教授",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "seminar",
+    "trans": [
+      "讨论会"
+    ],
+    "usphone": "'sɛmɪnɑr",
+    "ukphone": "'semɪnɑː",
+    "sentences": [
+      {
+        "english": "a Shakespeare seminar",
+        "chinese": "莎士比亚研讨班"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 研究班， 研讨会",
+        "english": "a class at a university or college for a small group of students and a teacher to study or discuss a particular subject"
+      }
+    ]
+  },
+  {
+    "name": "chemistry",
+    "trans": [
+      "化学"
+    ],
+    "usphone": "'kɛmɪstri",
+    "ukphone": "'kemɪstrɪ",
+    "sentences": [
+      {
+        "english": "inorganic/organic chemistry",
+        "chinese": "无机 / 有机化学"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "化学",
+        "english": "the science that is concerned with studying the structure of substances and the way that they change or combine with each other"
+      }
+    ]
+  },
+  {
+    "name": "trade",
+    "trans": [
+      "贸易",
+      "交易"
+    ],
+    "usphone": "tred",
+    "ukphone": "treɪd",
+    "sentences": [
+      {
+        "english": "They had to travel into town to trade the produce from their farm.",
+        "chinese": "他们不得不到镇上去出售他们农场的产品。"
+      },
+      {
+        "english": "We traded necklaces.",
+        "chinese": "我们交换了项链。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "做买卖；交换",
+        "english": "to buy and sell goods, services etc as your job or business"
+      }
+    ]
+  },
+  {
+    "name": "payment",
+    "trans": [
+      "支付"
+    ],
+    "usphone": "'pemənt",
+    "ukphone": "'peɪm(ə)nt",
+    "sentences": [
+      {
+        "english": "She demanded payment in advance.",
+        "chinese": "她要求预先付款。"
+      },
+      {
+        "english": "Payment can be made by cheque or credit card.",
+        "chinese": "可以用支票或信用卡付款。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "支付",
+        "english": "the act of paying for something"
+      }
+    ]
+  },
+  {
+    "name": "portable",
+    "trans": [
+      "便携的"
+    ],
+    "usphone": "'pɔrtəbl",
+    "ukphone": "'pɔːtəb(ə)l",
+    "sentences": [
+      {
+        "english": "a portable radio",
+        "chinese": "便携式收音机"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "轻便的；手提的",
+        "english": "able to be carried or moved easily"
+      }
+    ]
+  },
+  {
+    "name": "comedy",
+    "trans": [
+      "喜剧"
+    ],
+    "usphone": "'kɑmədi",
+    "ukphone": "'kɒmədi",
+    "sentences": [
+      {
+        "english": "a career in stand-up comedy",
+        "chinese": "单口喜剧表演职业"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 喜剧， 喜剧性",
+        "english": "entertainment that is intended to make people laugh"
+      }
+    ]
+  },
+  {
+    "name": "pattern",
+    "trans": [
+      "模式"
+    ],
+    "usphone": "'pætɚn",
+    "ukphone": "'pæt(ə)n",
+    "sentences": [
+      {
+        "english": "Weather patterns have changed in recent years.",
+        "chinese": "气候模式近年已经发生了变化。"
+      },
+      {
+        "english": "A general pattern began to emerge .",
+        "chinese": "一个总体模式开始显现。"
+      },
+      {
+        "english": "Their descriptions seemed to follow a set pattern (= always develop in the same way ) .",
+        "chinese": "他们的描述似乎依据固定的模式。"
+      },
+      {
+        "english": "His behavior fits a pattern of violent acts.",
+        "chinese": "他的举动符合暴力行为的模式。"
+      },
+      {
+        "english": "a dress pattern",
+        "chinese": "连衣裙的纸样"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "型，式样；模，模型",
+        "english": "the regular way in which something happens, develops, or is done"
+      }
+    ]
+  },
+  {
+    "name": "fresh",
+    "trans": [
+      "新鲜的"
+    ],
+    "usphone": "frɛʃ",
+    "ukphone": "freʃ",
+    "sentences": [
+      {
+        "english": "I’ll just make some fresh coffee.",
+        "chinese": "我来重新煮点咖啡。"
+      },
+      {
+        "english": "The report provides fresh evidence about the way the business was run.",
+        "chinese": "报告提供了有关该公司运营方式的新证据。"
+      },
+      {
+        "english": "You’ll have to start again on a fresh sheet of paper.",
+        "chinese": "你得拿张新的纸重新开始。"
+      },
+      {
+        "english": "The beans are fresh from the garden.",
+        "chinese": "这些豆子是刚从园子里摘来的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "新的；新鲜的",
+        "english": "adding to or replacing something"
+      }
+    ]
+  },
+  {
+    "name": "application",
+    "trans": [
+      "申请"
+    ],
+    "usphone": "ˌæpləˈkeʃən",
+    "ukphone": "ˌæplɪ'keɪʃn",
+    "sentences": [
+      {
+        "english": "We receive hundreds of job applications each year.",
+        "chinese": "我们每年收到数百封求职信。"
+      },
+      {
+        "english": "I filled in the application form and sent it off.",
+        "chinese": "我填完申请表后把它寄了出去。"
+      },
+      {
+        "english": "You have to submit your application before the end of the month.",
+        "chinese": "月底之前必须递交申请。"
+      },
+      {
+        "english": "I’ve put in an application for a transfer.",
+        "chinese": "我已递交了调动申请。"
+      },
+      {
+        "english": "He received a letter saying that his application had been rejected .",
+        "chinese": "他收到一封信，告知他的申请已被拒绝。"
+      },
+      {
+        "english": "It can take a long time for your visa application to be processed .",
+        "chinese": "办理签证申请可能需要很长时间。"
+      },
+      {
+        "english": "The Council is currently reviewing the way it deals with planning applications .",
+        "chinese": "市政会目前正在审查其处理规划申请的方式。"
+      },
+      {
+        "english": "Thank you for your letter of application , which we received yesterday.",
+        "chinese": "你的申请信昨天收悉，谢谢。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 申请， 申请书； 施用， 涂抹； 应用， 实施； 实用性",
+        "english": "a formal, usually written, request for something such as a job, place at university, or permission to do something"
+      }
+    ]
+  },
+  {
+    "name": "employee",
+    "trans": [
+      "雇员"
+    ],
+    "usphone": "ɪm'plɔɪi",
+    "ukphone": "emplɒɪ'iː; em'plɒɪiː; ɪm-",
+    "sentences": [
+      {
+        "english": "a government employee",
+        "chinese": "政府雇员"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "受雇者，雇员，雇工",
+        "english": "someone who is paid to work for someone else"
+      }
+    ]
+  },
+  {
+    "name": "evaporate",
+    "trans": [
+      "蒸发"
+    ],
+    "usphone": "ɪ'væpəret",
+    "ukphone": "ɪ'væpəreɪt",
+    "sentences": [
+      {
+        "english": "Most of the water had evaporated.",
+        "chinese": "大部分的水都蒸发了。"
+      },
+      {
+        "english": "The sun evaporates moisture on the leaves.",
+        "chinese": "太阳会蒸发叶子上的水分。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "使蒸发",
+        "english": "if a liquid evaporates, or if heat evaporates it, it changes into a gas"
+      },
+      {
+        "pos": "v",
+        "chinese": "蒸发",
+        "english": "if a liquid evaporates, or if heat evaporates it, it changes into a gas"
+      }
+    ]
+  }
 ]

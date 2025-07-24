@@ -1,0 +1,47 @@
+{
+  "network": {
+    "connectionFailed": "Network connection failed",
+    "timeout": "Request timeout",
+    "serverError": "Server error",
+    "notFound": "Resource not found",
+    "unauthorized": "Unauthorized access",
+    "forbidden": "Access forbidden"
+  },
+  "dictionary": {
+    "notFound": "Dictionary not found",
+    "loadFailed": "Failed to load dictionary data",
+    "invalidFormat": "Invalid dictionary format",
+    "chapterNotFound": "Chapter not found"
+  },
+  "article": {
+    "notFound": "Article not found",
+    "loadFailed": "Failed to load article",
+    "saveFailed": "Failed to save article",
+    "deleteFailed": "Failed to delete article",
+    "titleRequired": "Article title is required",
+    "contentRequired": "Article content is required"
+  },
+  "user": {
+    "loginRequired": "Please login first",
+    "loginFailed": "Login failed",
+    "registerFailed": "Registration failed",
+    "invalidCredentials": "Invalid username or password",
+    "userExists": "User already exists",
+    "emailInvalid": "Invalid email format"
+  },
+  "validation": {
+    "required": "This field is required",
+    "minLength": "Must be at least {{min}} characters",
+    "maxLength": "Must be no more than {{max}} characters",
+    "invalidEmail": "Invalid email format",
+    "invalidPassword": "Invalid password format",
+    "passwordMismatch": "Passwords do not match"
+  },
+  "general": {
+    "unknownError": "Unknown error",
+    "operationFailed": "Operation failed",
+    "permissionDenied": "Permission denied",
+    "dataCorrupted": "Data corrupted",
+    "storageQuotaExceeded": "Storage quota exceeded"
+  }
+}

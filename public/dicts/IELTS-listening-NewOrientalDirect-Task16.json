@@ -1,254 +1,1103 @@
 [
-    {
-        "name": "research",
-        "trans": [
-            "n. 研究；调查；探索"
-        ]
-    },
-    {
-        "name": "project",
-        "trans": [
-            "n. 项目；方案；工程"
-        ]
-    },
-    {
-        "name": "programme",
-        "trans": [
-            "n. （电视或广播中的）节目"
-        ]
-    },
-    {
-        "name": "proposal",
-        "trans": [
-            "n. 建议；计划；提案"
-        ]
-    },
-    {
-        "name": "procedure",
-        "trans": [
-            "n. 程序；步骤；常规"
-        ]
-    },
-    {
-        "name": "allocate",
-        "trans": [
-            "v. 分配；分派；拨给，划拨"
-        ]
-    },
-    {
-        "name": "reference",
-        "trans": [
-            "n. 提到；谈到；论及、参考文献、推荐信、介绍人"
-        ]
-    },
-    {
-        "name": "laboratory",
-        "trans": [
-            "n. 实验室；实验大楼"
-        ]
-    },
-    {
-        "name": "equipment",
-        "trans": [
-            "n. 设备；器材；用具"
-        ]
-    },
-    {
-        "name": "microscope",
-        "trans": [
-            "n. 显微镜"
-        ]
-    },
-    {
-        "name": "development",
-        "trans": [
-            "n. 成长，发育；发展"
-        ]
-    },
-    {
-        "name": "stage",
-        "trans": [
-            "n. 阶段；发展时期"
-        ]
-    },
-    {
-        "name": "phase",
-        "trans": [
-            "n. （发展或变化的）阶段，时期"
-        ]
-    },
-    {
-        "name": "monitor",
-        "trans": [
-            "v. 监控，监测"
-        ]
-    },
-    {
-        "name": "record",
-        "trans": [
-            "v. 录制；录（音）；录（像）"
-        ]
-    },
-    {
-        "name": "label",
-        "trans": [
-            "v. 贴标签"
-        ]
-    },
-    {
-        "name": "diagram",
-        "trans": [
-            "n. 图，图解，示意图"
-        ]
-    },
-    {
-        "name": "analyze",
-        "trans": [
-            "v. 分析"
-        ]
-    },
-    {
-        "name": "analysis",
-        "trans": [
-            "n. 分析"
-        ]
-    },
-    {
-        "name": "finding",
-        "trans": [
-            "n. （正式的）调查发现，调研结果"
-        ]
-    },
-    {
-        "name": "presentation",
-        "trans": [
-            "n. 报告，演讲，陈述"
-        ]
-    },
-    {
-        "name": "topic",
-        "trans": [
-            "n. 话题；主题"
-        ]
-    },
-    {
-        "name": "survey",
-        "trans": [
-            "n. 调查"
-        ]
-    },
-    {
-        "name": "journal",
-        "trans": [
-            "n. 杂志，期刊；报纸"
-        ]
-    },
-    {
-        "name": "discussion",
-        "trans": [
-            "n. 讨论，议论，谈论"
-        ]
-    },
-    {
-        "name": "outline",
-        "trans": [
-            "n. 轮廓，略图，外形"
-        ]
-    },
-    {
-        "name": "structure",
-        "trans": [
-            "n. 结构；构造；机构；体系"
-        ]
-    },
-    {
-        "name": "content",
-        "trans": [
-            "n. 内容"
-        ]
-    },
-    {
-        "name": "introduction",
-        "trans": [
-            "n. 采用；引进；推行；放入，插入"
-        ]
-    },
-    {
-        "name": "overview",
-        "trans": [
-            "n. 概述；概观"
-        ]
-    },
-    {
-        "name": "background",
-        "trans": [
-            "n. （画、照片的）背景，衬托"
-        ]
-    },
-    {
-        "name": "summary",
-        "trans": [
-            "n. 总结，概要，摘要"
-        ]
-    },
-    {
-        "name": "conclusion",
-        "trans": [
-            "n. 结局；结尾；结果"
-        ]
-    },
-    {
-        "name": "round off",
-        "trans": [
-            "phr. v. 结束，圆满完成"
-        ]
-    },
-    {
-        "name": "slide",
-        "trans": [
-            "n. 幻灯片"
-        ]
-    },
-    {
-        "name": "illustration",
-        "trans": [
-            "n. 插图；图解，图示"
-        ]
-    },
-    {
-        "name": "handout",
-        "trans": [
-            "n. （尤指发给学生或听报告的人的）讲义，印刷品"
-        ]
-    },
-    {
-        "name": "note",
-        "trans": [
-            "n. 笔记，便条"
-        ]
-    },
-    {
-        "name": "eye contact",
-        "trans": [
-            "N. phrase 目光接触"
-        ]
-    },
-    {
-        "name": "audience",
-        "trans": [
-            "n. 观众；听众；读者"
-        ]
-    },
-    {
-        "name": "body language",
-        "trans": [
-            "N. phrase 身体语言，肢体语言"
-        ]
-    },
-    {
-        "name": "style",
-        "trans": [
-            "n. 做事方式；（尤指）风格，作风"
-        ]
-    }
+  {
+    "name": "research",
+    "trans": [
+      "n. 研究；调查；探索"
+    ],
+    "usphone": "'risɝtʃ",
+    "ukphone": "rɪ'sɜːtʃ; 'riːsɜːtʃ",
+    "sentences": [
+      {
+        "english": "It’s a good idea to do some research before you buy a house.",
+        "chinese": "买房子之前作些了解，这想法很对。"
+      },
+      {
+        "english": "Gould was helped in his researches by local naturalists.",
+        "chinese": "古尔德在研究过程中得到了当地博物学家的帮助。"
+      },
+      {
+        "english": "He’s been researching material for a documentary.",
+        "chinese": "他一直在研究材料，准备做一个纪录片。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "研究，调查；研究；探索",
+        "english": "the activity of finding information about something that you are interested in or need to know about"
+      },
+      {
+        "pos": "v",
+        "chinese": "研究；探索",
+        "english": "to study a subject in detail, especially in order to discover new facts or test new ideas"
+      }
+    ]
+  },
+  {
+    "name": "project",
+    "trans": [
+      "n. 项目；方案；工程"
+    ],
+    "usphone": "prəˈdʒɛkt; prɑdʒɛkt",
+    "ukphone": "prəˈdʒekt",
+    "sentences": [
+      {
+        "english": "The project aims to provide an analysis of children’s emotions.",
+        "chinese": "该计划旨在对儿童情绪作出分析。"
+      },
+      {
+        "english": "a three-year research project",
+        "chinese": "一项为期三年的研究计划"
+      },
+      {
+        "english": "The scheme will now be extended after a successful pilot project (= a small trial to test if an idea will be successful ) .",
+        "chinese": "试行成功后，该方案现在将得到推广。"
+      },
+      {
+        "english": "The project is funded by Wellcome plc.",
+        "chinese": "这个项目由威康公司资助。"
+      },
+      {
+        "english": "a project manager",
+        "chinese": "项目经理"
+      },
+      {
+        "english": "a geography project",
+        "chinese": "一个地理课题"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "工程；课题、作业",
+        "english": "a carefully planned piece of work to get information about something, to build something, to improve something etc"
+      }
+    ]
+  },
+  {
+    "name": "programme",
+    "trans": [
+      "n. （电视或广播中的）节目"
+    ],
+    "usphone": "proɡrəm",
+    "ukphone": "'prəʊgræm",
+    "sentences": [
+      {
+        "english": "the US space program",
+        "chinese": "美国太空计划"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "计划，规划；节目；程序",
+        "english": "a series of actions which are designed to achieve something important"
+      },
+      {
+        "pos": "v",
+        "chinese": "编程序；制作节目",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "proposal",
+    "trans": [
+      "n. 建议；计划；提案"
+    ],
+    "usphone": "prə'pozl",
+    "ukphone": "prə'pəʊz(ə)l",
+    "sentences": [
+      {
+        "english": "The president is to put forward new proposals for resolving the country's constitutional crisis.",
+        "chinese": "总统将提出解决国家宪法危机的新议案。"
+      },
+      {
+        "english": "She politely declined his proposal of marriage.",
+        "chinese": "她礼貌地拒绝了他的求婚。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "提议，建议；求婚",
+        "english": "a plan or suggestion which is made formally to an official person or group, or the act of making it"
+      }
+    ]
+  },
+  {
+    "name": "procedure",
+    "trans": [
+      "n. 程序；步骤；常规"
+    ],
+    "usphone": "prə'sidʒɚ",
+    "ukphone": "prəˈsi:dʒə(r)",
+    "sentences": [
+      {
+        "english": "On board, we were given the usual talk on safety procedures (= what to do if an accident happens, or to prevent an accident ) .",
+        "chinese": "在飞机上，我们听了例行的飞行安全讲解。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "程序",
+        "english": "a way of doing something, especially the correct or usual way"
+      }
+    ]
+  },
+  {
+    "name": "allocate",
+    "trans": [
+      "v. 分配；分派；拨给，划拨"
+    ],
+    "usphone": "'æləket",
+    "ukphone": "'æləkeɪt",
+    "sentences": [
+      {
+        "english": "Tickets are limited and will be allocated to those who apply first.",
+        "chinese": "票数有限，将分配给那些先申请的人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": " 分配； 分派， 把…拨给",
+        "english": "to use something for a particular purpose, give something to a particular person etc, especially after an official decision has been made"
+      }
+    ]
+  },
+  {
+    "name": "reference",
+    "trans": [
+      "n. 提到；谈到；论及、参考文献、推荐信、介绍人"
+    ],
+    "usphone": "'rɛfrəns",
+    "ukphone": "'ref(ə)r(ə)ns",
+    "sentences": [
+      {
+        "english": "Keep their price list on file for future reference (= so that it can be looked at in the future ) ..",
+        "chinese": "将他们的价目表存档，以供日后参考。"
+      },
+      {
+        "english": "There is no direct reference to her own childhood in the novel.",
+        "chinese": "小说里没有直接提及她自己的童年。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "参考；提及",
+        "english": "the act of looking at sth for information"
+      }
+    ]
+  },
+  {
+    "name": "laboratory",
+    "trans": [
+      "n. 实验室；实验大楼"
+    ],
+    "usphone": "'læbrə'tɔri",
+    "ukphone": "lə'bɒrə,t(ə)rɪ; 'læb(ə)rə,t(ə)rɪ",
+    "sentences": [
+      {
+        "english": "a research laboratory",
+        "chinese": "研究实验室"
+      },
+      {
+        "english": "tests on laboratory animals",
+        "chinese": "在实验室动物身上做的试验"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "实验室，研究室",
+        "english": "a special room or building in which a scientist does tests or prepares substances"
+      }
+    ]
+  },
+  {
+    "name": "equipment",
+    "trans": [
+      "n. 设备；器材；用具"
+    ],
+    "usphone": "ɪ'kwɪpmənt",
+    "ukphone": "ɪ'kwɪpm(ə)nt",
+    "sentences": [
+      {
+        "english": "a shop selling camping equipment",
+        "chinese": "出售露营装备的商店"
+      },
+      {
+        "english": "some brand new computer equipment",
+        "chinese": "一些全新的计算机设备"
+      },
+      {
+        "english": "a very useful piece of equipment",
+        "chinese": "一件非常有用的设备"
+      },
+      {
+        "english": "A lot of money was spent on the equipment of the new hospital.",
+        "chinese": "新医院的装备花费巨大。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "装备，设备；配备",
+        "english": "the tools, machines etc that you need to do a particular job or activity"
+      }
+    ]
+  },
+  {
+    "name": "microscope",
+    "trans": [
+      "n. 显微镜"
+    ],
+    "usphone": "'maɪkrəskop",
+    "ukphone": "'maɪkrəskəʊp",
+    "sentences": [
+      {
+        "english": "The slightest movement will defocus the microscope.",
+        "chinese": "最轻微的运动都会使显微镜散焦。"
+      },
+      {
+        "english": "The microscope magnified the object two hundred times.",
+        "chinese": "这架显微镜把实物放大了200倍。"
+      },
+      {
+        "english": "The microscope capacitates small objects to be observed.",
+        "chinese": "显微镜可以观察到微小的物体。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "显微镜",
+        "english": "a scientific instrument that makes extremely small things look larger"
+      }
+    ]
+  },
+  {
+    "name": "development",
+    "trans": [
+      "n. 成长，发育；发展"
+    ],
+    "usphone": "dɪ'vɛləpmənt",
+    "ukphone": "dɪ'veləpm(ə)nt",
+    "sentences": [
+      {
+        "english": "child development",
+        "chinese": "儿童发育"
+      },
+      {
+        "english": "The funds will be used for marketing and product development.",
+        "chinese": "这笔资金将用于市场营销和产品开发。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "发展；生长；开发",
+        "english": "the process of gradually becoming bigger, better, stronger, or more advanced"
+      }
+    ]
+  },
+  {
+    "name": "stage",
+    "trans": [
+      "n. 阶段；发展时期"
+    ],
+    "usphone": "stedʒ",
+    "ukphone": "steɪdʒ",
+    "sentences": [
+      {
+        "english": "We’re getting to the stage where we hardly ever go out together.",
+        "chinese": "我们快要到几乎不一起外出的地步了。"
+      },
+      {
+        "english": "She is on stage for most of the play.",
+        "chinese": "这出戏的大部分时间里她都在台上"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "阶段；舞台",
+        "english": "a particular time or state that something reaches as it grows or develops"
+      }
+    ]
+  },
+  {
+    "name": "phase",
+    "trans": [
+      "n. （发展或变化的）阶段，时期"
+    ],
+    "usphone": "fez",
+    "ukphone": "feɪz",
+    "sentences": [
+      {
+        "english": "a new drug that is in the experimental phase",
+        "chinese": "处于试验阶段的一种新药"
+      },
+      {
+        "english": "It’s just a phase he’s going through.",
+        "chinese": "这只是他要经历的一个阶段。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "阶段；相位",
+        "english": "one of the stages of a process of development or change"
+      }
+    ]
+  },
+  {
+    "name": "monitor",
+    "trans": [
+      "v. 监控，监测"
+    ],
+    "usphone": "'mɔnɪtɚ",
+    "ukphone": "'mɒnɪtə",
+    "sentences": [
+      {
+        "english": "a heart monitor",
+        "chinese": "心脏监测仪"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "班长；监视器，检测器；显示器",
+        "english": "a television or part of a computer with a screen, on which you can see pictures or information"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 监听， 检测",
+        "english": "to carefully watch and check a situation in order to see how it changes over a period of time"
+      }
+    ]
+  },
+  {
+    "name": "record",
+    "trans": [
+      "v. 录制；录（音）；录（像）"
+    ],
+    "usphone": "(for v.) rɪˈkɔrd; (for n. adj.) ˈrɛkɚd",
+    "ukphone": "(for v.)rɪˈkɔːd; (for n.) ˈrekɔːd",
+    "sentences": [
+      {
+        "english": "According to official records, five people were killed last year near that road junction.",
+        "chinese": "据官方记录，去年有五人在那个路口附近丧生。"
+      },
+      {
+        "english": "His record reveals a tough streak.",
+        "chinese": "他的经历说明他个性坚强。"
+      },
+      {
+        "english": "Her husband made her record every penny she spent.",
+        "chinese": "她丈夫要她把花的每分钱都记下来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "记录；履历",
+        "english": "information about something that is written down or stored on computer, film etc so that it can be looked at in the future"
+      },
+      {
+        "pos": "v",
+        "chinese": "记录",
+        "english": "to write information down or store it in a computer or on film so that it can be looked at in the future"
+      }
+    ]
+  },
+  {
+    "name": "label",
+    "trans": [
+      "v. 贴标签"
+    ],
+    "usphone": "ˈlebəl",
+    "ukphone": "'leɪbl",
+    "sentences": [
+      {
+        "english": "a luggage label",
+        "chinese": "行李标签"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "标签；标记，符号",
+        "english": "a piece of paper or another material that is attached to something and gives information about it"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 贴标签于； 把…称为",
+        "english": "to attach a label onto something or write information on something"
+      }
+    ]
+  },
+  {
+    "name": "diagram",
+    "trans": [
+      "n. 图，图解，示意图"
+    ],
+    "usphone": "'daɪəɡræm",
+    "ukphone": "'daiəgræm",
+    "sentences": [
+      {
+        "english": "This diagram will illustrate what I mean.",
+        "chinese": "这个图表可说明我的意思。"
+      },
+      {
+        "english": "This is a simpler diagram than the one I just showed you but the principles are the same.",
+        "chinese": "这是一个比我刚展示的还要更简单的图解，但是原理是一样的。"
+      },
+      {
+        "english": "A table or diagram containing the name and address range of each peripheral addressable by the processor within the memory space.",
+        "chinese": "一个在内存空间中的，包含每个外设的名字和可由处理器设置的地址范围的表格或图表。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "图解",
+        "english": "to show or represent something in a diagram"
+      },
+      {
+        "pos": "n",
+        "chinese": " 图解， 简图， 图表",
+        "english": "a simple drawing or plan that shows exactly where something is, what something looks like, or how something works"
+      }
+    ]
+  },
+  {
+    "name": "analyze",
+    "trans": [
+      "v. 分析"
+    ],
+    "usphone": "'ænə,laɪz",
+    "ukphone": "'ænə,laɪz",
+    "sentences": [
+      {
+        "english": "How do you analyze this change?",
+        "chinese": "你该如何分析这种变化？"
+      },
+      {
+        "english": "You have to hoover anything before you can analyze it.",
+        "chinese": "在你不具备分析能力之前，你只得胡乱吸收你所能学到的东西。"
+      },
+      {
+        "english": "We should learn to discern and analyze the essentials of complicated questions.",
+        "chinese": "我们应该学会认识和分析复杂问题的本质。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "分析",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "analysis",
+    "trans": [
+      "n. 分析"
+    ],
+    "usphone": "ə'næləsɪs",
+    "ukphone": "ə'næləsɪs",
+    "sentences": [
+      {
+        "english": "She’s been in analysis for three years.",
+        "chinese": "她接受精神分析治疗已经三年了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 分析， 分析报告； 分解， 解析",
+        "english": "a process in which a doctor makes someone talk about their past experiences, relationships etc in order to help them with mental or emotional problems"
+      }
+    ]
+  },
+  {
+    "name": "finding",
+    "trans": [
+      "n. （正式的）调查发现，调研结果"
+    ],
+    "usphone": "'faɪndɪŋ",
+    "ukphone": "'faɪndɪŋ",
+    "sentences": [
+      {
+        "english": "Surveys conducted in other countries reported similar findings.",
+        "chinese": "在其他国家进行的调查也报告说有类似的结果。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "发现；调查的结果",
+        "english": "the information that someone has discovered as a result of their study, work etc"
+      }
+    ]
+  },
+  {
+    "name": "presentation",
+    "trans": [
+      "n. 报告，演讲，陈述"
+    ],
+    "usphone": ",prizɛn'teʃən",
+    "ukphone": "ˌprezn'teɪʃn",
+    "sentences": [
+      {
+        "english": "the presentation ceremony",
+        "chinese": "颁奖仪式"
+      },
+      {
+        "english": "Dr Evans thanked him for coming to make the presentations .",
+        "chinese": "埃文斯博士感谢他来颁奖。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 提供， 显示； 外观， 图像； 授予， 赠送； 报告， 介绍； 表演",
+        "english": "the act of giving someone a prize or present at a formal ceremony"
+      }
+    ]
+  },
+  {
+    "name": "topic",
+    "trans": [
+      "n. 话题；主题"
+    ],
+    "usphone": "'tɑpɪk",
+    "ukphone": "'tɒpɪk",
+    "sentences": [
+      {
+        "english": "The environment is a popular topic these days.",
+        "chinese": "如今环境是一个热门话题。"
+      },
+      {
+        "english": "The main topic for discussion will be the proposed new supermarket.",
+        "chinese": "讨论的主要议题是拟建中的超级市场。"
+      },
+      {
+        "english": "a wide range of topics",
+        "chinese": "广泛的话题"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 题目， 论题， 话题",
+        "english": "a subject that people talk or write about"
+      }
+    ]
+  },
+  {
+    "name": "survey",
+    "trans": [
+      "n. 调查"
+    ],
+    "usphone": "ˈsɝˌve; (for v.) sɝˈve",
+    "ukphone": "'sɜ:veɪ",
+    "sentences": [
+      {
+        "english": "Of the 100 companies surveyed, 10% had a turnover of £50 m to £99 m.",
+        "chinese": "被调查的 100 家公司中，10% 的公司营业额在 5,000 万到 9,900 万英镑之间。"
+      },
+      {
+        "english": "She turned to survey her daughter’s pale face.",
+        "chinese": "她转过头审视女儿苍白的面容。"
+      },
+      {
+        "english": "We conducted a survey of parents in the village.",
+        "chinese": "我们对这个村子的孩子父母作了一次调查。"
+      },
+      {
+        "english": "a geological survey",
+        "chinese": "地质勘察"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "调查；审视，仔细考虑",
+        "english": "to ask a large number of people questions in order to find out their attitudes or opinions"
+      },
+      {
+        "pos": "n",
+        "chinese": "调查；勘测，测量，测绘",
+        "english": "a set of questions that you ask a large number of people in order to find out about their opinions or behaviour"
+      }
+    ]
+  },
+  {
+    "name": "journal",
+    "trans": [
+      "n. 杂志，期刊；报纸"
+    ],
+    "usphone": "'dʒɝnl",
+    "ukphone": "'dʒɜːn(ə)l",
+    "sentences": [
+      {
+        "english": "the British Medical Journal",
+        "chinese": "《英国医学杂志》"
+      },
+      {
+        "english": "He decided to keep a journal.",
+        "chinese": "他决定记日记。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "日报，杂志；日志",
+        "english": "a serious magazine produced for professional people or those with a particular interest"
+      }
+    ]
+  },
+  {
+    "name": "discussion",
+    "trans": [
+      "n. 讨论，议论，谈论"
+    ],
+    "usphone": "dɪ'skʌʃən",
+    "ukphone": "dɪ'skʌʃ(ə)n",
+    "sentences": [
+      {
+        "english": "class discussions",
+        "chinese": "课堂讨论"
+      },
+      {
+        "english": "the topics suggested for discussion",
+        "chinese": "建议讨论的话题"
+      },
+      {
+        "english": "We have had discussions about her legal situation.",
+        "chinese": "我们就她的法律状况已进行了讨论。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "讨论，谈论；论述",
+        "english": "when you discuss something"
+      }
+    ]
+  },
+  {
+    "name": "outline",
+    "trans": [
+      "n. 轮廓，略图，外形"
+    ],
+    "usphone": "'aʊtlaɪn",
+    "ukphone": "'autlaɪn",
+    "sentences": [
+      {
+        "english": "a research proposal outline",
+        "chinese": "研究计划梗概"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "提纲，要点；外形；略图",
+        "english": "the main ideas or facts about something, without the details"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 概述； 描…的外形",
+        "english": "to describe something in a general way, giving the main points but not the details"
+      }
+    ]
+  },
+  {
+    "name": "structure",
+    "trans": [
+      "n. 结构；构造；机构；体系"
+    ],
+    "usphone": "'strʌktʃɚ",
+    "ukphone": "ˈstrʌktʃə(r)",
+    "sentences": [
+      {
+        "english": "challenges to the existing power structure",
+        "chinese": "对现有权力结构的挑战"
+      },
+      {
+        "english": "A new management structure has been introduced.",
+        "chinese": "已推行一种新的管理结构。"
+      },
+      {
+        "english": "molecular structures",
+        "chinese": "分子结构"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "结构",
+        "english": "the way in which the parts of something are connected with each other and form a whole, or the thing that these parts make up"
+      }
+    ]
+  },
+  {
+    "name": "content",
+    "trans": [
+      "n. 内容"
+    ],
+    "usphone": "'kɑntɛnt",
+    "ukphone": "'kɒntent",
+    "sentences": [
+      {
+        "english": "The content of the media course includes scripting, editing and camera work.",
+        "chinese": "大众传媒课程的内容包括稿件写作、剪辑和摄像操作。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "内容",
+        "english": "the ideas, facts, or opinions that are contained in a speech, piece of writing, film, programme etc"
+      }
+    ]
+  },
+  {
+    "name": "introduction",
+    "trans": [
+      "n. 采用；引进；推行；放入，插入"
+    ],
+    "usphone": ",ɪntrə'dʌkʃən",
+    "ukphone": ",ɪntrə'dʌkʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Pete, are you going to make the introductions?",
+        "chinese": "皮特，你来作一下介绍吧。"
+      },
+      {
+        "english": "Our first contestant needs no introduction (= everyone already knows the person ).",
+        "chinese": "我们的第一位参赛者就不用介绍了。"
+      },
+      {
+        "english": "the introduction of Buddhism to China nearly 2,000 years ago",
+        "chinese": "约2,000年前佛教传入中国"
+      },
+      {
+        "english": "In the introduction, he explains why he wrote the book.",
+        "chinese": "在引言里，他解释了写这本书的原因。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "介绍；引进；引言",
+        "english": "the act of formally telling two people each other’s names when they first meet"
+      }
+    ]
+  },
+  {
+    "name": "overview",
+    "trans": [
+      "n. 概述；概观"
+    ],
+    "usphone": "'ovɚ'vjʊ",
+    "ukphone": "'əʊvəvjuː",
+    "sentences": [
+      {
+        "english": "The central section of the book is a historical overview of drug use.",
+        "chinese": "本书的中心部分是对药物使用的一个历史概述。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[图情] 综述；概观",
+        "english": "a short description of a subject or situation that gives the main ideas without explaining all the details"
+      }
+    ]
+  },
+  {
+    "name": "background",
+    "trans": [
+      "n. （画、照片的）背景，衬托"
+    ],
+    "usphone": "'bækɡraʊnd",
+    "ukphone": "'bækgraund",
+    "sentences": [
+      {
+        "english": "Students with a background in chemistry will probably find the course easier.",
+        "chinese": "学过化学的学生可能会觉得这门课程容易些。"
+      },
+      {
+        "english": "It’s important to understand other people, people from different backgrounds .",
+        "chinese": "要理解别人，理解那些来自不同背景的人，这是很重要的。"
+      },
+      {
+        "english": "Do you know anything about his background?",
+        "chinese": "关于他的背景，你知道什么吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 出身背景， 经历； 背景资料； 背景， 底子",
+        "english": "someone’s family, education, previous work etc"
+      }
+    ]
+  },
+  {
+    "name": "summary",
+    "trans": [
+      "n. 总结，概要，摘要"
+    ],
+    "usphone": "'sʌməri",
+    "ukphone": "'sʌm(ə)rɪ",
+    "sentences": [
+      {
+        "english": "A brief summary is given on a separate sheet.",
+        "chinese": "摘要另写一页。"
+      },
+      {
+        "english": "It says torture and summary execution are common.",
+        "chinese": "据说酷刑和草草处决很常见。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "摘要,概要",
+        "english": "a short statement that gives the main information about something, without giving all the details"
+      },
+      {
+        "pos": "adj",
+        "chinese": "概括的,简略的",
+        "english": "a summary report, statement etc gives the main facts in a report etc without any of the details or explanations"
+      }
+    ]
+  },
+  {
+    "name": "conclusion",
+    "trans": [
+      "n. 结局；结尾；结果"
+    ],
+    "usphone": "kən'kluʒn",
+    "ukphone": "kən'kluːʒ(ə)n",
+    "sentences": [
+      {
+        "english": "These are the report’s main conclusions.",
+        "chinese": "这些就是这篇报告的主要结论。"
+      },
+      {
+        "english": "It is still too early to reach a conclusion on this point.",
+        "chinese": "在这一点上作出结论还为时过早。"
+      },
+      {
+        "english": "There are perhaps two main conclusions to be drawn from the above discussion.",
+        "chinese": "从以上的讨论也许可以得出两个主要的结论。"
+      },
+      {
+        "english": "All the evidence pointed to the conclusion that he was guilty.",
+        "chinese": "所有证据都表明他是有罪的。"
+      },
+      {
+        "english": "It’s important not to jump to conclusions.",
+        "chinese": "决不要贸然下结论。"
+      },
+      {
+        "english": "The police came to the inescapable conclusion that the children had been murdered.",
+        "chinese": "警方得出了无法回避的结论: 这些儿童被谋杀了。"
+      },
+      {
+        "english": "At the conclusion of the meeting, little progress had been made.",
+        "chinese": "会议开到最后，没有取得多少进展。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "结论，推论；结尾",
+        "english": "something you decide after considering all the information you have"
+      }
+    ]
+  },
+  {
+    "name": "round off",
+    "trans": [
+      "phr. v. 结束，圆满完成"
+    ]
+  },
+  {
+    "name": "slide",
+    "trans": [
+      "n. 幻灯片"
+    ],
+    "usphone": "slaɪd",
+    "ukphone": "slaɪd",
+    "sentences": [
+      {
+        "english": "He slid open the door of the glass cabinet.",
+        "chinese": "他滑开玻璃柜的门。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "滑",
+        "english": "to move smoothly over a surface while continuing to touch it, or to make something move in this way"
+      },
+      {
+        "pos": "v",
+        "chinese": "使滑动",
+        "english": "to move smoothly over a surface while continuing to touch it, or to make something move in this way"
+      },
+      {
+        "pos": "n",
+        "chinese": "滑",
+        "english": "a large structure with steps leading to the top of a long sloping surface which children can slide down"
+      }
+    ]
+  },
+  {
+    "name": "illustration",
+    "trans": [
+      "n. 插图；图解，图示"
+    ],
+    "usphone": ",ɪlə'streʃən",
+    "ukphone": "ɪlə'streɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "The book contains 62 pages of illustrations.",
+        "chinese": "这本书有62页插图。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "说明；插图；例证；图解",
+        "english": "a picture in a book, article etc, especially one that helps you to understand it"
+      }
+    ]
+  },
+  {
+    "name": "handout",
+    "trans": [
+      "n. （尤指发给学生或听报告的人的）讲义，印刷品"
+    ],
+    "usphone": "'hænd'aʊt",
+    "ukphone": "'hændaʊt",
+    "sentences": [
+      {
+        "english": "people who have to live on handouts from the state",
+        "chinese": "必须依赖国家发放的救济金生活的人们"
+      },
+      {
+        "english": "a cash handout",
+        "chinese": "救济款"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "施舍物，救济品",
+        "english": "money or goods that are given to someone, for example because they are poor"
+      }
+    ]
+  },
+  {
+    "name": "note",
+    "trans": [
+      "n. 笔记，便条"
+    ],
+    "usphone": "not",
+    "ukphone": "nəʊt",
+    "sentences": [
+      {
+        "english": "Dave made a note of her address and phone number.",
+        "chinese": "戴夫记下了她的地址和电话号码。"
+      },
+      {
+        "english": "I was going to write Kathy a note, but I decided to call her instead.",
+        "chinese": "我原来准备给凯茜写个便条，但又决定还是打电话给她。"
+      },
+      {
+        "english": "The notes are at the back of the book.",
+        "chinese": "注解在书末。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "笔记；便条；注释",
+        "english": "something that you write down to remind you of something"
+      }
+    ]
+  },
+  {
+    "name": "eye contact",
+    "trans": [
+      "N. phrase 目光接触"
+    ]
+  },
+  {
+    "name": "audience",
+    "trans": [
+      "n. 观众；听众；读者"
+    ],
+    "usphone": "'ɔdɪəns",
+    "ukphone": "'ɔːdɪəns",
+    "sentences": [
+      {
+        "english": "The show attracts a regular audience of about 20 million.",
+        "chinese": "这个节目吸引了大约两千万固定观众收看。"
+      },
+      {
+        "english": "Goya was one of the first painters to look for a wider audience for his work.",
+        "chinese": "戈雅是最早为自己的作品寻找更多观赏者的画家之一。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "听众，观众，读者",
+        "english": "the people who watch or listen to a particular programme, or who see or hear a particular artist’s, writer’s etc work"
+      }
+    ]
+  },
+  {
+    "name": "body language",
+    "trans": [
+      "N. phrase 身体语言，肢体语言"
+    ]
+  },
+  {
+    "name": "style",
+    "trans": [
+      "n. 做事方式；（尤指）风格，作风"
+    ],
+    "usphone": "staɪl",
+    "ukphone": "staɪl",
+    "sentences": [
+      {
+        "english": "an attempt to use Japanese management style in a European business",
+        "chinese": "将日本的管理方式用于欧洲企业的尝试"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "风格；时尚；类型；字体",
+        "english": "a particular way of doing, designing, or producing something, especially one that is typical of a particular place, period of time, or group of people"
+      },
+      {
+        "pos": "v",
+        "chinese": "设计；称呼；使合潮流",
+        "english": "to design clothing, furniture, or the shape of someone’s hair in a particular way"
+      }
+    ]
+  }
 ]

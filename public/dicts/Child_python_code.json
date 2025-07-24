@@ -1,116 +1,633 @@
 [
-    {
-        "name": "if",
-        "trans": [
-            "如果"
-        ]
-    },
-    {
-        "name": "else",
-        "trans": [
-            "否则"
-        ]
-    },
-    {
-        "name": "while",
-        "trans": [
-            "while 型循环"
-        ]
-    },
-    {
-        "name": "for",
-        "trans":[
-            "for 型循环"
-        ]
-    },
-    {
-        "name": "and",
-        "trans": [
-            "逻辑与运算符"
-        ]
-    },
-    {
-        "name": "or",
-        "trans": [
-            "逻辑或运算符"
-        ]
-    },
-    {
-        "name": "not",
-        "trans": [
-            "逻辑非运算符"
-        ]
-    },
-    {
-        "name": "TRUE",
-        "trans": [
-            "真"
-        ]
-    },
-    {
-        "name": "FALSE",
-        "trans": [
-            "假"
-        ]
-    },
-    {
-        "name": "None",
-        "trans": [
-            "空值"
-        ]
-    },
-    {
-        "name": "continue",
-        "trans": [
-            "跳出本次循环，继续下一轮循环"
-        ]
-    },
-    {
-        "name": "break",
-        "trans": [
-            "跳出整个循环"
-        ]
-    },
-    {
-        "name": "pass",
-        "trans": [
-            "空语句，不做任何事情"
-        ]
-    },
-    {
-        "name": "def",
-        "trans": [
-            "define的缩写，定义一个函数"
-        ]
-    },
-    {
-        "name": "return",
-        "trans": [
-            "返回语句，退出def语句块"
-        ]
-    },
-    {
-        "name": "global",
-        "trans": [
-            "声明全局变量"
-        ]
-    },
-    {
-        "name": "class",
-        "trans": [
-            "定义一个类"
-        ]
-    },
-    {
-        "name": "import",
-        "trans": [
-            "导入模块"
-        ]
-    },
-    {
-        "name": "from",
-        "trans": [
-            "与import配合导入模块"
-        ]
-    }
+  {
+    "name": "if",
+    "trans": [
+      "如果"
+    ],
+    "usphone": "ɪf",
+    "ukphone": "ɪf",
+    "sentences": [
+      {
+        "english": "We’ll stay at home if it rains.",
+        "chinese": "如果下雨，我们就待在家里。"
+      },
+      {
+        "english": "If you need money, I can lend you some.",
+        "chinese": "如果你需要钱，我能借给你一些。"
+      },
+      {
+        "english": "If I didn’t apologize, I’d feel guilty.",
+        "chinese": "如果我不道歉，我会感到内疚。"
+      },
+      {
+        "english": "If you had worked harder, you would have passed your exams.",
+        "chinese": "要是你再努力一点，就通过考试了。"
+      },
+      {
+        "english": "What would happen to your family if you were to die in an accident?",
+        "chinese": "要是你在意外事故中身亡，你的家人会怎么样呢？"
+      },
+      {
+        "english": "If Dad were here, he would know what to do.",
+        "chinese": "如果爸爸在这儿，他会知道怎么做的。"
+      },
+      {
+        "english": "Taste the soup and add salt and pepper if necessary.",
+        "chinese": "尝一下汤，需要的话加一点盐和胡椒粉。"
+      },
+      {
+        "english": "I want to get back by five o’clock if possible.",
+        "chinese": "如果可能的话，我想5点之前回来。"
+      },
+      {
+        "english": "I think I can fix it tomorrow. If not, you’ll have to wait till Friday.",
+        "chinese": "我想明天我能修好它，如果不行，你只好等到周五了。"
+      },
+      {
+        "english": "Is the book available, and if so, where?",
+        "chinese": "有没有这本书？ 如果有的话，在哪儿？"
+      },
+      {
+        "english": "The missiles can be fired only if the operator types in a six-digit code.",
+        "chinese": "只有在操作员输入一组六位数密码后，导弹才能发射。"
+      },
+      {
+        "english": "We’ll face that problem if and when it comes along (= if it happens or when it happens ).",
+        "chinese": "如果这一问题真的发生了，我们就要面对它。"
+      },
+      {
+        "english": "If by any chance you can’t manage dinner tonight, perhaps we can at least have a drink together.",
+        "chinese": "万一你今晚不能来吃饭，或许我们至少可以一起喝一杯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "假如，如果",
+        "english": "used when talking about something that might happen or be true, or might have happened"
+      }
+    ]
+  },
+  {
+    "name": "else",
+    "trans": [
+      "否则"
+    ],
+    "usphone": "ɛls",
+    "ukphone": "els",
+    "sentences": [
+      {
+        "english": "There’s something else I’d like to talk about as well.",
+        "chinese": "我还有其他事情要谈一谈。"
+      },
+      {
+        "english": "I’d like you to come, and anyone else who’s free.",
+        "chinese": "我想请你过来，其他人有空也可以来。"
+      },
+      {
+        "english": "He was awake now, as was everyone else.",
+        "chinese": "他现在已经醒了，其他人也都醒了。"
+      },
+      {
+        "english": "Who else was at the party?",
+        "chinese": "还有谁参加了聚会？"
+      },
+      {
+        "english": "‘Two coffees, please.’ ‘Anything else?’ ‘No, thanks.’",
+        "chinese": "“请来两杯咖啡。”“还要别的吗？”“不要了，谢谢。"
+      },
+      {
+        "english": "(= more than any other things ) she was seeking love.",
+        "chinese": "她追求爱情胜过一切。"
+      },
+      {
+        "english": "If I can't make a living at painting, at least I can teach someone else to paint.",
+        "chinese": "如果我不能以画画谋生的话，至少我能教别人画画。"
+      },
+      {
+        "english": "We had nothing else to do on those long trips.",
+        "chinese": "在那些漫长的旅途中我们别无他事可做。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "其它，另外",
+        "english": "besides or in addition to someone or something"
+      },
+      {
+        "pos": "adj",
+        "chinese": "别的",
+        "english": "You use else after words such as \"anywhere,\" \"someone,\" and \"what\" to refer in a vague way to another person, place, or thing"
+      }
+    ]
+  },
+  {
+    "name": "while",
+    "trans": [
+      "while 型循环"
+    ],
+    "usphone": "waɪl",
+    "ukphone": "wʌɪl",
+    "sentences": [
+      {
+        "english": "They arrived while we were having dinner.",
+        "chinese": "他们来时我们正在吃饭。"
+      },
+      {
+        "english": "While she was asleep, thieves broke in and stole her handbag.",
+        "chinese": "她睡着的时候，小偷闯进来偷走了她的手提包。"
+      },
+      {
+        "english": "She met Andy while working on a production of Carmen.",
+        "chinese": "排练《卡门》时，她认识了安迪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "虽然；然而；当……的时候",
+        "english": "during the time that something is happening"
+      },
+      {
+        "pos": "n",
+        "chinese": "一会儿；一段时间",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "消磨；轻松地度过",
+        "english": "to spend time in a pleasant and lazy way"
+      }
+    ]
+  },
+  {
+    "name": "for",
+    "trans": [
+      "for 型循环"
+    ],
+    "usphone": "fɚ; strong form fɔr",
+    "ukphone": "fə(r); strong form fɔ:(r)",
+    "sentences": [
+      {
+        "english": "I’ve got a present for you.",
+        "chinese": "我有件礼物送给你。"
+      },
+      {
+        "english": "Someone left a message for Vicky.",
+        "chinese": "有人给维基留了言。"
+      },
+      {
+        "english": "an English course for foreign students",
+        "chinese": "为外国学生开的一门英语课程"
+      },
+      {
+        "english": "WWhat did you do that for?",
+        "chinese": "你那样做是为了什么？"
+      },
+      {
+        "english": "We could hardly see for the mist.",
+        "chinese": "由于雾气，我们几乎什么也看不见。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "给；为；因为",
+        "english": "used to say who is intended to get or use something, or where something is intended to be used"
+      }
+    ]
+  },
+  {
+    "name": "and",
+    "trans": [
+      "逻辑与运算符"
+    ],
+    "usphone": "ənd, ən,ænd",
+    "ukphone": "ənd; (ə)n; ænd",
+    "sentences": [
+      {
+        "english": "He’s gone to get some fish and chips.",
+        "chinese": "他去买炸鱼薯条了。"
+      },
+      {
+        "english": "The film starred Jack Lemmon and Shirley Maclaine.",
+        "chinese": "这部电影由杰克·莱蒙和雪莉·麦克莱恩主演。"
+      },
+      {
+        "english": "We’ve dealt with items one, two, and eleven.",
+        "chinese": "我们已经处理了第一项、第二项和第十一项。"
+      },
+      {
+        "english": "He was tall, dark, and handsome.",
+        "chinese": "他身材高大、皮肤黝黑，相貌英俊。"
+      },
+      {
+        "english": "He plays the guitar and sings folk songs.",
+        "chinese": "他弹吉他唱民歌。"
+      },
+      {
+        "english": "I missed supper and I’m starving!",
+        "chinese": "我没吃晚饭，现在饿极了！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "和，又，并；则，那么",
+        "english": "used to join two words, phrases etc referring to things that are related in some way"
+      }
+    ]
+  },
+  {
+    "name": "or",
+    "trans": [
+      "逻辑或运算符"
+    ],
+    "usphone": "ɔr",
+    "ukphone": "ɔː",
+    "sentences": [
+      {
+        "english": "Shall we go out to the cinema or stay at home?",
+        "chinese": "我们是出去看电影还是待在家里？"
+      },
+      {
+        "english": "You can have ham, cheese, or tuna.",
+        "chinese": "你可以选择火腿、干酪或者金枪鱼。"
+      },
+      {
+        "english": "She wasn’t involved in drugs or anything like that.",
+        "chinese": "她没有涉毒之类的行为。"
+      },
+      {
+        "english": "Grapes are usually either green or red.",
+        "chinese": "葡萄一般要么是绿色，要么是红色。"
+      },
+      {
+        "english": "He’s going to do it whether we like it or not.",
+        "chinese": "不管我们喜欢与否，他都会去做这件事。"
+      },
+      {
+        "english": "It’s going to snow tomorrow, or that’s what the forecast says.",
+        "chinese": "明天要下雪，确切地说，气象预报是这样说的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "或，或者；即",
+        "english": "used between two words or phrases to show that either of two things is possible, or used before the last in a list of possibilities or choices"
+      }
+    ]
+  },
+  {
+    "name": "not",
+    "trans": [
+      "逻辑非运算符"
+    ],
+    "usphone": "nɑt",
+    "ukphone": "nɒt",
+    "sentences": [
+      {
+        "english": "Most of the stores do not open until 10 am.",
+        "chinese": "大多数商店要到上午10点才开始营业。"
+      },
+      {
+        "english": "She’s not a very nice person.",
+        "chinese": "她为人不太好。"
+      },
+      {
+        "english": "You were wrong not to inform the police.",
+        "chinese": "你没有通知警方是错误的。"
+      },
+      {
+        "english": "‘Can we go to the park?’ ‘No, not today, dear.’",
+        "chinese": "“我们能去公园吗？”“不，今天不行，亲爱的。”"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "不，没有",
+        "english": "used to make a word, statement, or question negative"
+      }
+    ]
+  },
+  {
+    "name": "TRUE",
+    "trans": [
+      "真"
+    ],
+    "usphone": "tru",
+    "ukphone": "truː",
+    "sentences": [
+      {
+        "english": "Everything I had heard about him was true.",
+        "chinese": "我所听到的关于他的一切都是真的。"
+      },
+      {
+        "english": "He said it was true that a collision had happened.",
+        "chinese": "他说碰撞真的发生了一次。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "真实的；正确的",
+        "english": "If something is true, it is based on facts rather than being invented or imagined, and is accurate and reliable"
+      },
+      {
+        "pos": "adv",
+        "chinese": "真实地；准确地",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "真实；准确",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "装准",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "FALSE",
+    "trans": [
+      "假"
+    ],
+    "usphone": "fɔls",
+    "ukphone": "fɔːls; fɒls",
+    "sentences": [
+      {
+        "english": "It was quite clear the president was being given false information by those around him.",
+        "chinese": "很明显，总统身边的那些人正给总统提供着错误信息。"
+      },
+      {
+        "english": "You do not know whether what you're told is true or false.",
+        "chinese": "你不知道别人告诉你的是真的还是假的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "错误的；虚伪的；伪造的",
+        "english": "If something is false, it is incorrect, untrue, or mistaken"
+      },
+      {
+        "pos": "adv",
+        "chinese": "欺诈地",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "None",
+    "trans": [
+      "空值"
+    ]
+  },
+  {
+    "name": "continue",
+    "trans": [
+      "跳出本次循环，继续下一轮循环"
+    ],
+    "usphone": "kən'tɪnju",
+    "ukphone": "kən'tɪnjuː",
+    "sentences": [
+      {
+        "english": "He will be continuing his education in the US.",
+        "chinese": "他将在美国继续求学。"
+      },
+      {
+        "english": "英文例句: I felt too sick to continue.",
+        "chinese": "我感觉很难受，无法继续下去了。"
+      },
+      {
+        "english": "英文例句:The road continues northwards to the border.",
+        "chinese": "中文例句: 这条路往北一直延伸到边境。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "继续，连续；延伸",
+        "english": "to not stop happening, existing, or doing something"
+      }
+    ]
+  },
+  {
+    "name": "break",
+    "trans": [
+      "跳出整个循环"
+    ],
+    "usphone": "brek",
+    "ukphone": "breɪk",
+    "sentences": [
+      {
+        "english": "I had to break a window to get into the house.",
+        "chinese": "我只得打破一扇窗户进屋。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "打破；损坏；破坏",
+        "english": "if you break something, you make it separate into two or more pieces, for example by hitting it, dropping it, or bending it"
+      }
+    ]
+  },
+  {
+    "name": "pass",
+    "trans": [
+      "空语句，不做任何事情"
+    ],
+    "usphone": "pæs",
+    "ukphone": "pɑːs",
+    "sentences": [
+      {
+        "english": "The crowd parted to let the truck pass.",
+        "chinese": "人群分开让卡车通过。"
+      },
+      {
+        "english": "He gave me a smile as he passed.",
+        "chinese": "他经过时对我微笑了一下。"
+      },
+      {
+        "english": "We passed a group of students outside the theatre.",
+        "chinese": "我们在戏院外从一群学生身旁经过。"
+      },
+      {
+        "english": "I pass the sports centre on the way to work.",
+        "chinese": "我上班的路上经过体育中心。"
+      },
+      {
+        "english": "The road passes right through the town centre.",
+        "chinese": "那条路正好穿过镇中心。"
+      },
+      {
+        "english": "We passed the winter pleasantly enough.",
+        "chinese": "我们相当愉快地度过了那个冬季。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "经过；通过；度过",
+        "english": "to come up to a particular place, person, or object and go past them"
+      }
+    ]
+  },
+  {
+    "name": "def",
+    "trans": [
+      "define的缩写，定义一个函数"
+    ]
+  },
+  {
+    "name": "return",
+    "trans": [
+      "返回语句，退出def语句块"
+    ],
+    "usphone": "rɪ'tɝn",
+    "ukphone": "rɪ'tɜːn",
+    "sentences": [
+      {
+        "english": "It was forty five minutes before she returned.",
+        "chinese": "过了45分钟她才回来。"
+      },
+      {
+        "english": "Alison decided to return home.",
+        "chinese": "艾利森决定回家。"
+      },
+      {
+        "english": "He left his country, never to return.",
+        "chinese": "他离开了祖国，一去不复返。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "返回；报答",
+        "english": "to go or come back to a place where you were before"
+      },
+      {
+        "pos": "n",
+        "chinese": "返回；归还；回球",
+        "english": "the act of returning from somewhere, or your arrival back in a place"
+      },
+      {
+        "pos": "adj",
+        "chinese": "报答的；回程的；返回的",
+        "english": "used or paid for a journey from one place to another and back again"
+      }
+    ]
+  },
+  {
+    "name": "global",
+    "trans": [
+      "声明全局变量"
+    ],
+    "usphone": "'ɡlobl",
+    "ukphone": "'gləʊb(ə)l",
+    "sentences": [
+      {
+        "english": "global climate change",
+        "chinese": "全球气候变化"
+      },
+      {
+        "english": "the global economy",
+        "chinese": "全球经济"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "全球的",
+        "english": "affecting or including the whole world"
+      }
+    ]
+  },
+  {
+    "name": "class",
+    "trans": [
+      "定义一个类"
+    ],
+    "usphone": "klæs",
+    "ukphone": "klɑːs",
+    "sentences": [
+      {
+        "english": "Gary came top of the class in English.",
+        "chinese": "加里的英文是班里顶尖的。"
+      },
+      {
+        "english": "a member of the landed class",
+        "chinese": "地主阶级的一员"
+      },
+      {
+        "english": "He’s not in the same class (= not as good ) as her at tennis.",
+        "chinese": "他的网球水平并不如她。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "班，班级；阶级；等级",
+        "english": "a group of students who are taught together"
+      }
+    ]
+  },
+  {
+    "name": "import",
+    "trans": [
+      "导入模块"
+    ],
+    "usphone": "'ɪmpɔt",
+    "ukphone": "ɪm'pɔːt",
+    "sentences": [
+      {
+        "english": "a ban on beef imports",
+        "chinese": "禁止进口牛肉"
+      },
+      {
+        "english": "In 2001, Britain exported more cars than it imported.",
+        "chinese": "2001年英国的汽车出口量大于进口"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "进口",
+        "english": "a product that is brought from one country into another so that it can be sold there, or the business of doing this"
+      },
+      {
+        "pos": "v",
+        "chinese": "进口",
+        "english": "to bring a product from one country into another so that it can be sold there"
+      }
+    ]
+  },
+  {
+    "name": "from",
+    "trans": [
+      "与import配合导入模块"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "I'm from Italy.",
+        "chinese": "我是意大利人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "从…来",
+        "english": "used to show what the origin of sb/sth is"
+      }
+    ]
+  }
 ]

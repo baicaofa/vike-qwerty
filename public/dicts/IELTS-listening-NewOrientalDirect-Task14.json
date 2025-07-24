@@ -1,278 +1,1010 @@
 [
-    {
-        "name": "ferry",
-        "trans": [
-            "n. （尤指定期的）渡船，轮渡"
-        ]
-    },
-    {
-        "name": "boat",
-        "trans": [
-            "n. 艇；小船"
-        ]
-    },
-    {
-        "name": "ship",
-        "trans": [
-            "n. （尤指航海的）大船，海轮，轮船，舰"
-        ]
-    },
-    {
-        "name": "steam ship",
-        "trans": [
-            "n. 汽船；轮船"
-        ]
-    },
-    {
-        "name": "harbor",
-        "trans": [
-            "n. 港口，港湾"
-        ]
-    },
-    {
-        "name": "fly",
-        "trans": [
-            "v. （鸟、昆虫或飞机）飞，飞行"
-        ]
-    },
-    {
-        "name": "airport",
-        "trans": [
-            "n. 航空站，航空港，机场"
-        ]
-    },
-    {
-        "name": "terminal",
-        "trans": [
-            "n. 航空站，终点站"
-        ]
-    },
-    {
-        "name": "train",
-        "trans": [
-            "n. 火车，列车"
-        ]
-    },
-    {
-        "name": "tram",
-        "trans": [
-            "n. （通常在市内运营的）有轨电车"
-        ]
-    },
-    {
-        "name": "coach",
-        "trans": [
-            "n. 教练；辅导老师；私人教师；家庭教师"
-        ]
-    },
-    {
-        "name": "minibus",
-        "trans": [
-            "n. 小型公共汽车；中巴车"
-        ]
-    },
-    {
-        "name": "attraction",
-        "trans": [
-            "n. 吸引（力）；有吸引力的事物"
-        ]
-    },
-    {
-        "name": "places of interest",
-        "trans": [
-            "n. 名胜古迹"
-        ]
-    },
-    {
-        "name": "theme park",
-        "trans": [
-            "n. 主题公园"
-        ]
-    },
-    {
-        "name": "campsite",
-        "trans": [
-            "n. 度假营地；野营地，宿营地"
-        ]
-    },
-    {
-        "name": "castle",
-        "trans": [
-            "n. 城堡；堡垒"
-        ]
-    },
-    {
-        "name": "desert",
-        "trans": [
-            "n. 沙漠，荒漠"
-        ]
-    },
-    {
-        "name": "mountain",
-        "trans": [
-            "n. （高）山，山岳"
-        ]
-    },
-    {
-        "name": "forest",
-        "trans": [
-            "n. 森林；林区"
-        ]
-    },
-    {
-        "name": "lake",
-        "trans": [
-            "n. 湖，湖泊"
-        ]
-    },
-    {
-        "name": "waterfall",
-        "trans": [
-            "n. 瀑布"
-        ]
-    },
-    {
-        "name": "botanic garden",
-        "trans": [
-            "n. 植物园"
-        ]
-    },
-    {
-        "name": "sea",
-        "trans": [
-            "n. 海，海洋"
-        ]
-    },
-    {
-        "name": "ocean",
-        "trans": [
-            "n. 海洋，大洋；大海"
-        ]
-    },
-    {
-        "name": "coast",
-        "trans": [
-            "n. 海岸；沿海地区"
-        ]
-    },
-    {
-        "name": "beach",
-        "trans": [
-            "n. 海滨，湖滨；海滩，沙滩"
-        ]
-    },
-    {
-        "name": "island/isle",
-        "trans": [
-            "n. 岛，岛屿"
-        ]
-    },
-    {
-        "name": "museum",
-        "trans": [
-            "n. 博物馆，博物院"
-        ]
-    },
-    {
-        "name": "gallery",
-        "trans": [
-            "n. （艺术作品）陈列馆；美术馆；画廊"
-        ]
-    },
-    {
-        "name": "sculpture",
-        "trans": [
-            "n. 雕塑，雕刻；塑像，雕塑品，雕刻品"
-        ]
-    },
-    {
-        "name": "heritage site",
-        "trans": [
-            "n. 遗址(景区）"
-        ]
-    },
-    {
-        "name": "adventure playground",
-        "trans": [
-            "n. 儿童游乐园"
-        ]
-    },
-    {
-        "name": "circus",
-        "trans": [
-            "n. 马戏团；马戏演员；马戏表演"
-        ]
-    },
-    {
-        "name": "whale watch",
-        "trans": [
-            "n. phrase 看鲸"
-        ]
-    },
-    {
-        "name": "bush walking",
-        "trans": [
-            "n. 在丛林中徒步"
-        ]
-    },
-    {
-        "name": "trekking",
-        "trans": [
-            "n. 以长距离步行作为消遣的活动"
-        ]
-    },
-    {
-        "name": "hiking",
-        "trans": [
-            "n. （在乡村的）长途徒步旅行，远足，健行"
-        ]
-    },
-    {
-        "name": "fishing",
-        "trans": [
-            "n. 钓鱼；捕鱼"
-        ]
-    },
-    {
-        "name": "kite surfing",
-        "trans": [
-            "n. 风筝冲浪"
-        ]
-    },
-    {
-        "name": "surfing",
-        "trans": [
-            "n. 冲浪运动"
-        ]
-    },
-    {
-        "name": "water skiing",
-        "trans": [
-            "n. 滑水"
-        ]
-    },
-    {
-        "name": "scuba diving",
-        "trans": [
-            "n. 潜水"
-        ]
-    },
-    {
-        "name": "sunbathe",
-        "trans": [
-            "v. （为使皮肤变黑而）晒太阳，沐日光浴"
-        ]
-    },
-    {
-        "name": "skiing",
-        "trans": [
-            "n. 滑雪；滑雪运动"
-        ]
-    },
-    {
-        "name": "recreation",
-        "trans": [
-            "n. 娱乐；消遣（方式）"
-        ]
-    }
+  {
+    "name": "ferry",
+    "trans": [
+      "n. （尤指定期的）渡船，轮渡"
+    ],
+    "usphone": "'fɛri",
+    "ukphone": "'ferɪ",
+    "sentences": [
+      {
+        "english": "They had recrossed the River Gambia by ferry.",
+        "chinese": "他们乘船又一次渡过了冈比亚河。"
+      },
+      {
+        "english": "The ship was used to ferry supplies to Russia during the war.",
+        "chinese": "这艘船在战时被用来往俄罗斯 运送补给。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "渡船",
+        "english": "a boat that carries people or goods across a river or a narrow area of water"
+      },
+      {
+        "pos": "v",
+        "chinese": "运送",
+        "english": "to carry people or things a short distance from one place to another in a boat or other vehicle"
+      }
+    ]
+  },
+  {
+    "name": "boat",
+    "trans": [
+      "n. 艇；小船"
+    ],
+    "usphone": "bot",
+    "ukphone": "bəʊt",
+    "sentences": [
+      {
+        "english": "a fishing boat",
+        "chinese": "渔船"
+      },
+      {
+        "english": "The boat capsized (=  turned over  ) in heavy seas.",
+        "chinese": "船在波涛汹涌的大海上倾覆了。"
+      },
+      {
+        "english": "a boat trip around the islands",
+        "chinese": "乘船环岛旅行"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "小船；轮船",
+        "english": "a vehicle that travels across water"
+      },
+      {
+        "pos": "v",
+        "chinese": "划船",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "ship",
+    "trans": [
+      "n. （尤指航海的）大船，海轮，轮船，舰"
+    ],
+    "usphone": "ʃɪp",
+    "ukphone": "ʃɪp",
+    "sentences": [
+      {
+        "english": "We'll ship your order to the address we print on your cheques.",
+        "chinese": "我们将把你预订的货物送到我们印在你单据上的地址。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "运送，乘船；以船运送",
+        "english": "to send goods somewhere by ship, plane, truck etc"
+      },
+      {
+        "pos": "n",
+        "chinese": "船；舰；太空船",
+        "english": "a large boat used for carrying people or goods across the sea"
+      }
+    ]
+  },
+  {
+    "name": "steam ship",
+    "trans": [
+      "n. 汽船；轮船"
+    ]
+  },
+  {
+    "name": "harbor",
+    "trans": [
+      "n. 港口，港湾"
+    ],
+    "usphone": "'hɑrbɚ",
+    "ukphone": "'hɑ:bə",
+    "sentences": [
+      {
+        "english": "All the battleships can refresh in this harbor.",
+        "chinese": "所有战舰都能在这个港口装上补充供应品。"
+      },
+      {
+        "english": "It is the harbor of Athens.",
+        "chinese": "它是雅典的港口城。"
+      },
+      {
+        "english": "She stands on a small island in New York harbor, near the great city.",
+        "chinese": "她竖立在纽约海港的一座小岛，并紧挨着纽约这座大城市。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "海港",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "fly",
+    "trans": [
+      "v. （鸟、昆虫或飞机）飞，飞行"
+    ],
+    "usphone": "flaɪ",
+    "ukphone": "flaɪ",
+    "sentences": [
+      {
+        "english": "Ellen flew across the room and greeted her uncle with a kiss.",
+        "chinese": "埃伦从房间那头飞奔过来，给了她叔叔一个吻。"
+      },
+      {
+        "english": "By the time the police arrived, the men had flown.",
+        "chinese": "警察赶到时，那些人已经逃走了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "飞跑；逃跑，消失",
+        "english": "to move somewhere quickly and suddenly"
+      }
+    ]
+  },
+  {
+    "name": "airport",
+    "trans": [
+      "n. 航空站，航空港，机场"
+    ],
+    "usphone": "'ɛr'pɔrt",
+    "ukphone": "'eəpɔːt",
+    "sentences": [
+      {
+        "english": "The plane landed at Heathrow Airport.",
+        "chinese": "飞机降落在希思罗机场。"
+      },
+      {
+        "english": "Her family went to see her off at the airport.",
+        "chinese": "她的家人去机场送她。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "机场，航空站",
+        "english": "a place where planes take off and land, with buildings for passengers to wait in"
+      }
+    ]
+  },
+  {
+    "name": "terminal",
+    "trans": [
+      "n. 航空站，终点站"
+    ],
+    "usphone": "ˈtɜːrmɪnl",
+    "ukphone": "'tɜːmɪn(ə)l",
+    "sentences": [
+      {
+        "english": "a terminal branch of a tree",
+        "chinese": "树顶枝条"
+      },
+      {
+        "english": "terminal examinations (= at the end of a course, etc.)",
+        "chinese": "期终考试"
+      },
+      {
+        "english": "the airport’s passenger terminal",
+        "chinese": "机场航站楼"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "末端的",
+        "english": "at the end of sth"
+      },
+      {
+        "pos": "n",
+        "chinese": "〔飞机、公共汽车、轮船客运或货物运输的〕集散站，终点站",
+        "english": "a big building where people wait to get onto planes, buses, or ships, or where goods are loaded"
+      }
+    ]
+  },
+  {
+    "name": "train",
+    "trans": [
+      "n. 火车，列车"
+    ],
+    "usphone": "tren",
+    "ukphone": "treɪn",
+    "sentences": [
+      {
+        "english": "We went all the way to Inverness by train.",
+        "chinese": "我们一路坐火车到因弗内斯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "火车；行列；长队；裙裾",
+        "english": "a set of several carriages that are connected to each other and pulled along a railway line by an engine"
+      },
+      {
+        "pos": "v",
+        "chinese": "培养；训练；瞄准",
+        "english": "to teach someone the skills of a particular job or activity, or to be taught these skills"
+      }
+    ]
+  },
+  {
+    "name": "tram",
+    "trans": [
+      "n. （通常在市内运营的）有轨电车"
+    ],
+    "usphone": "træm",
+    "ukphone": "træm",
+    "sentences": [
+      {
+        "english": "The tramp from the tram swamped the ham hamburge with shampoo.",
+        "chinese": "有轨电车的脚步声淹没了带有香波的火腿汉堡。"
+      },
+      {
+        "english": "The tramp from the tram swamped the ham hamburger with shampoo.",
+        "chinese": "来自有轨电车的流浪者用洗发水淹没火腿汉堡。"
+      },
+      {
+        "english": "In Rio de Janeiro, an extensive network of tram lines, including the Santa Teresa line, operated for more than a century.",
+        "chinese": "在里约热内卢，一个包括圣特雷莎线在内的巨大电车线路网络运行了逾一个世纪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": " 乘电车",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "有轨电车，电车轨道",
+        "english": "a vehicle for passengers, which travels along metal tracks in the street"
+      }
+    ]
+  },
+  {
+    "name": "coach",
+    "trans": [
+      "n. 教练；辅导老师；私人教师；家庭教师"
+    ],
+    "usphone": "kotʃ",
+    "ukphone": "kəʊtʃ",
+    "sentences": [
+      {
+        "english": "a tennis coach",
+        "chinese": "网球教练"
+      },
+      {
+        "english": "the Norwegian national coach",
+        "chinese": "挪威国家队教练"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "教练",
+        "english": "someone who trains a person or team in a sport"
+      }
+    ]
+  },
+  {
+    "name": "minibus",
+    "trans": [
+      "n. 小型公共汽车；中巴车"
+    ],
+    "usphone": "'mɪnɪbʌs",
+    "ukphone": "'mɪnɪbʌs",
+    "sentences": [
+      {
+        "english": "He was then taken by minibus to the military base.",
+        "chinese": "接着他被小型公共汽车带到了军事基地。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "面包车（等于microbus）；小型公共汽车；中客车",
+        "english": "a small bus with seats for six to twelve people"
+      },
+      {
+        "pos": "vi",
+        "chinese": "乘中客车",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "attraction",
+    "trans": [
+      "n. 吸引（力）；有吸引力的事物"
+    ],
+    "usphone": "ə'trækʃən",
+    "ukphone": "ə'trækʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Sexual attraction is a large part of falling in love.",
+        "chinese": "堕入爱河很大部分是由于性吸引。"
+      },
+      {
+        "english": "gravitational/magnetic attraction",
+        "chinese": "地心引力；磁力"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "吸引；吸引力；引力",
+        "english": "a feeling of liking sb, especially sexually"
+      }
+    ]
+  },
+  {
+    "name": "places of interest",
+    "trans": [
+      "n. 名胜古迹"
+    ]
+  },
+  {
+    "name": "theme park",
+    "trans": [
+      "n. 主题公园"
+    ]
+  },
+  {
+    "name": "campsite",
+    "trans": [
+      "n. 度假营地；野营地，宿营地"
+    ],
+    "usphone": "'kæmpsaɪt",
+    "ukphone": "'kæmpsaɪt",
+    "sentences": [
+      {
+        "english": "Then the journey continues on to a campsite where camels await you.",
+        "chinese": "然后继续前往一个营地，在那里会有骆驼恭候大驾。"
+      },
+      {
+        "english": "Standing just 100 feet from his wife, Kirsta, and two toddlers at the campsite, Britton tried to run away from the lion into a clearing, but the lion followed him.",
+        "chinese": "在离他仅有100英尺的营地里，有他的妻子克里斯塔和两个刚学走路的孩子。 布里顿试图跑到开阔地，但是狮子却跟随着他。"
+      },
+      {
+        "english": "The smell of the food might attract dangerous animals to our campsite.",
+        "chinese": "食物的气味还可能会招引危险的动物到我们的营地来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "营地",
+        "english": "an area where people can camp, often with a water supply and toilets"
+      }
+    ]
+  },
+  {
+    "name": "castle",
+    "trans": [
+      "n. 城堡；堡垒"
+    ],
+    "usphone": "'kæsl",
+    "ukphone": "'kɑːs(ə)l",
+    "sentences": [
+      {
+        "english": "Edinburgh Castle",
+        "chinese": "爱丁堡城堡"
+      },
+      {
+        "english": "a ruined castle",
+        "chinese": "破败的城堡"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "城堡；象棋中的车",
+        "english": "a very large strong building, built in the past as a safe place that could be easily defended against attack"
+      },
+      {
+        "pos": "v",
+        "chinese": "置…于城堡中；筑城堡防御",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "desert",
+    "trans": [
+      "n. 沙漠，荒漠"
+    ],
+    "usphone": "(for v.) dɪˈzɝ​t; (for n.) 'dɛzɚt",
+    "ukphone": "(for v.) dɪ'zɜːt; (for n.) 'dezət",
+    "sentences": [
+      {
+        "english": "the Sahara Desert",
+        "chinese": "撒哈拉沙漠"
+      },
+      {
+        "english": "This area of the country is mostly desert.",
+        "chinese": "该国的这一地区大部分是沙漠。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n&a",
+        "chinese": "沙漠",
+        "english": "a large area of land where it is always very dry, and there is a lot of sand"
+      },
+      {
+        "pos": "n",
+        "chinese": "无人居住的",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "丢弃",
+        "english": "to leave someone or something and no longer help or support them"
+      },
+      {
+        "pos": "n",
+        "chinese": "离开",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "mountain",
+    "trans": [
+      "n. （高）山，山岳"
+    ],
+    "usphone": "ˈmaʊntn",
+    "ukphone": "ˈmaʊntən",
+    "sentences": [
+      {
+        "english": "the highest mountain in Austria",
+        "chinese": "奥地利最高的山"
+      },
+      {
+        "english": "the Rocky Mountains",
+        "chinese": "落基山脉"
+      },
+      {
+        "english": "a steep mountain road",
+        "chinese": "陡峭的山路"
+      },
+      {
+        "english": "magnificent mountain ranges",
+        "chinese": "雄伟的山脉"
+      },
+      {
+        "english": "snow-capped mountain peaks",
+        "chinese": "白雪覆盖的山峰"
+      },
+      {
+        "english": "a mountain rescue team",
+        "chinese": "山地营救队"
+      },
+      {
+        "english": "She was the first British woman to climb the mountain .",
+        "chinese": "她是攀登这座山峰的第一位英国女子。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "山，山岳；山脉",
+        "english": "a very high hill"
+      }
+    ]
+  },
+  {
+    "name": "forest",
+    "trans": [
+      "n. 森林；林区"
+    ],
+    "usphone": "'fɔrɪst",
+    "ukphone": "'fɒrɪst",
+    "sentences": [
+      {
+        "english": "a tropical forest",
+        "chinese": "热带森林"
+      },
+      {
+        "english": "the danger of forest fires",
+        "chinese": "发生森林火灾的危险"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "森林；森林地带",
+        "english": "a large area of land that is covered with trees"
+      }
+    ]
+  },
+  {
+    "name": "lake",
+    "trans": [
+      "n. 湖，湖泊"
+    ],
+    "usphone": "lek",
+    "ukphone": "leɪk",
+    "sentences": [
+      {
+        "english": "Lake Michigan",
+        "chinese": "密歇根湖"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "湖；深红色颜料；胭脂红",
+        "english": "a large area of water surrounded by land"
+      },
+      {
+        "pos": "vt",
+        "chinese": "（使）血球溶解",
+        "english": ""
+      },
+      {
+        "pos": "vi",
+        "chinese": "（使）血球溶解",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "waterfall",
+    "trans": [
+      "n. 瀑布"
+    ],
+    "usphone": "'wɔtɚfɔl",
+    "ukphone": "'wɔːtəfɔːl",
+    "sentences": [
+      {
+        "english": "...Angel Falls, the world's highest waterfall.",
+        "chinese": "…安赫尔瀑布，世界上最高的瀑布。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "瀑布；瀑布似的东西",
+        "english": "a place where water from a river or stream falls down over a cliff or rock"
+      }
+    ]
+  },
+  {
+    "name": "botanic garden",
+    "trans": [
+      "n. 植物园"
+    ]
+  },
+  {
+    "name": "sea",
+    "trans": [
+      "n. 海，海洋"
+    ],
+    "usphone": "si",
+    "ukphone": "siː",
+    "sentences": [
+      {
+        "english": "Jay stripped his clothes off and ran into the sea.",
+        "chinese": "杰伊脱光衣服奔入海里。"
+      },
+      {
+        "english": "Most exports went by sea .",
+        "chinese": "大部分出口商品都走海路。"
+      },
+      {
+        "english": "a little cottage by the sea",
+        "chinese": "一座海滨小屋"
+      },
+      {
+        "english": "He spent over 30 years at sea .",
+        "chinese": "他在船上工作了30多年。"
+      },
+      {
+        "english": "They stood side by side looking out to sea .",
+        "chinese": "他们并排站着眺望大海。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "海；海洋；许多；大量",
+        "english": "the large area of salty water that covers much of the Earth’s surface"
+      }
+    ]
+  },
+  {
+    "name": "ocean",
+    "trans": [
+      "n. 海洋，大洋；大海"
+    ],
+    "usphone": "'oʃən",
+    "ukphone": "'əuʃn",
+    "sentences": [
+      {
+        "english": "She stood on the beach, gazing at the ocean.",
+        "chinese": "她站在海滩上，凝视着大海。"
+      },
+      {
+        "english": "I like to swim in the ocean when it’s warm enough.",
+        "chinese": "海水足够暖的时候，我喜欢在海里游泳。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 洋， 海洋； 许多， 大量",
+        "english": "the great mass of salt water that covers most of the Earth’s surface"
+      }
+    ]
+  },
+  {
+    "name": "coast",
+    "trans": [
+      "n. 海岸；沿海地区"
+    ],
+    "usphone": "kost",
+    "ukphone": "kəʊst",
+    "sentences": [
+      {
+        "english": "He pushed in the clutch and coasted to a halt.",
+        "chinese": "他踩下离合器，滑行了一会儿便停下来了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "滑行；沿岸航行",
+        "english": "if a car or bicycle coasts, it moves without any effort from you or any power from the engine"
+      },
+      {
+        "pos": "n",
+        "chinese": "海岸；滑坡",
+        "english": "the area where the land meets the sea"
+      }
+    ]
+  },
+  {
+    "name": "beach",
+    "trans": [
+      "n. 海滨，湖滨；海滩，沙滩"
+    ],
+    "usphone": "bitʃ",
+    "ukphone": "biːtʃ",
+    "sentences": [
+      {
+        "english": "a sandy beach",
+        "chinese": "沙滩"
+      },
+      {
+        "english": "surfers on the beach",
+        "chinese": "沙滩上的冲浪者"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "海滩，湖滩，河滩",
+        "english": "an area of sand or small stones at the edge of the sea or a lake"
+      }
+    ]
+  },
+  {
+    "name": "island/isle",
+    "trans": [
+      "n. 岛，岛屿"
+    ]
+  },
+  {
+    "name": "museum",
+    "trans": [
+      "n. 博物馆，博物院"
+    ],
+    "usphone": "mju'ziəm",
+    "ukphone": "mjuː'zɪəm",
+    "sentences": [
+      {
+        "english": "the Museum of Modern Art",
+        "chinese": "现代艺术博物馆"
+      },
+      {
+        "english": "The museum has an extensive collection of early photographs.",
+        "chinese": "这座博物馆藏有大量早期的照片。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "博物馆；展览馆",
+        "english": "a building where important  cultural, historical, or scientific objects are kept and shown to the public"
+      }
+    ]
+  },
+  {
+    "name": "gallery",
+    "trans": [
+      "n. （艺术作品）陈列馆；美术馆；画廊"
+    ],
+    "usphone": "'gæləri",
+    "ukphone": "'gæl(ə)rɪ",
+    "sentences": [
+      {
+        "english": "The bright modern painting stares out at you in the otherwise conservative gallery.",
+        "chinese": "有些古典派画廊也会陈列出明亮色彩的现代派绘画。"
+      },
+      {
+        "english": "Statement and portrait together form a single image of a thinker. (See the interactive gallery, “Why Philosophy?",
+        "chinese": "陈述和肖像一起构成了一位思想家的独有影像。 （参见互动画廊，“何为哲学？”）"
+      },
+      {
+        "english": "Whether you just want to browse our huge image gallery or want to share your personal photos with others, this is the site for you!",
+        "chinese": "无论你是想要浏览我们众多的画廊图片还是想要和其他人分享你的个人照片,这个网站绝对对你的味口。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "画廊",
+        "english": "a small privately owned shop or studio where you can see and buy pieces of art"
+      }
+    ]
+  },
+  {
+    "name": "sculpture",
+    "trans": [
+      "n. 雕塑，雕刻；塑像，雕塑品，雕刻品"
+    ],
+    "usphone": "'skʌlptʃɚ",
+    "ukphone": "'skʌlptʃə",
+    "sentences": [
+      {
+        "english": "a sculpture of an elephant",
+        "chinese": "一尊大象雕塑"
+      },
+      {
+        "english": "the techniques of sculpture in stone",
+        "chinese": "石雕技艺"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雕刻品；雕刻（术）",
+        "english": "an object made out of stone, wood, clay etc by an artist"
+      }
+    ]
+  },
+  {
+    "name": "heritage site",
+    "trans": [
+      "n. 遗址(景区）"
+    ]
+  },
+  {
+    "name": "adventure playground",
+    "trans": [
+      "n. 儿童游乐园"
+    ]
+  },
+  {
+    "name": "circus",
+    "trans": [
+      "n. 马戏团；马戏演员；马戏表演"
+    ],
+    "usphone": "'sɝkəs",
+    "ukphone": "'sɜːkəs",
+    "sentences": [
+      {
+        "english": "Piccadilly Circus",
+        "chinese": "皮卡迪利广场"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "马戏表演；广场",
+        "english": "a group of people and animals who travel to different places performing skilful tricks as entertainment"
+      }
+    ]
+  },
+  {
+    "name": "whale watch",
+    "trans": [
+      "n. phrase 看鲸"
+    ]
+  },
+  {
+    "name": "bush walking",
+    "trans": [
+      "n. 在丛林中徒步"
+    ]
+  },
+  {
+    "name": "trekking",
+    "trans": [
+      "n. 以长距离步行作为消遣的活动"
+    ]
+  },
+  {
+    "name": "hiking",
+    "trans": [
+      "n. （在乡村的）长途徒步旅行，远足，健行"
+    ],
+    "usphone": "'haɪkɪŋ",
+    "ukphone": "'haɪkɪŋ",
+    "sentences": [
+      {
+        "english": "We’re going to do some hiking this summer.",
+        "chinese": "今年夏天我们要去远足。"
+      },
+      {
+        "english": "Utah is a great place to go hiking .",
+        "chinese": "犹他州是徒步旅行的绝好去处。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "远足",
+        "english": "the activity of taking long walks in the mountains or country"
+      }
+    ]
+  },
+  {
+    "name": "fishing",
+    "trans": [
+      "n. 钓鱼；捕鱼"
+    ],
+    "usphone": "'fɪʃɪŋ",
+    "ukphone": "'fɪʃɪŋ",
+    "sentences": [
+      {
+        "english": "Fishing is one of his hobbies.",
+        "chinese": "钓鱼是他的一项业余爱好。"
+      },
+      {
+        "english": "Terry’s going fishing at Lake Arrowhead next weekend.",
+        "chinese": "特里下周末要到阿罗黑德湖钓鱼。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "渔业；捕鱼（术）；试探；装配",
+        "english": "the sport or business of catching fish"
+      },
+      {
+        "pos": "adj",
+        "chinese": "钓鱼的；钓鱼用的",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "捕鱼（fish的ing形式）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "kite surfing",
+    "trans": [
+      "n. 风筝冲浪"
+    ]
+  },
+  {
+    "name": "surfing",
+    "trans": [
+      "n. 冲浪运动"
+    ],
+    "usphone": "'sɝfɪŋ",
+    "ukphone": "'sɜːfɪŋ",
+    "sentences": [
+      {
+        "english": "When we were in Hawaii, we went surfing every day.",
+        "chinese": "我们在夏威夷时每天都去冲浪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "冲浪",
+        "english": "the activity or sport of riding over the waves on a special board"
+      }
+    ]
+  },
+  {
+    "name": "water skiing",
+    "trans": [
+      "n. 滑水"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "One night, Gates walked through the door in a leg cast -- he had snapped his leg water skiing.",
+        "chinese": "一天晚上，艾伦发现同住一间宿舍的盖茨进门时腿上竟打了石膏——原来他在滑水远动中弄折了脚。"
+      },
+      {
+        "english": "Tug-of-war, polo, water skiing, and power boating are all events that have been dropped from competition.",
+        "chinese": "拔河、马球、滑水和汽艇比赛已经取消。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "滑水",
+        "english": "a sport in which you ski over water while being pulled by a boat"
+      }
+    ]
+  },
+  {
+    "name": "scuba diving",
+    "trans": [
+      "n. 潜水"
+    ]
+  },
+  {
+    "name": "sunbathe",
+    "trans": [
+      "v. （为使皮肤变黑而）晒太阳，沐日光浴"
+    ],
+    "usphone": "'sʌnbeð",
+    "ukphone": "'sʌnbeɪð",
+    "sentences": [
+      {
+        "english": "If it is not too cold, the beach is a nice place to sit, relax and even sunbathe in the summer.",
+        "chinese": "如果天气不太冷，坐在沙滩上是个不错的选择，放松甚至在夏天享受日光浴。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "日光浴；太阳灯浴",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "沐日光浴",
+        "english": "to sit or lie outside in the sun, especially in order to become brown"
+      }
+    ]
+  },
+  {
+    "name": "skiing",
+    "trans": [
+      "n. 滑雪；滑雪运动"
+    ]
+  },
+  {
+    "name": "recreation",
+    "trans": [
+      "n. 娱乐；消遣（方式）"
+    ],
+    "usphone": ",rɛkrɪ'eʃən",
+    "ukphone": ",rekrɪ'eɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "His only recreations are drinking beer and watching football.",
+        "chinese": "他唯一的消遣就是喝啤酒和看足球比赛。"
+      },
+      {
+        "english": "the provision of recreation facilities",
+        "chinese": "提供娱乐设施"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "消遣，娱乐活动",
+        "english": "an activity that you do for pleasure or amusement"
+      }
+    ]
+  }
 ]

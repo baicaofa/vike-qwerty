@@ -1,218 +1,807 @@
 [
-    {
-        "name": "pedestrian",
-        "trans": [
-            "n. 行人"
-        ]
-    },
-    {
-        "name": "safety",
-        "trans": [
-            "n. 安全"
-        ]
-    },
-    {
-        "name": "traffic accident",
-        "trans": [
-            "n. 交通事故"
-        ]
-    },
-    {
-        "name": "traffic jam",
-        "trans": [
-            "n. 交通堵塞"
-        ]
-    },
-    {
-        "name": "traffic congestion",
-        "trans": [
-            "n. 交通堵塞"
-        ]
-    },
-    {
-        "name": "pollution",
-        "trans": [
-            "n. 污染"
-        ]
-    },
-    {
-        "name": "install",
-        "trans": [
-            "v. 安装"
-        ]
-    },
-    {
-        "name": "traffic light",
-        "trans": [
-            "n. 交通信号灯"
-        ]
-    },
-    {
-        "name": "crossroads",
-        "trans": [
-            "n. 十字路口"
-        ]
-    },
-    {
-        "name": "intersection",
-        "trans": [
-            "n. 十字路口"
-        ]
-    },
-    {
-        "name": "junction",
-        "trans": [
-            "n. 路口"
-        ]
-    },
-    {
-        "name": "erect",
-        "trans": [
-            "v. 树立"
-        ]
-    },
-    {
-        "name": "sign",
-        "trans": [
-            "n. 标志"
-        ]
-    },
-    {
-        "name": "keep clear",
-        "trans": [
-            "禁止占用"
-        ]
-    },
-    {
-        "name": "out of bounds",
-        "trans": [
-            "禁止入内"
-        ]
-    },
-    {
-        "name": "pavement",
-        "trans": [
-            "n. 人行道"
-        ]
-    },
-    {
-        "name": "footpath",
-        "trans": [
-            "n. 人行道"
-        ]
-    },
-    {
-        "name": "widen",
-        "trans": [
-            "v. 使……变宽"
-        ]
-    },
-    {
-        "name": "colour",
-        "trans": [
-            "v. 给……着色"
-        ]
-    },
-    {
-        "name": "mark",
-        "trans": [
-            "v. 做标记"
-        ]
-    },
-    {
-        "name": "bend",
-        "trans": [
-            "n. 转弯处"
-        ]
-    },
-    {
-        "name": "corner",
-        "trans": [
-            "n. 转弯处"
-        ]
-    },
-    {
-        "name": "cycle path/ lane",
-        "trans": [
-            "n. 自行车道"
-        ]
-    },
-    {
-        "name": "separate",
-        "trans": [
-            "adj. 分开的，单独的"
-        ]
-    },
-    {
-        "name": "parking",
-        "trans": [
-            "n. 停车"
-        ]
-    },
-    {
-        "name": "car park",
-        "trans": [
-            "n. 【英】停车场"
-        ]
-    },
-    {
-        "name": "parking lot",
-        "trans": [
-            "n. 【美】停车场"
-        ]
-    },
-    {
-        "name": "disabled",
-        "trans": [
-            "adj. 残疾的"
-        ]
-    },
-    {
-        "name": "pay and display",
-        "trans": [
-            "泊车付费系统"
-        ]
-    },
-    {
-        "name": "regulation",
-        "trans": [
-            "n. 法规，规则"
-        ]
-    },
-    {
-        "name": "regulate",
-        "trans": [
-            "v. 控制，调节"
-        ]
-    },
-    {
-        "name": "restriction",
-        "trans": [
-            "n. 限制"
-        ]
-    },
-    {
-        "name": "lorry",
-        "trans": [
-            "n. 卡车"
-        ]
-    },
-    {
-        "name": "load",
-        "trans": [
-            "v. 装载"
-        ]
-    },
-    {
-        "name": "obey",
-        "trans": [
-            "v. 遵守"
-        ]
-    },
-    {
-        "name": "ban",
-        "trans": [
-            "v. 禁止"
-        ]
-    }
+  {
+    "name": "pedestrian",
+    "trans": [
+      "n. 行人"
+    ],
+    "usphone": "pə'dɛstrɪən",
+    "ukphone": "pɪˈdestrɪən",
+    "sentences": [
+      {
+        "english": "More than a third of all pedestrian injuries are to children.",
+        "chinese": "所有受伤的行人中有1/3以上是儿童。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "行人，步行者",
+        "english": "someone who is walking, especially along a street or other place used by cars"
+      }
+    ]
+  },
+  {
+    "name": "safety",
+    "trans": [
+      "n. 安全"
+    ],
+    "usphone": "'sefti",
+    "ukphone": "'seɪftɪ",
+    "sentences": [
+      {
+        "english": "You shouldn’t travel alone, for safety’s sake .",
+        "chinese": "为安全起见，不要独自一人旅行。"
+      },
+      {
+        "english": "For your own safety , please do not smoke inside the plane.",
+        "chinese": "为了您自身的安全，请不要在飞机上吸烟。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "安全；保险；安全设备；保险装置；安打",
+        "english": "when someone or something is safe from danger or harm"
+      }
+    ]
+  },
+  {
+    "name": "traffic accident",
+    "trans": [
+      "n. 交通事故"
+    ]
+  },
+  {
+    "name": "traffic jam",
+    "trans": [
+      "n. 交通堵塞"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "We were stuck in a traffic jam for two hours.",
+        "chinese": "我们遇上塞车，被堵了两个小时。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "交通阻塞，塞车",
+        "english": "a long line of vehicles on a road that cannot move or can only move very slowly"
+      }
+    ]
+  },
+  {
+    "name": "traffic congestion",
+    "trans": [
+      "n. 交通堵塞"
+    ]
+  },
+  {
+    "name": "pollution",
+    "trans": [
+      "n. 污染"
+    ],
+    "usphone": "pə'luʃən",
+    "ukphone": "pə'luːʃ(ə)n",
+    "sentences": [
+      {
+        "english": "California’s tough anti-pollution laws",
+        "chinese": "加利福尼亚州严厉的反污染法"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "污染",
+        "english": "the process of making air, water, soil etc dangerously dirty and not suitable for people to use, or the state of being dangerously dirty"
+      }
+    ]
+  },
+  {
+    "name": "install",
+    "trans": [
+      "v. 安装"
+    ],
+    "usphone": "ɪn'stɔl",
+    "ukphone": "ɪnˈstɔ:l",
+    "sentences": [
+      {
+        "english": "They’ve installed the new computer network at last.",
+        "chinese": "他们终于安装了新电脑网络。"
+      },
+      {
+        "english": "Security cameras have been installed in the city centre.",
+        "chinese": "在市中心已安装了一些监控摄像机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "安装",
+        "english": "to put a piece of equipment somewhere and connect it so that it is ready to be used"
+      }
+    ]
+  },
+  {
+    "name": "traffic light",
+    "trans": [
+      "n. 交通信号灯"
+    ]
+  },
+  {
+    "name": "crossroads",
+    "trans": [
+      "n. 十字路口"
+    ],
+    "usphone": "'krɔsrodz",
+    "ukphone": "'krɒsrəʊdz",
+    "sentences": [
+      {
+        "english": "The car was approaching the crossroads.",
+        "chinese": "汽车正驶近交叉路口。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "十字路口；交叉路口；聚会的中心地点（crossroad的复数形式）",
+        "english": "a place where two roads meet and cross each other"
+      }
+    ]
+  },
+  {
+    "name": "intersection",
+    "trans": [
+      "n. 十字路口"
+    ],
+    "usphone": ",ɪntɚ'sɛkʃən",
+    "ukphone": "ɪntə'sekʃ(ə)n",
+    "sentences": [
+      {
+        "english": "We crossed at a busy intersection.",
+        "chinese": "我们穿过了一个繁忙的道路交叉口。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "交叉；十字路口；交集；交叉点",
+        "english": "a place where roads, lines etc cross each other, especially where two roads meet"
+      }
+    ]
+  },
+  {
+    "name": "junction",
+    "trans": [
+      "n. 路口"
+    ],
+    "usphone": "'dʒʌŋkʃən",
+    "ukphone": "'dʒʌŋ(k)ʃ(ə)n",
+    "sentences": [
+      {
+        "english": "the junction of Abbot Road and Mill Street",
+        "chinese": "阿伯特路与米尔街的交叉口"
+      },
+      {
+        "english": "Junction 5 on the M40 ",
+        "chinese": "40号高速公路上的第5交叉口"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "连接点，汇合处",
+        "english": "a place where one road, track etc joins another"
+      }
+    ]
+  },
+  {
+    "name": "erect",
+    "trans": [
+      "v. 树立"
+    ],
+    "usphone": "ɪ'rɛkt",
+    "ukphone": "ɪ'rekt",
+    "sentences": [
+      {
+        "english": "an imposing town hall, erected in 1892",
+        "chinese": "一座气势宏伟的市政厅，建于1892年"
+      },
+      {
+        "english": "Police have erected barriers across the main roads into the town.",
+        "chinese": "警察在进城的主要道路上设立了路障。"
+      },
+      {
+        "english": "It took a couple of hours to erect the tent.",
+        "chinese": "搭帐篷花了几个小时。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "建造；使竖立",
+        "english": "to build something such as a building or wall"
+      }
+    ]
+  },
+  {
+    "name": "sign",
+    "trans": [
+      "n. 标志"
+    ],
+    "usphone": "saɪn",
+    "ukphone": "saɪn",
+    "sentences": [
+      {
+        "english": "the dollar sign",
+        "chinese": "美元符号"
+      },
+      {
+        "english": "a minus sign",
+        "chinese": "减号"
+      },
+      {
+        "english": "a sign on the door",
+        "chinese": "门上的标牌"
+      },
+      {
+        "english": "Sign here, please.",
+        "chinese": "请在这里签字。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "符号；招牌",
+        "english": "a mark or shape that has a particular meaning"
+      },
+      {
+        "pos": "v",
+        "chinese": "签名",
+        "english": "to write your signature on something to show that you wrote it, agree with it, or were present"
+      }
+    ]
+  },
+  {
+    "name": "keep clear",
+    "trans": [
+      "禁止占用"
+    ]
+  },
+  {
+    "name": "out of bounds",
+    "trans": [
+      "禁止入内"
+    ]
+  },
+  {
+    "name": "pavement",
+    "trans": [
+      "n. 人行道"
+    ],
+    "usphone": "'pevmənt",
+    "ukphone": "'peɪvm(ə)nt",
+    "sentences": [
+      {
+        "english": "A small group of journalists waited on the pavement outside her house.",
+        "chinese": "有一小群记者守候在她家外面的人行道上。"
+      },
+      {
+        "english": "a pavement cafe",
+        "chinese": "路边咖啡馆"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "人行道",
+        "english": "a hard level surface or path at the side of a road for people to walk on"
+      }
+    ]
+  },
+  {
+    "name": "footpath",
+    "trans": [
+      "n. 人行道"
+    ],
+    "usphone": "'fʊtpæθ",
+    "ukphone": "'fʊtpɑːθ",
+    "sentences": [
+      {
+        "english": "He said he had just picked up the druken man from the footpath and did not know him from Adam.",
+        "chinese": "他说他只是把这个倒在人行道上的醉汉扶了起来，他根本不认识他。"
+      },
+      {
+        "english": "The sun was shining gloriously, so Karen and the old lady went along the footpath through the corn, where it was rather dusty.",
+        "chinese": "那天艳阳高照，凯伦和老妇人沿着穿过玉米地的小路去教堂，一路上灰尘漫天。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "小路，人行道",
+        "english": "a narrow path for people to walk along, especially in the country"
+      }
+    ]
+  },
+  {
+    "name": "widen",
+    "trans": [
+      "v. 使……变宽"
+    ],
+    "usphone": "'waɪdn",
+    "ukphone": "'waɪd(ə)n",
+    "sentences": [
+      {
+        "english": "They’re widening the road.",
+        "chinese": "他们正在拓宽马路。"
+      },
+      {
+        "english": "The river widens and splits.",
+        "chinese": "这条河有变宽的河段，也有分流的河段。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "加宽",
+        "english": "to become wider, or to make something wider"
+      },
+      {
+        "pos": "v",
+        "chinese": "变宽",
+        "english": "to become wider, or to make something wider"
+      }
+    ]
+  },
+  {
+    "name": "colour",
+    "trans": [
+      "v. 给……着色"
+    ],
+    "usphone": "'kʌlɚ",
+    "ukphone": "'kʌlə",
+    "sentences": [
+      {
+        "english": "Her eyes suddenly met his and she coloured slightly.",
+        "chinese": "她的目光突然和他相遇，她微微有点脸红了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "把…涂颜色，粉饰；歪曲；使脸红",
+        "english": "when someone colours, their face becomes redder because they are embarrassed"
+      },
+      {
+        "pos": "n",
+        "chinese": "颜色；风格；气色，面色；外貌",
+        "english": "red, blue, yellow, green, brown, purple etc"
+      }
+    ]
+  },
+  {
+    "name": "mark",
+    "trans": [
+      "v. 做标记"
+    ],
+    "usphone": "",
+    "ukphone": "mɑːk",
+    "sentences": [
+      {
+        "english": "The kitten is mainly white with black marks on her back.",
+        "chinese": "小猫身体基本为白色，背上有黑色斑点。"
+      },
+      {
+        "english": "Make a mark at the bottom of the page.",
+        "chinese": "在页末做个记号。"
+      },
+      {
+        "english": "A simple wooden cross marked her grave.",
+        "chinese": "一个简单的木十字架标出了她坟墓的位置。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "斑点；记号",
+        "english": "a small area of darker or lighter colour on a plain surface such as a person’s skin or an animal’s fur"
+      },
+      {
+        "pos": "v",
+        "chinese": "标明",
+        "english": "to show where something is"
+      }
+    ]
+  },
+  {
+    "name": "bend",
+    "trans": [
+      "n. 转弯处"
+    ],
+    "usphone": "bɛnd",
+    "ukphone": "bend",
+    "sentences": [
+      {
+        "english": "Lee bent and kissed her.",
+        "chinese": "李俯下身来亲她。"
+      },
+      {
+        "english": "She bent her head.",
+        "chinese": "她低下头。"
+      },
+      {
+        "english": "Bend your knees, but keep your back straight.",
+        "chinese": "膝盖弯曲，背部保持挺直。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "俯身；弯曲，转弯",
+        "english": "to move part of your body so that it is not straight or so that you are not upright"
+      },
+      {
+        "pos": "vt",
+        "chinese": "弯曲；屈服；使集中于",
+        "english": "to become curved and no longer flat or straight"
+      },
+      {
+        "pos": "n",
+        "chinese": " 弯曲",
+        "english": "a curved part of something, especially a road or river"
+      }
+    ]
+  },
+  {
+    "name": "corner",
+    "trans": [
+      "n. 转弯处"
+    ],
+    "usphone": "'kɔrnɚ",
+    "ukphone": "'kɔːnə",
+    "sentences": [
+      {
+        "english": "He pulled a dirty handkerchief out by its corner and waved it at me.",
+        "chinese": "他拽出一块脏手帕，捏着一角向我挥动。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "角落，拐角处；地区，偏僻处；困境，窘境",
+        "english": "the point at which two lines or edges meet"
+      },
+      {
+        "pos": "v",
+        "chinese": "囤积；相交成角",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "cycle path/ lane",
+    "trans": [
+      "n. 自行车道"
+    ]
+  },
+  {
+    "name": "separate",
+    "trans": [
+      "adj. 分开的，单独的"
+    ],
+    "usphone": "(for v.) sɛpəˌret; (for adj.) sɛprɪt",
+    "ukphone": "(for v.) ˈsepəreɪt; (for adj.) ˈseprət",
+    "sentences": [
+      {
+        "english": "The gym and the sauna are in separate buildings.",
+        "chinese": "健身房和桑拿浴室在不同的大楼里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "分离的；个别的",
+        "english": "not joined to or touching something else"
+      }
+    ]
+  },
+  {
+    "name": "parking",
+    "trans": [
+      "n. 停车"
+    ],
+    "usphone": "'pɑrkɪŋ",
+    "ukphone": "'pɑːkɪŋ",
+    "sentences": [
+      {
+        "english": "No Parking (= used on signs )",
+        "chinese": "禁止停车"
+      },
+      {
+        "english": "a £45 parking fine",
+        "chinese": "45英镑的违章停车罚款"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "停车",
+        "english": "the act of parking a car or other vehicle"
+      },
+      {
+        "pos": "adj",
+        "chinese": "停车的",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "停车（park的ing形式）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "car park",
+    "trans": [
+      "n. 【英】停车场"
+    ]
+  },
+  {
+    "name": "parking lot",
+    "trans": [
+      "n. 【美】停车场"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "If you drive to work, park at the far end of the parking lot.",
+        "chinese": "如果你开车上班，那么就将汽车泊在停车场的最远端。"
+      },
+      {
+        "english": "They emerged from the darkness and gathered like pilgrims, lining up beneath floodlights in the parking lot.",
+        "chinese": "他们从暗处冒出，像朝圣者一样汇聚在一起，在停车场的强光灯下排队。"
+      },
+      {
+        "english": "Sitting in our usual parking lot, I was holding my book, watching her over the top of it.",
+        "chinese": "我们像往常一样在那个停车场里坐着，我拿了本书，从书的上边向她望去。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "停车场",
+        "english": "an open area for cars to park in"
+      }
+    ]
+  },
+  {
+    "name": "disabled",
+    "trans": [
+      "adj. 残疾的"
+    ],
+    "usphone": "dɪs'ebld",
+    "ukphone": "dɪs'eɪbld",
+    "sentences": [
+      {
+        "english": "a support group for parents of disabled children",
+        "chinese": "帮助残障儿童父母的援助团"
+      },
+      {
+        "english": "a severely disabled polio patient",
+        "chinese": "严重残疾的小儿麻痺症病人"
+      },
+      {
+        "english": "teachers who work with learning disabled children (= children who have problems learning )",
+        "chinese": "教有学习障碍的儿童的教师"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "残废的，有缺陷的",
+        "english": "someone who is disabled cannot use a part of their body properly, or cannot learn easily"
+      },
+      {
+        "pos": "v",
+        "chinese": "使…失去能力（disable的过去分词）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "pay and display",
+    "trans": [
+      "泊车付费系统"
+    ]
+  },
+  {
+    "name": "regulation",
+    "trans": [
+      "n. 法规，规则"
+    ],
+    "usphone": "ˌrɛɡjəˈleʃən",
+    "ukphone": "ˌregjuˈleɪʃn",
+    "sentences": [
+      {
+        "english": "There seem to be so many rules and regulations these days.",
+        "chinese": "如今好像条条框框很多。"
+      },
+      {
+        "english": "regulations governing the safety of toys",
+        "chinese": "监控玩具安全的条例"
+      },
+      {
+        "english": "All companies must comply with the regulations .",
+        "chinese": "所有公司都必须遵守规定。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "管理；规则",
+        "english": "an official rule or order"
+      }
+    ]
+  },
+  {
+    "name": "regulate",
+    "trans": [
+      "v. 控制，调节"
+    ],
+    "usphone": "'rɛɡjulet",
+    "ukphone": "'regjʊleɪt",
+    "sentences": [
+      {
+        "english": "People sweat to regulate their body heat.",
+        "chinese": "人出汗以调节体温。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "调整，调节，校准",
+        "english": "to make a machine or your body work at a particular speed, temperature etc"
+      }
+    ]
+  },
+  {
+    "name": "restriction",
+    "trans": [
+      "n. 限制"
+    ],
+    "usphone": "rɪ'strɪkʃən",
+    "ukphone": "rɪ'strɪkʃ(ə)n",
+    "sentences": [
+      {
+        "english": "a 50 mph speed restriction",
+        "chinese": "每小时50英里的限速"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "限制；约束；束缚",
+        "english": "a rule or law that limits or controls what people can do"
+      }
+    ]
+  },
+  {
+    "name": "lorry",
+    "trans": [
+      "n. 卡车"
+    ],
+    "usphone": "'lɔri",
+    "ukphone": "'lɒrɪ",
+    "sentences": [
+      {
+        "english": "Now and then they heard the roar of a heavy lorry.",
+        "chinese": "他们不时听见一辆重型卡车的轰响声。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "（英）卡车；[车辆] 货车；运料车",
+        "english": "a large vehicle for carrying heavy goods"
+      }
+    ]
+  },
+  {
+    "name": "load",
+    "trans": [
+      "v. 装载"
+    ],
+    "usphone": "lod",
+    "ukphone": "ləʊd",
+    "sentences": [
+      {
+        "english": "Have you finished loading up?",
+        "chinese": "你装完货了吗？"
+      },
+      {
+        "english": "It took an hour to load the van.",
+        "chinese": "给小型货车装货花了一小时。"
+      },
+      {
+        "english": "Will you help me load the dishwasher?",
+        "chinese": "你帮我把碗碟放进洗碗机好吗？"
+      },
+      {
+        "english": "The plane was carrying afull loadof fuel.",
+        "chinese": "飞机载满燃料。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "装；装满",
+        "english": "to put a large quantity of something into a vehicle or container"
+      },
+      {
+        "pos": "n",
+        "chinese": "负载",
+        "english": "a large quantity of something that is carried by a vehicle, person etc"
+      }
+    ]
+  },
+  {
+    "name": "obey",
+    "trans": [
+      "v. 遵守"
+    ],
+    "usphone": "ə'be",
+    "ukphone": "ə(ʊ)'beɪ",
+    "sentences": [
+      {
+        "english": "The little boy made no effort to obey.",
+        "chinese": "这小男孩不肯服从。"
+      },
+      {
+        "english": "‘Sit!’ he said, and the dog obeyed him instantly.",
+        "chinese": "“坐下！”他说道，那只狗马上就服从了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "顺从",
+        "english": "to do what someone in authority tells you to do, or what a law or rule says you must do"
+      },
+      {
+        "pos": "v",
+        "chinese": "服从",
+        "english": "to do what someone in authority tells you to do, or what a law or rule says you must do"
+      }
+    ]
+  },
+  {
+    "name": "ban",
+    "trans": [
+      "v. 禁止"
+    ],
+    "usphone": "bæn",
+    "ukphone": "bæn",
+    "sentences": [
+      {
+        "english": "Smoking is banned in the building.",
+        "chinese": "大楼内禁止吸烟。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "取缔，查禁；禁止",
+        "english": "to say that something must not be done, seen, used etc"
+      },
+      {
+        "pos": "n",
+        "chinese": " 禁止， 禁令",
+        "english": "an official order that prevents something from being used or done"
+      }
+    ]
+  }
 ]

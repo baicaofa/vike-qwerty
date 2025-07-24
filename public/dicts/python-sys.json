@@ -105,12 +105,62 @@
     "name": "path",
     "trans": [
       "搜索路径"
+    ],
+    "usphone": "pæθ",
+    "ukphone": "pɑːθ",
+    "sentences": [
+      {
+        "english": "I walked nervously up the garden path towards the front door.",
+        "chinese": "我提心吊胆地沿着花园的小道向前门走去。"
+      },
+      {
+        "english": "a well-worn path across the grass",
+        "chinese": "草地上被踏出的小径"
+      },
+      {
+        "english": "Follow the path along the river to the bridge.",
+        "chinese": "沿着河边的小路走到那座桥。"
+      },
+      {
+        "english": "a path leading to the summer house",
+        "chinese": "通往避暑别墅的小径"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "路，小道；道路",
+        "english": "a track that has been made deliberately or made by many people walking over the same ground"
+      }
     ]
   },
   {
     "name": "platform",
     "trans": [
       "查看当前操作系统的信息,来采集系统版本位数计算机类型名称内核等一系列信息"
+    ],
+    "usphone": "'plæt'fɔrm",
+    "ukphone": "'plætfɔːm",
+    "sentences": [
+      {
+        "english": "The Edinburgh train will depart from platform six.",
+        "chinese": "开往爱丁堡的火车将从六号站台发车。"
+      },
+      {
+        "english": "a small raised platform at one end of the room",
+        "chinese": "房间一端凸起的小讲台"
+      },
+      {
+        "english": "an oil exploration platform",
+        "chinese": "石油勘探平台"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "站台；讲台；平台",
+        "english": "the raised place beside a railway track where you get on and off a train in a station"
+      }
     ]
   },
   {

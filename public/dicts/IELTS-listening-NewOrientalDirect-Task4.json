@@ -1,202 +1,826 @@
 [
-    {
-        "name": "borrow",
-        "trans": [
-            "v. 借入"
-        ]
-    },
-    {
-        "name": "lend",
-        "trans": [
-            "v. 借出，借给"
-        ]
-    },
-    {
-        "name": "return",
-        "trans": [
-            "v. 归还"
-        ]
-    },
-    {
-        "name": "book",
-        "trans": [
-            "v. 预订"
-        ]
-    },
-    {
-        "name": "reserve",
-        "trans": [
-            "v. 预约，保留"
-        ]
-    },
-    {
-        "name": "consultation",
-        "trans": [
-            "n. 咨询"
-        ]
-    },
-    {
-        "name": "library card",
-        "trans": [
-            "n. 图书馆卡"
-        ]
-    },
-    {
-        "name": "admission",
-        "trans": [
-            "n. 准入，入场券"
-        ]
-    },
-    {
-        "name": "counter",
-        "trans": [
-            "n. 柜台"
-        ]
-    },
-    {
-        "name": "shelf",
-        "trans": [
-            "n. 架子"
-        ]
-    },
-    {
-        "name": "staff",
-        "trans": [
-            "n. 员工"
-        ]
-    },
-    {
-        "name": "librarian",
-        "trans": [
-            "n. 图书管理员"
-        ]
-    },
-    {
-        "name": "catalog(ue)",
-        "trans": [
-            "n. 目录"
-        ]
-    },
-    {
-        "name": "category",
-        "trans": [
-            "n. 种类，类别"
-        ]
-    },
-    {
-        "name": "classification",
-        "trans": [
-            "n. 分类"
-        ]
-    },
-    {
-        "name": "call slip",
-        "trans": [
-            "n. 借书单"
-        ]
-    },
-    {
-        "name": "title",
-        "trans": [
-            "n. 标题"
-        ]
-    },
-    {
-        "name": "author",
-        "trans": [
-            "n. 作者"
-        ]
-    },
-    {
-        "name": "index",
-        "trans": [
-            "n. 索引"
-        ]
-    },
-    {
-        "name": "deadline",
-        "trans": [
-            "n. 截止日期"
-        ]
-    },
-    {
-        "name": "expire",
-        "trans": [
-            "v. 期满，终止"
-        ]
-    },
-    {
-        "name": "expiry",
-        "trans": [
-            "n. 期满，终止"
-        ]
-    },
-    {
-        "name": "recall",
-        "trans": [
-            "v. 召回，收回"
-        ]
-    },
-    {
-        "name": "renew",
-        "trans": [
-            "v. 更新"
-        ]
-    },
-    {
-        "name": "renewal",
-        "trans": [
-            "n. 更新"
-        ]
-    },
-    {
-        "name": "due",
-        "trans": [
-            "adj. 到期的"
-        ]
-    },
-    {
-        "name": "overdue",
-        "trans": [
-            "adj. 过期的"
-        ]
-    },
-    {
-        "name": "fine",
-        "trans": [
-            "v. 罚款",
-            "n. 罚款"
-        ]
-    },
-    {
-        "name": "available",
-        "trans": [
-            "adj. 可获得的"
-        ]
-    },
-    {
-        "name": "circulation",
-        "trans": [
-            "n. 流通"
-        ]
-    },
-    {
-        "name": "stock",
-        "trans": [
-            "n. 库存，储备"
-        ]
-    },
-    {
-        "name": "loan",
-        "trans": [
-            "v. 借出",
-            "n. 借出物"
-        ]
-    },
-    {
-        "name": "inter library service",
-        "trans": [
-            "n. 馆际服务"
-        ]
-    }
+  {
+    "name": "borrow",
+    "trans": [
+      "v. 借入"
+    ],
+    "usphone": "'bɑro",
+    "ukphone": "'bɒrəʊ",
+    "sentences": [
+      {
+        "english": "Can I borrow your pen for a minute?",
+        "chinese": "我可以借你的笔用一下吗？"
+      },
+      {
+        "english": "They borrowed heavily (=  borrowed a lot of money  ) from the bank to start their new business.",
+        "chinese": "他们向银行贷了巨款来创办新公司。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "借，借用，借人",
+        "english": "to use something that belongs to someone else and that you must give back to them later"
+      }
+    ]
+  },
+  {
+    "name": "lend",
+    "trans": [
+      "v. 借出，借给"
+    ],
+    "usphone": "lɛnd",
+    "ukphone": "lend",
+    "sentences": [
+      {
+        "english": "The hospital agreed to lend us a wheelchair.",
+        "chinese": "医院同意借给我们一把轮椅。"
+      },
+      {
+        "english": "The bank is reassessing its criteria for lending money.",
+        "chinese": "银行正在重新评估其贷款标准。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "把…借给；贷（款）",
+        "english": "to let someone borrow money or something that belongs to you for a short time"
+      }
+    ]
+  },
+  {
+    "name": "return",
+    "trans": [
+      "v. 归还"
+    ],
+    "usphone": "rɪ'tɝn",
+    "ukphone": "rɪ'tɜːn",
+    "sentences": [
+      {
+        "english": "It was forty five minutes before she returned.",
+        "chinese": "过了45分钟她才回来。"
+      },
+      {
+        "english": "Alison decided to return home.",
+        "chinese": "艾利森决定回家。"
+      },
+      {
+        "english": "He left his country, never to return.",
+        "chinese": "他离开了祖国，一去不复返。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "返回；报答",
+        "english": "to go or come back to a place where you were before"
+      },
+      {
+        "pos": "n",
+        "chinese": "返回；归还；回球",
+        "english": "the act of returning from somewhere, or your arrival back in a place"
+      },
+      {
+        "pos": "adj",
+        "chinese": "报答的；回程的；返回的",
+        "english": "used or paid for a journey from one place to another and back again"
+      }
+    ]
+  },
+  {
+    "name": "book",
+    "trans": [
+      "v. 预订"
+    ],
+    "usphone": "bʊk",
+    "ukphone": "bʊk",
+    "sentences": [
+      {
+        "english": "I’ve just started reading a book by Graham Greene.",
+        "chinese": "我刚开始看格雷厄姆·格林写的一本书。"
+      },
+      {
+        "english": "a cookery book",
+        "chinese": "烹饪书"
+      },
+      {
+        "english": "Have you booked a holiday this year?",
+        "chinese": "你今年有没有预订去度假？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "书，书籍",
+        "english": "a set of printed pages that are held together in a cover so that you can read them"
+      },
+      {
+        "pos": "v",
+        "chinese": "预定",
+        "english": "to make arrangements to stay in a place, eat in a restaurant, go to a theatre etc at a particular time in the future"
+      }
+    ]
+  },
+  {
+    "name": "reserve",
+    "trans": [
+      "v. 预约，保留"
+    ],
+    "usphone": "rɪ'zɝv",
+    "ukphone": "rɪ'zɜːv",
+    "sentences": [
+      {
+        "english": "Do you have to reserve tickets in advance?",
+        "chinese": "你必须预先订票吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "保留，留存；预订",
+        "english": "to arrange for a place in a hotel, restaurant, plane etc to be kept for you to use at a particular time in the future"
+      },
+      {
+        "pos": "n",
+        "chinese": " 储备； 保留； 拘谨， 矜持； 替补队员， 后备部队； 自然保护区",
+        "english": "a supply of something kept to be used if it is needed"
+      }
+    ]
+  },
+  {
+    "name": "consultation",
+    "trans": [
+      "n. 咨询"
+    ],
+    "usphone": ",kɑnsl'teʃən",
+    "ukphone": "ˌkɒnslˈteɪʃn",
+    "sentences": [
+      {
+        "english": "They retired to another room for private consultation.",
+        "chinese": "他们退到另一房间秘密磋商。"
+      },
+      {
+        "english": "This is a critical question that we must answer together through consultation and coordination.",
+        "chinese": "这是一个我们必须通过磋商和协调共同回答的关键问题。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "商议",
+        "english": "a discussion in which people who are affected by or involved in something can give their opinions"
+      }
+    ]
+  },
+  {
+    "name": "library card",
+    "trans": [
+      "n. 图书馆卡"
+    ]
+  },
+  {
+    "name": "admission",
+    "trans": [
+      "n. 准入，入场券"
+    ],
+    "usphone": "əd'mɪʃən",
+    "ukphone": "əd'miʃən",
+    "sentences": [
+      {
+        "english": "Reese, by his own admission , lacks the necessary experience.",
+        "chinese": "里斯自己也承认缺乏必要的经验。"
+      },
+      {
+        "english": "No admission after 10 pm.",
+        "chinese": "晚上10点以后免进。"
+      },
+      {
+        "english": "The Museum has no admission charge .",
+        "chinese": "那家博物馆不收门票。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "承认；准许进(加)入；入场费",
+        "english": "a statement in which you admit that something is true or that you have done something wrong"
+      }
+    ]
+  },
+  {
+    "name": "counter",
+    "trans": [
+      "n. 柜台"
+    ],
+    "usphone": "'kaʊntɚ",
+    "ukphone": "'kaʊntə",
+    "sentences": [
+      {
+        "english": "He wondered if the girl behind the counter recognised him.",
+        "chinese": "他在想柜台后面的那个女孩是否认出了他。"
+      },
+      {
+        "english": "Set the video counter to zero before you press play.",
+        "chinese": "在按播放键之前，把录像机上的计数器调到零。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "柜台；计数器",
+        "english": "the place where you pay or are served in a shop, bank, restaurant etc"
+      }
+    ]
+  },
+  {
+    "name": "shelf",
+    "trans": [
+      "n. 架子"
+    ],
+    "usphone": "ʃɛlf",
+    "ukphone": "ʃelf",
+    "sentences": [
+      {
+        "english": "shelves of books",
+        "chinese": "一层层书架的书"
+      },
+      {
+        "english": "supermarket shelves",
+        "chinese": "超级市场的货架"
+      },
+      {
+        "english": "the amount of shelf space available",
+        "chinese": "可用的货架空间"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "搁板，架子",
+        "english": "a long flat narrow board attached to a wall or in a frame or cupboard, used for putting things on"
+      }
+    ]
+  },
+  {
+    "name": "staff",
+    "trans": [
+      "n. 员工"
+    ],
+    "usphone": "stæf",
+    "ukphone": "stɑːf",
+    "sentences": [
+      {
+        "english": "The staff were very good.",
+        "chinese": "员工们都很棒。"
+      },
+      {
+        "english": "10 staff were allocated to the task.",
+        "chinese": "10名员工被分派做这项任务。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "全体职员，员工；工作人员；参谋",
+        "english": "the people who work for an organization"
+      }
+    ]
+  },
+  {
+    "name": "librarian",
+    "trans": [
+      "n. 图书管理员"
+    ],
+    "usphone": "laɪ'brɛrɪən",
+    "ukphone": "laɪ'breərɪən",
+    "sentences": [
+      {
+        "english": "The new librarian is a friend of mine.",
+        "chinese": "这位新来的图书管理员是我的朋友。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "图书馆馆长",
+        "english": "someone who works in a library"
+      }
+    ]
+  },
+  {
+    "name": "catalog(ue)",
+    "trans": [
+      "n. 目录"
+    ]
+  },
+  {
+    "name": "category",
+    "trans": [
+      "n. 种类，类别"
+    ],
+    "usphone": "'kætəɡɔri",
+    "ukphone": "ˈkætəgəri",
+    "sentences": [
+      {
+        "english": "people in the over-45 age category",
+        "chinese": "属45岁以上年龄组的人"
+      },
+      {
+        "english": "Seats are available in eight of the ten price categories .",
+        "chinese": "座位共有10种票价，现有8种可售。"
+      },
+      {
+        "english": "Williams’ style does not fit easily into the category of jazz.",
+        "chinese": "威廉斯的风格不能轻易归入爵士乐的范畴。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "种类",
+        "english": "a group of people or things that are all of the same type"
+      }
+    ]
+  },
+  {
+    "name": "classification",
+    "trans": [
+      "n. 分类"
+    ],
+    "usphone": ",klæsɪfɪ'keʃən",
+    "ukphone": ",klæsɪfɪ'keɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "the classification of wines according to quality",
+        "chinese": "葡萄酒按品质的分类"
+      },
+      {
+        "english": "There are five job classifications.",
+        "chinese": "有五种工作类别。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "分类，级别",
+        "english": "a process in which you put something into the group or class it belongs to"
+      }
+    ]
+  },
+  {
+    "name": "call slip",
+    "trans": [
+      "n. 借书单"
+    ]
+  },
+  {
+    "name": "title",
+    "trans": [
+      "n. 标题"
+    ],
+    "usphone": "'taɪtl",
+    "ukphone": "'taɪt(ə)l",
+    "sentences": [
+      {
+        "english": "\"Patience and Sarah\" was first published in 1969 under the title \"A Place for Us.\"",
+        "chinese": "《耐心与萨拉》于1969年以《我们的地方》为书名首次出版。"
+      },
+      {
+        "english": "Pirandello titled his play \"Six Characters in Search of an Author.\"",
+        "chinese": "皮兰德娄将其戏剧命名为《六个寻找作者的剧中人》。"
+      },
+      {
+        "english": "The single is titled \"White Love.\"",
+        "chinese": "这支单曲名为《白色之恋》。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "冠军；标题；头衔；权利；字幕",
+        "english": "the name given to a particular book, painting, play etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "加标题于；赋予头衔；把…称为",
+        "english": "When a writer, composer, or artist titles a work, they give it a name"
+      },
+      {
+        "pos": "adj",
+        "chinese": "冠军的；标题的；头衔的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "author",
+    "trans": [
+      "n. 作者"
+    ],
+    "usphone": "'ɔθɚ",
+    "ukphone": "'ɔːθə",
+    "sentences": [
+      {
+        "english": "Nothomb is a Belgian author.",
+        "chinese": "诺东是位比利时作家。"
+      },
+      {
+        "english": "It’s clear that the author is a woman.",
+        "chinese": "显然，这位作者是女性。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "作者，作家",
+        "english": "someone who has written a book"
+      }
+    ]
+  },
+  {
+    "name": "index",
+    "trans": [
+      "n. 索引"
+    ],
+    "usphone": "'ɪndɛks",
+    "ukphone": "'ɪndeks",
+    "sentences": [
+      {
+        "english": "...the consumer price index.",
+        "chinese": "…消费价格指数。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "指数",
+        "english": "a standard by which the level of something can be judged or measured"
+      }
+    ]
+  },
+  {
+    "name": "deadline",
+    "trans": [
+      "n. 截止日期"
+    ],
+    "usphone": "ˈdedlaɪn",
+    "ukphone": "'dedlaɪn",
+    "sentences": [
+      {
+        "english": "I’m always working under pressure to meet deadlines (= finish something on time ) .",
+        "chinese": "我总是在赶工期的压力下工作。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 最后期限",
+        "english": "a date or time by which you have to do or complete something"
+      }
+    ]
+  },
+  {
+    "name": "expire",
+    "trans": [
+      "v. 期满，终止"
+    ],
+    "usphone": "ɪk'spaɪɚ",
+    "ukphone": "ɪk'spaɪə; ek-",
+    "sentences": [
+      {
+        "english": "My passport expires next week.",
+        "chinese": "我的护照下周就到期了。"
+      },
+      {
+        "english": "Ophelia expires in Act IV of Hamlet.",
+        "chinese": "奥菲莉娅在《哈姆雷特》第四幕中死去。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "满期，到期；断气",
+        "english": "(of a document, an agreement, etc.) to be no longer valid because the period of time for which it could be used has ended"
+      }
+    ]
+  },
+  {
+    "name": "expiry",
+    "trans": [
+      "n. 期满，终止"
+    ],
+    "usphone": "ɪk'spaɪəri",
+    "ukphone": "ɪk'spaɪrɪ; ek-",
+    "sentences": [
+      {
+        "english": "The United Mine Workers are not on strike today, despite the expiry of their contract at midnight.",
+        "chinese": "联合矿业工会今天没有罢工，尽管他们的合同于午夜期满。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "满期，逾期；呼气；终结",
+        "english": "The expiry of something such as a contract, deadline, or visa is the time that it comes to an end or stops being valid"
+      }
+    ]
+  },
+  {
+    "name": "recall",
+    "trans": [
+      "v. 召回，收回"
+    ],
+    "usphone": "'rikɔl",
+    "ukphone": "rɪ'kɔːl",
+    "sentences": [
+      {
+        "english": "You don’t happen to recall his name, do you?",
+        "chinese": "你不会恰巧还想得起他的名字吧？"
+      },
+      {
+        "english": "As I recall, it was you who suggested this idea in the first place.",
+        "chinese": "我记得，是你首先提出这个想法的。"
+      },
+      {
+        "english": "Cole was recalled to the squad to replace the injured Quinn.",
+        "chinese": "科尔被召回队里代替受伤的奎因。"
+      },
+      {
+        "english": "The cars had to be recalled due to an engine fault.",
+        "chinese": "由于发动机缺陷，那些汽车必须召回。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "回想；叫回；收回",
+        "english": "to remember a particular fact, event, or situation from the past"
+      }
+    ]
+  },
+  {
+    "name": "renew",
+    "trans": [
+      "v. 更新"
+    ],
+    "usphone": "rɪ'nʊ",
+    "ukphone": "rɪ'njuː",
+    "sentences": [
+      {
+        "english": "The window frames need to be renewed.",
+        "chinese": "窗框需要换新的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "使更新",
+        "english": "to remove something that is old or broken and put a new one in its place"
+      },
+      {
+        "pos": "v",
+        "chinese": "更新",
+        "english": "to begin doing something again after a period of not doing it"
+      }
+    ]
+  },
+  {
+    "name": "renewal",
+    "trans": [
+      "n. 更新"
+    ],
+    "usphone": "rɪ'nuəl",
+    "ukphone": "rɪ'njuːəl",
+    "sentences": [
+      {
+        "english": "Mark’s contract comes up for renewal at the end of this year.",
+        "chinese": "马克的合同将在今年年末到期，需要续签。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "更新，恢复；复兴；补充；革新；续借；重申",
+        "english": "when an activity, situation, or process begins again after a period when it had stopped"
+      }
+    ]
+  },
+  {
+    "name": "due",
+    "trans": [
+      "adj. 到期的"
+    ],
+    "usphone": "du",
+    "ukphone": "djuː",
+    "sentences": [
+      {
+        "english": "The team are due to fly to Italy next month.",
+        "chinese": "该球队预定下个月飞往意大利。"
+      },
+      {
+        "english": "Any money due you will be sent by cheque through the post.",
+        "chinese": "应该支付给你的款项将会以支票邮寄给你。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "预期的；应给的",
+        "english": "expected to happen or arrive at a particular time"
+      }
+    ]
+  },
+  {
+    "name": "overdue",
+    "trans": [
+      "adj. 过期的"
+    ],
+    "usphone": "'ovɚ'dʊ",
+    "ukphone": "əʊvə'djuː",
+    "sentences": [
+      {
+        "english": "an overdue gas bill",
+        "chinese": "逾期未付的煤气账单"
+      },
+      {
+        "english": "The library books are overdue.",
+        "chinese": "图书馆的书过期未还。"
+      },
+      {
+        "english": "The baby was a week overdue (= it was expected to be born a week ago ).",
+        "chinese": "宝宝超过预产期有一周了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "过期未付的",
+        "english": "not done, paid, returned etc by the time expected"
+      }
+    ]
+  },
+  {
+    "name": "fine",
+    "trans": [
+      "v. 罚款",
+      "n. 罚款"
+    ],
+    "usphone": "faɪn",
+    "ukphone": "faɪn",
+    "sentences": [
+      {
+        "english": "Many people regard Beethoven’s fifth symphony as his finest work.",
+        "chinese": "很多人认为贝多芬的第五交响曲是他最杰出的作品。"
+      },
+      {
+        "english": "He’s a very fine player.",
+        "chinese": "他是个很优秀的选手。"
+      },
+      {
+        "english": "It’s a fine idea.",
+        "chinese": "这是个很妙的主意。"
+      },
+      {
+        "english": "Hatfield House is a fine example of Jacobean architecture.",
+        "chinese": "哈特菲尔德宅第是英王詹姆斯一世时期建筑的典范。"
+      },
+      {
+        "english": "The restaurant was chosen for its good food and fine wines .",
+        "chinese": "这家餐厅因其美酒佳肴而入选。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "美好的；纤细的",
+        "english": "very good or of a very high standard"
+      }
+    ]
+  },
+  {
+    "name": "available",
+    "trans": [
+      "adj. 可获得的"
+    ],
+    "usphone": "ə'veləbl",
+    "ukphone": "ə'veiləbl",
+    "sentences": [
+      {
+        "english": "Tickets are available from the box office.",
+        "chinese": "售票处有票出售。"
+      },
+      {
+        "english": "Meetings were held to update employees as soon as new information became available .",
+        "chinese": "一有新的信息就开会告诉员工。"
+      },
+      {
+        "english": "Further building can continue when money is made available .",
+        "chinese": "有了资金就可以继续进一步的施工。"
+      },
+      {
+        "english": "Every available space on the wall was covered in pictures.",
+        "chinese": "墙上每一个可用的地方都挂上了画。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "可利用的，现有的；可获得的",
+        "english": "something that is available is able to be used or can easily be bought or found"
+      }
+    ]
+  },
+  {
+    "name": "circulation",
+    "trans": [
+      "n. 流通"
+    ],
+    "usphone": ",sɝkjə'leʃən",
+    "ukphone": "sɜːkjʊ'leɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Exercise improves the circulation.",
+        "chinese": "运动能促进血液循环。"
+      },
+      {
+        "english": "The Treasury Department plans to remove older coins from circulation and replace them with new ones.",
+        "chinese": "财政部打算收回市面上流通的旧版硬币，以新版取代。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "血液循环；（资料、货币等）流通",
+        "english": "the movement of blood around your body"
+      }
+    ]
+  },
+  {
+    "name": "stock",
+    "trans": [
+      "n. 库存，储备"
+    ],
+    "usphone": "stɑk",
+    "ukphone": "stɒk",
+    "sentences": [
+      {
+        "english": "We stock a wide range of kitchen equipment.",
+        "chinese": "我们备有各种厨房用品。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "储备",
+        "english": "if a shop stocks a particular product, it keeps a supply of it to sell"
+      },
+      {
+        "pos": "adj",
+        "chinese": " 常用的， 常备的",
+        "english": "something that is available in a shop and does not have to be ordered"
+      },
+      {
+        "pos": "n",
+        "chinese": "原料，库存品；股本，公债；世系，血统；汤汁；家畜，牲畜",
+        "english": "a liquid made by boiling meat or bones and vegetables, which is used to make soups or to add  flavour  to other dishes"
+      }
+    ]
+  },
+  {
+    "name": "loan",
+    "trans": [
+      "v. 借出",
+      "n. 借出物"
+    ],
+    "usphone": "lon",
+    "ukphone": "ləʊn",
+    "sentences": [
+      {
+        "english": "We obtained a loan from the government.",
+        "chinese": "我们得了一笔政府贷款。"
+      },
+      {
+        "english": "If you ask him for a loan, he'll come through.",
+        "chinese": "如果你向他贷款，他会满足你的要求的。"
+      },
+      {
+        "english": "The company won't keep going unless we can get some loan.",
+        "chinese": "除非我们能搞到贷款，否则公司就维持不下去了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "贷款",
+        "english": "an amount of money that you borrow from a bank etc"
+      }
+    ]
+  },
+  {
+    "name": "inter library service",
+    "trans": [
+      "n. 馆际服务"
+    ]
+  }
 ]

@@ -1,470 +1,1966 @@
 [
-    {
-        "name": "your",
-        "trans": [
-            "refers to something that belongs to the person being addressed."
-        ],
-        "usphone": "jʊər; jʊr",
-        "ukphone": "jɔ:(r)"
-    },
-    {
-        "name": "I",
-        "trans": [
-            "refers to the speaker, the person who is speaking or writing."
-        ]
-    },
-    {
-        "name": "they",
-        "trans": [
-            "refers to a group of people or things being discussed or referred to."
-        ],
-        "usphone": "ðe",
-        "ukphone": "ðeɪ"
-    },
-    {
-        "name": "their",
-        "trans": [
-            "refers to something that belongs to a group of people being discussed or referred to."
-        ],
-        "usphone": "ðɛr",
-        "ukphone": "ðeə"
-    },
-    {
-        "name": "we",
-        "trans": [
-            "refers to a group of people including the speaker."
-        ],
-        "usphone": "wi",
-        "ukphone": "wiː"
-    },
-    {
-        "name": "who",
-        "trans": [
-            "used to ask about a person or people being discussed or referred to."
-        ],
-        "usphone": "hu",
-        "ukphone": "huː; hʊ"
-    },
-    {
-        "name": "them",
-        "trans": [
-            "refers to a group of people or things being discussed or referred to."
-        ],
-        "usphone": "ðɛm; ðəm",
-        "ukphone": "ðem; ðəm"
-    },
-    {
-        "name": "its",
-        "trans": [
-            "refers to something that belongs to an animal, object, or thing being discussed or referred to."
-        ],
-        "usphone": "ɪts",
-        "ukphone": "ɪts"
-    },
-    {
-        "name": "our",
-        "trans": [
-            "refers to something that belongs to a group of people including the speaker."
-        ],
-        "usphone": "aʊr",
-        "ukphone": "aʊə"
-    },
-    {
-        "name": "my",
-        "trans": [
-            "refers to something that belongs to the speaker."
-        ],
-        "usphone": "maɪ",
-        "ukphone": "maɪ"
-    },
-    {
-        "name": "those",
-        "trans": [
-            "refers to a specific group of things being discussed or referred to that are not nearby."
-        ],
-        "usphone": "ðoz",
-        "ukphone": "ðəʊz"
-    },
-    {
-        "name": "he",
-        "trans": [
-            "refers to a specific male person being discussed or referred to."
-        ],
-        "usphone": "hi",
-        "ukphone": "hiː"
-    },
-    {
-        "name": "us",
-        "trans": [
-            "refers to a group of people including the speaker."
-        ],
-        "usphone": "əs; ʌs",
-        "ukphone": "əs; ʌs"
-    },
-    {
-        "name": "her",
-        "trans": [
-            "refers to a specific female person being discussed or referred to."
-        ],
-        "usphone": "hɚ",
-        "ukphone": "hɜː"
-    },
-    {
-        "name": "something",
-        "trans": [
-            "refers to a thing or object being discussed or referred to without specifying what it is."
-        ],
-        "usphone": "'sʌmθɪŋ",
-        "ukphone": "'sʌmθɪŋ"
-    },
-    {
-        "name": "me",
-        "trans": [
-            "refers to the speaker, the person who is speaking or writing."
-        ],
-        "usphone": "mi",
-        "ukphone": "miː"
-    },
-    {
-        "name": "yourself",
-        "trans": [
-            "refers to the person being addressed, or the reflexive form of you."
-        ],
-        "usphone": "jɔr'sɛlf",
-        "ukphone": "jɔː'self; jʊə-; jə-"
-    },
-    {
-        "name": "someone",
-        "trans": [
-            "refers to a person who is not known or specified."
-        ],
-        "usphone": "'sʌmwʌn",
-        "ukphone": "'sʌmwʌn"
-    },
-    {
-        "name": "everything",
-        "trans": [
-            "refers to all things, or the entirety of something."
-        ],
-        "usphone": "'ɛvrɪ'θɪŋ",
-        "ukphone": "'evrɪθɪŋ"
-    },
-    {
-        "name": "itself",
-        "trans": [
-            "refers to a thing or object being discussed, or the reflexive form of it."
-        ],
-        "usphone": "ɪt'sɛlf",
-        "ukphone": "ɪt'self"
-    },
-    {
-        "name": "everyone",
-        "trans": [
-            "refers to every person, or all members of a group."
-        ],
-        "usphone": "'ɛvrɪwʌn",
-        "ukphone": "'evrɪwʌn"
-    },
-    {
-        "name": "themselves",
-        "trans": [
-            "refers to multiple people or things being discussed, or the reflexive form of they."
-        ],
-        "usphone": "ðɛm'sɛlvz",
-        "ukphone": "ð(ə)m'selvz"
-    },
-    {
-        "name": "anyone",
-        "trans": [
-            "refers to any person, or a person who is not known or specified."
-        ],
-        "usphone": "'ɛnɪ'wʌn",
-        "ukphone": "'enɪwʌn"
-    },
-    {
-        "name": "him",
-        "trans": [
-            "refers to a male person being discussed or referred to."
-        ],
-        "usphone": "hɪm",
-        "ukphone": "hɪm"
-    },
-    {
-        "name": "whose",
-        "trans": [
-            "used to ask about or indicate possession."
-        ],
-        "usphone": "huz",
-        "ukphone": "huːz"
-    },
-    {
-        "name": "myself",
-        "trans": [
-            "refers to the speaker, or the reflexive form of I."
-        ],
-        "usphone": "maɪ'sɛlf",
-        "ukphone": "maɪ'self"
-    },
-    {
-        "name": "everybody",
-        "trans": [
-            "refers to every person, or all members of a group."
-        ],
-        "usphone": "'ɛvrɪbɑdi",
-        "ukphone": "'evrɪbɒdɪ"
-    },
-    {
-        "name": "ourselves",
-        "trans": [
-            "refers to the group of people who are speaking, or the reflexive form of we."
-        ],
-        "usphone": "ɑr'sɛlvz",
-        "ukphone": "aʊə'selvz"
-    },
-    {
-        "name": "himself",
-        "trans": [
-            "refers to a male person being discussed or referred to."
-        ],
-        "usphone": "hɪm'sɛlf",
-        "ukphone": "hɪm'self"
-    },
-    {
-        "name": "somebody",
-        "trans": [
-            "refers to a person who is not known or specified."
-        ],
-        "usphone": "'sʌmbədi",
-        "ukphone": "'sʌmbədɪ"
-    },
-    {
-        "name": "yours",
-        "trans": [
-            "refers to something that belongs to the person being addressed."
-        ],
-        "usphone": "jʊrz",
-        "ukphone": "jɔːz; jʊəz"
-    },
-    {
-        "name": "herself",
-        "trans": [
-            "refers to a female person being discussed or referred to."
-        ],
-        "usphone": "hɝ'sɛlf",
-        "ukphone": "hɜː'self"
-    },
-    {
-        "name": "whoever",
-        "trans": [
-            "refers to any person who."
-        ],
-        "usphone": "hʊ'ɛvɚ",
-        "ukphone": "huːˈɛvə"
-    },
-    {
-        "name": "you",
-        "trans": [
-            "refers to the person being addressed."
-        ],
-        "usphone": "ju",
-        "ukphone": "juː"
-    },
-    {
-        "name": "that",
-        "trans": [
-            "refers to a specific thing or idea being discussed."
-        ],
-        "usphone": "ðæt",
-        "ukphone": "ðæt; ðət"
-    },
-    {
-        "name": "it",
-        "trans": [
-            "refers to a thing or object being discussed."
-        ],
-        "usphone": "ɪt",
-        "ukphone": "ɪt"
-    },
-    {
-        "name": "this",
-        "trans": [
-            "refers to a specific thing or idea being discussed."
-        ],
-        "usphone": "ðɪs",
-        "ukphone": "ðɪs"
-    },
-    {
-        "name": "what",
-        "trans": [
-            "used to ask about something or indicate surprise."
-        ],
-        "usphone": "hwɒt; hwɑt",
-        "ukphone": "wɒt"
-    },
-    {
-        "name": "which",
-        "trans": [
-            "used to indicate one or more alternatives."
-        ],
-        "usphone": "wɪtʃ",
-        "ukphone": "wɪtʃ"
-    },
-    {
-        "name": "these",
-        "trans": [
-            "refers to specific things being discussed or referred to."
-        ],
-        "usphone": "ðiz",
-        "ukphone": "ðiːz"
-    },
-    {
-        "name": "his",
-        "trans": [
-            "refers to something that belongs to a male person being discussed or referred to."
-        ],
-        "usphone": "hɪz",
-        "ukphone": "hɪz"
-    },
-    {
-        "name": "she",
-        "trans": [
-            "refers to a female person being discussed or referred to."
-        ],
-        "usphone": "ʃi",
-        "ukphone": "ʃiː"
-    },
-    {
-        "name": "lot",
-        "trans": [
-            "refers to a large number or amount of something."
-        ],
-        "usphone": "lɑt",
-        "ukphone": "lɒt"
-    },
-    {
-        "name": "anything",
-        "trans": [
-            "refers to any thing, or a thing that is not known or specified."
-        ],
-        "usphone": "'ɛnɪ'θɪŋ",
-        "ukphone": "'enɪθɪŋ"
-    },
-    {
-        "name": "whatever",
-        "trans": [
-            "refers to any thing or idea, or an unspecified thing or idea."
-        ],
-        "usphone": "wət'ɛvɚ",
-        "ukphone": "wɒt'evə"
-    },
-    {
-        "name": "nobody",
-        "trans": [
-            "refers to no person, or a person who is not present or specified."
-        ],
-        "usphone": "'nəubədi, -bɔdi",
-        "ukphone": "'nəʊbədɪ"
-    },
-    {
-        "name": "none",
-        "trans": [
-            "refers to no one or nothing, or an absence of someone or something."
-        ],
-        "usphone": "nʌn",
-        "ukphone": "nʌn"
-    },
-    {
-        "name": "mine",
-        "trans": [
-            "refers to something that belongs to the speaker."
-        ],
-        "usphone": "maɪn",
-        "ukphone": "maɪn"
-    },
-    {
-        "name": "anybody",
-        "trans": [
-            "refers to any person, or a person who is not known or specified."
-        ],
-        "usphone": "'ɛnɪbɑdi",
-        "ukphone": "'enɪbɒdɪ"
-    },
-    {
-        "name": "some",
-        "trans": [
-            "refers to a certain amount or number of something, or an unspecified amount or number."
-        ],
-        "usphone": "sʌm;səm",
-        "ukphone": "sʌm;səm"
-    },
-    {
-        "name": "there",
-        "trans": [
-            "refers to a place or location being discussed or referred to."
-        ],
-        "usphone": "ðɛr",
-        "ukphone": "ðeə; ðə"
-    },
-    {
-        "name": "all",
-        "trans": [
-            "refers to everything or everyone being discussed or referred to."
-        ],
-        "usphone": "ɔl",
-        "ukphone": "ɔːl"
-    },
-    {
-        "name": "where",
-        "trans": [
-            "used to ask about a place or location."
-        ],
-        "usphone": "hweə(r); hwɛr",
-        "ukphone": "weə"
-    },
-    {
-        "name": "another",
-        "trans": [
-            "refers to an additional person or thing, or a person or thing that is different from one already mentioned."
-        ],
-        "usphone": "ə'nʌðɚ",
-        "ukphone": "ə'nʌðə"
-    },
-    {
-        "name": "same",
-        "trans": [
-            "refers to something that is identical or similar to something else."
-        ],
-        "usphone": "sem",
-        "ukphone": "seɪm"
-    },
-    {
-        "name": "certain",
-        "trans": [
-            "refers to a specific thing or idea being discussed, or a thing or idea that is known or definite."
-        ],
-        "usphone": "'sɝtn",
-        "ukphone": "'sɜːt(ə)n; -tɪn"
-    },
-    {
-        "name": "nothing",
-        "trans": [
-            "refers to no thing or idea, or an absence of something."
-        ],
-        "usphone": "'nʌθɪŋ",
-        "ukphone": "'nʌθɪŋ"
-    },
-    {
-        "name": "self",
-        "trans": [
-            "refers to the individual person being discussed or referred to."
-        ]
-    },
-    {
-        "name": "nowhere",
-        "trans": [
-            "refers to no place or location, or a place or location that is not known or specified."
-        ],
-        "usphone": "'no'wɛr",
-        "ukphone": "'nəʊhweə"
-    }
+  {
+    "name": "your",
+    "trans": [
+      "refers to something that belongs to the person being addressed."
+    ],
+    "usphone": "jʊər; jʊr",
+    "ukphone": "jɔ:(r)",
+    "sentences": [
+      {
+        "english": "You should keep in with your colleagues.",
+        "chinese": "你应当与你的同事友好相处。"
+      },
+      {
+        "english": "You should not deprecate your own worth.",
+        "chinese": "你不应该贬低你自己的价值。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "你的，你们的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "I",
+    "trans": [
+      "refers to the speaker, the person who is speaking or writing."
+    ],
+    "usphone": "",
+    "ukphone": "aɪ",
+    "sentences": [
+      {
+        "english": "I moved to this city six years ago.",
+        "chinese": "六年前我搬到了这个城市。"
+      },
+      {
+        "english": "I’m not late again, am I?",
+        "chinese": "我没有又迟到吧？"
+      },
+      {
+        "english": "My husband and I enjoy going to the theatre.",
+        "chinese": "我和丈夫喜欢去剧院看戏。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "（主格）我",
+        "english": "used by the person speaking or writing to refer to himself or herself"
+      }
+    ]
+  },
+  {
+    "name": "they",
+    "trans": [
+      "refers to a group of people or things being discussed or referred to."
+    ],
+    "usphone": "ðe",
+    "ukphone": "ðeɪ",
+    "sentences": [
+      {
+        "english": "Bob and Sue said they wouldn’t be able to come.",
+        "chinese": "鲍勃和休说他们来不了。"
+      },
+      {
+        "english": "Ken gave me some flowers. Aren’t they beautiful?",
+        "chinese": "肯送给我一些花。很漂亮吧？"
+      },
+      {
+        "english": "They all want to come to the wedding.",
+        "chinese": "他们都想来参加婚礼。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "他们；它们；她们",
+        "english": "used to refer to two or more people or things that have already been mentioned or are already known about"
+      }
+    ]
+  },
+  {
+    "name": "their",
+    "trans": [
+      "refers to something that belongs to a group of people being discussed or referred to."
+    ],
+    "usphone": "ðɛr",
+    "ukphone": "ðeə",
+    "sentences": [
+      {
+        "english": "They have their compensations.",
+        "chinese": "他们有他们的报酬。"
+      },
+      {
+        "english": "My pulses, her pulses, their pulses.",
+        "chinese": "我的脉搏，她的脉搏，他们的脉搏。"
+      },
+      {
+        "english": "In America, they go out with their friends.",
+        "chinese": "在美国，他们与他们的朋友出去。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj&pron",
+        "chinese": " 他们的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "we",
+    "trans": [
+      "refers to a group of people including the speaker."
+    ],
+    "usphone": "wi",
+    "ukphone": "wiː",
+    "sentences": [
+      {
+        "english": "‘Did you go into the supermarket?’ ‘No, we didn’t.’",
+        "chinese": "“你们进超级市场了吗？”“我们没有进去。”"
+      },
+      {
+        "english": "Shall we stop for a coffee?",
+        "chinese": "我们停下来喝杯咖啡好吗？"
+      },
+      {
+        "english": "So we all travelled down to Brighton together.",
+        "chinese": "所以我们一起都去了布赖顿。"
+      },
+      {
+        "english": "We declare our support for a government of national unity.",
+        "chinese": "我们宣布支持一个全国统一的政府。"
+      },
+      {
+        "english": "We Italians are proud of our history.",
+        "chinese": "我们意大利人为自己的历史感到自豪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "我们（主格）；笔者，本人（作者或演讲人使用）；朕，寡人",
+        "english": "used by the person speaking or writing to refer to himself or herself and one or more other people"
+      },
+      {
+        "pos": "n",
+        "chinese": "(We)人名；(缅)韦",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "who",
+    "trans": [
+      "used to ask about a person or people being discussed or referred to."
+    ],
+    "usphone": "hu",
+    "ukphone": "huː; hʊ",
+    "sentences": [
+      {
+        "english": "Who locked the door?",
+        "chinese": "谁锁的门？"
+      },
+      {
+        "english": "Who do you work for?",
+        "chinese": "你为谁工作？"
+      },
+      {
+        "english": "Who’s that guy with your wife?",
+        "chinese": "和你妻子在一起的那个人是谁？"
+      },
+      {
+        "english": "They never found out who the murderer was.",
+        "chinese": "他们一直未查出谁是凶犯。"
+      },
+      {
+        "english": "She wondered who had sent the flowers.",
+        "chinese": "她不知道是谁送的花。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "谁；什么人",
+        "english": "used to ask or talk about which person is involved, or what the name of a person is"
+      }
+    ]
+  },
+  {
+    "name": "them",
+    "trans": [
+      "refers to a group of people or things being discussed or referred to."
+    ],
+    "usphone": "ðɛm; ðəm",
+    "ukphone": "ðem; ðəm",
+    "sentences": [
+      {
+        "english": "Has anyone seen my keys? I can’t find them anywhere.",
+        "chinese": "有人见到我的钥匙吗？我哪儿都找不到。"
+      },
+      {
+        "english": "The police were very helpful when I spoke to them.",
+        "chinese": "我和警察说了，他们很帮忙。"
+      },
+      {
+        "english": "I lent him several books, but he hasn’t read any of them.",
+        "chinese": "我借给他几本书，但他一本还没看过。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "他们；它们；她们",
+        "english": "used to refer to two or more people or things that have already been mentioned or are already known about"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Them)人名；(老)探",
+        "english": "used when talking about someone who may be male or female, to avoid saying ‘him or her’"
+      }
+    ]
+  },
+  {
+    "name": "its",
+    "trans": [
+      "refers to something that belongs to an animal, object, or thing being discussed or referred to."
+    ],
+    "usphone": "ɪts",
+    "ukphone": "ɪts",
+    "sentences": [
+      {
+        "english": "He emphasized its importance to me.",
+        "chinese": "他向我强调它的重要性。"
+      },
+      {
+        "english": "The child read the story but did not comprehend its meaning.",
+        "chinese": "这个孩子读了这篇故事，但不能理解它的意思。"
+      },
+      {
+        "english": "The company disseminated information about its new programmes.",
+        "chinese": "公司传播有关其新计划的信息。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "它的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "our",
+    "trans": [
+      "refers to something that belongs to a group of people including the speaker."
+    ],
+    "usphone": "aʊr",
+    "ukphone": "aʊə",
+    "sentences": [
+      {
+        "english": "They partook of our triumph.",
+        "chinese": "他们分享我们的胜利。"
+      },
+      {
+        "english": "She spread our lunch on the grass.",
+        "chinese": "她在草地上摆好了我们的午饭。"
+      },
+      {
+        "english": "We avenged ourselves on  our enemy.",
+        "chinese": "我们向我们的敌人报仇。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "我们的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "my",
+    "trans": [
+      "refers to something that belongs to the speaker."
+    ],
+    "usphone": "maɪ",
+    "ukphone": "maɪ",
+    "sentences": [
+      {
+        "english": "All my friends do not smoke.",
+        "chinese": "我的朋友并不全都吸烟。"
+      },
+      {
+        "english": "Then you must be my cousin.",
+        "chinese": "那么你一定是我的远亲了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "我的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "those",
+    "trans": [
+      "refers to a specific group of things being discussed or referred to that are not nearby."
+    ],
+    "usphone": "ðoz",
+    "ukphone": "ðəʊz",
+    "sentences": [
+      {
+        "english": "He dotted down those notes.",
+        "chinese": "他匆匆记下了那些注解。"
+      },
+      {
+        "english": "She ganged up on me with those rough boys.",
+        "chinese": "她伙同那些粗野的男孩对付我。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "那些的",
+        "english": ""
+      },
+      {
+        "pos": "pron",
+        "chinese": "那些（that的复数）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "he",
+    "trans": [
+      "refers to a specific male person being discussed or referred to."
+    ],
+    "usphone": "hi",
+    "ukphone": "hiː",
+    "sentences": [
+      {
+        "english": "‘Where’s Paul?’ ‘He’s gone to the cinema.’",
+        "chinese": "“保罗在哪儿？”“他去看电影了。”"
+      },
+      {
+        "english": "It was he who first suggested the idea.",
+        "chinese": "是他先提出这个想法的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "（主格）他",
+        "english": "used to refer to a man, boy, or male animal that has already been mentioned or is already known about"
+      }
+    ]
+  },
+  {
+    "name": "us",
+    "trans": [
+      "refers to a group of people including the speaker."
+    ],
+    "usphone": "əs; ʌs",
+    "ukphone": "əs; ʌs",
+    "sentences": [
+      {
+        "english": "Please help us.",
+        "chinese": "请帮助我们。"
+      },
+      {
+        "english": "He arranged for us all to have a drink.",
+        "chinese": "他安排我们大家一起喝一杯。"
+      },
+      {
+        "english": "She’s invited us both.",
+        "chinese": "我们俩她都请了。"
+      },
+      {
+        "english": "My mother is coming to stay with us.",
+        "chinese": "我妈要来和我们同住。"
+      },
+      {
+        "english": "Send us a donation now.",
+        "chinese": "现在就给我们捐款吧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "我们",
+        "english": "used by the person speaking or writing to refer to himself or herself and one or more other people"
+      }
+    ]
+  },
+  {
+    "name": "her",
+    "trans": [
+      "refers to a specific female person being discussed or referred to."
+    ],
+    "usphone": "hɚ",
+    "ukphone": "hɜː",
+    "sentences": [
+      {
+        "english": "Jane? I don’t really know her.",
+        "chinese": "简？我不太认识她。"
+      },
+      {
+        "english": "Margaret wants me to go with her.",
+        "chinese": "玛格丽特想让我和她一起去。"
+      },
+      {
+        "english": "Give her the keys.",
+        "chinese": "把钥匙给她。"
+      },
+      {
+        "english": "Her room was pleasant and airy.",
+        "chinese": "她的房间既舒适又通风。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "（宾格）她",
+        "english": "used to refer to a woman, girl, or female animal that has already been mentioned or is already known about"
+      },
+      {
+        "pos": "determiner.",
+        "chinese": "她的",
+        "english": "belonging to or connected with a woman, girl, or female animal that has already been mentioned"
+      }
+    ]
+  },
+  {
+    "name": "something",
+    "trans": [
+      "refers to a thing or object being discussed or referred to without specifying what it is."
+    ],
+    "usphone": "'sʌmθɪŋ",
+    "ukphone": "'sʌmθɪŋ",
+    "sentences": [
+      {
+        "english": "There’s something in my eye.",
+        "chinese": "我眼睛里有什么东西。"
+      },
+      {
+        "english": "Sarah said something about coming over later.",
+        "chinese": "萨拉说她等一会儿过来什么的。"
+      },
+      {
+        "english": "I don’t know what he does exactly, but I know it has something to do with computers (= is related to them in some way ) .",
+        "chinese": "我不知道他具体是干什么的，只知道和电脑有关。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "某事；某物",
+        "english": "used to mean a particular thing when you do not know its name or do not know exactly what it is"
+      },
+      {
+        "pos": "n",
+        "chinese": "重要的人；值得重视的事",
+        "english": ""
+      },
+      {
+        "pos": "adv",
+        "chinese": "非常；有点；大约",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "大约；有点象",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "me",
+    "trans": [
+      "refers to the speaker, the person who is speaking or writing."
+    ],
+    "usphone": "mi",
+    "ukphone": "miː",
+    "sentences": [
+      {
+        "english": "Stop, you’re hurting me.",
+        "chinese": "住手，你弄疼我了。"
+      },
+      {
+        "english": "He bought me a drink.",
+        "chinese": "他给我买了一杯酒。"
+      },
+      {
+        "english": "Give that book to me.",
+        "chinese": "把那本书给我。"
+      },
+      {
+        "english": "She’s two years older than me.",
+        "chinese": "她比我大两岁。"
+      },
+      {
+        "english": "That’s me, standing on the left.",
+        "chinese": "那是我，站在左边的那一个。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "（宾格）我",
+        "english": "used by the person speaking or writing to refer to himself or herself"
+      }
+    ]
+  },
+  {
+    "name": "yourself",
+    "trans": [
+      "refers to the person being addressed, or the reflexive form of you."
+    ],
+    "usphone": "jɔr'sɛlf",
+    "ukphone": "jɔː'self; jʊə-; jə-",
+    "sentences": [
+      {
+        "english": "Look at yourself in the mirror.",
+        "chinese": "照照镜子吧。"
+      },
+      {
+        "english": "Come and warm yourselves by the fire.",
+        "chinese": "到火边来暖暖身子。"
+      },
+      {
+        "english": "Have you hurt yourself?",
+        "chinese": "你伤到自己了吗？"
+      },
+      {
+        "english": "Go and buy yourself an ice cream.",
+        "chinese": "去给你自己买个冰激凌吧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "你自己",
+        "english": "used when talking to someone to show that they are affected by their own action"
+      }
+    ]
+  },
+  {
+    "name": "someone",
+    "trans": [
+      "refers to a person who is not known or specified."
+    ],
+    "usphone": "'sʌmwʌn",
+    "ukphone": "'sʌmwʌn",
+    "sentences": [
+      {
+        "english": "What would you do if someone tried to rob you in the street?",
+        "chinese": "要是有人在街上抢劫你，你会怎么办？"
+      },
+      {
+        "english": "Will someone please explain what’s going on?",
+        "chinese": "谁能说说是怎么回事？"
+      },
+      {
+        "english": "Have Brooks or someone fax this to New York right away.",
+        "chinese": "叫布鲁克斯或谁立刻把这个发传真到纽约。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "有人，某人",
+        "english": "used to mean a person, when you do not know or do not say who the person is"
+      }
+    ]
+  },
+  {
+    "name": "everything",
+    "trans": [
+      "refers to all things, or the entirety of something."
+    ],
+    "usphone": "'ɛvrɪ'θɪŋ",
+    "ukphone": "'evrɪθɪŋ",
+    "sentences": [
+      {
+        "english": "Everything was covered in a thick layer of dust.",
+        "chinese": "所有东西上面都蒙着厚厚一层灰。"
+      },
+      {
+        "english": "I decided to tell her everything.",
+        "chinese": "我决定把一切都告诉她。"
+      },
+      {
+        "english": "Apart from the bus arriving late, everything else seemed to be going according to plan.",
+        "chinese": "除了公共汽车晚点之外，其他一切似乎都在按计划进行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "每件事，事事",
+        "english": "each thing or all things"
+      }
+    ]
+  },
+  {
+    "name": "itself",
+    "trans": [
+      "refers to a thing or object being discussed, or the reflexive form of it."
+    ],
+    "usphone": "ɪt'sɛlf",
+    "ukphone": "ɪt'self",
+    "sentences": [
+      {
+        "english": "The cat lay on the sofa, washing itself.",
+        "chinese": "猫躺在沙发上把自己舔干。"
+      },
+      {
+        "english": "The machine switches itself off when the process is complete.",
+        "chinese": "工作程序结束，机器会自动关闭。"
+      },
+      {
+        "english": "a small local enterprise that has transformed itself into a highly successful company",
+        "chinese": "已发展为业绩喜人的公司的一家小型地方企业"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "它自己；自身",
+        "english": "used to show that a thing, organization, animal, or baby that does something is affected by its own action"
+      }
+    ]
+  },
+  {
+    "name": "everyone",
+    "trans": [
+      "refers to every person, or all members of a group."
+    ],
+    "usphone": "'ɛvrɪwʌn",
+    "ukphone": "'evrɪwʌn",
+    "sentences": [
+      {
+        "english": "If everyone is ready, I’ll begin.",
+        "chinese": "如果大家都准备好了，我就开始。"
+      },
+      {
+        "english": "Send my best wishes to everyone in the family.",
+        "chinese": "请向全家人致以最美好的祝愿。"
+      },
+      {
+        "english": "Of course everyone else thought it was hilarious!",
+        "chinese": "当然其他所有人都觉得好笑极了！"
+      },
+      {
+        "english": "Not everyone enjoys sport.",
+        "chinese": "并不是谁都喜欢体育运动的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "每人，人人",
+        "english": "every person"
+      }
+    ]
+  },
+  {
+    "name": "themselves",
+    "trans": [
+      "refers to multiple people or things being discussed, or the reflexive form of they."
+    ],
+    "usphone": "ðɛm'sɛlvz",
+    "ukphone": "ð(ə)m'selvz",
+    "sentences": [
+      {
+        "english": "Teachers have no choice but to take measures to protect themselves.",
+        "chinese": "教师们别无选择，只能采取措施来保护自己。"
+      },
+      {
+        "english": "Our neighbours have just bought themselves a jacuzzi.",
+        "chinese": "我们邻居刚刚买了一个按摩浴缸。"
+      },
+      {
+        "english": "The kids seem very pleased with themselves.",
+        "chinese": "那些孩子好像自得其乐。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "他们自己；他们亲自",
+        "english": "used to show that the people who do something are affected by their own action"
+      }
+    ]
+  },
+  {
+    "name": "anyone",
+    "trans": [
+      "refers to any person, or a person who is not known or specified."
+    ],
+    "usphone": "'ɛnɪ'wʌn",
+    "ukphone": "'enɪwʌn",
+    "sentences": [
+      {
+        "english": "Anyone could win tonight.",
+        "chinese": "今晚任何人都可能赢。"
+      },
+      {
+        "english": "They offer help and advice to anyone interested in becoming a teacher.",
+        "chinese": "他们为任何有兴趣当老师的人提供帮助和咨询。"
+      },
+      {
+        "english": "If anyone sees Lisa, ask her to call me.",
+        "chinese": "如果有谁看见莉萨，叫她打电话给我。"
+      },
+      {
+        "english": "Anyone else who is interested in going on the trip should see me at the end of this lesson.",
+        "chinese": "还有谁有兴趣参加此次旅行，下课来找我。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "任何人",
+        "english": "used to refer to any person, when it is not important to say exactly who"
+      }
+    ]
+  },
+  {
+    "name": "him",
+    "trans": [
+      "refers to a male person being discussed or referred to."
+    ],
+    "usphone": "hɪm",
+    "ukphone": "hɪm",
+    "sentences": [
+      {
+        "english": "Are you in love with him?",
+        "chinese": "你爱上他了吗？"
+      },
+      {
+        "english": "Why don’t you ask him yourself?",
+        "chinese": "你为什么不自己问他？"
+      },
+      {
+        "english": "He repeated what she had told him.",
+        "chinese": "他把她告诉他的话重复了一遍。"
+      },
+      {
+        "english": "I knew it was him as soon as I heard his voice.",
+        "chinese": "我一听声音就知道是他。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "（宾格）他",
+        "english": "used to refer to a man, boy, or male animal that has already been mentioned or is already known about"
+      }
+    ]
+  },
+  {
+    "name": "whose",
+    "trans": [
+      "used to ask about or indicate possession."
+    ],
+    "usphone": "huz",
+    "ukphone": "huːz",
+    "sentences": [
+      {
+        "english": "So who are your real friends and whose real friends are you?",
+        "chinese": "而谁是你的真正的朋友，你又是谁的真正的朋友呢？"
+      },
+      {
+        "english": "That’s the man whose house has burned down. ＃",
+        "chinese": "就是那个男人的房子被烧毁了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "谁的；（特指）那个人的",
+        "english": "used to ask which person or people a particular thing belongs to"
+      }
+    ]
+  },
+  {
+    "name": "myself",
+    "trans": [
+      "refers to the speaker, or the reflexive form of I."
+    ],
+    "usphone": "maɪ'sɛlf",
+    "ukphone": "maɪ'self",
+    "sentences": [
+      {
+        "english": "I blame myself for what has happened.",
+        "chinese": "发生这一切都怪我自己。"
+      },
+      {
+        "english": "I can look after myself.",
+        "chinese": "我可以照顾好自己。"
+      },
+      {
+        "english": "I’m making myself a sandwich.",
+        "chinese": "我在给自己做三明治。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "我自己；我亲自",
+        "english": "used by the person speaking or writing to show that they are affected by their own action"
+      }
+    ]
+  },
+  {
+    "name": "everybody",
+    "trans": [
+      "refers to every person, or all members of a group."
+    ],
+    "usphone": "'ɛvrɪbɑdi",
+    "ukphone": "'evrɪbɒdɪ",
+    "sentences": [
+      {
+        "english": "Everybody knows Tom.",
+        "chinese": "人人都认识汤姆。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "每人，人人",
+        "english": "everyone"
+      }
+    ]
+  },
+  {
+    "name": "ourselves",
+    "trans": [
+      "refers to the group of people who are speaking, or the reflexive form of we."
+    ],
+    "usphone": "ɑr'sɛlvz",
+    "ukphone": "aʊə'selvz",
+    "sentences": [
+      {
+        "english": "We prepared ourselves for the long journey ahead.",
+        "chinese": "我们为将要开始的长途旅行做好了准备。"
+      },
+      {
+        "english": "It was strange seeing ourselves on television.",
+        "chinese": "在电视上看到自己感觉很奇怪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "我们自己",
+        "english": "used by the person speaking to show that they and one or more other people are affected by their own action"
+      }
+    ]
+  },
+  {
+    "name": "himself",
+    "trans": [
+      "refers to a male person being discussed or referred to."
+    ],
+    "usphone": "hɪm'sɛlf",
+    "ukphone": "hɪm'self",
+    "sentences": [
+      {
+        "english": "He repossessed himself of his farm.",
+        "chinese": "他收回自己所有的农场。"
+      },
+      {
+        "english": "He barred himself in.",
+        "chinese": "他把自己关在里面。"
+      },
+      {
+        "english": "He stroked the name of himself with his pen.",
+        "chinese": "他用钢笔划掉了他自己的名字。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "他自己；他亲自",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "somebody",
+    "trans": [
+      "refers to a person who is not known or specified."
+    ],
+    "usphone": "'sʌmbədi",
+    "ukphone": "'sʌmbədɪ",
+    "sentences": [
+      {
+        "english": "There’s somebody waiting to see you.",
+        "chinese": "有人等着要见你。"
+      },
+      {
+        "english": "Somebody’s car alarm kept me awake all night.",
+        "chinese": "不知谁的汽车警报器吵得我整晚都无法入睡。"
+      },
+      {
+        "english": "‘Who can we get to babysit?’ ‘I’ll call Suzie or somebody .’",
+        "chinese": "“我们能请谁来看小孩呢？”“我会叫苏齐或别的什么人。”"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "某人，有人",
+        "english": "used to mean a person, when you do not know, or do not say who the person is"
+      }
+    ]
+  },
+  {
+    "name": "yours",
+    "trans": [
+      "refers to something that belongs to the person being addressed."
+    ],
+    "usphone": "jʊrz",
+    "ukphone": "jɔːz; jʊəz",
+    "sentences": [
+      {
+        "english": "This is our room, and yours is just across the hall.",
+        "chinese": "这是我们的房间，你们的在走廊那边。"
+      },
+      {
+        "english": "A lot of people have money problems, but yours are more serious than most people’s.",
+        "chinese": "许多人有财务问题，不过你的问题比大多数人的要严重。"
+      },
+      {
+        "english": "A cash prize of £10,000 or a new car – the choice is yours.  ",
+        "chinese": "一万英镑的奖金或一辆新车——随你选择。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "你（们）的东西；你的责任[义务]；你的家属；来信，尊函",
+        "english": "used when speaking or writing to one or more people to refer to something that belongs to them or is connected with them"
+      },
+      {
+        "pos": "adj",
+        "chinese": "你（们）的（东西）；信末署名前用语",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "herself",
+    "trans": [
+      "refers to a female person being discussed or referred to."
+    ],
+    "usphone": "hɝ'sɛlf",
+    "ukphone": "hɜː'self",
+    "sentences": [
+      {
+        "english": "She hurt herself.",
+        "chinese": "她弄伤了自己。"
+      },
+      {
+        "english": "She must be very proud of herself.",
+        "chinese": "她一定非常自豪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "她自己；她亲自",
+        "english": "used when the woman or girl who performs an action is also affected by it"
+      }
+    ]
+  },
+  {
+    "name": "whoever",
+    "trans": [
+      "refers to any person who."
+    ],
+    "usphone": "hʊ'ɛvɚ",
+    "ukphone": "huːˈɛvə",
+    "sentences": [
+      {
+        "english": "I’ll take whoever wants to go.",
+        "chinese": "谁想去我就带谁去。"
+      },
+      {
+        "english": "When you’re done with the book, just give it to Kristin or Shelley or whoever.",
+        "chinese": "你看完书以后，就给克里斯廷或谢利，或者随便谁都行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": " 谁； 无论谁； 究竟是谁",
+        "english": "used to say that it does not matter who does something, is in a particular place etc"
+      }
+    ]
+  },
+  {
+    "name": "you",
+    "trans": [
+      "refers to the person being addressed."
+    ],
+    "usphone": "ju",
+    "ukphone": "juː",
+    "sentences": [
+      {
+        "english": "Hi, Kelly. How are you?",
+        "chinese": "嗨，凯利，你好吗？"
+      },
+      {
+        "english": "You must all listen carefully.",
+        "chinese": "你们大家都必须仔细听着。"
+      },
+      {
+        "english": "I have some news for you.",
+        "chinese": "我有一些消息要告诉你们。"
+      },
+      {
+        "english": "The letter is addressed to both of you.",
+        "chinese": "信是寄给你们俩的。"
+      },
+      {
+        "english": "Did Robin give you the money?",
+        "chinese": "罗宾把钱给你了吗？"
+      },
+      {
+        "english": "Only you can make this decision.",
+        "chinese": "只有你才能作这个决定。"
+      },
+      {
+        "english": "You idiot!",
+        "chinese": "你这个白痴！"
+      },
+      {
+        "english": "You boys have got to learn to behave yourselves.",
+        "chinese": "你们这些男孩子必须学着规矩点。"
+      },
+      {
+        "english": "Hey, you over there! Get out of the way!",
+        "chinese": "嘿，说你呢，让开！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "你；你们",
+        "english": "used to refer to a person or group of people when speaking or writing to them"
+      },
+      {
+        "pos": "n",
+        "chinese": "(You)人名；(柬)尤；(东南亚国家华语)猷",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "that",
+    "trans": [
+      "refers to a specific thing or idea being discussed."
+    ],
+    "usphone": "ðæt",
+    "ukphone": "ðæt; ðət",
+    "sentences": [
+      {
+        "english": "‘You never cared about me.’ ‘That’s not true.’",
+        "chinese": "“你从不关心我。”“那不是事实。”"
+      },
+      {
+        "english": "I wish you wouldn’t say things like that.",
+        "chinese": "我希望你不要那么说。"
+      },
+      {
+        "english": "What did you do with those sandwiches?",
+        "chinese": "那些三明治你怎么处理了？"
+      },
+      {
+        "english": "Victoria Street? That’s where my sister lives.",
+        "chinese": "维多利亚街？我的姐姐就住在那儿。"
+      },
+      {
+        "english": "Do you remember that nice Mr Hoskins who came to dinner?",
+        "chinese": "你还记得那位来这儿吃过晚饭的好人霍斯金斯先生吗？"
+      },
+      {
+        "english": "I’ve got that pain in my back again.",
+        "chinese": "我的背又疼起来了。"
+      },
+      {
+        "english": "He killed a man once and that’s why he had to leave Ireland.",
+        "chinese": "他曾杀死过一个人，这就是他不得不离开爱尔兰的原因。"
+      },
+      {
+        "english": "‘We’ve been cheated,’ she said. Those were her exact words.",
+        "chinese": "“我们被骗了。”她说。这是她的原话。"
+      },
+      {
+        "english": "‘I have to go,’ she said, and with that (= after saying that ) she hung up the phone.",
+        "chinese": "“我得走了。”说完她就把电话挂了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "determiner",
+        "chinese": "那，那个〔指已经提到或已经知道的人、事物、想法等〕",
+        "english": "used to refer to a person, thing, idea etc that has already been mentioned or is already known about"
+      },
+      {
+        "pos": "conjunction",
+        "chinese": "〔用于动词、名词或形容词后引导一个从句，表示某人所说或所想，或陈述一个事实或理由〕",
+        "english": "used after verbs, nouns, and adjectives to introduce a  clause  which shows what someone says or thinks, or states a fact or reason"
+      },
+      {
+        "pos": "adv",
+        "chinese": "那么〔大、多等〕〔尤指通过手势比画来表示大小、数量等〕",
+        "english": "used to say how big, how much etc, especially when you are showing the size, amount etc with your hands"
+      }
+    ]
+  },
+  {
+    "name": "it",
+    "trans": [
+      "refers to a thing or object being discussed."
+    ],
+    "usphone": "ɪt",
+    "ukphone": "ɪt",
+    "sentences": [
+      {
+        "english": "‘Where’s your office?’ ‘It’s on the third floor.’",
+        "chinese": "“你的办公室在哪儿？”“在三楼。”"
+      },
+      {
+        "english": "I love the spring – it’s a wonderful time of the year.",
+        "chinese": "我喜欢春季——这是一年里最美妙的时节。"
+      },
+      {
+        "english": "There were people crying, buildings on fire. It was terrible!",
+        "chinese": "有人在哭喊，楼房在燃烧―太可怕了！"
+      },
+      {
+        "english": "Don’t blame me. It wasn’t my idea.",
+        "chinese": "不要责备我，这不是我的主意。"
+      },
+      {
+        "english": "This little beast is a lemur and it lives in Madagascar.",
+        "chinese": "这小动物是狐猴，生活在马达加斯加。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "这，那，它",
+        "english": "used to refer to a thing, animal, situation, idea etc that has already been mentioned or is already known about"
+      }
+    ]
+  },
+  {
+    "name": "this",
+    "trans": [
+      "refers to a specific thing or idea being discussed."
+    ],
+    "usphone": "ðɪs",
+    "ukphone": "ðɪs",
+    "sentences": [
+      {
+        "english": "The table’s about this high and this wide.",
+        "chinese": "那桌子大约有这么高，这么宽。"
+      },
+      {
+        "english": "You need to cut about this much off the end of the pipe.",
+        "chinese": "你要从管子头上切下大约这么多。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "这；这个；这里",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "这；本；这个；今",
+        "english": ""
+      },
+      {
+        "pos": "adv",
+        "chinese": "这样地；这么",
+        "english": "used to say how big, how much etc, when you are showing the size, amount etc with your hands"
+      },
+      {
+        "pos": "n",
+        "chinese": "(This)人名；(法)蒂斯",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "what",
+    "trans": [
+      "used to ask about something or indicate surprise."
+    ],
+    "usphone": "hwɒt; hwɑt",
+    "ukphone": "wɒt",
+    "sentences": [
+      {
+        "english": "Show me what you bought.",
+        "chinese": "给我看看你买的东西。"
+      },
+      {
+        "english": "What he did was morally wrong.",
+        "chinese": "他的行为很缺德。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "所…的",
+        "english": "the thing which"
+      }
+    ]
+  },
+  {
+    "name": "which",
+    "trans": [
+      "used to indicate one or more alternatives."
+    ],
+    "usphone": "wɪtʃ",
+    "ukphone": "wɪtʃ",
+    "sentences": [
+      {
+        "english": "Which book are you looking for?",
+        "chinese": "你在找哪本书？"
+      },
+      {
+        "english": "Which are the most important crops?",
+        "chinese": "哪些农作物是最重要的？"
+      },
+      {
+        "english": "Miranda was sure it was one of them, but was not sure which.",
+        "chinese": "米兰达确定此人是他们其中的一个，但不能肯定是哪一个。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "哪一个",
+        "english": "used to ask or talk about one or more members of a group of people or things, when you are uncertain about it or about them"
+      }
+    ]
+  },
+  {
+    "name": "these",
+    "trans": [
+      "refers to specific things being discussed or referred to."
+    ],
+    "usphone": "ðiz",
+    "ukphone": "ðiːz",
+    "sentences": [
+      {
+        "english": "We all defer to her in these matters.",
+        "chinese": "在这些事情上我们都听她的。"
+      },
+      {
+        "english": "Are these all yours?",
+        "chinese": "这些都是你的吗?"
+      },
+      {
+        "english": "Bear these thoughts with you as you go out into the world.",
+        "chinese": "当你出去走入社会时你把这些思想牢记在心。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "这些",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "这些的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "his",
+    "trans": [
+      "refers to something that belongs to a male person being discussed or referred to."
+    ],
+    "usphone": "hɪz",
+    "ukphone": "hɪz",
+    "sentences": [
+      {
+        "english": "He took my hand in his.",
+        "chinese": "他握住我的手。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "他的，他的东西",
+        "english": "of or belonging to him"
+      }
+    ]
+  },
+  {
+    "name": "she",
+    "trans": [
+      "refers to a female person being discussed or referred to."
+    ],
+    "usphone": "ʃi",
+    "ukphone": "ʃiː",
+    "sentences": [
+      {
+        "english": "You could always ask Beth – she’s got plenty of money.",
+        "chinese": "你总是可以去问贝丝——她有很多钱。"
+      },
+      {
+        "english": "I saw you talking to that girl. Who is she?",
+        "chinese": "我看见你和那个女孩子说话。 她是谁？"
+      },
+      {
+        "english": "What did she say when you told her?",
+        "chinese": "你告诉她时她怎么说？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "她（主格）；它（用来指雌性动物或国家、船舶、地球、月亮等）",
+        "english": "used to refer to a woman, girl, or female animal that has already been mentioned or is already known about"
+      },
+      {
+        "pos": "n",
+        "chinese": "女人；雌性动物",
+        "english": "used to refer to a woman, girl, or female animal that has already been mentioned or is already known about"
+      }
+    ]
+  },
+  {
+    "name": "lot",
+    "trans": [
+      "refers to a large number or amount of something."
+    ],
+    "usphone": "lɑt",
+    "ukphone": "lɒt",
+    "sentences": [
+      {
+        "english": "We’ve spent a lot on the children’s education.",
+        "chinese": "我们在孩子的教育上花费甚多。"
+      },
+      {
+        "english": "‘How many CDs have you got?’ ‘Lots.’",
+        "chinese": "“你有多少张CD？”“多着呢。”"
+      },
+      {
+        "english": "They drew lots for the right to go first.",
+        "chinese": "他们拈阄儿决定谁先走。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron.",
+        "chinese": "许多，大量",
+        "english": "a large amount or number"
+      },
+      {
+        "pos": "n",
+        "chinese": "抽签，抓阄",
+        "english": "to choose sb/sth by lot"
+      }
+    ]
+  },
+  {
+    "name": "anything",
+    "trans": [
+      "refers to any thing, or a thing that is not known or specified."
+    ],
+    "usphone": "'ɛnɪ'θɪŋ",
+    "ukphone": "'enɪθɪŋ",
+    "sentences": [
+      {
+        "english": "You can buy anything you want.",
+        "chinese": "你想要什么都可以买。"
+      },
+      {
+        "english": "He was prepared to do anything to make a bit of money.",
+        "chinese": "只要能赚一点钱，他什么都愿意做。"
+      },
+      {
+        "english": "Anything would be better than staying at home!",
+        "chinese": "做什么都比待在家里好！"
+      },
+      {
+        "english": "You can write about swimming, skiing, or anything else you enjoy doing.",
+        "chinese": "你可以写游泳、写滑雪或者其他任何你喜欢的活动。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "任何事物；一切",
+        "english": "any thing, event, situation etc, when it is not important to say exactly which"
+      }
+    ]
+  },
+  {
+    "name": "whatever",
+    "trans": [
+      "refers to any thing or idea, or an unspecified thing or idea."
+    ],
+    "usphone": "wət'ɛvɚ",
+    "ukphone": "wɒt'evə",
+    "sentences": [
+      {
+        "english": "She has shown no interest whatever in anything scientific.",
+        "chinese": "凡是与科学有关的她都没有表现出任何兴趣。"
+      },
+      {
+        "english": "This is just a stupid argument that has nothing whatever to do with your job.",
+        "chinese": "这只是一场无聊的争论，和你的工作没有任何关系。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": " [用于否定句中以加强语气]任何； 无论什么",
+        "english": "used to emphasize a negative statement"
+      }
+    ]
+  },
+  {
+    "name": "nobody",
+    "trans": [
+      "refers to no person, or a person who is not present or specified."
+    ],
+    "usphone": "'nəubədi, -bɔdi",
+    "ukphone": "'nəʊbədɪ",
+    "sentences": [
+      {
+        "english": "I knocked on the door but nobody answered.",
+        "chinese": "我敲了敲门，但没人应门。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "谁也不；无人",
+        "english": "no one"
+      }
+    ]
+  },
+  {
+    "name": "none",
+    "trans": [
+      "refers to no one or nothing, or an absence of someone or something."
+    ],
+    "usphone": "nʌn",
+    "ukphone": "nʌn",
+    "sentences": [
+      {
+        "english": "I wish I could offer you some cake but there’s none left.",
+        "chinese": "我真想能请你吃些蛋糕，但一点也没剩的了。"
+      },
+      {
+        "english": "Although these were good students, none had a score above 60.",
+        "chinese": "虽然这些都是好学生，但是没有一个考到60分以上。"
+      },
+      {
+        "english": "She waited for a reply, but none came.",
+        "chinese": "她等着答复，可是什么也没等到。"
+      },
+      {
+        "english": "Even an old car is better than none.",
+        "chinese": "有一辆旧车也比没有车强。"
+      },
+      {
+        "english": "I was none too pleased to have to take the exam again.",
+        "chinese": "我要重考一次，根本高兴不起来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "没有人；没有一点",
+        "english": "not any amount of something or not one of a group of people or things"
+      },
+      {
+        "pos": "adv",
+        "chinese": "毫不",
+        "english": "not at all"
+      }
+    ]
+  },
+  {
+    "name": "mine",
+    "trans": [
+      "refers to something that belongs to the speaker."
+    ],
+    "usphone": "maɪn",
+    "ukphone": "maɪn",
+    "sentences": [
+      {
+        "english": "It was Glen’s idea, not mine.",
+        "chinese": "这是格伦的主意，不是我的。"
+      },
+      {
+        "english": "‘Is that your car?’ ‘No, mine is parked over the road.’",
+        "chinese": "“那是你的车吗？”“不是，我的车停在路对面。”"
+      },
+      {
+        "english": "You’ve got good legs – mine are too thin.",
+        "chinese": "你的腿很美——我的腿太细了。"
+      },
+      {
+        "english": "His English is better than mine.",
+        "chinese": "他英语比我好。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "我的",
+        "english": "used by the person speaking or writing to refer to something that belongs to or is connected with himself or herself"
+      }
+    ]
+  },
+  {
+    "name": "anybody",
+    "trans": [
+      "refers to any person, or a person who is not known or specified."
+    ],
+    "usphone": "'ɛnɪbɑdi",
+    "ukphone": "'enɪbɒdɪ",
+    "sentences": [
+      {
+        "english": "She swore me not to tell anybody about my secret.",
+        "chinese": "她向我发誓不把我的秘密告诉任何人。"
+      },
+      {
+        "english": "I think we should be open to negotiate with anybody.",
+        "chinese": "他说：“我认为，我们应该同任何人进行谈判。"
+      },
+      {
+        "english": "If using window is not appropriate than can anybody help me with dialog?",
+        "chinese": "如果使用窗口不适当的比任何人可以帮助我与对话？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": " 任何人， 无论谁",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "some",
+    "trans": [
+      "refers to a certain amount or number of something, or an unspecified amount or number."
+    ],
+    "usphone": "sʌm;səm",
+    "ukphone": "sʌm;səm",
+    "sentences": [
+      {
+        "english": "I’ve just made a pot of coffee. Would you like some?",
+        "chinese": "我刚煮了一壶咖啡，你想喝点吗？"
+      },
+      {
+        "english": "‘Do you know where the screws are?’ ‘There are some in the garage.’",
+        "chinese": "“你知道螺丝钉在哪儿吗？”“车库里有一些。”"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "一些；某个；大约；相当多的",
+        "english": ""
+      },
+      {
+        "pos": "pron",
+        "chinese": "一些；若干；其中的一部分；（数量不确切时用）有些人",
+        "english": "a number of people or things or an amount of something, when the exact number or amount is not stated"
+      },
+      {
+        "pos": "adv",
+        "chinese": "非常；相当；<美>稍微",
+        "english": "a fairly large number or amount of something"
+      }
+    ]
+  },
+  {
+    "name": "there",
+    "trans": [
+      "refers to a place or location being discussed or referred to."
+    ],
+    "usphone": "ðɛr",
+    "ukphone": "ðeə; ðə",
+    "sentences": [
+      {
+        "english": "We could go back to my cottage and have lunch there.",
+        "chinese": "我们可以回到我的小屋去吃午饭。"
+      },
+      {
+        "english": "Scotland? I’ve always wanted to go there.",
+        "chinese": "苏格兰？我一直想去那儿。"
+      },
+      {
+        "english": "Hold it right there and don’t move.",
+        "chinese": "就站在那里，不要动。"
+      },
+      {
+        "english": "Can you pass me that wine glass there?",
+        "chinese": "你能把那个葡萄酒杯递给我吗？"
+      },
+      {
+        "english": "Look, there’s that bookshop I was telling you about.",
+        "chinese": "看，那就是我跟你说过的那家书店。"
+      },
+      {
+        "english": "Who’s that man over there ?",
+        "chinese": "那边的那个男人是谁？"
+      },
+      {
+        "english": "It’s too far to drive there and back in one day.",
+        "chinese": "一天开车来回太远了。"
+      },
+      {
+        "english": "Are we going to get there (= arrive ) before the banks close?",
+        "chinese": "银行关门之前，我们到得了吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "在那里；在那边；在那点上",
+        "english": "in or to a particular place that is not where you are"
+      },
+      {
+        "pos": "int",
+        "chinese": "你瞧",
+        "english": "used to express satisfaction that you have been proved right or that you have done what you intended to do"
+      },
+      {
+        "pos": "n",
+        "chinese": "那个地方",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "all",
+    "trans": [
+      "refers to everything or everyone being discussed or referred to."
+    ],
+    "usphone": "ɔl",
+    "ukphone": "ɔːl",
+    "sentences": [
+      {
+        "english": "There is built-in storage space in all bedrooms.",
+        "chinese": "所有卧室里都有内置储藏空间。"
+      },
+      {
+        "english": "the restaurant that Hugh and all his friends go to",
+        "chinese": "休和他所有的朋友们去的那家饭馆"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "det",
+        "chinese": "全部的",
+        "english": "the whole of an amount, thing, or type of thing"
+      },
+      {
+        "pos": "pron",
+        "chinese": "全部",
+        "english": "the whole of a particular group or thing or to everyone or everything of a particular kind"
+      }
+    ]
+  },
+  {
+    "name": "where",
+    "trans": [
+      "used to ask about a place or location."
+    ],
+    "usphone": "hweə(r); hwɛr",
+    "ukphone": "weə",
+    "sentences": [
+      {
+        "english": "Where are you going?",
+        "chinese": "你要到哪儿去？"
+      },
+      {
+        "english": "Where do they live?",
+        "chinese": "他们住在哪里？"
+      },
+      {
+        "english": "Do you know where my glasses are?",
+        "chinese": "你知道我的眼镜在哪儿吗？"
+      },
+      {
+        "english": "Where would you like to sit?",
+        "chinese": "你想坐在哪里？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "在哪里",
+        "english": "in or to which place"
+      },
+      {
+        "pos": "pron",
+        "chinese": "哪里",
+        "english": ""
+      },
+      {
+        "pos": "conj",
+        "chinese": "在…的地方",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "地点",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "another",
+    "trans": [
+      "refers to an additional person or thing, or a person or thing that is different from one already mentioned."
+    ],
+    "usphone": "ə'nʌðɚ",
+    "ukphone": "ə'nʌðə",
+    "sentences": [
+      {
+        "english": "They must have returned by another route.",
+        "chinese": "他们肯定是从另一条路线回来的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "det",
+        "chinese": "再一个的；别的",
+        "english": "not the same thing, person etc, but a different one"
+      }
+    ]
+  },
+  {
+    "name": "same",
+    "trans": [
+      "refers to something that is identical or similar to something else."
+    ],
+    "usphone": "sem",
+    "ukphone": "seɪm",
+    "sentences": [
+      {
+        "english": "Her perfume has always had the same effect on me.",
+        "chinese": "她身上的香水给我的感觉一如既往。"
+      },
+      {
+        "english": "He’s the same old Peter – moody and irritable.",
+        "chinese": "他还是以前那个彼得——喜怒无常且爱发火。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "相同的；同一的；上述的（通常与the连用）；无变化的",
+        "english": "used to say that a particular person or thing does not change"
+      },
+      {
+        "pos": "pron",
+        "chinese": "同样的事物或人（通常与the连用）",
+        "english": "used to say that two or more people or things are exactly like each other"
+      },
+      {
+        "pos": "adv",
+        "chinese": "同样地（通常与the连用）",
+        "english": "in the same way"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Same)人名；(意)萨梅",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "certain",
+    "trans": [
+      "refers to a specific thing or idea being discussed, or a thing or idea that is known or definite."
+    ],
+    "usphone": "'sɝtn",
+    "ukphone": "'sɜːt(ə)n; -tɪn",
+    "sentences": [
+      {
+        "english": "I felt certain that I’d passed the test.",
+        "chinese": "我感觉自己肯定通过这次测验了。"
+      },
+      {
+        "english": "Many people look certain to lose their jobs.",
+        "chinese": "许多人看来肯定要失业了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "肯定的；确实的",
+        "english": "confident and sure, without any doubts"
+      }
+    ]
+  },
+  {
+    "name": "nothing",
+    "trans": [
+      "refers to no thing or idea, or an absence of something."
+    ],
+    "usphone": "'nʌθɪŋ",
+    "ukphone": "'nʌθɪŋ",
+    "sentences": [
+      {
+        "english": "Nothing ever happens in this town.",
+        "chinese": "这镇上从来都不会发生什么特别的事。"
+      },
+      {
+        "english": "There’s nothing in this box.",
+        "chinese": "这盒子里什么也没有。"
+      },
+      {
+        "english": "There was nothing else the doctors could do.",
+        "chinese": "医生们没有别的办法了。"
+      },
+      {
+        "english": "He had nothing more to say.",
+        "chinese": "他没有更多要说的了。"
+      },
+      {
+        "english": "We know nothing about her family.",
+        "chinese": "我们对她的家庭一无所知。"
+      },
+      {
+        "english": "I couldn’t just stand by and do nothing.",
+        "chinese": "我不能就那样袖手旁观。"
+      },
+      {
+        "english": "I promised to say nothing about it to anyone.",
+        "chinese": "我答应这件事对谁也不说。"
+      },
+      {
+        "english": "We’ve heard nothing from her for weeks.",
+        "chinese": "我们好几个星期没有她的音信了。"
+      },
+      {
+        "english": "There’s absolutely nothing to be ashamed of.",
+        "chinese": "根本没有什么好难为情的。"
+      },
+      {
+        "english": "‘Do you know much about business?’ ‘Nothing at all.’",
+        "chinese": "“你对做生意了解得多吗？”“一窍不通。”"
+      },
+      {
+        "english": "She had eaten virtually nothing at supper.",
+        "chinese": "晚饭她几乎什么也没吃。"
+      },
+      {
+        "english": "There’s nothing wrong with the data.",
+        "chinese": "这些数据没什么差错。"
+      },
+      {
+        "english": "There’s nothing new about this.",
+        "chinese": "这没有什么新鲜的。"
+      },
+      {
+        "english": "A brief search was made but they found nothing untoward.",
+        "chinese": "他们简单地搜查了一番，没发现任何异常。"
+      },
+      {
+        "english": "She’s nothing like her brother.",
+        "chinese": "她一点都不像她的哥哥。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "没有东西",
+        "english": "not anything or no thing"
+      },
+      {
+        "pos": "adv",
+        "chinese": "毫不",
+        "english": "to have no qualities or features that are similar to someone or something else"
+      }
+    ]
+  },
+  {
+    "name": "self",
+    "trans": [
+      "refers to the individual person being discussed or referred to."
+    ],
+    "usphone": "sɛlf",
+    "ukphone": "self",
+    "sentences": [
+      {
+        "english": "a child’s developing sense of self",
+        "chinese": "儿童逐渐形成的自我意识"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "自己，自我；本质；私心",
+        "english": "the type of person you are, your character, your typical behaviour etc"
+      },
+      {
+        "pos": "adj",
+        "chinese": "同一的",
+        "english": ""
+      },
+      {
+        "pos": "vt",
+        "chinese": "使自花授精；使近亲繁殖",
+        "english": ""
+      },
+      {
+        "pos": "vi",
+        "chinese": "自花授精",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "nowhere",
+    "trans": [
+      "refers to no place or location, or a place or location that is not known or specified."
+    ],
+    "usphone": "'no'wɛr",
+    "ukphone": "'nəʊhweə",
+    "sentences": [
+      {
+        "english": "Nowhere is drug abuse more of a problem than in the US.",
+        "chinese": "没有什么地方的吸毒问题比美国更严重。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "任何地方都不",
+        "english": "not in any place or to any place"
+      }
+    ]
+  }
 ]

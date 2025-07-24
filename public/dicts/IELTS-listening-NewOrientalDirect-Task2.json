@@ -1,203 +1,702 @@
 [
-    {
-        "name": "dictionary",
-        "trans": [
-            "n. 词典"
-        ]
-    },
-    {
-        "name": "encyclopedia",
-        "trans": [
-            "n. 百科全书"
-        ]
-    },
-    {
-        "name": "reference book",
-        "trans": [
-            "n. 参考书"
-        ]
-    },
-    {
-        "name": "textbook",
-        "trans": [
-            "n. 课本"
-        ]
-    },
-    {
-        "name": "handout",
-        "trans": [
-            "n. 讲义"
-        ]
-    },
-    {
-        "name": "paper",
-        "trans": [
-            "n. 论文"
-        ]
-    },
-    {
-        "name": "online",
-        "trans": [
-            "adj. 在线的"
-        ]
-    },
-    {
-        "name": "internet",
-        "trans": [
-            "n. 互联网"
-        ]
-    },
-    {
-        "name": "database",
-        "trans": [
-            "n. 数据库"
-        ]
-    },
-    {
-        "name": "digital",
-        "trans": [
-            "adj. 电子的，数码的"
-        ]
-    },
-    {
-        "name": "physical",
-        "trans": [
-            "adj. 实体的"
-        ]
-    },
-    {
-        "name": "video",
-        "trans": [
-            "n. 视频"
-        ]
-    },
-    {
-        "name": "CD-ROM",
-        "trans": [
-            "n. 只读光盘"
-        ]
-    },
-    {
-        "name": "DVD",
-        "trans": [
-            "n. 数字化视频光盘"
-        ]
-    },
-    {
-        "name": "periodical",
-        "trans": [
-            "n. 期刊"
-        ]
-    },
-    {
-        "name": "journal",
-        "trans": [
-            "n. 学报"
-        ]
-    },
-    {
-        "name": "current",
-        "trans": [
-            "adj. 现在的"
-        ]
-    },
-    {
-        "name": "back",
-        "trans": [
-            "adj. 过去的"
-        ]
-    },
-    {
-        "name": "issue",
-        "trans": [
-            "n. 刊物"
-        ]
-    },
-    {
-        "name": "leaflet",
-        "trans": [
-            "n. 传单"
-        ]
-    },
-    {
-        "name": "booklet",
-        "trans": [
-            "n. 小册子"
-        ]
-    },
-    {
-        "name": "magazine",
-        "trans": [
-            "n. 杂志"
-        ]
-    },
-    {
-        "name": "newspaper",
-        "trans": [
-            "n. 报纸"
-        ]
-    },
-    {
-        "name": "novel",
-        "trans": [
-            "n. 小说"
-        ]
-    },
-    {
-        "name": "fiction",
-        "trans": [
-            "n. 虚构小说"
-        ]
-    },
-    {
-        "name": "non - fiction",
-        "trans": [
-            "n. 纪实文学"
-        ]
-    },
-    {
-        "name": "enquiry/inquiry",
-        "trans": [
-            "n. 询问，调查"
-        ]
-    },
-    {
-        "name": "delivery desk",
-        "trans": [
-            "n. 借书台"
-        ]
-    },
-    {
-        "name": "circulation desk",
-        "trans": [
-            "n. 还书处"
-        ]
-    },
-    {
-        "name": "open shelf",
-        "trans": [
-            "n. 开架",
-            "adj. 开架的"
-        ]
-    },
-    {
-        "name": "closed shelf",
-        "trans": [
-            "n. 闭架",
-            "adj. 闭架的"
-        ]
-    },
-    {
-        "name": "photocopy",
-        "trans": [
-            "n. 影印本",
-            "v. 复印"
-        ]
-    },
-    {
-        "name": "scanner",
-        "trans": [
-            "n. 扫描仪"
-        ]
-    }
+  {
+    "name": "dictionary",
+    "trans": [
+      "n. 词典"
+    ],
+    "usphone": "'dɪkʃə'nɛri",
+    "ukphone": "'dɪkʃ(ə)n(ə)rɪ",
+    "sentences": [
+      {
+        "english": "a German-English dictionary",
+        "chinese": "一本德英词典"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "词典，字典",
+        "english": "a book that gives a list of words in alphabetical order and explains their meanings in the same language, or another language"
+      }
+    ]
+  },
+  {
+    "name": "encyclopedia",
+    "trans": [
+      "n. 百科全书"
+    ],
+    "usphone": "ɪnˌsaɪkləˈpidiɚ",
+    "ukphone": "ɪnˌsaɪkləˈpiːdiə",
+    "sentences": [
+      {
+        "english": "the Encyclopedia of Music",
+        "chinese": "音乐百科全书"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "百科全书（亦是encyclopaedia）",
+        "english": "a book or cd, or a set of these, containing facts about many different subjects, or containing detailed facts about one subject"
+      }
+    ]
+  },
+  {
+    "name": "reference book",
+    "trans": [
+      "n. 参考书"
+    ]
+  },
+  {
+    "name": "textbook",
+    "trans": [
+      "n. 课本"
+    ],
+    "usphone": "'tɛkstbʊk",
+    "ukphone": "'teks(t)bʊk",
+    "sentences": [
+      {
+        "english": "a biology textbook",
+        "chinese": "一本生物教科书"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "教科书，课本",
+        "english": "a book that contains information about a subject that people study, especially at school or college"
+      }
+    ]
+  },
+  {
+    "name": "handout",
+    "trans": [
+      "n. 讲义"
+    ],
+    "usphone": "'hænd'aʊt",
+    "ukphone": "'hændaʊt",
+    "sentences": [
+      {
+        "english": "people who have to live on handouts from the state",
+        "chinese": "必须依赖国家发放的救济金生活的人们"
+      },
+      {
+        "english": "a cash handout",
+        "chinese": "救济款"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "施舍物，救济品",
+        "english": "money or goods that are given to someone, for example because they are poor"
+      }
+    ]
+  },
+  {
+    "name": "paper",
+    "trans": [
+      "n. 论文"
+    ],
+    "usphone": "'pepɚ",
+    "ukphone": "'peɪpə",
+    "sentences": [
+      {
+        "english": "I’ll get you a piece of paper so you can write the number down.",
+        "chinese": "我给你找张纸，你好把号码写下来。"
+      },
+      {
+        "english": "Do you have a pen and paper?",
+        "chinese": "你有笔和纸吗？"
+      },
+      {
+        "english": "the 1998 White Paper on political reform",
+        "chinese": "1998年政治改革白皮书"
+      },
+      {
+        "english": "a paper on the Civil War",
+        "chinese": "一篇关于南北战争的论文"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "纸；官方文件；文章",
+        "english": "material in the form of thin sheets that is used for writing on, wrapping things etc"
+      }
+    ]
+  },
+  {
+    "name": "online",
+    "trans": [
+      "adj. 在线的"
+    ],
+    "usphone": "'ɑn'laɪn",
+    "ukphone": "ɒn'laɪn",
+    "sentences": [
+      {
+        "english": "All the city’s schools will be online by the end of the year.",
+        "chinese": "到年底，市里的所有学校都会连接因特网。"
+      },
+      {
+        "english": "...the cool stuff you find online.",
+        "chinese": "…你在网上找到的好东西。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "在线的",
+        "english": "connected to other computers through the Internet, or available through the Internet"
+      },
+      {
+        "pos": "adv",
+        "chinese": "在线地",
+        "english": "While connected to a computer or under computer control."
+      }
+    ]
+  },
+  {
+    "name": "internet",
+    "trans": [
+      "n. 互联网"
+    ],
+    "usphone": "'ɪntɚnɛt",
+    "ukphone": "'ɪntənet",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "国际互联网，因特网",
+        "english": "The Internet is the network that allows computer users to connect with computers all over the world, and that carries e-mail"
+      }
+    ]
+  },
+  {
+    "name": "database",
+    "trans": [
+      "n. 数据库"
+    ],
+    "usphone": "'detəbes",
+    "ukphone": "'deɪtəbeɪs",
+    "sentences": [
+      {
+        "english": "customer details held on a database",
+        "chinese": "存储在数据库内的客户详细信息"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 数据库",
+        "english": "a large amount of data stored in a computer system so that you can find and use it easily"
+      }
+    ]
+  },
+  {
+    "name": "digital",
+    "trans": [
+      "adj. 电子的，数码的"
+    ],
+    "usphone": "'dɪdʒɪtl",
+    "ukphone": "'dɪdʒɪt(ə)l",
+    "sentences": [
+      {
+        "english": "digital TV",
+        "chinese": "数字电视"
+      },
+      {
+        "english": "a digital signal",
+        "chinese": "数字信号"
+      },
+      {
+        "english": "a digital camera",
+        "chinese": "数码照相机"
+      },
+      {
+        "english": "digital recording",
+        "chinese": "数字录音"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "数字的，计数的",
+        "english": "using a system in which information is recorded or sent out electronically in the form of numbers, usually ones and zeros"
+      }
+    ]
+  },
+  {
+    "name": "physical",
+    "trans": [
+      "adj. 实体的"
+    ],
+    "usphone": "'fɪzɪkl",
+    "ukphone": "ˈfɪzɪkl",
+    "sentences": [
+      {
+        "english": "She was in constant physical pain.",
+        "chinese": "她一直感到身上疼痛。"
+      },
+      {
+        "english": "the physical and emotional needs of young adults",
+        "chinese": "青年人的身心需求"
+      },
+      {
+        "english": "people with severe physical disabilities",
+        "chinese": "身体重度残疾的人"
+      },
+      {
+        "english": "Don’t be put off by his physical appearance .",
+        "chinese": "别因为他的外貌讨厌他。"
+      },
+      {
+        "english": "He was obsessed with physical fitness .",
+        "chinese": "他对健身着了迷。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "身体上的",
+        "english": "related to someone’s body rather than their mind or emotions"
+      }
+    ]
+  },
+  {
+    "name": "video",
+    "trans": [
+      "n. 视频"
+    ],
+    "usphone": "'vɪdɪo",
+    "ukphone": "'vɪdiəu",
+    "sentences": [
+      {
+        "english": "video production",
+        "chinese": "录像制作"
+      },
+      {
+        "english": "video materials for language teaching",
+        "chinese": "语言教学的影像素材"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "录像的；电视的",
+        "english": "relating to or used in the process of recording and showing pictures on television"
+      },
+      {
+        "pos": "n",
+        "chinese": " 录像",
+        "english": "a copy of a film or television programme, or a series of events, recorded on videotape"
+      }
+    ]
+  },
+  {
+    "name": "CD-ROM",
+    "trans": [
+      "n. 只读光盘"
+    ]
+  },
+  {
+    "name": "DVD",
+    "trans": [
+      "n. 数字化视频光盘"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "abbr",
+        "chinese": "数字化视频光盘（Digital Video Disk）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "periodical",
+    "trans": [
+      "n. 期刊"
+    ],
+    "usphone": ",pɪrɪ'ɑdɪkl",
+    "ukphone": "pɪərɪ'ɒdɪk(ə)l",
+    "sentences": [
+      {
+        "english": "She made periodical visits to her dentist.",
+        "chinese": "她定期去看牙医。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "[数] 周期的；定期的",
+        "english": "Periodical events or situations happen occasionally, at fairly regular intervals"
+      },
+      {
+        "pos": "n",
+        "chinese": "期刊；杂志",
+        "english": "a magazine, especially one about a serious or technical subject"
+      }
+    ]
+  },
+  {
+    "name": "journal",
+    "trans": [
+      "n. 学报"
+    ],
+    "usphone": "'dʒɝnl",
+    "ukphone": "'dʒɜːn(ə)l",
+    "sentences": [
+      {
+        "english": "the British Medical Journal",
+        "chinese": "《英国医学杂志》"
+      },
+      {
+        "english": "He decided to keep a journal.",
+        "chinese": "他决定记日记。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "日报，杂志；日志",
+        "english": "a serious magazine produced for professional people or those with a particular interest"
+      }
+    ]
+  },
+  {
+    "name": "current",
+    "trans": [
+      "adj. 现在的"
+    ],
+    "usphone": "kɝ​ənt",
+    "ukphone": "'kʌrənt",
+    "sentences": [
+      {
+        "english": "the current President",
+        "chinese": "现任总统"
+      },
+      {
+        "english": "In its current state, the car is worth £1,000.",
+        "chinese": "这辆车按现在的车况来看值1,000英镑。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "当前的",
+        "english": "happening or existing now"
+      }
+    ]
+  },
+  {
+    "name": "back",
+    "trans": [
+      "adj. 过去的"
+    ],
+    "usphone": "bæk",
+    "ukphone": "bæk",
+    "sentences": [
+      {
+        "english": "I’ll be back in a minute.",
+        "chinese": "我马上回来。"
+      },
+      {
+        "english": "Put that book back where you found it!",
+        "chinese": "把那本书放回原处！"
+      },
+      {
+        "english": "He was back home by half past eleven.",
+        "chinese": "他是11点半之前回家的。"
+      },
+      {
+        "english": "It’s possible to travel there and back in a day.",
+        "chinese": "到那里一天来回是可以的。"
+      },
+      {
+        "english": "Kirov stepped back a pace.",
+        "chinese": "基洛夫往后退了一步。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "回原处；回；在后",
+        "english": "in, into, or to the place or position where someone or something was before"
+      }
+    ]
+  },
+  {
+    "name": "issue",
+    "trans": [
+      "n. 刊物"
+    ],
+    "usphone": "'ɪʃu",
+    "ukphone": "'ɪʃuː",
+    "sentences": [
+      {
+        "english": "Silva issued a statement denying all knowledge of the affair.",
+        "chinese": "西尔瓦发表声明，宣称对此事一无所知。"
+      },
+      {
+        "english": "a warning issued by the Surgeon General",
+        "chinese": "（美国）卫生局局长发出的警告"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": " 发行； 分发， 发出",
+        "english": "to officially make a statement, give an order, warning etc"
+      },
+      {
+        "pos": "n",
+        "chinese": "问题；发行；分发",
+        "english": "a subject or problem that is often discussed or argued about, especially a social or political matter that affects the interests of a lot of people"
+      }
+    ]
+  },
+  {
+    "name": "leaflet",
+    "trans": [
+      "n. 传单"
+    ],
+    "usphone": "'liflət",
+    "ukphone": "ˈliːflət",
+    "sentences": [
+      {
+        "english": "a leaflet on skin cancer",
+        "chinese": "有关皮肤癌的宣传页"
+      },
+      {
+        "english": "Students were handing out election leaflets at the station.",
+        "chinese": "学生在车站分发选举传单。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "传单",
+        "english": "a small book or piece of paper advertising something or giving information on a particular subject"
+      }
+    ]
+  },
+  {
+    "name": "booklet",
+    "trans": [
+      "n. 小册子"
+    ],
+    "usphone": "'bʊklət",
+    "ukphone": "'bʊklɪt",
+    "sentences": [
+      {
+        "english": "a free booklet on drug abuse",
+        "chinese": "关于嗜毒问题的免费小册子"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "小册子",
+        "english": "a very short book that usually contains information on one particular subject"
+      }
+    ]
+  },
+  {
+    "name": "magazine",
+    "trans": [
+      "n. 杂志"
+    ],
+    "usphone": "'mæɡəzin",
+    "ukphone": "mægə'ziːn",
+    "sentences": [
+      {
+        "english": "a magazine article",
+        "chinese": "杂志中的文章"
+      },
+      {
+        "english": "She glanced over the magazine racks.",
+        "chinese": "她扫了一眼杂志架。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "杂志，期刊",
+        "english": "a large thin book with a paper cover that contains news stories, articles, photographs etc, and is sold weekly or monthly"
+      }
+    ]
+  },
+  {
+    "name": "newspaper",
+    "trans": [
+      "n. 报纸"
+    ],
+    "usphone": "'nuzpepɚ",
+    "ukphone": "'njuːzpeɪpə; 'njuːs-",
+    "sentences": [
+      {
+        "english": "She had read about it in the newspapers.",
+        "chinese": "关于这件事她已经在报纸上看到了。"
+      },
+      {
+        "english": "a series of newspaper articles about life in Cuba",
+        "chinese": "刊登在报纸上的一系列关于古巴生活的文章"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "报纸，报",
+        "english": "a set of large folded sheets of printed paper containing news, articles, pictures, advertisements etc which is sold daily or weekly"
+      }
+    ]
+  },
+  {
+    "name": "novel",
+    "trans": [
+      "n. 小说"
+    ],
+    "usphone": "ˈnɑːvl",
+    "ukphone": "'nɒv(ə)l",
+    "sentences": [
+      {
+        "english": "a novel by Jane Austen",
+        "chinese": "简·奥斯丁的小说"
+      },
+      {
+        "english": "What a novel idea!.",
+        "chinese": "多么新奇的想法呀！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "小说",
+        "english": "a long written story in which the characters and events are usually imaginary"
+      },
+      {
+        "pos": "adj",
+        "chinese": "新的",
+        "english": "not like anything known before, and unusual or interesting"
+      }
+    ]
+  },
+  {
+    "name": "fiction",
+    "trans": [
+      "n. 虚构小说"
+    ],
+    "usphone": "'fɪkʃən",
+    "ukphone": "'fɪkʃ(ə)n",
+    "sentences": [
+      {
+        "english": "romantic fiction",
+        "chinese": "爱情小说"
+      },
+      {
+        "english": "historical fiction",
+        "chinese": "历史小说"
+      },
+      {
+        "english": "For years he managed to keep up the fiction that he was not married.",
+        "chinese": "多年来他设法一直给人一种未婚的假象。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "小说；虚构，杜撰",
+        "english": "books and stories about imaginary people and events"
+      }
+    ]
+  },
+  {
+    "name": "non - fiction",
+    "trans": [
+      "n. 纪实文学"
+    ]
+  },
+  {
+    "name": "enquiry/inquiry",
+    "trans": [
+      "n. 询问，调查"
+    ]
+  },
+  {
+    "name": "delivery desk",
+    "trans": [
+      "n. 借书台"
+    ]
+  },
+  {
+    "name": "circulation desk",
+    "trans": [
+      "n. 还书处"
+    ]
+  },
+  {
+    "name": "open shelf",
+    "trans": [
+      "n. 开架",
+      "adj. 开架的"
+    ]
+  },
+  {
+    "name": "closed shelf",
+    "trans": [
+      "n. 闭架",
+      "adj. 闭架的"
+    ]
+  },
+  {
+    "name": "photocopy",
+    "trans": [
+      "n. 影印本",
+      "v. 复印"
+    ],
+    "usphone": "'fotokɑpi",
+    "ukphone": "'fəʊtəʊkɒpɪ",
+    "sentences": [
+      {
+        "english": "I sent him the original document, not a photocopy.",
+        "chinese": "我寄给他的是原件，不是复印件。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "复印件；影印",
+        "english": "a photographic copy, especially of something printed, written, or drawn"
+      },
+      {
+        "pos": "v",
+        "chinese": "影印，复印",
+        "english": "to make a photographic copy of something"
+      }
+    ]
+  },
+  {
+    "name": "scanner",
+    "trans": [
+      "n. 扫描仪"
+    ],
+    "usphone": "'skænɚ",
+    "ukphone": "'skænə",
+    "sentences": [
+      {
+        "english": "a high-tech body scanner",
+        "chinese": "高科技人体扫描仪"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[计] 扫描仪；扫描器；光电子扫描装置",
+        "english": "a machine that passes an electrical beam over something in order to produce a picture of what is inside it"
+      }
+    ]
+  }
 ]

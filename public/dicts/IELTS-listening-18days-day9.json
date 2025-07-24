@@ -1,306 +1,1919 @@
 [
-    {
-        "name": "stop watch",
-        "trans": ["秒表"]
-    },
-    {
-        "name": "ban",
-        "trans": ["禁止"]
-    },
-    {
-        "name": "filter",
-        "trans": ["过滤器"]
-    },
-    {
-        "name": "standard",
-        "trans": ["标准"]
-    },
-    {
-        "name": "operate",
-        "trans": ["操作"]
-    },
-    {
-        "name": "feedback",
-        "trans": ["反馈"]
-    },
-    {
-        "name": "brush",
-        "trans": ["刷子"]
-    },
-    {
-        "name": "captain",
-        "trans": ["队长"]
-    },
-    {
-        "name": "display",
-        "trans": ["显示"]
-    },
-    {
-        "name": "TV surveillance",
-        "trans": ["TV监视"]
-    },
-    {
-        "name": "button",
-        "trans": ["按钮"]
-    },
-    {
-        "name": "blinded",
-        "trans": ["瞎的"]
-    },
-    {
-        "name": "characteristic",
-        "trans": ["特色"]
-    },
-    {
-        "name": "fixed",
-        "trans": ["固定的"]
-    },
-    {
-        "name": "mathematics",
-        "trans": ["数学"]
-    },
-    {
-        "name": "academic",
-        "trans": ["学术的"]
-    },
-    {
-        "name": "scoring",
-        "trans": ["得分"]
-    },
-    {
-        "name": "heroine",
-        "trans": ["女主角"]
-    },
-    {
-        "name": "Town Hall",
-        "trans": ["市政厅"]
-    },
-    {
-        "name": "spare",
-        "trans": ["节约"]
-    },
-    {
-        "name": "altitude",
-        "trans": ["海拔"]
-    },
-    {
-        "name": "scenery",
-        "trans": ["景色"]
-    },
-    {
-        "name": "fishery",
-        "trans": ["渔业"]
-    },
-    {
-        "name": "certificate",
-        "trans": ["证书"]
-    },
-    {
-        "name": "injure",
-        "trans": ["受伤"]
-    },
-    {
-        "name": "strike",
-        "trans": ["撞击"]
-    },
-    {
-        "name": "luggage",
-        "trans": ["行李"]
-    },
-    {
-        "name": "fringe",
-        "trans": ["边缘"]
-    },
-    {
-        "name": "badge",
-        "trans": ["徽章"]
-    },
-    {
-        "name": "cooperative",
-        "trans": ["合作的"]
-    },
-    {
-        "name": "donkey",
-        "trans": ["驴"]
-    },
-    {
-        "name": "riverside",
-        "trans": ["河边"]
-    },
-    {
-        "name": "humid",
-        "trans": ["湿润的"]
-    },
-    {
-        "name": "escape",
-        "trans": ["逃脱"]
-    },
-    {
-        "name": "seek",
-        "trans": ["寻找"]
-    },
-    {
-        "name": "accompany",
-        "trans": ["陪伴"]
-    },
-    {
-        "name": "limb",
-        "trans": ["四肢"]
-    },
-    {
-        "name": "quiz",
-        "trans": ["小型考试"]
-    },
-    {
-        "name": "multimedia",
-        "trans": ["多媒体"]
-    },
-    {
-        "name": "championship",
-        "trans": ["冠军地位"]
-    },
-    {
-        "name": "influential",
-        "trans": ["有影响力的"]
-    },
-    {
-        "name": "regulation",
-        "trans": ["规则"]
-    },
-    {
-        "name": "certificate",
-        "trans": ["证明…"]
-    },
-    {
-        "name": "statement",
-        "trans": ["声明"]
-    },
-    {
-        "name": "calculate",
-        "trans": ["计算"]
-    },
-    {
-        "name": "assume",
-        "trans": ["假定"]
-    },
-    {
-        "name": "emergency",
-        "trans": ["紧急事件"]
-    },
-    {
-        "name": "sign",
-        "trans": ["记号"]
-    },
-    {
-        "name": "disabled",
-        "trans": ["残疾的"]
-    },
-    {
-        "name": "chain",
-        "trans": ["链"]
-    },
-    {
-        "name": "cafeteria",
-        "trans": ["自助餐厅"]
-    },
-    {
-        "name": "chess",
-        "trans": ["国际象棋"]
-    },
-    {
-        "name": "president",
-        "trans": ["总统"]
-    },
-    {
-        "name": "transport",
-        "trans": ["运输"]
-    },
-    {
-        "name": "senior",
-        "trans": ["高级的"]
-    },
-    {
-        "name": "direction",
-        "trans": ["方向"]
-    },
-    {
-        "name": "political",
-        "trans": ["政治的"]
-    },
-    {
-        "name": "landmark",
-        "trans": ["地标性建筑"]
-    },
-    {
-        "name": "submit",
-        "trans": ["上交"]
-    },
-    {
-        "name": "specific",
-        "trans": ["具体的", "特定的"]
-    },
-    {
-        "name": "assess",
-        "trans": ["评估"]
-    },
-    {
-        "name": "junction",
-        "trans": ["交叉路口"]
-    },
-    {
-        "name": "assistance",
-        "trans": ["帮助"]
-    },
-    {
-        "name": "ambulance",
-        "trans": ["救护车"]
-    },
-    {
-        "name": "harbour",
-        "trans": ["港湾"]
-    },
-    {
-        "name": "category",
-        "trans": ["类别"]
-    },
-    {
-        "name": "sufficient",
-        "trans": ["足够的"]
-    },
-    {
-        "name": "orchard",
-        "trans": ["果园"]
-    },
-    {
-        "name": "adjust",
-        "trans": ["适应"]
-    },
-    {
-        "name": "climate",
-        "trans": ["天气"]
-    },
-    {
-        "name": "previous",
-        "trans": ["之前的"]
-    },
-    {
-        "name": "routine",
-        "trans": ["日常的"]
-    },
-    {
-        "name": "illustration",
-        "trans": ["说明", "图解"]
-    },
-    {
-        "name": "carer",
-        "trans": ["护工"]
-    },
-    {
-        "name": "stretch",
-        "trans": ["伸展"]
-    },
-    {
-        "name": "career",
-        "trans": ["生涯", "职业"]
-    }
+  {
+    "name": "stop watch",
+    "trans": [
+      "秒表"
+    ]
+  },
+  {
+    "name": "ban",
+    "trans": [
+      "禁止"
+    ],
+    "usphone": "bæn",
+    "ukphone": "bæn",
+    "sentences": [
+      {
+        "english": "Smoking is banned in the building.",
+        "chinese": "大楼内禁止吸烟。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "取缔，查禁；禁止",
+        "english": "to say that something must not be done, seen, used etc"
+      },
+      {
+        "pos": "n",
+        "chinese": " 禁止， 禁令",
+        "english": "an official order that prevents something from being used or done"
+      }
+    ]
+  },
+  {
+    "name": "filter",
+    "trans": [
+      "过滤器"
+    ],
+    "usphone": "'fɪltɚ",
+    "ukphone": "'fɪltə",
+    "sentences": [
+      {
+        "english": "The water in the tank is constantly filtered.",
+        "chinese": "鱼缸里的水在不停地被过滤。"
+      },
+      {
+        "english": "The ozone layer filters harmful UV rays from the sun.",
+        "chinese": "臭氧层过滤掉有害的太阳紫外线。"
+      },
+      {
+        "english": "coffee filter papers",
+        "chinese": "咖啡滤纸"
+      },
+      {
+        "english": "filter cigarettes (= with a filter at the end )",
+        "chinese": "过滤嘴香烟"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "过滤",
+        "english": "to remove unwanted substances from water, air etc by passing it through a special substance or piece of equipment"
+      },
+      {
+        "pos": "n",
+        "chinese": "过滤器",
+        "english": "something that you pass water, air etc through in order to remove unwanted substances and make it clean or suitable to use"
+      }
+    ]
+  },
+  {
+    "name": "standard",
+    "trans": [
+      "标准"
+    ],
+    "usphone": "'stændɚd",
+    "ukphone": "'stændəd",
+    "sentences": [
+      {
+        "english": "Students have to reach a certain standard or they won’t pass.",
+        "chinese": "学生必须达到某一标准，否则无法通过。"
+      },
+      {
+        "english": "The airline has rigorous safety standards.",
+        "chinese": "这家航空公司有严格的安全标准。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "标准；水准；旗；度量衡标准",
+        "english": "the level that is considered to be acceptable, or the level that someone or something has achieved"
+      },
+      {
+        "pos": "adj",
+        "chinese": "标准的；合规格的；公认为优秀的",
+        "english": "accepted as normal or usual"
+      }
+    ]
+  },
+  {
+    "name": "operate",
+    "trans": [
+      "操作"
+    ],
+    "usphone": "'ɑpə'ret",
+    "ukphone": "'ɒpəreɪt",
+    "sentences": [
+      {
+        "english": "The whole tax system is now operating more efficiently.",
+        "chinese": "现在整个税收制度运作效率更高了。"
+      },
+      {
+        "english": "The new law doesn’t operate in our favour.",
+        "chinese": "这项新法规对我们不利。"
+      },
+      {
+        "english": "The car parks operate a pay-as-you-leave system.",
+        "chinese": "这些停车场按“离开时付费”的模式运作。"
+      },
+      {
+        "english": "The bus company operates a Monday to Saturday service.",
+        "chinese": "这家公共汽车公司周一至周六运营。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "运转,运作",
+        "english": "if a system, process, or service operates, or if you operate it, it works"
+      },
+      {
+        "pos": "vt",
+        "chinese": "操作；经营，管理",
+        "english": "to use and control a machine or equipment"
+      }
+    ]
+  },
+  {
+    "name": "feedback",
+    "trans": [
+      "反馈"
+    ],
+    "usphone": "'fidbæk",
+    "ukphone": "ˈfi:dbæk",
+    "sentences": [
+      {
+        "english": "How can I provide feedback without making someone angry?",
+        "chinese": "我怎样才能提出反馈意见又不会得罪人呢？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "反馈",
+        "english": "advice, criticism etc about how successful or useful something is"
+      }
+    ]
+  },
+  {
+    "name": "brush",
+    "trans": [
+      "刷子"
+    ],
+    "usphone": "brʌʃ",
+    "ukphone": "brʌʃ",
+    "sentences": [
+      {
+        "english": "a scrubbing brush",
+        "chinese": "硬毛刷，板刷"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "刷子，毛刷；画笔",
+        "english": "an object that you use for cleaning, painting, making your hair tidy etc, made with a lot of hairs,  bristle s  , or thin pieces of plastic, fastened to a handle"
+      }
+    ]
+  },
+  {
+    "name": "captain",
+    "trans": [
+      "队长"
+    ],
+    "usphone": "ˈkæptən",
+    "ukphone": "'kæptɪn",
+    "sentences": [
+      {
+        "english": "The captain and crew welcome you aboard.",
+        "chinese": "机长和全体机组人员欢迎各位乘坐本次航班。"
+      },
+      {
+        "english": "He captained the winning team in 1991.",
+        "chinese": "他于1991年率队夺得胜利。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "舰长，船长；机长",
+        "english": "the sailor in charge of a ship, or the pilot in charge of an aircraft"
+      },
+      {
+        "pos": "v",
+        "chinese": "做…的首领,指挥",
+        "english": "If you captain a team or a ship, you are the captain of it"
+      }
+    ]
+  },
+  {
+    "name": "display",
+    "trans": [
+      "显示"
+    ],
+    "usphone": "dɪ'sple",
+    "ukphone": "dɪˈspleɪ",
+    "sentences": [
+      {
+        "english": "a dazzling display (= very good display ) of flowers",
+        "chinese": "令人目眩神迷的花卉展"
+      },
+      {
+        "english": "The window display caught her eye.",
+        "chinese": "橱窗陈列吸引了她的目光。"
+      },
+      {
+        "english": "shop windows displaying the latest fashions",
+        "chinese": "展示最新时装的商店橱窗"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "展览",
+        "english": "an arrangement of things for people to look at or buy"
+      },
+      {
+        "pos": "v",
+        "chinese": "展览",
+        "english": "to show something to people, or put it in a place where people can see it easily"
+      }
+    ]
+  },
+  {
+    "name": "TV surveillance",
+    "trans": [
+      "TV监视"
+    ]
+  },
+  {
+    "name": "button",
+    "trans": [
+      "按钮"
+    ],
+    "usphone": "'bʌtn",
+    "ukphone": "[ˈbʌtn]",
+    "sentences": [
+      {
+        "english": "small pearl buttons",
+        "chinese": "小的珍珠纽扣"
+      },
+      {
+        "english": "A button was missing from his shirt.",
+        "chinese": "他的衬衫上掉了一颗纽扣。"
+      },
+      {
+        "english": "She undid (=  unfastened  ) the buttons of her blouse.",
+        "chinese": "她解开衬衫的纽扣。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "按钮；纽扣",
+        "english": "a small round flat object on your shirt, coat etc that you pass through a hole to fasten it"
+      },
+      {
+        "pos": "v",
+        "chinese": "扣住；扣紧；在…上装纽扣",
+        "english": "to fasten clothes with buttons, or to be fastened with buttons"
+      }
+    ]
+  },
+  {
+    "name": "blinded",
+    "trans": [
+      "瞎的"
+    ]
+  },
+  {
+    "name": "characteristic",
+    "trans": [
+      "特色"
+    ],
+    "usphone": ",kærəktə'rɪstɪk",
+    "ukphone": "kærəktə'rɪstɪk",
+    "sentences": [
+      {
+        "english": "the highly characteristic (= very typical ) flint walls of the local houses",
+        "chinese": "当地房子非常有特色的燧石墙"
+      },
+      {
+        "english": "Violent images are a defining characteristic of his work.",
+        "chinese": "暴力形象是他作品的一个鲜明特征。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "特有的",
+        "english": "very typical of a particular thing or of someone’s character"
+      },
+      {
+        "pos": "n",
+        "chinese": "特性",
+        "english": "a quality or feature of something or someone that is typical of them and easy to recognize"
+      }
+    ]
+  },
+  {
+    "name": "fixed",
+    "trans": [
+      "固定的"
+    ],
+    "usphone": "fɪkst",
+    "ukphone": "fɪkst",
+    "sentences": [
+      {
+        "english": "The classes begin and end at fixed times.",
+        "chinese": "上下课的时间都是固定不变的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "确定的；固执的；<美口>处境的；准备好的",
+        "english": "firmly fastened to a particular position"
+      },
+      {
+        "pos": "v",
+        "chinese": "修理（过去式）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "mathematics",
+    "trans": [
+      "数学"
+    ],
+    "usphone": ",mæθə'mætɪks",
+    "ukphone": "mæθ(ə)'mætɪks",
+    "sentences": [
+      {
+        "english": "...a professor of mathematics at Boston College.",
+        "chinese": "…一位波士顿大学的数学教授。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "数学",
+        "english": "the science of numbers and of shapes, including  algebra  ,  geometry  , and  arithmetic"
+      }
+    ]
+  },
+  {
+    "name": "academic",
+    "trans": [
+      "学术的"
+    ],
+    "usphone": ",ækə'dɛmɪk",
+    "ukphone": ",ækə'demik",
+    "sentences": [
+      {
+        "english": "He possessed no academic qualifications.",
+        "chinese": "他没有学历。"
+      },
+      {
+        "english": "a program to raise academic standards",
+        "chinese": "旨在提高学术水平的计划"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "学术的",
+        "english": "relating to education, especially at college or university level"
+      }
+    ]
+  },
+  {
+    "name": "scoring",
+    "trans": [
+      "得分"
+    ],
+    "usphone": "'skɔ:riŋ",
+    "ukphone": "'skɔːrɪŋ",
+    "sentences": [
+      {
+        "english": "“Those teams feel that football is about scoring goals,” he said. “That is our challenge.",
+        "chinese": "“那些队认为足球就是得分进球”，他说，“那是我们的艰巨任务。"
+      },
+      {
+        "english": "This allows a modeler to see all of the gathered metrics for that element and decide whether it is just one metric that is problematic or whether that element is scoring badly in several ways.",
+        "chinese": "这样还允许模型构建者为这个元素查看搜集的所有矩阵，从而确定它仅仅是一个有问题的矩阵或者这个元素是否在几个方面得分都很不理想。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "得分；刻痕；总谱",
+        "english": "the act or practice of scoring "
+      },
+      {
+        "pos": "adj",
+        "chinese": "得分的",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "得分（score的ing形式）；刻痕；记下",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "heroine",
+    "trans": [
+      "女主角"
+    ],
+    "usphone": "'hɛroɪn",
+    "ukphone": "'herəʊɪn",
+    "sentences": [
+      {
+        "english": "a heroine of the French Resistance",
+        "chinese": "法国抵抗运动的一位女英雄"
+      },
+      {
+        "english": "The heroine is a senior TV executive.",
+        "chinese": "女主人公是一位电视台高级主管。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "女英雄；女主角",
+        "english": "a woman who is admired for doing something extremely brave"
+      }
+    ]
+  },
+  {
+    "name": "Town Hall",
+    "trans": [
+      "市政厅"
+    ]
+  },
+  {
+    "name": "spare",
+    "trans": [
+      "节约"
+    ],
+    "usphone": "spɛr",
+    "ukphone": "speə",
+    "sentences": [
+      {
+        "english": "Sorry, I can’t spare the time.",
+        "chinese": "对不起，我抽不出时间。"
+      },
+      {
+        "english": "Have you got any spare boxes?",
+        "chinese": "你有没有多余的盒子？"
+      },
+      {
+        "english": "You could sleep in the spare bedroom.",
+        "chinese": "你可以睡那间空着的客房。"
+      },
+      {
+        "english": "Do you have any spare cash?",
+        "chinese": "你手头有闲钱吗？"
+      },
+      {
+        "english": "I’ll go and see if there are any spare seats.",
+        "chinese": "我去看看是否还有空余的座位。"
+      },
+      {
+        "english": "A decline in beer sales had left the industry with spare capacity (= the ability to produce more than can be sold ) .",
+        "chinese": "啤酒销售量的下降使该行业出现产能闲置。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "抽出；拨出；留出；匀出",
+        "english": "to make something such as time, money, or workers available for someone, especially when this is difficult for you to do"
+      },
+      {
+        "pos": "adj",
+        "chinese": "多余的",
+        "english": "not being used or not needed at the present time"
+      }
+    ]
+  },
+  {
+    "name": "altitude",
+    "trans": [
+      "海拔"
+    ],
+    "usphone": "'æltɪtud",
+    "ukphone": "'ælti,tju:d",
+    "sentences": [
+      {
+        "english": "The aircraft had reached its cruising altitude of about 39,000 feet.",
+        "chinese": "那架飞机已经达到了大约三万九千英尺的巡航高度。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "海拔, 高度",
+        "english": "the height of an object or place above the sea"
+      }
+    ]
+  },
+  {
+    "name": "scenery",
+    "trans": [
+      "景色"
+    ],
+    "usphone": "'sinəri",
+    "ukphone": "'siːn(ə)rɪ",
+    "sentences": [
+      {
+        "english": "The best part of the trip was the fantastic scenery.",
+        "chinese": "此次旅行最精彩之处就是那美妙绝伦的风景。"
+      },
+      {
+        "english": "Instead of stagehands, the actors will move the scenery right in front of the audience.",
+        "chinese": "演员们将替代舞台工作人员，当着观众的面置换布景。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "风景；舞台布景",
+        "english": "the natural features of a particular part of a country that you can see, such as mountains, forests, deserts etc"
+      }
+    ]
+  },
+  {
+    "name": "fishery",
+    "trans": [
+      "渔业"
+    ],
+    "usphone": "'fɪʃəri",
+    "ukphone": "'fɪʃ(ə)rɪ",
+    "sentences": [
+      {
+        "english": "...the fisheries off Newfoundland.",
+        "chinese": "…纽芬兰附近的那些渔场。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "渔业；渔场；水产业",
+        "english": "a part of the sea where fish are caught in large numbers"
+      }
+    ]
+  },
+  {
+    "name": "certificate",
+    "trans": [
+      "证书"
+    ],
+    "usphone": "sɚˈtɪfɪkɪt; (for v.,) sɚˈtɪfɪˌket",
+    "ukphone": "səˈtɪfɪkɪt; (for v.,) səˈtɪfɪˌkeɪt",
+    "sentences": [
+      {
+        "english": "birth/death/marriage certificate (=giving details of someone’s birth, death, or marriage)",
+        "chinese": "出生/死亡/结婚证书"
+      },
+      {
+        "english": "a degree certificate",
+        "chinese": "学位证书"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "证书，证件，执照；（毕业）文凭，合格证书",
+        "english": "an official document that states that a fact or facts are true"
+      }
+    ]
+  },
+  {
+    "name": "injure",
+    "trans": [
+      "受伤"
+    ],
+    "usphone": "'ɪndʒɚ",
+    "ukphone": "'ɪndʒə(r)",
+    "sentences": [
+      {
+        "english": "Angus injured his leg playing rugby.",
+        "chinese": "安格斯在打橄榄球时弄伤了腿。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "使受伤",
+        "english": "to hurt yourself or someone else, for example in an accident or an attack"
+      }
+    ]
+  },
+  {
+    "name": "strike",
+    "trans": [
+      "撞击"
+    ],
+    "usphone": "straɪk",
+    "ukphone": "straɪk",
+    "sentences": [
+      {
+        "english": "The government has promised that the army will be called in to help if there is a firemen’s strike.",
+        "chinese": "政府承诺，如消防员罢工，就将调军队来协助。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "罢工",
+        "english": "a period of time when a group of workers deliberately stop working because of a disagreement about pay, working conditions etc"
+      }
+    ]
+  },
+  {
+    "name": "luggage",
+    "trans": [
+      "行李"
+    ],
+    "usphone": "'lʌɡɪdʒ",
+    "ukphone": "'lʌgɪdʒ",
+    "sentences": [
+      {
+        "english": "They searched his luggage for illegal drugs.",
+        "chinese": "他们搜查他的行李看是否藏有毒品。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "行李；皮箱，皮包",
+        "english": "the cases, bags etc that you carry when you are travelling"
+      }
+    ]
+  },
+  {
+    "name": "fringe",
+    "trans": [
+      "边缘"
+    ],
+    "usphone": "frɪndʒ",
+    "ukphone": "frɪn(d)ʒ",
+    "sentences": [
+      {
+        "english": "a tall girl with straight brown hair and a fringe",
+        "chinese": "一头棕色直发、留着刘海的高个子女孩"
+      },
+      {
+        "english": "The monarchists are a small fringe group who quarrel fiercely among themselves.",
+        "chinese": "君主制拥护者们是个边缘性小团体，内部争吵激烈。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "边缘；穗；刘海",
+        "english": "if you have a fringe, your hair is cut so that it hangs down over your forehead"
+      },
+      {
+        "pos": "adj",
+        "chinese": "边缘的；附加的",
+        "english": "Fringe groups or events are less important or popular than other related groups or events"
+      },
+      {
+        "pos": "v",
+        "chinese": "加穗于",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "badge",
+    "trans": [
+      "徽章"
+    ],
+    "usphone": "bædʒ",
+    "ukphone": "bædʒ",
+    "sentences": [
+      {
+        "english": "We were each handed a badge with our name on it.",
+        "chinese": "我们每个人都拿到一个徽章，上面有我们的名字。"
+      },
+      {
+        "english": "He now sees his wartime injuries as a badge of honor.",
+        "chinese": "现在，他把自己在战争中受的伤看成是一种光荣标记。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "徽章，像章；标志",
+        "english": "a small piece of metal or plastic, with a design or words on it, that a person wears to show that they belong to an organization, support sth, have achieved sth, have a particular rank, etc."
+      }
+    ]
+  },
+  {
+    "name": "cooperative",
+    "trans": [
+      "合作的"
+    ],
+    "usphone": "ko'ɑpərətɪv",
+    "ukphone": "kəʊ'ɒpərətɪv",
+    "sentences": [
+      {
+        "english": "He was doing his best to be cooperative.",
+        "chinese": "他在尽全力配合。"
+      },
+      {
+        "english": "a cooperative witness",
+        "chinese": "肯配合的目击者"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "合作的",
+        "english": "willing to cooperate"
+      }
+    ]
+  },
+  {
+    "name": "donkey",
+    "trans": [
+      "驴"
+    ],
+    "usphone": "'dɔŋki",
+    "ukphone": "'dɒŋkɪ",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "驴",
+        "english": "a grey or brown animal like a horse, but smaller and with long ears"
+      }
+    ]
+  },
+  {
+    "name": "riverside",
+    "trans": [
+      "河边"
+    ]
+  },
+  {
+    "name": "humid",
+    "trans": [
+      "湿润的"
+    ],
+    "usphone": "'hjumɪd",
+    "ukphone": "'hjuːmɪd",
+    "sentences": [
+      {
+        "english": "Tokyo is extremely humid in mid-summer.",
+        "chinese": "仲夏的东京十分潮湿。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "湿的，湿气重的",
+        "english": "if the weather is humid, you feel uncomfortable because the air is very wet and usually hot"
+      }
+    ]
+  },
+  {
+    "name": "escape",
+    "trans": [
+      "逃脱"
+    ],
+    "usphone": "ɪˈskep",
+    "ukphone": "ɪ'skeɪp; e-",
+    "sentences": [
+      {
+        "english": "He broke down the locked door and escaped.",
+        "chinese": "他砸开上锁的门，逃走了。"
+      },
+      {
+        "english": "Vents allow any steam to escape if the system overheats.",
+        "chinese": "如果系统过热，排放口可使蒸汽逸出。"
+      },
+      {
+        "english": "The girl had no chance of escape.",
+        "chinese": "那女孩没有机会逃跑。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "逃跑；逸出",
+        "english": "to leave a place when someone is trying to catch you or stop you, or when there is a dangerous situation"
+      },
+      {
+        "pos": "n",
+        "chinese": "逃跑",
+        "english": "the act of getting away from a place, or a dangerous or bad situation"
+      }
+    ]
+  },
+  {
+    "name": "seek",
+    "trans": [
+      "寻找"
+    ],
+    "usphone": "sik",
+    "ukphone": "siːk",
+    "sentences": [
+      {
+        "english": "new graduates seeking employment",
+        "chinese": "正在求职的刚毕业的大学生"
+      },
+      {
+        "english": "Drivers are advised to seek alternative routes.",
+        "chinese": "驾车者被告知需另寻其他路线。"
+      },
+      {
+        "english": "They quickly sought to distance themselves from the protesters.",
+        "chinese": "他们迅速设法远离抗议者。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "寻找，探索；试图",
+        "english": "to look for someone or something"
+      }
+    ]
+  },
+  {
+    "name": "accompany",
+    "trans": [
+      "陪伴"
+    ],
+    "usphone": "ə'kʌmpəni",
+    "ukphone": "ə'kʌmpəni",
+    "sentences": [
+      {
+        "english": "Children under 14 must be accompanied by an adult.",
+        "chinese": "14岁以下儿童必须有成人陪同。"
+      },
+      {
+        "english": "Wherever her husband went, she would accompany him.",
+        "chinese": "不论丈夫去哪里，她都陪伴左右。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": " 陪同， 伴随； 为…伴奏",
+        "english": "to go somewhere with someone"
+      }
+    ]
+  },
+  {
+    "name": "limb",
+    "trans": [
+      "四肢"
+    ],
+    "usphone": "lɪm",
+    "ukphone": "lɪm",
+    "sentences": [
+      {
+        "english": "She would be able to stretch out her cramped limbs and rest for a few hours.",
+        "chinese": "她将可以伸开蜷缩的四肢，休息几个小时。"
+      },
+      {
+        "english": "She sat on a limb of the tree and looked down.",
+        "chinese": "文例句：她坐在一根大树枝上往下看."
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "肢，臂，翼；树枝",
+        "english": "an arm or leg"
+      }
+    ]
+  },
+  {
+    "name": "quiz",
+    "trans": [
+      "小型考试"
+    ],
+    "usphone": "kwɪz",
+    "ukphone": "kwɪz",
+    "sentences": [
+      {
+        "english": "a love quiz in a magazine",
+        "chinese": "杂志上的爱情问答"
+      },
+      {
+        "english": "a general knowledge quiz",
+        "chinese": "常识问答竞赛"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "智力竞赛，问答比赛；小测验",
+        "english": "a competition or game in which people have to answer questions"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 考查， 盘问",
+        "english": "to ask someone a lot of questions"
+      }
+    ]
+  },
+  {
+    "name": "multimedia",
+    "trans": [
+      "多媒体"
+    ],
+    "usphone": ",mʌltɪ'midɪə",
+    "ukphone": "'mʌltɪmiːdɪə",
+    "sentences": [
+      {
+        "english": "...the case of an insurance company using multimedia to improve customer service in its branches.",
+        "chinese": "…一家保险公司利用多媒体技术改善其分支机构的客户服务的实例。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "多媒体",
+        "english": "You use multimedia to refer to computer programs and products which involve sound, pictures, and film, as well as text"
+      },
+      {
+        "pos": "adj",
+        "chinese": "多媒体的",
+        "english": "involving computers and computer programs that use a mixture of sound, pictures, video, and writing to give information"
+      }
+    ]
+  },
+  {
+    "name": "championship",
+    "trans": [
+      "冠军地位"
+    ],
+    "usphone": "'tʃæmpɪənʃɪp",
+    "ukphone": "'tʃæmpɪənʃɪp",
+    "sentences": [
+      {
+        "english": "the women’s figure skating championships",
+        "chinese": "女子花样滑冰锦标赛"
+      },
+      {
+        "english": "Greece won the European Championship.",
+        "chinese": "希腊队赢得了欧洲锦标赛的冠军。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "锦标赛；冠军称号；冠军的地位",
+        "english": "a competition to find which player, team etc is the best in a particular sport"
+      }
+    ]
+  },
+  {
+    "name": "influential",
+    "trans": [
+      "有影响力的"
+    ],
+    "usphone": ",ɪnflu'ɛnʃl",
+    "ukphone": "ˌɪnfluˈenʃl",
+    "sentences": [
+      {
+        "english": "He had influential friends.",
+        "chinese": "他有一些有影响力的朋友。"
+      },
+      {
+        "english": "a highly influential art magazine",
+        "chinese": "一本极有影响力的艺术杂志"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "有影响力的",
+        "english": "having a lot of influence and therefore changing the way people think and behave"
+      }
+    ]
+  },
+  {
+    "name": "regulation",
+    "trans": [
+      "规则"
+    ],
+    "usphone": "ˌrɛɡjəˈleʃən",
+    "ukphone": "ˌregjuˈleɪʃn",
+    "sentences": [
+      {
+        "english": "There seem to be so many rules and regulations these days.",
+        "chinese": "如今好像条条框框很多。"
+      },
+      {
+        "english": "regulations governing the safety of toys",
+        "chinese": "监控玩具安全的条例"
+      },
+      {
+        "english": "All companies must comply with the regulations .",
+        "chinese": "所有公司都必须遵守规定。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "管理；规则",
+        "english": "an official rule or order"
+      }
+    ]
+  },
+  {
+    "name": "certificate",
+    "trans": [
+      "证明…"
+    ],
+    "usphone": "sɚˈtɪfɪkɪt; (for v.,) sɚˈtɪfɪˌket",
+    "ukphone": "səˈtɪfɪkɪt; (for v.,) səˈtɪfɪˌkeɪt",
+    "sentences": [
+      {
+        "english": "birth/death/marriage certificate (=giving details of someone’s birth, death, or marriage)",
+        "chinese": "出生/死亡/结婚证书"
+      },
+      {
+        "english": "a degree certificate",
+        "chinese": "学位证书"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "证书，证件，执照；（毕业）文凭，合格证书",
+        "english": "an official document that states that a fact or facts are true"
+      }
+    ]
+  },
+  {
+    "name": "statement",
+    "trans": [
+      "声明"
+    ],
+    "usphone": "'stetmənt",
+    "ukphone": "'steɪtmənt",
+    "sentences": [
+      {
+        "english": "In an official statement, she formally announced her resignation.",
+        "chinese": "在一份官方声明中，她正式宣布辞职。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 陈述， 声明； 结算单， 报表",
+        "english": "something you say or write, especially publicly or officially, to let people know your intentions or opinions, or to record facts"
+      }
+    ]
+  },
+  {
+    "name": "calculate",
+    "trans": [
+      "计算"
+    ],
+    "usphone": "'kælkjulet",
+    "ukphone": "'kælkjuleɪt",
+    "sentences": [
+      {
+        "english": "These instruments calculate distances precisely.",
+        "chinese": "这些仪器计算距离非常精确。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": " 计算， 推算； 计划， 打算",
+        "english": "to find out how much something will cost, how long something will take etc, by using numbers"
+      }
+    ]
+  },
+  {
+    "name": "assume",
+    "trans": [
+      "假定"
+    ],
+    "usphone": "ə'sum",
+    "ukphone": "ə'sjuːm",
+    "sentences": [
+      {
+        "english": "I think we can safely assume (=  it is almost certain  ) that interest rates will go up again soon.",
+        "chinese": "我想我们几乎可以肯定，利率很快会再次上调。"
+      },
+      {
+        "english": "When it got to midnight and Paul was still not back, I began to assume the worst (=  think that the worst possible thing had happened  ) .",
+        "chinese": "到午夜时保罗还没回来，我就开始往最坏的地方想了。"
+      },
+      {
+        "english": "Whoever they appoint will assume responsibility for all financial matters.",
+        "chinese": "不管他们任命的是谁，他都要负责财务方面的所有事务。"
+      },
+      {
+        "english": "These relationships assume great importance in times of crisis.",
+        "chinese": "在危急时刻，这些关系显得尤为重要。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "假定；承担；呈现",
+        "english": "to think that something is true, although you do not have definite proof"
+      }
+    ]
+  },
+  {
+    "name": "emergency",
+    "trans": [
+      "紧急事件"
+    ],
+    "usphone": "ɪ'mɝdʒənsi",
+    "ukphone": "i'mə:dʒənsi",
+    "sentences": [
+      {
+        "english": "Lifeguards are trained to deal with emergencies.",
+        "chinese": "救生员接受过应对紧急情况的训练。"
+      },
+      {
+        "english": "(= In case of emergency ), press the alarm button.",
+        "chinese": "遇到紧急情况，请按报警按钮。"
+      },
+      {
+        "english": "The plane had to make an emergency landing.",
+        "chinese": "那架飞机不得不紧急着陆。"
+      },
+      {
+        "english": "The government called an emergency meeting to discuss the crisis.",
+        "chinese": "政府召开了紧急会议，讨论这次危机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "紧急情况",
+        "english": "an unexpected and dangerous situation that must be dealt with immediately"
+      }
+    ]
+  },
+  {
+    "name": "sign",
+    "trans": [
+      "记号"
+    ],
+    "usphone": "saɪn",
+    "ukphone": "saɪn",
+    "sentences": [
+      {
+        "english": "the dollar sign",
+        "chinese": "美元符号"
+      },
+      {
+        "english": "a minus sign",
+        "chinese": "减号"
+      },
+      {
+        "english": "a sign on the door",
+        "chinese": "门上的标牌"
+      },
+      {
+        "english": "Sign here, please.",
+        "chinese": "请在这里签字。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "符号；招牌",
+        "english": "a mark or shape that has a particular meaning"
+      },
+      {
+        "pos": "v",
+        "chinese": "签名",
+        "english": "to write your signature on something to show that you wrote it, agree with it, or were present"
+      }
+    ]
+  },
+  {
+    "name": "disabled",
+    "trans": [
+      "残疾的"
+    ],
+    "usphone": "dɪs'ebld",
+    "ukphone": "dɪs'eɪbld",
+    "sentences": [
+      {
+        "english": "a support group for parents of disabled children",
+        "chinese": "帮助残障儿童父母的援助团"
+      },
+      {
+        "english": "a severely disabled polio patient",
+        "chinese": "严重残疾的小儿麻痺症病人"
+      },
+      {
+        "english": "teachers who work with learning disabled children (= children who have problems learning )",
+        "chinese": "教有学习障碍的儿童的教师"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "残废的，有缺陷的",
+        "english": "someone who is disabled cannot use a part of their body properly, or cannot learn easily"
+      },
+      {
+        "pos": "v",
+        "chinese": "使…失去能力（disable的过去分词）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "chain",
+    "trans": [
+      "链"
+    ],
+    "usphone": "tʃen",
+    "ukphone": "tʃeɪn",
+    "sentences": [
+      {
+        "english": "...a large supermarket chain.",
+        "chinese": "…一家大型连锁超市。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "连锁店",
+        "english": "a number of shops, hotels, cinemas etc owned or managed by the same company or person"
+      }
+    ]
+  },
+  {
+    "name": "cafeteria",
+    "trans": [
+      "自助餐厅"
+    ],
+    "usphone": ",kæfə'tɪrɪə",
+    "ukphone": "ˌkæfəˈtɪəriə",
+    "sentences": [
+      {
+        "english": "the school cafeteria",
+        "chinese": "学校餐厅"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "自助餐厅",
+        "english": "a restaurant, often in a factory, college etc, where you choose from foods that have already been cooked and carry your own food to a table"
+      }
+    ]
+  },
+  {
+    "name": "chess",
+    "trans": [
+      "国际象棋"
+    ],
+    "usphone": "tʃɛs",
+    "ukphone": "tʃes",
+    "sentences": [
+      {
+        "english": "They meet fairly often to play chess .",
+        "chinese": "他们经常在一起下国际象棋。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "棋；国际象棋",
+        "english": "a game for two players, who move their playing pieces according to particular rules across a special board to try to trap their opponent’s king"
+      }
+    ]
+  },
+  {
+    "name": "president",
+    "trans": [
+      "总统"
+    ],
+    "usphone": "'prɛzɪdənt",
+    "ukphone": "'prezɪd(ə)nt",
+    "sentences": [
+      {
+        "english": "President Bush",
+        "chinese": "布什总统"
+      },
+      {
+        "english": "the president of General Motors",
+        "chinese": "通用汽车公司总裁"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "总统；（某组织的）最高权力人",
+        "english": "the official leader of a country that does not have a king or queen"
+      }
+    ]
+  },
+  {
+    "name": "transport",
+    "trans": [
+      "运输"
+    ],
+    "usphone": "'trænspɔrt",
+    "ukphone": "træn'spɔːt; trɑːn-",
+    "sentences": [
+      {
+        "english": "trucks used for transporting oil",
+        "chinese": "运输石油的卡车"
+      },
+      {
+        "english": "Canals were used for the transport of goods.",
+        "chinese": "利用运河来运输货物。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "运输",
+        "english": "to take goods, people etc from one place to another in a vehicle"
+      },
+      {
+        "pos": "n",
+        "chinese": "运输",
+        "english": "the process or business of taking goods from one place to another"
+      }
+    ]
+  },
+  {
+    "name": "senior",
+    "trans": [
+      "高级的"
+    ],
+    "usphone": "'sinɪɚ",
+    "ukphone": "'siːnɪə",
+    "sentences": [
+      {
+        "english": "Seniors can get a 10% discount.",
+        "chinese": "老年人可以享受10%的折扣。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "老年人",
+        "english": "a  senior citizen"
+      }
+    ]
+  },
+  {
+    "name": "direction",
+    "trans": [
+      "方向"
+    ],
+    "usphone": "dəˈrɛkʃən; (also) daɪˈrɛkʃən",
+    "ukphone": "dɪˈrɛkʃən; daɪ-",
+    "sentences": [
+      {
+        "english": "Which direction did they go in ?",
+        "chinese": "他们朝哪个方向走了？"
+      },
+      {
+        "english": "A very helpful woman gave me directions to the police station.",
+        "chinese": "一个很热心的妇女给我指了去警察局的路。"
+      },
+      {
+        "english": "Be sure you read the directions before using any piece of equipment.",
+        "chinese": "使用任何设备之前一定要先阅读操作指南。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "方向,方位；指令；说明",
+        "english": "the way something or someone moves, faces, or is aimed"
+      }
+    ]
+  },
+  {
+    "name": "political",
+    "trans": [
+      "政治的"
+    ],
+    "usphone": "pə'lɪtɪkl",
+    "ukphone": "pə'lɪtɪk(ə)l",
+    "sentences": [
+      {
+        "english": "a monarch without political power",
+        "chinese": "没有政治权力的君主"
+      },
+      {
+        "english": "He was a political prisoner (= one who was put in prison because he was thought to be harmful to the state) .",
+        "chinese": "他曾是个政治犯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "政治的，政治上的",
+        "english": "connected with the state, government or public affairs"
+      }
+    ]
+  },
+  {
+    "name": "landmark",
+    "trans": [
+      "地标性建筑"
+    ],
+    "usphone": "'lændmɑrk",
+    "ukphone": "'lændmɑrk",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "有重大意义或影响的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "submit",
+    "trans": [
+      "上交"
+    ],
+    "usphone": "səb'mɪt",
+    "ukphone": "səb'mɪt",
+    "sentences": [
+      {
+        "english": "In desperation, Mrs. Jones submitted to an operation on her right knee to relieve the pain.",
+        "chinese": "绝望中，琼斯夫人不得已接受了一次她右膝的手术以减轻疼痛。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 屈从， 听从； 忍受； 甘心",
+        "english": "If you submit to something, you unwillingly allow something to be done to you, or you do what someone wants, for example because you are not powerful enough to resist"
+      },
+      {
+        "pos": "vt",
+        "chinese": "屈从，听从，服从；呈送，提交；主张，建议",
+        "english": "to give a plan, piece of writing etc to someone in authority for them to consider or approve"
+      }
+    ]
+  },
+  {
+    "name": "specific",
+    "trans": [
+      "具体的",
+      "特定的"
+    ],
+    "usphone": "spɪ'sɪfɪk",
+    "ukphone": "spə'sɪfɪk",
+    "sentences": [
+      {
+        "english": "games suitable for specific age groups",
+        "chinese": "适合特定年龄组的游戏"
+      },
+      {
+        "english": "a specific example of alcohol’s effect on the body",
+        "chinese": "酒精对身体影响的具体例子"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "特有的；明确的；具体的",
+        "english": "a specific thing, person, or group is one particular thing, person, or group"
+      },
+      {
+        "pos": "n",
+        "chinese": " 详情， 细节",
+        "english": "particular details"
+      }
+    ]
+  },
+  {
+    "name": "assess",
+    "trans": [
+      "评估"
+    ],
+    "usphone": "ə'sɛs",
+    "ukphone": "ə'ses",
+    "sentences": [
+      {
+        "english": "The test was to assess aptitude rather than academic achievement.",
+        "chinese": "该测试将评估能力而不是学业成绩。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": " 对估价； 评价， 评论",
+        "english": "to make a judgment about a person or situation after thinking carefully about it"
+      }
+    ]
+  },
+  {
+    "name": "junction",
+    "trans": [
+      "交叉路口"
+    ],
+    "usphone": "'dʒʌŋkʃən",
+    "ukphone": "'dʒʌŋ(k)ʃ(ə)n",
+    "sentences": [
+      {
+        "english": "the junction of Abbot Road and Mill Street",
+        "chinese": "阿伯特路与米尔街的交叉口"
+      },
+      {
+        "english": "Junction 5 on the M40 ",
+        "chinese": "40号高速公路上的第5交叉口"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "连接点，汇合处",
+        "english": "a place where one road, track etc joins another"
+      }
+    ]
+  },
+  {
+    "name": "assistance",
+    "trans": [
+      "帮助"
+    ],
+    "usphone": "ə'sɪstəns",
+    "ukphone": "ə'sɪstəns",
+    "sentences": [
+      {
+        "english": "We offer financial assistance to students.",
+        "chinese": "我们向学生提供经济援助。"
+      },
+      {
+        "english": "Can I be of any assistance (=  can I help you  ) ?",
+        "chinese": "我能帮什么忙吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 协助， 援助",
+        "english": "help or support"
+      }
+    ]
+  },
+  {
+    "name": "ambulance",
+    "trans": [
+      "救护车"
+    ],
+    "usphone": "'æmbjələns",
+    "ukphone": "'æmbjʊl(ə)ns",
+    "sentences": [
+      {
+        "english": "the ambulance service",
+        "chinese": "救护车服务"
+      },
+      {
+        "english": "the ambulance service",
+        "chinese": "你觉得我们需要叫救护车吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[车辆][医] 救护车；战时流动医院",
+        "english": "a special vehicle that is used to take people who are ill or injured to hospital"
+      }
+    ]
+  },
+  {
+    "name": "harbour",
+    "trans": [
+      "港湾"
+    ],
+    "usphone": "hɑrbɚ",
+    "ukphone": "ˈhɑ:bə(r)",
+    "sentences": [
+      {
+        "english": "I think he’s harbouring some sort of grudge against me.",
+        "chinese": "我觉得他对我有点怀恨在心。"
+      },
+      {
+        "english": "Sinks and draining boards can harbour germs.",
+        "chinese": "洗涤槽和沥水板可能藏有病菌。"
+      },
+      {
+        "english": "Accusations of harbouring suspects were raised against the former Hungarian leadership.",
+        "chinese": "匈牙利前领导人被指控窝藏疑犯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "怀着（不好的想法、恐惧或希望）；包含，藏有；窝藏",
+        "english": "to keep bad thoughts, fears, or hopes in your mind for a long time"
+      }
+    ]
+  },
+  {
+    "name": "category",
+    "trans": [
+      "类别"
+    ],
+    "usphone": "'kætəɡɔri",
+    "ukphone": "ˈkætəgəri",
+    "sentences": [
+      {
+        "english": "people in the over-45 age category",
+        "chinese": "属45岁以上年龄组的人"
+      },
+      {
+        "english": "Seats are available in eight of the ten price categories .",
+        "chinese": "座位共有10种票价，现有8种可售。"
+      },
+      {
+        "english": "Williams’ style does not fit easily into the category of jazz.",
+        "chinese": "威廉斯的风格不能轻易归入爵士乐的范畴。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "种类",
+        "english": "a group of people or things that are all of the same type"
+      }
+    ]
+  },
+  {
+    "name": "sufficient",
+    "trans": [
+      "足够的"
+    ],
+    "usphone": "səˈfɪʃənt",
+    "ukphone": "səˈfɪʃnt",
+    "sentences": [
+      {
+        "english": "We can only prosecute if there is sufficient evidence.",
+        "chinese": "有了足够的证据，我们才能提出起诉。"
+      },
+      {
+        "english": "Unauthorized absence is sufficient reason for dismissal.",
+        "chinese": "旷工足以成为解雇的理由。"
+      },
+      {
+        "english": "We need sufficient time to deal with the problem.",
+        "chinese": "我们需要足够的时间来处理这个问题。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "足够的",
+        "english": "as much as is needed for a particular purpose"
+      }
+    ]
+  },
+  {
+    "name": "orchard",
+    "trans": [
+      "果园"
+    ],
+    "usphone": "'ɔrtʃɚd",
+    "ukphone": "'ɔːtʃəd",
+    "sentences": [
+      {
+        "english": "a cherry orchard",
+        "chinese": "樱桃园"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "果园",
+        "english": "a place where fruit trees are grown"
+      }
+    ]
+  },
+  {
+    "name": "adjust",
+    "trans": [
+      "适应"
+    ],
+    "usphone": "ə'dʒʌst",
+    "ukphone": "ə'dʒʌst",
+    "sentences": [
+      {
+        "english": "They’ll soon settle in – kids are very good at adjusting.",
+        "chinese": "他们很快就会习惯的——小孩子适应能力很强。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 适应",
+        "english": "to gradually become familiar with a new situation"
+      },
+      {
+        "pos": "vt",
+        "chinese": "调整，调节；校正",
+        "english": "to change or move something slightly to improve it or make it more suitable for a particular purpose"
+      }
+    ]
+  },
+  {
+    "name": "climate",
+    "trans": [
+      "天气"
+    ],
+    "usphone": "ˈklaɪmɪt",
+    "ukphone": "'klaɪmət",
+    "sentences": [
+      {
+        "english": "Los Angeles’ warm dry climate",
+        "chinese": "洛杉矶温暖干燥的气候"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 气候； 风土， 地带； 风气， 气氛",
+        "english": "the typical weather conditions in a particular area"
+      }
+    ]
+  },
+  {
+    "name": "previous",
+    "trans": [
+      "之前的"
+    ],
+    "usphone": "'privɪəs",
+    "ukphone": "ˈpri:viəs",
+    "sentences": [
+      {
+        "english": "She has a teenage daughter from a previous marriage.",
+        "chinese": "她有个出自前一次婚姻的十几岁的女儿。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "之前的",
+        "english": "A previous event or thing is one that happened or existed before the one that you are talking about"
+      }
+    ]
+  },
+  {
+    "name": "routine",
+    "trans": [
+      "日常的"
+    ],
+    "usphone": "rʊ'tin",
+    "ukphone": "ruː'tiːn",
+    "sentences": [
+      {
+        "english": "John’s departure had upset their daily routine .",
+        "chinese": "约翰的离去打乱了他们的日常生活。"
+      },
+      {
+        "english": "Try to get into a routine (= develop a fixed order of doing things ) .",
+        "chinese": "尽量养成一套习惯。"
+      },
+      {
+        "english": "my daily exercise routine",
+        "chinese": "我每天的锻炼习惯"
+      },
+      {
+        "english": "Dressing is a task which we do every day as a matter of routine (= done regularly and not unusual ) .",
+        "chinese": "穿衣打扮是我们每天必做的事情。"
+      },
+      {
+        "english": "You mustn’t worry. These are just routine enquiries.",
+        "chinese": "你不必担心，这只是例行的询问。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "例行公事",
+        "english": "the usual order in which you do things, or the things you regularly do"
+      },
+      {
+        "pos": "adj",
+        "chinese": "日常的",
+        "english": "happening as a normal part of a job or process"
+      }
+    ]
+  },
+  {
+    "name": "illustration",
+    "trans": [
+      "说明",
+      "图解"
+    ],
+    "usphone": ",ɪlə'streʃən",
+    "ukphone": "ɪlə'streɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "The book contains 62 pages of illustrations.",
+        "chinese": "这本书有62页插图。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "说明；插图；例证；图解",
+        "english": "a picture in a book, article etc, especially one that helps you to understand it"
+      }
+    ]
+  },
+  {
+    "name": "carer",
+    "trans": [
+      "护工"
+    ]
+  },
+  {
+    "name": "stretch",
+    "trans": [
+      "伸展"
+    ],
+    "usphone": "strɛtʃ",
+    "ukphone": "stretʃ",
+    "sentences": [
+      {
+        "english": "Carl sat up in bed, yawned, and stretched.",
+        "chinese": "卡尔从床上坐起来，打了个呵欠，伸了伸懒 腰。"
+      },
+      {
+        "english": "Always stretch before exercising.",
+        "chinese": "锻炼之前都要做伸展运动。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "伸， 延",
+        "english": "to straighten your arms, legs, or body to full length"
+      },
+      {
+        "pos": "vt",
+        "chinese": "拉长",
+        "english": "to reach a long way for something"
+      },
+      {
+        "pos": "n",
+        "chinese": "一段时间； 一段距离；延伸， 连绵； 连绵的一片",
+        "english": "a continuous period of time"
+      }
+    ]
+  },
+  {
+    "name": "career",
+    "trans": [
+      "生涯",
+      "职业"
+    ],
+    "usphone": "kə'rɪr",
+    "ukphone": "kə'rɪə",
+    "sentences": [
+      {
+        "english": "a teaching career",
+        "chinese": "教学事业"
+      },
+      {
+        "english": "He realized that his acting career was over.",
+        "chinese": "他意识到自己的演艺事业已走到了尽头。"
+      },
+      {
+        "english": "a physiotherapist who wanted to make a dramatic career change by becoming an author",
+        "chinese": "想彻底改行当作家的理疗师"
+      },
+      {
+        "english": "Nurses want an improved career structure (= better opportunities to move upwards in their jobs ) .",
+        "chinese": "护士希望有更好的职业架构。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "生涯，职业；经历",
+        "english": "the series of jobs that a person has in a particular area of work, usually involving more responsibility as time passes"
+      }
+    ]
+  }
 ]

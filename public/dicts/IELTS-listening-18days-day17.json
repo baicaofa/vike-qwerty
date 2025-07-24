@@ -1,186 +1,1270 @@
 [
-    {
-        "name": "compose",
-        "trans": ["构成"]
-    },
-    {
-        "name": "trace",
-        "trans": ["痕迹"]
-    },
-    {
-        "name": "mineral",
-        "trans": ["矿物"]
-    },
-    {
-        "name": "metabolism",
-        "trans": ["新陈代谢"]
-    },
-    {
-        "name": "deserve",
-        "trans": ["应得"]
-    },
-    {
-        "name": "maintenance",
-        "trans": ["维护"]
-    },
-    {
-        "name": "intrigue",
-        "trans": ["激起"]
-    },
-    {
-        "name": "poison",
-        "trans": ["毒"]
-    },
-    {
-        "name": "decline",
-        "trans": ["下降"]
-    },
-    {
-        "name": "aging",
-        "trans": ["老化"]
-    },
-    {
-        "name": "ocean",
-        "trans": ["大洋"]
-    },
-    {
-        "name": "marriage",
-        "trans": ["结婚"]
-    },
-    {
-        "name": "curve",
-        "trans": ["曲线"]
-    },
-    {
-        "name": "constant",
-        "trans": ["不变的"]
-    },
-    {
-        "name": "muscle",
-        "trans": ["肌肉"]
-    },
-    {
-        "name": "immune",
-        "trans": ["免疫的"]
-    },
-    {
-        "name": "spider",
-        "trans": ["蜘蛛"]
-    },
-    {
-        "name": "extensive",
-        "trans": ["广泛的"]
-    },
-    {
-        "name": "pottery",
-        "trans": ["陶瓷"]
-    },
-    {
-        "name": "enrollment",
-        "trans": ["登记"]
-    },
-    {
-        "name": "oxygen",
-        "trans": ["氧气"]
-    },
-    {
-        "name": "shark",
-        "trans": ["鲨鱼"]
-    },
-    {
-        "name": "straightforward",
-        "trans": ["简单的"]
-    },
-    {
-        "name": "injury",
-        "trans": ["伤害"]
-    },
-    {
-        "name": "corporate",
-        "trans": ["公司的"]
-    },
-    {
-        "name": "attack",
-        "trans": ["攻击"]
-    },
-    {
-        "name": "reserve",
-        "trans": ["储备"]
-    },
-    {
-        "name": "plough",
-        "trans": ["耕地"]
-    },
-    {
-        "name": "commodity",
-        "trans": ["商品"]
-    },
-    {
-        "name": "transportation",
-        "trans": ["运输"]
-    },
-    {
-        "name": "operational",
-        "trans": ["合作"]
-    },
-    {
-        "name": "aerial",
-        "trans": ["空中的"]
-    },
-    {
-        "name": "barrier",
-        "trans": ["障碍物"]
-    },
-    {
-        "name": "fertilizer",
-        "trans": ["肥料"]
-    },
-    {
-        "name": "yield",
-        "trans": ["产出"]
-    },
-    {
-        "name": "shellfish",
-        "trans": ["甲壳类动物"]
-    },
-    {
-        "name": "nomadic",
-        "trans": ["游动的"]
-    },
-    {
-        "name": "grain",
-        "trans": ["谷类"]
-    },
-    {
-        "name": "pedal",
-        "trans": ["踏板"]
-    },
-    {
-        "name": "stomach",
-        "trans": ["胃"]
-    },
-    {
-        "name": "peer",
-        "trans": ["同龄人"]
-    },
-    {
-        "name": "confusion",
-        "trans": ["困惑"]
-    },
-    {
-        "name": "drum",
-        "trans": ["鼓"]
-    },
-    {
-        "name": "intensity",
-        "trans": ["强度"]
-    },
-    {
-        "name": "fade",
-        "trans": ["逐渐消失"]
-    },
-    {
-        "name": "pirate",
-        "trans": ["海盗"]
-    }
+  {
+    "name": "compose",
+    "trans": [
+      "构成"
+    ],
+    "usphone": "kəm'poz",
+    "ukphone": "kəm'pəʊz",
+    "sentences": [
+      {
+        "english": "Barrington has composed the music for a new production of ‘A Midsummer Night’s Dream’.",
+        "chinese": "巴林顿为新版的《仲夏夜之梦》谱了曲。"
+      },
+      {
+        "english": "Water is composed of hydrogen and oxygen.",
+        "chinese": "水由氢和氧组成。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "创作；组成，构成",
+        "english": "to write a piece of music"
+      }
+    ]
+  },
+  {
+    "name": "trace",
+    "trans": [
+      "痕迹"
+    ],
+    "usphone": "tres",
+    "ukphone": "treɪs",
+    "sentences": [
+      {
+        "english": "There was no trace of anyone having entered the room since then.",
+        "chinese": "没有任何迹象表明在那以后有人进过这房间。"
+      },
+      {
+        "english": "Petra’s lost all trace of her German accent.",
+        "chinese": "彼得拉已完全没有德国口音。"
+      },
+      {
+        "english": "Officers were unable to find any trace of drugs.",
+        "chinese": "警察未能找到毒品的蛛丝马迹。"
+      },
+      {
+        "english": "I saw the faintest trace of a smile cross Sandra’s face.",
+        "chinese": "我看到桑德拉的脸上闪过一丝微笑。"
+      },
+      {
+        "english": "We finally traced him to an address in Chicago.",
+        "chinese": "我们终于追查到他在芝加哥的一个地址。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "痕迹；丝毫",
+        "english": "a small sign that shows that someone or something was present or existed"
+      },
+      {
+        "pos": "v",
+        "chinese": "跟踪",
+        "english": "to find or discover sb/sth by looking carefully for them/it"
+      }
+    ]
+  },
+  {
+    "name": "mineral",
+    "trans": [
+      "矿物"
+    ],
+    "usphone": "'mɪnərəl",
+    "ukphone": "'mɪn(ə)r(ə)l",
+    "sentences": [
+      {
+        "english": "The area is very rich in minerals .",
+        "chinese": "该地区矿产非常丰富。"
+      },
+      {
+        "english": "a country with few mineral resources",
+        "chinese": "矿产资源稀少的国家"
+      },
+      {
+        "english": "mineral water",
+        "chinese": "矿泉水"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "矿物",
+        "english": "a substance that is formed naturally in the earth, such as coal, salt, stone, or gold. Minerals can be dug out of the ground and used"
+      },
+      {
+        "pos": "adj",
+        "chinese": "矿物的",
+        "english": "of or containing or derived from minerals"
+      }
+    ]
+  },
+  {
+    "name": "metabolism",
+    "trans": [
+      "新陈代谢"
+    ],
+    "usphone": "mɛ'tæbəlɪzəm",
+    "ukphone": "mɪ'tæbəlɪz(ə)m",
+    "sentences": [
+      {
+        "english": "This drug speeds up your metabolism.",
+        "chinese": "这种药物会加快你的新陈代谢。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[生理] 新陈代谢",
+        "english": "the chemical processes by which food is changed into energy in your body"
+      }
+    ]
+  },
+  {
+    "name": "deserve",
+    "trans": [
+      "应得"
+    ],
+    "usphone": "dɪ'zɝv",
+    "ukphone": "dɪ'zɜ:v",
+    "sentences": [
+      {
+        "english": "What have I done to deserve this?",
+        "chinese": "我做了什么事，要得到这样的报应？"
+      },
+      {
+        "english": "I’m sorry for the kids. They deserve better (= deserve to be treated in a better way ) .",
+        "chinese": "我为这些孩子感到难过，他们应该过得更好。"
+      },
+      {
+        "english": "Ledley deserves a place in the team.",
+        "chinese": "莱德利应该在队里占有一席之地。"
+      },
+      {
+        "english": "Paula deserves a special mention for all the help she has given us.",
+        "chinese": "应该特别提一下葆拉，她给了我们许多帮助。"
+      },
+      {
+        "english": "I would never hit anyone, even if they deserved it.",
+        "chinese": "我决不会打人，哪怕他欠揍。"
+      },
+      {
+        "english": "What has he done to deserve this punishment ?",
+        "chinese": "他做了什么，竟会受到这样的惩罚？"
+      },
+      {
+        "english": "People who are sent to prison for drunk-driving get what they deserve .",
+        "chinese": "那些醉酒驾车被送进监狱的人是罪有应得的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "值得",
+        "english": "to have earned something by good or bad actions or behaviour"
+      }
+    ]
+  },
+  {
+    "name": "maintenance",
+    "trans": [
+      "维护"
+    ],
+    "usphone": "'mentənəns",
+    "ukphone": "'meɪntənəns",
+    "sentences": [
+      {
+        "english": "the cost of repairs and maintenance",
+        "chinese": "维修保养费"
+      },
+      {
+        "english": "The theatres were closed on Saturday and Sunday for routine maintenance .",
+        "chinese": "戏院周六和周日关闭进行例行维护。"
+      },
+      {
+        "english": "Engineers are carrying out essential maintenance work on the main line to Cambridge.",
+        "chinese": "机修工正在对通往剑桥的干线进行必要的养护。"
+      },
+      {
+        "english": "an evening class in car maintenance",
+        "chinese": "汽车保养的夜校课程"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 维持； 保养； 抚养费",
+        "english": "the repairs, painting etc that are necessary to keep something in good condition"
+      }
+    ]
+  },
+  {
+    "name": "intrigue",
+    "trans": [
+      "激起"
+    ],
+    "usphone": "'ɪn'triɡ",
+    "ukphone": "ɪn'triːg",
+    "sentences": [
+      {
+        "english": "Other people’s houses always intrigued her.",
+        "chinese": "别人的房子总令她好奇。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "耍阴谋，施诡计",
+        "english": "to make secret plans to harm someone or make them lose their position of power"
+      },
+      {
+        "pos": "vt",
+        "chinese": "激起…的好奇心，迷住",
+        "english": "if something intrigues you, it interests you a lot because it seems strange or mysterious"
+      },
+      {
+        "pos": "n",
+        "chinese": " 阴谋， 诡计， 密谋",
+        "english": "the making of secret plans to harm someone or make them lose their position of power, or a plan of this kind"
+      }
+    ]
+  },
+  {
+    "name": "poison",
+    "trans": [
+      "毒"
+    ],
+    "usphone": "'pɔɪzn",
+    "ukphone": "'pɒɪz(ə)n",
+    "sentences": [
+      {
+        "english": "Belladonna and red arsenic are deadly poisons .",
+        "chinese": "颠茄和雄黄都是致命的毒物。"
+      },
+      {
+        "english": "a box of rat poison",
+        "chinese": "一盒鼠药"
+      },
+      {
+        "english": "He killed several people by poisoning their tea.",
+        "chinese": "他在茶里下毒杀死了几个人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "毒，毒药",
+        "english": "a substance that can cause death or serious illness if you eat it, drink it etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "毒害",
+        "english": "to give someone poison, especially by adding it to their food or drink, in order to harm or kill them"
+      }
+    ]
+  },
+  {
+    "name": "decline",
+    "trans": [
+      "下降"
+    ],
+    "usphone": "dɪ'klaɪn",
+    "ukphone": "dɪ'klaɪn",
+    "sentences": [
+      {
+        "english": "Offered the position of chairman, Smith declined, preferring to keep his current job.",
+        "chinese": "对担任主席的邀约，史密斯拒绝了，他宁愿留在现在的职位上。"
+      },
+      {
+        "english": "Mary declined a hot drink and went to her room.",
+        "chinese": "玛丽谢绝了热饮料，到自己的房间去了。"
+      },
+      {
+        "english": "The minister declined to comment (= refused to speak to people who report the news ) about the progress of the peace talks.",
+        "chinese": "部长拒绝就和谈进程发表评论。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "拒绝",
+        "english": "to say no politely when someone invites you somewhere, offers you something, or wants you to do something"
+      }
+    ]
+  },
+  {
+    "name": "aging",
+    "trans": [
+      "老化"
+    ]
+  },
+  {
+    "name": "ocean",
+    "trans": [
+      "大洋"
+    ],
+    "usphone": "'oʃən",
+    "ukphone": "'əuʃn",
+    "sentences": [
+      {
+        "english": "She stood on the beach, gazing at the ocean.",
+        "chinese": "她站在海滩上，凝视着大海。"
+      },
+      {
+        "english": "I like to swim in the ocean when it’s warm enough.",
+        "chinese": "海水足够暖的时候，我喜欢在海里游泳。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 洋， 海洋； 许多， 大量",
+        "english": "the great mass of salt water that covers most of the Earth’s surface"
+      }
+    ]
+  },
+  {
+    "name": "marriage",
+    "trans": [
+      "结婚"
+    ],
+    "usphone": "'mærɪdʒ",
+    "ukphone": "'mærɪdʒ",
+    "sentences": [
+      {
+        "english": "She has three daughters from a previous marriage.",
+        "chinese": "她前一次婚姻生了三个女儿。"
+      },
+      {
+        "english": "The marriage took place at St Bartholomew’s Church.",
+        "chinese": "婚礼是在圣巴托罗缪教堂举行的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "结婚，婚姻；婚礼",
+        "english": "the relationship between two people who are married, or the state of being married"
+      }
+    ]
+  },
+  {
+    "name": "curve",
+    "trans": [
+      "曲线"
+    ],
+    "usphone": "kɝv",
+    "ukphone": "kɜːv",
+    "sentences": [
+      {
+        "english": "a sweeping curve of railroad track",
+        "chinese": "铁轨的大弧线"
+      },
+      {
+        "english": "The car took the curve much too quickly.",
+        "chinese": "那辆汽车拐弯太快了。"
+      },
+      {
+        "english": "The track curved round the side of the hill.",
+        "chinese": "小路弯弯曲曲，依山盘旋。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "曲线；弯",
+        "english": "a line that gradually bends like part of a circle"
+      },
+      {
+        "pos": "v",
+        "chinese": "弄弯",
+        "english": "to bend or move in the shape of a curve, or to make something do this"
+      }
+    ]
+  },
+  {
+    "name": "constant",
+    "trans": [
+      "不变的"
+    ],
+    "usphone": "'kɑnstənt",
+    "ukphone": "'kɒnst(ə)nt",
+    "sentences": [
+      {
+        "english": "There was a constant stream of visitors to the house.",
+        "chinese": "参观这幢房子的游客川流不息。"
+      },
+      {
+        "english": "Amy lived in constant fear of being attacked.",
+        "chinese": "埃米一直生活在害怕遭到袭击的恐惧之中。"
+      },
+      {
+        "english": "He kept in constant contact with his family while he was in Australia.",
+        "chinese": "他在澳大利亚时一直和家人保持着联系。"
+      },
+      {
+        "english": "travelling at a constant speed",
+        "chinese": "以恒定速度行驶"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "经常的；永恒的",
+        "english": "happening regularly or all the time"
+      }
+    ]
+  },
+  {
+    "name": "muscle",
+    "trans": [
+      "肌肉"
+    ],
+    "usphone": "'mʌsl",
+    "ukphone": "'mʌs(ə)l",
+    "sentences": [
+      {
+        "english": "Relax your stomach muscles , then stretch again.",
+        "chinese": "放松腹部肌肉，然后再绷紧。"
+      },
+      {
+        "english": "Regular exercise will help to strengthen your muscles .",
+        "chinese": "经常锻炼有助于强健肌肉。"
+      },
+      {
+        "english": "It took muscle to work in an old-fashioned kitchen.",
+        "chinese": "在老式厨房里干活很费力。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "肌肉，肌；体力",
+        "english": "one of the pieces of flesh inside your body that you use in order to move, and that connect your bones together"
+      }
+    ]
+  },
+  {
+    "name": "immune",
+    "trans": [
+      "免疫的"
+    ],
+    "usphone": "ɪ'mjʊn",
+    "ukphone": "ɪ'mjuːn",
+    "sentences": [
+      {
+        "english": "Once we’ve had the disease, we’re immune for life.",
+        "chinese": "我们一旦得过这种病，就获得了终身免疫力。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 免疫的， 有免疫力的， 不受影响的； 免除的， 豁免的",
+        "english": "someone who is immune to a particular disease cannot catch it"
+      }
+    ]
+  },
+  {
+    "name": "spider",
+    "trans": [
+      "蜘蛛"
+    ],
+    "usphone": "'spaɪdɚ",
+    "ukphone": "'spaɪdə",
+    "sentences": [
+      {
+        "english": "Do you think that the spider can web anything?",
+        "chinese": "你觉得这蜘蛛能用网捕住什么吗?"
+      },
+      {
+        "english": "Why not hold spider of the week contests in your home throughout this season?",
+        "chinese": "在这整个蜘蛛出没的季节里，为什么不在你家里举行蜘蛛周竞赛？"
+      },
+      {
+        "english": "Likewise, by these investigators’ logic, male arachnophobes should get a mild tickle down there whenever they spy a spider scurrying across their desk.",
+        "chinese": "同样的，按这些研究者的逻辑，男性蜘蛛恐惧者每次看到蜘蛛爬过桌子都应该下身瘙痒咯？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "蜘蛛",
+        "english": "a small creature with eight legs, which catches insects using a fine network of sticky threads"
+      }
+    ]
+  },
+  {
+    "name": "extensive",
+    "trans": [
+      "广泛的"
+    ],
+    "usphone": "ɪk'stɛnsɪv",
+    "ukphone": "ɪk'stensɪv; ek-",
+    "sentences": [
+      {
+        "english": "The house stands in extensive grounds.",
+        "chinese": "这栋房子占地面积很大。"
+      },
+      {
+        "english": "Fire has caused extensive damage to the island’s forests.",
+        "chinese": "大火严重毁坏了岛上的森林。"
+      },
+      {
+        "english": "the extensive use of pesticides",
+        "chinese": "杀虫剂的大量使用"
+      },
+      {
+        "english": "The exhibition has received extensive coverage in the national press.",
+        "chinese": "这次展览会被全国媒体广泛报道。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "广阔的；广泛的",
+        "english": "large in size, amount, or degree"
+      }
+    ]
+  },
+  {
+    "name": "pottery",
+    "trans": [
+      "陶瓷"
+    ],
+    "usphone": "'pɑtəri",
+    "ukphone": "'pɒt(ə)rɪ",
+    "sentences": [
+      {
+        "english": "Native American pottery",
+        "chinese": "美洲印第安人的陶器"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "陶器，陶器制造厂",
+        "english": "objects made out of baked clay"
+      }
+    ]
+  },
+  {
+    "name": "enrollment",
+    "trans": [
+      "登记"
+    ],
+    "usphone": "ɪn'rolmənt",
+    "ukphone": "ɪn'rəʊlmənt",
+    "sentences": [
+      {
+        "english": "Class enrollment, where each student has all of the course schedule selections, each student having his own bucket in the CGTT.",
+        "chinese": "班级入学，每个学生都有所有的课程安排选择，每个学生都将自己的选择放在 CGTT 中。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "入学人数",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "oxygen",
+    "trans": [
+      "氧气"
+    ],
+    "usphone": "'ɑksɪdʒən",
+    "ukphone": "'ɒksɪdʒən",
+    "sentences": [
+      {
+        "english": "The human brain needs to be without oxygen for only four minutes before permanent damage occurs.",
+        "chinese": "人脑缺氧只需4分钟就会造成永久性损伤。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 氧， 氧气",
+        "english": "a gas that has no colour or smell, is present in air, and is necessary for most animals and plants to live. It is a chemical element: symbol O"
+      }
+    ]
+  },
+  {
+    "name": "shark",
+    "trans": [
+      "鲨鱼"
+    ],
+    "usphone": "ʃɑrk",
+    "ukphone": "ʃɑːk",
+    "sentences": [
+      {
+        "english": "Sharks were circling around our boat.",
+        "chinese": "鲨鱼在我们的小船周围游弋。"
+      },
+      {
+        "english": "Beware the sharks when you are making up your mind how to invest.",
+        "chinese": "当你决定如何投资时要提防诈骗者。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "鲨鱼；诈骗钱财者",
+        "english": "a large sea fish with several rows of very sharp teeth that is considered to be dangerous to humans"
+      }
+    ]
+  },
+  {
+    "name": "straightforward",
+    "trans": [
+      "简单的"
+    ],
+    "usphone": ",stret'fɔrwɚd",
+    "ukphone": "ˌstreɪtˈfɔ:wəd",
+    "sentences": [
+      {
+        "english": "In this example, we will use the most straightforward method of all -- writing our object reference to a file that will be picked up by our client.",
+        "chinese": "在这个示例中，我们将使用所有方法中最直截了当的一种 — 将对象引用写入一个文件，该 文件将由客户机选取。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "直接的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "injury",
+    "trans": [
+      "伤害"
+    ],
+    "usphone": "'ɪndʒəri",
+    "ukphone": "'ɪn(d)ʒ(ə)rɪ",
+    "sentences": [
+      {
+        "english": "She was taken to hospital with serious head injuries.",
+        "chinese": "她头部受重伤被送到医院。"
+      },
+      {
+        "english": "Beckham has missed several games through injury",
+        "chinese": "贝克汉姆因伤错过了几场比赛。"
+      },
+      {
+        "english": "He’s a lawyer who specializes in personal injury claims.",
+        "chinese": "他是个专门从事人身伤害索赔的律师。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "伤害，损害；受伤处",
+        "english": "a wound or damage to part of your body caused by an accident or attack"
+      }
+    ]
+  },
+  {
+    "name": "corporate",
+    "trans": [
+      "公司的"
+    ],
+    "usphone": "ˈkɔːrpərət",
+    "ukphone": "'kɔːpərɪət",
+    "sentences": [
+      {
+        "english": "The company is moving its corporate headquarters (= main offices ) from New York to Houston.",
+        "chinese": "这家公司要把总部从纽约迁到休斯敦。"
+      },
+      {
+        "english": "Vince is vice-president of corporate communications.",
+        "chinese": "文斯是负责企业宣传的副总裁。"
+      },
+      {
+        "english": "Corporate America is not about to be converted to the environmentalist cause.",
+        "chinese": "美国企业界不打算投身环保事业。"
+      },
+      {
+        "english": "changing the corporate culture (= the way that people in a corporation think and behave ) to accept family-friendly policies",
+        "chinese": "改变公司文化，采取更关怀家庭的政策"
+      },
+      {
+        "english": "an advertising campaign intended to reinforce our corporate identity",
+        "chinese": "旨在加强我们公司形象的广告宣传活动"
+      },
+      {
+        "english": "The yacht can be hired for corporate hospitality (= entertainment provided by companies for their customers ) .",
+        "chinese": "可以租下这艘游艇用于公司招待客户。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 法人团体的， 公司的； 全体的， 共同的",
+        "english": "belonging to or relating to a corporation"
+      }
+    ]
+  },
+  {
+    "name": "attack",
+    "trans": [
+      "攻击"
+    ],
+    "usphone": "ə'tæk",
+    "ukphone": "ə'tæk",
+    "sentences": [
+      {
+        "english": "a bomb attack",
+        "chinese": "炸弹袭击"
+      },
+      {
+        "english": "a knife attack",
+        "chinese": "持刀攻击"
+      },
+      {
+        "english": "an arson attack",
+        "chinese": "纵火袭击"
+      },
+      {
+        "english": "victims of racial attacks",
+        "chinese": "种族袭击的受害者"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n&vt",
+        "chinese": " 攻击， 进攻； 突然发作",
+        "english": "an act of violence that is intended to hurt a person or damage a place"
+      }
+    ]
+  },
+  {
+    "name": "reserve",
+    "trans": [
+      "储备"
+    ],
+    "usphone": "rɪ'zɝv",
+    "ukphone": "rɪ'zɜːv",
+    "sentences": [
+      {
+        "english": "Do you have to reserve tickets in advance?",
+        "chinese": "你必须预先订票吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "保留，留存；预订",
+        "english": "to arrange for a place in a hotel, restaurant, plane etc to be kept for you to use at a particular time in the future"
+      },
+      {
+        "pos": "n",
+        "chinese": " 储备； 保留； 拘谨， 矜持； 替补队员， 后备部队； 自然保护区",
+        "english": "a supply of something kept to be used if it is needed"
+      }
+    ]
+  },
+  {
+    "name": "plough",
+    "trans": [
+      "耕地"
+    ],
+    "usphone": "plaʊ",
+    "ukphone": "plaʊ",
+    "sentences": [
+      {
+        "english": "In those days the land was plowed by oxen.",
+        "chinese": "在那个年代是用公牛来犁地的。"
+      },
+      {
+        "english": "a ploughed field",
+        "chinese": "犁过的地"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "犁；耕",
+        "english": "to turn over the earth using a plough so that seeds can be planted"
+      },
+      {
+        "pos": "n",
+        "chinese": "犁；耕地（等于plow）",
+        "english": "a piece of farm equipment used to turn over the earth so that seeds can be planted"
+      }
+    ]
+  },
+  {
+    "name": "commodity",
+    "trans": [
+      "商品"
+    ],
+    "usphone": "kə'mɑdəti",
+    "ukphone": "kə'mɒdɪtɪ",
+    "sentences": [
+      {
+        "english": "agricultural commodities",
+        "chinese": "农业商品"
+      },
+      {
+        "english": "Commodity prices fell sharply.",
+        "chinese": "商品价格急剧下跌。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "商品，货物；日用品",
+        "english": "a product that is bought and sold"
+      }
+    ]
+  },
+  {
+    "name": "transportation",
+    "trans": [
+      "运输"
+    ],
+    "usphone": ",trænspɔr'teʃən",
+    "ukphone": "ˌtrænspɔ:ˈteɪʃn",
+    "sentences": [
+      {
+        "english": "The city needs to improve its public transportation (= buses, trains etc ) .",
+        "chinese": "这座城市需要改善公共交通。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "运输",
+        "english": "a system or method for carrying passengers or goods from one place to another"
+      }
+    ]
+  },
+  {
+    "name": "operational",
+    "trans": [
+      "合作"
+    ],
+    "usphone": "'ɑpə'reʃənl",
+    "ukphone": "ɒpə'reɪʃ(ə)n(ə)l",
+    "sentences": [
+      {
+        "english": "operational activities/costs/difficulties",
+        "chinese": "营运上的活动 / 成本 / 困难"
+      },
+      {
+        "english": "The boat should be operational by this afternoon.",
+        "chinese": "今天下午这艘船应该可以使用了。"
+      },
+      {
+        "english": "The new system became operational in March.",
+        "chinese": "新的系统于3月份启用。"
+      },
+      {
+        "english": "Our main offices are now fully operational.",
+        "chinese": "我们的总部现已全面投入运营。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "操作上的；可使用的",
+        "english": "relating to the operation of a business, government etc"
+      }
+    ]
+  },
+  {
+    "name": "aerial",
+    "trans": [
+      "空中的"
+    ],
+    "usphone": "'ɛrɪəl",
+    "ukphone": "'eərɪəl",
+    "sentences": [
+      {
+        "english": "an aerial attack",
+        "chinese": "空袭"
+      },
+      {
+        "english": "aerial photographs",
+        "chinese": "在空中拍摄的照片"
+      },
+      {
+        "english": "an aerial view of the Three Gorges Dam project",
+        "chinese": "一张三峡大坝工程鸟瞰图"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "飞机的，航空的；空中的，架空的",
+        "english": "from a plane"
+      },
+      {
+        "pos": "n",
+        "chinese": " 天线",
+        "english": "a piece of equipment for receiving or sending radio or television signals, usually consisting of a piece of metal or wire"
+      }
+    ]
+  },
+  {
+    "name": "barrier",
+    "trans": [
+      "障碍物"
+    ],
+    "usphone": "'bærɪɚ",
+    "ukphone": "'bærɪə",
+    "sentences": [
+      {
+        "english": "He advocated the removal of trade barriers.",
+        "chinese": "他提倡消除贸易壁垒。"
+      },
+      {
+        "english": "Crowds burst through the barriers and ran onto the pitch.",
+        "chinese": "人群冲破围栏跑进球场。"
+      },
+      {
+        "english": "The mountains form a natural barrier between the two countries.",
+        "chinese": "群山构成了两国之间的天然屏障。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "障碍；栅栏；屏障",
+        "english": "a rule, problem etc that prevents people from doing something, or limits what they can do"
+      }
+    ]
+  },
+  {
+    "name": "fertilizer",
+    "trans": [
+      "肥料"
+    ],
+    "usphone": "'fɝtəlaɪzɚ",
+    "ukphone": "ˈfɜ:təlaɪzə(r)",
+    "sentences": [
+      {
+        "english": "...farming without any purchased chemical, fertilizer or pesticide.",
+        "chinese": "…不使用任何购买的化学品、肥料或杀虫剂的耕作。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "肥料",
+        "english": "a substance that is put on the soil to make plants grow"
+      }
+    ]
+  },
+  {
+    "name": "yield",
+    "trans": [
+      "产出"
+    ],
+    "usphone": "jild",
+    "ukphone": "ji:ld",
+    "sentences": [
+      {
+        "english": "Our research has only recently begun to yield important results.",
+        "chinese": "直到最近我们的研究才开始取得重要成果。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "产生",
+        "english": "to produce a result, answer, or piece of information"
+      }
+    ]
+  },
+  {
+    "name": "shellfish",
+    "trans": [
+      "甲壳类动物"
+    ],
+    "usphone": "'ʃɛl'fɪʃ",
+    "ukphone": "'ʃelfɪʃ",
+    "sentences": [
+      {
+        "english": "Fish and shellfish are the specialties.",
+        "chinese": "鱼和甲壳类水生动物是特产。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "甲壳类动物；贝类等有壳的水生动物",
+        "english": "an animal that lives in water, has a shell, and can be eaten as food, for example  crab s  ,  lobster s  , and  oyster s "
+      }
+    ]
+  },
+  {
+    "name": "nomadic",
+    "trans": [
+      "游动的"
+    ],
+    "usphone": "nəu'mædik, nɔ-",
+    "ukphone": "nəʊ'mædɪk",
+    "sentences": [
+      {
+        "english": "nomadic herdsmen",
+        "chinese": "游牧民"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "游牧的；流浪的；游动的",
+        "english": "nomadic people are nomads"
+      }
+    ]
+  },
+  {
+    "name": "grain",
+    "trans": [
+      "谷类"
+    ],
+    "usphone": "ɡren",
+    "ukphone": "greɪn",
+    "sentences": [
+      {
+        "english": "There were crumbs and grains of sugar on the table.",
+        "chinese": "桌子上有面包屑和糖粒。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 谷物， 谷粒， 颗粒； 少量， 微量",
+        "english": "a single very small piece of a substance such as sand or salt"
+      }
+    ]
+  },
+  {
+    "name": "pedal",
+    "trans": [
+      "踏板"
+    ],
+    "usphone": "'pɛdl",
+    "ukphone": "'ped(ə)l",
+    "sentences": [
+      {
+        "english": "She was pedalling furiously (= very fast ) .",
+        "chinese": "她飞快地踩着踏板。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "踩踏板；骑车",
+        "english": "to ride a bicycle"
+      },
+      {
+        "pos": "n",
+        "chinese": "踏板；脚蹬子",
+        "english": "one of the two parts of a bicycle that you push round with your feet to make the bicycle go forward"
+      },
+      {
+        "pos": "adj",
+        "chinese": "脚的；脚踏的",
+        "english": "of or relating to the foot or feet "
+      }
+    ]
+  },
+  {
+    "name": "stomach",
+    "trans": [
+      "胃"
+    ],
+    "usphone": "'stʌmək",
+    "ukphone": "'stʌmək",
+    "sentences": [
+      {
+        "english": "I was so hungry my stomach hurt.",
+        "chinese": "我饿得胃都痛了。"
+      },
+      {
+        "english": "His stomach was full of food.",
+        "chinese": "他的胃里塞满了食物。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "胃；腹部；胃口",
+        "english": "the organ inside your body where food begins to be  digested "
+      },
+      {
+        "pos": "v",
+        "chinese": "忍受；吃下",
+        "english": "to be able to accept something, especially something unpleasant"
+      }
+    ]
+  },
+  {
+    "name": "peer",
+    "trans": [
+      "同龄人"
+    ],
+    "usphone": "pɪr",
+    "ukphone": "pɪə",
+    "sentences": [
+      {
+        "english": "American children did less well in math than their peers in Japan.",
+        "chinese": "美国儿童的数学成绩不如日本的同龄儿童。"
+      },
+      {
+        "english": "Staff members are trained by their peers.",
+        "chinese": "员工由同事培训。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "同龄人",
+        "english": "your peers are the people who are the same age as you, or who have the same type of job, social class etc"
+      }
+    ]
+  },
+  {
+    "name": "confusion",
+    "trans": [
+      "困惑"
+    ],
+    "usphone": "kən'fjʊʒən",
+    "ukphone": "kən'fjuːʒ(ə)n",
+    "sentences": [
+      {
+        "english": "a scene of indescribable confusion",
+        "chinese": "难以形容的混乱场面"
+      },
+      {
+        "english": "To avoid confusion, the teams wore different colours.",
+        "chinese": "为了避免混淆，各队穿着不同颜色的服装。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "混乱；骚乱；混淆",
+        "english": "a very confusing situation, that usually has a lot of noise and action, so that it is difficult for someone to understand it or control it"
+      }
+    ]
+  },
+  {
+    "name": "drum",
+    "trans": [
+      "鼓"
+    ],
+    "usphone": "drʌm",
+    "ukphone": "drʌm",
+    "sentences": [
+      {
+        "english": "a big bass drum",
+        "chinese": "一面低音大鼓"
+      },
+      {
+        "english": "1,000 people marched, beating drums and carrying flags.",
+        "chinese": "1,000人打着鼓扛着旗游行。"
+      },
+      {
+        "english": "Jones played the drums in an all-girl band.",
+        "chinese": "琼斯在一个女子乐队里打鼓。"
+      },
+      {
+        "english": "a brake drum",
+        "chinese": "制动鼓"
+      },
+      {
+        "english": "a 5 gallon oil drum",
+        "chinese": "5加仑的油桶"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "鼓；鼓状物；圆桶",
+        "english": "a musical instrument made of skin stretched over a circular frame, played by hitting it with your hand or a stick"
+      }
+    ]
+  },
+  {
+    "name": "intensity",
+    "trans": [
+      "强度"
+    ],
+    "usphone": "ɪn'tɛnsəti",
+    "ukphone": "ɪn'tensɪtɪ",
+    "sentences": [
+      {
+        "english": "The intensity of the hurricane was frightening.",
+        "chinese": "飓风的猛烈程度令人恐惧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "强烈，剧烈；〔光、声等的〕强度",
+        "english": "the quality of being felt very strongly or having a strong effect"
+      }
+    ]
+  },
+  {
+    "name": "fade",
+    "trans": [
+      "逐渐消失"
+    ],
+    "usphone": "fed",
+    "ukphone": "feɪd",
+    "sentences": [
+      {
+        "english": "the fading evening light",
+        "chinese": "渐暗的暮色"
+      },
+      {
+        "english": "a pair of faded jeans",
+        "chinese": "一条褪了色的牛仔裤"
+      },
+      {
+        "english": "The sun had faded the curtains.",
+        "chinese": "太阳把窗帘晒得褪了色。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "褪色",
+        "english": "to lose colour and brightness, or to make something do this"
+      }
+    ]
+  },
+  {
+    "name": "pirate",
+    "trans": [
+      "海盗"
+    ],
+    "usphone": "'paɪrət",
+    "ukphone": "ˈpaɪərət",
+    "sentences": [
+      {
+        "english": "Computer game pirates cost the industry twenty million pounds a year.",
+        "chinese": "电脑游戏盗版者每年要给该行业带来两千万英镑的损失。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "海盗；盗版；侵犯专利权者",
+        "english": "someone who sails on the seas, attacking other boats and stealing things from them"
+      },
+      {
+        "pos": "v",
+        "chinese": "掠夺；翻印；剽窃",
+        "english": "to illegally copy and sell another person’s work such as a book, video, or computer program"
+      }
+    ]
+  }
 ]

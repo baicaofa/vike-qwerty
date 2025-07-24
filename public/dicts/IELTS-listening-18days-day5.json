@@ -1,306 +1,1961 @@
 [
-    {
-        "name": "printer",
-        "trans": ["n. 打印机"]
-    },
-    {
-        "name": "withdraw",
-        "trans": ["v. 收回"]
-    },
-    {
-        "name": "outstanding",
-        "trans": ["adj. 杰出的"]
-    },
-    {
-        "name": "canteen",
-        "trans": ["n. 食堂"]
-    },
-    {
-        "name": "exact",
-        "trans": ["adj. 精确的"]
-    },
-    {
-        "name": "switch off",
-        "trans": ["v. 关掉"]
-    },
-    {
-        "name": "boot",
-        "trans": ["n. 靴子"]
-    },
-    {
-        "name": "wood",
-        "trans": ["n. 木材"]
-    },
-    {
-        "name": "forbid",
-        "trans": ["v. 禁止"]
-    },
-    {
-        "name": "client",
-        "trans": ["n. 客户"]
-    },
-    {
-        "name": "rail",
-        "trans": ["n. 铁轨"]
-    },
-    {
-        "name": "intermediate",
-        "trans": ["adj. 中间的"]
-    },
-    {
-        "name": "appliance",
-        "trans": ["n. 电器"]
-    },
-    {
-        "name": "intensive",
-        "trans": ["adj. 加强的"]
-    },
-    {
-        "name": "allergy",
-        "trans": ["n. 过敏"]
-    },
-    {
-        "name": "vegetarian",
-        "trans": ["n. 素食者"]
-    },
-    {
-        "name": "bargain",
-        "trans": ["n. 便宜货"]
-    },
-    {
-        "name": "relative",
-        "trans": ["adj. 相对的"]
-    },
-    {
-        "name": "condition",
-        "trans": ["n. 情况"]
-    },
-    {
-        "name": "package",
-        "trans": ["n. 包裹"]
-    },
-    {
-        "name": "fare",
-        "trans": ["n. 费用"]
-    },
-    {
-        "name": "armchair",
-        "trans": ["n. 扶手椅"]
-    },
-    {
-        "name": "advanced",
-        "trans": ["adj. 高级的"]
-    },
-    {
-        "name": "material",
-        "trans": ["n. 物质"]
-    },
-    {
-        "name": "jeans",
-        "trans": ["n. 牛仔裤"]
-    },
-    {
-        "name": "trolley",
-        "trans": ["n. 手推车"]
-    },
-    {
-        "name": "sightseeing",
-        "trans": ["n. 观光"]
-    },
-    {
-        "name": "post office",
-        "trans": ["n. 邮局"]
-    },
-    {
-        "name": "rent",
-        "trans": ["n. 租金"]
-    },
-    {
-        "name": "sports centre",
-        "trans": ["n. 体育中心"]
-    },
-    {
-        "name": "Monday",
-        "trans": ["n. 星期一"]
-    },
-    {
-        "name": "Sunday",
-        "trans": ["n. 星期天"]
-    },
-    {
-        "name": "rail",
-        "trans": ["n. 铁轨，栏杆"]
-    },
-    {
-        "name": "stair lift",
-        "trans": ["n. 楼梯升降机"]
-    },
-    {
-        "name": "seat",
-        "trans": ["n. 座位"]
-    },
-    {
-        "name": "living room",
-        "trans": ["n. 客厅起居室"]
-    },
-    {
-        "name": "bathroom",
-        "trans": ["n. 浴室，卫生间"]
-    },
-    {
-        "name": "kitchen",
-        "trans": ["n. 厨房"]
-    },
-    {
-        "name": "washing machine",
-        "trans": ["n. 洗衣机"]
-    },
-    {
-        "name": "video",
-        "trans": ["n. 电视，录像机"]
-    },
-    {
-        "name": "basin",
-        "trans": ["n. 盆"]
-    },
-    {
-        "name": "campus",
-        "trans": ["n. 校园"]
-    },
-    {
-        "name": "balcony",
-        "trans": ["n. 阳台"]
-    },
-    {
-        "name": "lamp",
-        "trans": ["n. 灯"]
-    },
-    {
-        "name": "survey",
-        "trans": ["n. 调查，测量"]
-    },
-    {
-        "name": "community",
-        "trans": ["n. 社区，共同体"]
-    },
-    {
-        "name": "dissatisfaction",
-        "trans": ["n. 不满"]
-    },
-    {
-        "name": "quality",
-        "trans": ["n. 质量，品质"]
-    },
-    {
-        "name": "local",
-        "trans": ["adj. 当地的"]
-    },
-    {
-        "name": "swimming pool",
-        "trans": ["n. 游泳池"]
-    },
-    {
-        "name": "bedsheet",
-        "trans": ["n. 床单"]
-    },
-    {
-        "name": "carpet",
-        "trans": ["n. 地毯"]
-    },
-    {
-        "name": "Thursday",
-        "trans": ["n. 星期四"]
-    },
-    {
-        "name": "iron",
-        "trans": ["n. 熨烫"]
-    },
-    {
-        "name": "suburb",
-        "trans": ["n. 郊区"]
-    },
-    {
-        "name": "exterior",
-        "trans": ["adj. 外面的"]
-    },
-    {
-        "name": "setting",
-        "trans": ["n. 环境"]
-    },
-    {
-        "name": "ceremony",
-        "trans": ["n. 典礼仪式"]
-    },
-    {
-        "name": "consult",
-        "trans": ["v. 咨询"]
-    },
-    {
-        "name": "premium",
-        "trans": ["adj. 高品质的"]
-    },
-    {
-        "name": "apply",
-        "trans": ["v. 申请"]
-    },
-    {
-        "name": "brochure",
-        "trans": ["n. 小册子"]
-    },
-    {
-        "name": "reception",
-        "trans": ["n. 招待"]
-    },
-    {
-        "name": "annual",
-        "trans": ["adj. 每年的"]
-    },
-    {
-        "name": "guard",
-        "trans": ["n. 保卫"]
-    },
-    {
-        "name": "poster",
-        "trans": ["n. 海报"]
-    },
-    {
-        "name": "health check",
-        "trans": ["n. 体检"]
-    },
-    {
-        "name": "petrol",
-        "trans": ["n. 汽油"]
-    },
-    {
-        "name": "literacy",
-        "trans": ["n. 读写能力"]
-    },
-    {
-        "name": "comedy",
-        "trans": ["n. 喜剧"]
-    },
-    {
-        "name": "lounge",
-        "trans": ["n. 休息厅"]
-    },
-    {
-        "name": "Spanish",
-        "trans": ["n. 西班牙语"]
-    },
-    {
-        "name": "yoga",
-        "trans": ["n. 瑜伽"]
-    },
-    {
-        "name": "headache",
-        "trans": ["n. 头疼"]
-    },
-    {
-        "name": "burglar",
-        "trans": ["n. 盗贼"]
-    },
-    {
-        "name": "goods",
-        "trans": ["n. 商品"]
-    }
+  {
+    "name": "printer",
+    "trans": [
+      "n. 打印机"
+    ],
+    "usphone": "'prɪntɚ",
+    "ukphone": "'prɪntə",
+    "sentences": [
+      {
+        "english": "a laser printer",
+        "chinese": "激光打印机"
+      },
+      {
+        "english": "a colour printer",
+        "chinese": "彩色打印机"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[计] 打印机；印刷工；印花工",
+        "english": "a machine which is connected to a computer and can make a printed record of computer information"
+      }
+    ]
+  },
+  {
+    "name": "withdraw",
+    "trans": [
+      "v. 收回"
+    ],
+    "usphone": "wɪð'drɔ",
+    "ukphone": "wið'drɔː",
+    "sentences": [
+      {
+        "english": "calls for Britain to withdraw from the European Union",
+        "chinese": "要求英国退出欧盟的呼声"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 缩回， 退出； 撤退",
+        "english": "to stop taking part in an activity, belonging to an organization etc, or to make someone do this"
+      },
+      {
+        "pos": "vt",
+        "chinese": "收回，撤销；撤退；提款",
+        "english": "to stop taking part in an activity, belonging to an organization etc, or to make someone do this"
+      }
+    ]
+  },
+  {
+    "name": "outstanding",
+    "trans": [
+      "adj. 杰出的"
+    ],
+    "usphone": "'aʊt'stændɪŋ",
+    "ukphone": "aʊt'stændɪŋ",
+    "sentences": [
+      {
+        "english": "an outstanding example of a 13th-century castle",
+        "chinese": "13世纪城堡的杰出典范"
+      },
+      {
+        "english": "an outstanding success",
+        "chinese": "了不起的成功"
+      },
+      {
+        "english": "His performance was outstanding.",
+        "chinese": "他的表演相当出色。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "杰出的；显著的；未解决的；未偿付的",
+        "english": "extremely good"
+      },
+      {
+        "pos": "n",
+        "chinese": "未偿贷款",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "canteen",
+    "trans": [
+      "n. 食堂"
+    ],
+    "usphone": "kænˈtiːn",
+    "ukphone": "kæn'tiːn",
+    "sentences": [
+      {
+        "english": "Rennie had eaten his supper in the canteen.",
+        "chinese": "伦尼已在食堂吃过晚饭。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "食堂",
+        "english": "a place in a factory, school etc where meals are provided, usually quite cheaply"
+      }
+    ]
+  },
+  {
+    "name": "exact",
+    "trans": [
+      "adj. 精确的"
+    ],
+    "usphone": "ɪɡ'zækt",
+    "ukphone": "ɪg'zækt",
+    "sentences": [
+      {
+        "english": "Police are still investigating the exact cause of the accident.",
+        "chinese": "警方还在调查这起事故的确切原因。"
+      },
+      {
+        "english": "What were his exact words?",
+        "chinese": "他的原话是什么？"
+      },
+      {
+        "english": "The timing had to be exact.",
+        "chinese": "对时机的把握必须精确。"
+      },
+      {
+        "english": "Some concepts in Chinese medicine have no exact equivalent in Western medicine.",
+        "chinese": "中医的一些概念在西医中没有完全一样的对应观念。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "确切的，精确的",
+        "english": "completely correct in every detail"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 强求， 索取",
+        "english": "to demand and get something from someone by using threats, force etc"
+      }
+    ]
+  },
+  {
+    "name": "switch off",
+    "trans": [
+      "v. 关掉"
+    ]
+  },
+  {
+    "name": "boot",
+    "trans": [
+      "n. 靴子"
+    ],
+    "usphone": "but",
+    "ukphone": "buːt",
+    "sentences": [
+      {
+        "english": "hiking boots",
+        "chinese": "远足靴"
+      },
+      {
+        "english": "a pair of boots",
+        "chinese": "一双靴子"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "靴子，长统靴",
+        "english": "a type of shoe that covers your whole foot and the lower part of your leg"
+      }
+    ]
+  },
+  {
+    "name": "wood",
+    "trans": [
+      "n. 木材"
+    ],
+    "usphone": "wʊd",
+    "ukphone": "wʊd",
+    "sentences": [
+      {
+        "english": "Put some more wood on the fire.",
+        "chinese": "往火上再添些木柴。"
+      },
+      {
+        "english": "a polished wood floor",
+        "chinese": "擦得锃亮的木地板"
+      },
+      {
+        "english": "Her house was made of wood .",
+        "chinese": "她家的房子是木头盖的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "木材；木制品；树林",
+        "english": "the material that trees are made of"
+      },
+      {
+        "pos": "vi",
+        "chinese": "收集木材",
+        "english": ""
+      },
+      {
+        "pos": "vt",
+        "chinese": "植林于；给…添加木柴",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "forbid",
+    "trans": [
+      "v. 禁止"
+    ],
+    "usphone": "fɚ'bɪd",
+    "ukphone": "fə'bɪd",
+    "sentences": [
+      {
+        "english": "He was forbidden to leave the house, as a punishment.",
+        "chinese": "作为惩罚，他被禁止离开家。"
+      },
+      {
+        "english": "Lack of space forbids listing the names of all those who contributed.",
+        "chinese": "由于篇幅限制，无法列出所有捐款人的姓名。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "禁止，不许；阻止",
+        "english": "to tell someone that they are not allowed to do something, or that something is not allowed"
+      }
+    ]
+  },
+  {
+    "name": "client",
+    "trans": [
+      "n. 客户"
+    ],
+    "usphone": "'klaɪənt",
+    "ukphone": "'klaɪənt",
+    "sentences": [
+      {
+        "english": "a meeting with an important client",
+        "chinese": "与一位重要客户的会面"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "顾客；诉讼委托人",
+        "english": "someone who gets services or advice from a professional person, company, or organization"
+      }
+    ]
+  },
+  {
+    "name": "rail",
+    "trans": [
+      "n. 铁轨"
+    ],
+    "usphone": "rel",
+    "ukphone": "reɪl",
+    "sentences": [
+      {
+        "english": "the American rail system",
+        "chinese": "美国铁路系统"
+      },
+      {
+        "english": "a high-speed rail network",
+        "chinese": "一个高速铁路网络"
+      },
+      {
+        "english": "Passengers want a better rail service .",
+        "chinese": "乘客希望有更好的铁路服务。"
+      },
+      {
+        "english": "the Channel Tunnel and its rail links with London",
+        "chinese": "英吉利海峡隧道及其与伦敦之间的铁路连接"
+      },
+      {
+        "english": "I need to buy a rail ticket .",
+        "chinese": "我要买一张火车票。"
+      },
+      {
+        "english": "cheap rail fares",
+        "chinese": "便宜的火车票价"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 责骂， 抱怨",
+        "english": "to complain angrily about something, especially something that you think is very unfair"
+      },
+      {
+        "pos": "n",
+        "chinese": "栏杆，横杆；铁轨，轨道；铁路",
+        "english": "the railway system"
+      }
+    ]
+  },
+  {
+    "name": "intermediate",
+    "trans": [
+      "adj. 中间的"
+    ],
+    "usphone": ",ɪntɚ'midɪət",
+    "ukphone": ",ɪntə'miːdɪət",
+    "sentences": [
+      {
+        "english": "an intermediate coursebook",
+        "chinese": "中级课本"
+      },
+      {
+        "english": "an intermediate stage/step in a process",
+        "chinese": "中间阶段 / 步骤"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "中级的；中间的",
+        "english": "having more than a basic knowledge of sth but not yet advanced"
+      }
+    ]
+  },
+  {
+    "name": "appliance",
+    "trans": [
+      "n. 电器"
+    ],
+    "usphone": "ə'plaɪəns",
+    "ukphone": "ə'plaɪəns",
+    "sentences": [
+      {
+        "english": "The device most often used to do this is a load balancer, which is an appliance that accepts requests from the outside world and hands them off to the next available application server.",
+        "chinese": "进行这一操作最常用的设备是一个负载均衡器，这是一个从外部接收请求并将它们移交给下一个可用应用程序服务器的装置。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "用具，器具，器械",
+        "english": "a piece of equipment, especially electrical equipment, such as a  cooker  or  washing machine  , used in people’s homes"
+      }
+    ]
+  },
+  {
+    "name": "intensive",
+    "trans": [
+      "adj. 加强的"
+    ],
+    "usphone": "ɪn'tɛnsɪv",
+    "ukphone": "ɪn'tensɪv",
+    "sentences": [
+      {
+        "english": "a one-week intensive course in English",
+        "chinese": "为期一周的英语强化课程"
+      },
+      {
+        "english": "a day of intensive negotiations",
+        "chinese": "紧张谈判的一天"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "加强的；精耕细作的",
+        "english": "involving a lot of activity, effort, or careful attention in a short period of time"
+      }
+    ]
+  },
+  {
+    "name": "allergy",
+    "trans": [
+      "n. 过敏"
+    ],
+    "usphone": "'ælɚdʒi",
+    "ukphone": "'ælədʒɪ",
+    "sentences": [
+      {
+        "english": "a food allergy",
+        "chinese": "食物过敏"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "过敏症；反感；厌恶",
+        "english": "a medical condition in which you become ill or in which your skin becomes red and painful because you have eaten or touched a particular substance"
+      }
+    ]
+  },
+  {
+    "name": "vegetarian",
+    "trans": [
+      "n. 素食者"
+    ],
+    "usphone": "ˌvedʒə'teriən",
+    "ukphone": "vɛdʒɪˈtɛːrɪən",
+    "sentences": [
+      {
+        "english": "Our youngest daughter is a vegetarian.",
+        "chinese": "我们的小女儿是个素食主义者。"
+      },
+      {
+        "english": "dishes suitable for vegetarians",
+        "chinese": "适合素食者的菜肴"
+      },
+      {
+        "english": "I’m thinking about becoming a vegetarian.",
+        "chinese": "我在考虑戒除荤食。"
+      },
+      {
+        "english": "Yasmin sticks to a strict vegetarian diet.",
+        "chinese": "亚斯敏坚持一种严格的纯素饮食。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "素食者；食草动物",
+        "english": "someone who does not eat meat or fish"
+      },
+      {
+        "pos": "adj",
+        "chinese": "素食的",
+        "english": "Someone who is vegetarian never eats meat or fish"
+      }
+    ]
+  },
+  {
+    "name": "bargain",
+    "trans": [
+      "n. 便宜货"
+    ],
+    "usphone": "ˈbɑːɡɪn",
+    "ukphone": "ˈbɑːɡɪn",
+    "sentences": [
+      {
+        "english": "I’ve kept my side of the bargain and I expect you to keep yours.",
+        "chinese": "我履行了我的承诺，希望你也履行你的承诺。"
+      },
+      {
+        "english": "women bargaining with traders",
+        "chinese": "和商贩讨价还价的女人"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "交易",
+        "english": "an agreement, made between two people or groups to do something in return for something else"
+      },
+      {
+        "pos": "v",
+        "chinese": "议价",
+        "english": "to discuss the conditions of a sale, agreement etc, for example to try and get a lower price"
+      }
+    ]
+  },
+  {
+    "name": "relative",
+    "trans": [
+      "adj. 相对的"
+    ],
+    "usphone": "'rɛlətɪv",
+    "ukphone": "'relətɪv",
+    "sentences": [
+      {
+        "english": "The relative merits of both approaches have to be considered.",
+        "chinese": "两种方法的相对优点都得考虑在内。"
+      },
+      {
+        "english": "her opponent’s relative lack of experience",
+        "chinese": "她的对手相对来说缺少经验"
+      },
+      {
+        "english": "You may think you’re poor, but it’s all relative (= you are not poor compared to some people ) .",
+        "chinese": "你可能认为自己很穷，但一切都是相对的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "有关系的，相对的",
+        "english": "having a particular quality when compared with something else"
+      },
+      {
+        "pos": "n",
+        "chinese": " 亲属， 亲戚",
+        "english": "a member of your family"
+      }
+    ]
+  },
+  {
+    "name": "condition",
+    "trans": [
+      "n. 情况"
+    ],
+    "usphone": "kən'dɪʃən",
+    "ukphone": "kən'dɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Profits increased by £1.5m, despite the difficult economic conditions.",
+        "chinese": "尽管经济形势不佳，利润还是增长了150万英镑。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "状况，状态；环境",
+        "english": "the state that something is in, especially how good or bad its physical state is"
+      }
+    ]
+  },
+  {
+    "name": "package",
+    "trans": [
+      "n. 包裹"
+    ],
+    "usphone": "'pækɪdʒ",
+    "ukphone": "'pækɪdʒ",
+    "sentences": [
+      {
+        "english": "There’s a package here for a Miami Lakes address.",
+        "chinese": "这里有一个寄往迈阿密湖的包裹。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "包裹，包装；一揽子交易",
+        "english": "something wrapped in paper, packed in a box, and then sent by mail or delivered"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 把…打包； 包装",
+        "english": "to put food or other goods into a bag, box etc ready to be sold or sent"
+      }
+    ]
+  },
+  {
+    "name": "fare",
+    "trans": [
+      "n. 费用"
+    ],
+    "usphone": "fɛr",
+    "ukphone": "feə",
+    "sentences": [
+      {
+        "english": "It is unlikely that the marine industry will fare any better in September.",
+        "chinese": "海运业不大可能在9月份有所好转。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 进展",
+        "english": "If you say that someone or something fares well or badly, you are referring to the degree of success they achieve in a particular situation or activity"
+      },
+      {
+        "pos": "n",
+        "chinese": "车费，船费，票价",
+        "english": "the price you pay to travel somewhere by bus, train, plane etc"
+      }
+    ]
+  },
+  {
+    "name": "armchair",
+    "trans": [
+      "n. 扶手椅"
+    ],
+    "usphone": "'ɑrmtʃɛr",
+    "ukphone": "ɑːm'tʃeə; 'ɑːm-",
+    "sentences": [
+      {
+        "english": "She was sitting in an armchair with blankets wrapped around her.",
+        "chinese": "她当时正裹着毯子坐在一把扶手椅里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "扶手椅，单人沙发",
+        "english": "a comfortable chair with sides that you can rest your arms on"
+      },
+      {
+        "pos": "adj",
+        "chinese": "不切实际的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "advanced",
+    "trans": [
+      "adj. 高级的"
+    ],
+    "usphone": "əd'vænst",
+    "ukphone": "ədˈvɑ:nst",
+    "sentences": [
+      {
+        "english": "advanced learners of English",
+        "chinese": "高级程度的英语学习者"
+      },
+      {
+        "english": "advanced physics",
+        "chinese": "高等物理（学）"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "高级的",
+        "english": "studying or dealing with a school subject at a difficult level"
+      }
+    ]
+  },
+  {
+    "name": "material",
+    "trans": [
+      "n. 物质"
+    ],
+    "usphone": "mə'tɪrɪəl",
+    "ukphone": "mə'tɪərɪəl",
+    "sentences": [
+      {
+        "english": "materials like wood or stone",
+        "chinese": "木材或石头之类的材料"
+      },
+      {
+        "english": "harmful radioactive material",
+        "chinese": "有害的放射性材料"
+      },
+      {
+        "english": "a paper company which imports raw materials (= substances which have not been treated ) from North America",
+        "chinese": "从北美进口原材料的纸业公司"
+      },
+      {
+        "english": "recycled material",
+        "chinese": "再生材料"
+      },
+      {
+        "english": "Anita is collecting material for a novel.",
+        "chinese": "安妮塔正在收集小说素材。"
+      },
+      {
+        "english": "a society that places high importance on material rewards",
+        "chinese": "重视物质回报的社会"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "材料；素材",
+        "english": "a solid substance such as wood, plastic, or metal"
+      },
+      {
+        "pos": "adj",
+        "chinese": "物质的",
+        "english": "relating to your money, possessions, living conditions etc, rather than the needs of your mind or soul"
+      }
+    ]
+  },
+  {
+    "name": "jeans",
+    "trans": [
+      "n. 牛仔裤"
+    ],
+    "usphone": "",
+    "ukphone": "dʒiːnz",
+    "sentences": [
+      {
+        "english": "...a young man in jeans and a worn T-shirt.",
+        "chinese": "…一个穿着牛仔裤和破旧T恤衫的年轻人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 工装裤， 牛仔裤",
+        "english": "trousers made of denim(= a strong, usually blue, cotton cloth )"
+      }
+    ]
+  },
+  {
+    "name": "trolley",
+    "trans": [
+      "n. 手推车"
+    ],
+    "usphone": "'trɑli",
+    "ukphone": "'trɒlɪ",
+    "sentences": [
+      {
+        "english": "a supermarket trolley",
+        "chinese": "超市购物手推车"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "手推车；（美）有轨电车（等于trolley car）；（英）无轨电车（等于trolleybus）；空中吊运车",
+        "english": "a large basket on wheels that you use for carrying bags, shopping etc"
+      },
+      {
+        "pos": "vi",
+        "chinese": "乘电车",
+        "english": ""
+      },
+      {
+        "pos": "vt",
+        "chinese": "用手推车运",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "sightseeing",
+    "trans": [
+      "n. 观光"
+    ],
+    "usphone": "'saɪtsiɪŋ",
+    "ukphone": "'saɪtsiːɪŋ",
+    "sentences": [
+      {
+        "english": "She swam and sunbathed, went sightseeing and relaxed.",
+        "chinese": "她游泳，晒日光浴，观光，放松。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "观光；游览",
+        "english": "when you visit famous or interesting places, especially as tourists"
+      },
+      {
+        "pos": "adj",
+        "chinese": "观光的；游览的",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "观光（sightsee的ing形式）；游览",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "post office",
+    "trans": [
+      "n. 邮局"
+    ],
+    "usphone": "ˈpost ɔfɪs",
+    "ukphone": "ˈpəust ɔfis",
+    "sentences": [
+      {
+        "english": "The hotel is opposite the post office.",
+        "chinese": "邮局的对过是旅馆。"
+      },
+      {
+        "english": "Men in the post office classify mail according to places it is to go.",
+        "chinese": "邮局里的人员将信件按寄送地点分类。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "邮局",
+        "english": "a place where you can buy stamps, send letters and packages etc"
+      }
+    ]
+  },
+  {
+    "name": "rent",
+    "trans": [
+      "n. 租金"
+    ],
+    "usphone": "rɛnt",
+    "ukphone": "rent",
+    "sentences": [
+      {
+        "english": "I pay the rent at the beginning of every month.",
+        "chinese": "我每逢月初交付房租。"
+      },
+      {
+        "english": "She rents out two rooms to students.",
+        "chinese": "她把两个房间出租给学生"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "租金",
+        "english": "the money that someone pays regularly to use a room, house etc that belongs to someone else"
+      },
+      {
+        "pos": "v",
+        "chinese": "出租",
+        "english": "to let someone live in a house, room etc that you own, or use your land, in return for money"
+      }
+    ]
+  },
+  {
+    "name": "sports centre",
+    "trans": [
+      "n. 体育中心"
+    ]
+  },
+  {
+    "name": "Monday",
+    "trans": [
+      "n. 星期一"
+    ],
+    "usphone": "ˈmʌnde; ˈmʌndɪ",
+    "ukphone": "ˈmʌndeɪ; ˈmʌndi",
+    "sentences": [
+      {
+        "english": "The president announced Monday that he would cancel the debt.",
+        "chinese": "总统周一宣布他会取消这笔债务。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "星期一",
+        "english": "the day between Sunday and Tuesday"
+      }
+    ]
+  },
+  {
+    "name": "Sunday",
+    "trans": [
+      "n. 星期天"
+    ],
+    "usphone": "ˈsʌnde; ˈsʌndi",
+    "ukphone": "ˈsʌndeɪ; ˈsʌndi",
+    "sentences": [
+      {
+        "english": "What are you doing Sunday?",
+        "chinese": "你星期天做什么？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "星期日；礼拜日",
+        "english": "the day between Saturday and Monday"
+      }
+    ]
+  },
+  {
+    "name": "rail",
+    "trans": [
+      "n. 铁轨，栏杆"
+    ],
+    "usphone": "rel",
+    "ukphone": "reɪl",
+    "sentences": [
+      {
+        "english": "the American rail system",
+        "chinese": "美国铁路系统"
+      },
+      {
+        "english": "a high-speed rail network",
+        "chinese": "一个高速铁路网络"
+      },
+      {
+        "english": "Passengers want a better rail service .",
+        "chinese": "乘客希望有更好的铁路服务。"
+      },
+      {
+        "english": "the Channel Tunnel and its rail links with London",
+        "chinese": "英吉利海峡隧道及其与伦敦之间的铁路连接"
+      },
+      {
+        "english": "I need to buy a rail ticket .",
+        "chinese": "我要买一张火车票。"
+      },
+      {
+        "english": "cheap rail fares",
+        "chinese": "便宜的火车票价"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 责骂， 抱怨",
+        "english": "to complain angrily about something, especially something that you think is very unfair"
+      },
+      {
+        "pos": "n",
+        "chinese": "栏杆，横杆；铁轨，轨道；铁路",
+        "english": "the railway system"
+      }
+    ]
+  },
+  {
+    "name": "stair lift",
+    "trans": [
+      "n. 楼梯升降机"
+    ]
+  },
+  {
+    "name": "seat",
+    "trans": [
+      "n. 座位"
+    ],
+    "usphone": "sit",
+    "ukphone": "siːt",
+    "sentences": [
+      {
+        "english": "I was in the back seat and Jo was driving.",
+        "chinese": "我在后座，乔开车。"
+      },
+      {
+        "english": "a 10,000-seat stadium",
+        "chinese": "万人体育场"
+      },
+      {
+        "english": "People were shifting in their seats, looking uncomfortable.",
+        "chinese": "人们在座位上动来动去，看上去不大自在。"
+      },
+      {
+        "english": "He waved toward a chair, and seated himself at the desk.",
+        "chinese": "他朝一把椅子一挥手，在桌旁坐了下来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "座位；所在地；职位",
+        "english": "a place where you can sit, especially one in a vehicle or one from which you watch a performance, sports event etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "使…坐下；可容纳…的；使就职",
+        "english": "If you seat yourself somewhere, you sit down"
+      }
+    ]
+  },
+  {
+    "name": "living room",
+    "trans": [
+      "n. 客厅起居室"
+    ],
+    "usphone": "'lɪvɪŋ rum",
+    "ukphone": "'lɪvɪŋ ru:m",
+    "sentences": [
+      {
+        "english": "I made some new curtains for the living room.",
+        "chinese": "我给起居室做了新窗帘。"
+      },
+      {
+        "english": "That was the extent of our living room decor – we had nothing on the walls, or the other surfaces in the room.",
+        "chinese": "这个小架子，就是我老家起居室的全部装饰了。 除此之外，墙上和任何东西上都是干干净净的。"
+      },
+      {
+        "english": "Park said that although he'd only had the plastic tree for two years, he felt it was like \"his best friend\" and never got tired of seeing it sitting in his living room.",
+        "chinese": "帕克先生说，尽管他和这颗塑胶圣诞树在一起生活才两年时间，但是它就像是“一个最好的朋友”一样。 每天它都立在起居室�，帕克从未厌倦它。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "起居室；客厅",
+        "english": "the main room in a house where people relax, watch television etc"
+      }
+    ]
+  },
+  {
+    "name": "bathroom",
+    "trans": [
+      "n. 浴室，卫生间"
+    ],
+    "usphone": "'bæθrum",
+    "ukphone": "'bɑːθruːm; -rʊm",
+    "sentences": [
+      {
+        "english": "The water shed from the bathroom.",
+        "chinese": "水是从浴室中溢出来的。"
+      },
+      {
+        "english": "We revamped our bathroom last month.",
+        "chinese": "我们在上个月装修了浴室。"
+      },
+      {
+        "english": "My glasses steamed when I came into the bathroom.",
+        "chinese": "我走进浴室时，眼镜上蒙上了一层水气。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "浴室",
+        "english": "a room where there is a bath or  shower  , a  basin  , and sometimes a toilet"
+      }
+    ]
+  },
+  {
+    "name": "kitchen",
+    "trans": [
+      "n. 厨房"
+    ],
+    "usphone": "'kɪtʃɪn",
+    "ukphone": "'kɪtʃɪn; -tʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Sam went into the kitchen to make a pot of tea.",
+        "chinese": "萨姆走进厨房去沏一壶茶。"
+      },
+      {
+        "english": "She is in the kitchen making a meal.",
+        "chinese": "她在厨房里做饭。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "厨房，灶间",
+        "english": "the room where you prepare and cook food"
+      }
+    ]
+  },
+  {
+    "name": "washing machine",
+    "trans": [
+      "n. 洗衣机"
+    ]
+  },
+  {
+    "name": "video",
+    "trans": [
+      "n. 电视，录像机"
+    ],
+    "usphone": "'vɪdɪo",
+    "ukphone": "'vɪdiəu",
+    "sentences": [
+      {
+        "english": "video production",
+        "chinese": "录像制作"
+      },
+      {
+        "english": "video materials for language teaching",
+        "chinese": "语言教学的影像素材"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "录像的；电视的",
+        "english": "relating to or used in the process of recording and showing pictures on television"
+      },
+      {
+        "pos": "n",
+        "chinese": " 录像",
+        "english": "a copy of a film or television programme, or a series of events, recorded on videotape"
+      }
+    ]
+  },
+  {
+    "name": "basin",
+    "trans": [
+      "n. 盆"
+    ],
+    "usphone": "'besn",
+    "ukphone": "'beɪs(ə)n",
+    "sentences": [
+      {
+        "english": "a wash basin",
+        "chinese": "洗脸盆"
+      },
+      {
+        "english": "Fill the basin with the cake mixture.",
+        "chinese": "在盆里装入蛋糕拌料。"
+      },
+      {
+        "english": "countries around the Pacific Basin",
+        "chinese": "太平洋盆地周围的国家"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "洗脸盆；盆；盆地",
+        "english": "a round container attached to the wall in a bathroom, where you wash your hands and face"
+      }
+    ]
+  },
+  {
+    "name": "campus",
+    "trans": [
+      "n. 校园"
+    ],
+    "usphone": "'kæmpəs",
+    "ukphone": "'kæmpəs",
+    "sentences": [
+      {
+        "english": "a beautiful campus in New England",
+        "chinese": "新英格兰的一个美丽校园"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "校园，学校场地",
+        "english": "the land and buildings of a university or college, including the buildings where students live"
+      }
+    ]
+  },
+  {
+    "name": "balcony",
+    "trans": [
+      "n. 阳台"
+    ],
+    "usphone": "'bælkəni",
+    "ukphone": "'bælkənɪ",
+    "sentences": [
+      {
+        "english": "Has your flat got a balcony?",
+        "chinese": "你的公寓有阳台吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "阳台；包厢；戏院楼厅",
+        "english": "a structure that you can stand on, that is attached to the outside wall of a building, above ground level"
+      }
+    ]
+  },
+  {
+    "name": "lamp",
+    "trans": [
+      "n. 灯"
+    ],
+    "usphone": "læmp",
+    "ukphone": "læmp",
+    "sentences": [
+      {
+        "english": "She switched on the bedside lamp.",
+        "chinese": "她打开了床头灯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "灯；照射器",
+        "english": "an object that produces light by using electricity, oil, or gas"
+      },
+      {
+        "pos": "vt",
+        "chinese": "照亮",
+        "english": ""
+      },
+      {
+        "pos": "vi",
+        "chinese": "发亮",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "survey",
+    "trans": [
+      "n. 调查，测量"
+    ],
+    "usphone": "ˈsɝˌve; (for v.) sɝˈve",
+    "ukphone": "'sɜ:veɪ",
+    "sentences": [
+      {
+        "english": "Of the 100 companies surveyed, 10% had a turnover of £50 m to £99 m.",
+        "chinese": "被调查的 100 家公司中，10% 的公司营业额在 5,000 万到 9,900 万英镑之间。"
+      },
+      {
+        "english": "She turned to survey her daughter’s pale face.",
+        "chinese": "她转过头审视女儿苍白的面容。"
+      },
+      {
+        "english": "We conducted a survey of parents in the village.",
+        "chinese": "我们对这个村子的孩子父母作了一次调查。"
+      },
+      {
+        "english": "a geological survey",
+        "chinese": "地质勘察"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "调查；审视，仔细考虑",
+        "english": "to ask a large number of people questions in order to find out their attitudes or opinions"
+      },
+      {
+        "pos": "n",
+        "chinese": "调查；勘测，测量，测绘",
+        "english": "a set of questions that you ask a large number of people in order to find out about their opinions or behaviour"
+      }
+    ]
+  },
+  {
+    "name": "community",
+    "trans": [
+      "n. 社区，共同体"
+    ],
+    "usphone": "kə'mjʊnəti",
+    "ukphone": "kə'mjuːnɪtɪ",
+    "sentences": [
+      {
+        "english": "The new arts centre will serve the whole community.",
+        "chinese": "这座新的艺术中心将为整个社区服务。"
+      },
+      {
+        "english": "the Polish community in London",
+        "chinese": "在伦敦的波兰侨民团体"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "社区；社会；公社",
+        "english": "the people who live in the same area, town etc"
+      }
+    ]
+  },
+  {
+    "name": "dissatisfaction",
+    "trans": [
+      "n. 不满"
+    ],
+    "usphone": "dɪs'sætɪs'fækʃən",
+    "ukphone": "dɪssætɪs'fækʃn",
+    "sentences": [
+      {
+        "english": "30% of customers expressed dissatisfaction with the service.",
+        "chinese": "30%的顾客对服务表示不满意。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "不满，不平",
+        "english": "a feeling of not being satisfied"
+      }
+    ]
+  },
+  {
+    "name": "quality",
+    "trans": [
+      "n. 质量，品质"
+    ],
+    "usphone": "'kwɑləti",
+    "ukphone": "'kwɒlɪtɪ",
+    "sentences": [
+      {
+        "english": "Much of the land was of poor quality.",
+        "chinese": "很多地的土质很差。"
+      },
+      {
+        "english": "Use only high quality ingredients.",
+        "chinese": "只使用上等的材料。"
+      },
+      {
+        "english": "the drug’s addictive quality",
+        "chinese": "毒品令人上瘾的特性"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "质量；品质；特性",
+        "english": "how good or bad something is"
+      }
+    ]
+  },
+  {
+    "name": "local",
+    "trans": [
+      "adj. 当地的"
+    ],
+    "usphone": "ˈloʊkl",
+    "ukphone": "'ləʊk(ə)l",
+    "sentences": [
+      {
+        "english": "local hospital",
+        "chinese": "当地医院"
+      },
+      {
+        "english": "local residents",
+        "chinese": "本地居民"
+      },
+      {
+        "english": "a local infection",
+        "chinese": "局部感染"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "地方的；局部的",
+        "english": "relating to the particular area you live in, or the area you are talking about"
+      }
+    ]
+  },
+  {
+    "name": "swimming pool",
+    "trans": [
+      "n. 游泳池"
+    ]
+  },
+  {
+    "name": "bedsheet",
+    "trans": [
+      "n. 床单"
+    ]
+  },
+  {
+    "name": "carpet",
+    "trans": [
+      "n. 地毯"
+    ],
+    "usphone": "'kɑrpɪt",
+    "ukphone": "'kɑːpɪt",
+    "sentences": [
+      {
+        "english": "The building has been carpeted throughout.",
+        "chinese": "大楼里上上下下都铺了地毯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "在…上铺地毯，把地毯铺在…上；斥责",
+        "english": "to cover a floor with carpet"
+      },
+      {
+        "pos": "n",
+        "chinese": "地毯；地毯状覆盖物",
+        "english": "heavy woven material for covering floors or stairs, or a piece of this material"
+      }
+    ]
+  },
+  {
+    "name": "Thursday",
+    "trans": [
+      "n. 星期四"
+    ],
+    "usphone": "ˈθɝzde; ˈθɝzdɪ",
+    "ukphone": "'θɜːzdeɪ; -dɪ",
+    "sentences": [
+      {
+        "english": "She was working Thursday.",
+        "chinese": "她星期四在工作。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "星期四",
+        "english": "the day between Wednesday and Friday"
+      }
+    ]
+  },
+  {
+    "name": "iron",
+    "trans": [
+      "n. 熨烫"
+    ],
+    "usphone": "'aɪɚn",
+    "ukphone": "'aɪən",
+    "sentences": [
+      {
+        "english": "the iron and steel industry",
+        "chinese": "钢铁工业"
+      },
+      {
+        "english": "a driveway with large iron gates",
+        "chinese": "安装了大铁门的私家车道"
+      },
+      {
+        "english": "the absorption of iron from food",
+        "chinese": "对食物中铁的吸收"
+      },
+      {
+        "english": "...a man of icy nerve and iron will.",
+        "chinese": "…一个头脑冷静、意志坚强的男人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "熨斗；烙铁；坚强",
+        "english": "a common hard metal that is used to make steel, is  magnetic  , and is found in very small quantities in food and blood. It is a chemical  element  : symbol Fe"
+      },
+      {
+        "pos": "v",
+        "chinese": "熨；用铁铸成",
+        "english": "to make clothes smooth using an iron"
+      },
+      {
+        "pos": "adj",
+        "chinese": "铁的；残酷的；刚强的",
+        "english": "You can use iron to describe the character or behaviour of someone who is very firm in their decisions and actions, or who can control their feelings well"
+      }
+    ]
+  },
+  {
+    "name": "suburb",
+    "trans": [
+      "n. 郊区"
+    ],
+    "usphone": "'sʌbɝb",
+    "ukphone": "'sʌbɜːb",
+    "sentences": [
+      {
+        "english": "a London suburb",
+        "chinese": "一个伦敦郊区"
+      },
+      {
+        "english": "a kid from the suburbs",
+        "chinese": "来自郊区的小孩子"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 郊区， 郊外， 近郊",
+        "english": "an area where people live which is away from the centre of a town or city"
+      }
+    ]
+  },
+  {
+    "name": "exterior",
+    "trans": [
+      "adj. 外面的"
+    ],
+    "usphone": "ɪk'stɪrɪɚ",
+    "ukphone": "ɪk'stɪərɪə; ek-",
+    "sentences": [
+      {
+        "english": "The exterior walls need a new coat of paint.",
+        "chinese": "外墙需要刷新漆了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "外部的；表面的；外在的",
+        "english": "on the outside of something"
+      },
+      {
+        "pos": "n",
+        "chinese": "外部；表面；外型；外貌",
+        "english": "the outside of something, especially a building"
+      }
+    ]
+  },
+  {
+    "name": "setting",
+    "trans": [
+      "n. 环境"
+    ],
+    "usphone": "'sɛtɪŋ",
+    "ukphone": "'setɪŋ",
+    "sentences": [
+      {
+        "english": "I’ve worked with children in various settings, mainly in secondary school.",
+        "chinese": "我在许多地方教过孩子，主要是在中学。"
+      },
+      {
+        "english": "The heating system was already on its highest setting.",
+        "chinese": "取暖系统已经调到了最高挡。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "环境；安装，调整",
+        "english": "the place where something is or where something happens, and the general environment"
+      }
+    ]
+  },
+  {
+    "name": "ceremony",
+    "trans": [
+      "n. 典礼仪式"
+    ],
+    "usphone": "ˈsɛrəˌmoʊni",
+    "ukphone": "'serɪmənɪ",
+    "sentences": [
+      {
+        "english": "a wedding ceremony",
+        "chinese": "婚礼"
+      },
+      {
+        "english": "the opening ceremony of the Olympic Games",
+        "chinese": "奥运会开幕式"
+      },
+      {
+        "english": "The queen was crowned with due ceremony.",
+        "chinese": "女王按照规定的礼仪加冕。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "典礼，仪式；礼节",
+        "english": "an important social or religious event, when a traditional set of actions is performed in a formal way"
+      }
+    ]
+  },
+  {
+    "name": "consult",
+    "trans": [
+      "v. 咨询"
+    ],
+    "usphone": "kən'sʌlt",
+    "ukphone": "kən'sʌlt",
+    "sentences": [
+      {
+        "english": "If symptoms persist, consult a doctor without delay.",
+        "chinese": "如果症状持续的话，马上咨询医生。"
+      },
+      {
+        "english": "Have you consulted a dictionary?",
+        "chinese": "你查过词典了吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "请教；查阅",
+        "english": "to ask for information or advice from someone because it is their job to know something"
+      }
+    ]
+  },
+  {
+    "name": "premium",
+    "trans": [
+      "adj. 高品质的"
+    ],
+    "usphone": "'primɪəm",
+    "ukphone": "'priːmiəm",
+    "sentences": [
+      {
+        "english": "premium ice cream",
+        "chinese": "优质冰激凌"
+      },
+      {
+        "english": "the current consumer trend for premium products",
+        "chinese": "当前消费者喜欢购买优质产品的趋向"
+      },
+      {
+        "english": "premium quality British potatoes",
+        "chinese": "优质英国马铃薯"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 高级的，优质的；售价高的",
+        "english": "of very high quality"
+      },
+      {
+        "pos": "n",
+        "chinese": "保险金；额外费用，加付款；奖品，赠品；额外津贴",
+        "english": "the cost of insurance, especially the amount that you pay each year"
+      }
+    ]
+  },
+  {
+    "name": "apply",
+    "trans": [
+      "v. 申请"
+    ],
+    "usphone": "ə'plaɪ",
+    "ukphone": "ə'plaɪ",
+    "sentences": [
+      {
+        "english": "We need to apply for planning permission to build a garage.",
+        "chinese": "我们建车库需要申请规划许可。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "应用，实施，使用；适用；申请，请求",
+        "english": "to make a formal request, usually written, for something such as a job, a place at a university, or permission to do something"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 涂， 敷， 施",
+        "english": "to put or spread something such as paint, liquid, or medicine onto a surface"
+      }
+    ]
+  },
+  {
+    "name": "brochure",
+    "trans": [
+      "n. 小册子"
+    ],
+    "usphone": "bro'ʃʊr",
+    "ukphone": "'brəʊʃə; brɒ'ʃʊə",
+    "sentences": [
+      {
+        "english": "a holiday brochure",
+        "chinese": "度假手册"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "手册，小册子",
+        "english": "a thin book giving information or advertising something"
+      }
+    ]
+  },
+  {
+    "name": "reception",
+    "trans": [
+      "n. 招待"
+    ],
+    "usphone": "rɪ'sɛpʃən",
+    "ukphone": "rɪˈsepʃn",
+    "sentences": [
+      {
+        "english": "She was unsure of her reception after everything that had happened.",
+        "chinese": "发生了这些事后，她对自己是否还受欢迎没把握。"
+      },
+      {
+        "english": "The plans received a mixed reception from unions (= some people liked them, others did not ) .",
+        "chinese": "各工会对这些计划反响不一。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "接待；反响",
+        "english": "a particular type of welcome for someone, or a particular type of reaction to their ideas, work etc"
+      }
+    ]
+  },
+  {
+    "name": "annual",
+    "trans": [
+      "adj. 每年的"
+    ],
+    "usphone": "'ænjuəl",
+    "ukphone": "'ænjuəl",
+    "sentences": [
+      {
+        "english": "The school trip has become an annual event.",
+        "chinese": "学校组织的旅行成了一年一度的活动。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "每年的，一年一次的",
+        "english": "happening once a year"
+      },
+      {
+        "pos": "n",
+        "chinese": " 年报， 年鉴； 一年生的植物",
+        "english": "a plant that lives for one year or season"
+      }
+    ]
+  },
+  {
+    "name": "guard",
+    "trans": [
+      "n. 保卫"
+    ],
+    "usphone": "ɡɑrd",
+    "ukphone": "gɑːd",
+    "sentences": [
+      {
+        "english": "The Sergeant told Swift to guard the entrance.",
+        "chinese": "中士叫斯威夫特守着入口。"
+      },
+      {
+        "english": "a lioness guarding her cubs",
+        "chinese": "守护着幼狮的母狮"
+      },
+      {
+        "english": "There were two security guards on duty outside the building.",
+        "chinese": "大楼外面有两名保安在值勤。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "守卫；看守",
+        "english": "to protect a person, place, or object by staying near them and watching them"
+      },
+      {
+        "pos": "n",
+        "chinese": "卫兵",
+        "english": "someone whose job is to protect a place or person"
+      }
+    ]
+  },
+  {
+    "name": "poster",
+    "trans": [
+      "n. 海报"
+    ],
+    "usphone": "'postɚ",
+    "ukphone": "'pəʊstə",
+    "sentences": [
+      {
+        "english": "A team of volunteers were putting up posters .",
+        "chinese": "一队志愿者正在张贴海报。"
+      },
+      {
+        "english": "a poster campaign for the election",
+        "chinese": "选举的海报宣传"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "海报，广告；招贴",
+        "english": "a large printed notice, picture, or photograph, used to advertise something or as a decoration"
+      }
+    ]
+  },
+  {
+    "name": "health check",
+    "trans": [
+      "n. 体检"
+    ]
+  },
+  {
+    "name": "petrol",
+    "trans": [
+      "n. 汽油"
+    ],
+    "usphone": "'pɛtrəl",
+    "ukphone": "'petr(ə)l",
+    "sentences": [
+      {
+        "english": "unleaded petrol",
+        "chinese": "无铅汽油"
+      },
+      {
+        "english": "petrol prices",
+        "chinese": "汽油价格"
+      },
+      {
+        "english": "The petrol tank is leaking.",
+        "chinese": "油箱漏了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "（英）汽油",
+        "english": "a liquid obtained from  petroleum that is used to supply power to the engine of cars and other vehicles"
+      }
+    ]
+  },
+  {
+    "name": "literacy",
+    "trans": [
+      "n. 读写能力"
+    ],
+    "usphone": "'lɪtərəsi",
+    "ukphone": "'lɪtərəsi",
+    "sentences": [
+      {
+        "english": "a new adult literacy campaign",
+        "chinese": "新一轮成人识字[扫盲]运动"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 识字， 有文化， 读写能力",
+        "english": "the state of being able to read and write"
+      }
+    ]
+  },
+  {
+    "name": "comedy",
+    "trans": [
+      "n. 喜剧"
+    ],
+    "usphone": "'kɑmədi",
+    "ukphone": "'kɒmədi",
+    "sentences": [
+      {
+        "english": "a career in stand-up comedy",
+        "chinese": "单口喜剧表演职业"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 喜剧， 喜剧性",
+        "english": "entertainment that is intended to make people laugh"
+      }
+    ]
+  },
+  {
+    "name": "lounge",
+    "trans": [
+      "n. 休息厅"
+    ],
+    "usphone": "laʊndʒ",
+    "ukphone": "laʊndʒ",
+    "sentences": [
+      {
+        "english": "the television lounge",
+        "chinese": "电视放映室"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "休息室",
+        "english": "a public room in a hotel or other building, that is used by many people as a place to relax"
+      }
+    ]
+  },
+  {
+    "name": "Spanish",
+    "trans": [
+      "n. 西班牙语"
+    ],
+    "usphone": "'spænɪʃ",
+    "ukphone": "'spænɪʃ",
+    "sentences": [
+      {
+        "english": "First-year students may elect  French, Spanish, or German.",
+        "chinese": "一年级学生可选修法语、西班牙语或德语。"
+      },
+      {
+        "english": "The English and the Spanish were among the first to colonize North America.",
+        "chinese": "英国人和西班牙人是首先向北美洲开拓殖民地的。"
+      },
+      {
+        "english": "At his lordship's death in the Spanish campaign in the year 1811,his estate fell in to the family of the Tiptoffs.",
+        "chinese": "这位爵爷在1811年西班牙战役中死亡后，他的产业归蒂普托夫家族支配。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "西班牙的",
+        "english": "relating to Spain, its people, or its language"
+      }
+    ]
+  },
+  {
+    "name": "yoga",
+    "trans": [
+      "n. 瑜伽"
+    ],
+    "usphone": "'joɡə",
+    "ukphone": "'jəʊgə",
+    "sentences": [
+      {
+        "english": "I do yoga twice a week.",
+        "chinese": "我一周做两次瑜伽。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "瑜珈（意为“结合”，指修行）；瑜珈术",
+        "english": "a system of exercises that help you control your mind and body in order to relax"
+      }
+    ]
+  },
+  {
+    "name": "headache",
+    "trans": [
+      "n. 头疼"
+    ],
+    "usphone": "ˈhɛdˌek",
+    "ukphone": "'hedeɪk",
+    "sentences": [
+      {
+        "english": "If you have a headache, you should take some aspirin.",
+        "chinese": "要是头痛，你该吃点阿司匹林。"
+      },
+      {
+        "english": "The airline's biggest headache is the increase in the price of aviation fuel.",
+        "chinese": "令航空公司最头疼的问题是航空燃料价格的上涨。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "头痛；头痛的事",
+        "english": "a pain in your head"
+      }
+    ]
+  },
+  {
+    "name": "burglar",
+    "trans": [
+      "n. 盗贼"
+    ],
+    "usphone": "'bɝɡlɚ",
+    "ukphone": "'bɜːglə",
+    "sentences": [
+      {
+        "english": "Burglars broke into their home.",
+        "chinese": "窃贼闯进了他们家。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "夜贼，窃贼",
+        "english": "someone who goes into houses, shops etc to steal things"
+      }
+    ]
+  },
+  {
+    "name": "goods",
+    "trans": [
+      "n. 商品"
+    ],
+    "usphone": "ɡʊdz",
+    "ukphone": "ɡʊdz",
+    "sentences": [
+      {
+        "english": "a goods train",
+        "chinese": "一列货车"
+      },
+      {
+        "english": "the large market for consumer goods",
+        "chinese": "庞大的消费品市场"
+      },
+      {
+        "english": "Britain’s leading exporter of manufactured goods",
+        "chinese": "英国主要的工业制成品出口商"
+      },
+      {
+        "english": "There will be tax increases on a range of goods and services .",
+        "chinese": "有一些商品和服务将要增税。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "货物；商品",
+        "english": "things which are carried by road, train etc"
+      }
+    ]
+  }
 ]

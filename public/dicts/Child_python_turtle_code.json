@@ -1,164 +1,519 @@
 [
-    {
-        "name": "screensize",
-        "trans": [
-            "设置画布大小及颜色"
-        ]
-    },
-    {
-        "name": "setup",
-        "trans": [
-            "设置窗口大小和位置"
-        ]
-    },
-    {
-        "name": "forward",
-        "trans": [
-            "向当前画笔方向移动dist像素长，简化为fd(dist)"
-        ]
-    },
-    {
-        "name": "backward",
-        "trans": [
-            "向当前画笔相反方向移动dist像素长度，简化为bk(dist)"
-        ]
-    },
-    {
-        "name": "right",
-        "trans": [
-            "顺时针转动degree°"
-        ]
-    },
-    {
-        "name": "left",
-        "trans": [
-            "逆时针转动degree°"
-        ]
-    },
-    {
-        "name": "circle",
-        "trans": [
-            "逆时针画半径为r整圆"
-        ]
-    },
-    {
-        "name": "dot",
-        "trans": [
-            "按给定直径画圆点"
-        ]
-    },
-    {
-        "name": "speed",
-        "trans": [
-            "画笔绘制的速度，s为0-10的整数(1-10越来越快,0表示最快)"
-        ]
-    },
-    {
-        "name": "pendown",
-        "trans": [
-            "移动时绘制图形，缺省时也为绘制，简化为down()"
-        ]
-    },
-    {
-        "name": "penup",
-        "trans": [
-            "移动时不绘制图形，提起笔，用于另起一个地方绘制时用，简化为up()"
-        ]
-    },
-    {
-        "name": "goto",
-        "trans": [
-            "将画笔移动到坐标为x,y的位置"
-        ]
-    },
-    {
-        "name": "setx",
-        "trans": [
-            "将当前x轴移动到指定位置"
-        ]
-    },
-    {
-        "name": "sety",
-        "trans": [
-            "将当前y轴移动到指定位置"
-        ]
-    },
-    {
-        "name": "setheading",
-        "trans": [
-            "设置当前朝向为angle角度，简化为seth(angle)"
-        ]
-    },
-    {
-        "name": "home",
-        "trans": [
-            "设置当前画笔位置为原点(0,0)，并恢复默认朝向为向东(0)"
-        ]
-    },
-    {
-        "name": "pensize",
-        "trans": [
-            "绘制图形时的画笔宽度"
-        ]
-    },
-    {
-        "name": "pencolor",
-        "trans": [
-            "画笔颜色"
-        ]
-    },
-    {
-        "name": "shape",
-        "trans": [
-            "画笔外观形状，可选classic/arrow/turtle/circle/square/triangle"
-        ]
-    },
-    {
-        "name": "fillcolor",
-        "trans": [
-            "图形的填充颜色"
-        ]
-    },
-    {
-        "name": "color",
-        "trans": [
-            "同时设置pencolor=c1, fillcolor=c2"
-        ]
-    },
-    {
-        "name": "begin_fill",
-        "trans": [
-            "准备开始填充图形"
-        ]
-    },
-    {
-        "name": "end_fill",
-        "trans": [
-            "填充完成"
-        ]
-    },
-    {
-        "name": "hideturtle",
-        "trans": [
-            "隐藏箭头显示，简化为ht()"
-        ]
-    },
-    {
-        "name": "showturtle",
-        "trans": [
-            "与hideturtle()函数对应，简化为st()"
-        ]
-    },
-    {
-        "name": "clear",
-        "trans": [
-            "清空turtle窗口，但是turtle的位置和状态不会改变"
-        ]
-    },
-    {
-        "name": "reset",
-        "trans": [
-            "清空窗口，重置turtle状态为起始状态"
-        ]
-    }
+  {
+    "name": "screensize",
+    "trans": [
+      "设置画布大小及颜色"
+    ]
+  },
+  {
+    "name": "setup",
+    "trans": [
+      "设置窗口大小和位置"
+    ],
+    "usphone": "'sɛt,ʌp",
+    "ukphone": "'setʌp",
+    "sentences": [
+      {
+        "english": "The worst part of the setup is the poor instruction manual.",
+        "chinese": "安装过程中最糟糕的部分就是差劲的操作手册。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "装备, 安装,计划",
+        "english": "The setup of computer hardware or software is the process of installing it and making it ready to use"
+      }
+    ]
+  },
+  {
+    "name": "forward",
+    "trans": [
+      "向当前画笔方向移动dist像素长，简化为fd(dist)"
+    ],
+    "usphone": "'fɔrwɚd",
+    "ukphone": "'fɔːwəd",
+    "sentences": [
+      {
+        "english": "He leaned forward , his elbows resting on the table.",
+        "chinese": "他身体前倾，胳膊肘撑在桌子上。"
+      },
+      {
+        "english": "The crowd surged forwards.",
+        "chinese": "人群向前涌去。"
+      },
+      {
+        "english": "The next scene takes the story forward five years.",
+        "chinese": "下一个场面是描述故事中五年后的情况。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "向前；今后，往后",
+        "english": "towards a place or position that is in front of you"
+      }
+    ]
+  },
+  {
+    "name": "backward",
+    "trans": [
+      "向当前画笔相反方向移动dist像素长度，简化为bk(dist)"
+    ],
+    "usphone": "'bækwɚd",
+    "ukphone": "'bækwəd",
+    "sentences": [
+      {
+        "english": "She went without a backward glance.",
+        "chinese": "她头也不回地走了。"
+      },
+      {
+        "english": "He works backward, building a house from the top downward.",
+        "chinese": "他倒着干活，从上往下盖房子。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "向后的；倒的",
+        "english": "looking or facing in the direction that is behind you"
+      },
+      {
+        "pos": "adv",
+        "chinese": "倒",
+        "english": "If you do something backward, you do it in the opposite way to the usual way"
+      }
+    ]
+  },
+  {
+    "name": "right",
+    "trans": [
+      "顺时针转动degree°"
+    ],
+    "usphone": "raɪt",
+    "ukphone": "raɪt",
+    "sentences": [
+      {
+        "english": "Yes, that’s the right answer .",
+        "chinese": "对，回答正确。"
+      },
+      {
+        "english": "Is that the right time ?",
+        "chinese": "那个时间对吗？"
+      },
+      {
+        "english": "I got most of the questions right .",
+        "chinese": "大部分问题我都答对了。"
+      },
+      {
+        "english": "His ideas have now been proved right .",
+        "chinese": "他的观点现已证明是对的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "正确的；直接的；右方的",
+        "english": "a statement or piece of information that is right is correct and based on true facts"
+      },
+      {
+        "pos": "v",
+        "chinese": "复正；恢复平稳",
+        "english": "exactly in a particular position or place"
+      },
+      {
+        "pos": "n",
+        "chinese": "正确；右边；正义",
+        "english": "used to check if what you have said is correct"
+      },
+      {
+        "pos": "adv",
+        "chinese": "正确地；恰当地；彻底地",
+        "english": "exactly in a particular position or place"
+      }
+    ]
+  },
+  {
+    "name": "left",
+    "trans": [
+      "逆时针转动degree°"
+    ],
+    "usphone": "lɛft",
+    "ukphone": "left",
+    "sentences": [
+      {
+        "english": "She held out her left hand.",
+        "chinese": "她伸出左手。"
+      },
+      {
+        "english": "a scar on the left side of his face",
+        "chinese": "他左脸上的伤疤"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "左边的",
+        "english": "your left side is the side of your body that contains your heart"
+      },
+      {
+        "pos": "adv",
+        "chinese": "在左边",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "circle",
+    "trans": [
+      "逆时针画半径为r整圆"
+    ],
+    "usphone": "'sɝkl",
+    "ukphone": "'sɜːk(ə)l",
+    "sentences": [
+      {
+        "english": "Draw a circle 10cm in diameter.",
+        "chinese": "画一个直径10厘米的圆形。"
+      },
+      {
+        "english": "Johnson was part of the President’s inner circle (= the people who have the most influence ) .",
+        "chinese": "约翰逊是总统核心集团的人。"
+      },
+      {
+        "english": "Sooner or later, fashion comes full circle.",
+        "chinese": "时尚迟早会流行回来的。"
+      },
+      {
+        "english": "This is the road that circles the city.",
+        "chinese": "这就是那条环城路。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "圆,圆周；集团；周期,循环",
+        "english": "a completely round shape, like the letter O"
+      },
+      {
+        "pos": "v",
+        "chinese": "环绕,旋转",
+        "english": "to move in the shape of a circle around something, especially in the air"
+      }
+    ]
+  },
+  {
+    "name": "dot",
+    "trans": [
+      "按给定直径画圆点"
+    ],
+    "usphone": "dɑt",
+    "ukphone": "dɒt",
+    "sentences": [
+      {
+        "english": "a pattern of dots",
+        "chinese": "圆点图案"
+      },
+      {
+        "english": "She never dots her i’s.",
+        "chinese": "她从来不在i上面加点。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "点，圆点",
+        "english": "a small round mark or spot"
+      },
+      {
+        "pos": "v",
+        "chinese": "打点于",
+        "english": "to mark something by putting a dot on it or above it"
+      }
+    ]
+  },
+  {
+    "name": "speed",
+    "trans": [
+      "画笔绘制的速度，s为0-10的整数(1-10越来越快,0表示最快)"
+    ],
+    "usphone": "spid",
+    "ukphone": "spiːd",
+    "sentences": [
+      {
+        "english": "I got caught speeding on the A40 yesterday.",
+        "chinese": "昨天我在 A40 号干线公路上超速行驶被逮到。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "飞驰，迅速前进，急行；加速；超速行驶",
+        "english": "to be driving faster than the legal limit"
+      },
+      {
+        "pos": "n",
+        "chinese": "速度，速率；快速，迅速",
+        "english": "the rate at which something moves or travels"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 快速传送； 促进， 使加速",
+        "english": "to take someone or something somewhere very quickly"
+      }
+    ]
+  },
+  {
+    "name": "pendown",
+    "trans": [
+      "移动时绘制图形，缺省时也为绘制，简化为down()"
+    ]
+  },
+  {
+    "name": "penup",
+    "trans": [
+      "移动时不绘制图形，提起笔，用于另起一个地方绘制时用，简化为up()"
+    ]
+  },
+  {
+    "name": "goto",
+    "trans": [
+      "将画笔移动到坐标为x,y的位置"
+    ]
+  },
+  {
+    "name": "setx",
+    "trans": [
+      "将当前x轴移动到指定位置"
+    ]
+  },
+  {
+    "name": "sety",
+    "trans": [
+      "将当前y轴移动到指定位置"
+    ]
+  },
+  {
+    "name": "setheading",
+    "trans": [
+      "设置当前朝向为angle角度，简化为seth(angle)"
+    ]
+  },
+  {
+    "name": "home",
+    "trans": [
+      "设置当前画笔位置为原点(0,0)，并恢复默认朝向为向东(0)"
+    ],
+    "usphone": "hom",
+    "ukphone": "həʊm",
+    "sentences": [
+      {
+        "english": "They have a beautiful home in California.",
+        "chinese": "他们在加州有个美丽的家。"
+      },
+      {
+        "english": "Good luck in your new home!",
+        "chinese": "祝你在新家一切顺利！"
+      },
+      {
+        "english": "A family of birds made their home (= started living ) under the roof.",
+        "chinese": "一窝鸟在屋顶下安了家。"
+      },
+      {
+        "english": "These children need a proper home life.",
+        "chinese": "这些孩子需要正常的家庭生活。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "家；家乡",
+        "english": "the house, apartment, or place where you live"
+      },
+      {
+        "pos": "adj",
+        "chinese": "家庭的",
+        "english": "relating to or belonging to your home or family"
+      }
+    ]
+  },
+  {
+    "name": "pensize",
+    "trans": [
+      "绘制图形时的画笔宽度"
+    ]
+  },
+  {
+    "name": "pencolor",
+    "trans": [
+      "画笔颜色"
+    ]
+  },
+  {
+    "name": "shape",
+    "trans": [
+      "画笔外观形状，可选classic/arrow/turtle/circle/square/triangle"
+    ],
+    "usphone": "ʃep",
+    "ukphone": "ʃeɪp",
+    "sentences": [
+      {
+        "english": "What shape is the table?",
+        "chinese": "那张桌子是什么形状的？"
+      },
+      {
+        "english": "You can recognize a tree by the shape of its leaves.",
+        "chinese": "可以根据树叶的形状辨认出是什么树。"
+      },
+      {
+        "english": "His battered old hat had completely lost its shape.",
+        "chinese": "他那顶破旧的帽子已经完全变形了。"
+      },
+      {
+        "english": "The plants grow in every shape and size .",
+        "chinese": "这些植物有各种形状，各种大小。"
+      },
+      {
+        "english": "The children cut out shapes (= squares, triangles etc ) from the piece of cardboard.",
+        "chinese": "孩子们把卡纸片剪成各种形状。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "形状；模型；身材；具体化",
+        "english": "the form that something has, for example round, square,  triangular  etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "形成；塑造，使成形；使符合",
+        "english": "to influence something such as a belief, opinion etc and make it develop in a particular way"
+      }
+    ]
+  },
+  {
+    "name": "fillcolor",
+    "trans": [
+      "图形的填充颜色"
+    ]
+  },
+  {
+    "name": "color",
+    "trans": [
+      "同时设置pencolor=c1, fillcolor=c2"
+    ],
+    "usphone": "'kʌlɚ",
+    "ukphone": "'kʌlə(r)",
+    "sentences": [
+      {
+        "english": "What color dress did you buy?",
+        "chinese": "你买的连衣裙是什么颜色的？"
+      },
+      {
+        "english": "jams that contain no artificial colors or preservatives",
+        "chinese": "不含人工色素和防腐剂的果酱"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "颜色，彩色；颜料",
+        "english": "red, blue, yellow, green, brown, purple etc"
+      }
+    ]
+  },
+  {
+    "name": "begin_fill",
+    "trans": [
+      "准备开始填充图形"
+    ]
+  },
+  {
+    "name": "end_fill",
+    "trans": [
+      "填充完成"
+    ]
+  },
+  {
+    "name": "hideturtle",
+    "trans": [
+      "隐藏箭头显示，简化为ht()"
+    ]
+  },
+  {
+    "name": "showturtle",
+    "trans": [
+      "与hideturtle()函数对应，简化为st()"
+    ]
+  },
+  {
+    "name": "clear",
+    "trans": [
+      "清空turtle窗口，但是turtle的位置和状态不会改变"
+    ],
+    "usphone": "klɪr",
+    "ukphone": "klɪə",
+    "sentences": [
+      {
+        "english": "clear instructions",
+        "chinese": "明确的指示"
+      },
+      {
+        "english": "The question wasn’t very clear.",
+        "chinese": "这问题不是很清楚。"
+      },
+      {
+        "english": "It’s the clearest guide I’ve used.",
+        "chinese": "我从没用过这么清晰易懂的指南。"
+      },
+      {
+        "english": "Perhaps I tried to cover too much and didn’t make myself clear (= express myself well ) .",
+        "chinese": "可能是我涉及的内容太多，没有表达清楚。"
+      },
+      {
+        "english": "If you don’t understand, it’s best to say so and get things clear .",
+        "chinese": "如果你不明白，那就最好照直说并把事情弄清楚。"
+      },
+      {
+        "english": "If I catch you smoking again, you’re grounded. Do I make myself clear (= used when you are angry ) ?",
+        "chinese": "如果再让我发现你抽烟，我就罚你不准出门。我的话你听清楚了吗？"
+      },
+      {
+        "english": "Snowplows have been out clearing the roads.",
+        "chinese": "扫雪机已经出动，去清扫路面了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "清晰的",
+        "english": "expressed in a simple and direct way so that people understand"
+      },
+      {
+        "pos": "v",
+        "chinese": "清除",
+        "english": "to make somewhere emptier or tidier by removing things from it"
+      }
+    ]
+  },
+  {
+    "name": "reset",
+    "trans": [
+      "清空窗口，重置turtle状态为起始状态"
+    ],
+    "usphone": "'risɛt",
+    "ukphone": "riː'set",
+    "sentences": [
+      {
+        "english": "She was careful to reset the alarm before she left the office.",
+        "chinese": "在离开办公室之前，她小心翼翼地重设了警报器。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "重新安排",
+        "english": "to restart a computer without switching the power off"
+      }
+    ]
+  }
 ]

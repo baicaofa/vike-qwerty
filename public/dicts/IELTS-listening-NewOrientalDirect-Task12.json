@@ -1,272 +1,977 @@
 [
-    {
-        "name": "venue",
-        "trans": [
-            "n. 场所，场馆"
-        ]
-    },
-    {
-        "name": "theatre / theater",
-        "trans": [
-            "n. 剧院"
-        ]
-    },
-    {
-        "name": "concert hall",
-        "trans": [
-            "n. 音乐厅"
-        ]
-    },
-    {
-        "name": "museum",
-        "trans": [
-            "n. 博物馆"
-        ]
-    },
-    {
-        "name": "castle",
-        "trans": [
-            "n. 城堡"
-        ]
-    },
-    {
-        "name": "unsafe",
-        "trans": [
-            "adj. 不安全的"
-        ]
-    },
-    {
-        "name": "shabby-looking",
-        "trans": [
-            "adj. 外表破旧的"
-        ]
-    },
-    {
-        "name": "damaged",
-        "trans": [
-            "adj. 被破坏的"
-        ]
-    },
-    {
-        "name": "destroy",
-        "trans": [
-            "v. 毁坏"
-        ]
-    },
-    {
-        "name": "bomb",
-        "trans": [
-            "n. 炸弹"
-        ]
-    },
-    {
-        "name": "demolition",
-        "trans": [
-            "n. 拆除"
-        ]
-    },
-    {
-        "name": "reconstruct",
-        "trans": [
-            "v. 重建"
-        ]
-    },
-    {
-        "name": "rebuild",
-        "trans": [
-            "v. 重建"
-        ]
-    },
-    {
-        "name": "refurbish",
-        "trans": [
-            "v. 整修"
-        ]
-    },
-    {
-        "name": "redecorate",
-        "trans": [
-            "v. 重新装饰"
-        ]
-    },
-    {
-        "name": "relocate",
-        "trans": [
-            "v. 搬迁"
-        ]
-    },
-    {
-        "name": "reorient",
-        "trans": [
-            "v. 重定向，改变方向"
-        ]
-    },
-    {
-        "name": "exterior",
-        "trans": [
-            "n. 外部"
-        ]
-    },
-    {
-        "name": "repaint",
-        "trans": [
-            "v. 重新粉刷"
-        ]
-    },
-    {
-        "name": "statue",
-        "trans": [
-            "n. 雕像，塑像"
-        ]
-    },
-    {
-        "name": "sculpture",
-        "trans": [
-            "n. 雕塑，雕刻"
-        ]
-    },
-    {
-        "name": "interior",
-        "trans": [
-            "n. 内部"
-        ]
-    },
-    {
-        "name": "ceiling",
-        "trans": [
-            "n. 天花板"
-        ]
-    },
-    {
-        "name": "light",
-        "trans": [
-            "n. 灯"
-        ]
-    },
-    {
-        "name": "chandelier",
-        "trans": [
-            "n. 枝形吊灯"
-        ]
-    },
-    {
-        "name": "wall",
-        "trans": [
-            "n. 墙壁"
-        ]
-    },
-    {
-        "name": "acoustic",
-        "trans": [
-            "adj. 音响的"
-        ]
-    },
-    {
-        "name": "floor",
-        "trans": [
-            "n. 地板，楼层"
-        ]
-    },
-    {
-        "name": "basement",
-        "trans": [
-            "n. 地下室"
-        ]
-    },
-    {
-        "name": "ground floor",
-        "trans": [
-            "n. 【英】一层"
-        ]
-    },
-    {
-        "name": "foyer",
-        "trans": [
-            "n. 门厅"
-        ]
-    },
-    {
-        "name": "box office",
-        "trans": [
-            "n. 售票处"
-        ]
-    },
-    {
-        "name": "lift",
-        "trans": [
-            "n. 【英】电梯"
-        ]
-    },
-    {
-        "name": "elevator",
-        "trans": [
-            "n. 【美】电梯"
-        ]
-    },
-    {
-        "name": "escalator",
-        "trans": [
-            "n. 扶梯"
-        ]
-    },
-    {
-        "name": "dressing room",
-        "trans": [
-            "n. 化妆间"
-        ]
-    },
-    {
-        "name": "cloakroom",
-        "trans": [
-            "n. 衣帽寄存处"
-        ]
-    },
-    {
-        "name": "stage",
-        "trans": [
-            "n. 舞台"
-        ]
-    },
-    {
-        "name": "backstage",
-        "trans": [
-            "n. 后台"
-        ]
-    },
-    {
-        "name": "auditorium",
-        "trans": [
-            "n. 观众席"
-        ]
-    },
-    {
-        "name": "leg-room",
-        "trans": [
-            "n. 伸腿处"
-        ]
-    },
-    {
-        "name": "funding",
-        "trans": [
-            "n. 资金"
-        ]
-    },
-    {
-        "name": "government",
-        "trans": [
-            "n. 政府"
-        ]
-    },
-    {
-        "name": "council",
-        "trans": [
-            "n. 议会"
-        ]
-    },
-    {
-        "name": "raise",
-        "trans": [
-            "v. 筹集（资金）"
-        ]
-    }
+  {
+    "name": "venue",
+    "trans": [
+      "n. 场所，场馆"
+    ],
+    "usphone": "'vɛnju",
+    "ukphone": "'venjuː",
+    "sentences": [
+      {
+        "english": "The first thing to do is book a venue.",
+        "chinese": "首先要做的是预订一个会场。"
+      },
+      {
+        "english": "The band will play (= perform at ) as many venues as possible.",
+        "chinese": "那支乐队将在尽可能多的地方演出。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 地点",
+        "english": "a place where an organized meeting, concert etc takes place"
+      }
+    ]
+  },
+  {
+    "name": "theatre / theater",
+    "trans": [
+      "n. 剧院"
+    ]
+  },
+  {
+    "name": "concert hall",
+    "trans": [
+      "n. 音乐厅"
+    ]
+  },
+  {
+    "name": "museum",
+    "trans": [
+      "n. 博物馆"
+    ],
+    "usphone": "mju'ziəm",
+    "ukphone": "mjuː'zɪəm",
+    "sentences": [
+      {
+        "english": "the Museum of Modern Art",
+        "chinese": "现代艺术博物馆"
+      },
+      {
+        "english": "The museum has an extensive collection of early photographs.",
+        "chinese": "这座博物馆藏有大量早期的照片。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "博物馆；展览馆",
+        "english": "a building where important  cultural, historical, or scientific objects are kept and shown to the public"
+      }
+    ]
+  },
+  {
+    "name": "castle",
+    "trans": [
+      "n. 城堡"
+    ],
+    "usphone": "'kæsl",
+    "ukphone": "'kɑːs(ə)l",
+    "sentences": [
+      {
+        "english": "Edinburgh Castle",
+        "chinese": "爱丁堡城堡"
+      },
+      {
+        "english": "a ruined castle",
+        "chinese": "破败的城堡"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "城堡；象棋中的车",
+        "english": "a very large strong building, built in the past as a safe place that could be easily defended against attack"
+      },
+      {
+        "pos": "v",
+        "chinese": "置…于城堡中；筑城堡防御",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "unsafe",
+    "trans": [
+      "adj. 不安全的"
+    ],
+    "usphone": "ʌn'sef",
+    "ukphone": "ʌn'seɪf",
+    "sentences": [
+      {
+        "english": "The building is unsafe.",
+        "chinese": "那栋大楼不安全。"
+      },
+      {
+        "english": "water that’s unsafe to drink",
+        "chinese": "不能安全饮用的水"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "不安全的；危险的；不安稳的",
+        "english": "dangerous or likely to cause harm"
+      }
+    ]
+  },
+  {
+    "name": "shabby-looking",
+    "trans": [
+      "adj. 外表破旧的"
+    ]
+  },
+  {
+    "name": "damaged",
+    "trans": [
+      "adj. 被破坏的"
+    ]
+  },
+  {
+    "name": "destroy",
+    "trans": [
+      "v. 毁坏"
+    ],
+    "usphone": "dɪ'strɔɪ",
+    "ukphone": "dɪ'strɒɪ",
+    "sentences": [
+      {
+        "english": "companies that are polluting and destroying the environment",
+        "chinese": "污染和破坏环境的公司"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "破坏；消灭；打破",
+        "english": "to damage something so badly that it no longer exists or cannot be used or repaired"
+      }
+    ]
+  },
+  {
+    "name": "bomb",
+    "trans": [
+      "n. 炸弹"
+    ],
+    "usphone": "bɑm",
+    "ukphone": "bɒm",
+    "sentences": [
+      {
+        "english": "The bomb went off at 9.30 in the morning.",
+        "chinese": "炸弹在早上9点半爆炸。"
+      },
+      {
+        "english": "Enemy planes dropped over 200 bombs during the raid.",
+        "chinese": "袭击中敌机投下了两百多枚炸弹。"
+      },
+      {
+        "english": "He was killed in a bomb explosion.",
+        "chinese": "他在一次炸弹爆炸中身亡。"
+      },
+      {
+        "english": "The town was heavily bombed in World War II.",
+        "chinese": "这座城镇在第二次世界大战中遭到猛烈轰炸。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "炸弹",
+        "english": "a weapon made of material that will explode"
+      },
+      {
+        "pos": "v",
+        "chinese": "轰炸",
+        "english": "to attack a place by leaving a bomb there, or by dropping bombs on it from a plane"
+      }
+    ]
+  },
+  {
+    "name": "demolition",
+    "trans": [
+      "n. 拆除"
+    ],
+    "usphone": ",dɛmə'lɪʃən; ,dimə'lɪʃən",
+    "ukphone": "demə'lɪʃn",
+    "sentences": [
+      {
+        "english": "The project required the total demolition of the old bridge.",
+        "chinese": "这项工程要求那座旧桥的彻底拆除。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "拆除（等于demolishment）；破坏；毁坏",
+        "english": "The demolition of a structure, for example, a building, is the act of deliberately destroying it, often in order to build something else in its place"
+      }
+    ]
+  },
+  {
+    "name": "reconstruct",
+    "trans": [
+      "v. 重建"
+    ],
+    "usphone": ",rikən'strʌkt",
+    "ukphone": "riːkən'strʌkt",
+    "sentences": [
+      {
+        "english": "Police were reconstructing the movements of the murdered couple.",
+        "chinese": "警方正在重现这对被害夫妇的行为活动。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "重建；改造；修复；重现",
+        "english": "to produce a complete description or copy of an event by collecting together pieces of information"
+      }
+    ]
+  },
+  {
+    "name": "rebuild",
+    "trans": [
+      "v. 重建"
+    ],
+    "usphone": ",ri'bɪld",
+    "ukphone": "riː'bɪld",
+    "sentences": [
+      {
+        "english": "The church was completely rebuilt in the last century.",
+        "chinese": "这座教堂在上个世纪全面重建。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "重建；改造，重新组装；复原",
+        "english": "to build something again, after it has been damaged or destroyed"
+      }
+    ]
+  },
+  {
+    "name": "refurbish",
+    "trans": [
+      "v. 整修"
+    ],
+    "usphone": ",ri'fɝbɪʃ",
+    "ukphone": "riː'fɜːbɪʃ",
+    "sentences": [
+      {
+        "english": "We have spent money on refurbishing the offices.",
+        "chinese": "我们已在这些办公室的翻新上花了钱。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "刷新；再磨光",
+        "english": "To refurbish a building or room means to clean it and decorate it and make it more attractive or better equipped"
+      }
+    ]
+  },
+  {
+    "name": "redecorate",
+    "trans": [
+      "v. 重新装饰"
+    ]
+  },
+  {
+    "name": "relocate",
+    "trans": [
+      "v. 搬迁"
+    ],
+    "usphone": ",ri'loket",
+    "ukphone": "riːlə(ʊ)'keɪt",
+    "sentences": [
+      {
+        "english": "If the company was to relocate, most employees would move.",
+        "chinese": "如果公司要迁移，大多数员工得搬家。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "重新安置；迁移",
+        "english": "if a person or business relocates, or if they are relocated, they move to a different place"
+      },
+      {
+        "pos": "n",
+        "chinese": "浮动",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "reorient",
+    "trans": [
+      "v. 重定向，改变方向"
+    ],
+    "usphone": ",ri'ɔrɪɛnt",
+    "ukphone": "riː'ɔːrɪent; -'ɒr-",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "使适应；再调整",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "exterior",
+    "trans": [
+      "n. 外部"
+    ],
+    "usphone": "ɪk'stɪrɪɚ",
+    "ukphone": "ɪk'stɪərɪə; ek-",
+    "sentences": [
+      {
+        "english": "The exterior walls need a new coat of paint.",
+        "chinese": "外墙需要刷新漆了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "外部的；表面的；外在的",
+        "english": "on the outside of something"
+      },
+      {
+        "pos": "n",
+        "chinese": "外部；表面；外型；外貌",
+        "english": "the outside of something, especially a building"
+      }
+    ]
+  },
+  {
+    "name": "repaint",
+    "trans": [
+      "v. 重新粉刷"
+    ],
+    "usphone": "",
+    "ukphone": "rɪ'peɪnt",
+    "sentences": [
+      {
+        "english": "They hired a small company to repaint the dining room.",
+        "chinese": "他们雇用一个小公司重新油漆饭厅。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": " 重新油漆， 重画",
+        "english": "to apply a new or fresh coat of paint "
+      }
+    ]
+  },
+  {
+    "name": "statue",
+    "trans": [
+      "n. 雕像，塑像"
+    ],
+    "usphone": "'stætʃu",
+    "ukphone": "'stætjuː; -tʃuː",
+    "sentences": [
+      {
+        "english": "Churchill’s statue stands outside the parliament building.",
+        "chinese": "丘吉尔的塑像矗立在议会大厦外。"
+      },
+      {
+        "english": "A bronze statue was erected in his honour.",
+        "chinese": "人们立了一座铜像纪念他。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雕像，塑像",
+        "english": "an image of a person or animal that is made in solid material such as stone or metal and is usually large"
+      },
+      {
+        "pos": "vt",
+        "chinese": "以雕像装饰",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "sculpture",
+    "trans": [
+      "n. 雕塑，雕刻"
+    ],
+    "usphone": "'skʌlptʃɚ",
+    "ukphone": "'skʌlptʃə",
+    "sentences": [
+      {
+        "english": "a sculpture of an elephant",
+        "chinese": "一尊大象雕塑"
+      },
+      {
+        "english": "the techniques of sculpture in stone",
+        "chinese": "石雕技艺"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雕刻品；雕刻（术）",
+        "english": "an object made out of stone, wood, clay etc by an artist"
+      }
+    ]
+  },
+  {
+    "name": "interior",
+    "trans": [
+      "n. 内部"
+    ],
+    "usphone": "ɪn'tɪrɪɚ",
+    "ukphone": "ɪn'tɪɜːrɪə",
+    "sentences": [
+      {
+        "english": "The interior walls are all painted white.",
+        "chinese": "室内墙壁都粉刷成了白色。"
+      },
+      {
+        "english": "The interior of the church was dark.",
+        "chinese": "教堂里很暗。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "内的；内地的内部",
+        "english": "inside or indoors"
+      },
+      {
+        "pos": "n",
+        "chinese": "内部",
+        "english": "the inner part or inside of something"
+      }
+    ]
+  },
+  {
+    "name": "ceiling",
+    "trans": [
+      "n. 天花板"
+    ],
+    "usphone": "'silɪŋ",
+    "ukphone": "'siːlɪŋ",
+    "sentences": [
+      {
+        "english": "rooms with high ceilings",
+        "chinese": "天花板很高的房间"
+      },
+      {
+        "english": "a light hanging from the ceiling",
+        "chinese": "吊在天花板上的灯"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "天花板；上限",
+        "english": "the inner surface of the top part of a room"
+      }
+    ]
+  },
+  {
+    "name": "light",
+    "trans": [
+      "n. 灯"
+    ],
+    "usphone": "laɪt",
+    "ukphone": "laɪt",
+    "sentences": [
+      {
+        "english": "You can carry this bag – it’s fairly light.",
+        "chinese": "你可以拿这个袋子——它很轻。"
+      },
+      {
+        "english": "You should wear light, comfortable shoes.",
+        "chinese": "你应该穿轻便舒适的鞋子。"
+      },
+      {
+        "english": "The truck was quite light and easy to drive.",
+        "chinese": "这辆卡车很轻，容易驾驶。"
+      },
+      {
+        "english": "people who have suffered only light exposure to radiation",
+        "chinese": "只受到轻度辐射的人"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "轻的；少量的",
+        "english": "not very heavy"
+      }
+    ]
+  },
+  {
+    "name": "chandelier",
+    "trans": [
+      "n. 枝形吊灯"
+    ],
+    "usphone": ",ʃændə'lɪr",
+    "ukphone": "ˌʃændəˈlɪr",
+    "sentences": [
+      {
+        "english": "A crystal chandelier lit the room.",
+        "chinese": "一盏水晶吊灯照亮了房间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "枝形吊灯",
+        "english": "a large round frame for holding  candle s  or lights that hangs from the ceiling and is decorated with small pieces of glass"
+      }
+    ]
+  },
+  {
+    "name": "wall",
+    "trans": [
+      "n. 墙壁"
+    ],
+    "usphone": "wɔl",
+    "ukphone": "wɔːl",
+    "sentences": [
+      {
+        "english": "the Great Wall of China",
+        "chinese": "中国的长城"
+      },
+      {
+        "english": "We climbed over the wall into the orchard.",
+        "chinese": "我们翻墙进了果园。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "墙壁，围墙；似墙之物",
+        "english": "an upright flat structure made of stone or brick, that divides one area from another or surrounds an area"
+      },
+      {
+        "pos": "v",
+        "chinese": "用墙围住，围以墙",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "墙壁的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "acoustic",
+    "trans": [
+      "adj. 音响的"
+    ],
+    "usphone": "ə'kʊstɪk",
+    "ukphone": "ə'kuːstɪk",
+    "sentences": [
+      {
+        "english": "In our case, we have found the true acoustic echo beacon.",
+        "chinese": "但在这种情况下，我们发现了真正的声学‘回声灯塔’ ”。"
+      },
+      {
+        "english": "This gives it excellent thermal and acoustic properties, but the suitability of the product for a large-scale commercial project was questioned.",
+        "chinese": "这给了它出色的热学和声学属性，但是这种产品是否适合于一个大尺度的商业项目还是个问题。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "有关声音的, 声学的",
+        "english": "relating to sound and the way people hear things"
+      }
+    ]
+  },
+  {
+    "name": "floor",
+    "trans": [
+      "n. 地板，楼层"
+    ],
+    "usphone": "flɔr",
+    "ukphone": "flɔː",
+    "sentences": [
+      {
+        "english": "a polished wooden floor",
+        "chinese": "上过蜡的木地板"
+      },
+      {
+        "english": "a puddle of water on the kitchen floor",
+        "chinese": "厨房地面上的一摊水"
+      },
+      {
+        "english": "a warehouse that has 410,000 square feet of floor space",
+        "chinese": "楼面面积为41万平方英尺的仓库"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "地板，地面；楼层；基底；议员席",
+        "english": "the flat surface that you stand on inside a building"
+      },
+      {
+        "pos": "v",
+        "chinese": "铺地板；打倒，击倒；（被困难）难倒",
+        "english": "to hit someone so hard that they fall down"
+      }
+    ]
+  },
+  {
+    "name": "basement",
+    "trans": [
+      "n. 地下室"
+    ],
+    "usphone": "'besmənt",
+    "ukphone": "'beɪsm(ə)nt",
+    "sentences": [
+      {
+        "english": "They bought an old schoolhouse to live in and built a workshop in the basement.",
+        "chinese": "他们买了座旧校舍居住，还在地下室建了个作坊。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "地下室；地窖；底层",
+        "english": "a room or area in a building that is under the level of the ground"
+      }
+    ]
+  },
+  {
+    "name": "ground floor",
+    "trans": [
+      "n. 【英】一层"
+    ]
+  },
+  {
+    "name": "foyer",
+    "trans": [
+      "n. 门厅"
+    ],
+    "usphone": "ˈfɔɪər",
+    "ukphone": "ˈfɔɪeɪ",
+    "sentences": [
+      {
+        "english": "I went and waited in the foyer.",
+        "chinese": "我去了，在门厅里等着。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "门厅，休息室；大厅",
+        "english": "a room or hall at the entrance to a public building"
+      }
+    ]
+  },
+  {
+    "name": "box office",
+    "trans": [
+      "n. 售票处"
+    ]
+  },
+  {
+    "name": "lift",
+    "trans": [
+      "n. 【英】电梯"
+    ],
+    "usphone": "lɪft",
+    "ukphone": "lɪft",
+    "sentences": [
+      {
+        "english": "Sophie lifted the phone before the second ring.",
+        "chinese": "铃响了一下苏菲就接起了电话。"
+      },
+      {
+        "english": "He lifted the lid on the pot of soup.",
+        "chinese": "他揭开汤锅的盖子。"
+      },
+      {
+        "english": "The lumber was lifted by crane and dropped into the truck.",
+        "chinese": "木材由起重机搬运到卡车上。"
+      },
+      {
+        "english": "They took the lift down to the bar.",
+        "chinese": "他们乘电梯去楼下的酒吧。"
+      },
+      {
+        "english": "It’s on the 3rd floor. Let’s use the lift.",
+        "chinese": "在三楼，我们乘电梯上去吧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "提起，提高",
+        "english": "to move something or someone upwards into the air"
+      },
+      {
+        "pos": "n",
+        "chinese": "电梯",
+        "english": "a machine that you can ride in, that moves up and down between the floors in a tall building"
+      }
+    ]
+  },
+  {
+    "name": "elevator",
+    "trans": [
+      "n. 【美】电梯"
+    ],
+    "usphone": "'ɛlɪvetɚ",
+    "ukphone": "'elɪveɪtə",
+    "sentences": [
+      {
+        "english": "We’ll have to take the elevator.",
+        "chinese": "我们只好坐电梯了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "电梯；升降机",
+        "english": "a machine that takes people and goods from one level to another in a building"
+      }
+    ]
+  },
+  {
+    "name": "escalator",
+    "trans": [
+      "n. 扶梯"
+    ],
+    "usphone": "'ɛskə'letɚ",
+    "ukphone": "'eskəleɪtə",
+    "sentences": [
+      {
+        "english": "Take the escalator to the third floor and it's the last office on the left.",
+        "chinese": "乘电梯到4楼，左边最后的那个办公室就是。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "自动扶梯",
+        "english": "a set of moving stairs that take people to different levels in a building"
+      }
+    ]
+  },
+  {
+    "name": "dressing room",
+    "trans": [
+      "n. 化妆间"
+    ]
+  },
+  {
+    "name": "cloakroom",
+    "trans": [
+      "n. 衣帽寄存处"
+    ],
+    "usphone": "'klokrum",
+    "ukphone": "'kləukruːm",
+    "sentences": [
+      {
+        "english": "Let's get our coats at the cloakroom and not come back.",
+        "chinese": "我们去衣帽间取大衣，然后就别回来了。"
+      },
+      {
+        "english": "...a cloakroom attendant.",
+        "chinese": "…一名衣帽间服务员。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 衣帽间； 〈英〉洗手间",
+        "english": "The cloakroom at a public building such as a theatre or club is the place where customers can leave their coats, usually for a small fee"
+      }
+    ]
+  },
+  {
+    "name": "stage",
+    "trans": [
+      "n. 舞台"
+    ],
+    "usphone": "stedʒ",
+    "ukphone": "steɪdʒ",
+    "sentences": [
+      {
+        "english": "We’re getting to the stage where we hardly ever go out together.",
+        "chinese": "我们快要到几乎不一起外出的地步了。"
+      },
+      {
+        "english": "She is on stage for most of the play.",
+        "chinese": "这出戏的大部分时间里她都在台上"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "阶段；舞台",
+        "english": "a particular time or state that something reaches as it grows or develops"
+      }
+    ]
+  },
+  {
+    "name": "backstage",
+    "trans": [
+      "n. 后台"
+    ],
+    "usphone": ",bæk'stedʒ",
+    "ukphone": "bæk'steɪdʒ",
+    "sentences": [
+      {
+        "english": "He went backstage and asked for her autograph.",
+        "chinese": "他到后台去请她签名。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "在后台；向后台",
+        "english": "In a theatre, backstage refers to the areas behind the stage"
+      }
+    ]
+  },
+  {
+    "name": "auditorium",
+    "trans": [
+      "n. 观众席"
+    ],
+    "usphone": ",ɔdɪ'tɔrɪəm",
+    "ukphone": "ɔːdɪ'tɔːrɪəm",
+    "sentences": [
+      {
+        "english": "Anderson was to sing at the Constitution Hall auditorium.",
+        "chinese": "安德森将要在宪法厅的观众席演唱。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "礼堂，会堂；观众席",
+        "english": "the part of a theatre where people sit when watching a play, concert etc"
+      }
+    ]
+  },
+  {
+    "name": "leg-room",
+    "trans": [
+      "n. 伸腿处"
+    ]
+  },
+  {
+    "name": "funding",
+    "trans": [
+      "n. 资金"
+    ],
+    "usphone": "'fʌndɪŋ",
+    "ukphone": "'fʌndɪŋ",
+    "sentences": [
+      {
+        "english": "They hope for government funding for the programme.",
+        "chinese": "他们希望得到政府为这一计划提供的资金。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 基金， 资金； 提供资金",
+        "english": "Funding is money which a government or organization provides for a particular purpose"
+      }
+    ]
+  },
+  {
+    "name": "government",
+    "trans": [
+      "n. 政府"
+    ],
+    "usphone": "'ɡʌvɚnmənt",
+    "ukphone": "'gʌv(ə)n,m(ə)nt; 'gʌvəm(ə)nt",
+    "sentences": [
+      {
+        "english": "The Government are planning further cuts in public spending.",
+        "chinese": "政府正计划进一步削减公共支出。"
+      },
+      {
+        "english": "The US government has tightened restrictions on firearms.",
+        "chinese": "美国政府已经加强了对枪支的管制。"
+      },
+      {
+        "english": "Neither party had the majority necessary to form a government.",
+        "chinese": "两个政党都没有获得组阁所必需的多数票。"
+      },
+      {
+        "english": "strong government",
+        "chinese": "强有力的统治"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "政府；治理；政治",
+        "english": "the group of people who govern a country or state"
+      }
+    ]
+  },
+  {
+    "name": "council",
+    "trans": [
+      "n. 议会"
+    ],
+    "usphone": "'kaʊnsl",
+    "ukphone": "'kaʊnsl",
+    "sentences": [
+      {
+        "english": "the council for civil liberties",
+        "chinese": "公民自由委员会"
+      },
+      {
+        "english": "the UN Security Council",
+        "chinese": "联合国安全理事会"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "议会",
+        "english": "a group of people that are chosen to make rules, laws, or decisions, or to give advice"
+      }
+    ]
+  },
+  {
+    "name": "raise",
+    "trans": [
+      "v. 筹集（资金）"
+    ],
+    "usphone": "rez",
+    "ukphone": "reɪz",
+    "sentences": [
+      {
+        "english": "He did not raise the subject again.",
+        "chinese": "他再也没有提起这个话题。"
+      },
+      {
+        "english": "I’d like to raise the issue of publicity.",
+        "chinese": "我想提一提宣传问题。"
+      },
+      {
+        "english": "Betty raised the important question of who will be in charge.",
+        "chinese": "贝蒂提出了一个重要问题，就是将由谁来负责。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "提出，发起，发出",
+        "english": "to begin to talk or write about a subject that you want to be considered or a question that you think should be answered"
+      }
+    ]
+  }
 ]

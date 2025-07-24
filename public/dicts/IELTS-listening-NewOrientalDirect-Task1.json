@@ -1,272 +1,947 @@
 [
-    {
-        "name": "accommodation",
-        "trans": [
-            "n. 住宿"
-        ]
-    },
-    {
-        "name": "rent",
-        "trans": [
-            "n. 租金",
-            "v. 出租；租用"
-        ]
-    },
-    {
-        "name": "let",
-        "trans": [
-            "v. 出租",
-            "n. 租赁"
-        ]
-    },
-    {
-        "name": "hire",
-        "trans": [
-            "v. 租用；聘用"
-        ]
-    },
-    {
-        "name": "apartment",
-        "trans": [
-            "n. 公寓"
-        ]
-    },
-    {
-        "name": "flat",
-        "trans": [
-            "n. 公寓"
-        ]
-    },
-    {
-        "name": "house",
-        "trans": [
-            "n. 住宅"
-        ]
-    },
-    {
-        "name": "bungalow",
-        "trans": [
-            "n. 平房"
-        ]
-    },
-    {
-        "name": "terraced house",
-        "trans": [
-            "n. 连栋房屋"
-        ]
-    },
-    {
-        "name": "homestay",
-        "trans": [
-            "n. 寄宿家庭"
-        ]
-    },
-    {
-        "name": "host family",
-        "trans": [
-            "n. 寄宿家庭"
-        ]
-    },
-    {
-        "name": "dormitory",
-        "trans": [
-            "n. 宿舍"
-        ]
-    },
-    {
-        "name": "hall of residence",
-        "trans": [
-            "n. 学校公寓"
-        ]
-    },
-    {
-        "name": "en-suite facility",
-        "trans": [
-            "n. 套房设施"
-        ]
-    },
-    {
-        "name": "city centre",
-        "trans": [
-            "n. 市中心"
-        ]
-    },
-    {
-        "name": "downtown",
-        "trans": [
-            "adj. 市中心（的）",
-            "adv. 往市中心；在市中心",
-            "n. 市中心"
-        ]
-    },
-    {
-        "name": "urban",
-        "trans": [
-            "adj. 城市的"
-        ]
-    },
-    {
-        "name": "outskirts",
-        "trans": [
-            "n. 市郊"
-        ]
-    },
-    {
-        "name": "uptown",
-        "trans": [
-            "adj. 市郊住宅区（的）",
-            "adv. 在市郊住宅区",
-            "n. 市郊住宅区"
-        ]
-    },
-    {
-        "name": "suburb",
-        "trans": [
-            "n. 郊区"
-        ]
-    },
-    {
-        "name": "countryside",
-        "trans": [
-            "n. 农村，乡下"
-        ]
-    },
-    {
-        "name": "community",
-        "trans": [
-            "n. 社区"
-        ]
-    },
-    {
-        "name": "neighbourhood",
-        "trans": [
-            "n. 邻里；周围"
-        ]
-    },
-    {
-        "name": "surrounding",
-        "trans": [
-            "adj. 周围的，附近的"
-        ]
-    },
-    {
-        "name": "dining room",
-        "trans": [
-            "n. 餐厅"
-        ]
-    },
-    {
-        "name": "living room",
-        "trans": [
-            "n. 客厅"
-        ]
-    },
-    {
-        "name": "study",
-        "trans": [
-            "n. 书房；研究，课题"
-        ]
-    },
-    {
-        "name": "laundry room",
-        "trans": [
-            "n. 洗衣房"
-        ]
-    },
-    {
-        "name": "cloakroom",
-        "trans": [
-            "n. 衣帽寄放处；行李寄存处"
-        ]
-    },
-    {
-        "name": "shared kitchen",
-        "trans": [
-            "n. 共享厨房"
-        ]
-    },
-    {
-        "name": "shared bathroom",
-        "trans": [
-            "n. 共享浴室"
-        ]
-    },
-    {
-        "name": "separate",
-        "trans": [
-            "adj. 分开的；单独的"
-        ]
-    },
-    {
-        "name": "foyer",
-        "trans": [
-            "n. 休息室；大厅"
-        ]
-    },
-    {
-        "name": "garage",
-        "trans": [
-            "n. 车库"
-        ]
-    },
-    {
-        "name": "yard",
-        "trans": [
-            "n. 院子"
-        ]
-    },
-    {
-        "name": "garden",
-        "trans": [
-            "n. 花园"
-        ]
-    },
-    {
-        "name": "shared swimming pool",
-        "trans": [
-            "n. 共享游泳池"
-        ]
-    },
-    {
-        "name": "advisor",
-        "trans": [
-            "n. 顾问"
-        ]
-    },
-    {
-        "name": "real estate agency",
-        "trans": [
-            "n. 房地产公司"
-        ]
-    },
-    {
-        "name": "estate agency",
-        "trans": [
-            "n. 房产代理处"
-        ]
-    },
-    {
-        "name": "estate agent",
-        "trans": [
-            "n. 房地产经纪人"
-        ]
-    },
-    {
-        "name": "landlord",
-        "trans": [
-            "n. 房东"
-        ]
-    },
-    {
-        "name": "landlady",
-        "trans": [
-            "n. 女房东"
-        ]
-    },
-    {
-        "name": "tenant",
-        "trans": [
-            "n. 承租人；房客"
-        ]
-    }
+  {
+    "name": "accommodation",
+    "trans": [
+      "n. 住宿"
+    ],
+    "usphone": "ə,kɑmə'deʃən",
+    "ukphone": "əˌkɒmə'deɪʃn",
+    "sentences": [
+      {
+        "english": "The price for the holiday includes flights and accommodation.",
+        "chinese": "度假的价格包括机票和住宿。"
+      },
+      {
+        "english": "living accommodations for the crews",
+        "chinese": "船员的起居舱"
+      },
+      {
+        "english": "travel and hotel accommodations",
+        "chinese": "旅行及酒店住宿"
+      },
+      {
+        "english": "{\"COLLOINEXA\":[\"rented accommodation\"]}",
+        "chinese": "租用的住处"
+      },
+      {
+        "english": "secure accommodation for young offenders",
+        "chinese": "严密看管的少年犯囚室"
+      },
+      {
+        "english": "Universities have to provide student accommodation for first-year students.",
+        "chinese": "大学必须为一年级生提供学生宿舍。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 住处； 膳宿",
+        "english": "a place for someone to stay, live, or work"
+      }
+    ]
+  },
+  {
+    "name": "rent",
+    "trans": [
+      "n. 租金",
+      "v. 出租；租用"
+    ],
+    "usphone": "rɛnt",
+    "ukphone": "rent",
+    "sentences": [
+      {
+        "english": "I pay the rent at the beginning of every month.",
+        "chinese": "我每逢月初交付房租。"
+      },
+      {
+        "english": "She rents out two rooms to students.",
+        "chinese": "她把两个房间出租给学生"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "租金",
+        "english": "the money that someone pays regularly to use a room, house etc that belongs to someone else"
+      },
+      {
+        "pos": "v",
+        "chinese": "出租",
+        "english": "to let someone live in a house, room etc that you own, or use your land, in return for money"
+      }
+    ]
+  },
+  {
+    "name": "let",
+    "trans": [
+      "v. 出租",
+      "n. 租赁"
+    ],
+    "usphone": "lɛt",
+    "ukphone": "let",
+    "sentences": [
+      {
+        "english": "I can’t come out tonight – my dad won’t let me.",
+        "chinese": "今天晚上我不能出来，我爸爸不允许。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "允许，让；使",
+        "english": "to allow someone to do something"
+      }
+    ]
+  },
+  {
+    "name": "hire",
+    "trans": [
+      "v. 租用；聘用"
+    ],
+    "usphone": "'haɪɚ",
+    "ukphone": "'haɪə",
+    "sentences": [
+      {
+        "english": "The best way to explore the island is to hire a car.",
+        "chinese": "在该岛寻幽访胜的最好方式就是租用一辆汽车。"
+      },
+      {
+        "english": "What does it cost to hire a boat for a week?",
+        "chinese": "一艘小船租用一星期的费用是多少？"
+      },
+      {
+        "english": "a car hire company",
+        "chinese": "汽车租赁公司"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "租借",
+        "english": "to pay money to borrow something for a short period of time"
+      },
+      {
+        "pos": "n",
+        "chinese": "租用，雇用",
+        "english": "an arrangement in which you pay a sum of money to borrow something for a short time"
+      }
+    ]
+  },
+  {
+    "name": "apartment",
+    "trans": [
+      "n. 公寓"
+    ],
+    "usphone": "ə'pɑrtmənt",
+    "ukphone": "əˈpɑ:tmənt",
+    "sentences": [
+      {
+        "english": "She lives in a small apartment.",
+        "chinese": "她住在一套小公寓里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "公寓",
+        "english": "a set of rooms on one floor of a large building, where someone lives"
+      }
+    ]
+  },
+  {
+    "name": "flat",
+    "trans": [
+      "n. 公寓"
+    ],
+    "usphone": "flæt",
+    "ukphone": "flæt",
+    "sentences": [
+      {
+        "english": "The bed can be folded flat for storage.",
+        "chinese": "这张床可以折扁存放。"
+      },
+      {
+        "english": "He lay flat on the floor.",
+        "chinese": "他平躺在地板上。"
+      },
+      {
+        "english": "That night I lay flat on my back and stared up at the ceiling.",
+        "chinese": "那一夜，我仰面平躺，眼睛直直地盯着天花板。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": " 平直地； 直截了当地",
+        "english": "in a position in which the surface of something is against another surface without curving or sloping"
+      },
+      {
+        "pos": "adj",
+        "chinese": "平的；固定的；漏气的；单调的，沉闷的；浅的",
+        "english": "smooth and level, without raised or hollow areas, and not sloping or curving"
+      },
+      {
+        "pos": "n",
+        "chinese": "一套房间，单元住宅",
+        "english": "a place for people to live that consists of a set of rooms that are part of a larger building"
+      }
+    ]
+  },
+  {
+    "name": "house",
+    "trans": [
+      "n. 住宅"
+    ],
+    "usphone": "haʊs",
+    "ukphone": "haʊs",
+    "sentences": [
+      {
+        "english": "a four-bedroom house",
+        "chinese": "一幢有四间卧室的房子"
+      },
+      {
+        "english": "America’s oldest publishing house",
+        "chinese": "美国历史最悠久的出版社"
+      },
+      {
+        "english": "a small independent software house",
+        "chinese": "一家小型的独立软件公司"
+      },
+      {
+        "english": "an auction house",
+        "chinese": "一家拍卖行"
+      },
+      {
+        "english": "a famous Italian fashion house",
+        "chinese": "一家著名的意大利时装公司"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "房屋，住宅；商号",
+        "english": "a building that someone lives in, especially one that has more than one level and is intended to be used by one family"
+      }
+    ]
+  },
+  {
+    "name": "bungalow",
+    "trans": [
+      "n. 平房"
+    ],
+    "usphone": "ˈbʌŋɡəˌlo",
+    "ukphone": "'bʌŋgələʊ",
+    "sentences": [
+      {
+        "english": "I remember changing cars twice when visiting her bungalow in New Delhi in 1998.",
+        "chinese": "我记得1998年去她在新德里的小平房拜访时，中途两次换车。"
+      },
+      {
+        "english": "Belinda and Clive, who worked on the railways, moved to a bungalow not far from Barry Island.",
+        "chinese": "贝琳达和克里夫在铁路工作，并且搬到离巴厘岛不远的一处平房居住。"
+      },
+      {
+        "english": "It would never have happened if he had stayed in Australia, for Australia is still the land of the bungalow.",
+        "chinese": "要是他居住在澳大利亚的话这种情况绝对不可能发生，因为现在澳大利亚土地上所座落的依然是平房。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "平房；小屋",
+        "english": "a house that is all on ground level"
+      }
+    ]
+  },
+  {
+    "name": "terraced house",
+    "trans": [
+      "n. 连栋房屋"
+    ]
+  },
+  {
+    "name": "homestay",
+    "trans": [
+      "n. 寄宿家庭"
+    ],
+    "usphone": "'homste",
+    "ukphone": "'həʊmsteɪ",
+    "sentences": [
+      {
+        "english": "Are you getting along well with your homestay family?",
+        "chinese": "你和你的寄宿家庭相处的好吗？"
+      },
+      {
+        "english": "Another growing trend is enrolling in a global education program that combines language study, homestay, cultural immersion, community service, and independent study.",
+        "chinese": "此外，一项集合了语言学习、家庭寄宿、文化渗透、社区服务与独立学习的全球教育项目风正席卷全球。"
+      },
+      {
+        "english": "M: I'm on a homestay program.",
+        "chinese": "玛   丽：我参加一个接待家庭留学计画。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "家庭寄宿",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "host family",
+    "trans": [
+      "n. 寄宿家庭"
+    ]
+  },
+  {
+    "name": "dormitory",
+    "trans": [
+      "n. 宿舍"
+    ],
+    "usphone": "'dɔrmətɔri",
+    "ukphone": "ˈdɔːmətri",
+    "sentences": [
+      {
+        "english": "She lived in a college dormitory.",
+        "chinese": "她住在一幢大学宿舍楼里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "宿舍",
+        "english": "a large building at a college or university where students live"
+      }
+    ]
+  },
+  {
+    "name": "hall of residence",
+    "trans": [
+      "n. 学校公寓"
+    ]
+  },
+  {
+    "name": "en-suite facility",
+    "trans": [
+      "n. 套房设施"
+    ]
+  },
+  {
+    "name": "city centre",
+    "trans": [
+      "n. 市中心"
+    ]
+  },
+  {
+    "name": "downtown",
+    "trans": [
+      "adj. 市中心（的）",
+      "adv. 往市中心；在市中心",
+      "n. 市中心"
+    ],
+    "usphone": "'daʊn'taʊn",
+    "ukphone": "'daʊntaʊn",
+    "sentences": [
+      {
+        "english": "By day he worked downtown for American Standard.",
+        "chinese": "白天，他在市中心为美国标准公司工作。"
+      },
+      {
+        "english": "...an office in downtown Chicago.",
+        "chinese": "…芝加哥市中心的一间办公室。"
+      },
+      {
+        "english": "...in a large vacant area of the downtown.",
+        "chinese": "…在市中心的一大块空地上。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "往闹市区；在市区",
+        "english": "Downtown is also an adverb"
+      },
+      {
+        "pos": "adj",
+        "chinese": "市中心的",
+        "english": "Downtown places are in or toward the centre of a large town or city, where the stores and places of business are"
+      },
+      {
+        "pos": "n",
+        "chinese": "市中心区；三分线以外",
+        "english": "Downtown is also a noun"
+      }
+    ]
+  },
+  {
+    "name": "urban",
+    "trans": [
+      "adj. 城市的"
+    ],
+    "usphone": "'ɝbən",
+    "ukphone": "'ɜ:bən",
+    "sentences": [
+      {
+        "english": "unemployment in urban areas",
+        "chinese": "城市地区的失业状况"
+      },
+      {
+        "english": "the deprived sections of the urban population",
+        "chinese": "城市人口中的贫困群体"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "城市的，都市的",
+        "english": "relating to towns and cities"
+      }
+    ]
+  },
+  {
+    "name": "outskirts",
+    "trans": [
+      "n. 市郊"
+    ],
+    "usphone": "'aʊt'skɝts",
+    "ukphone": "'autskɜːts",
+    "sentences": [
+      {
+        "english": "The rubble was then dumped in a municipal landfill site on the outskirts of Florence.",
+        "chinese": "这堆碎石后来被倾倒在佛罗伦萨市郊的一处垃圾填埋场。"
+      },
+      {
+        "english": "On the outskirts of every city I saw, there was a veritable forest of apartment blocks under construction.",
+        "chinese": "在我造访的每个城市的郊区，一栋栋在建公寓楼确实是鳞次栉比。"
+      },
+      {
+        "english": "After abandoning his devastated home on the outskirts of Damascus, Mustafa, his wife, children and aging parents spent months seeking safety in one town after another.",
+        "chinese": "在抛弃大马士革郊区破坏殆尽的家后，穆斯塔法和他的妻子，孩子几年迈的父母花了几个月的时间在一个又一个小镇躲避战祸。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "郊区",
+        "english": "the parts of a town or city that are furthest from the centre"
+      }
+    ]
+  },
+  {
+    "name": "uptown",
+    "trans": [
+      "adj. 市郊住宅区（的）",
+      "adv. 在市郊住宅区",
+      "n. 市郊住宅区"
+    ],
+    "usphone": ",ʌp'taʊn",
+    "ukphone": "'ʌptaʊn",
+    "sentences": [
+      {
+        "english": "Is this bus going uptown?",
+        "chinese": "这车是去住宅区的吗？"
+      },
+      {
+        "english": "But after a while, they move uptown, into the formal economy.",
+        "chinese": "但是不久，他们就搬进住宅区，成为正式经济的一部分。"
+      },
+      {
+        "english": "Every Friday, I trek uptown with Audrey to see a child life specialist.",
+        "chinese": "每周五，我都要很辛苦地带着奥德丽去住宅区看儿童生活专家。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "住宅区",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "住宅区的",
+        "english": ""
+      },
+      {
+        "pos": "adv",
+        "chinese": "（美）在住宅区；（美）在城镇非商业区",
+        "english": "in or towards an area of a city that is away from the centre, especially one where the streets have larger numbers in their names and where people have more money"
+      }
+    ]
+  },
+  {
+    "name": "suburb",
+    "trans": [
+      "n. 郊区"
+    ],
+    "usphone": "'sʌbɝb",
+    "ukphone": "'sʌbɜːb",
+    "sentences": [
+      {
+        "english": "a London suburb",
+        "chinese": "一个伦敦郊区"
+      },
+      {
+        "english": "a kid from the suburbs",
+        "chinese": "来自郊区的小孩子"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 郊区， 郊外， 近郊",
+        "english": "an area where people live which is away from the centre of a town or city"
+      }
+    ]
+  },
+  {
+    "name": "countryside",
+    "trans": [
+      "n. 农村，乡下"
+    ],
+    "usphone": "'kʌntrɪsaɪd",
+    "ukphone": "'kʌntrɪsaɪd",
+    "sentences": [
+      {
+        "english": "The house had lovely views over open countryside .",
+        "chinese": "这房子望出去是开阔的乡村美景。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "农村，乡下；乡下的全体居民",
+        "english": "land that is outside cities and towns"
+      }
+    ]
+  },
+  {
+    "name": "community",
+    "trans": [
+      "n. 社区"
+    ],
+    "usphone": "kə'mjʊnəti",
+    "ukphone": "kə'mjuːnɪtɪ",
+    "sentences": [
+      {
+        "english": "The new arts centre will serve the whole community.",
+        "chinese": "这座新的艺术中心将为整个社区服务。"
+      },
+      {
+        "english": "the Polish community in London",
+        "chinese": "在伦敦的波兰侨民团体"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "社区；社会；公社",
+        "english": "the people who live in the same area, town etc"
+      }
+    ]
+  },
+  {
+    "name": "neighbourhood",
+    "trans": [
+      "n. 邻里；周围"
+    ],
+    "usphone": "nebɚˌhʊd",
+    "ukphone": "ˈneɪbəhʊd",
+    "sentences": [
+      {
+        "english": "Be quiet! You’ll wake up the whole neighbourhood!",
+        "chinese": "安静点！ 你会把邻居全都吵醒的！"
+      },
+      {
+        "english": "She grew up in a quiet neighborhood of Boston.",
+        "chinese": "她是在波士顿一个清静的街区里长大的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "附近地区（的居民）；邻近",
+        "english": "the area around you or around a particular place, or the people who live there"
+      }
+    ]
+  },
+  {
+    "name": "surrounding",
+    "trans": [
+      "adj. 周围的，附近的"
+    ],
+    "usphone": "sə'raʊndɪŋ",
+    "ukphone": "sə'raundɪŋ",
+    "sentences": [
+      {
+        "english": "Troops sealed off the surrounding area .",
+        "chinese": "军队封锁了周围地区。"
+      },
+      {
+        "english": "We decided to explore the surrounding countryside .",
+        "chinese": "我们决定去附近的乡间走走看看。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "附近的；四周的",
+        "english": "near or around a particular place"
+      }
+    ]
+  },
+  {
+    "name": "dining room",
+    "trans": [
+      "n. 餐厅"
+    ]
+  },
+  {
+    "name": "living room",
+    "trans": [
+      "n. 客厅"
+    ],
+    "usphone": "'lɪvɪŋ rum",
+    "ukphone": "'lɪvɪŋ ru:m",
+    "sentences": [
+      {
+        "english": "I made some new curtains for the living room.",
+        "chinese": "我给起居室做了新窗帘。"
+      },
+      {
+        "english": "That was the extent of our living room decor – we had nothing on the walls, or the other surfaces in the room.",
+        "chinese": "这个小架子，就是我老家起居室的全部装饰了。 除此之外，墙上和任何东西上都是干干净净的。"
+      },
+      {
+        "english": "Park said that although he'd only had the plastic tree for two years, he felt it was like \"his best friend\" and never got tired of seeing it sitting in his living room.",
+        "chinese": "帕克先生说，尽管他和这颗塑胶圣诞树在一起生活才两年时间，但是它就像是“一个最好的朋友”一样。 每天它都立在起居室�，帕克从未厌倦它。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "起居室；客厅",
+        "english": "the main room in a house where people relax, watch television etc"
+      }
+    ]
+  },
+  {
+    "name": "study",
+    "trans": [
+      "n. 书房；研究，课题"
+    ],
+    "usphone": "'stʌdi",
+    "ukphone": "'stʌdɪ",
+    "sentences": [
+      {
+        "english": "Recent studies show that women still get paid a lot less than men.",
+        "chinese": "最近的调查表明，女性的薪水仍比男性的要低很多。"
+      },
+      {
+        "english": "The study was carried out between January and May 2008.",
+        "chinese": "这项研究是在 2008 年1月到5月间进行的。"
+      },
+      {
+        "english": "Set aside a period of time specifically for study.",
+        "chinese": "留出一段时间专门用于学习"
+      },
+      {
+        "english": "I’ve been studying English for six years",
+        "chinese": "我学英语已有六年了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "研究 (对某一课题或问题的)；中文释义: 学习 (尤指在家里或放学后的)",
+        "english": "a piece of work that is done to find out more about a particular subject or problem, and usually includes a written report"
+      },
+      {
+        "pos": "词性: v",
+        "chinese": "中文释义: 学习，攻读",
+        "english": "to learn about a subject at school, university etc"
+      }
+    ]
+  },
+  {
+    "name": "laundry room",
+    "trans": [
+      "n. 洗衣房"
+    ]
+  },
+  {
+    "name": "cloakroom",
+    "trans": [
+      "n. 衣帽寄放处；行李寄存处"
+    ],
+    "usphone": "'klokrum",
+    "ukphone": "'kləukruːm",
+    "sentences": [
+      {
+        "english": "Let's get our coats at the cloakroom and not come back.",
+        "chinese": "我们去衣帽间取大衣，然后就别回来了。"
+      },
+      {
+        "english": "...a cloakroom attendant.",
+        "chinese": "…一名衣帽间服务员。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 衣帽间； 〈英〉洗手间",
+        "english": "The cloakroom at a public building such as a theatre or club is the place where customers can leave their coats, usually for a small fee"
+      }
+    ]
+  },
+  {
+    "name": "shared kitchen",
+    "trans": [
+      "n. 共享厨房"
+    ]
+  },
+  {
+    "name": "shared bathroom",
+    "trans": [
+      "n. 共享浴室"
+    ]
+  },
+  {
+    "name": "separate",
+    "trans": [
+      "adj. 分开的；单独的"
+    ],
+    "usphone": "(for v.) sɛpəˌret; (for adj.) sɛprɪt",
+    "ukphone": "(for v.) ˈsepəreɪt; (for adj.) ˈseprət",
+    "sentences": [
+      {
+        "english": "The gym and the sauna are in separate buildings.",
+        "chinese": "健身房和桑拿浴室在不同的大楼里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "分离的；个别的",
+        "english": "not joined to or touching something else"
+      }
+    ]
+  },
+  {
+    "name": "foyer",
+    "trans": [
+      "n. 休息室；大厅"
+    ],
+    "usphone": "ˈfɔɪər",
+    "ukphone": "ˈfɔɪeɪ",
+    "sentences": [
+      {
+        "english": "I went and waited in the foyer.",
+        "chinese": "我去了，在门厅里等着。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "门厅，休息室；大厅",
+        "english": "a room or hall at the entrance to a public building"
+      }
+    ]
+  },
+  {
+    "name": "garage",
+    "trans": [
+      "n. 车库"
+    ],
+    "usphone": "gəˈrɑʒ; gəˈrɑdʒ",
+    "ukphone": "'ɡærɑ:ʒ",
+    "sentences": [
+      {
+        "english": "I’ll just go and put the car in the garage.",
+        "chinese": "我把车停到车库去。"
+      },
+      {
+        "english": "an automatic garage door",
+        "chinese": "车库自动门"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "车库",
+        "english": "a building for keeping a car in, usually next to or attached to a house"
+      }
+    ]
+  },
+  {
+    "name": "yard",
+    "trans": [
+      "n. 院子"
+    ],
+    "usphone": "jɑrd",
+    "ukphone": "jɑːd",
+    "sentences": [
+      {
+        "english": "a hundred yards away",
+        "chinese": "100码外"
+      },
+      {
+        "english": "an area of 9,000 square yards",
+        "chinese": "面积为9,000平方码的一片区域"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "院子；码（英制中丈量长度单位，1码=3英尺）；庭院；帆桁",
+        "english": "a unit for measuring length, equal to three feet or 0.91 metres"
+      },
+      {
+        "pos": "vt",
+        "chinese": "把…关进或围在畜栏里",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "garden",
+    "trans": [
+      "n. 花园"
+    ],
+    "usphone": "'ɡɑrdn",
+    "ukphone": "'gɑːd(ə)n",
+    "sentences": [
+      {
+        "english": "He’s outside in the garden.",
+        "chinese": "他在外面花园里。"
+      },
+      {
+        "english": "Grace brought us some flowers from her garden.",
+        "chinese": "格雷丝给我们送来一些她花园里的花。"
+      },
+      {
+        "english": "the botanical gardens in Edinburgh",
+        "chinese": "爱丁堡的植物园"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "花园，菜园；公园",
+        "english": "piece of land next to or around your house where you can grow flowers, fruit, vegetables, etc., usually with an area of grass(called a lawn )"
+      }
+    ]
+  },
+  {
+    "name": "shared swimming pool",
+    "trans": [
+      "n. 共享游泳池"
+    ]
+  },
+  {
+    "name": "advisor",
+    "trans": [
+      "n. 顾问"
+    ],
+    "usphone": "əd'vaɪzɚ",
+    "ukphone": "əd'vaɪzə",
+    "sentences": [
+      {
+        "english": "This is the role of the coach, advisor, or teacher.",
+        "chinese": "这就是教练、顾问或者老师所扮演的角色。"
+      },
+      {
+        "english": "When you purchase stocks, or equities, as your advisor might put it, you become a part owner of the business.",
+        "chinese": "当你买入股票或者等价物，你的顾问会告诉你说你已经成为了企业的部分所有者。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "顾问",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "real estate agency",
+    "trans": [
+      "n. 房地产公司"
+    ]
+  },
+  {
+    "name": "estate agency",
+    "trans": [
+      "n. 房产代理处"
+    ]
+  },
+  {
+    "name": "estate agent",
+    "trans": [
+      "n. 房地产经纪人"
+    ]
+  },
+  {
+    "name": "landlord",
+    "trans": [
+      "n. 房东"
+    ],
+    "usphone": "'lændlɔrd",
+    "ukphone": "'læn(d)lɔːd",
+    "sentences": [
+      {
+        "english": "His landlord doubled the rent.",
+        "chinese": "他的房东把房租提高了一倍。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "房东，老板；地主",
+        "english": "a man who rents a room, building, or piece of land to someone"
+      }
+    ]
+  },
+  {
+    "name": "landlady",
+    "trans": [
+      "n. 女房东"
+    ],
+    "usphone": "'lændledi",
+    "ukphone": "'læn(d)leɪdɪ",
+    "sentences": [
+      {
+        "english": "There was a note under the door from my landlady.",
+        "chinese": "门下有我女房东的一张便条。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "女房东；女地主；女店主",
+        "english": "a woman who rents a room, building, or piece of land to someone"
+      }
+    ]
+  },
+  {
+    "name": "tenant",
+    "trans": [
+      "n. 承租人；房客"
+    ],
+    "usphone": "'tɛnənt",
+    "ukphone": "'tenənt",
+    "sentences": [
+      {
+        "english": "The desk was left by the previous tenant.",
+        "chinese": "书桌是上一个房客留下来的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 房客， 佃户",
+        "english": "someone who lives in a house, room etc and pays rent to the person who owns it"
+      }
+    ]
+  }
 ]

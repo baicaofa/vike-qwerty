@@ -1,470 +1,1433 @@
 [
-    {
-        "name": "do",
-        "trans": [
-            "做; 执行代码块"
-        ]
-    },
-    {
-        "name": "if",
-        "trans": [
-            "如果; 条件语句"
-        ]
-    },
-    {
-        "name": "for",
-        "trans": [
-            "循环; 循环结构"
-        ]
-    },
-    {
-        "name": "abs",
-        "trans": [
-            "绝对值; 返回绝对值"
-        ]
-    },
-    {
-        "name": "max",
-        "trans": [
-            "最大; 返回最大值"
-        ]
-    },
-    {
-        "name": "sin",
-        "trans": [
-            "正弦; 计算角度的正弦值"
-        ]
-    },
-    {
-        "name": "int",
-        "trans": [
-            "整数; 定义整数变量"
-        ]
-    },
-    {
-        "name": "LOW",
-        "trans": [
-            "低; 低电平"
-        ]
-    },
-    {
-        "name": "min",
-        "trans": [
-            "最小; 返回最小值"
-        ]
-    },
-    {
-        "name": "map",
-        "trans": [
-            "映射; 将一个范围内的值映射到另一个范围"
-        ]
-    },
-    {
-        "name": "tan",
-        "trans": [
-            "正切; 计算角度的正切值"
-        ]
-    },
-    {
-        "name": "pow",
-        "trans": [
-            "幂; 计算一个数的幂"
-        ]
-    },
-    {
-        "name": "bit",
-        "trans": [
-            "位; 单个二进制位"
-        ]
-    },
-    {
-        "name": "cos",
-        "trans": [
-            "余弦; 计算角度的余弦值"
-        ]
-    },
-    {
-        "name": "true",
-        "trans": [
-            "真; 布尔值“真”"
-        ]
-    },
-    {
-        "name": "data",
-        "trans": [
-            "数据; 存储在变量中的信息"
-        ]
-    },
-    {
-        "name": "void",
-        "trans": [
-            "无效; 表示无返回值"
-        ]
-    },
-    {
-        "name": "else",
-        "trans": [
-            "否则; 条件的替代分支"
-        ]
-    },
-    {
-        "name": "word",
-        "trans": [
-            "单词; 16位无符号数据类型"
-        ]
-    },
-    {
-        "name": "sqrt",
-        "trans": [
-            "平方根; 计算平方根"
-        ]
-    },
-    {
-        "name": "HIGH",
-        "trans": [
-            "高; 高电平"
-        ]
-    },
-    {
-        "name": "case",
-        "trans": [
-            "情况; switch语句中的情况"
-        ]
-    },
-    {
-        "name": "long",
-        "trans": [
-            "长; 定义长整数变量"
-        ]
-    },
-    {
-        "name": "code",
-        "trans": [
-            "代码; 编程指令"
-        ]
-    },
-    {
-        "name": "tone",
-        "trans": [
-            "音调; 生成音频频率"
-        ]
-    },
-    {
-        "name": "char",
-        "trans": [
-            "字符; 定义字符变量"
-        ]
-    },
-    {
-        "name": "byte",
-        "trans": [
-            "字节; 8位无符号数据类型"
-        ]
-    },
-    {
-        "name": "array",
-        "trans": [
-            "数组; 元素的集合"
-        ]
-    },
-    {
-        "name": "index",
-        "trans": [
-            "索引; 数组中的位置"
-        ]
-    },
-    {
-        "name": "const",
-        "trans": [
-            "常量; 常量值"
-        ]
-    },
-    {
-        "name": "float",
-        "trans": [
-            "浮点; 定义浮点变量"
-        ]
-    },
-    {
-        "name": "INPUT",
-        "trans": [
-            "输入; 将引脚设置为输入"
-        ]
-    },
-    {
-        "name": "maker",
-        "trans": [
-            "制造者; 指制造者或创建者"
-        ]
-    },
-    {
-        "name": "types",
-        "trans": [
-            "类型; 变量的不同类型"
-        ]
-    },
-    {
-        "name": "break",
-        "trans": [
-            "中断; 退出循环或switch"
-        ]
-    },
-    {
-        "name": "while",
-        "trans": [
-            "当; 条件为真时循环"
-        ]
-    },
-    {
-        "name": "false",
-        "trans": [
-            "假; 布尔值“假”"
-        ]
-    },
-    {
-        "name": "delay",
-        "trans": [
-            "延迟; 暂停程序执行"
-        ]
-    },
-    {
-        "name": "sizeof",
-        "trans": [
-            "大小; 返回数据类型的大小"
-        ]
-    },
-    {
-        "name": "static",
-        "trans": [
-            "静态; 在函数调用之间保留变量值"
-        ]
-    },
-    {
-        "name": "noTone",
-        "trans": [
-            "无音调; 停止声音生成"
-        ]
-    },
-    {
-        "name": "millis",
-        "trans": [
-            "毫秒; 返回经过的毫秒数"
-        ]
-    },
-    {
-        "name": "micros",
-        "trans": [
-            "微秒; 返回经过的微秒数"
-        ]
-    },
-    {
-        "name": "switch",
-        "trans": [
-            "开关; 选择要执行的代码块"
-        ]
-    },
-    {
-        "name": "define",
-        "trans": [
-            "定义; 定义宏"
-        ]
-    },
-    {
-        "name": "Stream",
-        "trans": [
-            "流; 处理数据输入/输出"
-        ]
-    },
-    {
-        "name": "double",
-        "trans": [
-            "双精度; 定义双精度浮点变量"
-        ]
-    },
-    {
-        "name": "bitSet",
-        "trans": [
-            "设置位; 在特定位置设置位"
-        ]
-    },
-    {
-        "name": "OUTPUT",
-        "trans": [
-            "输出; 将引脚设置为输出"
-        ]
-    },
-    {
-        "name": "random",
-        "trans": [
-            "随机; 生成随机数"
-        ]
-    },
-    {
-        "name": "Serial",
-        "trans": [
-            "串行; 处理串行通信"
-        ]
-    },
-    {
-        "name": "string",
-        "trans": [
-            "字符串; 字符序列"
-        ]
-    },
-    {
-        "name": "return",
-        "trans": [
-            "返回; 退出函数并可选地返回值"
-        ]
-    },
-    {
-        "name": "boolean",
-        "trans": [
-            "布尔值; 定义布尔变量"
-        ]
-    },
-    {
-        "name": "pulseIn",
-        "trans": [
-            "脉冲输入; 读取引脚上的脉冲宽度"
-        ]
-    },
-    {
-        "name": "lowByte",
-        "trans": [
-            "低字节; 返回值的低字节"
-        ]
-    },
-    {
-        "name": "bitRead",
-        "trans": [
-            "读取位; 读取特定位上的值"
-        ]
-    },
-    {
-        "name": "shiftIn",
-        "trans": [
-            "移入; 逐位移入数据"
-        ]
-    },
-    {
-        "name": "arduino",
-        "trans": [
-            "arduino; 微控制器平台"
-        ]
-    },
-    {
-        "name": "include",
-        "trans": [
-            "包含; 在程序中包含文件"
-        ]
-    },
-    {
-        "name": "pinMode",
-        "trans": [
-            "引脚模式; 将引脚配置为输入或输出"
-        ]
-    },
-    {
-        "name": "shiftOut",
-        "trans": [
-            "移出; 逐位移出数据"
-        ]
-    },
-    {
-        "name": "volatile",
-        "trans": [
-            "易变的; 表示变量可能会意外更改"
-        ]
-    },
-    {
-        "name": "bitClear",
-        "trans": [
-            "清除位; 清除特定位上的值"
-        ]
-    },
-    {
-        "name": "unsigned",
-        "trans": [
-            "无符号; 表示变量不能为负值"
-        ]
-    },
-    {
-        "name": "continue",
-        "trans": [
-            "继续; 跳过当前循环的剩余部分"
-        ]
-    },
-    {
-        "name": "bitWrite",
-        "trans": [
-            "写入位; 在特定位上写入值"
-        ]
-    },
-    {
-        "name": "highByte",
-        "trans": [
-            "高字节; 返回值的高字节"
-        ]
-    },
-    {
-        "name": "constrain",
-        "trans": [
-            "限制; 将值限制在范围内"
-        ]
-    },
-    {
-        "name": "reference",
-        "trans": [
-            "参考; 指向变量或函数"
-        ]
-    },
-    {
-        "name": "analogRead",
-        "trans": [
-            "模拟读取; 从模拟引脚读取值"
-        ]
-    },
-    {
-        "name": "randomSeed",
-        "trans": [
-            "随机种子; 设置生成随机数的起始点"
-        ]
-    },
-    {
-        "name": "digitalRead",
-        "trans": [
-            "数字读取; 从数字引脚读取值"
-        ]
-    },
-    {
-        "name": "analogWrite",
-        "trans": [
-            "模拟写入; 向引脚写入模拟值"
-        ]
-    },
-    {
-        "name": "digitalWrite",
-        "trans": [
-            "数字写入; 向引脚写入数字值"
-        ]
-    },
-    {
-        "name": "detachInterrupt",
-        "trans": [
-            "分离中断; 禁用引脚上的中断"
-        ]
-    },
-    {
-        "name": "attachInterrupt",
-        "trans": [
-            "连接中断; 启用引脚上的中断"
-        ]
-    },
-    {
-        "name": "delayMicroseconds",
-        "trans": [
-            "微秒延迟; 暂停程序执行几微秒"
-        ]
-    }
+  {
+    "name": "do",
+    "trans": [
+      "做; 执行代码块"
+    ],
+    "usphone": "du",
+    "ukphone": "duː",
+    "sentences": [
+      {
+        "english": "‘Will Kay come?’ ‘She may do.’",
+        "chinese": "“凯来吗？” “或许吧。”"
+      },
+      {
+        "english": "So now you know as much as I do.",
+        "chinese": "那么现在你知道的和我一样多了。"
+      },
+      {
+        "english": "‘You forgot all about it.’ ‘No, I didn’t.’",
+        "chinese": "“你把这事忘记得一干二净。” “没有，我没忘记。”"
+      },
+      {
+        "english": "‘I want to go home.’ ‘So do I.’",
+        "chinese": "“我想回家。” “我也是。”"
+      },
+      {
+        "english": "I didn’t believe the story and neither did he.",
+        "chinese": "我不相信这个故事，他也不信。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "aux",
+        "chinese": "v",
+        "english": "used instead of repeating a verb that has already been used"
+      },
+      {
+        "pos": "v",
+        "chinese": "做，干，办",
+        "english": "used instead of repeating a verb that has already been used"
+      }
+    ]
+  },
+  {
+    "name": "if",
+    "trans": [
+      "如果; 条件语句"
+    ],
+    "usphone": "ɪf",
+    "ukphone": "ɪf",
+    "sentences": [
+      {
+        "english": "We’ll stay at home if it rains.",
+        "chinese": "如果下雨，我们就待在家里。"
+      },
+      {
+        "english": "If you need money, I can lend you some.",
+        "chinese": "如果你需要钱，我能借给你一些。"
+      },
+      {
+        "english": "If I didn’t apologize, I’d feel guilty.",
+        "chinese": "如果我不道歉，我会感到内疚。"
+      },
+      {
+        "english": "If you had worked harder, you would have passed your exams.",
+        "chinese": "要是你再努力一点，就通过考试了。"
+      },
+      {
+        "english": "What would happen to your family if you were to die in an accident?",
+        "chinese": "要是你在意外事故中身亡，你的家人会怎么样呢？"
+      },
+      {
+        "english": "If Dad were here, he would know what to do.",
+        "chinese": "如果爸爸在这儿，他会知道怎么做的。"
+      },
+      {
+        "english": "Taste the soup and add salt and pepper if necessary.",
+        "chinese": "尝一下汤，需要的话加一点盐和胡椒粉。"
+      },
+      {
+        "english": "I want to get back by five o’clock if possible.",
+        "chinese": "如果可能的话，我想5点之前回来。"
+      },
+      {
+        "english": "I think I can fix it tomorrow. If not, you’ll have to wait till Friday.",
+        "chinese": "我想明天我能修好它，如果不行，你只好等到周五了。"
+      },
+      {
+        "english": "Is the book available, and if so, where?",
+        "chinese": "有没有这本书？ 如果有的话，在哪儿？"
+      },
+      {
+        "english": "The missiles can be fired only if the operator types in a six-digit code.",
+        "chinese": "只有在操作员输入一组六位数密码后，导弹才能发射。"
+      },
+      {
+        "english": "We’ll face that problem if and when it comes along (= if it happens or when it happens ).",
+        "chinese": "如果这一问题真的发生了，我们就要面对它。"
+      },
+      {
+        "english": "If by any chance you can’t manage dinner tonight, perhaps we can at least have a drink together.",
+        "chinese": "万一你今晚不能来吃饭，或许我们至少可以一起喝一杯。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "假如，如果",
+        "english": "used when talking about something that might happen or be true, or might have happened"
+      }
+    ]
+  },
+  {
+    "name": "for",
+    "trans": [
+      "循环; 循环结构"
+    ],
+    "usphone": "fɚ; strong form fɔr",
+    "ukphone": "fə(r); strong form fɔ:(r)",
+    "sentences": [
+      {
+        "english": "I’ve got a present for you.",
+        "chinese": "我有件礼物送给你。"
+      },
+      {
+        "english": "Someone left a message for Vicky.",
+        "chinese": "有人给维基留了言。"
+      },
+      {
+        "english": "an English course for foreign students",
+        "chinese": "为外国学生开的一门英语课程"
+      },
+      {
+        "english": "WWhat did you do that for?",
+        "chinese": "你那样做是为了什么？"
+      },
+      {
+        "english": "We could hardly see for the mist.",
+        "chinese": "由于雾气，我们几乎什么也看不见。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "给；为；因为",
+        "english": "used to say who is intended to get or use something, or where something is intended to be used"
+      }
+    ]
+  },
+  {
+    "name": "abs",
+    "trans": [
+      "绝对值; 返回绝对值"
+    ]
+  },
+  {
+    "name": "max",
+    "trans": [
+      "最大; 返回最大值"
+    ]
+  },
+  {
+    "name": "sin",
+    "trans": [
+      "正弦; 计算角度的正弦值"
+    ],
+    "usphone": "sɪn",
+    "ukphone": "sɪn",
+    "sentences": [
+      {
+        "english": "She needed to confess her sins and ask for forgiveness.",
+        "chinese": "她需要忏悔罪过，请求宽恕。"
+      },
+      {
+        "english": "He knew that he had committed a terrible sin .",
+        "chinese": "他知道自己犯下了可怕的罪行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "罪恶；罪孽；过失",
+        "english": "an action that is against religious rules and is considered to be an offence against God"
+      },
+      {
+        "pos": "v",
+        "chinese": "犯罪；犯过失",
+        "english": "to do something that is against religious rules and is considered to be an offence against God"
+      }
+    ]
+  },
+  {
+    "name": "int",
+    "trans": [
+      "整数; 定义整数变量"
+    ]
+  },
+  {
+    "name": "LOW",
+    "trans": [
+      "低; 低电平"
+    ]
+  },
+  {
+    "name": "min",
+    "trans": [
+      "最小; 返回最小值"
+    ]
+  },
+  {
+    "name": "map",
+    "trans": [
+      "映射; 将一个范围内的值映射到另一个范围"
+    ],
+    "usphone": "mæp",
+    "ukphone": "mæp",
+    "sentences": [
+      {
+        "english": "He spent the next fifteen years mapping the Isle of Anglesey.",
+        "chinese": "他在后来的十五年里绘制了安格尔西岛的地图。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "映射；计划；绘制地图；确定基因在染色体中的位置",
+        "english": "to make a map of a particular area"
+      },
+      {
+        "pos": "n",
+        "chinese": "地图；示意图；染色体图",
+        "english": "a drawing of a particular area, for example a city or country, which shows its main features, such as its roads, rivers, mountains etc"
+      }
+    ]
+  },
+  {
+    "name": "tan",
+    "trans": [
+      "正切; 计算角度的正切值"
+    ],
+    "usphone": "tæn",
+    "ukphone": "tæn",
+    "sentences": [
+      {
+        "english": "I wish I could get a tan like that.",
+        "chinese": "但愿我也能晒成那样的棕褐色肤色。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "（日晒后皮肤的）黝黑色；棕褐色；鞣料；马戏团",
+        "english": "the attractive brown colour that someone with pale skin gets after they have been in the sun"
+      },
+      {
+        "pos": "v",
+        "chinese": "鞣（革）；晒成褐色",
+        "english": "if you tan, or if the sun tans you, your skin becomes darker because you spend time in the sun"
+      },
+      {
+        "pos": "adj",
+        "chinese": "黄褐色的；鞣皮的",
+        "english": "having a light yellowish-brown colour"
+      }
+    ]
+  },
+  {
+    "name": "pow",
+    "trans": [
+      "幂; 计算一个数的幂"
+    ]
+  },
+  {
+    "name": "bit",
+    "trans": [
+      "位; 单个二进制位"
+    ],
+    "usphone": "bɪt",
+    "ukphone": "bɪt",
+    "sentences": [
+      {
+        "english": "He’s taken the engine to bits .",
+        "chinese": "他把发动机拆开了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "一点，一些，小片",
+        "english": "a small piece of something"
+      }
+    ]
+  },
+  {
+    "name": "cos",
+    "trans": [
+      "余弦; 计算角度的余弦值"
+    ]
+  },
+  {
+    "name": "true",
+    "trans": [
+      "真; 布尔值“真”"
+    ],
+    "usphone": "tru",
+    "ukphone": "truː",
+    "sentences": [
+      {
+        "english": "No, honestly, it’s a true story .",
+        "chinese": "不，真的，这是一个真实的故事。"
+      },
+      {
+        "english": "Students decide if statements are true or false .",
+        "chinese": "由学生来判断说法正确还是错误。"
+      },
+      {
+        "english": "It’s generally true to say that fewer people are needed nowadays.",
+        "chinese": "总的来说现在需要的人员少了。"
+      },
+      {
+        "english": "The results appear to hold true (= still be correct ) for other countries.",
+        "chinese": "这些结果在其他国家似乎同样正确。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "真实的；正确的",
+        "english": "based on facts and not imagined or invented"
+      },
+      {
+        "pos": "adv",
+        "chinese": "真实地；准确地",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "真实；准确",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "装准",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "data",
+    "trans": [
+      "数据; 存储在变量中的信息"
+    ],
+    "usphone": "'detə",
+    "ukphone": "'deɪtə",
+    "sentences": [
+      {
+        "english": "The research involves collecting data from two random samples.",
+        "chinese": "该项研究需要从两个随机样本里收集资料。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "数据;",
+        "english": "information or facts"
+      },
+      {
+        "pos": "n",
+        "chinese": "资料",
+        "english": "information or facts"
+      }
+    ]
+  },
+  {
+    "name": "void",
+    "trans": [
+      "无效; 表示无返回值"
+    ],
+    "usphone": "vɔɪd",
+    "ukphone": "vɔɪd",
+    "sentences": [
+      {
+        "english": "Her eyes were void of all expression.",
+        "chinese": "她的眼神一片茫然。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "无效的；没有的，缺乏的",
+        "english": "a contract or official agreement that is void is not legal and has no effect"
+      },
+      {
+        "pos": "n",
+        "chinese": "空虚感，寂寞感；真空，空白",
+        "english": "a feeling of great sadness that you have when someone you love dies or when something is taken from you"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 使无效",
+        "english": "to make a contract or agreement void so that it has no legal effect"
+      }
+    ]
+  },
+  {
+    "name": "else",
+    "trans": [
+      "否则; 条件的替代分支"
+    ],
+    "usphone": "ɛls",
+    "ukphone": "els",
+    "sentences": [
+      {
+        "english": "There’s something else I’d like to talk about as well.",
+        "chinese": "我还有其他事情要谈一谈。"
+      },
+      {
+        "english": "I’d like you to come, and anyone else who’s free.",
+        "chinese": "我想请你过来，其他人有空也可以来。"
+      },
+      {
+        "english": "He was awake now, as was everyone else.",
+        "chinese": "他现在已经醒了，其他人也都醒了。"
+      },
+      {
+        "english": "Who else was at the party?",
+        "chinese": "还有谁参加了聚会？"
+      },
+      {
+        "english": "‘Two coffees, please.’ ‘Anything else?’ ‘No, thanks.’",
+        "chinese": "“请来两杯咖啡。”“还要别的吗？”“不要了，谢谢。"
+      },
+      {
+        "english": "(= more than any other things ) she was seeking love.",
+        "chinese": "她追求爱情胜过一切。"
+      },
+      {
+        "english": "If I can't make a living at painting, at least I can teach someone else to paint.",
+        "chinese": "如果我不能以画画谋生的话，至少我能教别人画画。"
+      },
+      {
+        "english": "We had nothing else to do on those long trips.",
+        "chinese": "在那些漫长的旅途中我们别无他事可做。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "其它，另外",
+        "english": "besides or in addition to someone or something"
+      },
+      {
+        "pos": "adj",
+        "chinese": "别的",
+        "english": "You use else after words such as \"anywhere,\" \"someone,\" and \"what\" to refer in a vague way to another person, place, or thing"
+      }
+    ]
+  },
+  {
+    "name": "word",
+    "trans": [
+      "单词; 16位无符号数据类型"
+    ],
+    "usphone": "wɝd",
+    "ukphone": "wɜːd",
+    "sentences": [
+      {
+        "english": "Write an essay of about five hundred words.",
+        "chinese": "写一篇约500字的文章。"
+      },
+      {
+        "english": "What does that word mean?",
+        "chinese": "那个单词是什么意思？"
+      },
+      {
+        "english": "‘Vater’ is the German word for (= that means ) ‘father’.",
+        "chinese": "vater在德语中是“父亲”的意思。"
+      },
+      {
+        "english": "Perhaps ‘lucky’ is not exactly the right word .",
+        "chinese": "也许“幸运”一词还不够贴切。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[语] 单词；话语；消息；诺言；命令",
+        "english": "a single group of letters that are used together with a particular meaning"
+      },
+      {
+        "pos": "v",
+        "chinese": "用言辞表达",
+        "english": "to use words that are carefully chosen in order to express something"
+      }
+    ]
+  },
+  {
+    "name": "sqrt",
+    "trans": [
+      "平方根; 计算平方根"
+    ]
+  },
+  {
+    "name": "HIGH",
+    "trans": [
+      "高; 高电平"
+    ]
+  },
+  {
+    "name": "case",
+    "trans": [
+      "情况; switch语句中的情况"
+    ],
+    "usphone": "kes",
+    "ukphone": "keɪs",
+    "sentences": [
+      {
+        "english": "In some cases people have had to wait several weeks for an appointment.",
+        "chinese": "在某些情况下，人们必须等上好几周才能得到约见。"
+      },
+      {
+        "english": "a severe case of typhoid",
+        "chinese": "伤寒重病例"
+      },
+      {
+        "english": "It is simply not the case that prison conditions are improving.",
+        "chinese": "监狱条件得到改善的情况绝非事实。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "情况；病例；事实",
+        "english": "a particular situation or a situation of a particular type"
+      }
+    ]
+  },
+  {
+    "name": "long",
+    "trans": [
+      "长; 定义长整数变量"
+    ],
+    "usphone": "lɔŋ",
+    "ukphone": "lɒŋ",
+    "sentences": [
+      {
+        "english": "He longed to see her again.",
+        "chinese": "到那里去要多长时间？"
+      },
+      {
+        "english": "She longed for the chance to speak to him in private.",
+        "chinese": "她渴望有机会和他私下交谈。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "渴望",
+        "english": "to want something very much, especially when it seems unlikely to happen soon"
+      }
+    ]
+  },
+  {
+    "name": "code",
+    "trans": [
+      "代码; 编程指令"
+    ],
+    "usphone": "kod",
+    "ukphone": "kəʊd",
+    "sentences": [
+      {
+        "english": "The spy sent his message in code.",
+        "chinese": "这个间谍用密码发送情报。"
+      },
+      {
+        "english": "But we have not yet implemented this in the code.",
+        "chinese": "但我们在代码中尚未实现此功能。"
+      },
+      {
+        "english": "The hacker came smack up against the company's policy of keeping its records in code.",
+        "chinese": "这个计算机黑客突然碰壁了，因这家公司实行了用密码保存公司纪录的政策。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "代号，密码",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "tone",
+    "trans": [
+      "音调; 生成音频频率"
+    ],
+    "usphone": "ton",
+    "ukphone": "təʊn",
+    "sentences": [
+      {
+        "english": "Her tone was sharp with anger.",
+        "chinese": "她很气愤，语气尖刻。"
+      },
+      {
+        "english": "It was obvious from her tone of voice that she didn’t like me.",
+        "chinese": "从她的语气明显听得出来她不喜欢我。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "语气；色调；音调；音色",
+        "english": "the way your voice sounds, which shows how you are feeling or what you mean"
+      },
+      {
+        "pos": "v",
+        "chinese": "增强；用某种调子说",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "char",
+    "trans": [
+      "字符; 定义字符变量"
+    ],
+    "usphone": "tʃɑr",
+    "ukphone": "tʃɑː",
+    "sentences": [
+      {
+        "english": "Roast the peppers until the skin begins to char and blister.",
+        "chinese": "把这些辣椒烤到表皮发黑起泡为止。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "烧焦",
+        "english": "to burn something so that its outside becomes black"
+      },
+      {
+        "pos": "n",
+        "chinese": "碳",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "byte",
+    "trans": [
+      "字节; 8位无符号数据类型"
+    ],
+    "usphone": "baɪt",
+    "ukphone": "baɪt",
+    "sentences": [
+      {
+        "english": "Each character requires one byte of storage space.",
+        "chinese": "每个字符需要一个字节的储存空间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "字节；8位元组",
+        "english": "a unit for measuring computer information, equal to eight  bit s (=  the smallest unit on which information is stored on a computer  ) "
+      }
+    ]
+  },
+  {
+    "name": "array",
+    "trans": [
+      "数组; 元素的集合"
+    ],
+    "usphone": "ə're",
+    "ukphone": "ə'reɪ",
+    "sentences": [
+      {
+        "english": "make-up arrayed on the bathroom counter",
+        "chinese": "盥洗台上摆放整齐的化妆品"
+      },
+      {
+        "english": "We visited the local markets and saw wonderful arrays of fruit and vegetables.",
+        "chinese": "我们参观了当地的市场，看到了漂亮地摆放着的水果蔬菜。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "（美观地）排列",
+        "english": "to arrange something in an attractive way"
+      },
+      {
+        "pos": "n",
+        "chinese": "陈列",
+        "english": "An array of objects is a collection of them that is displayed or arranged in a particular way."
+      }
+    ]
+  },
+  {
+    "name": "index",
+    "trans": [
+      "索引; 数组中的位置"
+    ],
+    "usphone": "'ɪndɛks",
+    "ukphone": "'ɪndeks",
+    "sentences": [
+      {
+        "english": "...the consumer price index.",
+        "chinese": "…消费价格指数。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "指数",
+        "english": "a standard by which the level of something can be judged or measured"
+      }
+    ]
+  },
+  {
+    "name": "const",
+    "trans": [
+      "常量; 常量值"
+    ]
+  },
+  {
+    "name": "float",
+    "trans": [
+      "浮点; 定义浮点变量"
+    ],
+    "usphone": "flot",
+    "ukphone": "fləʊt",
+    "sentences": [
+      {
+        "english": "I looked up at the clouds floating in the sky.",
+        "chinese": "我仰望着天上的浮云。"
+      },
+      {
+        "english": "Leaves floated gently down from the trees.",
+        "chinese": "叶子从树上轻轻飘落。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "使漂浮；实行",
+        "english": "if something floats, it moves slowly through the air or stays up in the air"
+      },
+      {
+        "pos": "n",
+        "chinese": "彩车，花车；漂流物；浮舟；浮萍",
+        "english": "a large vehicle that is decorated to drive through the streets as part of a special event"
+      }
+    ]
+  },
+  {
+    "name": "INPUT",
+    "trans": [
+      "输入; 将引脚设置为输入"
+    ]
+  },
+  {
+    "name": "maker",
+    "trans": [
+      "制造者; 指制造者或创建者"
+    ],
+    "usphone": "'mekɚ",
+    "ukphone": "'meɪkə",
+    "sentences": [
+      {
+        "english": "a leading Japanese computer maker",
+        "chinese": "日本一家主要的计算机生产商"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "制造者",
+        "english": "a person or company that makes a particular type of goods"
+      }
+    ]
+  },
+  {
+    "name": "types",
+    "trans": [
+      "类型; 变量的不同类型"
+    ]
+  },
+  {
+    "name": "break",
+    "trans": [
+      "中断; 退出循环或switch"
+    ],
+    "usphone": "brek",
+    "ukphone": "breɪk",
+    "sentences": [
+      {
+        "english": "I had to break a window to get into the house.",
+        "chinese": "我只得打破一扇窗户进屋。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "打破；损坏；破坏",
+        "english": "if you break something, you make it separate into two or more pieces, for example by hitting it, dropping it, or bending it"
+      }
+    ]
+  },
+  {
+    "name": "while",
+    "trans": [
+      "当; 条件为真时循环"
+    ],
+    "usphone": "waɪl",
+    "ukphone": "wʌɪl",
+    "sentences": [
+      {
+        "english": "They arrived while we were having dinner.",
+        "chinese": "他们来时我们正在吃饭。"
+      },
+      {
+        "english": "While she was asleep, thieves broke in and stole her handbag.",
+        "chinese": "她睡着的时候，小偷闯进来偷走了她的手提包。"
+      },
+      {
+        "english": "She met Andy while working on a production of Carmen.",
+        "chinese": "排练《卡门》时，她认识了安迪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "虽然；然而；当……的时候",
+        "english": "during the time that something is happening"
+      },
+      {
+        "pos": "n",
+        "chinese": "一会儿；一段时间",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "消磨；轻松地度过",
+        "english": "to spend time in a pleasant and lazy way"
+      }
+    ]
+  },
+  {
+    "name": "false",
+    "trans": [
+      "假; 布尔值“假”"
+    ],
+    "usphone": "fɔls",
+    "ukphone": "fɔːls; fɒls",
+    "sentences": [
+      {
+        "english": "I don’t want to give you any false hopes .",
+        "chinese": "我不想让你有任何虚假的希望。"
+      },
+      {
+        "english": "The statement gives us a false impression that we understand something when we do not.",
+        "chinese": "这句话使我们产生错觉，以为自己懂了，但其实并没懂。"
+      },
+      {
+        "english": "false assumptions about people of other cultures",
+        "chinese": "对来自其他文化的人的错误假设"
+      },
+      {
+        "english": "{\"GLOSS\":[\"a feeling of being safe when you are not really safe\"],\"COLLOINEXA\":[\"a false sense of security\"]}",
+        "chinese": "虚假的安全感"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "错误的；虚伪的；伪造的",
+        "english": "based on incorrect information or ideas"
+      },
+      {
+        "pos": "adv",
+        "chinese": "欺诈地",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "delay",
+    "trans": [
+      "延迟; 暂停程序执行"
+    ],
+    "usphone": "dɪ'le",
+    "ukphone": "dɪ'leɪ",
+    "sentences": [
+      {
+        "english": "Don’t delay – send off for the information now.",
+        "chinese": "别犹豫——即刻去函索取信息。"
+      },
+      {
+        "english": "He delayed his decision on whether to call an election.",
+        "chinese": "在是否宣布举行选举一事上，他推迟作出决定。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "推迟，延期",
+        "english": "to wait until a later time to do something"
+      }
+    ]
+  },
+  {
+    "name": "sizeof",
+    "trans": [
+      "大小; 返回数据类型的大小"
+    ]
+  },
+  {
+    "name": "static",
+    "trans": [
+      "静态; 在函数调用之间保留变量值"
+    ],
+    "usphone": "'stætɪk",
+    "ukphone": "'stætɪk",
+    "sentences": [
+      {
+        "english": "The number of young people obtaining qualifications has remained static or decreased.",
+        "chinese": "获得各种资格证书的年轻人的数量一直保持不变或者已经减少。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "静态的；静电的；静力的",
+        "english": "Something that is static does not move or change"
+      },
+      {
+        "pos": "n",
+        "chinese": "静电；静电干扰",
+        "english": "noise caused by electricity in the air that blocks or spoils the sound from radio or TV"
+      }
+    ]
+  },
+  {
+    "name": "noTone",
+    "trans": [
+      "无音调; 停止声音生成"
+    ]
+  },
+  {
+    "name": "millis",
+    "trans": [
+      "毫秒; 返回经过的毫秒数"
+    ]
+  },
+  {
+    "name": "micros",
+    "trans": [
+      "微秒; 返回经过的微秒数"
+    ]
+  },
+  {
+    "name": "switch",
+    "trans": [
+      "开关; 选择要执行的代码块"
+    ],
+    "usphone": "swɪtʃ",
+    "ukphone": "swɪtʃ",
+    "sentences": [
+      {
+        "english": "The terrorists will switch tactics .",
+        "chinese": "恐怖分子会改变战术。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "转换",
+        "english": "to change from doing or using one thing to doing or using another"
+      }
+    ]
+  },
+  {
+    "name": "define",
+    "trans": [
+      "定义; 定义宏"
+    ],
+    "usphone": "dɪ'faɪn",
+    "ukphone": "dɪ'faɪn",
+    "sentences": [
+      {
+        "english": "the ability to define clients’ needs",
+        "chinese": "确定客户需求的能力"
+      },
+      {
+        "english": "The duties of the post are difficult to define.",
+        "chinese": "这一职位的职责很难界定。"
+      },
+      {
+        "english": "Define precisely what you mean by ‘crime’.",
+        "chinese": "把你说的 “犯罪” 明确定义一下。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "确定；下定义",
+        "english": "to describe something correctly and thoroughly, and to say what standards, limits, qualities etc it has that make it different from other things"
+      }
+    ]
+  },
+  {
+    "name": "Stream",
+    "trans": [
+      "流; 处理数据输入/输出"
+    ]
+  },
+  {
+    "name": "double",
+    "trans": [
+      "双精度; 定义双精度浮点变量"
+    ],
+    "usphone": "'dʌbl",
+    "ukphone": "'dʌb(ə)l",
+    "sentences": [
+      {
+        "english": "a double sink",
+        "chinese": "双水槽"
+      },
+      {
+        "english": "a double wardrobe",
+        "chinese": "双门衣柜"
+      },
+      {
+        "english": "the great double doors of the cathedral",
+        "chinese": "大教堂宏伟的双开大门"
+      },
+      {
+        "english": "Don’t park your car on double yellow lines.",
+        "chinese": "不可以在双黄线处停车。"
+      },
+      {
+        "english": "The city was enclosed by walls of double thickness.",
+        "chinese": "该城被两倍厚的墙围了起来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "双的；两倍的",
+        "english": "consisting of two parts that are similar or exactly the same"
+      }
+    ]
+  },
+  {
+    "name": "bitSet",
+    "trans": [
+      "设置位; 在特定位置设置位"
+    ]
+  },
+  {
+    "name": "OUTPUT",
+    "trans": [
+      "输出; 将引脚设置为输出"
+    ]
+  },
+  {
+    "name": "random",
+    "trans": [
+      "随机; 生成随机数"
+    ],
+    "usphone": "'rændəm",
+    "ukphone": "'rændəm",
+    "sentences": [
+      {
+        "english": "The gang picked their victims at random.",
+        "chinese": "这帮犯罪分子随意选择对象下手。"
+      },
+      {
+        "english": "The company has introduced random drug testing of its employees.",
+        "chinese": "公司已实行对雇员的随机毒品测试。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "随机",
+        "english": "without any definite plan, aim, or pattern"
+      },
+      {
+        "pos": "adj",
+        "chinese": "随机的",
+        "english": "happening or chosen without any definite plan, aim, or pattern"
+      }
+    ]
+  },
+  {
+    "name": "Serial",
+    "trans": [
+      "串行; 处理串行通信"
+    ]
+  },
+  {
+    "name": "string",
+    "trans": [
+      "字符串; 字符序列"
+    ],
+    "usphone": "strɪŋ",
+    "ukphone": "strɪŋ",
+    "sentences": [
+      {
+        "english": "Her key hung on a string around her neck.",
+        "chinese": "她的钥匙穿了根绳子挂在脖子上。"
+      },
+      {
+        "english": "a ball of string",
+        "chinese": "一团细绳"
+      },
+      {
+        "english": "I need a piece of string to tie this package.",
+        "chinese": "我需要一根绳子来捆这个包裹。"
+      },
+      {
+        "english": "a string of pearls",
+        "chinese": "一串珍珠"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "线，细绳；一串",
+        "english": "a strong thread made of several threads twisted together, used for tying or fastening things"
+      }
+    ]
+  },
+  {
+    "name": "return",
+    "trans": [
+      "返回; 退出函数并可选地返回值"
+    ],
+    "usphone": "rɪ'tɝn",
+    "ukphone": "rɪ'tɜːn",
+    "sentences": [
+      {
+        "english": "It was forty five minutes before she returned.",
+        "chinese": "过了45分钟她才回来。"
+      },
+      {
+        "english": "Alison decided to return home.",
+        "chinese": "艾利森决定回家。"
+      },
+      {
+        "english": "He left his country, never to return.",
+        "chinese": "他离开了祖国，一去不复返。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "返回；报答",
+        "english": "to go or come back to a place where you were before"
+      },
+      {
+        "pos": "n",
+        "chinese": "返回；归还；回球",
+        "english": "the act of returning from somewhere, or your arrival back in a place"
+      },
+      {
+        "pos": "adj",
+        "chinese": "报答的；回程的；返回的",
+        "english": "used or paid for a journey from one place to another and back again"
+      }
+    ]
+  },
+  {
+    "name": "boolean",
+    "trans": [
+      "布尔值; 定义布尔变量"
+    ]
+  },
+  {
+    "name": "pulseIn",
+    "trans": [
+      "脉冲输入; 读取引脚上的脉冲宽度"
+    ]
+  },
+  {
+    "name": "lowByte",
+    "trans": [
+      "低字节; 返回值的低字节"
+    ]
+  },
+  {
+    "name": "bitRead",
+    "trans": [
+      "读取位; 读取特定位上的值"
+    ]
+  },
+  {
+    "name": "shiftIn",
+    "trans": [
+      "移入; 逐位移入数据"
+    ]
+  },
+  {
+    "name": "arduino",
+    "trans": [
+      "arduino; 微控制器平台"
+    ]
+  },
+  {
+    "name": "include",
+    "trans": [
+      "包含; 在程序中包含文件"
+    ],
+    "usphone": "ɪn'klud",
+    "ukphone": "ɪn'kluːd",
+    "sentences": [
+      {
+        "english": "Does the price include postage?",
+        "chinese": "这个价格包含邮费吗？"
+      },
+      {
+        "english": "His job includes looking after under-21 teams.",
+        "chinese": "他的职责包括照管21岁以下球队。"
+      },
+      {
+        "english": "The curriculum includes courses in computing.",
+        "chinese": "课程内容包括计算机技术。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "包含",
+        "english": "if one thing includes another, the second thing is part of the first"
+      }
+    ]
+  },
+  {
+    "name": "pinMode",
+    "trans": [
+      "引脚模式; 将引脚配置为输入或输出"
+    ]
+  },
+  {
+    "name": "shiftOut",
+    "trans": [
+      "移出; 逐位移出数据"
+    ]
+  },
+  {
+    "name": "volatile",
+    "trans": [
+      "易变的; 表示变量可能会意外更改"
+    ],
+    "usphone": "'vɑlətl",
+    "ukphone": "'vɒlətaɪl",
+    "sentences": [
+      {
+        "english": "an increasingly volatile political situation",
+        "chinese": "日益动荡的政治局势"
+      },
+      {
+        "english": "the highly volatile stock and bond markets",
+        "chinese": "相当不稳定的股票和债券市场"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "[化学] 挥发性的；不稳定的；爆炸性的；反复无常的",
+        "english": "a volatile situation is likely to change suddenly and without warning"
+      },
+      {
+        "pos": "n",
+        "chinese": "挥发物；有翅的动物",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "bitClear",
+    "trans": [
+      "清除位; 清除特定位上的值"
+    ]
+  },
+  {
+    "name": "unsigned",
+    "trans": [
+      "无符号; 表示变量不能为负值"
+    ]
+  },
+  {
+    "name": "continue",
+    "trans": [
+      "继续; 跳过当前循环的剩余部分"
+    ],
+    "usphone": "kən'tɪnju",
+    "ukphone": "kən'tɪnjuː",
+    "sentences": [
+      {
+        "english": "He will be continuing his education in the US.",
+        "chinese": "他将在美国继续求学。"
+      },
+      {
+        "english": "英文例句: I felt too sick to continue.",
+        "chinese": "我感觉很难受，无法继续下去了。"
+      },
+      {
+        "english": "英文例句:The road continues northwards to the border.",
+        "chinese": "中文例句: 这条路往北一直延伸到边境。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "继续，连续；延伸",
+        "english": "to not stop happening, existing, or doing something"
+      }
+    ]
+  },
+  {
+    "name": "bitWrite",
+    "trans": [
+      "写入位; 在特定位上写入值"
+    ]
+  },
+  {
+    "name": "highByte",
+    "trans": [
+      "高字节; 返回值的高字节"
+    ]
+  },
+  {
+    "name": "constrain",
+    "trans": [
+      "限制; 将值限制在范围内"
+    ],
+    "usphone": "kən'stren",
+    "ukphone": "kən'streɪn",
+    "sentences": [
+      {
+        "english": "Poor soil has constrained the level of crop production.",
+        "chinese": "贫瘠的土地限制了农作物的产量。"
+      },
+      {
+        "english": "Women’s employment opportunities are often severely constrained by family commitments.",
+        "chinese": "女性的就业机会常常受到家庭责任的严重限制。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "限制",
+        "english": "to limit something"
+      }
+    ]
+  },
+  {
+    "name": "reference",
+    "trans": [
+      "参考; 指向变量或函数"
+    ],
+    "usphone": "'rɛfrəns",
+    "ukphone": "'ref(ə)r(ə)ns",
+    "sentences": [
+      {
+        "english": "Keep their price list on file for future reference (= so that it can be looked at in the future ) ..",
+        "chinese": "将他们的价目表存档，以供日后参考。"
+      },
+      {
+        "english": "There is no direct reference to her own childhood in the novel.",
+        "chinese": "小说里没有直接提及她自己的童年。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "参考；提及",
+        "english": "the act of looking at sth for information"
+      }
+    ]
+  },
+  {
+    "name": "analogRead",
+    "trans": [
+      "模拟读取; 从模拟引脚读取值"
+    ]
+  },
+  {
+    "name": "randomSeed",
+    "trans": [
+      "随机种子; 设置生成随机数的起始点"
+    ]
+  },
+  {
+    "name": "digitalRead",
+    "trans": [
+      "数字读取; 从数字引脚读取值"
+    ]
+  },
+  {
+    "name": "analogWrite",
+    "trans": [
+      "模拟写入; 向引脚写入模拟值"
+    ]
+  },
+  {
+    "name": "digitalWrite",
+    "trans": [
+      "数字写入; 向引脚写入数字值"
+    ]
+  },
+  {
+    "name": "detachInterrupt",
+    "trans": [
+      "分离中断; 禁用引脚上的中断"
+    ]
+  },
+  {
+    "name": "attachInterrupt",
+    "trans": [
+      "连接中断; 启用引脚上的中断"
+    ]
+  },
+  {
+    "name": "delayMicroseconds",
+    "trans": [
+      "微秒延迟; 暂停程序执行几微秒"
+    ]
+  }
 ]

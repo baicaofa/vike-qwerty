@@ -1,302 +1,1770 @@
 [
-    {
-        "name": "personal officer",
-        "trans": ["n. 人事部员工"]
-    },
-    {
-        "name": "booking form",
-        "trans": ["n. 预定表格"]
-    },
-    {
-        "name": "file",
-        "trans": ["n. 文件"]
-    },
-    {
-        "name": "cabin",
-        "trans": ["n. 船舱"]
-    },
-    {
-        "name": "bill",
-        "trans": ["n. 清单"]
-    },
-    {
-        "name": "neutral",
-        "trans": ["adj. 中立的"]
-    },
-    {
-        "name": "luggage",
-        "trans": ["n. 行李"]
-    },
-    {
-        "name": "documentary film",
-        "trans": ["n. 纪录片"]
-    },
-    {
-        "name": "unloaded",
-        "trans": ["adj. 卸货"]
-    },
-    {
-        "name": "parking lot",
-        "trans": ["n. 停车场"]
-    },
-    {
-        "name": "comedy",
-        "trans": ["n. 喜剧"]
-    },
-    {
-        "name": "campsite",
-        "trans": ["n. 营地"]
-    },
-    {
-        "name": "fiction",
-        "trans": ["n. 小说"]
-    },
-    {
-        "name": "metal paint",
-        "trans": ["n. 金属漆"]
-    },
-    {
-        "name": "meadow",
-        "trans": ["n. 草地"]
-    },
-    {
-        "name": "metal detector",
-        "trans": ["n. 金属探测器"]
-    },
-    {
-        "name": "cash point",
-        "trans": ["n. 提款机"]
-    },
-    {
-        "name": "label",
-        "trans": ["n. 标签"]
-    },
-    {
-        "name": "ink",
-        "trans": ["n. 墨水"]
-    },
-    {
-        "name": "statue",
-        "trans": ["n. 雕塑"]
-    },
-    {
-        "name": "seed",
-        "trans": ["n. 种子"]
-    },
-    {
-        "name": "award",
-        "trans": ["n. 奖品"]
-    },
-    {
-        "name": "vehicle",
-        "trans": ["n. 车辆"]
-    },
-    {
-        "name": "herb",
-        "trans": ["n. 草药"]
-    },
-    {
-        "name": "excursion",
-        "trans": ["n. 短途旅行"]
-    },
-    {
-        "name": "blanket",
-        "trans": ["n. 毛毯"]
-    },
-    {
-        "name": "extra",
-        "trans": ["adj. 额外的"]
-    },
-    {
-        "name": "coal",
-        "trans": ["n. 煤"]
-    },
-    {
-        "name": "terrain",
-        "trans": ["n. 地形"]
-    },
-    {
-        "name": "aspect",
-        "trans": ["n. 方面"]
-    },
-    {
-        "name": "allow",
-        "trans": ["v. 允许"]
-    },
-    {
-        "name": "recommend",
-        "trans": ["v. 推荐"]
-    },
-    {
-        "name": "mine",
-        "trans": ["n. 矿"]
-    },
-    {
-        "name": "reception",
-        "trans": ["n. 接待处"]
-    },
-    {
-        "name": "technological",
-        "trans": ["adj. 科技的"]
-    },
-    {
-        "name": "staff",
-        "trans": ["n. 职员"]
-    },
-    {
-        "name": "insight",
-        "trans": ["n. 洞察力"]
-    },
-    {
-        "name": "elevator",
-        "trans": ["n. 电梯"]
-    },
-    {
-        "name": "underground",
-        "trans": ["n. 地铁"]
-    },
-    {
-        "name": "employee",
-        "trans": ["n. 员工"]
-    },
-    {
-        "name": "notice board",
-        "trans": ["n. 布告栏"]
-    },
-    {
-        "name": "supportive",
-        "trans": ["adj. 支持的"]
-    },
-    {
-        "name": "budget",
-        "trans": ["n. 预算"]
-    },
-    {
-        "name": "responsibility",
-        "trans": ["n. 责任"]
-    },
-    {
-        "name": "atmosphere",
-        "trans": ["n. 气氛"]
-    },
-    {
-        "name": "guest",
-        "trans": ["n. 客人"]
-    },
-    {
-        "name": "screen",
-        "trans": ["n. 屏幕"]
-    },
-    {
-        "name": "deliver",
-        "trans": ["v. 递送"]
-    },
-    {
-        "name": "store room",
-        "trans": ["n. 储藏室"]
-    },
-    {
-        "name": "main hall",
-        "trans": ["n. 大厅"]
-    },
-    {
-        "name": "lobby",
-        "trans": ["n. 大厅"]
-    },
-    {
-        "name": "tax",
-        "trans": ["n. 税"]
-    },
-    {
-        "name": "accountant",
-        "trans": ["n. 会计师"]
-    },
-    {
-        "name": "architecture",
-        "trans": ["n. 建筑"]
-    },
-    {
-        "name": "waterfall",
-        "trans": ["n. 瀑布"]
-    },
-    {
-        "name": "rent",
-        "trans": ["n. 租金"]
-    },
-    {
-        "name": "solar energy",
-        "trans": ["n. 太阳能"]
-    },
-    {
-        "name": "villa",
-        "trans": ["n. 别墅"]
-    },
-    {
-        "name": "picnic",
-        "trans": ["n. 野餐"]
-    },
-    {
-        "name": "pond",
-        "trans": ["n. 池塘"]
-    },
-    {
-        "name": "pool",
-        "trans": ["n. 游泳池"]
-    },
-    {
-        "name": "agent",
-        "trans": ["n. 中介"]
-    },
-    {
-        "name": "real estate",
-        "trans": ["n. 房地产"]
-    },
-    {
-        "name": "worthwhile",
-        "trans": ["adj. 值得的"]
-    },
-    {
-        "name": "location",
-        "trans": ["n. 位置"]
-    },
-    {
-        "name": "suitable",
-        "trans": ["adj. 适当的"]
-    },
-    {
-        "name": "decorate",
-        "trans": ["v. 装饰"]
-    },
-    {
-        "name": "appointment",
-        "trans": ["n. 约定"]
-    },
-    {
-        "name": "single",
-        "trans": ["adj. 单一的"]
-    },
-    {
-        "name": "garage",
-        "trans": ["n. 车库"]
-    },
-    {
-        "name": "spare room",
-        "trans": ["n. 空房"]
-    },
-    {
-        "name": "shade",
-        "trans": ["n. 树荫"]
-    },
-    {
-        "name": "string",
-        "trans": ["n. 线"]
-    },
-    {
-        "name": "lettuce",
-        "trans": ["n. 生菜"]
-    },
-    {
-        "name": "spoon",
-        "trans": ["n. 勺子"]
-    }
+  {
+    "name": "personal officer",
+    "trans": [
+      "n. 人事部员工"
+    ]
+  },
+  {
+    "name": "booking form",
+    "trans": [
+      "n. 预定表格"
+    ]
+  },
+  {
+    "name": "file",
+    "trans": [
+      "n. 文件"
+    ],
+    "usphone": "faɪl",
+    "ukphone": "faɪl",
+    "sentences": [
+      {
+        "english": "We will keep your details on file (= store them for later use ) .",
+        "chinese": "我们将把你的详细资料存档。"
+      },
+      {
+        "english": "The contracts are filed alphabetically.",
+        "chinese": "这些合同是按字母顺序归档的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "档案",
+        "english": "a set of papers, records etc that contain information about a particular person or subject"
+      },
+      {
+        "pos": "v",
+        "chinese": "把…归档",
+        "english": "to keep papers, documents etc in a particular place so that you can find them easily"
+      }
+    ]
+  },
+  {
+    "name": "cabin",
+    "trans": [
+      "n. 船舱"
+    ],
+    "usphone": "'kæbɪn",
+    "ukphone": "'kæbɪn",
+    "sentences": [
+      {
+        "english": "a log cabin",
+        "chinese": "原木小屋"
+      },
+      {
+        "english": "英文例句He showed her to a small cabin.",
+        "chinese": "他把她带到一间小房舱。"
+      },
+      {
+        "english": "He sat quietly in the first class cabin of the flight looking tired.",
+        "chinese": "他静静地坐在班机的头等舱内，看上去有些疲惫。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "小屋；船舱；机舱",
+        "english": "a small house, especially one built of wood in an area of forest or mountains"
+      }
+    ]
+  },
+  {
+    "name": "bill",
+    "trans": [
+      "n. 清单"
+    ],
+    "usphone": "bɪl",
+    "ukphone": "bɪl",
+    "sentences": [
+      {
+        "english": "Have you paid the phone bill?",
+        "chinese": "电话费你付了吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "账单；票据；招贴",
+        "english": "a written list showing how much you have to pay for services you have received, work that has been done etc"
+      }
+    ]
+  },
+  {
+    "name": "neutral",
+    "trans": [
+      "adj. 中立的"
+    ],
+    "usphone": "'nʊtrəl",
+    "ukphone": "'njuːtr(ə)l",
+    "sentences": [
+      {
+        "english": "I always tried to remain neutral when they started arguing.",
+        "chinese": "他们争论起来的时候我总是努力保持中立。"
+      },
+      {
+        "english": "Clive decided to adopt a neutral position.",
+        "chinese": "克莱夫决定采取中立立场。"
+      },
+      {
+        "english": "The British government acted as a neutral observer during the talks.",
+        "chinese": "英国政府在会谈中扮演了中立观察员的角色。"
+      },
+      {
+        "english": "the neutral language of an official news report",
+        "chinese": "官方新闻报道采用的中性语言"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "中立的；中性的",
+        "english": "not supporting any of the people or groups involved in an argument or disagreement"
+      }
+    ]
+  },
+  {
+    "name": "luggage",
+    "trans": [
+      "n. 行李"
+    ],
+    "usphone": "'lʌɡɪdʒ",
+    "ukphone": "'lʌgɪdʒ",
+    "sentences": [
+      {
+        "english": "They searched his luggage for illegal drugs.",
+        "chinese": "他们搜查他的行李看是否藏有毒品。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "行李；皮箱，皮包",
+        "english": "the cases, bags etc that you carry when you are travelling"
+      }
+    ]
+  },
+  {
+    "name": "documentary film",
+    "trans": [
+      "n. 纪录片"
+    ]
+  },
+  {
+    "name": "unloaded",
+    "trans": [
+      "adj. 卸货"
+    ]
+  },
+  {
+    "name": "parking lot",
+    "trans": [
+      "n. 停车场"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "If you drive to work, park at the far end of the parking lot.",
+        "chinese": "如果你开车上班，那么就将汽车泊在停车场的最远端。"
+      },
+      {
+        "english": "They emerged from the darkness and gathered like pilgrims, lining up beneath floodlights in the parking lot.",
+        "chinese": "他们从暗处冒出，像朝圣者一样汇聚在一起，在停车场的强光灯下排队。"
+      },
+      {
+        "english": "Sitting in our usual parking lot, I was holding my book, watching her over the top of it.",
+        "chinese": "我们像往常一样在那个停车场里坐着，我拿了本书，从书的上边向她望去。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "停车场",
+        "english": "an open area for cars to park in"
+      }
+    ]
+  },
+  {
+    "name": "comedy",
+    "trans": [
+      "n. 喜剧"
+    ],
+    "usphone": "'kɑmədi",
+    "ukphone": "'kɒmədi",
+    "sentences": [
+      {
+        "english": "a career in stand-up comedy",
+        "chinese": "单口喜剧表演职业"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 喜剧， 喜剧性",
+        "english": "entertainment that is intended to make people laugh"
+      }
+    ]
+  },
+  {
+    "name": "campsite",
+    "trans": [
+      "n. 营地"
+    ],
+    "usphone": "'kæmpsaɪt",
+    "ukphone": "'kæmpsaɪt",
+    "sentences": [
+      {
+        "english": "Then the journey continues on to a campsite where camels await you.",
+        "chinese": "然后继续前往一个营地，在那里会有骆驼恭候大驾。"
+      },
+      {
+        "english": "Standing just 100 feet from his wife, Kirsta, and two toddlers at the campsite, Britton tried to run away from the lion into a clearing, but the lion followed him.",
+        "chinese": "在离他仅有100英尺的营地里，有他的妻子克里斯塔和两个刚学走路的孩子。 布里顿试图跑到开阔地，但是狮子却跟随着他。"
+      },
+      {
+        "english": "The smell of the food might attract dangerous animals to our campsite.",
+        "chinese": "食物的气味还可能会招引危险的动物到我们的营地来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "营地",
+        "english": "an area where people can camp, often with a water supply and toilets"
+      }
+    ]
+  },
+  {
+    "name": "fiction",
+    "trans": [
+      "n. 小说"
+    ],
+    "usphone": "'fɪkʃən",
+    "ukphone": "'fɪkʃ(ə)n",
+    "sentences": [
+      {
+        "english": "romantic fiction",
+        "chinese": "爱情小说"
+      },
+      {
+        "english": "historical fiction",
+        "chinese": "历史小说"
+      },
+      {
+        "english": "For years he managed to keep up the fiction that he was not married.",
+        "chinese": "多年来他设法一直给人一种未婚的假象。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "小说；虚构，杜撰",
+        "english": "books and stories about imaginary people and events"
+      }
+    ]
+  },
+  {
+    "name": "metal paint",
+    "trans": [
+      "n. 金属漆"
+    ]
+  },
+  {
+    "name": "meadow",
+    "trans": [
+      "n. 草地"
+    ],
+    "usphone": "'mɛdo",
+    "ukphone": "'medəʊ",
+    "sentences": [
+      {
+        "english": "The meadow has been ploughed up.",
+        "chinese": "那片草地已用犁翻过。"
+      },
+      {
+        "english": "The colt bounded through the meadow.",
+        "chinese": "那匹马驹跳着跑过牧场。"
+      },
+      {
+        "english": "There are many lambs capering in the meadow.",
+        "chinese": "很多小羊在草地上蹦蹦跳跳。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "草地；牧场",
+        "english": "a field with wild grass and flowers"
+      }
+    ]
+  },
+  {
+    "name": "metal detector",
+    "trans": [
+      "n. 金属探测器"
+    ]
+  },
+  {
+    "name": "cash point",
+    "trans": [
+      "n. 提款机"
+    ]
+  },
+  {
+    "name": "label",
+    "trans": [
+      "n. 标签"
+    ],
+    "usphone": "ˈlebəl",
+    "ukphone": "'leɪbl",
+    "sentences": [
+      {
+        "english": "a luggage label",
+        "chinese": "行李标签"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "标签；标记，符号",
+        "english": "a piece of paper or another material that is attached to something and gives information about it"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 贴标签于； 把…称为",
+        "english": "to attach a label onto something or write information on something"
+      }
+    ]
+  },
+  {
+    "name": "ink",
+    "trans": [
+      "n. 墨水"
+    ],
+    "usphone": "ɪŋk",
+    "ukphone": "ɪŋk",
+    "sentences": [
+      {
+        "english": "Please write in black ink.",
+        "chinese": "请用黑色墨水书写。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "墨水，油墨",
+        "english": "a coloured liquid that you use for writing, printing or drawing"
+      }
+    ]
+  },
+  {
+    "name": "statue",
+    "trans": [
+      "n. 雕塑"
+    ],
+    "usphone": "'stætʃu",
+    "ukphone": "'stætjuː; -tʃuː",
+    "sentences": [
+      {
+        "english": "Churchill’s statue stands outside the parliament building.",
+        "chinese": "丘吉尔的塑像矗立在议会大厦外。"
+      },
+      {
+        "english": "A bronze statue was erected in his honour.",
+        "chinese": "人们立了一座铜像纪念他。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雕像，塑像",
+        "english": "an image of a person or animal that is made in solid material such as stone or metal and is usually large"
+      },
+      {
+        "pos": "vt",
+        "chinese": "以雕像装饰",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "seed",
+    "trans": [
+      "n. 种子"
+    ],
+    "usphone": "sid",
+    "ukphone": "siːd",
+    "sentences": [
+      {
+        "english": "He’s been top seed for the past two years.",
+        "chinese": "他在过去两年中一直是头号种子选手。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "种子；根据；精液；萌芽；子孙；原由",
+        "english": "a player or team in a competition that is given a particular position, according to how likely they are to win"
+      },
+      {
+        "pos": "v",
+        "chinese": "播种；结实；成熟；去…籽",
+        "english": "to remove seeds from fruit or vegetables"
+      }
+    ]
+  },
+  {
+    "name": "award",
+    "trans": [
+      "n. 奖品"
+    ],
+    "usphone": "ə'wɔrd",
+    "ukphone": "ə'wɔ:d",
+    "sentences": [
+      {
+        "english": "Moodie has been awarded a golf scholarship at the University of Hawaii.",
+        "chinese": "穆迪获授夏威夷大学高尔夫奖学金。"
+      },
+      {
+        "english": "The movie has won a number of awards.",
+        "chinese": "该片获得了多个奖项。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "授予；判给",
+        "english": "to officially give someone something such as a prize or money to reward them for something they have done"
+      },
+      {
+        "pos": "n",
+        "chinese": "奖(金)",
+        "english": "something such as a prize or money given to someone to reward them for something they have done"
+      }
+    ]
+  },
+  {
+    "name": "vehicle",
+    "trans": [
+      "n. 车辆"
+    ],
+    "usphone": "'viːɪkl",
+    "ukphone": "ˈvi:əkl",
+    "sentences": [
+      {
+        "english": "a description of the stolen vehicle",
+        "chinese": "对被盗车辆的描述"
+      },
+      {
+        "english": "Have you locked your vehicle?",
+        "chinese": "你锁车了吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "车辆",
+        "english": "a machine with an engine that is used to take people or things from one place to another, such as a car, bus, or truck"
+      }
+    ]
+  },
+  {
+    "name": "herb",
+    "trans": [
+      "n. 草药"
+    ],
+    "usphone": "ɝb",
+    "ukphone": "hɜːb",
+    "sentences": [
+      {
+        "english": "Sprinkle the dish with chopped fresh herbs.",
+        "chinese": "在菜肴上撒些切碎的新鲜香草。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "香草，药草",
+        "english": "a small plant that is used to improve the taste of food, or to make medicine"
+      }
+    ]
+  },
+  {
+    "name": "excursion",
+    "trans": [
+      "n. 短途旅行"
+    ],
+    "usphone": "ɪk'skɝʒn",
+    "ukphone": "ɪk'skɜːʃ(ə)n; ek-",
+    "sentences": [
+      {
+        "english": "They've gone on an excursion to York.",
+        "chinese": "他们到约克旅游去了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "远足；短途旅行",
+        "english": "a short journey made for pleasure, especially one that has been organized for a group of people"
+      }
+    ]
+  },
+  {
+    "name": "blanket",
+    "trans": [
+      "n. 毛毯"
+    ],
+    "usphone": "'blæŋkɪt",
+    "ukphone": "'blæŋkɪt",
+    "sentences": [
+      {
+        "english": "She huddled herself in the blanket.",
+        "chinese": "她用毯子紧紧裹住自己。"
+      },
+      {
+        "english": "They muffled up her head with a blanket.",
+        "chinese": "他们用毯子蒙住了她的头。"
+      },
+      {
+        "english": "He lapped his daughter in a warm blanket.",
+        "chinese": "他把女儿裹在一个暖和的毯子里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "毯子",
+        "english": "a cover for a bed, usually made of wool"
+      }
+    ]
+  },
+  {
+    "name": "extra",
+    "trans": [
+      "adj. 额外的"
+    ],
+    "usphone": "'ɛkstrə",
+    "ukphone": "'ekstrə",
+    "sentences": [
+      {
+        "english": "Could you get an extra loaf of bread?",
+        "chinese": "你能多拿一条面包吗？"
+      },
+      {
+        "english": "Allow extra time for your journey.",
+        "chinese": "要给你的旅程多留出点时间。"
+      },
+      {
+        "english": "Drivers are advised to take extra care.",
+        "chinese": "建议司机开车要格外小心。"
+      },
+      {
+        "english": "You’re going to have to work extra hard to pass the exam.",
+        "chinese": "你要格外用功才能通过考试。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "额外的",
+        "english": "more of something, in addition to the usual or standard amount or number"
+      },
+      {
+        "pos": "adv",
+        "chinese": "特别地",
+        "english": "used to emphasize an adjective or adverb"
+      }
+    ]
+  },
+  {
+    "name": "coal",
+    "trans": [
+      "n. 煤"
+    ],
+    "usphone": "kol",
+    "ukphone": "kəʊl",
+    "sentences": [
+      {
+        "english": "Put some coal on the fire.",
+        "chinese": "往火里加点煤。"
+      },
+      {
+        "english": "the coal mining industry",
+        "chinese": "采煤业"
+      },
+      {
+        "english": "a lump of coal",
+        "chinese": "一块煤"
+      },
+      {
+        "english": "Red hot coals glowed in the grate.",
+        "chinese": "炽热火红的煤块在炉栅里面发着光。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "煤；煤块",
+        "english": "a hard black mineral which is dug out of the ground and burnt to produce heat"
+      }
+    ]
+  },
+  {
+    "name": "terrain",
+    "trans": [
+      "n. 地形"
+    ],
+    "usphone": "tə'reɪn",
+    "ukphone": "təˈreɪn",
+    "sentences": [
+      {
+        "english": "rocky terrain",
+        "chinese": "多石的地形"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[地理] 地形，地势；领域；地带",
+        "english": "a particular type of land"
+      }
+    ]
+  },
+  {
+    "name": "aspect",
+    "trans": [
+      "n. 方面"
+    ],
+    "usphone": "'æspɛkt",
+    "ukphone": "'æspekt",
+    "sentences": [
+      {
+        "english": "a south-facing aspect",
+        "chinese": "朝南方向"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "方面",
+        "english": "one part of a situation, idea, plan etc that has many parts"
+      }
+    ]
+  },
+  {
+    "name": "allow",
+    "trans": [
+      "v. 允许"
+    ],
+    "usphone": "ə'laʊ",
+    "ukphone": "ə'laʊ",
+    "sentences": [
+      {
+        "english": "We don’t allow diving in the pool.",
+        "chinese": "泳池内禁止跳水。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "允许，准许；任",
+        "english": "to let someone do or have something, or let something happen"
+      }
+    ]
+  },
+  {
+    "name": "recommend",
+    "trans": [
+      "v. 推荐"
+    ],
+    "usphone": "'rɛkə'mɛnd",
+    "ukphone": "ˌrekəˈmend",
+    "sentences": [
+      {
+        "english": "I recommend the butter chicken - it’s delicious.",
+        "chinese": "我推荐黄油焗鸡，非常好吃。"
+      },
+      {
+        "english": "Can you recommend a good lawyer?",
+        "chinese": "你能介绍一位好律师吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "推荐",
+        "english": "to say that something or someone is good, or suggest them for a particular purpose or job"
+      }
+    ]
+  },
+  {
+    "name": "mine",
+    "trans": [
+      "n. 矿"
+    ],
+    "usphone": "maɪn",
+    "ukphone": "maɪn",
+    "sentences": [
+      {
+        "english": "It was Glen’s idea, not mine.",
+        "chinese": "这是格伦的主意，不是我的。"
+      },
+      {
+        "english": "‘Is that your car?’ ‘No, mine is parked over the road.’",
+        "chinese": "“那是你的车吗？”“不是，我的车停在路对面。”"
+      },
+      {
+        "english": "You’ve got good legs – mine are too thin.",
+        "chinese": "你的腿很美——我的腿太细了。"
+      },
+      {
+        "english": "His English is better than mine.",
+        "chinese": "他英语比我好。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "我的",
+        "english": "used by the person speaking or writing to refer to something that belongs to or is connected with himself or herself"
+      }
+    ]
+  },
+  {
+    "name": "reception",
+    "trans": [
+      "n. 接待处"
+    ],
+    "usphone": "rɪ'sɛpʃən",
+    "ukphone": "rɪˈsepʃn",
+    "sentences": [
+      {
+        "english": "She was unsure of her reception after everything that had happened.",
+        "chinese": "发生了这些事后，她对自己是否还受欢迎没把握。"
+      },
+      {
+        "english": "The plans received a mixed reception from unions (= some people liked them, others did not ) .",
+        "chinese": "各工会对这些计划反响不一。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "接待；反响",
+        "english": "a particular type of welcome for someone, or a particular type of reaction to their ideas, work etc"
+      }
+    ]
+  },
+  {
+    "name": "technological",
+    "trans": [
+      "adj. 科技的"
+    ],
+    "usphone": "tɛknə'lɑdʒɪkl",
+    "ukphone": "teknə'lɒdʒɪk(ə)l",
+    "sentences": [
+      {
+        "english": "The steam engine was the greatest technological advance of the 19th century.",
+        "chinese": "蒸汽机是19世纪最伟大的技术进步。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "科技的",
+        "english": "related to technology"
+      }
+    ]
+  },
+  {
+    "name": "staff",
+    "trans": [
+      "n. 职员"
+    ],
+    "usphone": "stæf",
+    "ukphone": "stɑːf",
+    "sentences": [
+      {
+        "english": "The staff were very good.",
+        "chinese": "员工们都很棒。"
+      },
+      {
+        "english": "10 staff were allocated to the task.",
+        "chinese": "10名员工被分派做这项任务。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "全体职员，员工；工作人员；参谋",
+        "english": "the people who work for an organization"
+      }
+    ]
+  },
+  {
+    "name": "insight",
+    "trans": [
+      "n. 洞察力"
+    ],
+    "usphone": "'ɪn'saɪt",
+    "ukphone": "'ɪnsaɪt",
+    "sentences": [
+      {
+        "english": "a writer of great insight",
+        "chinese": "有深刻洞察力的作家"
+      },
+      {
+        "english": "The book gives us fascinating insights into life in Mexico.",
+        "chinese": "这本书生动地表现了墨西哥的生活。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "洞察力；洞悉，见识",
+        "english": "the ability to understand and realize what people or situations are really like"
+      }
+    ]
+  },
+  {
+    "name": "elevator",
+    "trans": [
+      "n. 电梯"
+    ],
+    "usphone": "'ɛlɪvetɚ",
+    "ukphone": "'elɪveɪtə",
+    "sentences": [
+      {
+        "english": "We’ll have to take the elevator.",
+        "chinese": "我们只好坐电梯了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "电梯；升降机",
+        "english": "a machine that takes people and goods from one level to another in a building"
+      }
+    ]
+  },
+  {
+    "name": "underground",
+    "trans": [
+      "n. 地铁"
+    ],
+    "usphone": "ʌndɚˈɡraʊnd",
+    "ukphone": "ʌndə'graʊnd",
+    "sentences": [
+      {
+        "english": "This animal spends most of its life underground.",
+        "chinese": "这种动物一生中的大部分时间都待在地下。"
+      },
+      {
+        "english": "nuclear waste buried deep underground",
+        "chinese": "深埋在地下的核废物"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "在地下；秘密地",
+        "english": "under the earth’s surface"
+      },
+      {
+        "pos": "adj",
+        "chinese": "地下的；秘密的；先锋派的",
+        "english": "below the surface of the earth"
+      },
+      {
+        "pos": "n",
+        "chinese": "地下；地铁；地道；地下组织；秘密活动；先锋派团体",
+        "english": "a railway system under the ground"
+      }
+    ]
+  },
+  {
+    "name": "employee",
+    "trans": [
+      "n. 员工"
+    ],
+    "usphone": "ɪm'plɔɪi",
+    "ukphone": "emplɒɪ'iː; em'plɒɪiː; ɪm-",
+    "sentences": [
+      {
+        "english": "a government employee",
+        "chinese": "政府雇员"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "受雇者，雇员，雇工",
+        "english": "someone who is paid to work for someone else"
+      }
+    ]
+  },
+  {
+    "name": "notice board",
+    "trans": [
+      "n. 布告栏"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "Why don't you go and put it up on the college notice board?",
+        "chinese": "你干嘛不去学校的公告牌上打个广告？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "[管理] 布告牌；警告牌",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "supportive",
+    "trans": [
+      "adj. 支持的"
+    ],
+    "usphone": "sə'pɔrtɪv",
+    "ukphone": "sə'pɔːtɪv",
+    "sentences": [
+      {
+        "english": "My family were very supportive throughout the divorce.",
+        "chinese": "离婚过程中我的家人自始至终都很支持我。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "支持的；支援的；赞助的",
+        "english": "giving help or encouragement, especially to someone who is in a difficult situation – used to show approval"
+      }
+    ]
+  },
+  {
+    "name": "budget",
+    "trans": [
+      "n. 预算"
+    ],
+    "usphone": "'bʌdʒɪt",
+    "ukphone": "'bʌdʒɪt",
+    "sentences": [
+      {
+        "english": "We’ll have to budget more carefully.",
+        "chinese": "我们必须更仔细地安排开支。"
+      },
+      {
+        "english": "This scheme enables you to budget the cost through fixed monthly payments.",
+        "chinese": "这个计划可以让你把费用分摊在每个月里等额偿还。"
+      },
+      {
+        "english": "Cheap flights are available from budget travel agents from $240.",
+        "chinese": "起价$240的廉价机票可从一些经济旅行社那里买到。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "规划，安排；编预算",
+        "english": "to carefully plan and control how much money you spend and what you will buy with it"
+      },
+      {
+        "pos": "adj",
+        "chinese": " 低廉的， 收费公道的",
+        "english": "Budget is used in advertising to suggest that something is being sold cheaply"
+      },
+      {
+        "pos": "n",
+        "chinese": "预算，预算拨款",
+        "english": "the money that is available to an organization or person, or a plan of how it will be spent"
+      }
+    ]
+  },
+  {
+    "name": "responsibility",
+    "trans": [
+      "n. 责任"
+    ],
+    "usphone": "rɪˌspɑːnsəˈbɪləti",
+    "ukphone": "rɪˌspɒnsə'bɪlətɪ",
+    "sentences": [
+      {
+        "english": "Kelly’s promotion means more money and more responsibility.",
+        "chinese": "凯利获得提升，这意味着钱多了，责任也更大了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "责任",
+        "english": "a duty to be in charge of someone or something, so that you make decisions and can be blamed if something bad happens"
+      }
+    ]
+  },
+  {
+    "name": "atmosphere",
+    "trans": [
+      "n. 气氛"
+    ],
+    "usphone": "'ætməsfɪr",
+    "ukphone": "'ætməsfɪə(r)",
+    "sentences": [
+      {
+        "english": "The hotel had a lovely relaxed atmosphere .",
+        "chinese": "那家宾馆的气氛轻松愉快。"
+      },
+      {
+        "english": "The atmosphere at home was rather tense.",
+        "chinese": "家里的气氛很紧张。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "气氛，空气",
+        "english": "the feeling that an event or place gives you"
+      }
+    ]
+  },
+  {
+    "name": "guest",
+    "trans": [
+      "n. 客人"
+    ],
+    "usphone": "ɡɛst",
+    "ukphone": "gest",
+    "sentences": [
+      {
+        "english": "a banquet for 250 distinguished guests",
+        "chinese": "250位贵宾出席的宴会"
+      },
+      {
+        "english": "Among the invited guests were Jerry Brown and Elihu Harris.",
+        "chinese": "受邀的嘉宾中有杰里·布朗和伊莱休·哈里斯。"
+      },
+      {
+        "english": "The actress was guest of honour (= the most important guest ) at the launch.",
+        "chinese": "这位女演员是首发式上的贵宾。"
+      },
+      {
+        "english": "I’ve nearly finished the guest list for the wedding.",
+        "chinese": "参加婚礼的嘉宾名单我差不多准备好了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "客人，宾客；顾客",
+        "english": "someone who is invited to an event or special occasion"
+      },
+      {
+        "pos": "v",
+        "chinese": "款待，招待",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "客人的；特邀的，客座的",
+        "english": "for guests to use"
+      }
+    ]
+  },
+  {
+    "name": "screen",
+    "trans": [
+      "n. 屏幕"
+    ],
+    "usphone": "skrin",
+    "ukphone": "skriːn",
+    "sentences": [
+      {
+        "english": "a computer with an 18-inch colour screen",
+        "chinese": "带18英寸彩色屏幕的电脑"
+      },
+      {
+        "english": "He went on staring at the TV screen .",
+        "chinese": "他继续盯着电视屏幕看。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "屏幕，银幕；屏风；帘，纱窗",
+        "english": "the part of a television or computer where the picture or information appears"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 掩蔽， 遮蔽； 放映， 播放； 审查， 甄别",
+        "english": "if something screens something else, it is in front of it and hides it"
+      }
+    ]
+  },
+  {
+    "name": "deliver",
+    "trans": [
+      "v. 递送"
+    ],
+    "usphone": "dɪ'lɪvɚ",
+    "ukphone": "dɪ'lɪvə(r)",
+    "sentences": [
+      {
+        "english": "The morning mail has just been delivered.",
+        "chinese": "早晨的邮件刚送到。"
+      },
+      {
+        "english": "Do you deliver on Saturdays?",
+        "chinese": "星期六你们送货吗？"
+      },
+      {
+        "english": "I’m having some flowers delivered for her birthday.",
+        "chinese": "我在安排人给她送花祝贺生日。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "发表，递送",
+        "english": "to take goods, letters, packages etc to a particular place or person"
+      }
+    ]
+  },
+  {
+    "name": "store room",
+    "trans": [
+      "n. 储藏室"
+    ]
+  },
+  {
+    "name": "main hall",
+    "trans": [
+      "n. 大厅"
+    ]
+  },
+  {
+    "name": "lobby",
+    "trans": [
+      "n. 大厅"
+    ],
+    "usphone": "'lɑbi",
+    "ukphone": "'lɒbɪ",
+    "sentences": [
+      {
+        "english": "a hotel lobby",
+        "chinese": "宾馆大堂"
+      },
+      {
+        "english": "I’ll meet you in the entrance lobby.",
+        "chinese": "我们在入口大厅见。"
+      },
+      {
+        "english": "The group is lobbying for a reduction in defence spending.",
+        "chinese": "该团体正在游说政府削减国防开支。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "大堂",
+        "english": "a wide passage or large hall just inside the entrance to a public building"
+      },
+      {
+        "pos": "v",
+        "chinese": "游说",
+        "english": "to try to persuade the government or someone with political power that a law or situation should be changed"
+      }
+    ]
+  },
+  {
+    "name": "tax",
+    "trans": [
+      "n. 税"
+    ],
+    "usphone": "tæks",
+    "ukphone": "tæks",
+    "sentences": [
+      {
+        "english": "No-one enjoys paying tax.",
+        "chinese": "没人喜欢缴税。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "税，税款；负担",
+        "english": "an amount of money that you must pay to the government according to your income, property, goods etc and that is used to pay for public services"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 对…征税； 使负担重， 使费尽力气",
+        "english": "to charge a tax on something"
+      }
+    ]
+  },
+  {
+    "name": "accountant",
+    "trans": [
+      "n. 会计师"
+    ],
+    "usphone": "ə'kaʊntənt",
+    "ukphone": "ə'kaʊnt(ə)nt",
+    "sentences": [
+      {
+        "english": "The boss dropped an accountant from the payroll.",
+        "chinese": "老板把一名会计师从在职人员名单中除了名。"
+      },
+      {
+        "english": "The accountant checked this unnecessary spending in good time.",
+        "chinese": "会计及时卡住了这笔不必要的开支。"
+      },
+      {
+        "english": "They conferred with the accountant vis-à-vis the proposed budget.",
+        "chinese": "他们与会计商量有关预算提案的事。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "会计员",
+        "english": "someone whose job is to keep and check financial accounts, calculate taxes etc"
+      }
+    ]
+  },
+  {
+    "name": "architecture",
+    "trans": [
+      "n. 建筑"
+    ],
+    "usphone": "'ɑrkə'tɛktʃɚ",
+    "ukphone": "'ɑːkɪtektʃə",
+    "sentences": [
+      {
+        "english": "modern/classical/medieval etc architecture",
+        "chinese": "现代/古典/中世纪等的建筑风格"
+      },
+      {
+        "english": "He studied architecture at university.",
+        "chinese": "他在大学里读的是建筑学。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "建筑式样；建筑学",
+        "english": "the style and design of a building or buildings"
+      }
+    ]
+  },
+  {
+    "name": "waterfall",
+    "trans": [
+      "n. 瀑布"
+    ],
+    "usphone": "'wɔtɚfɔl",
+    "ukphone": "'wɔːtəfɔːl",
+    "sentences": [
+      {
+        "english": "...Angel Falls, the world's highest waterfall.",
+        "chinese": "…安赫尔瀑布，世界上最高的瀑布。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "瀑布；瀑布似的东西",
+        "english": "a place where water from a river or stream falls down over a cliff or rock"
+      }
+    ]
+  },
+  {
+    "name": "rent",
+    "trans": [
+      "n. 租金"
+    ],
+    "usphone": "rɛnt",
+    "ukphone": "rent",
+    "sentences": [
+      {
+        "english": "I pay the rent at the beginning of every month.",
+        "chinese": "我每逢月初交付房租。"
+      },
+      {
+        "english": "She rents out two rooms to students.",
+        "chinese": "她把两个房间出租给学生"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "租金",
+        "english": "the money that someone pays regularly to use a room, house etc that belongs to someone else"
+      },
+      {
+        "pos": "v",
+        "chinese": "出租",
+        "english": "to let someone live in a house, room etc that you own, or use your land, in return for money"
+      }
+    ]
+  },
+  {
+    "name": "solar energy",
+    "trans": [
+      "n. 太阳能"
+    ]
+  },
+  {
+    "name": "villa",
+    "trans": [
+      "n. 别墅"
+    ],
+    "usphone": "'vɪlə",
+    "ukphone": "'vɪlə",
+    "sentences": [
+      {
+        "english": "We rented a holiday villa in Spain.",
+        "chinese": "我们在西班牙租了一座假日别墅。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "别墅",
+        "english": "a house that you use or rent while you are on holiday"
+      }
+    ]
+  },
+  {
+    "name": "picnic",
+    "trans": [
+      "n. 野餐"
+    ],
+    "usphone": "'pɪknɪk",
+    "ukphone": "'pɪknɪk",
+    "sentences": [
+      {
+        "english": "We decided to have a picnic down by the lake.",
+        "chinese": "我们决定在湖边野餐。"
+      },
+      {
+        "english": "a picnic table",
+        "chinese": "野餐桌"
+      },
+      {
+        "english": "There is free parking for visitors, as well as a restaurant and picnic area (= a special area with tables where people can have a picnic ) .",
+        "chinese": "除了餐厅和野餐区，我们还为游客提供免费停车位。"
+      },
+      {
+        "english": "The area is very popular with picnickers.",
+        "chinese": "那个地区很受野餐者的欢迎。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "郊游，野餐",
+        "english": "if you have a picnic, you take food and eat it outdoors, especially in the country"
+      },
+      {
+        "pos": "v",
+        "chinese": "野餐",
+        "english": "to have a picnic"
+      }
+    ]
+  },
+  {
+    "name": "pond",
+    "trans": [
+      "n. 池塘"
+    ],
+    "usphone": "pɑnd",
+    "ukphone": "pɒnd",
+    "sentences": [
+      {
+        "english": "The path descends to  the pond.",
+        "chinese": "小路下斜通到池塘。"
+      },
+      {
+        "english": "This pond often catches in winter.",
+        "chinese": "这个池塘在冬天常常结冰。"
+      },
+      {
+        "english": "Wild flowers and grasses rimmed the little pond.",
+        "chinese": "各种野花和野草环绕着这个小池塘。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "筑成池塘",
+        "english": ""
+      },
+      {
+        "pos": "vi",
+        "chinese": "筑成池塘",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "池塘",
+        "english": "a small area of fresh water that is smaller than a lake, that is either natural or artificially made"
+      }
+    ]
+  },
+  {
+    "name": "pool",
+    "trans": [
+      "n. 游泳池"
+    ],
+    "usphone": "pul",
+    "ukphone": "puːl",
+    "sentences": [
+      {
+        "english": "They have a nice pool in their backyard.",
+        "chinese": "他们后院有个漂亮的游泳池。"
+      },
+      {
+        "english": "a shallow pool suitable for children",
+        "chinese": "适合儿童的浅水池"
+      },
+      {
+        "english": "pools of water with tiny fish in them",
+        "chinese": "有小鱼的一个个水池"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "游泳池；水塘，水池",
+        "english": "a hole or container that has been specially made and filled with water so that people can swim or play in it"
+      }
+    ]
+  },
+  {
+    "name": "agent",
+    "trans": [
+      "n. 中介"
+    ],
+    "usphone": "'edʒənt",
+    "ukphone": "'eɪdʒ(ə)nt",
+    "sentences": [
+      {
+        "english": "Our agent in Rio deals with all our Brazilian business.",
+        "chinese": "我们在里约热内卢的业务代表处理我们在巴西的全部业务。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "代理商",
+        "english": "a person or company that represents another person or company, especially in business"
+      }
+    ]
+  },
+  {
+    "name": "real estate",
+    "trans": [
+      "n. 房地产"
+    ]
+  },
+  {
+    "name": "worthwhile",
+    "trans": [
+      "adj. 值得的"
+    ],
+    "usphone": "'wɝθ'waɪl",
+    "ukphone": "wɜːθ'waɪl",
+    "sentences": [
+      {
+        "english": "He wanted to do a worthwhile job.",
+        "chinese": "他想做有意义的工作。"
+      },
+      {
+        "english": "We decided to give the money to a worthwhile cause (= one that helps people ) .",
+        "chinese": "我们决定把这笔钱投入到慈善事业中。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "有价值的",
+        "english": "if something is worthwhile, it is important or useful, or you gain something from it"
+      }
+    ]
+  },
+  {
+    "name": "location",
+    "trans": [
+      "n. 位置"
+    ],
+    "usphone": "lo'keʃən",
+    "ukphone": "lə(ʊ)'keɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "The main problem for engineers was the location of underground rivers in the area.",
+        "chinese": "工程师们面临的主要难题是要确定该地区地下河的位置。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "定位，测位",
+        "english": "the act of finding the position of something"
+      }
+    ]
+  },
+  {
+    "name": "suitable",
+    "trans": [
+      "adj. 适当的"
+    ],
+    "usphone": "'sutəbl",
+    "ukphone": "'suːtəb(ə)l",
+    "sentences": [
+      {
+        "english": "We are hoping to find a suitable school.",
+        "chinese": "我们希望能找到一所合适的学校。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "适当的；相配的",
+        "english": "having the right qualities for a particular person, purpose, or situation"
+      }
+    ]
+  },
+  {
+    "name": "decorate",
+    "trans": [
+      "v. 装饰"
+    ],
+    "usphone": "'dɛkəret",
+    "ukphone": "'dekəreɪt",
+    "sentences": [
+      {
+        "english": "The bathroom is decorated in green and yellow.",
+        "chinese": "浴室里是用绿色和黄色装潢的。"
+      },
+      {
+        "english": "We plan to spend the weekend decorating.",
+        "chinese": "我们计划用这个周末来装修。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "装饰，装璜，修饰",
+        "english": "to paint the inside of a room, put special paper on the walls etc"
+      }
+    ]
+  },
+  {
+    "name": "appointment",
+    "trans": [
+      "n. 约定"
+    ],
+    "usphone": "ə'pɔɪntmənt",
+    "ukphone": "ə'pɒɪntm(ə)nt",
+    "sentences": [
+      {
+        "english": "All consultations are by appointment only.",
+        "chinese": "就诊必须预约。"
+      },
+      {
+        "english": "Other changes included the appointment of a new Foreign Minister.",
+        "chinese": "其他变动包括任命了一位新的外交部长。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "约定，约会；任命",
+        "english": "an arrangement for a meeting at an agreed time and place, for a particular purpose"
+      }
+    ]
+  },
+  {
+    "name": "single",
+    "trans": [
+      "adj. 单一的"
+    ],
+    "usphone": "'sɪŋɡl",
+    "ukphone": "'sɪŋgl",
+    "sentences": [
+      {
+        "english": "A single tree gave shade from the sun.",
+        "chinese": "唯有一棵树遮阴。"
+      },
+      {
+        "english": "They won the game by a single point.",
+        "chinese": "他们仅以一分的优势赢得比赛。"
+      },
+      {
+        "english": "the highest price ever paid for a single work of art",
+        "chinese": "为单件艺术品所支付的最高价格"
+      },
+      {
+        "english": "a single-sex school",
+        "chinese": "单一性别的学校"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "单一的；独身的；单程的",
+        "english": "only one"
+      },
+      {
+        "pos": "n",
+        "chinese": "单程票；",
+        "english": "a ticket for a trip from one place to another but not back again"
+      }
+    ]
+  },
+  {
+    "name": "garage",
+    "trans": [
+      "n. 车库"
+    ],
+    "usphone": "gəˈrɑʒ; gəˈrɑdʒ",
+    "ukphone": "'ɡærɑ:ʒ",
+    "sentences": [
+      {
+        "english": "I’ll just go and put the car in the garage.",
+        "chinese": "我把车停到车库去。"
+      },
+      {
+        "english": "an automatic garage door",
+        "chinese": "车库自动门"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "车库",
+        "english": "a building for keeping a car in, usually next to or attached to a house"
+      }
+    ]
+  },
+  {
+    "name": "spare room",
+    "trans": [
+      "n. 空房"
+    ]
+  },
+  {
+    "name": "shade",
+    "trans": [
+      "n. 树荫"
+    ],
+    "usphone": "ʃed",
+    "ukphone": "ʃeɪd",
+    "sentences": [
+      {
+        "english": "a delicate/pale/rich/soft shade of red",
+        "chinese": "淡 / 浅 / 艳 / 柔和的红色"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "（色彩的）浓淡，深浅",
+        "english": "a particular type of red, green, blue etc"
+      }
+    ]
+  },
+  {
+    "name": "string",
+    "trans": [
+      "n. 线"
+    ],
+    "usphone": "strɪŋ",
+    "ukphone": "strɪŋ",
+    "sentences": [
+      {
+        "english": "Her key hung on a string around her neck.",
+        "chinese": "她的钥匙穿了根绳子挂在脖子上。"
+      },
+      {
+        "english": "a ball of string",
+        "chinese": "一团细绳"
+      },
+      {
+        "english": "I need a piece of string to tie this package.",
+        "chinese": "我需要一根绳子来捆这个包裹。"
+      },
+      {
+        "english": "a string of pearls",
+        "chinese": "一串珍珠"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "线，细绳；一串",
+        "english": "a strong thread made of several threads twisted together, used for tying or fastening things"
+      }
+    ]
+  },
+  {
+    "name": "lettuce",
+    "trans": [
+      "n. 生菜"
+    ],
+    "usphone": "'lɛtɪs",
+    "ukphone": "'letɪs",
+    "sentences": [
+      {
+        "english": "Do you like lettuce in sandwiches?",
+        "chinese": "你喜欢在三明治里放生菜吗？"
+      },
+      {
+        "english": "Do you like lettuce in sandwiches?",
+        "chinese": "你喜欢吃莴苣三明治吗?。"
+      },
+      {
+        "english": "We have fresh cabbage, celery, lettuce and spinach.",
+        "chinese": "有新鲜的卷心菜、芹菜、生菜和菠菜。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 生菜； 莴苣",
+        "english": "a round vegetable with thin green leaves eaten raw in salads"
+      }
+    ]
+  },
+  {
+    "name": "spoon",
+    "trans": [
+      "n. 勺子"
+    ],
+    "usphone": "spʊn",
+    "ukphone": "spuːn",
+    "sentences": [
+      {
+        "english": "He spooned instant coffee into two of the mugs.",
+        "chinese": "他用勺把速溶咖啡舀进了两个杯子里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "匙，勺子；一杓的量",
+        "english": "an object that you use for eating, cooking, or serving food. It has a small bowl-shaped part and a long handle."
+      },
+      {
+        "pos": "v",
+        "chinese": "用匙舀；使成匙状",
+        "english": "to move food with a spoon"
+      }
+    ]
+  }
 ]

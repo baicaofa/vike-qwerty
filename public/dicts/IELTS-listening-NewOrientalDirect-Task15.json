@@ -1,176 +1,738 @@
 [
-    {
-        "name": "fitness centre",
-        "trans": [
-            "n. phrase 健身中心"
-        ]
-    },
-    {
-        "name": "coach",
-        "trans": [
-            "n. 教练"
-        ]
-    },
-    {
-        "name": "session",
-        "trans": [
-            "n. 时期，课程"
-        ]
-    },
-    {
-        "name": "weight",
-        "trans": [
-            "n. 重量"
-        ]
-    },
-    {
-        "name": "injury",
-        "trans": [
-            "n. 伤"
-        ]
-    },
-    {
-        "name": "champion",
-        "trans": [
-            "n. 冠军"
-        ]
-    },
-    {
-        "name": "volunteer",
-        "trans": [
-            "n. 志愿者"
-        ]
-    },
-    {
-        "name": "income",
-        "trans": [
-            "n. 收入"
-        ]
-    },
-    {
-        "name": "donation",
-        "trans": [
-            "n. 捐赠，捐赠物"
-        ]
-    },
-    {
-        "name": "investment",
-        "trans": [
-            "n. 投资"
-        ]
-    },
-    {
-        "name": "grant",
-        "trans": [
-            "n. 补助金、拨款"
-        ]
-    },
-    {
-        "name": "sponsor",
-        "trans": [
-            "v. 赞助；n. 赞助人"
-        ]
-    },
-    {
-        "name": "fundraising",
-        "trans": [
-            "n. 筹款"
-        ]
-    },
-    {
-        "name": "instrument",
-        "trans": [
-            "n. 仪器"
-        ]
-    },
-    {
-        "name": "flute",
-        "trans": [
-            "n. 笛子"
-        ]
-    },
-    {
-        "name": "clarinet",
-        "trans": [
-            "n. 单簧管"
-        ]
-    },
-    {
-        "name": "perform",
-        "trans": [
-            "v. 表演"
-        ]
-    },
-    {
-        "name": "rehearsal",
-        "trans": [
-            "n. 彩排"
-        ]
-    },
-    {
-        "name": "festival",
-        "trans": [
-            "n. 节日"
-        ]
-    },
-    {
-        "name": "carnival",
-        "trans": [
-            "n. 嘉年华"
-        ]
-    },
-    {
-        "name": "firework",
-        "trans": [
-            "n. 烟火"
-        ]
-    },
-    {
-        "name": "poster",
-        "trans": [
-            "n. 海报"
-        ]
-    },
-    {
-        "name": "fee",
-        "trans": [
-            "n. 费用"
-        ]
-    },
-    {
-        "name": "facility",
-        "trans": [
-            "n. 设施"
-        ]
-    },
-    {
-        "name": "hall",
-        "trans": [
-            "n. 大厅"
-        ]
-    },
-    {
-        "name": "gallery",
-        "trans": [
-            "n. 画廊"
-        ]
-    },
-    {
-        "name": "complex",
-        "trans": [
-            "n. 综合体;建筑群"
-        ]
-    },
-    {
-        "name": "exhibition",
-        "trans": [
-            "n. 展览"
-        ]
-    },
-    {
-        "name": "sculpture",
-        "trans": [
-            "n. 雕塑"
-        ]
-    }
+  {
+    "name": "fitness centre",
+    "trans": [
+      "n. phrase 健身中心"
+    ]
+  },
+  {
+    "name": "coach",
+    "trans": [
+      "n. 教练"
+    ],
+    "usphone": "kotʃ",
+    "ukphone": "kəʊtʃ",
+    "sentences": [
+      {
+        "english": "a tennis coach",
+        "chinese": "网球教练"
+      },
+      {
+        "english": "the Norwegian national coach",
+        "chinese": "挪威国家队教练"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "教练",
+        "english": "someone who trains a person or team in a sport"
+      }
+    ]
+  },
+  {
+    "name": "session",
+    "trans": [
+      "n. 时期，课程"
+    ],
+    "usphone": "'sɛʃən",
+    "ukphone": "ˈseʃn",
+    "sentences": [
+      {
+        "english": "Board members met in closed session (= with nobody else present ) .",
+        "chinese": "委员会成员举行了闭门会议。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "会议，学年",
+        "english": "a formal meeting or group of meetings, especially of a law court or parliament"
+      }
+    ]
+  },
+  {
+    "name": "weight",
+    "trans": [
+      "n. 重量"
+    ],
+    "usphone": "wet",
+    "ukphone": "weɪt",
+    "sentences": [
+      {
+        "english": "The average weight of a baby at birth is just over seven pounds.",
+        "chinese": "婴儿的平均出生体重是七磅多一点。"
+      },
+      {
+        "english": "It can be sewn into curtain hems to weight the curtain and so allow it to hang better.",
+        "chinese": "可以把它缝在窗帘的摺边里以增加窗帘的重量，使之更有下垂感。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "重量，重力；负担；砝码；重要性",
+        "english": "how heavy something is when you measure it"
+      },
+      {
+        "pos": "v",
+        "chinese": "加重量于，使变重",
+        "english": "If you weight something, you make it heavier by adding something to it, for example, in order to stop it from moving easily"
+      }
+    ]
+  },
+  {
+    "name": "injury",
+    "trans": [
+      "n. 伤"
+    ],
+    "usphone": "'ɪndʒəri",
+    "ukphone": "'ɪn(d)ʒ(ə)rɪ",
+    "sentences": [
+      {
+        "english": "She was taken to hospital with serious head injuries.",
+        "chinese": "她头部受重伤被送到医院。"
+      },
+      {
+        "english": "Beckham has missed several games through injury",
+        "chinese": "贝克汉姆因伤错过了几场比赛。"
+      },
+      {
+        "english": "He’s a lawyer who specializes in personal injury claims.",
+        "chinese": "他是个专门从事人身伤害索赔的律师。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "伤害，损害；受伤处",
+        "english": "a wound or damage to part of your body caused by an accident or attack"
+      }
+    ]
+  },
+  {
+    "name": "champion",
+    "trans": [
+      "n. 冠军"
+    ],
+    "usphone": "'tʃæmpɪən",
+    "ukphone": "'tʃæmpɪən",
+    "sentences": [
+      {
+        "english": "the world heavyweight boxing champion",
+        "chinese": "世界重量级拳击冠军"
+      },
+      {
+        "english": "the Olympic champion",
+        "chinese": "奥运会冠军"
+      },
+      {
+        "english": "He passionately championed the poor.",
+        "chinese": "他曾热情地捍卫穷人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "冠军；拥护者；战士",
+        "english": "someone or something that has won a competition, especially in sport"
+      },
+      {
+        "pos": "v",
+        "chinese": "支持；拥护",
+        "english": "If you champion a person, a cause, or a principle, you support or defend them"
+      },
+      {
+        "pos": "adj",
+        "chinese": "优胜的；第一流的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "volunteer",
+    "trans": [
+      "n. 志愿者"
+    ],
+    "usphone": ",vɑlən'tɪr",
+    "ukphone": ",vɒlən'tɪə",
+    "sentences": [
+      {
+        "english": "Most of the relief work was done by volunteers.",
+        "chinese": "大部分救援工作都由志愿人员完成。"
+      },
+      {
+        "english": "I volunteered my services as a driver.",
+        "chinese": "我主动提出来当司机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "志愿者",
+        "english": "someone who does a job willingly without being paid"
+      },
+      {
+        "pos": "v",
+        "chinese": "志愿",
+        "english": "to offer to do something without expecting any reward, often something that other people do not want to do"
+      }
+    ]
+  },
+  {
+    "name": "income",
+    "trans": [
+      "n. 收入"
+    ],
+    "usphone": "'ɪnkʌm",
+    "ukphone": "'ɪnkʌm",
+    "sentences": [
+      {
+        "english": "low-income families",
+        "chinese": "低收入家庭"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "收入；收益；进款",
+        "english": "the money that you earn from your work or that you receive from investments, the government etc"
+      }
+    ]
+  },
+  {
+    "name": "donation",
+    "trans": [
+      "n. 捐赠，捐赠物"
+    ],
+    "usphone": "do'neʃən",
+    "ukphone": "dəu'neiʃən",
+    "sentences": [
+      {
+        "english": "There have been generous donations from EU funds.",
+        "chinese": "欧盟基金给予了慷慨的捐款。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "捐赠",
+        "english": "something, especially money, that you give to a person or an organ-ization in order to help them"
+      }
+    ]
+  },
+  {
+    "name": "investment",
+    "trans": [
+      "n. 投资"
+    ],
+    "usphone": "ɪn'vɛstmənt",
+    "ukphone": "ɪn'ves(t)m(ə)nt",
+    "sentences": [
+      {
+        "english": "We plan to buy some property as an investment.",
+        "chinese": "我们打算买些房地产作为投资。"
+      },
+      {
+        "english": "a huge investment of time and effort",
+        "chinese": "时间和精力的大量投入"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "投资，投资额；投入",
+        "english": "the use of money to get a profit or to make a business activity successful, or the money that is used"
+      }
+    ]
+  },
+  {
+    "name": "grant",
+    "trans": [
+      "n. 补助金、拨款"
+    ],
+    "usphone": "ɡrænt",
+    "ukphone": "grɑːnt",
+    "sentences": [
+      {
+        "english": "Britain could grant Spain’s request .",
+        "chinese": "英国可能会同意西班牙的请求。"
+      },
+      {
+        "english": "I would love to be able to grant her wish.",
+        "chinese": "我很希望能够满足她的愿望。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "授给物",
+        "english": ""
+      },
+      {
+        "pos": "vt",
+        "chinese": " 授予， 给予",
+        "english": "to give someone something or allow them to have something that they have asked for"
+      }
+    ]
+  },
+  {
+    "name": "sponsor",
+    "trans": [
+      "v. 赞助；n. 赞助人"
+    ],
+    "usphone": "'spɑnsɚ",
+    "ukphone": "'spɒnsə",
+    "sentences": [
+      {
+        "english": "When you define the project, you make sure that you have an agreement with the project sponsor on what work should be completed in this project.",
+        "chinese": "在你定义项目的时候，你要确保和项目发起人在项目应该完成的所有工作内容上达成一致意见。"
+      },
+      {
+        "english": "It is important that your sponsor be truly committed to the value of the project to ensure that funds and support are not in jeopardy if adoption is not immediate.",
+        "chinese": "发起人必须真正认可项目的价值，这一点很重要，只有这样才能确保在推广没有立即见效时资金和支持不会随之消失。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "发起者",
+        "english": "someone who officially introduces or supports a proposal for a new law"
+      },
+      {
+        "pos": "v",
+        "chinese": "发起",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "fundraising",
+    "trans": [
+      "n. 筹款"
+    ],
+    "usphone": "'fʌnd,rezɪŋ",
+    "ukphone": "'fʌnd,reiziŋ",
+    "sentences": [
+      {
+        "english": "an Action Pack full of fundraising ideas",
+        "chinese": "讲了许多募捐方法的一本《行动宝盒》"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "筹款；资金募集",
+        "english": "the activity of collecting money for a specific purpose, especially in order to help people who are ill, old etc"
+      },
+      {
+        "pos": "adj",
+        "chinese": "募款的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "instrument",
+    "trans": [
+      "n. 仪器"
+    ],
+    "usphone": "'ɪnstrəmənt",
+    "ukphone": "'ɪnstrəmənt",
+    "sentences": [
+      {
+        "english": "surgical instruments",
+        "chinese": "外科(手术)器械"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 仪器， 工具； 乐器",
+        "english": "a small tool used in work such as science or medicine"
+      }
+    ]
+  },
+  {
+    "name": "flute",
+    "trans": [
+      "n. 笛子"
+    ],
+    "usphone": "flut",
+    "ukphone": "fluːt",
+    "sentences": [
+      {
+        "english": "The boy trilled on a flute.",
+        "chinese": "男孩在长笛上吹颤音。"
+      },
+      {
+        "english": "He played a nice tune on the flute.",
+        "chinese": "他吹奏了一首优美的笛子曲。"
+      },
+      {
+        "english": "A pipe organ gives much more volume than a violin or flute.",
+        "chinese": "管风琴发出的音量比小提琴或笛子都大。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "长笛",
+        "english": "a musical instrument like a thin pipe, that you play by holding it across your lips, blowing over a hole, and pressing down buttons with your fingers"
+      },
+      {
+        "pos": "v",
+        "chinese": "吹长笛,刻槽",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "clarinet",
+    "trans": [
+      "n. 单簧管"
+    ]
+  },
+  {
+    "name": "perform",
+    "trans": [
+      "v. 表演"
+    ],
+    "usphone": "pɚ'fɔrm",
+    "ukphone": "pə'fɔːm",
+    "sentences": [
+      {
+        "english": "Chenier and the band are performing at the Silver Palace tomorrow.",
+        "chinese": "车尼尔和乐队明天将在银宫演出。"
+      },
+      {
+        "english": "The children perform two plays each school year.",
+        "chinese": "孩子们一学年表演两部话剧。"
+      },
+      {
+        "english": "She was fired for not performing the duties outlined in her contract.",
+        "chinese": "由于没有履行合同中规定的职责，她被解雇了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "演出；履行，执行",
+        "english": "to do something to entertain people, for example by acting a play or playing a piece of music"
+      }
+    ]
+  },
+  {
+    "name": "rehearsal",
+    "trans": [
+      "n. 彩排"
+    ],
+    "usphone": "rɪ'hɝsl",
+    "ukphone": "rɪ'hɜːs(ə)l",
+    "sentences": [
+      {
+        "english": "a wedding rehearsal",
+        "chinese": "婚礼的预演"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "排演；预演；练习；训练；叙述",
+        "english": "a time when all the people in a play, concert etc practise before a public performance"
+      }
+    ]
+  },
+  {
+    "name": "festival",
+    "trans": [
+      "n. 节日"
+    ],
+    "usphone": "ˈfɛstəvəl",
+    "ukphone": "'festɪv(ə)l",
+    "sentences": [
+      {
+        "english": "the Swansea Festival of Music and the Arts",
+        "chinese": "斯旺西音乐艺术节"
+      },
+      {
+        "english": "Christmas is one of the main festivals in the Christian Calendar.",
+        "chinese": "圣诞节是基督教历的重大节日之一。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "〔电影、戏剧、音乐等的〕节，节庆，会演；节日",
+        "english": "an occasion when there are performances of many films, plays, pieces of music etc, usually happening in the same place every year"
+      }
+    ]
+  },
+  {
+    "name": "carnival",
+    "trans": [
+      "n. 嘉年华"
+    ],
+    "usphone": "'kɑrnɪvl",
+    "ukphone": "'kɑːnɪv(ə)l",
+    "sentences": [
+      {
+        "english": "preparations for this year’s carnival",
+        "chinese": "今年狂欢节的准备工作"
+      },
+      {
+        "english": "when it’s Carnival in Rio",
+        "chinese": "里约热内卢举行狂欢节的时候"
+      },
+      {
+        "english": "a carnival atmosphere in the town",
+        "chinese": "城里的狂欢气氛"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "狂欢节，嘉年华会；饮宴狂欢",
+        "english": "a public event at which people play music, wear special clothes, and dance in the streets"
+      }
+    ]
+  },
+  {
+    "name": "firework",
+    "trans": [
+      "n. 烟火"
+    ],
+    "usphone": "'faɪɚwɝk",
+    "ukphone": "'faɪəwɜːk",
+    "sentences": [
+      {
+        "english": "a New Year’s Eve fireworks display",
+        "chinese": "除夕夜的烟火表演"
+      },
+      {
+        "english": "Jeff and David were in the back yard setting off fireworks.",
+        "chinese": "杰夫和戴维在后院放烟花。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "爆竹，花炮，烟火",
+        "english": "a small container filled with powder that burns or explodes to produce coloured lights and noise in the sky"
+      }
+    ]
+  },
+  {
+    "name": "poster",
+    "trans": [
+      "n. 海报"
+    ],
+    "usphone": "'postɚ",
+    "ukphone": "'pəʊstə",
+    "sentences": [
+      {
+        "english": "A team of volunteers were putting up posters .",
+        "chinese": "一队志愿者正在张贴海报。"
+      },
+      {
+        "english": "a poster campaign for the election",
+        "chinese": "选举的海报宣传"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "海报，广告；招贴",
+        "english": "a large printed notice, picture, or photograph, used to advertise something or as a decoration"
+      }
+    ]
+  },
+  {
+    "name": "fee",
+    "trans": [
+      "n. 费用"
+    ],
+    "usphone": "fi",
+    "ukphone": "fiː",
+    "sentences": [
+      {
+        "english": "You can use the gym and pool for a fee of £35 a month.",
+        "chinese": "月付35英镑，即可使用健身房和游泳池。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "费，酬金；赏金",
+        "english": "an amount of money that you pay to do something or that you pay to a professional person for their work"
+      }
+    ]
+  },
+  {
+    "name": "facility",
+    "trans": [
+      "n. 设施"
+    ],
+    "usphone": "fə'sɪləti",
+    "ukphone": "fə'sɪləti",
+    "sentences": [
+      {
+        "english": "What recreational facilities are now available?",
+        "chinese": "什么娱乐设施现在是可用的？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "设施",
+        "english": "Facilities are buildings, pieces of equipment, or services that are provided for a particular purpose"
+      }
+    ]
+  },
+  {
+    "name": "hall",
+    "trans": [
+      "n. 大厅"
+    ],
+    "usphone": "hɔl",
+    "ukphone": "hɔːl",
+    "sentences": [
+      {
+        "english": "a huge tiled entrance hall",
+        "chinese": "铺着地砖的大门厅"
+      },
+      {
+        "english": "Each floor had ten rooms on both sides of the hall.",
+        "chinese": "每一层在走廊的两边都各有十个房间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "门厅；过道；会堂",
+        "english": "the area just inside the door of a house or other building, that leads to other rooms"
+      }
+    ]
+  },
+  {
+    "name": "gallery",
+    "trans": [
+      "n. 画廊"
+    ],
+    "usphone": "'gæləri",
+    "ukphone": "'gæl(ə)rɪ",
+    "sentences": [
+      {
+        "english": "The bright modern painting stares out at you in the otherwise conservative gallery.",
+        "chinese": "有些古典派画廊也会陈列出明亮色彩的现代派绘画。"
+      },
+      {
+        "english": "Statement and portrait together form a single image of a thinker. (See the interactive gallery, “Why Philosophy?",
+        "chinese": "陈述和肖像一起构成了一位思想家的独有影像。 （参见互动画廊，“何为哲学？”）"
+      },
+      {
+        "english": "Whether you just want to browse our huge image gallery or want to share your personal photos with others, this is the site for you!",
+        "chinese": "无论你是想要浏览我们众多的画廊图片还是想要和其他人分享你的个人照片,这个网站绝对对你的味口。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "画廊",
+        "english": "a small privately owned shop or studio where you can see and buy pieces of art"
+      }
+    ]
+  },
+  {
+    "name": "complex",
+    "trans": [
+      "n. 综合体;建筑群"
+    ],
+    "usphone": "ˈkɑmplɛks;kəmˈplɛks",
+    "ukphone": "'kɒmpleks",
+    "sentences": [
+      {
+        "english": "a complex system of highways",
+        "chinese": "复杂的公路网"
+      },
+      {
+        "english": "Photosynthesis is a highly complex process.",
+        "chinese": "光合作用是一个非常复杂的过程。"
+      },
+      {
+        "english": "Peter seemed to have an instant understanding of the most complex issues.",
+        "chinese": "再复杂的问题彼得似乎也是一看就明白。"
+      },
+      {
+        "english": "It was a very complex relationship between two complex people.",
+        "chinese": "这是两个复杂的人之间非常复杂的关系。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "由许多部分组成的，复合的；复杂的，难懂的",
+        "english": "consisting of many different parts and often difficult to understand"
+      },
+      {
+        "pos": "n",
+        "chinese": " 综合体， 集合体； 情结， 夸大的情绪反应",
+        "english": "a group of buildings, or a large building with many parts, used for a particular purpose"
+      }
+    ]
+  },
+  {
+    "name": "exhibition",
+    "trans": [
+      "n. 展览"
+    ],
+    "usphone": "ˌɛksəˈbɪʃən",
+    "ukphone": "ˌeksɪˈbɪʃn",
+    "sentences": [
+      {
+        "english": "All visitors to the exhibition must report to the main service desk.",
+        "chinese": "到展览会参观的人都必须先到总服务台报到。"
+      },
+      {
+        "english": "Our country will tie up with another country to host this exhibition.",
+        "chinese": "我国将和另外一个国家联合主办这次展览会。"
+      },
+      {
+        "english": "You go to the exhibition centre, I must hie myself to tell the new matters.",
+        "chinese": "你去展览中心吧，我得赶紧汇报一下这个新情况。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "展览",
+        "english": "a show of paintings, photographs, or other objects that people can go to see"
+      }
+    ]
+  },
+  {
+    "name": "sculpture",
+    "trans": [
+      "n. 雕塑"
+    ],
+    "usphone": "'skʌlptʃɚ",
+    "ukphone": "'skʌlptʃə",
+    "sentences": [
+      {
+        "english": "a sculpture of an elephant",
+        "chinese": "一尊大象雕塑"
+      },
+      {
+        "english": "the techniques of sculpture in stone",
+        "chinese": "石雕技艺"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雕刻品；雕刻（术）",
+        "english": "an object made out of stone, wood, clay etc by an artist"
+      }
+    ]
+  }
 ]

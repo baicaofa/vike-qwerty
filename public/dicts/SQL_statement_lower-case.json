@@ -9,6 +9,21 @@
     "name": "commit",
     "trans": [
       "commit 用来将事务写入数据库。"
+    ],
+    "usphone": "kə'mɪt",
+    "ukphone": "kə'mɪt",
+    "sentences": [
+      {
+        "english": "Women commit fewer crimes than men.",
+        "chinese": "女性犯罪比男性少。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": " 犯， 干； 使承诺； 把…托付给； 调拨…供使用， 拨出",
+        "english": "to do something wrong or illegal"
+      }
     ]
   },
   {
@@ -33,18 +48,76 @@
     "name": "delete",
     "trans": [
       "delete 用来从表中删除一行或多行。"
+    ],
+    "usphone": "dɪ'lit",
+    "ukphone": "dɪ'liːt",
+    "sentences": [
+      {
+        "english": "His name was deleted from the list.",
+        "chinese": "他的名字从名单上删掉了。"
+      },
+      {
+        "english": "I deleted the file by mistake.",
+        "chinese": "我误删了这个文件。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "删除",
+        "english": "to remove something that has been written down or stored in a computer"
+      }
     ]
   },
   {
     "name": "drop",
     "trans": [
       "drop 用来永久性地删除数据库对象（表、视图和索引等）"
+    ],
+    "usphone": "drɑp",
+    "ukphone": "drɒp",
+    "sentences": [
+      {
+        "english": "Your button has dropped off.",
+        "chinese": "你的纽扣掉了。"
+      },
+      {
+        "english": "The number of deaths on the roads has dropped sharply.",
+        "chinese": "交通事故死亡人数已大大减少。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "使落下；降低",
+        "english": "to fall suddenly onto the ground or into something"
+      }
     ]
   },
   {
     "name": "insert",
     "trans": [
       "insert 用来对表添加一个新行。"
+    ],
+    "usphone": "'ɪnsɝt",
+    "ukphone": "ɪn'sɜːt",
+    "sentences": [
+      {
+        "english": "He took a small key from his pocket and slowly inserted it into the lock.",
+        "chinese": "他从衣袋里掏出一把小钥匙，然后缓缓地将其插入锁孔里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "插入；嵌入",
+        "english": "to put something inside or into something else"
+      },
+      {
+        "pos": "n",
+        "chinese": "插入物；管芯；镶块；[机械]刀片",
+        "english": "something that is designed to be put inside something else"
+      }
     ]
   },
   {
@@ -63,12 +136,56 @@
     "name": "select",
     "trans": [
       "select 用来从一个或多个表（或视图）中检索数据。"
+    ],
+    "usphone": "sə'lɛkt",
+    "ukphone": "sɪ'lekt",
+    "sentences": [
+      {
+        "english": "The party was small and select.",
+        "chinese": "团里人员不多，都是经过精心挑选的。"
+      },
+      {
+        "english": "Honorary degrees are handed out to a select few .",
+        "chinese": "荣誉学位颁给挑选出的少数几个人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 精选的， 挑选出来的； 优等的， 第一流的",
+        "english": "a select group of people or things is a small special group that has been chosen carefully"
+      },
+      {
+        "pos": "vt",
+        "chinese": "选择，挑选",
+        "english": "to choose something or someone by thinking carefully about which is the best, most suitable etc"
+      }
     ]
   },
   {
     "name": "update",
     "trans": [
       "update 用来对表中的一行或多行进行更新。"
+    ],
+    "usphone": ",ʌp'det",
+    "ukphone": "ˌʌp'deɪt",
+    "sentences": [
+      {
+        "english": "The files need updating.",
+        "chinese": "这些档案需要更新。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "更新；使现代化",
+        "english": "to add the most recent information to something"
+      },
+      {
+        "pos": "n",
+        "chinese": " 最新信息",
+        "english": "the most recent news or information about something"
+      }
     ]
   }
 ]

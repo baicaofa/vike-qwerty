@@ -1,314 +1,1874 @@
 [
-    {
-        "name": "referee",
-        "trans": ["证明人"]
-    },
-    {
-        "name": "puzzling",
-        "trans": ["莫名其妙的"]
-    },
-    {
-        "name": "perspective",
-        "trans": ["观点"]
-    },
-    {
-        "name": "path",
-        "trans": ["小路"]
-    },
-    {
-        "name": "representative",
-        "trans": ["有代表性的"]
-    },
-    {
-        "name": "discontinue",
-        "trans": ["终止"]
-    },
-    {
-        "name": "accounting",
-        "trans": ["会记学"]
-    },
-    {
-        "name": "satellite",
-        "trans": ["卫星"]
-    },
-    {
-        "name": "permission",
-        "trans": ["允许"]
-    },
-    {
-        "name": "variation",
-        "trans": ["变化"]
-    },
-    {
-        "name": "innovation",
-        "trans": ["创新"]
-    },
-    {
-        "name": "divide",
-        "trans": ["划分"]
-    },
-    {
-        "name": "diet",
-        "trans": ["饮食"]
-    },
-    {
-        "name": "partly",
-        "trans": ["部分地"]
-    },
-    {
-        "name": "stimulating",
-        "trans": ["刺激的"]
-    },
-    {
-        "name": "master",
-        "trans": ["硕士"]
-    },
-    {
-        "name": "microbiology",
-        "trans": ["微生物学"]
-    },
-    {
-        "name": "essay",
-        "trans": ["论文"]
-    },
-    {
-        "name": "strategy",
-        "trans": ["战略"]
-    },
-    {
-        "name": "cosmetics",
-        "trans": ["化妆品"]
-    },
-    {
-        "name": "extension",
-        "trans": ["延期"]
-    },
-    {
-        "name": "record",
-        "trans": ["记录"]
-    },
-    {
-        "name": "bibliography",
-        "trans": ["参考书目"]
-    },
-    {
-        "name": "incorrect",
-        "trans": ["错误的"]
-    },
-    {
-        "name": "thorough",
-        "trans": ["彻底的"]
-    },
-    {
-        "name": "definition",
-        "trans": ["定义"]
-    },
-    {
-        "name": "connective",
-        "trans": ["连接词"]
-    },
-    {
-        "name": "solution",
-        "trans": ["解决方案"]
-    },
-    {
-        "name": "leisure",
-        "trans": ["闲暇"]
-    },
-    {
-        "name": "decisive",
-        "trans": ["果断的"]
-    },
-    {
-        "name": "ambitious",
-        "trans": ["野心勃勃的"]
-    },
-    {
-        "name": "specialised",
-        "trans": ["专业的"]
-    },
-    {
-        "name": "observe",
-        "trans": ["观察"]
-    },
-    {
-        "name": "dominance",
-        "trans": ["支配"]
-    },
-    {
-        "name": "stick",
-        "trans": ["刺"]
-    },
-    {
-        "name": "imaginable",
-        "trans": ["可想象的"]
-    },
-    {
-        "name": "worthy",
-        "trans": ["值得的"]
-    },
-    {
-        "name": "interpersonal",
-        "trans": ["人际的"]
-    },
-    {
-        "name": "accessible",
-        "trans": ["可接近的"]
-    },
-    {
-        "name": "regrettable",
-        "trans": ["令人遗憾的"]
-    },
-    {
-        "name": "wind",
-        "trans": ["风"]
-    },
-    {
-        "name": "economics",
-        "trans": ["经济学"]
-    },
-    {
-        "name": "postgraduate",
-        "trans": ["研究生"]
-    },
-    {
-        "name": "management",
-        "trans": ["管理"]
-    },
-    {
-        "name": "adviser",
-        "trans": ["顾问"]
-    },
-    {
-        "name": "folder",
-        "trans": ["文件夹"]
-    },
-    {
-        "name": "identify",
-        "trans": ["辨认出"]
-    },
-    {
-        "name": "worksheet",
-        "trans": ["练习册"]
-    },
-    {
-        "name": "access",
-        "trans": ["接近"]
-    },
-    {
-        "name": "profit",
-        "trans": ["利益"]
-    },
-    {
-        "name": "cultivate",
-        "trans": ["培养"]
-    },
-    {
-        "name": "highlight",
-        "trans": ["精彩部分"]
-    },
-    {
-        "name": "diploma",
-        "trans": ["文凭"]
-    },
-    {
-        "name": "tutorial",
-        "trans": ["指导"]
-    },
-    {
-        "name": "assessment",
-        "trans": ["评定"]
-    },
-    {
-        "name": "brand",
-        "trans": ["牌子"]
-    },
-    {
-        "name": "image",
-        "trans": ["图像"]
-    },
-    {
-        "name": "residential",
-        "trans": ["住宅的"]
-    },
-    {
-        "name": "intimacy",
-        "trans": ["亲密行为"]
-    },
-    {
-        "name": "inappropriate",
-        "trans": ["不合适的"]
-    },
-    {
-        "name": "underline",
-        "trans": ["强调"]
-    },
-    {
-        "name": "analyse",
-        "trans": ["分析"]
-    },
-    {
-        "name": "quote",
-        "trans": ["引述"]
-    },
-    {
-        "name": "sub-topic",
-        "trans": ["小标题"]
-    },
-    {
-        "name": "frustrated",
-        "trans": ["挫败的"]
-    },
-    {
-        "name": "premise",
-        "trans": ["前提"]
-    },
-    {
-        "name": "intelligent",
-        "trans": ["聪明的"]
-    },
-    {
-        "name": "sector",
-        "trans": ["部门"]
-    },
-    {
-        "name": "transcription",
-        "trans": ["抄写"]
-    },
-    {
-        "name": "chimpanzee",
-        "trans": ["黑猩猩"]
-    },
-    {
-        "name": "imitate",
-        "trans": ["模仿"]
-    },
-    {
-        "name": "nutshell",
-        "trans": ["坚果的外壳"]
-    },
-    {
-        "name": "invalid",
-        "trans": ["无效的"]
-    },
-    {
-        "name": "ability",
-        "trans": ["能力"]
-    },
-    {
-        "name": "leadership",
-        "trans": ["领导能力"]
-    },
-    {
-        "name": "majority",
-        "trans": ["多数"]
-    },
-    {
-        "name": "seat belt",
-        "trans": ["安全带"]
-    },
-    {
-        "name": "theory",
-        "trans": ["理论"]
-    }
+  {
+    "name": "referee",
+    "trans": [
+      "证明人"
+    ],
+    "usphone": ",rɛfə'ri",
+    "ukphone": "refə'riː",
+    "sentences": [
+      {
+        "english": "His headmaster agreed to act as his referee.",
+        "chinese": "他的校长同意做他的推荐人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "裁判员；调解人；介绍人",
+        "english": "someone who makes sure that the rules of a sport such as football,  basketball  , or  boxing  , are followed"
+      },
+      {
+        "pos": "v",
+        "chinese": "仲裁；担任裁判",
+        "english": "to be the referee of a game"
+      }
+    ]
+  },
+  {
+    "name": "puzzling",
+    "trans": [
+      "莫名其妙的"
+    ],
+    "usphone": "",
+    "ukphone": "'pʌzlɪŋ",
+    "sentences": [
+      {
+        "english": "a puzzling fact",
+        "chinese": "令人费解的情况"
+      },
+      {
+        "english": "Gary found her reaction puzzling.",
+        "chinese": "加里对她的反应感到迷惑。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "令人困惑的",
+        "english": "confusing and difficult to understand or explain"
+      }
+    ]
+  },
+  {
+    "name": "perspective",
+    "trans": [
+      "观点"
+    ],
+    "usphone": "pɚ'spɛktɪv",
+    "ukphone": "pə'spektɪv",
+    "sentences": [
+      {
+        "english": "the artist’s use of perspective",
+        "chinese": "那位画家对透视法的运用"
+      },
+      {
+        "english": "a perspective of the whole valley",
+        "chinese": "山谷全景"
+      },
+      {
+        "english": "His father’s death gave him a whole new perspective on life.",
+        "chinese": "父亲的死使他对生活有了全新的看法。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "透视；远景；观点",
+        "english": "a method of drawing a picture that makes objects look solid and shows distance and depth, or the effect this method produces in a picture"
+      }
+    ]
+  },
+  {
+    "name": "path",
+    "trans": [
+      "小路"
+    ],
+    "usphone": "pæθ",
+    "ukphone": "pɑːθ",
+    "sentences": [
+      {
+        "english": "I walked nervously up the garden path towards the front door.",
+        "chinese": "我提心吊胆地沿着花园的小道向前门走去。"
+      },
+      {
+        "english": "a well-worn path across the grass",
+        "chinese": "草地上被踏出的小径"
+      },
+      {
+        "english": "Follow the path along the river to the bridge.",
+        "chinese": "沿着河边的小路走到那座桥。"
+      },
+      {
+        "english": "a path leading to the summer house",
+        "chinese": "通往避暑别墅的小径"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "路，小道；道路",
+        "english": "a track that has been made deliberately or made by many people walking over the same ground"
+      }
+    ]
+  },
+  {
+    "name": "representative",
+    "trans": [
+      "有代表性的"
+    ],
+    "usphone": "'rɛprɪ'zɛntətɪv",
+    "ukphone": "reprɪ'zentətɪv",
+    "sentences": [
+      {
+        "english": "The latest incident is representative of a wider trend.",
+        "chinese": "最近发生的事件代表了一个更大的趋势。"
+      },
+      {
+        "english": "an elected representative of the people",
+        "chinese": "民选代表"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "代表性的",
+        "english": "typical of a particular group or thing"
+      },
+      {
+        "pos": "n",
+        "chinese": "代表",
+        "english": "someone who has been chosen to speak, vote, or make decisions for someone else"
+      }
+    ]
+  },
+  {
+    "name": "discontinue",
+    "trans": [
+      "终止"
+    ],
+    "usphone": ",dɪskən'tɪnju",
+    "ukphone": "dɪskən'tɪnjuː",
+    "sentences": [
+      {
+        "english": "Bus route 51 is being discontinued.",
+        "chinese": "51 路公共汽车目前停止运营。"
+      },
+      {
+        "english": "a discontinued china pattern",
+        "chinese": "不再使用的瓷器图案"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "停止；使中止",
+        "english": "to stop doing, producing, or providing something"
+      }
+    ]
+  },
+  {
+    "name": "accounting",
+    "trans": [
+      "会记学"
+    ],
+    "usphone": "ə'kaʊntɪŋ",
+    "ukphone": "ə'kaʊntɪŋ",
+    "sentences": [
+      {
+        "english": "...the accounting firm of Leventhal & Horwath.",
+        "chinese": "…利文撒尔与霍瓦特会计事务所。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "会计，会计学；账单",
+        "english": "accountancy"
+      },
+      {
+        "pos": "v",
+        "chinese": "解释（account的ing形式）；叙述",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "satellite",
+    "trans": [
+      "卫星"
+    ],
+    "usphone": "'sætəlaɪt",
+    "ukphone": "'sætəlaɪt",
+    "sentences": [
+      {
+        "english": "the launch of a communications and weather satellite",
+        "chinese": "气象通信卫星的发射"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "卫星；人造卫星",
+        "english": "a machine that has been sent into space and goes around the Earth, moon etc, used for radio, television, and other electronic communication"
+      }
+    ]
+  },
+  {
+    "name": "permission",
+    "trans": [
+      "允许"
+    ],
+    "usphone": "pɚ'mɪʃən",
+    "ukphone": "pə'mɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "He asked permission to leave the room.",
+        "chinese": "他请求离开房间的许可。"
+      },
+      {
+        "english": "They cannot leave the country without permission.",
+        "chinese": "没有许可他们不得离开这个国家。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "允许，许可，同意",
+        "english": "the act of allowing sb to do sth, especially when this is done by sb in a position of authority"
+      }
+    ]
+  },
+  {
+    "name": "variation",
+    "trans": [
+      "变化"
+    ],
+    "usphone": ",vɛrɪ'eʃən",
+    "ukphone": "veərɪ'eɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Most of his poems are variations on the theme of love.",
+        "chinese": "他的大部分诗作都是有关爱情主题的形式不同的作品。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "变化；[生物] 变异，变种",
+        "english": "a difference between similar things, or a change from the usual amount or form of something"
+      }
+    ]
+  },
+  {
+    "name": "innovation",
+    "trans": [
+      "创新"
+    ],
+    "usphone": ",ɪnə'veʃən",
+    "ukphone": "ˌɪnəˈveɪʃn",
+    "sentences": [
+      {
+        "english": "We must encourage innovation if the company is to remain competitive.",
+        "chinese": "公司要想保持竞争力，就必须鼓励革新。"
+      },
+      {
+        "english": "recent innovations in English teaching",
+        "chinese": "英语教学的新创举"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "创新，改革；新设施",
+        "english": "the introduction of new ideas or methods"
+      }
+    ]
+  },
+  {
+    "name": "divide",
+    "trans": [
+      "划分"
+    ],
+    "usphone": "dɪ'vaɪd",
+    "ukphone": "dɪ'vaɪd",
+    "sentences": [
+      {
+        "english": "The book is divided into six sections.",
+        "chinese": "本书分为六部分。"
+      },
+      {
+        "english": "The money will be divided equally among the charities.",
+        "chinese": "这笔钱将被平分给各慈善机构。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "分；分开；分配",
+        "english": "if something divides, or if you divide it, it separates into two or more parts"
+      }
+    ]
+  },
+  {
+    "name": "diet",
+    "trans": [
+      "饮食"
+    ],
+    "usphone": "'daɪət",
+    "ukphone": "'daɪət",
+    "sentences": [
+      {
+        "english": "She doesn’t eat a very healthy diet.",
+        "chinese": "她的饮食不是很健康。"
+      },
+      {
+        "english": "It is important to have a balanced diet.",
+        "chinese": "饮食均衡很重要。"
+      },
+      {
+        "english": "Rice is the staple diet (= the main food that a group of people usually eat ) .",
+        "chinese": "大米是主食。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "日常饮食，日常食物",
+        "english": "the kind of food that a person or animal eats each day"
+      }
+    ]
+  },
+  {
+    "name": "partly",
+    "trans": [
+      "部分地"
+    ],
+    "usphone": "'pɑrtli",
+    "ukphone": "'pɑːtlɪ",
+    "sentences": [
+      {
+        "english": "The poor weather was partly responsible for the crash.",
+        "chinese": "天气不好是造成坠机事故的部分原因。"
+      },
+      {
+        "english": "The company’s problems are partly due to bad management.",
+        "chinese": "那家公司的问题部分是由于管理不善造成的。"
+      },
+      {
+        "english": "It is partly because of her sick mother that she hasn’t taken the job abroad.",
+        "chinese": "她没有接受那份去国外的工作，部分原因是母亲病了。"
+      },
+      {
+        "english": "The group is funded partly by the government.",
+        "chinese": "那个团体的部分资金由政府提供。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "部分地，不完全地",
+        "english": "to some degree, but not completely"
+      }
+    ]
+  },
+  {
+    "name": "stimulating",
+    "trans": [
+      "刺激的"
+    ]
+  },
+  {
+    "name": "master",
+    "trans": [
+      "硕士"
+    ],
+    "usphone": "'mæstɚ",
+    "ukphone": "'mɑːstə",
+    "sentences": [
+      {
+        "english": "a work of art by a true master",
+        "chinese": "一件真正的大师之作"
+      },
+      {
+        "english": "You’ll have to ask the master’s permission.",
+        "chinese": "你得去请求主人的同意。"
+      },
+      {
+        "english": "You’ll have to ask the master’s permission.",
+        "chinese": "你得去请求主人的同意。"
+      },
+      {
+        "english": "Master of Arts/Science/Education etc",
+        "chinese": "文学/理学/教育学等硕士"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "能手；主人；硕士",
+        "english": "someone who is very skilled at something"
+      }
+    ]
+  },
+  {
+    "name": "microbiology",
+    "trans": [
+      "微生物学"
+    ],
+    "usphone": ",maɪkrobaɪ'ɑlədʒi",
+    "ukphone": ",maɪkrə(ʊ)baɪ'ɒlədʒɪ",
+    "sentences": [
+      {
+        "english": "...a professor of microbiology and immunology.",
+        "chinese": "...一位微生物学和免疫学教授。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "微生物学",
+        "english": "the scientific study of very small living things such as  bacteria "
+      }
+    ]
+  },
+  {
+    "name": "essay",
+    "trans": [
+      "论文"
+    ],
+    "usphone": "'ɛse",
+    "ukphone": "'eseɪ",
+    "sentences": [
+      {
+        "english": "an essay on Bernard Shaw",
+        "chinese": "关于萧伯纳的文章"
+      },
+      {
+        "english": "We asked Jason to write an essay about his hometown.",
+        "chinese": "我们让杰森写一篇关于他家乡的短文。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "短文；散文，小品文",
+        "english": "a short piece of writing about a particular subject by a student as part of a course of study"
+      }
+    ]
+  },
+  {
+    "name": "strategy",
+    "trans": [
+      "战略"
+    ],
+    "usphone": "'strætədʒi",
+    "ukphone": "'strætədʒɪ",
+    "sentences": [
+      {
+        "english": "the government’s long-term economic strategy",
+        "chinese": "政府的长期经济策略"
+      },
+      {
+        "english": "a company’s business strategy",
+        "chinese": "公司的经营策略"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "策略",
+        "english": "a planned series of actions for achieving something"
+      }
+    ]
+  },
+  {
+    "name": "cosmetics",
+    "trans": [
+      "化妆品"
+    ]
+  },
+  {
+    "name": "extension",
+    "trans": [
+      "延期"
+    ],
+    "usphone": "ɪk'stɛnʃən",
+    "ukphone": "ɪk'stenʃn",
+    "sentences": [
+      {
+        "english": "Can I have extension 316, please?",
+        "chinese": "能帮我接316号分机吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "分机",
+        "english": "one of many telephone lines connected to a central system in a large building, which all have different numbers"
+      }
+    ]
+  },
+  {
+    "name": "record",
+    "trans": [
+      "记录"
+    ],
+    "usphone": "(for v.) rɪˈkɔrd; (for n. adj.) ˈrɛkɚd",
+    "ukphone": "(for v.)rɪˈkɔːd; (for n.) ˈrekɔːd",
+    "sentences": [
+      {
+        "english": "According to official records, five people were killed last year near that road junction.",
+        "chinese": "据官方记录，去年有五人在那个路口附近丧生。"
+      },
+      {
+        "english": "His record reveals a tough streak.",
+        "chinese": "他的经历说明他个性坚强。"
+      },
+      {
+        "english": "Her husband made her record every penny she spent.",
+        "chinese": "她丈夫要她把花的每分钱都记下来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "记录；履历",
+        "english": "information about something that is written down or stored on computer, film etc so that it can be looked at in the future"
+      },
+      {
+        "pos": "v",
+        "chinese": "记录",
+        "english": "to write information down or store it in a computer or on film so that it can be looked at in the future"
+      }
+    ]
+  },
+  {
+    "name": "bibliography",
+    "trans": [
+      "参考书目"
+    ],
+    "usphone": ",bɪblɪ'ɑɡrəfi",
+    "ukphone": "ˌbɪbli'ɒgrəfi",
+    "sentences": [
+      {
+        "english": "At the end of this chapter there is a select bibliography of useful books.",
+        "chinese": "本章末尾附着有用书籍的精选书目。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 参考书目； 书目",
+        "english": "a list of all the books and articles used in preparing a piece of writing"
+      }
+    ]
+  },
+  {
+    "name": "incorrect",
+    "trans": [
+      "错误的"
+    ],
+    "usphone": ",ɪnkə'rɛkt",
+    "ukphone": "ɪnkə'rekt",
+    "sentences": [
+      {
+        "english": "The information you gave us was incorrect.",
+        "chinese": "你给我们的信息不准确。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "不正确的，错误的",
+        "english": "not correct or true"
+      }
+    ]
+  },
+  {
+    "name": "thorough",
+    "trans": [
+      "彻底的"
+    ],
+    "usphone": "ˈθʌrəʊ; θʌro",
+    "ukphone": "'θʌrə",
+    "sentences": [
+      {
+        "english": "The doctor gave him a thorough check-up.",
+        "chinese": "医生给他做了一次全面的体检。"
+      },
+      {
+        "english": "a thorough and detailed biography",
+        "chinese": "详尽的传记"
+      },
+      {
+        "english": "The police investigation was very thorough.",
+        "chinese": "警方的调查十分彻底。"
+      },
+      {
+        "english": "thorough notes of the meeting",
+        "chinese": "详尽的会议记录"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "彻底的；详尽的",
+        "english": "including every possible detail"
+      }
+    ]
+  },
+  {
+    "name": "definition",
+    "trans": [
+      "定义"
+    ],
+    "usphone": ",dɛfɪ'nɪʃən",
+    "ukphone": "defɪ'nɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "a dictionary definition",
+        "chinese": "词典里的释义"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "定义",
+        "english": "a phrase or sentence that says exactly what a word, phrase, or idea means"
+      }
+    ]
+  },
+  {
+    "name": "connective",
+    "trans": [
+      "连接词"
+    ],
+    "usphone": "kə'nɛktɪv",
+    "ukphone": "kə'nektɪv",
+    "sentences": [
+      {
+        "english": "Examples may include servers, disk storage devices, tape storage devices, and connective devices associated with these items.",
+        "chinese": "例子包括服务器、磁盘存储设备、磁带存储设备，和与这些相联系的连接设备。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "连合的, 连接的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "solution",
+    "trans": [
+      "解决方案"
+    ],
+    "usphone": "sə'luʃən",
+    "ukphone": "sə'luːʃ(ə)n",
+    "sentences": [
+      {
+        "english": "The best solution would be for them to separate.",
+        "chinese": "最好的解决方法是他们分开。"
+      },
+      {
+        "english": "he solution of glucose in water",
+        "chinese": "葡萄糖在水中的溶解"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "解决，解答；溶解",
+        "english": "a way of solving a problem or dealing with a difficult situation"
+      }
+    ]
+  },
+  {
+    "name": "leisure",
+    "trans": [
+      "闲暇"
+    ],
+    "usphone": "'liʒɚ",
+    "ukphone": "'leʒə(r)",
+    "sentences": [
+      {
+        "english": "Most people now enjoy shorter working hours and more leisure time.",
+        "chinese": "现在大多数人都喜欢工作时间短些，闲暇时间多些。"
+      },
+      {
+        "english": "Watching television is now the nation’s most popular leisure activity.",
+        "chinese": "看电视是当前国民最普遍的消遣活动。"
+      },
+      {
+        "english": "The hotel offers various leisure facilities such as a swimming pool and sauna.",
+        "chinese": "酒店提供游泳池、桑拿浴室等各种休闲设施。"
+      },
+      {
+        "english": "The leisure industry (= the business of providing leisure activities ) is now an important part of the economy.",
+        "chinese": "现在休闲娱乐行业是经济的一个重要组成部分。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "悠闲，空闲",
+        "english": "time when you are not working or studying and can relax and do things you enjoy"
+      }
+    ]
+  },
+  {
+    "name": "decisive",
+    "trans": [
+      "果断的"
+    ],
+    "usphone": "dɪ'saɪsɪv",
+    "ukphone": "dɪ'saɪsɪv",
+    "sentences": [
+      {
+        "english": "a decisive factor/victory/battle",
+        "chinese": "决定性的因素 / 胜利 / 战役"
+      },
+      {
+        "english": "a decisive leader",
+        "chinese": "果断的领袖"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "决定性的；果断的",
+        "english": "very important for the final result of a particular situation"
+      }
+    ]
+  },
+  {
+    "name": "ambitious",
+    "trans": [
+      "野心勃勃的"
+    ],
+    "usphone": "æm'bɪʃəs",
+    "ukphone": "æm'biʃəs",
+    "sentences": [
+      {
+        "english": "Alfred was intensely ambitious, obsessed with the idea of becoming rich.",
+        "chinese": "艾尔弗雷德雄心勃勃，一心想着发财。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "有雄心的，野心勃勃的",
+        "english": "determined to be successful, rich, powerful etc"
+      }
+    ]
+  },
+  {
+    "name": "specialised",
+    "trans": [
+      "专业的"
+    ]
+  },
+  {
+    "name": "observe",
+    "trans": [
+      "观察"
+    ],
+    "usphone": "əb'zɝv",
+    "ukphone": "əb'zɜːv",
+    "sentences": [
+      {
+        "english": "Scientists have observed a drop in ozone levels over the Antarctic.",
+        "chinese": "科学家已经观察到南极洲上方的臭氧浓度有所下降。"
+      },
+      {
+        "english": "Predators have been observed to avoid attacking brightly coloured species.",
+        "chinese": "据观察发现，食肉动物会避免袭击色彩鲜艳的物种。"
+      },
+      {
+        "english": "The army was observing a ceasefire.",
+        "chinese": "军队当时在遵守一项停火协议。"
+      },
+      {
+        "english": "‘Sid looks ill,’ Doherty observed.",
+        "chinese": "“锡德看上去病了。”多尔蒂说道。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "看到；遵守；说",
+        "english": "to see and notice something"
+      }
+    ]
+  },
+  {
+    "name": "dominance",
+    "trans": [
+      "支配"
+    ],
+    "usphone": "'dɔmɪnəns",
+    "ukphone": "'dɒmɪnəns",
+    "sentences": [
+      {
+        "english": "The latest fighting appears to be an attempt by each group to establish dominance over the other.",
+        "chinese": "最近的战斗似乎是冲突各方在试图争夺控制权。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "优势；统治；支配",
+        "english": "the fact of being more powerful, more important, or more noticeable than other people or things"
+      }
+    ]
+  },
+  {
+    "name": "stick",
+    "trans": [
+      "刺"
+    ],
+    "usphone": "stɪk",
+    "ukphone": "stɪk",
+    "sentences": [
+      {
+        "english": "a pair of drum sticks",
+        "chinese": "一对鼓槌"
+      },
+      {
+        "english": "a measuring stick",
+        "chinese": "量尺"
+      },
+      {
+        "english": "Aunt Lou walks with a stick (= uses a stick to help her walk ) .",
+        "chinese": "卢姑妈走路要拄拐棍。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "棍",
+        "english": "a long thin piece of wood, plastic etc that you use for a particular purpose"
+      },
+      {
+        "pos": "v",
+        "chinese": "刺,戳",
+        "english": "if a pointed object sticks into something, or if you stick it there, it is pushed into it"
+      }
+    ]
+  },
+  {
+    "name": "imaginable",
+    "trans": [
+      "可想象的"
+    ],
+    "usphone": "ɪ'mædʒɪnəbl",
+    "ukphone": "ɪ'mædʒɪnəb(ə)l",
+    "sentences": [
+      {
+        "english": "The travel brochure is full of the most wonderful resorts imaginable.",
+        "chinese": "这本旅游小册子里全是人们梦寐以求的最好的旅游胜地。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "可能的；可想像的",
+        "english": "used to emphasize that something is the best, worst etc that can be imagined"
+      }
+    ]
+  },
+  {
+    "name": "worthy",
+    "trans": [
+      "值得的"
+    ],
+    "usphone": "wɜði",
+    "ukphone": "ˈwəːði",
+    "sentences": [
+      {
+        "english": "Leeds United were worthy winners of the competition.",
+        "chinese": "利兹联队是比赛当之无愧的获胜者。"
+      },
+      {
+        "english": "a worthy opponent",
+        "chinese": "值得钦佩的对手"
+      },
+      {
+        "english": "A couple of other books are worthy of mention.",
+        "chinese": "还有一些其他的书值得一提"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "值得尊敬的；值得的",
+        "english": "deserving respect from people"
+      }
+    ]
+  },
+  {
+    "name": "interpersonal",
+    "trans": [
+      "人际的"
+    ],
+    "usphone": "'ɪntɚ'pɝsnl",
+    "ukphone": "ˌɪntə'pɜːsənl",
+    "sentences": [
+      {
+        "english": "interpersonal skills",
+        "chinese": "人际交往技巧"
+      },
+      {
+        "english": "interpersonal communication",
+        "chinese": "人际沟通"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 人与人之间的， 关于人与人之间关系的",
+        "english": "relating to relationships between people"
+      }
+    ]
+  },
+  {
+    "name": "accessible",
+    "trans": [
+      "可接近的"
+    ],
+    "usphone": "ək'sɛsəbl",
+    "ukphone": "ək'sesɪb(ə)l",
+    "sentences": [
+      {
+        "english": "The island is only accessible by boat.",
+        "chinese": "这个岛只有坐船才能到。"
+      },
+      {
+        "english": "There is a church which is easily accessible from my home.",
+        "chinese": "有座教堂离我家很近。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "易接近的；可进入的；可理解的",
+        "english": "a place, building, or object that is accessible is easy to reach or get into"
+      }
+    ]
+  },
+  {
+    "name": "regrettable",
+    "trans": [
+      "令人遗憾的"
+    ],
+    "usphone": "rɪ'ɡrɛtəbl",
+    "ukphone": "rɪ'gretəb(ə)l",
+    "sentences": [
+      {
+        "english": "This was a very regrettable error.",
+        "chinese": "这是个令人很遗憾的错误。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "令人遗憾的；可惜的；可悲的；抱歉的",
+        "english": "something that is regrettable is unpleasant, and you wish things could be different"
+      }
+    ]
+  },
+  {
+    "name": "wind",
+    "trans": [
+      "风"
+    ],
+    "usphone": "wɪnd; (for v.) waɪnd",
+    "ukphone": "wɪnd; (for v.) waɪnd",
+    "sentences": [
+      {
+        "english": "The wind blew from the northeast.",
+        "chinese": "风从东北方向吹来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "风",
+        "english": "moving air, especially when it moves strongly or quickly in a current"
+      }
+    ]
+  },
+  {
+    "name": "economics",
+    "trans": [
+      "经济学"
+    ],
+    "usphone": "'ikə'nɑmɪks; 'ɛkə'nɑmɪks",
+    "ukphone": "iːkə'nɒmɪks; ek-",
+    "sentences": [
+      {
+        "english": "a Harvard professor of economics",
+        "chinese": "哈佛大学的经济学教授"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "经济学；经济",
+        "english": "the study of the way in which money and goods are produced and used"
+      }
+    ]
+  },
+  {
+    "name": "postgraduate",
+    "trans": [
+      "研究生"
+    ],
+    "usphone": "post'ɡrædjet",
+    "ukphone": "ˌpəʊstˈgrædʒuət",
+    "sentences": [
+      {
+        "english": "\"Given the level of competition in law, I definitely think that my postgraduate degree helped to distinguish me from the crowd, \" he says.",
+        "chinese": "他说，“考虑到在法律行业的竞争水平，我确实认为我的研究生学位让我从众人中脱颖而出”。"
+      },
+      {
+        "english": "Attracted by the greatness of English language, Gu even changed her major from accounting to English in her postgraduate study.",
+        "chinese": "顾秋蓓被英语这门语言的魅力所吸引，她甚至将自己的研究生专业从会计转到了英语专业。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "研究生",
+        "english": "someone who is studying at a university to get a  master’s degree  or a  phd"
+      }
+    ]
+  },
+  {
+    "name": "management",
+    "trans": [
+      "管理"
+    ],
+    "usphone": "'mænɪdʒmənt",
+    "ukphone": "'mænɪdʒmənt",
+    "sentences": [
+      {
+        "english": "a lack of management skills",
+        "chinese": "缺乏管理技巧"
+      },
+      {
+        "english": "a management consultant",
+        "chinese": "一个管理顾问"
+      },
+      {
+        "english": "management training courses",
+        "chinese": "管理培训课程"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 管理； 处理； 管理部门， 管理人员",
+        "english": "the activity of controlling and organizing the work that a company or organization does"
+      }
+    ]
+  },
+  {
+    "name": "adviser",
+    "trans": [
+      "顾问"
+    ],
+    "usphone": "əd'vaɪzɚ",
+    "ukphone": "əd'vaɪzə",
+    "sentences": [
+      {
+        "english": "a financial adviser",
+        "chinese": "财务顾问"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "顾问；劝告者；指导教师（等于advisor）",
+        "english": "someone whose job is to give advice because they know a lot about a subject, especially in business, law, or politics"
+      }
+    ]
+  },
+  {
+    "name": "folder",
+    "trans": [
+      "文件夹"
+    ],
+    "usphone": "'foldɚ",
+    "ukphone": "'fəʊldə",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "文件夹；折叠机；折叠式印刷品",
+        "english": "a container for keeping loose papers in, made of folded card or plastic"
+      }
+    ]
+  },
+  {
+    "name": "identify",
+    "trans": [
+      "辨认出"
+    ],
+    "usphone": "aɪ'dɛntɪfaɪ",
+    "ukphone": "aɪ'dentɪfaɪ",
+    "sentences": [
+      {
+        "english": "He was too far away to be able to identify faces.",
+        "chinese": "他离得太远，没法看面孔认出谁是谁。"
+      },
+      {
+        "english": "The police took fingerprints and identified the body.",
+        "chinese": "警方采集了指纹，对尸体作了身份确认。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "认出，识别",
+        "english": "to recognize and correctly name someone or something"
+      }
+    ]
+  },
+  {
+    "name": "worksheet",
+    "trans": [
+      "练习册"
+    ],
+    "usphone": "'wɝkʃit",
+    "ukphone": "'wɜːkʃiːt",
+    "sentences": [
+      {
+        "english": "Another thing you can do is save the worksheet and send it to somebody else.",
+        "chinese": "您可以做的另一件事情是保存工作表并将其发送给其他人。"
+      },
+      {
+        "english": "If you do this to each worksheet item your test case script looks similar to Listing 6.",
+        "chinese": "如果您对每个工作表条目这样做，您的测试脚本看起来类似于列表6。"
+      },
+      {
+        "english": "You can manipulate the worksheet by adding columns and rows, including data from other sources, creating formulas for computations, and so on.",
+        "chinese": "您可以通过添加列和行、包括其他来源的数据、创建用于计算的公式等，从而操作工作表。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "工作记录表",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "access",
+    "trans": [
+      "接近"
+    ],
+    "usphone": "'æksɛs",
+    "ukphone": "'ækses",
+    "sentences": [
+      {
+        "english": "Access is by means of a small door on the right.",
+        "chinese": "入口是右边的一扇小门。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "接近；通道，入口；接近的机会",
+        "english": "the way you use to enter a building or reach a place"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 存取",
+        "english": "to find information, especially on a computer"
+      }
+    ]
+  },
+  {
+    "name": "profit",
+    "trans": [
+      "利益"
+    ],
+    "usphone": "'prɑfɪt",
+    "ukphone": "'prɒfɪt",
+    "sentences": [
+      {
+        "english": "The shop’s daily profit is usually around $500.",
+        "chinese": "这家商店每天的利润一般在500美元左右。"
+      },
+      {
+        "english": "She sold the business and bought a farm with the profits.",
+        "chinese": "她卖了公司，用所得利润买下了一座农场。"
+      },
+      {
+        "english": "They sold their house at a healthy profit.",
+        "chinese": "他们卖掉房子，赚了一大笔钱。"
+      },
+      {
+        "english": "There’s no profit in letting meetings drag on.",
+        "chinese": "会议拖拖拉拉没什么好处。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "利润；益处",
+        "english": "money that you gain by selling things or doing business, after your costs have been paid"
+      },
+      {
+        "pos": "v",
+        "chinese": "得益",
+        "english": "to get money from doing something"
+      }
+    ]
+  },
+  {
+    "name": "cultivate",
+    "trans": [
+      "培养"
+    ],
+    "usphone": "'kʌltɪvet",
+    "ukphone": "'kʌltɪvet",
+    "sentences": [
+      {
+        "english": "We cultivated maize and watermelons.",
+        "chinese": "我们种植玉米和西瓜。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "培养",
+        "english": "to plant and take care of a particular crop"
+      }
+    ]
+  },
+  {
+    "name": "highlight",
+    "trans": [
+      "精彩部分"
+    ],
+    "usphone": "'haɪlaɪt",
+    "ukphone": "'hailait",
+    "sentences": [
+      {
+        "english": "Your résumé should highlight your skills and achievements.",
+        "chinese": "你的简历应该突出自己的技能和成绩。"
+      },
+      {
+        "english": "That weekend in Venice was definitely the highlight of our trip.",
+        "chinese": "在威尼斯度过的那个周末无疑是我们这次旅行最精彩的部分。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "突出；强调",
+        "english": "to make a problem or subject easy to notice so that people pay attention to it"
+      },
+      {
+        "pos": "n",
+        "chinese": "突出的部分",
+        "english": "the most important, interesting, or enjoyable part of something such as a holiday, performance, or sports competition"
+      }
+    ]
+  },
+  {
+    "name": "diploma",
+    "trans": [
+      "文凭"
+    ],
+    "usphone": "dɪ'plomə",
+    "ukphone": "dɪ'pləʊmə",
+    "sentences": [
+      {
+        "english": "a High School diploma",
+        "chinese": "高中毕业文凭"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "毕业文凭，学位证书",
+        "english": "a document showing that a student has successfully completed their high school or university education"
+      }
+    ]
+  },
+  {
+    "name": "tutorial",
+    "trans": [
+      "指导"
+    ],
+    "usphone": "tu'tɔrɪəl",
+    "ukphone": "tjuː'tɔːrɪəl",
+    "sentences": [
+      {
+        "english": "tutorial staff",
+        "chinese": "辅导人员"
+      },
+      {
+        "english": "tutorial supervision",
+        "chinese": "老师的教授指导"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "辅导的；家庭教师的，个别指导的",
+        "english": "relating to a tutor or their work"
+      },
+      {
+        "pos": "n",
+        "chinese": "个别指导",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "assessment",
+    "trans": [
+      "评定"
+    ],
+    "usphone": "ə'sɛsmənt",
+    "ukphone": "əˈsesmənt",
+    "sentences": [
+      {
+        "english": "a reading assessment test",
+        "chinese": "阅读评估测试"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "评估，评价",
+        "english": "a process in which you make a judgment about a person or situation, or the judgment you make"
+      }
+    ]
+  },
+  {
+    "name": "brand",
+    "trans": [
+      "牌子"
+    ],
+    "usphone": "brænd",
+    "ukphone": "brænd",
+    "sentences": [
+      {
+        "english": "products which lack a strong brand image",
+        "chinese": "缺乏鲜明品牌形象的产品"
+      },
+      {
+        "english": "The owner couldn't be bothered to brand the cattle.",
+        "chinese": "主人懒得给这牛打上烙印。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "商标，牌子",
+        "english": "a type of product made by a particular company, that has a particular name or design"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 铭刻， 打烙印于； 加污名于， 谴责",
+        "english": "When you brand an animal, you put a permanent mark on its skin in order to show who it belongs to, usually by burning a mark onto its skin"
+      }
+    ]
+  },
+  {
+    "name": "image",
+    "trans": [
+      "图像"
+    ],
+    "usphone": "'ɪmɪdʒ",
+    "ukphone": "'imidʒ",
+    "sentences": [
+      {
+        "english": "attempts to improve the image of the police",
+        "chinese": "提升警察形象的努力"
+      },
+      {
+        "english": "He had the clearest image in his mind of his mother and father.",
+        "chinese": "他脑海中对父母的印象极其清晰。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "形象，声誉，；印象",
+        "english": "the opinion people have of a person, organization, product etc, or the way a person, organization etc seems to be to the public"
+      }
+    ]
+  },
+  {
+    "name": "residential",
+    "trans": [
+      "住宅的"
+    ],
+    "usphone": ",rɛzɪ'dɛnʃl",
+    "ukphone": "ˌrezɪ'denʃl",
+    "sentences": [
+      {
+        "english": "a quiet residential neighbourhood",
+        "chinese": "安静的住宅区"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 居住的， 住宅的； 寄宿的， 住在住所的",
+        "english": "a residential part of a town consists of private houses, with no offices or factories"
+      }
+    ]
+  },
+  {
+    "name": "intimacy",
+    "trans": [
+      "亲密行为"
+    ],
+    "usphone": "'ɪntɪməsi",
+    "ukphone": "'ɪntɪməsɪ",
+    "sentences": [
+      {
+        "english": "She thought back over the intimacies they’d shared and the plans they’d made.",
+        "chinese": "她回想起他们之间曾经有过的亲密言行以及他们设想的计划。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "性行为；亲密；亲昵行为；隐私",
+        "english": "a state of having a close personal relationship with someone"
+      }
+    ]
+  },
+  {
+    "name": "inappropriate",
+    "trans": [
+      "不合适的"
+    ],
+    "usphone": "'ɪnə'proprɪət",
+    "ukphone": "ɪnə'prəʊprɪət",
+    "sentences": [
+      {
+        "english": "There is no suggestion that clients have been sold inappropriate policies.",
+        "chinese": "没有迹象表明向客户出售过不适当的保险单。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "不合适的",
+        "english": "not suitable or right for a particular purpose or in a particular situation"
+      }
+    ]
+  },
+  {
+    "name": "underline",
+    "trans": [
+      "强调"
+    ],
+    "usphone": "'ʌndəlaɪn",
+    "ukphone": "ʌndə'laɪn",
+    "sentences": [
+      {
+        "english": "This tragic incident underlines the need for immediate action.",
+        "chinese": "这一悲剧事件突显了立即采取行动的必要性。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "强调；在…下面划线；预告",
+        "english": "to draw a line under a word to show that it is important"
+      },
+      {
+        "pos": "n",
+        "chinese": "下划线；下期节目预告",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "analyse",
+    "trans": [
+      "分析"
+    ],
+    "usphone": "'æn(ə)laɪz",
+    "ukphone": "'æn(ə)laɪz",
+    "sentences": [
+      {
+        "english": "She still needs to analyse the data.",
+        "chinese": "她仍需要分析这些数据。"
+      },
+      {
+        "english": "You need to sit down and analyse why you feel so upset.",
+        "chinese": "你得坐下来想一想自己为什么会那么生气。"
+      },
+      {
+        "english": "Joe had never tried to analyze their relationship.",
+        "chinese": "乔从未试图去理清他们的关系。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "分析，分解，解析",
+        "english": "to examine the nature or structure of sth, especially by separating it into its parts, in order to understand or explain it"
+      }
+    ]
+  },
+  {
+    "name": "quote",
+    "trans": [
+      "引述"
+    ],
+    "usphone": "kwot",
+    "ukphone": "kwəʊt",
+    "sentences": [
+      {
+        "english": "He quoted a short passage from the Bible.",
+        "chinese": "他引用了《圣经》里的一小段。"
+      },
+      {
+        "english": "A military spokesman was quoted as saying that the border area is now safe.",
+        "chinese": "报道引述军方一位发言人的话，说边境地区现在很安全。"
+      },
+      {
+        "english": "They quoted a price of £15,000.",
+        "chinese": "他们报价1.5万英镑。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "引用，引证；报价",
+        "english": "to repeat exactly what someone else has said or written"
+      }
+    ]
+  },
+  {
+    "name": "sub-topic",
+    "trans": [
+      "小标题"
+    ]
+  },
+  {
+    "name": "frustrated",
+    "trans": [
+      "挫败的"
+    ],
+    "usphone": "'frʌstretɪd",
+    "ukphone": "frʌ'streɪtɪd",
+    "sentences": [
+      {
+        "english": "He gets frustrated when people don’t understand what he’s trying to say.",
+        "chinese": "人们不懂他在说什么时，他就会很懊丧。"
+      },
+      {
+        "english": "The government has deliberately frustrated his efforts to gain work permits for his foreign staff.",
+        "chinese": "政府蓄意挫败了他为其外国员工取得工作许可证的努力。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "失意的，挫败的；泄气的",
+        "english": "someone who wants to develop a particular skill but has not been able to do this"
+      },
+      {
+        "pos": "v",
+        "chinese": "挫败；阻挠（frustrate的过去式和过去分词形式）",
+        "english": "If someone or something frustrates a plan or attempt to do something, they prevent it from succeeding"
+      }
+    ]
+  },
+  {
+    "name": "premise",
+    "trans": [
+      "前提"
+    ],
+    "usphone": "ˈpremɪs",
+    "ukphone": "'premɪs",
+    "sentences": [
+      {
+        "english": "Schools may earn extra money by renting out their premises.",
+        "chinese": "学校通过出租房屋场地可以获取额外收入。"
+      },
+      {
+        "english": "business premises",
+        "chinese": "企业经营场所"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 房屋和地基， 经营场址； 前提， 假设",
+        "english": "the buildings and land that a shop, restaurant, company etc uses"
+      }
+    ]
+  },
+  {
+    "name": "intelligent",
+    "trans": [
+      "聪明的"
+    ],
+    "usphone": "ɪn'tɛlɪdʒənt",
+    "ukphone": "ɪnˈtelɪdʒənt",
+    "sentences": [
+      {
+        "english": "a group of highly intelligent (= very intelligent )students",
+        "chinese": "一组聪明异常的学生"
+      },
+      {
+        "english": "Sontag was once famously described as the most intelligent woman in America.",
+        "chinese": "桑塔格曾被称为美国最聪明的女人，这是众人皆知的事。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "聪明的",
+        "english": "an intelligent person has a high level of mental ability and is good at understanding ideas and thinking clearly"
+      }
+    ]
+  },
+  {
+    "name": "sector",
+    "trans": [
+      "部门"
+    ],
+    "usphone": "'sɛktɚ",
+    "ukphone": "'sektə(r)",
+    "sentences": [
+      {
+        "english": "...the nation's manufacturing sector.",
+        "chinese": "…该国的制造部门。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "部门",
+        "english": "a part of an area of activity, especially of business, trade etc"
+      }
+    ]
+  },
+  {
+    "name": "transcription",
+    "trans": [
+      "抄写"
+    ],
+    "usphone": "træn'skrɪpʃən",
+    "ukphone": "træn'skrɪpʃ(ə)n; trɑːn-",
+    "sentences": [
+      {
+        "english": "Pronunciation is shown by a system of phonetic transcription.",
+        "chinese": "发音通过一种音标系统标示出来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "抄写；抄本；誊写",
+        "english": "when you transcribe something"
+      }
+    ]
+  },
+  {
+    "name": "chimpanzee",
+    "trans": [
+      "黑猩猩"
+    ],
+    "usphone": ",tʃɪmpæn'zi",
+    "ukphone": "tʃɪmpæn'ziː",
+    "sentences": [
+      {
+        "english": "So when you go from head to toe, you're seeing a mosaic creature that is neither chimpanzee, nor is it human.",
+        "chinese": "所以从头到脚，让人看到的是一个在黑猩猩和人类之间模棱两可的生物，这就是始祖地人猿。"
+      },
+      {
+        "english": "By hunting or gathering away from the group, both chimpanzee and dolphin moms ensure that what they find goes to their young.",
+        "chinese": "黑猩猩和海豚妈妈们远离群体打猎和收集食物，并保证他们所找到的食物都给孩子们。"
+      },
+      {
+        "english": "It was, if I can give a chimpanzee language, I can empty the contents of his mind. He can tell me what he's thinking, how he sees the world.",
+        "chinese": "他的想法是，如果我能交给黑猩猩一种语言的话，我就可以掏空他的想法，他可以告诉我他在想什么，他是怎样看这个世界的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[脊椎] 黑猩猩",
+        "english": "an intelligent African animal that is like a large monkey without a tail"
+      }
+    ]
+  },
+  {
+    "name": "imitate",
+    "trans": [
+      "模仿"
+    ],
+    "usphone": "'ɪmɪtet",
+    "ukphone": "'ɪmɪteɪt",
+    "sentences": [
+      {
+        "english": "She was a splendid mimic and loved to imitate Winston Churchill.",
+        "chinese": "她是个出色的模仿者，喜欢模仿温斯顿·丘吉尔。"
+      },
+      {
+        "english": "The Japanese have no wish to imitate Western social customs and attitudes.",
+        "chinese": "日本人无意仿效西方的社会习俗和处事态度。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "模仿；仿效；仿制",
+        "english": "to copy the way someone behaves, speaks, moves etc, especially in order to make people laugh"
+      }
+    ]
+  },
+  {
+    "name": "nutshell",
+    "trans": [
+      "坚果的外壳"
+    ]
+  },
+  {
+    "name": "invalid",
+    "trans": [
+      "无效的"
+    ],
+    "usphone": "ˈɪnvəlɪd；ɪnˈvælɪd",
+    "ukphone": "ɪn'vælɪd",
+    "sentences": [
+      {
+        "english": "Without the right date stamped on it, your ticket will be invalid.",
+        "chinese": "票上若没有加盖正确日期就是废票。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "无效的，作废的；无可靠根据的，站不住脚的",
+        "english": "a contract, ticket, claim etc that is invalid is not legally or officially acceptable"
+      },
+      {
+        "pos": "n",
+        "chinese": " 病弱者， 残疾者",
+        "english": "someone who cannot look after themselves because of illness, old age, or injury"
+      }
+    ]
+  },
+  {
+    "name": "ability",
+    "trans": [
+      "能力"
+    ],
+    "usphone": "ə'bɪləti",
+    "ukphone": "ə'bɪlɪtɪ",
+    "sentences": [
+      {
+        "english": "the ability to walk",
+        "chinese": "行走的能力"
+      },
+      {
+        "english": "The test measures your mathematical ability.",
+        "chinese": "这种测试考查的是数学能力。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "能力；能耐；本领",
+        "english": "the state of being able to do something"
+      }
+    ]
+  },
+  {
+    "name": "leadership",
+    "trans": [
+      "领导能力"
+    ],
+    "usphone": "'lidɚʃɪp",
+    "ukphone": "'liːdəʃɪp",
+    "sentences": [
+      {
+        "english": "The US must now take a firm leadership role.",
+        "chinese": "美国现在必须扮演一个强有力的领导人角色。"
+      },
+      {
+        "english": "the Conservative leadership contest",
+        "chinese": "保守党的领导人角逐"
+      },
+      {
+        "english": "The next leadership election is due in November.",
+        "chinese": "下一届领导人选举将在十一月举行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "领导",
+        "english": "the position of being the leader of a group, organization, country etc"
+      }
+    ]
+  },
+  {
+    "name": "majority",
+    "trans": [
+      "多数"
+    ],
+    "usphone": "mə'dʒɔrəti",
+    "ukphone": "mə'dʒɒrətɪ",
+    "sentences": [
+      {
+        "english": "The Labour Party won a huge majority at the last general election.",
+        "chinese": "工党在上次大选中以巨大的票数优势获胜。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "大多数",
+        "english": "most of the people or things in a group"
+      }
+    ]
+  },
+  {
+    "name": "seat belt",
+    "trans": [
+      "安全带"
+    ]
+  },
+  {
+    "name": "theory",
+    "trans": [
+      "理论"
+    ],
+    "usphone": "'θiəri",
+    "ukphone": "'θɪərɪ",
+    "sentences": [
+      {
+        "english": "Freudian theory has had a great influence on psychology.",
+        "chinese": "弗洛伊德理论对心理学产生过巨大影响。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "理论",
+        "english": "an idea or set of ideas that is intended to explain something about life or the world, especially an idea that has not yet been proved to be true"
+      }
+    ]
+  }
 ]

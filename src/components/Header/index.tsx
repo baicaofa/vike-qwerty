@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.svg";
+import { LanguageSwitcherCompact } from "@/components/LanguageSwitcher";
 import { UserAuthMenu } from "@/pages/Typing/components/UserAuthMenu";
 import type { PropsWithChildren } from "react";
 import type React from "react";
@@ -20,7 +21,10 @@ const Header: React.FC<PropsWithChildren> = ({ children }) => {
           {children}
         </nav>
 
-        <UserAuthMenu />
+        <div className="flex items-center space-x-3">
+          <LanguageSwitcherCompact />
+          <UserAuthMenu />
+        </div>
       </div>
     </header>
   );

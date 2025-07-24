@@ -1,1250 +1,4743 @@
 [
-    {
-        "name": "eat breakfast",
-        "trans": [
-            "吃早饭"
-        ],
-        "usphone": "it brɛkfəst",
-        "ukphone": ""
-    },
-    {
-        "name": "have...class",
-        "trans": [
-            "上⋯⋯课"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "play sports",
-        "trans": [
-            "进行体育运动"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "exercise",
-        "trans": [
-            "练习；运动；运用"
-        ],
-        "usphone": "'ɛksɚsaɪz",
-        "ukphone": "'eksəsaɪz"
-    },
-    {
-        "name": "do morning exercise",
-        "trans": [
-            "做早操"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "eat dinner",
-        "trans": [
-            "吃晚饭"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "clean my room",
-        "trans": [
-            "打扫我的房间"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "go for a walk",
-        "trans": [
-            "散步"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "go shopping",
-        "trans": [
-            "购物"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "take",
-        "trans": [
-            "上（课）"
-        ],
-        "usphone": "tek",
-        "ukphone": "teɪk"
-    },
-    {
-        "name": "dancing",
-        "trans": [
-            "跳舞"
-        ],
-        "usphone": "'dænsɪŋ",
-        "ukphone": "'dɑːnsɪŋ"
-    },
-    {
-        "name": "take a dancing class",
-        "trans": [
-            "上舞蹈课"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "when",
-        "trans": [
-            "什么时候"
-        ],
-        "usphone": "hwen; hwɛn",
-        "ukphone": "wen"
-    },
-    {
-        "name": "after",
-        "trans": [
-            "在⋯⋯之后"
-        ],
-        "usphone": "'æftɚ",
-        "ukphone": "'ɑːftə"
-    },
-    {
-        "name": "start",
-        "trans": [
-            "开始"
-        ],
-        "usphone": "stɑrt",
-        "ukphone": "stɑːt"
-    },
-    {
-        "name": "usually",
-        "trans": [
-            "通常地"
-        ],
-        "usphone": "juʒəlɪ",
-        "ukphone": "ˈjuːʒʊəlɪ"
-    },
-    {
-        "name": "Spain",
-        "trans": [
-            "西班牙"
-        ],
-        "usphone": "spen",
-        "ukphone": "spein"
-    },
-    {
-        "name": "late",
-        "trans": [
-            "晚"
-        ],
-        "usphone": "let",
-        "ukphone": "leɪt"
-    },
-    {
-        "name": "a.m.",
-        "trans": [
-            "上午"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "p.m.",
-        "trans": [
-            "下午"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "why",
-        "trans": [
-            "为什么"
-        ],
-        "usphone": "hwaɪ",
-        "ukphone": "waɪ"
-    },
-    {
-        "name": "shop",
-        "trans": [
-            "购物"
-        ],
-        "usphone": "ʃɑp",
-        "ukphone": "ʃɒp"
-    },
-    {
-        "name": "work",
-        "trans": [
-            "工作"
-        ],
-        "usphone": "wɝk",
-        "ukphone": "wɜːk"
-    },
-    {
-        "name": "last",
-        "trans": [
-            "上一个的"
-        ],
-        "usphone": "læst",
-        "ukphone": "lɑːst"
-    },
-    {
-        "name": "sound",
-        "trans": [
-            "听起来好像"
-        ],
-        "usphone": "saʊnd",
-        "ukphone": "saʊnd"
-    },
-    {
-        "name": "also",
-        "trans": [
-            "还"
-        ],
-        "usphone": "'ɔlso",
-        "ukphone": "'ɔːlsəʊ"
-    },
-    {
-        "name": "busy",
-        "trans": [
-            "忙的"
-        ],
-        "usphone": "ˈbɪzɪ",
-        "ukphone": "'bɪzɪ"
-    },
-    {
-        "name": "need",
-        "trans": [
-            "需要"
-        ],
-        "usphone": "nid",
-        "ukphone": "niːd"
-    },
-    {
-        "name": "play",
-        "trans": [
-            "戏剧"
-        ],
-        "usphone": "ple",
-        "ukphone": "pleɪ"
-    },
-    {
-        "name": "letter",
-        "trans": [
-            "信"
-        ],
-        "usphone": "'lɛtɚ",
-        "ukphone": "'letə"
-    },
-    {
-        "name": "live",
-        "trans": [
-            "居住"
-        ],
-        "usphone": "laɪv；lɪv",
-        "ukphone": "laɪv；lɪv"
-    },
-    {
-        "name": "island",
-        "trans": [
-            "岛"
-        ],
-        "usphone": "'aɪlənd",
-        "ukphone": "'aɪlənd"
-    },
-    {
-        "name": "always",
-        "trans": [
-            "总是"
-        ],
-        "usphone": "'ɔlwez",
-        "ukphone": "ˈɔ:lweɪz"
-    },
-    {
-        "name": "cave",
-        "trans": [
-            "山洞"
-        ],
-        "usphone": "kev",
-        "ukphone": "keɪv"
-    },
-    {
-        "name": "go swimming",
-        "trans": [
-            "去游泳"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "win",
-        "trans": [
-            "获胜"
-        ],
-        "usphone": "wɪn",
-        "ukphone": "wɪn"
-    },
-    {
-        "name": "spring",
-        "trans": [
-            "春天"
-        ],
-        "usphone": "sprɪŋ",
-        "ukphone": "sprɪŋ"
-    },
-    {
-        "name": "summer",
-        "trans": [
-            "夏天"
-        ],
-        "usphone": "'sʌmɚ",
-        "ukphone": "'sʌmə"
-    },
-    {
-        "name": "autumn",
-        "trans": [
-            "秋天"
-        ],
-        "usphone": "'ɔtəm",
-        "ukphone": "'ɔːtəm"
-    },
-    {
-        "name": "winter",
-        "trans": [
-            "冬天"
-        ],
-        "usphone": "'wɪntɚ",
-        "ukphone": "'wɪntə"
-    },
-    {
-        "name": "season",
-        "trans": [
-            "季节"
-        ],
-        "usphone": "'sizn",
-        "ukphone": "'siːz(ə)n"
-    },
-    {
-        "name": "picnic",
-        "trans": [
-            "野餐"
-        ],
-        "usphone": "'pɪknɪk",
-        "ukphone": "'pɪknɪk"
-    },
-    {
-        "name": "go on a picnic",
-        "trans": [
-            "去野餐"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "pick",
-        "trans": [
-            "摘"
-        ],
-        "usphone": "pɪk",
-        "ukphone": "pɪk"
-    },
-    {
-        "name": "pick apples",
-        "trans": [
-            "摘苹果"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "snowman",
-        "trans": [
-            "雪人"
-        ],
-        "usphone": "'snomæn",
-        "ukphone": "'snəʊmæn"
-    },
-    {
-        "name": "make a snowman",
-        "trans": [
-            "堆雪人"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "go swimming.",
-        "trans": [
-            "去游泳"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "which",
-        "trans": [
-            "哪一个"
-        ],
-        "usphone": "wɪtʃ",
-        "ukphone": "wɪtʃ"
-    },
-    {
-        "name": "best",
-        "trans": [
-            "最"
-        ],
-        "usphone": "bɛst",
-        "ukphone": "best"
-    },
-    {
-        "name": "snow",
-        "trans": [
-            "雪"
-        ],
-        "usphone": "sno",
-        "ukphone": "snəʊ"
-    },
-    {
-        "name": "good job",
-        "trans": [
-            "做得好"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "because",
-        "trans": [
-            "因为"
-        ],
-        "usphone": "bɪ'kɔz",
-        "ukphone": "bɪ'kɒz"
-    },
-    {
-        "name": "vacation",
-        "trans": [
-            "假期"
-        ],
-        "usphone": "veˈkeʃən",
-        "ukphone": "vəˈkeɪʃn"
-    },
-    {
-        "name": "all",
-        "trans": [
-            "完全"
-        ],
-        "usphone": "ɔl",
-        "ukphone": "ɔːl"
-    },
-    {
-        "name": "pink",
-        "trans": [
-            "粉色"
-        ],
-        "usphone": "pɪŋk",
-        "ukphone": "pɪŋk"
-    },
-    {
-        "name": "lovely",
-        "trans": [
-            "可爱的"
-        ],
-        "usphone": "'lʌvli",
-        "ukphone": "'lʌvlɪ"
-    },
-    {
-        "name": "leaf",
-        "trans": [
-            "叶子"
-        ],
-        "usphone": "lif",
-        "ukphone": "liːf"
-    },
-    {
-        "name": "fall",
-        "trans": [
-            "落下"
-        ],
-        "usphone": "fɔl",
-        "ukphone": "fɔːl"
-    },
-    {
-        "name": "paint",
-        "trans": [
-            "绘画"
-        ],
-        "usphone": "pent",
-        "ukphone": "peɪnt"
-    },
-    {
-        "name": "January",
-        "trans": [
-            "一月"
-        ],
-        "usphone": "'dʒænjʊ'ɛri",
-        "ukphone": "'dʒænjʊ(ə)rɪ"
-    },
-    {
-        "name": "February",
-        "trans": [
-            "二月"
-        ],
-        "usphone": "ˈfebrʊerɪ;'fɛbrʊɛrɪ",
-        "ukphone": "ˈfebrʊərɪ"
-    },
-    {
-        "name": "March",
-        "trans": [
-            "三月"
-        ],
-        "usphone": "mɑrtʃ",
-        "ukphone": "mɑːtʃ"
-    },
-    {
-        "name": "April",
-        "trans": [
-            "四月"
-        ],
-        "usphone": "'eprəl",
-        "ukphone": "'eɪprəl"
-    },
-    {
-        "name": "May",
-        "trans": [
-            "五月"
-        ],
-        "usphone": "me",
-        "ukphone": "meɪ"
-    },
-    {
-        "name": "June",
-        "trans": [
-            "六月"
-        ],
-        "usphone": "dʒun",
-        "ukphone": "dʒu:n"
-    },
-    {
-        "name": "July",
-        "trans": [
-            "七月"
-        ],
-        "usphone": "dʒʊˈlaɪ",
-        "ukphone": "dʒʊˈlaɪ"
-    },
-    {
-        "name": "August",
-        "trans": [
-            "八月"
-        ],
-        "usphone": "ɔˈɡʌst",
-        "ukphone": "ɔ:ˈgʌst"
-    },
-    {
-        "name": "September",
-        "trans": [
-            "九月"
-        ],
-        "usphone": "sɛp'tɛmbɚ",
-        "ukphone": "sep'tembə"
-    },
-    {
-        "name": "October",
-        "trans": [
-            "十月"
-        ],
-        "usphone": "ɑk'tobɚ",
-        "ukphone": "ɒk'təʊbə"
-    },
-    {
-        "name": "November",
-        "trans": [
-            "十一月"
-        ],
-        "usphone": "no'vɛmbɚ",
-        "ukphone": "nə(ʊ)'vembə"
-    },
-    {
-        "name": "December",
-        "trans": [
-            "十二月"
-        ],
-        "usphone": "dɪ'sɛmbɚ",
-        "ukphone": "dɪ'sembə"
-    },
-    {
-        "name": "few",
-        "trans": [
-            "不多"
-        ],
-        "usphone": "fju",
-        "ukphone": "fjuː"
-    },
-    {
-        "name": "a few",
-        "trans": [
-            "一些"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "thing",
-        "trans": [
-            "事情"
-        ],
-        "usphone": "θɪŋ",
-        "ukphone": "θɪŋ"
-    },
-    {
-        "name": "meet",
-        "trans": [
-            "集会"
-        ],
-        "usphone": "mit",
-        "ukphone": "miːt"
-    },
-    {
-        "name": "sports meet",
-        "trans": [
-            "运动会"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "Easter",
-        "trans": [
-            "复活节"
-        ],
-        "usphone": "istəʳ",
-        "ukphone": "'i:stə"
-    },
-    {
-        "name": "trip",
-        "trans": [
-            "旅行"
-        ],
-        "usphone": "trɪp",
-        "ukphone": "trɪp"
-    },
-    {
-        "name": "year",
-        "trans": [
-            "年"
-        ],
-        "usphone": "yir",
-        "ukphone": "jɪə; jɜː"
-    },
-    {
-        "name": "plant",
-        "trans": [
-            "种植"
-        ],
-        "usphone": "plænt",
-        "ukphone": "plɑːnt"
-    },
-    {
-        "name": "contest",
-        "trans": [
-            "比赛"
-        ],
-        "usphone": "kən'tɛst",
-        "ukphone": "'kɒntest"
-    },
-    {
-        "name": "the Great Wall",
-        "trans": [
-            "长城"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "national",
-        "trans": [
-            "国家的"
-        ],
-        "usphone": "'næʃnəl",
-        "ukphone": "'næʃ(ə)n(ə)l"
-    },
-    {
-        "name": "National Day",
-        "trans": [
-            "国庆日"
-        ],
-        "usphone": "ˈnæʃənəl de",
-        "ukphone": ""
-    },
-    {
-        "name": "American",
-        "trans": [
-            "美国的"
-        ],
-        "usphone": "əˈmɛrɪkən",
-        "ukphone": "əˈmerɪkən"
-    },
-    {
-        "name": "Thanksgiving",
-        "trans": [
-            "感恩节"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "Christmas",
-        "trans": [
-            "圣诞节"
-        ],
-        "usphone": "",
-        "ukphone": "ˈkrɪsməs"
-    },
-    {
-        "name": "holiday",
-        "trans": [
-            "节日"
-        ],
-        "usphone": "'hɑləde",
-        "ukphone": "'hɒlɪdeɪ; -dɪ"
-    },
-    {
-        "name": "game",
-        "trans": [
-            "游戏"
-        ],
-        "usphone": "ɡem",
-        "ukphone": "geɪm"
-    },
-    {
-        "name": "roll",
-        "trans": [
-            "滚动"
-        ],
-        "usphone": "rol",
-        "ukphone": "rəʊl"
-    },
-    {
-        "name": "look for",
-        "trans": [
-            "寻找"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "chocolate",
-        "trans": [
-            "巧克力"
-        ],
-        "usphone": "ˈtʃɑkələt",
-        "ukphone": "'tʃɒk(ə)lət"
-    },
-    {
-        "name": "bunny",
-        "trans": [
-            "兔子"
-        ],
-        "usphone": "'bʌni",
-        "ukphone": "'bʌnɪ"
-    },
-    {
-        "name": "RSVP",
-        "trans": [
-            "请赐复"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "by",
-        "trans": [
-            "在⋯⋯之前"
-        ],
-        "usphone": "baɪ",
-        "ukphone": "baɪ"
-    },
-    {
-        "name": "first",
-        "trans": [
-            "第一"
-        ],
-        "usphone": "fɝst",
-        "ukphone": "fɜːst"
-    },
-    {
-        "name": "second",
-        "trans": [
-            "第二"
-        ],
-        "usphone": "'sɛkənd",
-        "ukphone": "'sek(ə)nd"
-    },
-    {
-        "name": "third",
-        "trans": [
-            "第三"
-        ],
-        "usphone": "θɝd",
-        "ukphone": "θɜːd"
-    },
-    {
-        "name": "fourth",
-        "trans": [
-            "第四"
-        ],
-        "usphone": "fɔrθ",
-        "ukphone": "fɔːθ"
-    },
-    {
-        "name": "fifth",
-        "trans": [
-            "第五"
-        ],
-        "usphone": "fɪfθ",
-        "ukphone": "fɪfθ"
-    },
-    {
-        "name": "twelfth",
-        "trans": [
-            "第十二"
-        ],
-        "usphone": "twɛlfθ",
-        "ukphone": "twelfθ"
-    },
-    {
-        "name": "twentieth",
-        "trans": [
-            "第二十"
-        ],
-        "usphone": "ˈtwɛntɪɪθ",
-        "ukphone": "ˈtwentɪəθ"
-    },
-    {
-        "name": "twenty-first",
-        "trans": [
-            "第二十一"
-        ],
-        "usphone": "'twenti'fə:st",
-        "ukphone": ""
-    },
-    {
-        "name": "twenty-third",
-        "trans": [
-            "第二十三"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "thirtieth",
-        "trans": [
-            "第三十"
-        ],
-        "usphone": "'θɝtɪɪθ",
-        "ukphone": "'θɜːtɪɪθ"
-    },
-    {
-        "name": "special",
-        "trans": [
-            "特殊的"
-        ],
-        "usphone": "ˈspɛʃəl",
-        "ukphone": "'speʃ(ə)l"
-    },
-    {
-        "name": "fool",
-        "trans": [
-            "蠢人"
-        ],
-        "usphone": "ful",
-        "ukphone": "fuːl"
-    },
-    {
-        "name": "kitten",
-        "trans": [
-            "小猫"
-        ],
-        "usphone": "'kɪtn",
-        "ukphone": "'kɪt(ə)n"
-    },
-    {
-        "name": "diary",
-        "trans": [
-            "日记"
-        ],
-        "usphone": "'daɪəri",
-        "ukphone": "'daɪərɪ"
-    },
-    {
-        "name": "still",
-        "trans": [
-            "仍然"
-        ],
-        "usphone": "stɪl",
-        "ukphone": "stɪl"
-    },
-    {
-        "name": "noise",
-        "trans": [
-            "噪音"
-        ],
-        "usphone": "nɔɪz",
-        "ukphone": "nɔɪz"
-    },
-    {
-        "name": "fur",
-        "trans": [
-            "动物皮毛"
-        ],
-        "usphone": "fɝ",
-        "ukphone": "fɜː"
-    },
-    {
-        "name": "open",
-        "trans": [
-            "开着的"
-        ],
-        "usphone": "'opən",
-        "ukphone": "'əʊp(ə)n"
-    },
-    {
-        "name": "walk",
-        "trans": [
-            "行走"
-        ],
-        "usphone": "wɔk",
-        "ukphone": "wɔːk"
-    },
-    {
-        "name": "mine",
-        "trans": [
-            "我的"
-        ],
-        "usphone": "maɪn",
-        "ukphone": "maɪn"
-    },
-    {
-        "name": "yours",
-        "trans": [
-            "你的"
-        ],
-        "usphone": "jʊrz",
-        "ukphone": "jɔːz; jʊəz"
-    },
-    {
-        "name": "his",
-        "trans": [
-            "他的"
-        ],
-        "usphone": "hɪz",
-        "ukphone": "hɪz"
-    },
-    {
-        "name": "hers",
-        "trans": [
-            "她的"
-        ],
-        "usphone": "hɝz",
-        "ukphone": "hɜːz"
-    },
-    {
-        "name": "theirs",
-        "trans": [
-            "他们的"
-        ],
-        "usphone": "ðɛrz",
-        "ukphone": "ðeəz"
-    },
-    {
-        "name": "ours",
-        "trans": [
-            "我们的"
-        ],
-        "usphone": "ɑrz",
-        "ukphone": "aʊəz"
-    },
-    {
-        "name": "climbing",
-        "trans": [
-            "攀登"
-        ],
-        "usphone": "'klaɪmɪŋ",
-        "ukphone": "'klaɪmɪŋ"
-    },
-    {
-        "name": "eating",
-        "trans": [
-            "吃"
-        ],
-        "usphone": "'itɪŋ",
-        "ukphone": "'iːtɪŋ"
-    },
-    {
-        "name": "playing",
-        "trans": [
-            "玩"
-        ],
-        "usphone": "'pleɪŋ",
-        "ukphone": "'pleɪŋ"
-    },
-    {
-        "name": "jumping",
-        "trans": [
-            "跳"
-        ],
-        "usphone": "'dʒʌmpɪŋ",
-        "ukphone": "'dʒʌmpɪŋ"
-    },
-    {
-        "name": "drinking",
-        "trans": [
-            "喝"
-        ],
-        "usphone": "'drɪŋkɪŋ",
-        "ukphone": "'drɪŋkɪŋ"
-    },
-    {
-        "name": "sleeping",
-        "trans": [
-            "睡觉"
-        ],
-        "usphone": "'slipɪŋ",
-        "ukphone": "'sliːpɪŋ"
-    },
-    {
-        "name": "each",
-        "trans": [
-            "每个"
-        ],
-        "usphone": "itʃ",
-        "ukphone": "iːtʃ"
-    },
-    {
-        "name": "other",
-        "trans": [
-            "其他"
-        ],
-        "usphone": "'ʌðɚ",
-        "ukphone": "'ʌðə"
-    },
-    {
-        "name": "each other",
-        "trans": [
-            "相互"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "excited",
-        "trans": [
-            "兴奋地"
-        ],
-        "usphone": "ɪk'saɪtɪd",
-        "ukphone": "ɪk'saɪtɪd"
-    },
-    {
-        "name": "like",
-        "trans": [
-            "像⋯⋯那样"
-        ],
-        "usphone": "laɪk",
-        "ukphone": "laɪk"
-    },
-    {
-        "name": "doing morning exercises",
-        "trans": [
-            "做早操"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "having...class",
-        "trans": [
-            "上⋯⋯课"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "eating lunch",
-        "trans": [
-            "吃午饭"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "reading a book",
-        "trans": [
-            "看书"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "listening to music",
-        "trans": [
-            "听音乐"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "keep",
-        "trans": [
-            "保持"
-        ],
-        "usphone": "kip",
-        "ukphone": "kiːp"
-    },
-    {
-        "name": "keep to the right",
-        "trans": [
-            "靠右"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "keep your desk clean",
-        "trans": [
-            "保持课桌干净"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "talk quietly",
-        "trans": [
-            "小声讲话"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "turn",
-        "trans": [
-            "顺序"
-        ],
-        "usphone": "tɝn",
-        "ukphone": "tɜːn"
-    },
-    {
-        "name": "take turns",
-        "trans": [
-            "按顺序来"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "bamboo",
-        "trans": [
-            "竹子"
-        ],
-        "usphone": ",bæm'bu",
-        "ukphone": "bæm'buː"
-    },
-    {
-        "name": "its",
-        "trans": [
-            "它的"
-        ],
-        "usphone": "ɪts",
-        "ukphone": "ɪts"
-    },
-    {
-        "name": "show",
-        "trans": [
-            "指导，引导"
-        ],
-        "usphone": "ʃo",
-        "ukphone": "ʃəʊ"
-    },
-    {
-        "name": "anything",
-        "trans": [
-            "任何事物"
-        ],
-        "usphone": "'ɛnɪ'θɪŋ",
-        "ukphone": "'enɪθɪŋ"
-    },
-    {
-        "name": "else",
-        "trans": [
-            "另外"
-        ],
-        "usphone": "ɛls",
-        "ukphone": "els"
-    },
-    {
-        "name": "exhibition",
-        "trans": [
-            "展览"
-        ],
-        "usphone": "ˌɛksəˈbɪʃən",
-        "ukphone": "ˌeksɪˈbɪʃn"
-    },
-    {
-        "name": "say",
-        "trans": [
-            "说；讲"
-        ],
-        "usphone": "se",
-        "ukphone": "seɪ"
-    },
-    {
-        "name": "have a look",
-        "trans": [
-            "看一看"
-        ],
-        "usphone": "",
-        "ukphone": ""
-    },
-    {
-        "name": "sushi",
-        "trans": [
-            "寿司"
-        ],
-        "usphone": "'sʊʃi",
-        "ukphone": "'suːʃɪ"
-    },
-    {
-        "name": "teach",
-        "trans": [
-            "教"
-        ],
-        "usphone": "titʃ",
-        "ukphone": "tiːtʃ"
-    },
-    {
-        "name": "sure",
-        "trans": [
-            "当然"
-        ],
-        "usphone": "ʃʊər; ʃʊr",
-        "ukphone": "ʃɔ:(r)"
-    },
-    {
-        "name": "Canadian",
-        "trans": [
-            "加拿大的"
-        ],
-        "usphone": "kə'nedɪən",
-        "ukphone": "kə'neɪdɪən"
-    },
-    {
-        "name": "Spanish",
-        "trans": [
-            "西班牙的"
-        ],
-        "usphone": "'spænɪʃ",
-        "ukphone": "'spænɪʃ"
-    }
+  {
+    "name": "eat breakfast",
+    "trans": [
+      "吃早饭"
+    ],
+    "usphone": "it brɛkfəst",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "When you eat breakfast together, how does it go?",
+        "chinese": "当你们一起吃早餐的时候，情况怎么样？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "吃早饭",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "have...class",
+    "trans": [
+      "上⋯⋯课"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "上⋯⋯课",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "play sports",
+    "trans": [
+      "进行体育运动"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "Exercise regularly if you can, play sports, toss a ball around with your family.",
+        "chinese": "尽可能有规律地锻炼，可以做运动，或者和家人一起传球玩。"
+      },
+      {
+        "english": "Women who play sports and frequently cycle or swim can also break their hymen, even though they might be virgins.",
+        "chinese": "女性做运动和经常性地骑自行车或游泳都可以让她们的处女膜破裂，即使她们可能是处女。"
+      },
+      {
+        "english": "He liked to hang with the guys and play sports.",
+        "chinese": "他喜欢和男友一起打发时间或者做些运动。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "做体育运动",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "exercise",
+    "trans": [
+      "练习；运动；运用"
+    ],
+    "usphone": "'ɛksɚsaɪz",
+    "ukphone": "'eksəsaɪz",
+    "sentences": [
+      {
+        "english": "Try to fit some regular exercise into your daily routine.",
+        "chinese": "尽量在日常生活中安排一些经常性的锻炼。"
+      },
+      {
+        "english": "Working in an office, I don’t get much exercise.",
+        "chinese": "由于在办公室工作，我很少运动。"
+      },
+      {
+        "english": "role-play exercises",
+        "chinese": "角色扮演练习"
+      },
+      {
+        "english": "Horses need to be exercised regularly.",
+        "chinese": "马需要有规律的训练。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "锻炼；训练",
+        "english": "physical activities that you do in order to stay healthy and become stronger"
+      },
+      {
+        "pos": "v",
+        "chinese": "练习",
+        "english": "to do sports or other physical activities in order to stay healthy or become stronger; to make an animal do this"
+      }
+    ]
+  },
+  {
+    "name": "do morning exercise",
+    "trans": [
+      "做早操"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "When do you do morning exercise?",
+        "chinese": "你什麽时候做早操？"
+      },
+      {
+        "english": "He found it useful to his health to do morning exercise every day.",
+        "chinese": "他发现每天做早操对健康十分有益。"
+      },
+      {
+        "english": "Thirdly, wed better do morning exercise every day, do sports frequently to make our bodies strong.",
+        "chinese": "第三，我们最好每天做早操运动频繁，能使我们的体魄强壮。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "做早操",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "eat dinner",
+    "trans": [
+      "吃晚饭"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "We beseech thee to come eat dinner with us.",
+        "chinese": "我们恳求你来和我们一起吃晚饭。"
+      },
+      {
+        "english": "After a nap, television entertains the apprentices until they eat dinner and retire.",
+        "chinese": "在小睡之后，新手们会一直看电视直到吃晚饭和就寝。"
+      },
+      {
+        "english": "Or they can eat dinner and listen to live music at the Mangy Moose Saloon.",
+        "chinese": "或者，他们可以在梅吉.穆斯沙龙吃晚餐，并聆听现场音乐会。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "吃晚饭",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "clean my room",
+    "trans": [
+      "打扫我的房间"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "If don't clean my room,my mother won't____me meet my friends.",
+        "chinese": "如果我不清理房间，我妈妈不让我见我的朋友。"
+      },
+      {
+        "english": "I could clean my room and then ask if I could go to the party.",
+        "chinese": "我会整理好自己的房间，然后问妈妈我是否可以去参加聚会。"
+      },
+      {
+        "english": "For example: \"I'm really angry at Mom because she won't let me go to the party until I clean my room.",
+        "chinese": "例如：我真的很生气，因为如果我不整理好房间，妈妈就不让我去参加聚会。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "打扫我的房间",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "go for a walk",
+    "trans": [
+      "散步"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "Take it outside, go for a walk or eat at your desk.",
+        "chinese": "那就打包带走，边散步边吃，或者在办公桌上吃。"
+      },
+      {
+        "english": "Don't like eating in the lunch room? Take it outside, go for a walk or eat at your desk.",
+        "chinese": "不喜欢在餐厅吃午餐吗？那就打包带走，边散步边吃，或者在办公桌上吃。"
+      },
+      {
+        "english": "I try to do something, however little, try to make the effort to wash and dress and go for a walk every day, which helps me to feel in control of my life.",
+        "chinese": "我会尽力去做一些事情，尽管很微小，我会努力每天去洗漱更衣并且出去散步，这可以帮助我感觉到我还能够控制我的生活。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "散步",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "go shopping",
+    "trans": [
+      "购物"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "I usually go shopping with my aunt.",
+        "chinese": "我通常和我阿姨一起去购物。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "购物",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "take",
+    "trans": [
+      "上（课）"
+    ],
+    "usphone": "tek",
+    "ukphone": "teɪk",
+    "sentences": [
+      {
+        "english": "Will you take the job?",
+        "chinese": "你接受这份工作吗？"
+      },
+      {
+        "english": "Do you take American Express?",
+        "chinese": "你们接受美国运通信用卡吗？"
+      },
+      {
+        "english": "If you take my advice , you’ll see a doctor.",
+        "chinese": "如果你听我的意见，就去看医生。"
+      },
+      {
+        "english": "Our helpline take s 3.5 million calls (= telephone calls ) a year.",
+        "chinese": "我们的求助热线每年接听350万个电话。"
+      },
+      {
+        "english": "Some doctors are unwilling to take new patients without a referral.",
+        "chinese": "有些医生不愿意接收没有转诊单的新病人。"
+      },
+      {
+        "english": "Liz found his criticisms hard to take .",
+        "chinese": "利兹觉得他的批评很难接受。"
+      },
+      {
+        "english": "I just can’t take any more (= can’t deal with a bad situation any longer ) .",
+        "chinese": "我再也受不了了。"
+      },
+      {
+        "english": "Staff have agreed to take a 2% pay cut.",
+        "chinese": "员工同意接受2%的降薪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "  拿走； 接受， 接纳",
+        "english": "to accept or choose something that is offered, suggested, or given to you"
+      }
+    ]
+  },
+  {
+    "name": "dancing",
+    "trans": [
+      "跳舞"
+    ],
+    "usphone": "'dænsɪŋ",
+    "ukphone": "'dɑːnsɪŋ",
+    "sentences": [
+      {
+        "english": "All the schools have music and dancing as part of the curriculum.",
+        "chinese": "每个学校都设有音乐课和舞蹈课。"
+      },
+      {
+        "english": "Let's go dancing tonight.",
+        "chinese": "我们今晚去跳舞吧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "跳舞",
+        "english": "When people dance for enjoyment or to entertain others, you can refer to this activity as dancing"
+      }
+    ]
+  },
+  {
+    "name": "take a dancing class",
+    "trans": [
+      "上舞蹈课"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "On Saturdays, I often take a dancing class in the morning .",
+        "chinese": "周六上午我经常上舞蹈课。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "上舞蹈课",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "when",
+    "trans": [
+      "什么时候"
+    ],
+    "usphone": "hwen; hwɛn",
+    "ukphone": "wen",
+    "sentences": [
+      {
+        "english": "When are we leaving?",
+        "chinese": "我们什么时候走？"
+      },
+      {
+        "english": "When did you first meet Dr Darnall?",
+        "chinese": "你是什么时候认识达纳尔博士的？"
+      },
+      {
+        "english": "When will the work be finished?",
+        "chinese": "这项工作什么时候完成？"
+      },
+      {
+        "english": "I don’t know when I’ll see her again.",
+        "chinese": "我不知道何时才能再见到她。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "考虑到；既然；当…时；在…时；如果",
+        "english": ""
+      },
+      {
+        "pos": "adv",
+        "chinese": "什么时候，何时；（用于时间的表达方式之后）在那时；其时；当时",
+        "english": "at what time"
+      },
+      {
+        "pos": "pron",
+        "chinese": "那时；什么时侯",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "时间，时候；日期；场合",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "after",
+    "trans": [
+      "在⋯⋯之后"
+    ],
+    "usphone": "'æftɚ",
+    "ukphone": "'ɑːftə",
+    "sentences": [
+      {
+        "english": "After the war many soldiers stayed in France.",
+        "chinese": "战后，许多士兵留在法国。"
+      },
+      {
+        "english": "I go swimming every day after work.",
+        "chinese": "我每天下班后都去游泳。"
+      },
+      {
+        "english": "Do you believe in life after death?",
+        "chinese": "你相信人死后还有来生吗？"
+      },
+      {
+        "english": "The first attack started just after midnight.",
+        "chinese": "刚过午夜，第一波进攻开始了。"
+      },
+      {
+        "english": "David went to bed straight after (=  immediately after  ) supper.",
+        "chinese": "戴维一吃完晚饭就去睡觉了。"
+      },
+      {
+        "english": "After you’d called the police, what did you do?",
+        "chinese": "报警之后，你做了些什么？"
+      },
+      {
+        "english": "Zimmerman changed his name after he left Germany.",
+        "chinese": "齐默尔曼离开德国后改了名字。"
+      },
+      {
+        "english": "People still remember the 1958 revolution and what came after (=  happened after it  ) .",
+        "chinese": "人们依然记得1958年的那场革命和之后发生的事。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…以后；次于",
+        "english": "when a particular event or time has happened, or when someone has done something"
+      }
+    ]
+  },
+  {
+    "name": "start",
+    "trans": [
+      "开始"
+    ],
+    "usphone": "stɑrt",
+    "ukphone": "stɑːt",
+    "sentences": [
+      {
+        "english": "There’s so much to do. I don’t know where to start.",
+        "chinese": "有那么多的事情要做，我都不知道从哪里开始。"
+      },
+      {
+        "english": "She wanted to start her own catering business.",
+        "chinese": "她想自己创立一家餐饮公司。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "开动，着手；开设",
+        "english": "to do something that you were not doing before, and continue doing it"
+      }
+    ]
+  },
+  {
+    "name": "usually",
+    "trans": [
+      "通常地"
+    ],
+    "usphone": "juʒəlɪ",
+    "ukphone": "ˈjuːʒʊəlɪ",
+    "sentences": [
+      {
+        "english": "Women usually live longer than men.",
+        "chinese": "女人通常比男人长寿。"
+      },
+      {
+        "english": "Usually I wear black, grey, or brown.",
+        "chinese": "通常我都穿黑色、灰色或者棕色的衣服。"
+      },
+      {
+        "english": "The drive usually takes 15 or 20 minutes.",
+        "chinese": "这段车程通常需要 15 或 20 分钟。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "通常，经常",
+        "english": "used to talk about what happens on most occasions or in most situations"
+      }
+    ]
+  },
+  {
+    "name": "Spain",
+    "trans": [
+      "西班牙"
+    ],
+    "usphone": "spen",
+    "ukphone": "spein",
+    "sentences": [
+      {
+        "english": "They are touring in Spain.",
+        "chinese": "他们正在西班牙旅游。"
+      },
+      {
+        "english": "She chose Spain, but personally I'd prefer to go to France.",
+        "chinese": "她选择了西班牙，而我个人倒更愿意去法国。"
+      },
+      {
+        "english": "This island was ceded to Spain more than one hundred years ago.",
+        "chinese": "这个岛屿在一百多年以前就割让给西班牙了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "西班牙",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "late",
+    "trans": [
+      "晚"
+    ],
+    "usphone": "let",
+    "ukphone": "leɪt",
+    "sentences": [
+      {
+        "english": "Sorry I’m late – I overslept.",
+        "chinese": "对不起，来晚了——我睡过头了。"
+      },
+      {
+        "english": "The train was even later than usual.",
+        "chinese": "火车到得甚至比平时还晚。"
+      },
+      {
+        "english": "We apologize for the late departure of flight AZ709.",
+        "chinese": "我们为AZ709航班延误起飞表示歉意。"
+      },
+      {
+        "english": "There are penalties if loan repayments are late.",
+        "chinese": "逾期偿还贷款会被处以罚金。"
+      },
+      {
+        "english": "The stores are open later on Thursdays.",
+        "chinese": "商店星期四开门较晚。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "迟的",
+        "english": "arriving, happening, or done after the time that was expected, agreed, or arranged"
+      },
+      {
+        "pos": "adv",
+        "chinese": "迟，晚",
+        "english": "after the usual time"
+      }
+    ]
+  },
+  {
+    "name": "a.m.",
+    "trans": [
+      "上午"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "She adjourned the meeting until tomorrow at 9 a.m.",
+        "chinese": "她把会议延至明天上午9点举行。"
+      },
+      {
+        "english": "The time appointed for the mass meeting was 9 a.m.",
+        "chinese": "群众大会上午9点届时召开。"
+      },
+      {
+        "english": "Radio Beijing radiobroadcasts news at 9 a.m. every day.",
+        "chinese": "北京广播电台每天上午九时广播新闻。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "上午",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "p.m.",
+    "trans": [
+      "下午"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "The spa is open from 7:00 a.m. to 9:00 p.m. every day of the year.",
+        "chinese": "温泉区全年从早上7:00到晚上9:00开放。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "下午",
+        "english": "p.m. is used after a number to show that you are referring to a particular time between 12 noon and 12 midnight"
+      }
+    ]
+  },
+  {
+    "name": "why",
+    "trans": [
+      "为什么"
+    ],
+    "usphone": "hwaɪ",
+    "ukphone": "waɪ",
+    "sentences": [
+      {
+        "english": "Why are you crying?",
+        "chinese": "你为什么哭？"
+      },
+      {
+        "english": "Why do we have to take all these tests?",
+        "chinese": "我们为什么一定要参加这些测验？"
+      },
+      {
+        "english": "‘She wants to meet you.’ ‘Why?’",
+        "chinese": "“她想认识你。”“为什么？”"
+      },
+      {
+        "english": "‘I won’t be able to come into work tomorrow.’ ‘Why not?’",
+        "chinese": "“我明天不能来上班。”“为什么？”"
+      },
+      {
+        "english": "I have no idea why the television isn’t working.",
+        "chinese": "我不明白电视机为什么坏了。"
+      },
+      {
+        "english": "Simon loves you – that’s why he wants to be with you.",
+        "chinese": "西蒙爱你——所以他想和你在一起。"
+      },
+      {
+        "english": "He’s angry with me and I don’t know why.",
+        "chinese": "他生我气了，我不知道为什么。"
+      },
+      {
+        "english": "There’s no reason why we shouldn’t be friends.",
+        "chinese": "我们没有理由不成为朋友。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "为什么；…的理由",
+        "english": "used to ask or talk about the reason for something"
+      },
+      {
+        "pos": "int",
+        "chinese": " 咳， 哎呀",
+        "english": "used when you are surprised or have suddenly realized something"
+      }
+    ]
+  },
+  {
+    "name": "shop",
+    "trans": [
+      "购物"
+    ],
+    "usphone": "ʃɑp",
+    "ukphone": "ʃɒp",
+    "sentences": [
+      {
+        "english": "a barber’s shop",
+        "chinese": "理发店"
+      },
+      {
+        "english": "a fish-and-chip shop",
+        "chinese": "炸鱼薯条店"
+      },
+      {
+        "english": "the local shops",
+        "chinese": "当地的商店"
+      },
+      {
+        "english": "Shirley saw her reflection in the shop window.",
+        "chinese": "雪莉在商店橱窗里看到了自己的影像。"
+      },
+      {
+        "english": "I’m just going down to the shops .",
+        "chinese": "我正要去商店。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "商店；店铺",
+        "english": "a building or part of a building where you can buy things, food, or services"
+      },
+      {
+        "pos": "v",
+        "chinese": "购物",
+        "english": "to go to one or more shops to buy things"
+      }
+    ]
+  },
+  {
+    "name": "work",
+    "trans": [
+      "工作"
+    ],
+    "usphone": "wɝk",
+    "ukphone": "wɜːk",
+    "sentences": [
+      {
+        "english": "There isn’t a lot of work at this time of the year.",
+        "chinese": "每年这个时候工作机会都不多。"
+      },
+      {
+        "english": "He’s been out of work (= without a job ) for two years.",
+        "chinese": "他失业有两年了。"
+      },
+      {
+        "english": "More people are in work (= have a job ) than ten years ago.",
+        "chinese": "现在有工作的人比十年前多。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "工作；[物] 功；产品；操作；职业；行为；事业；工厂；著作；文学、音乐或艺术作品",
+        "english": "a job or activity that you do regularly, especially in order to earn money"
+      },
+      {
+        "pos": "v",
+        "chinese": "使工作；操作；经营；使缓慢前进",
+        "english": "to do the activities and duties that are part of your job"
+      }
+    ]
+  },
+  {
+    "name": "last",
+    "trans": [
+      "上一个的"
+    ],
+    "usphone": "læst",
+    "ukphone": "lɑːst",
+    "sentences": [
+      {
+        "english": "I didn’t read the last chapter of the book.",
+        "chinese": "我没有看这本书的最后一章。"
+      },
+      {
+        "english": "Add the flour last.",
+        "chinese": "最后加面粉。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "最后的",
+        "english": "happening or existing at the end, with no others after"
+      },
+      {
+        "pos": "adv",
+        "chinese": "最后",
+        "english": "after everything or everyone else"
+      }
+    ]
+  },
+  {
+    "name": "sound",
+    "trans": [
+      "听起来好像"
+    ],
+    "usphone": "saʊnd",
+    "ukphone": "saʊnd",
+    "sentences": [
+      {
+        "english": "a sound understanding of money and banking systems",
+        "chinese": "对货币和银行业体制的透彻理解"
+      },
+      {
+        "english": "a sound knowledge of English",
+        "chinese": "扎实的英语知识"
+      },
+      {
+        "english": "He has sound grasp of European history.",
+        "chinese": "他对欧洲历史有着透彻的理解。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "健康的；完好的",
+        "english": "complete and thorough"
+      }
+    ]
+  },
+  {
+    "name": "also",
+    "trans": [
+      "还"
+    ],
+    "usphone": "'ɔlso",
+    "ukphone": "'ɔːlsəʊ",
+    "sentences": [
+      {
+        "english": "Information is also available on women’s health care.",
+        "chinese": "还可以获得有关女性保健方面的资料。"
+      },
+      {
+        "english": "She sings beautifully and also plays the flute and piano.",
+        "chinese": "她歌唱得好，而且还会吹长笛和弹钢琴。"
+      },
+      {
+        "english": "The system was not only complicated but also ineffective.",
+        "chinese": "这套系统不仅复杂而且效率低。"
+      },
+      {
+        "english": "My girlfriend was also called Helen.",
+        "chinese": "我的女朋友也叫海伦。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "而且，还；亦，也",
+        "english": "in addition to something else that you have mentioned"
+      }
+    ]
+  },
+  {
+    "name": "busy",
+    "trans": [
+      "忙的"
+    ],
+    "usphone": "ˈbɪzɪ",
+    "ukphone": "'bɪzɪ",
+    "sentences": [
+      {
+        "english": "She’s busy now – can you phone later?",
+        "chinese": "她现在正忙，你稍后打来好吗？"
+      },
+      {
+        "english": "a busy mother of four",
+        "chinese": "一个忙忙碌碌、育有四个孩子的妈妈"
+      },
+      {
+        "english": "There were lots of activities to keep the kids busy .",
+        "chinese": "有很多活动可以让孩子们不闲着。"
+      },
+      {
+        "english": "December is the busiest time of year for shops.",
+        "chinese": "十二月份是一年中商店最繁忙的时期。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "忙的；繁忙的",
+        "english": "if you are busy, you are working hard and have a lot of things to do"
+      }
+    ]
+  },
+  {
+    "name": "need",
+    "trans": [
+      "需要"
+    ],
+    "usphone": "nid",
+    "ukphone": "niːd",
+    "sentences": [
+      {
+        "english": "You don’t really need a car.",
+        "chinese": "你其实并不需要一辆车。"
+      },
+      {
+        "english": "Plants need light in order to survive.",
+        "chinese": "植物需要光才能存活。"
+      },
+      {
+        "english": "The camcorder needs a new battery.",
+        "chinese": "这台摄像机需要一块新电池。"
+      },
+      {
+        "english": "Are you sure that you have everything you need?",
+        "chinese": "你确定需要的都有了吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "需要",
+        "english": "to have to have something or someone, because you cannot do something without them, or because you cannot continue or cannot exist without them"
+      },
+      {
+        "pos": "v",
+        "chinese": "aux需要",
+        "english": "to have to have something or someone, because you cannot do something without them, or because you cannot continue or cannot exist without them"
+      }
+    ]
+  },
+  {
+    "name": "play",
+    "trans": [
+      "戏剧"
+    ],
+    "usphone": "ple",
+    "ukphone": "pleɪ",
+    "sentences": [
+      {
+        "english": "Kids were playing and chasing each other.",
+        "chinese": "孩子们在互相追逐嬉闹。"
+      },
+      {
+        "english": "He’s learning to play the piano.",
+        "chinese": "他在学习弹钢琴。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "玩，游戏；演奏",
+        "english": "when children play, they do things that they enjoy, often with other people or with toys"
+      }
+    ]
+  },
+  {
+    "name": "letter",
+    "trans": [
+      "信"
+    ],
+    "usphone": "'lɛtɚ",
+    "ukphone": "'letə",
+    "sentences": [
+      {
+        "english": "I got a letter from Melanie today.",
+        "chinese": "今天我收到梅拉妮的一封信。"
+      },
+      {
+        "english": "There are 26 letters in the English alphabet.",
+        "chinese": "英语字母表有26个字母。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "信；字母",
+        "english": "a written or printed message that is usually put in an envelope and sent by mail"
+      }
+    ]
+  },
+  {
+    "name": "live",
+    "trans": [
+      "居住"
+    ],
+    "usphone": "laɪv；lɪv",
+    "ukphone": "laɪv；lɪv",
+    "sentences": [
+      {
+        "english": "He lives just across the street from me.",
+        "chinese": "他就住在我街对面。"
+      },
+      {
+        "english": "We live only a few miles from the coast.",
+        "chinese": "我们住的地方离海边只有几英里远。"
+      },
+      {
+        "english": "A rather odd family came tolive next door to us.",
+        "chinese": "有一户相当奇怪的人家搬到了我们隔壁。"
+      },
+      {
+        "english": "As soon as I saw the place, I knew I didn’t want to live there.",
+        "chinese": "我一看到那地方，就觉得不想住在那儿。"
+      },
+      {
+        "english": "Does Paul stilllive here?",
+        "chinese": "保罗还住在这儿吗？"
+      },
+      {
+        "english": "We’re still looking for somewhere to live.",
+        "chinese": "我们还在找住的地方。"
+      },
+      {
+        "english": "They’ve finally found a place to live.",
+        "chinese": "他们终于找到了住的地方。"
+      },
+      {
+        "english": "Most seventeen-year-olds still live at home(= live with their parents ).",
+        "chinese": "17 岁的孩子大都还住在家里。"
+      },
+      {
+        "english": "I’m quite happy living alone.",
+        "chinese": "我一个人住很开心。"
+      },
+      {
+        "english": "The house has 3,600 square feet of living space(= the areas of a house you live in ).",
+        "chinese": "这房子有3,600平方英尺的居住空间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "居住；活",
+        "english": "if you live in a place, you have your home there"
+      },
+      {
+        "pos": "adj",
+        "chinese": "活的",
+        "english": "not dead or artificial"
+      }
+    ]
+  },
+  {
+    "name": "island",
+    "trans": [
+      "岛"
+    ],
+    "usphone": "'aɪlənd",
+    "ukphone": "'aɪlənd",
+    "sentences": [
+      {
+        "english": "I live on an island.",
+        "chinese": "我住在一个岛上。"
+      },
+      {
+        "english": "Then one day, an English ship anchored near the island.",
+        "chinese": "然后有一天，一艘英国船在岛附近抛锚了。"
+      },
+      {
+        "english": "This is because the island is so close to the equator. So you can choose to go whenever you like.",
+        "chinese": "就因为这个岛是如此接近赤道。所以只要你愿意你任何时候都可以去。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 岛的",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "岛，岛屿",
+        "english": "a piece of land completely surrounded by water"
+      }
+    ]
+  },
+  {
+    "name": "always",
+    "trans": [
+      "总是"
+    ],
+    "usphone": "'ɔlwez",
+    "ukphone": "ˈɔ:lweɪz",
+    "sentences": [
+      {
+        "english": "Always lock your bicycle to something secure.",
+        "chinese": "每次都要把自行车锁在牢固的物体上。"
+      },
+      {
+        "english": "She’d always assumed that Gabriel was a girl’s name.",
+        "chinese": "她一直认为加布里埃尔是个女孩名字。"
+      },
+      {
+        "english": "He hadn’t always been a butler.",
+        "chinese": "他并不是一直当管家。"
+      },
+      {
+        "english": "I’ll always remember that day.",
+        "chinese": "我会永远记住那一天。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "总是，一直；永远",
+        "english": "all the time, at all times, or every time"
+      }
+    ]
+  },
+  {
+    "name": "cave",
+    "trans": [
+      "山洞"
+    ],
+    "usphone": "kev",
+    "ukphone": "keɪv",
+    "sentences": [
+      {
+        "english": "the entrance to a cave",
+        "chinese": "洞穴的入口"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "使凹陷，使塌落；在…挖洞穴",
+        "english": "to hollow out "
+      },
+      {
+        "pos": "n",
+        "chinese": "洞穴，窑洞",
+        "english": "a large natural hole in the side of a cliff or hill, or under the ground"
+      }
+    ]
+  },
+  {
+    "name": "go swimming",
+    "trans": [
+      "去游泳"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "I often go swimming on weekday.",
+        "chinese": "我经常在周日去游泳。"
+      },
+      {
+        "english": "Where do you go swimming?",
+        "chinese": "你们去哪里游泳呢？"
+      },
+      {
+        "english": "Your grandparents go swimming every day?",
+        "chinese": "你祖父母每天去游泳吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "去游泳",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "win",
+    "trans": [
+      "获胜"
+    ],
+    "usphone": "wɪn",
+    "ukphone": "wɪn",
+    "sentences": [
+      {
+        "english": "Who’s winning (= who is most successful at this point in the game )?",
+        "chinese": "现在谁领先？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "赢得；在…中获胜；劝诱",
+        "english": "to be the best or most successful in a competition, game, election etc"
+      },
+      {
+        "pos": "n",
+        "chinese": "赢；胜利",
+        "english": "a success or victory, especially in sport"
+      }
+    ]
+  },
+  {
+    "name": "spring",
+    "trans": [
+      "春天"
+    ],
+    "usphone": "sprɪŋ",
+    "ukphone": "sprɪŋ",
+    "sentences": [
+      {
+        "english": "He sprang to his feet (= stood up suddenly ) and rushed after her.",
+        "chinese": "他腾地站起身，冲过去追她。"
+      },
+      {
+        "english": "There are several hot springs in the area.",
+        "chinese": "这地区有几处温泉。"
+      },
+      {
+        "english": "With a spring, the cat leapt on to the table.",
+        "chinese": "猫一跃跳上桌子。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "跳，跃",
+        "english": "to move suddenly and quickly in a particular direction, especially by jumping"
+      },
+      {
+        "pos": "n",
+        "chinese": "泉；跳跃",
+        "english": "a place where water comes up naturally from the ground"
+      }
+    ]
+  },
+  {
+    "name": "summer",
+    "trans": [
+      "夏天"
+    ],
+    "usphone": "'sʌmɚ",
+    "ukphone": "'sʌmə",
+    "sentences": [
+      {
+        "english": "We tour by car every summer.",
+        "chinese": "每年夏天我们都驾车出外旅行。"
+      },
+      {
+        "english": "Food must be refrigerated in summer.",
+        "chinese": "食物在夏天必须加以冷藏。"
+      },
+      {
+        "english": "After a summer here the poorest sheep and cattle grow strong and fat.",
+        "chinese": "经过一个夏天， 连最差的牛羊在这里也长得又肥又壮了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "夏天，夏季",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "夏季的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "autumn",
+    "trans": [
+      "秋天"
+    ],
+    "usphone": "'ɔtəm",
+    "ukphone": "'ɔːtəm",
+    "sentences": [
+      {
+        "english": "autumn mists",
+        "chinese": "秋天的雾霭"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "秋，秋季",
+        "english": "the season between summer and winter, when leaves change colour and the weather becomes cooler"
+      }
+    ]
+  },
+  {
+    "name": "winter",
+    "trans": [
+      "冬天"
+    ],
+    "usphone": "'wɪntɚ",
+    "ukphone": "'wɪntə",
+    "sentences": [
+      {
+        "english": "I like winter because we play soccer!",
+        "chinese": "我喜欢冬天因为我们踢足球！"
+      },
+      {
+        "english": "Well, the worst of the winter should be over.",
+        "chinese": "不过，冬天最糟糕的一段日子总该过去了。"
+      },
+      {
+        "english": "Do you like summer? Yes, but I like winter better.",
+        "chinese": "你喜欢夏天吗？是的，但是我更喜欢冬天。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 冬天的",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "冬，冬季；萧条期，衰退期",
+        "english": "the season after autumn and before spring, when the weather is coldest"
+      }
+    ]
+  },
+  {
+    "name": "season",
+    "trans": [
+      "季节"
+    ],
+    "usphone": "'sizn",
+    "ukphone": "'siːz(ə)n",
+    "sentences": [
+      {
+        "english": "the effect on plants as the seasons start to change",
+        "chinese": "换季对植物的影响"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "时期；季节；赛季",
+        "english": "one of the main periods into which a year is divided, each of which has a particular type of weather. The seasons are spring, summer, autumn, and winter"
+      },
+      {
+        "pos": "v",
+        "chinese": "给…调味；使适应",
+        "english": "to add salt, pepper etc to food you are cooking"
+      }
+    ]
+  },
+  {
+    "name": "picnic",
+    "trans": [
+      "野餐"
+    ],
+    "usphone": "'pɪknɪk",
+    "ukphone": "'pɪknɪk",
+    "sentences": [
+      {
+        "english": "We decided to have a picnic down by the lake.",
+        "chinese": "我们决定在湖边野餐。"
+      },
+      {
+        "english": "a picnic table",
+        "chinese": "野餐桌"
+      },
+      {
+        "english": "There is free parking for visitors, as well as a restaurant and picnic area (= a special area with tables where people can have a picnic ) .",
+        "chinese": "除了餐厅和野餐区，我们还为游客提供免费停车位。"
+      },
+      {
+        "english": "The area is very popular with picnickers.",
+        "chinese": "那个地区很受野餐者的欢迎。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "郊游，野餐",
+        "english": "if you have a picnic, you take food and eat it outdoors, especially in the country"
+      },
+      {
+        "pos": "v",
+        "chinese": "野餐",
+        "english": "to have a picnic"
+      }
+    ]
+  },
+  {
+    "name": "go on a picnic",
+    "trans": [
+      "去野餐"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "I'd like to go on a picnic.",
+        "chinese": "我想去野餐。"
+      },
+      {
+        "english": "A: Would you like to go on a picnic this Sunday morning?",
+        "chinese": "你愿意星期天上午去野餐吗？"
+      },
+      {
+        "english": "I don't understand why you want to keep the same book every night...oh,well *sigh* \"It was a warm spring day,and the six bunny-wunnies decided to go on a picnic...",
+        "chinese": "真不懂你怎麽每晚都读同一本书...好吧，唉！“温暖的春天�，六只宾尼兔打算去野餐..."
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "去野餐",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "pick",
+    "trans": [
+      "摘"
+    ],
+    "usphone": "pɪk",
+    "ukphone": "pɪk",
+    "sentences": [
+      {
+        "english": "The Roman Swiss Army knife has a knife, spoon, fork, spike, spatula, and small pick.",
+        "chinese": "这种古罗马瑞士军刀包含了刀，勺，叉，长钉，抹刀和小鹤嘴锄。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "镐，鹤嘴锄",
+        "english": "a  pickaxe"
+      }
+    ]
+  },
+  {
+    "name": "pick apples",
+    "trans": [
+      "摘苹果"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "We helped the farmers to pick apples.",
+        "chinese": "我们帮助农民们摘苹果。"
+      },
+      {
+        "english": "People like to go to farms in the countryside and pick apples.",
+        "chinese": "人们喜欢去郊区的农场摘苹果。"
+      },
+      {
+        "english": "As an adult, I do my best to take my 9- and 7-year-old nieces every year on the same hay rides through the apple orchards I visited to pick apples when I was their age.",
+        "chinese": "成年之后，我每年都会尽量带上自己9岁和7岁的侄子开车经过一片苹果园，在他们这个年纪的时候，我曾在这里参观过并摘过苹果。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "摘苹果",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "snowman",
+    "trans": [
+      "雪人"
+    ],
+    "usphone": "'snomæn",
+    "ukphone": "'snəʊmæn",
+    "sentences": [
+      {
+        "english": "The children were balling up snow to make a snowman.",
+        "chinese": "孩子们正在把雪堆成球状，做一个雪人。"
+      },
+      {
+        "english": "\"He gave me a hug and a kiss and asked me where my snowman was,\" she said.",
+        "chinese": "黛比说：“他给了我一个拥抱和亲吻。 还问我的雪人在哪里。”"
+      },
+      {
+        "english": "If you are wrong,the snowman with the correct answer will chill your heart.",
+        "chinese": "如果你是错误的，有正确答案的雪人将会使你的心脏变冷。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雪人",
+        "english": "a simple figure of a person made of snow, made especially by children"
+      }
+    ]
+  },
+  {
+    "name": "make a snowman",
+    "trans": [
+      "堆雪人"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "A：Certainly! Shall we make a snowman?",
+        "chinese": "当然!我们堆雪人好吗?"
+      },
+      {
+        "english": "Click ALFY to help him make a snowman.",
+        "chinese": "按一下阿飞帮助他堆一个雪人。"
+      },
+      {
+        "english": "I wish I can make a snowman in winter.",
+        "chinese": "我希望我可以在冬天堆雪人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "堆雪人",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "go swimming.",
+    "trans": [
+      "去游泳"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "I often go swimming on weekday.",
+        "chinese": "我经常在周日去游泳。"
+      },
+      {
+        "english": "Where do you go swimming?",
+        "chinese": "你们去哪里游泳呢？"
+      },
+      {
+        "english": "Your grandparents go swimming every day?",
+        "chinese": "你祖父母每天去游泳吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "去游泳",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "which",
+    "trans": [
+      "哪一个"
+    ],
+    "usphone": "wɪtʃ",
+    "ukphone": "wɪtʃ",
+    "sentences": [
+      {
+        "english": "Which book are you looking for?",
+        "chinese": "你在找哪本书？"
+      },
+      {
+        "english": "Which are the most important crops?",
+        "chinese": "哪些农作物是最重要的？"
+      },
+      {
+        "english": "Miranda was sure it was one of them, but was not sure which.",
+        "chinese": "米兰达确定此人是他们其中的一个，但不能肯定是哪一个。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "哪一个",
+        "english": "used to ask or talk about one or more members of a group of people or things, when you are uncertain about it or about them"
+      }
+    ]
+  },
+  {
+    "name": "best",
+    "trans": [
+      "最"
+    ],
+    "usphone": "bɛst",
+    "ukphone": "best",
+    "sentences": [
+      {
+        "english": "He won the best actor award.",
+        "chinese": "他获得最佳男演员奖。"
+      },
+      {
+        "english": "What’s the best way to cook this fish?",
+        "chinese": "这鱼怎么烧最好？"
+      },
+      {
+        "english": "The best thing to do is to stop worrying.",
+        "chinese": "最好的办法就是不要再担心。"
+      },
+      {
+        "english": "Our pilots are given the best possible training.",
+        "chinese": "我们的飞行员接受最好的训练。"
+      },
+      {
+        "english": "We use only the very best ingredients.",
+        "chinese": "我们只用最好的原料。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "最好的；最大的",
+        "english": "better than anything else or anyone else in quality, skill, how effective it is etc"
+      }
+    ]
+  },
+  {
+    "name": "snow",
+    "trans": [
+      "雪"
+    ],
+    "usphone": "sno",
+    "ukphone": "snəʊ",
+    "sentences": [
+      {
+        "english": "Snow was falling heavily as we entered the village.",
+        "chinese": "我们进村的时候雪下得正大。"
+      },
+      {
+        "english": "I could see footprints in the snow.",
+        "chinese": "我看到雪地里有脚印。"
+      },
+      {
+        "english": "The town was buried under three feet of snow.",
+        "chinese": "小镇被三英尺厚的积雪覆盖着。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雪，积雪；下雪",
+        "english": "soft white pieces of frozen water that fall from the sky in cold weather and cover the ground"
+      },
+      {
+        "pos": "v",
+        "chinese": "降雪",
+        "english": "if it snows, snow falls from the sky"
+      }
+    ]
+  },
+  {
+    "name": "good job",
+    "trans": [
+      "做得好"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "How Not To get a good job.",
+        "chinese": "如何不得到一个好工作。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "做得好",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "because",
+    "trans": [
+      "因为"
+    ],
+    "usphone": "bɪ'kɔz",
+    "ukphone": "bɪ'kɒz",
+    "sentences": [
+      {
+        "english": "We didn’t enjoy the day because the weather was so awful.",
+        "chinese": "那天我们很不尽兴，因为天气实在太糟。"
+      },
+      {
+        "english": "‘Why can’t I go?’ ‘Because you’re not old enough.’",
+        "chinese": "“我为什么不能去？”“因为你年纪太小。”"
+      },
+      {
+        "english": "Hubert never experienced any fear, and this was partly because he was not particularly intelligent.",
+        "chinese": "休伯特从来都没有害怕的感觉，部分原因是他这人不大聪明。"
+      },
+      {
+        "english": "Many exam candidates lose marks simply because they do not read the questions properly.",
+        "chinese": "许多应试者失分只是因为没有好好地读题。"
+      },
+      {
+        "english": "I decided to go with them, mainly because I had nothing better to do.",
+        "chinese": "我决定和他们一起去，主要是因为我没有更好的事情可做。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "conj",
+        "chinese": "由于，因为",
+        "english": "used when you are giving the reason for something"
+      }
+    ]
+  },
+  {
+    "name": "vacation",
+    "trans": [
+      "假期"
+    ],
+    "usphone": "veˈkeʃən",
+    "ukphone": "vəˈkeɪʃn",
+    "sentences": [
+      {
+        "english": "What will you do this vacation?",
+        "chinese": "你这个假期将干什么？"
+      },
+      {
+        "english": "Do you have any vacation plans?",
+        "chinese": "您假期有什么安排吗？"
+      },
+      {
+        "english": "Do you have any idea for this vacation?",
+        "chinese": "这个假期你有什么想法吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 度假",
+        "english": "to go somewhere for a holiday"
+      },
+      {
+        "pos": "n",
+        "chinese": "假期，休假；空出，腾出",
+        "english": "a holiday, or time spent not working"
+      }
+    ]
+  },
+  {
+    "name": "all",
+    "trans": [
+      "完全"
+    ],
+    "usphone": "ɔl",
+    "ukphone": "ɔːl",
+    "sentences": [
+      {
+        "english": "There is built-in storage space in all bedrooms.",
+        "chinese": "所有卧室里都有内置储藏空间。"
+      },
+      {
+        "english": "the restaurant that Hugh and all his friends go to",
+        "chinese": "休和他所有的朋友们去的那家饭馆"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "det",
+        "chinese": "全部的",
+        "english": "the whole of an amount, thing, or type of thing"
+      },
+      {
+        "pos": "pron",
+        "chinese": "全部",
+        "english": "the whole of a particular group or thing or to everyone or everything of a particular kind"
+      }
+    ]
+  },
+  {
+    "name": "pink",
+    "trans": [
+      "粉色"
+    ],
+    "usphone": "pɪŋk",
+    "ukphone": "pɪŋk",
+    "sentences": [
+      {
+        "english": "Her room was decorated in bright pinks and purples.",
+        "chinese": "她的房间装饰成明亮的粉红色和紫色。"
+      },
+      {
+        "english": "She had arrived dressed in pink.",
+        "chinese": "她穿着粉色的衣服来了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "粉红色；化身，典范；石竹花；头面人物",
+        "english": "a pale red colour"
+      },
+      {
+        "pos": "v",
+        "chinese": "扎，刺，戳；使…变粉红色；使…面红耳赤",
+        "english": "to prick lightly with a sword or rapier "
+      },
+      {
+        "pos": "adj",
+        "chinese": "粉红的；比较激进的；石竹科的；脸色发红的",
+        "english": "pale red"
+      }
+    ]
+  },
+  {
+    "name": "lovely",
+    "trans": [
+      "可爱的"
+    ],
+    "usphone": "'lʌvli",
+    "ukphone": "'lʌvlɪ",
+    "sentences": [
+      {
+        "english": "She had a lovely face.",
+        "chinese": "她有一张漂亮的脸蛋。"
+      },
+      {
+        "english": "What a lovely house!",
+        "chinese": "多么漂亮的房子啊！"
+      },
+      {
+        "english": "You look lovely in that dress.",
+        "chinese": "你穿那条连衣裙很漂亮。"
+      },
+      {
+        "english": "He was a lovely little boy.",
+        "chinese": "他是个可爱的小男孩。"
+      },
+      {
+        "english": "What a lovely day!",
+        "chinese": "多好的天气啊！"
+      },
+      {
+        "english": "Thank you for a lovely evening.",
+        "chinese": "谢谢你让我们度过了一个美好的夜晚。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "可爱的；令人愉快的",
+        "english": "beautiful or attractive"
+      }
+    ]
+  },
+  {
+    "name": "leaf",
+    "trans": [
+      "叶子"
+    ],
+    "usphone": "lif",
+    "ukphone": "liːf",
+    "sentences": [
+      {
+        "english": "a flowering bush with large shiny leaves",
+        "chinese": "叶子大而油亮的开花灌木"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "叶子；（书籍等的）一张；扇页",
+        "english": "one of the flat green parts of a plant that are joined to its stem or branches"
+      },
+      {
+        "pos": "v",
+        "chinese": "生叶；翻书页",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "fall",
+    "trans": [
+      "落下"
+    ],
+    "usphone": "fɔl",
+    "ukphone": "fɔːl",
+    "sentences": [
+      {
+        "english": "The tree was about to fall.",
+        "chinese": "那棵树快要倒下了。"
+      },
+      {
+        "english": "The book fell from his hands.",
+        "chinese": "书从他手上跌落。"
+      },
+      {
+        "english": "Enough rain had fallen to flood the grounds.",
+        "chinese": "雨量很大，淹没了地面。"
+      },
+      {
+        "english": "She flushed and her eyes fell (= she looked down ) .",
+        "chinese": "她脸一红，垂下了眼帘。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "落下；跌倒；陷落",
+        "english": "to move or drop down from a higher position to a lower position"
+      }
+    ]
+  },
+  {
+    "name": "paint",
+    "trans": [
+      "绘画"
+    ],
+    "usphone": "pent",
+    "ukphone": "peɪnt",
+    "sentences": [
+      {
+        "english": "The ceiling needs painting.",
+        "chinese": "天花板需要粉刷了。"
+      },
+      {
+        "english": "brightly paintedhouses",
+        "chinese": "粉刷得很亮丽的房屋"
+      },
+      {
+        "english": "The living room was painted in pastel shades of pink and blue.",
+        "chinese": "起居室被漆成淡雅的粉色和蓝色。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "画；油漆",
+        "english": "to put paint on a surface"
+      },
+      {
+        "pos": "v",
+        "chinese": "绘画",
+        "english": "to make a picture, design etc using paint"
+      }
+    ]
+  },
+  {
+    "name": "January",
+    "trans": [
+      "一月"
+    ],
+    "usphone": "'dʒænjʊ'ɛri",
+    "ukphone": "'dʒænjʊ(ə)rɪ",
+    "sentences": [
+      {
+        "english": "We always have snow in January.",
+        "chinese": "我们这里1月份总会下雪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "一月",
+        "english": "the first month of the year, between December and February"
+      }
+    ]
+  },
+  {
+    "name": "February",
+    "trans": [
+      "二月"
+    ],
+    "usphone": "ˈfebrʊerɪ;'fɛbrʊɛrɪ",
+    "ukphone": "ˈfebrʊərɪ",
+    "sentences": [
+      {
+        "english": "He joined the Army in February 1943.",
+        "chinese": "他1943年2月参军。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "二月",
+        "english": "the second month of the year, between January and March"
+      }
+    ]
+  },
+  {
+    "name": "March",
+    "trans": [
+      "三月"
+    ],
+    "usphone": "mɑrtʃ",
+    "ukphone": "mɑːtʃ",
+    "sentences": [
+      {
+        "english": "She started work here last March.",
+        "chinese": "她去年3月开始在这儿工作。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "三月",
+        "english": "the third month of the year, between February and April"
+      }
+    ]
+  },
+  {
+    "name": "April",
+    "trans": [
+      "四月"
+    ],
+    "usphone": "'eprəl",
+    "ukphone": "'eɪprəl",
+    "sentences": [
+      {
+        "english": "You can paint, do repairs, and if you have already hired contractors in April or earlier, continue to work on your plans.",
+        "chinese": "你可以涂涂油漆，做点小修补，如果你已经在四月或更加之前就已经雇到承包商的话，按原计划进行没关系。"
+      },
+      {
+        "english": "This past April while visiting my parents on the farm I’d grown up on, I wandered outside to drink in the feel of “home”, a comfort I really needed right then.",
+        "chinese": "刚刚过去的那个四月，我回到我在那长大的农场探望我的父母。 我在屋外漫步，沉浸在“家”的舒适感觉中——当时我真的很需要家的慰藉。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "四月",
+        "english": "the fourth month of the year, between March and May"
+      }
+    ]
+  },
+  {
+    "name": "May",
+    "trans": [
+      "五月"
+    ],
+    "usphone": "me",
+    "ukphone": "meɪ",
+    "sentences": [
+      {
+        "english": "Graduation ceremonies are held in early May.",
+        "chinese": "毕业典礼在5月初举行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "五月",
+        "english": "the fifth month of the year, between April and June"
+      }
+    ]
+  },
+  {
+    "name": "June",
+    "trans": [
+      "六月"
+    ],
+    "usphone": "dʒun",
+    "ukphone": "dʒu:n",
+    "sentences": [
+      {
+        "english": "He spent two and a half weeks with us in June 1986.",
+        "chinese": "1986年6月，他和我们呆了两个半星期。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "六月",
+        "english": "the sixth month of the year, between May and July"
+      }
+    ]
+  },
+  {
+    "name": "July",
+    "trans": [
+      "七月"
+    ],
+    "usphone": "dʒʊˈlaɪ",
+    "ukphone": "dʒʊˈlaɪ",
+    "sentences": [
+      {
+        "english": "But from February through July, Joy sat around with nothing to do.",
+        "chinese": "但是从二月到七月，乔伊又无事可做了。"
+      },
+      {
+        "english": "People still remembered the earthquake that had jarred this region last July.",
+        "chinese": "人们仍然记得去年七月发生的使该地区产生剧烈震动的那次地震。"
+      },
+      {
+        "english": "One July a couple of years ago I took my supper with a Captain Moran on board the S.S. Margaret, that had put into a western river from I know not where.",
+        "chinese": "两年前的七月，我在玛格丽特号船上和一位名叫莫兰的船长共进晚餐，这艘船从我不熟悉的一个地方出发，驶往爱尔兰西部的某条河流。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "七月",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "August",
+    "trans": [
+      "八月"
+    ],
+    "usphone": "ɔˈɡʌst",
+    "ukphone": "ɔ:ˈgʌst",
+    "sentences": [
+      {
+        "english": "He moved to another city last August.",
+        "chinese": "去年八月，他搬到另一座城市。"
+      },
+      {
+        "english": "That night in August, waiting for the Rolling Stones to come on stage, we felt like rebels.",
+        "chinese": "在那个八月的夜晚，在等待滚石乐队登台演出时，我们有种造反的感觉。"
+      },
+      {
+        "english": "They make a huge migration from the north to the south of the US, mostly starting in August and the other way around in the spring.",
+        "chinese": "大部分是从八月开始，它们开始进行巨大的迁徙，从美国的北部到南部，而到了春天又沿相反方向回来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "八月",
+        "english": "the eighth month of the year, between July and September"
+      }
+    ]
+  },
+  {
+    "name": "September",
+    "trans": [
+      "九月"
+    ],
+    "usphone": "sɛp'tɛmbɚ",
+    "ukphone": "sep'tembə",
+    "sentences": [
+      {
+        "english": "The product suddenly took off in September.",
+        "chinese": "该产品在九月份突然热销起来。"
+      },
+      {
+        "english": "Do I remember that September afternoon when I first met you?",
+        "chinese": "还记不记得第一次遇见你的那个九月的下午？"
+      },
+      {
+        "english": "The carmaker is almost ready to launch out a new model in September.",
+        "chinese": "汽车制造商将于九月投产新型汽车。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "九月",
+        "english": "the ninth month of the year, between August and October"
+      }
+    ]
+  },
+  {
+    "name": "October",
+    "trans": [
+      "十月"
+    ],
+    "usphone": "ɑk'tobɚ",
+    "ukphone": "ɒk'təʊbə",
+    "sentences": [
+      {
+        "english": "Most seasonal hiring is done in early October.",
+        "chinese": "多数季节性招聘是在10月初进行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "十月",
+        "english": "the tenth month of the year, between September and November"
+      }
+    ]
+  },
+  {
+    "name": "November",
+    "trans": [
+      "十一月"
+    ],
+    "usphone": "no'vɛmbɚ",
+    "ukphone": "nə(ʊ)'vembə",
+    "sentences": [
+      {
+        "english": "And again in November.",
+        "chinese": "在十一月又一次。"
+      },
+      {
+        "english": "Too much snow in November.",
+        "chinese": "太多的大雪在十一月。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "十一月",
+        "english": "the 11th month of the year, between October and December"
+      }
+    ]
+  },
+  {
+    "name": "December",
+    "trans": [
+      "十二月"
+    ],
+    "usphone": "dɪ'sɛmbɚ",
+    "ukphone": "dɪ'sembə",
+    "sentences": [
+      {
+        "english": "In the dark of December.",
+        "chinese": "在十二月的黑夜里。"
+      },
+      {
+        "english": "Our summers are short and our winters long.In December, when it is darkest, we only have a few hours of very weak sunlight per day.",
+        "chinese": "我们的夏天很短但是冬天很长，在十二月，也就是最黑的时候，我们的一天中只有很短的时间可以看到微弱的阳光。"
+      },
+      {
+        "english": "I send out Valentine’s cards with the girls’ photo, instead of trying to mail cards in December.",
+        "chinese": "——我寄出有女孩子照片的情人节贺卡，以代替试图在十二月寄出的贺卡。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "十二月",
+        "english": "the 12th month of the year, between November and January"
+      }
+    ]
+  },
+  {
+    "name": "few",
+    "trans": [
+      "不多"
+    ],
+    "usphone": "fju",
+    "ukphone": "fjuː",
+    "sentences": [
+      {
+        "english": "...spending her few waking hours in front of the TV.",
+        "chinese": "…把她清醒的个把钟头花在电视机前。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "很少的；少数的",
+        "english": "not many or hardly any people or things"
+      }
+    ]
+  },
+  {
+    "name": "a few",
+    "trans": [
+      "一些"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "The committee disinterred a few old studies done by the predecessors to prove their point.",
+        "chinese": "该委员会再现了由前任作的一些旧研究以证明他们的观点。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "一些",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "thing",
+    "trans": [
+      "事情"
+    ],
+    "usphone": "θɪŋ",
+    "ukphone": "θɪŋ",
+    "sentences": [
+      {
+        "english": "People say things they don’t mean when they are angry.",
+        "chinese": "人生气时就会口不择言。"
+      },
+      {
+        "english": "It was a horrible thing to happen.",
+        "chinese": "发生这样的事情太糟糕了。"
+      },
+      {
+        "english": "I plan to do all the things I’ve been meaning to do for ages.",
+        "chinese": "我打算去做我多年以来一直想做的事。"
+      },
+      {
+        "english": "The first thing to do is to give them food and shelter.",
+        "chinese": "首要的事是给他们提供食物和住所。"
+      },
+      {
+        "english": "That’s a terrible thing to say .",
+        "chinese": "这话说得太难听了。"
+      },
+      {
+        "english": "Getting more American ideas into British business would be a good thing .",
+        "chinese": "将更多的美国式理念注入英国商界会是一件好事。"
+      },
+      {
+        "english": "‘I did no such thing ,’ he protested.",
+        "chinese": "“我没干过这样的事。”他抗议道。"
+      },
+      {
+        "english": "I know a thing or two (= a lot ) about dogs.",
+        "chinese": "我对狗所知甚详。"
+      },
+      {
+        "english": "In a democracy, it is no bad thing to be able to compromise (= it is good, even though it may not seem good ) .",
+        "chinese": "在民主国家，能够妥协并非就是坏事。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "事情；东西；事物；情况",
+        "english": "an idea, action, feeling, or fact that someone thinks, does, says, or talks about, or that happens"
+      }
+    ]
+  },
+  {
+    "name": "meet",
+    "trans": [
+      "集会"
+    ],
+    "usphone": "mit",
+    "ukphone": "miːt",
+    "sentences": [
+      {
+        "english": "You’ll never guess who I met in town.",
+        "chinese": "你绝对猜不出我在镇上碰到谁了。"
+      },
+      {
+        "english": "I was worried I might meet Henry on the bus.",
+        "chinese": "我担心可能会在公共汽车上遇到亨利。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "遇见",
+        "english": "to see someone by chance and talk to them"
+      },
+      {
+        "pos": "v",
+        "chinese": "相遇",
+        "english": "to see someone by chance and talk to them"
+      }
+    ]
+  },
+  {
+    "name": "sports meet",
+    "trans": [
+      "运动会"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "A number of records fell during the sports meet.",
+        "chinese": "在运动会上破了多项记录。"
+      },
+      {
+        "english": "The success of the sports meet turns on the weather.",
+        "chinese": "运动会能否成功要看天气如何。"
+      },
+      {
+        "english": "Whether it rains or not, we’ll hold the sports meet.",
+        "chinese": "不管下不下雨，我们都将举行运动会。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "运动会",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "Easter",
+    "trans": [
+      "复活节"
+    ],
+    "usphone": "istəʳ",
+    "ukphone": "'i:stə",
+    "sentences": [
+      {
+        "english": "on Easter Sunday",
+        "chinese": "在复活节星期日"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "复活节",
+        "english": "a Christian holy day in March or April when Christians remember the death of Christ and his return to life"
+      }
+    ]
+  },
+  {
+    "name": "trip",
+    "trans": [
+      "旅行"
+    ],
+    "usphone": "trɪp",
+    "ukphone": "trɪp",
+    "sentences": [
+      {
+        "english": "Two lucky employees won a round-the-world trip.",
+        "chinese": "两名幸运的雇员赢得一次环游世界的机会。"
+      },
+      {
+        "english": "It’s an 80-mile round trip (= a journey to a place and back again ) to Exeter.",
+        "chinese": "到埃克塞特往返有80英里。"
+      },
+      {
+        "english": "I’m afraid you’ve had a wasted trip (= a trip in which you do not achieve your purpose ) . Mr Burgess has already left.",
+        "chinese": "恐怕你是白来一趟了，伯吉斯先生已经走了。"
+      },
+      {
+        "english": "He was unable to make the trip to accept the award.",
+        "chinese": "他无法前去领奖。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "旅游；旅行，出行",
+        "english": "a visit to a place that involves a journey, for pleasure or a particular purpose"
+      },
+      {
+        "pos": "v",
+        "chinese": "绊；绊倒",
+        "english": "to hit something with your foot by accident so that you fall or almost fall"
+      }
+    ]
+  },
+  {
+    "name": "year",
+    "trans": [
+      "年"
+    ],
+    "usphone": "yir",
+    "ukphone": "jɪə; jɜː",
+    "sentences": [
+      {
+        "english": "I arrived here two years ago.",
+        "chinese": "我两年前来到这里。"
+      },
+      {
+        "english": "We’ve known each other for over a year.",
+        "chinese": "我们相识一年多了。"
+      },
+      {
+        "english": "It’s almost a year since Sue died.",
+        "chinese": "休去世快一年了。"
+      },
+      {
+        "english": "Jodi is 15 years old.",
+        "chinese": "约迪15岁。"
+      },
+      {
+        "english": "a three-year business plan",
+        "chinese": "三年的业务发展计划"
+      },
+      {
+        "english": "a four-year-old child",
+        "chinese": "四岁的孩子"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "年；年度；历年；年纪；一年的期间；某年级的学生",
+        "english": "a period of about 365 days or 12 months, measured from any particular time"
+      }
+    ]
+  },
+  {
+    "name": "plant",
+    "trans": [
+      "种植"
+    ],
+    "usphone": "plænt",
+    "ukphone": "plɑːnt",
+    "sentences": [
+      {
+        "english": "Don’t forget to water the plants.",
+        "chinese": "别忘记给植物浇水。"
+      },
+      {
+        "english": "a huge chemical plant",
+        "chinese": "一座大型化工厂"
+      },
+      {
+        "english": "Residents have helped us plant trees.",
+        "chinese": "居民们帮助我们种了树。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "植物；工厂",
+        "english": "a living thing that has leaves and roots and grows in earth, especially one that is smaller than a tree"
+      },
+      {
+        "pos": "v",
+        "chinese": "栽种",
+        "english": "to put plants or seeds in the ground to grow"
+      }
+    ]
+  },
+  {
+    "name": "contest",
+    "trans": [
+      "比赛"
+    ],
+    "usphone": "kən'tɛst",
+    "ukphone": "'kɒntest",
+    "sentences": [
+      {
+        "english": "Stone decided to hold a contest to see who could write the best song.",
+        "chinese": "斯通决定举行一场比赛，看谁能够写出最佳歌曲。"
+      },
+      {
+        "english": "I only entered the contest for fun.",
+        "chinese": "我只是为了好玩才参加这次比赛的。"
+      },
+      {
+        "english": "It is clear that the election will be a close contest .",
+        "chinese": "显然这次选举将是一场难分高下的角逐。"
+      },
+      {
+        "english": "the 1975 Liberal leadership contest",
+        "chinese": "1975年自由党的领导权之争"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 竞赛， 争夺",
+        "english": "a competition or a situation in which two or more people or groups are competing with each other"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 争夺， 与…竞争； 对…提出质疑， 辩驳",
+        "english": "to say formally that you do not accept something or do not agree with it"
+      }
+    ]
+  },
+  {
+    "name": "the Great Wall",
+    "trans": [
+      "长城"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "长城",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "national",
+    "trans": [
+      "国家的"
+    ],
+    "usphone": "'næʃnəl",
+    "ukphone": "'næʃ(ə)n(ə)l",
+    "sentences": [
+      {
+        "english": "Religion matters very much at a national level.",
+        "chinese": "宗教事务在全国都非常重要。"
+      },
+      {
+        "english": "Between 1929 and 1933 America’s national income fell by more than half.",
+        "chinese": "1929至1933年间，美国的国民收入下降过半。"
+      },
+      {
+        "english": "There are strong indications that the Prime Minister will call national elections in May.",
+        "chinese": "有明显迹象预示首相将于5月召集全国大选。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "民族的；国家的",
+        "english": "related to a whole nation as opposed to any of its parts"
+      }
+    ]
+  },
+  {
+    "name": "National Day",
+    "trans": [
+      "国庆日"
+    ],
+    "usphone": "ˈnæʃənəl de",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "We shall dress the hall up for the National Day.",
+        "chinese": "我们要把大厅布置一新过国庆节。"
+      },
+      {
+        "english": "I give you a special blessing to have it every minute per second gives you health， happiness and good luck and I hope that this is the best that you spend the National Day!",
+        "chinese": "给你我特别的祝福，愿它每分每秒都带给你健康、好运和幸福，希望这是你度过的最美好的国庆节! 愿这短短的话语给你带来国庆的快乐!"
+      },
+      {
+        "english": "My friends and I went to the Fragrant Mount on National Day.",
+        "chinese": "国庆节那天，我和我的朋友们一起去香山游玩。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "国庆日",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "American",
+    "trans": [
+      "美国的"
+    ],
+    "usphone": "əˈmɛrɪkən",
+    "ukphone": "əˈmerɪkən",
+    "sentences": [
+      {
+        "english": "Her mother is American.",
+        "chinese": "她妈妈是美国人。"
+      },
+      {
+        "english": "a famous American writer",
+        "chinese": "一位著名的美国作家"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "美洲的",
+        "english": "relating to the US or its people"
+      },
+      {
+        "pos": "n",
+        "chinese": "美国人",
+        "english": "someone from the US"
+      }
+    ]
+  },
+  {
+    "name": "Thanksgiving",
+    "trans": [
+      "感恩节"
+    ],
+    "usphone": "",
+    "ukphone": "ˌθæŋks'gɪvɪŋ",
+    "sentences": [
+      {
+        "english": "He said sometimes they would invite some friends to share the happiness of Thanksgiving Day.",
+        "chinese": "他说有时候他们也会邀请一些朋友来一起分享感恩节快乐。"
+      },
+      {
+        "english": "I hear about these people every Thanksgiving, then never think about them again for the next 364 days.",
+        "chinese": "我在每个感恩节都听说过这群人，而后在接下来的364天，就再也没有想起过他们。"
+      },
+      {
+        "english": "It compares with \"Cyber Monday\" in the US - the day after Thanksgiving marketed as a big online shopping day.",
+        "chinese": "它与“网络星期一”在美国，感恩节后的第一天销售作为一个大型网上购物一天。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 感恩节",
+        "english": "a public holiday in the US and in Canada when families have a large meal together to celebrate and be thankful for food, health, families etc"
+      }
+    ]
+  },
+  {
+    "name": "Christmas",
+    "trans": [
+      "圣诞节"
+    ],
+    "usphone": "",
+    "ukphone": "ˈkrɪsməs",
+    "sentences": [
+      {
+        "english": "Are you going home for Christmas?",
+        "chinese": "你回家过圣诞节吗？"
+      },
+      {
+        "english": "a Christmas present",
+        "chinese": "圣诞礼物"
+      },
+      {
+        "english": "the Christmas holidays",
+        "chinese": "圣诞节假期"
+      },
+      {
+        "english": "Merry Christmas and a happy New Year everyone!",
+        "chinese": "祝大家圣诞快乐、新年快乐！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "圣诞节",
+        "english": "the period of time around December 25th, the day when Christians celebrate the birth of Christ"
+      }
+    ]
+  },
+  {
+    "name": "holiday",
+    "trans": [
+      "节日"
+    ],
+    "usphone": "'hɑləde",
+    "ukphone": "'hɒlɪdeɪ; -dɪ",
+    "sentences": [
+      {
+        "english": "The school holidays start tomorrow.",
+        "chinese": "学校假期从明天开始。"
+      },
+      {
+        "english": "a national holiday",
+        "chinese": "全国假日"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "假期；假日，节日",
+        "english": "a time of rest from work, school etc"
+      }
+    ]
+  },
+  {
+    "name": "game",
+    "trans": [
+      "游戏"
+    ],
+    "usphone": "ɡem",
+    "ukphone": "geɪm",
+    "sentences": [
+      {
+        "english": "The boys were playing a game in the backyard.",
+        "chinese": "男孩们在后院里玩游戏。"
+      },
+      {
+        "english": "game birds",
+        "chinese": "被捕猎的鸟"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "游戏；比赛；猎物",
+        "english": "an activity or sport in which people compete with each other according to agreed rules"
+      }
+    ]
+  },
+  {
+    "name": "roll",
+    "trans": [
+      "滚动"
+    ],
+    "usphone": "rol",
+    "ukphone": "rəʊl",
+    "sentences": [
+      {
+        "english": "The ball rolled into the street.",
+        "chinese": "球滚到了街上。"
+      },
+      {
+        "english": "There was silence as the cameras started to roll.",
+        "chinese": "摄影机开始转动，大家安静了下来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "滚动；转动",
+        "english": "if something rolls, especially something round, or if you roll it, it moves along a surface by turning over and over"
+      }
+    ]
+  },
+  {
+    "name": "look for",
+    "trans": [
+      "寻找"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "\"What should I look for\"?",
+        "chinese": "是要我寻找什么吗？"
+      },
+      {
+        "english": "Not only this will happen but you will also look for his slightest mistakes then use them as proofs for what you have been told about him!!",
+        "chinese": "不仅这个将会发生，而且你也会寻找他最轻微的错误，然后将此作为他人告诉你他是怎么样的人的证据。"
+      },
+      {
+        "english": "\" so we can look for those features.",
+        "chinese": " 这样我们就可以寻找那些特征。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "寻找",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "chocolate",
+    "trans": [
+      "巧克力"
+    ],
+    "usphone": "ˈtʃɑkələt",
+    "ukphone": "'tʃɒk(ə)lət",
+    "sentences": [
+      {
+        "english": "a chocolate bar",
+        "chinese": "巧克力条"
+      },
+      {
+        "english": "a chocolate cake",
+        "chinese": "巧克力蛋糕"
+      },
+      {
+        "english": "a packet of chocolate biscuits",
+        "chinese": "一包巧克力饼干"
+      },
+      {
+        "english": "I prefer milk chocolate to dark chocolate.",
+        "chinese": "和黑巧克力比起来，我更喜欢牛奶巧克力。"
+      },
+      {
+        "english": "a box of chocolates",
+        "chinese": "一盒巧克力糖"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "巧克力；巧克力糖",
+        "english": "a sweet brown food that you can eat as a sweet or use in cooking to give foods such as cakes a special sweet taste"
+      }
+    ]
+  },
+  {
+    "name": "bunny",
+    "trans": [
+      "兔子"
+    ],
+    "usphone": "'bʌni",
+    "ukphone": "'bʌnɪ",
+    "sentences": [
+      {
+        "english": "He said they invariably bring up the Easter bunny but don't know the significance of the holiday to Christianity.",
+        "chinese": "他说学生们总是一成不变地提到复活节兔子但是不知道这个节日对于基督教的重要性。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "兔子",
+        "english": "a word for a rabbit, used especially by or to children"
+      }
+    ]
+  },
+  {
+    "name": "RSVP",
+    "trans": [
+      "请赐复"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "abbr",
+        "chinese": "请回复 Répondez s'il vous plaît（法语）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "by",
+    "trans": [
+      "在⋯⋯之前"
+    ],
+    "usphone": "baɪ",
+    "ukphone": "baɪ",
+    "sentences": [
+      {
+        "english": "She stood by the window.",
+        "chinese": "她站在窗边。"
+      },
+      {
+        "english": "I was attacked by a dog.",
+        "chinese": "我被一条狗袭击。"
+      },
+      {
+        "english": "a church designed by the famous architect, Sir Christopher Wren",
+        "chinese": "著名建筑师克里斯托弗·雷恩爵士设计的一座教堂"
+      },
+      {
+        "english": "We are all alarmed by the rise in violent crime.",
+        "chinese": "我们都对暴力罪案的增加感到忧虑。"
+      },
+      {
+        "english": "interference by the state in the affairs of the Church",
+        "chinese": "国家对教会事务的干预"
+      },
+      {
+        "english": "his appointment by the BBC as a producer",
+        "chinese": "英国广播公司委任他为制片人"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…旁；被，由",
+        "english": "beside or near something"
+      }
+    ]
+  },
+  {
+    "name": "first",
+    "trans": [
+      "第一"
+    ],
+    "usphone": "fɝst",
+    "ukphone": "fɜːst",
+    "sentences": [
+      {
+        "english": "These results are firsts in the history of women’s athletics.",
+        "chinese": "这些成绩在女运动员历史上是第一次。"
+      },
+      {
+        "english": "First I had to decide what to wear.",
+        "chinese": "首先我得决定穿什么。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "num",
+        "chinese": "第一",
+        "english": "1st"
+      },
+      {
+        "pos": "adv",
+        "chinese": "最初",
+        "english": "at the beginning"
+      }
+    ]
+  },
+  {
+    "name": "second",
+    "trans": [
+      "第二"
+    ],
+    "usphone": "'sɛkənd",
+    "ukphone": "'sek(ə)nd",
+    "sentences": [
+      {
+        "english": "Any proposal must be seconded by two other members of the committee.",
+        "chinese": "任何提案须有委员会其他两位委员附议。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "支持",
+        "english": "to formally support a suggestion made by another person in a meeting"
+      }
+    ]
+  },
+  {
+    "name": "third",
+    "trans": [
+      "第三"
+    ],
+    "usphone": "θɝd",
+    "ukphone": "θɜːd",
+    "sentences": [
+      {
+        "english": "Divide it into thirds.",
+        "chinese": "把它分成三等份。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "num",
+        "chinese": "第三；三分之一",
+        "english": "one of three equal parts of something"
+      },
+      {
+        "pos": "adj",
+        "chinese": "第三的；三分之一的",
+        "english": "coming after two other things in a series"
+      }
+    ]
+  },
+  {
+    "name": "fourth",
+    "trans": [
+      "第四"
+    ],
+    "usphone": "fɔrθ",
+    "ukphone": "fɔːθ",
+    "sentences": [
+      {
+        "english": "the fourth of July",
+        "chinese": "7月4日"
+      },
+      {
+        "english": "one-fourth/three-fourths",
+        "chinese": "1/4;3/4"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "第四",
+        "english": "the fourth thing in a series"
+      },
+      {
+        "pos": "n",
+        "chinese": "四分之一",
+        "english": "¼; one of four equal parts"
+      }
+    ]
+  },
+  {
+    "name": "fifth",
+    "trans": [
+      "第五"
+    ],
+    "usphone": "fɪfθ",
+    "ukphone": "fɪfθ",
+    "sentences": [
+      {
+        "english": "a fifth of bourbon",
+        "chinese": "五分之一加仑的波旁威士忌酒"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "num",
+        "chinese": "第五",
+        "english": "one of five equal parts of something"
+      },
+      {
+        "pos": "n",
+        "chinese": "五分之一",
+        "english": "one of five equal parts of something"
+      }
+    ]
+  },
+  {
+    "name": "twelfth",
+    "trans": [
+      "第十二"
+    ],
+    "usphone": "twɛlfθ",
+    "ukphone": "twelfθ",
+    "sentences": [
+      {
+        "english": "Captain: : You're the twelfth in a long line of governesses, who have come to look after my children since their mother died.",
+        "chinese": "上校：自从孩子们的母亲去世以后，你是来照看他们的第十二位女家庭教师。"
+      },
+      {
+        "english": "NIV] the fifth sardonyx, the sixth carnelian, the seventh chrysolite, the eighth beryl, the ninth topaz, the tenth chrysoprase, the eleventh jacinth, and the twelfth amethyst.",
+        "chinese": "第五是红玛瑙，第六是红宝石，第七是黄璧玺；第八是水苍玉；第九是红璧玺；第十是翡翠；第十一是紫玛瑙；第十二是紫晶。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "num",
+        "chinese": "第十二",
+        "english": "one of twelve equal parts of something"
+      },
+      {
+        "pos": "n",
+        "chinese": " 十二分之一",
+        "english": "one of twelve equal parts of something"
+      }
+    ]
+  },
+  {
+    "name": "twentieth",
+    "trans": [
+      "第二十"
+    ],
+    "usphone": "ˈtwɛntɪɪθ",
+    "ukphone": "ˈtwentɪəθ",
+    "sentences": [
+      {
+        "english": "He came in twentieth.",
+        "chinese": "他得了第二十名。"
+      },
+      {
+        "english": "If you are twentieth, do you get a medal?",
+        "chinese": "如果你第二十，你得到奖牌吗？"
+      },
+      {
+        "english": "Tutti was always first in her class before, but has slipped since the last move down to twentieth out of fifty children.",
+        "chinese": "图蒂从前在班上总是名列前茅，但打从上回搬家后，名次已掉到五十个学童当中的第二十名。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "num",
+        "chinese": "第二十",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": " 二十分之一",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "twenty-first",
+    "trans": [
+      "第二十一"
+    ],
+    "usphone": "'twenti'fə:st",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "The answers, my friends, will be blowing through and creating the winds of the twenty-first century.",
+        "chinese": "我的朋友，这些问题的答案将主导二十一世纪的风向，并将贯穿整个世纪。"
+      },
+      {
+        "english": "At the beginning of the twenty-first century, he could note that UNESCO had joined him in this conviction.",
+        "chinese": "在二十一世纪之初，他注意到联合国教科文组织已经同他一道对此深信不疑。"
+      },
+      {
+        "english": "Actually I have a few vacant offices on the seventh, thirteen and twenty-first floors in Mong Kok Centre Phase Ⅱ.",
+        "chinese": "我正好有一些旺角中心第二期的空置中层单位，是在七楼、十三楼和二十一楼。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "第二十一",
+        "english": "your twenty-first  birthday  or the celebration you have for it"
+      }
+    ]
+  },
+  {
+    "name": "twenty-third",
+    "trans": [
+      "第二十三"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "October twenty-third. Seteven is too slow.",
+        "chinese": "十月二十三号。史蒂文的进度太慢了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "第二十三",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "thirtieth",
+    "trans": [
+      "第三十"
+    ],
+    "usphone": "'θɝtɪɪθ",
+    "ukphone": "'θɜːtɪɪθ",
+    "sentences": [
+      {
+        "english": "Actually I'm not bored at all, \" I said, cupping my own breast for the thirtieth time.",
+        "chinese": "实际上我一点也不。\" 我正说著，我托了托双乳，准备拍第十三张。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "num",
+        "chinese": "第三十；三十分之一",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "第三十个的；三十分之一的",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "第三十；三十分之一",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "special",
+    "trans": [
+      "特殊的"
+    ],
+    "usphone": "ˈspɛʃəl",
+    "ukphone": "'speʃ(ə)l",
+    "sentences": [
+      {
+        "english": "a special place in the classroom for reading",
+        "chinese": "教室里的阅读专区"
+      },
+      {
+        "english": "No one receives special treatment.",
+        "chinese": "没有人享有特殊待遇。"
+      },
+      {
+        "english": "Maria’s special recipe for apple pie",
+        "chinese": "玛丽亚的苹果馅饼秘方"
+      },
+      {
+        "english": "The good china was used only on special occasions .",
+        "chinese": "这些精美瓷器只在特殊场合使用。"
+      },
+      {
+        "english": "Each village has its own special charm.",
+        "chinese": "每一座村子都有其独特的魅力。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "特殊的，特别的",
+        "english": "not ordinary or usual, but different in some way and often better or more important"
+      }
+    ]
+  },
+  {
+    "name": "fool",
+    "trans": [
+      "蠢人"
+    ],
+    "usphone": "ful",
+    "ukphone": "fuːl",
+    "sentences": [
+      {
+        "english": "What a fool she had been to think that he would stay.",
+        "chinese": "她竟然那么傻，以为他会留下来。"
+      },
+      {
+        "english": "Like a fool, I accepted straight away.",
+        "chinese": "我像个傻子，立刻就接受了。"
+      },
+      {
+        "english": "You silly old fool !",
+        "chinese": "你这个大傻瓜！"
+      },
+      {
+        "english": "Even art experts were fooled.",
+        "chinese": "连艺术品专家也被骗了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "蠢人，傻子",
+        "english": "a stupid person or someone who has done something stupid"
+      },
+      {
+        "pos": "v",
+        "chinese": "欺骗",
+        "english": "to trick someone into believing something that is not true"
+      }
+    ]
+  },
+  {
+    "name": "kitten",
+    "trans": [
+      "小猫"
+    ],
+    "usphone": "'kɪtn",
+    "ukphone": "'kɪt(ə)n",
+    "sentences": [
+      {
+        "english": "She nursed her kitten all evening.",
+        "chinese": "整个晚上她一直抱着她的小猫咪。"
+      },
+      {
+        "english": "Don't starve the kitten.",
+        "chinese": "别饿着小猫。"
+      },
+      {
+        "english": "Let someone else waste their own time filtering out the kitten stories.",
+        "chinese": "让别的某某人去浪费时间筛选这些小猫的故事吧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "小猫",
+        "english": "a young cat"
+      }
+    ]
+  },
+  {
+    "name": "diary",
+    "trans": [
+      "日记"
+    ],
+    "usphone": "'daɪəri",
+    "ukphone": "'daɪərɪ",
+    "sentences": [
+      {
+        "english": "Inge kept a diary (= wrote in a diary ) during the war years.",
+        "chinese": "英奇在战争年代里一直写日记。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "日记，日记簿",
+        "english": "a book in which you write down the things that happen to you each day"
+      }
+    ]
+  },
+  {
+    "name": "still",
+    "trans": [
+      "仍然"
+    ],
+    "usphone": "stɪl",
+    "ukphone": "stɪl",
+    "sentences": [
+      {
+        "english": "I still haven’t finished painting the spare room.",
+        "chinese": "我还没粉刷完那间空房间。"
+      },
+      {
+        "english": "Do you still have Julie’s phone number?",
+        "chinese": "你还留着朱莉的电话号码吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "仍然；更；静止地",
+        "english": "up to a particular point in time and continuing at that moment"
+      },
+      {
+        "pos": "adj",
+        "chinese": "静止的，不动的；寂静的，平静的；不起泡的",
+        "english": "not moving"
+      },
+      {
+        "pos": "n",
+        "chinese": "寂静；剧照；蒸馏室",
+        "english": "a photograph of a scene from a film"
+      },
+      {
+        "pos": "conj",
+        "chinese": "仍然；但是；尽管如此",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "蒸馏；使…静止；使…平静下来",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "noise",
+    "trans": [
+      "噪音"
+    ],
+    "usphone": "nɔɪz",
+    "ukphone": "nɔɪz",
+    "sentences": [
+      {
+        "english": "What’s that noise?",
+        "chinese": "那是什么声音？"
+      },
+      {
+        "english": "Try not to make a noise when you go upstairs.",
+        "chinese": "上楼时尽量不要弄出声。"
+      },
+      {
+        "english": "There was a lot of noise outside.",
+        "chinese": "外面很吵闹。"
+      },
+      {
+        "english": "Noise levels have been reduced by 20%.",
+        "chinese": "噪音水平下降了20%。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "喧闹声；响声；噪声",
+        "english": "a sound, especially one that is loud, unpleasant, or frightening"
+      }
+    ]
+  },
+  {
+    "name": "fur",
+    "trans": [
+      "动物皮毛"
+    ],
+    "usphone": "fɝ",
+    "ukphone": "fɜː",
+    "sentences": [
+      {
+        "english": "a fur coat",
+        "chinese": "裘皮大衣"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "皮，皮子；毛皮；软毛",
+        "english": "the thick soft hair that covers the bodies of some animals, such as cats, dogs, and rabbits"
+      },
+      {
+        "pos": "v",
+        "chinese": "用毛皮覆盖；使穿毛皮服装",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "open",
+    "trans": [
+      "开着的"
+    ],
+    "usphone": "'opən",
+    "ukphone": "'əʊp(ə)n",
+    "sentences": [
+      {
+        "english": "He threw the door open and ran down the stairs.",
+        "chinese": "他猛地打开门，往楼下跑去。"
+      },
+      {
+        "english": "an open window",
+        "chinese": "打开的窗户"
+      },
+      {
+        "english": "The gates swung silently open.",
+        "chinese": "大门悄悄地打开了。"
+      },
+      {
+        "english": "The bar door flew open and a noisy group burst in.",
+        "chinese": "酒吧的门猛地弹开，冲进来一群吵吵闹闹的人。"
+      },
+      {
+        "english": "All the windows were wide open (= completely open ).",
+        "chinese": "所有的窗户都大开着。"
+      },
+      {
+        "english": "The museum is open daily in the summer months.",
+        "chinese": "夏季里这座博物馆每天开放。"
+      },
+      {
+        "english": "Jack opened the window.",
+        "chinese": "杰克打开窗户。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "开的；开放的",
+        "english": "not closed, so that things, people, air etc can go in and out or be put in and out"
+      },
+      {
+        "pos": "v",
+        "chinese": "开",
+        "english": "to move a door, window etc so that people, things, air etc can pass through, or to be moved in this way"
+      }
+    ]
+  },
+  {
+    "name": "walk",
+    "trans": [
+      "行走"
+    ],
+    "usphone": "wɔk",
+    "ukphone": "wɔːk",
+    "sentences": [
+      {
+        "english": "It’s a long walk. Maybe we should get the bus.",
+        "chinese": "走着去很远，或许我们应该乘公共汽车。"
+      },
+      {
+        "english": "Rosanna and Forbes walked in silence.",
+        "chinese": "罗莎娜与福布斯默默地走着。"
+      },
+      {
+        "english": "We walked into the foyer.",
+        "chinese": "我们走进前厅。"
+      },
+      {
+        "english": "I walked a few steps toward the fence.",
+        "chinese": "我向栅栏走了几步。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "步行，走；散步",
+        "english": "a journey that you make by walking, especially for exercise or enjoyment"
+      },
+      {
+        "pos": "v",
+        "chinese": "散步；走过",
+        "english": "When you walk, you move forward by putting one foot in front of the other in a regular way"
+      }
+    ]
+  },
+  {
+    "name": "mine",
+    "trans": [
+      "我的"
+    ],
+    "usphone": "maɪn",
+    "ukphone": "maɪn",
+    "sentences": [
+      {
+        "english": "It was Glen’s idea, not mine.",
+        "chinese": "这是格伦的主意，不是我的。"
+      },
+      {
+        "english": "‘Is that your car?’ ‘No, mine is parked over the road.’",
+        "chinese": "“那是你的车吗？”“不是，我的车停在路对面。”"
+      },
+      {
+        "english": "You’ve got good legs – mine are too thin.",
+        "chinese": "你的腿很美——我的腿太细了。"
+      },
+      {
+        "english": "His English is better than mine.",
+        "chinese": "他英语比我好。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "我的",
+        "english": "used by the person speaking or writing to refer to something that belongs to or is connected with himself or herself"
+      }
+    ]
+  },
+  {
+    "name": "yours",
+    "trans": [
+      "你的"
+    ],
+    "usphone": "jʊrz",
+    "ukphone": "jɔːz; jʊəz",
+    "sentences": [
+      {
+        "english": "This is our room, and yours is just across the hall.",
+        "chinese": "这是我们的房间，你们的在走廊那边。"
+      },
+      {
+        "english": "A lot of people have money problems, but yours are more serious than most people’s.",
+        "chinese": "许多人有财务问题，不过你的问题比大多数人的要严重。"
+      },
+      {
+        "english": "A cash prize of £10,000 or a new car – the choice is yours.  ",
+        "chinese": "一万英镑的奖金或一辆新车——随你选择。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "你（们）的东西；你的责任[义务]；你的家属；来信，尊函",
+        "english": "used when speaking or writing to one or more people to refer to something that belongs to them or is connected with them"
+      },
+      {
+        "pos": "adj",
+        "chinese": "你（们）的（东西）；信末署名前用语",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "his",
+    "trans": [
+      "他的"
+    ],
+    "usphone": "hɪz",
+    "ukphone": "hɪz",
+    "sentences": [
+      {
+        "english": "He took my hand in his.",
+        "chinese": "他握住我的手。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "他的，他的东西",
+        "english": "of or belonging to him"
+      }
+    ]
+  },
+  {
+    "name": "hers",
+    "trans": [
+      "她的"
+    ],
+    "usphone": "hɝz",
+    "ukphone": "hɜːz",
+    "sentences": [
+      {
+        "english": "He bent and touched his mouth to hers.",
+        "chinese": "他俯身吻她的嘴唇。"
+      },
+      {
+        "english": "These are my gloves. Hers are in the drawer.",
+        "chinese": "这是我的手套，她的在抽屉里。"
+      },
+      {
+        "english": "The idea was hers.",
+        "chinese": "这个主意是她出的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "她的（所有格）",
+        "english": "used to refer to something that belongs to or is connected with a woman, girl, or female animal that has already been mentioned"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Hers)人名；(法)埃尔",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "theirs",
+    "trans": [
+      "他们的"
+    ],
+    "usphone": "ðɛrz",
+    "ukphone": "ðeəz",
+    "sentences": [
+      {
+        "english": "When our washing machine broke, our neighbours let us use theirs.",
+        "chinese": "我们的洗衣机坏了的时候，邻居就让我们用他们的。"
+      },
+      {
+        "english": "Our house is number 25, and theirs is just opposite.",
+        "chinese": "我们的房子是25号，他们的就在对面。"
+      },
+      {
+        "english": "We compared scores and found that theirs were higher than ours.",
+        "chinese": "我们比较了一下，发现他们的得分比我们的高。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "他们的；她们的；它们的",
+        "english": "used to refer to something that belongs to or is connected with people that have already been mentioned"
+      }
+    ]
+  },
+  {
+    "name": "ours",
+    "trans": [
+      "我们的"
+    ],
+    "usphone": "ɑrz",
+    "ukphone": "aʊəz",
+    "sentences": [
+      {
+        "english": "I’ll show you to your room. Ours is next door.",
+        "chinese": "我带你去你的房间，我们的房间在你的隔壁。"
+      },
+      {
+        "english": "The main difference between our brains and those of monkeys is that ours are bigger.",
+        "chinese": "我们的大脑和猴子的大脑之间的主要差别在于我们的要大些。"
+      },
+      {
+        "english": "No, that’s not ours.",
+        "chinese": "不，那不是我们的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "我们的",
+        "english": "used to refer to something that belongs to or is connected with us"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Ours)人名；(法)乌尔斯",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "climbing",
+    "trans": [
+      "攀登"
+    ],
+    "usphone": "'klaɪmɪŋ",
+    "ukphone": "'klaɪmɪŋ",
+    "sentences": [
+      {
+        "english": "a climbing rope",
+        "chinese": "登山绳"
+      },
+      {
+        "english": "He goes climbing nearly every weekend.",
+        "chinese": "他几乎每个周末都去登山。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "攀登",
+        "english": "the sport of climbing mountains or rocks"
+      }
+    ]
+  },
+  {
+    "name": "eating",
+    "trans": [
+      "吃"
+    ],
+    "usphone": "'itɪŋ",
+    "ukphone": "'iːtɪŋ",
+    "sentences": [
+      {
+        "english": "She rinsed her hands quickly before eating.",
+        "chinese": "她吃东西以前很快洗了一下手。"
+      },
+      {
+        "english": "He supplements his regular meals by eating between meals.",
+        "chinese": "他在两餐之间吃点东西来补充正餐。"
+      },
+      {
+        "english": "Those people are concerned only with eating,sleeping and procreating.",
+        "chinese": "那些人关心的只不过是吃饭、睡觉和生孩子。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "吃",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "playing",
+    "trans": [
+      "玩"
+    ],
+    "usphone": "'pleɪŋ",
+    "ukphone": "'pleɪŋ",
+    "sentences": [
+      {
+        "english": "...invite the children over to play.",
+        "chinese": "…邀请孩子们过来玩。"
+      },
+      {
+        "english": "They played in the little garden.",
+        "chinese": "他们在小花园里玩耍。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "玩",
+        "english": "When children, animals, or adults play, they spend time doing enjoyable things, such as using toys and taking part in games"
+      }
+    ]
+  },
+  {
+    "name": "jumping",
+    "trans": [
+      "跳"
+    ],
+    "usphone": "'dʒʌmpɪŋ",
+    "ukphone": "'dʒʌmpɪŋ",
+    "sentences": [
+      {
+        "english": "I jumped over the fence.",
+        "chinese": "我从篱笆上跳了过去。"
+      },
+      {
+        "english": "I'd jumped seventeen feet six in the long jump, which was a school record.",
+        "chinese": "我跳远曾跳了17.6英尺，这是个校纪录。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "跳",
+        "english": "If you jump, you bend your knees, push against the ground with your feet, and move quickly upward into the air"
+      }
+    ]
+  },
+  {
+    "name": "drinking",
+    "trans": [
+      "喝"
+    ],
+    "usphone": "'drɪŋkɪŋ",
+    "ukphone": "'drɪŋkɪŋ",
+    "sentences": [
+      {
+        "english": "after a night of heavy drinking",
+        "chinese": "狂饮一夜之后"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "喝",
+        "english": "the activity of drinking alcohol"
+      }
+    ]
+  },
+  {
+    "name": "sleeping",
+    "trans": [
+      "睡觉"
+    ],
+    "usphone": "'slipɪŋ",
+    "ukphone": "'sliːpɪŋ",
+    "sentences": [
+      {
+        "english": "On the top floor we have sleeping quarters for women and children.",
+        "chinese": "在顶楼我们有供妇女和孩子睡觉的地方。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "睡觉",
+        "english": "You use sleeping to describe places where people sleep or things concerned with where people sleep"
+      }
+    ]
+  },
+  {
+    "name": "each",
+    "trans": [
+      "每个"
+    ],
+    "usphone": "itʃ",
+    "ukphone": "iːtʃ",
+    "sentences": [
+      {
+        "english": "They reviewed each aspect of the plan bit by bit.",
+        "chinese": "他们对计划的各个方面逐一地进行了审核。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "各，各自",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "各",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "other",
+    "trans": [
+      "其他"
+    ],
+    "usphone": "'ʌðɚ",
+    "ukphone": "'ʌðə",
+    "sentences": [
+      {
+        "english": "The other hotels are all full.",
+        "chinese": "其他的宾馆均已客满。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "另外的；其余的",
+        "english": "used to refer to all the people or things in a group apart from the one you have already men­tioned or the one that is already known about"
+      }
+    ]
+  },
+  {
+    "name": "each other",
+    "trans": [
+      "相互"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "Susan and Robert kissed each other passionately.",
+        "chinese": "苏珊和罗伯特深情地亲吻。"
+      },
+      {
+        "english": "The girls looked at each other.",
+        "chinese": "女孩们互相看了看。"
+      },
+      {
+        "english": "They enjoy each other’s company.",
+        "chinese": "他俩很喜欢待在一起。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "相互",
+        "english": "used to show that each of two or more people does something to the other or others"
+      }
+    ]
+  },
+  {
+    "name": "excited",
+    "trans": [
+      "兴奋地"
+    ],
+    "usphone": "ɪk'saɪtɪd",
+    "ukphone": "ɪk'saɪtɪd",
+    "sentences": [
+      {
+        "english": "Steve flies home tomorrow – we’re all really excited.",
+        "chinese": "史蒂夫明天坐飞机回家——我们都非常激动。"
+      },
+      {
+        "english": "The food was nothing to get excited about (= not very good or special ).",
+        "chinese": "食物很一般，没什么特别。"
+      },
+      {
+        "english": "excited crowds of shoppers",
+        "chinese": "兴奋的购物人群"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "兴奋的；激动的；活跃的",
+        "english": "happy, interested, or hopeful because something good has happened or will happen"
+      },
+      {
+        "pos": "v",
+        "chinese": "激动；唤起（excite的过去分词）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "like",
+    "trans": [
+      "像⋯⋯那样"
+    ],
+    "usphone": "laɪk",
+    "ukphone": "laɪk",
+    "sentences": [
+      {
+        "english": "I like your jacket.",
+        "chinese": "我喜欢你这件上衣。"
+      },
+      {
+        "english": "I don’t really like classical music.",
+        "chinese": "我不是很喜欢古典音乐。"
+      },
+      {
+        "english": "Do you like this colour?",
+        "chinese": "你喜欢这种颜色吗？"
+      },
+      {
+        "english": "I like my coffee quite weak.",
+        "chinese": "我喜欢喝很淡的咖啡。"
+      },
+      {
+        "english": "I don’t like it when you get angry.",
+        "chinese": "我不喜欢你生气时的样子。"
+      },
+      {
+        "english": "How do you like living in London (= how much do you like it )?",
+        "chinese": "住在伦敦你感觉怎样？"
+      },
+      {
+        "english": "I quite like their new album.",
+        "chinese": "我很喜欢他们的新专辑。"
+      },
+      {
+        "english": "We really liked the film.",
+        "chinese": "我们非常喜欢这部影片。"
+      },
+      {
+        "english": "The time I like best (= like most of all ) is the evening when it’s cool.",
+        "chinese": "我最喜欢的时间是凉爽的傍晚。"
+      },
+      {
+        "english": "I didn’t like the idea of being a single parent.",
+        "chinese": "我可不想当单亲家长。"
+      },
+      {
+        "english": "Would you like a drink?",
+        "chinese": "你想喝一杯吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "喜欢；喜爱；希望",
+        "english": "to enjoy something or think that it is nice or good"
+      }
+    ]
+  },
+  {
+    "name": "doing morning exercises",
+    "trans": [
+      "做早操"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "Every morning, we see many old people doing morning exercises.",
+        "chinese": "每天早上我们看见许多老人在做早操。"
+      },
+      {
+        "english": "If you keep doing morning exercises every day, you will be healthy by and by.",
+        "chinese": "如果你每天坚持做早操，你的身体不久以后就会健康起来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "做早操",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "having...class",
+    "trans": [
+      "上⋯⋯课"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "上⋯⋯课",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "eating lunch",
+    "trans": [
+      "吃午饭"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "You practice it while eating lunch.",
+        "chinese": "你一边吃午餐一边练习；"
+      },
+      {
+        "english": "I went into the dining room of the Governors Mansion, where my friends were eating lunch, told them I wasn’t running, and apologized for bringing them all down.",
+        "chinese": "我走进州长官邸的饭厅，朋友们正在吃午餐，我告诉他们说不打算竞选总统了，对邀请他们大老远地跑过来感到抱歉。"
+      },
+      {
+        "english": "'I've cleared customs sitting in the dining car eating lunch, ' Mr. Thompson says.",
+        "chinese": "汤普森说：我是坐在餐车吃午饭的时候办理通关手续的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "吃午饭",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "reading a book",
+    "trans": [
+      "看书"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "I remember reading a book somewhere – it said that almost all of us are waiting for something.",
+        "chinese": "我记得在哪里读过一本书--- 书上说我们大部分人都一直在等待着什么。"
+      },
+      {
+        "english": "They want their online experience to be simple and straightforward, like reading a book or newspaper!",
+        "chinese": "他们更希望在线体验能够尽量简单和直观，就像阅读一本书或一份报纸一样！"
+      },
+      {
+        "english": "If you are reading a book and no longer feel that you get enough value from it, then stop reading it.",
+        "chinese": "如果你正在读一本书，但是再也感觉不到你能从中获得足够的价值，请停止阅读。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "看书",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "listening to music",
+    "trans": [
+      "听音乐"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "We spent the winter and some of the spring in my room—never hers—missing tests, listening to music, looking out my window to comment on people who wouldn't have given us a second thought.",
+        "chinese": "我们整个冬天和春天的一段时间都是在我宿舍度过的——我们从不去她的房间——逃考，听音乐，在我房间探出头去，对那些压根不会注意到我们的人品头论足。"
+      },
+      {
+        "english": "The idea of a “Mozart effect” remains popular, but the original study has been somewhat discredited, and any intellectual boost that comes from listening to music seems to be tiny and temporary.",
+        "chinese": "所谓“莫扎特效应”的观念仍然很流行，但是原始的研究被发现有些不太可信，而且任何聆听音乐造成的智力提升似乎都是微小和临时性的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "听音乐",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "keep",
+    "trans": [
+      "保持"
+    ],
+    "usphone": "kip",
+    "ukphone": "kiːp",
+    "sentences": [
+      {
+        "english": "The noise kept him awake.",
+        "chinese": "噪音使他一直醒着。"
+      },
+      {
+        "english": "I was struggling to keep awake.",
+        "chinese": "我努力不让自己睡着。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "保持；坚持",
+        "english": "to stay in a particular state, condition, or position, or to make someone or something do this"
+      }
+    ]
+  },
+  {
+    "name": "keep to the right",
+    "trans": [
+      "靠右"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "All vehicles should keep to the right.",
+        "chinese": "车辆一律靠右走。"
+      },
+      {
+        "english": "Article 35 Motor vehicles and non-motor vehicles shall keep to the right of the road.",
+        "chinese": "第三十五条机动车、非机动车实行右侧通行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "靠右",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "keep your desk clean",
+    "trans": [
+      "保持课桌干净"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "It is your responsibility to keep your desk clean.",
+        "chinese": "保持课桌清洁是你的责任。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "保持课桌干净",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "talk quietly",
+    "trans": [
+      "小声讲话"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "We just have to talk quietly.",
+        "chinese": "我们只能悄悄的讲话。"
+      },
+      {
+        "english": "Read stories, rub their backs, listen to music, talk quietly about the day.",
+        "chinese": "讲故事、抚摸孩子的背、听音乐、轻声谈论当天的事情。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "小声讲话",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "turn",
+    "trans": [
+      "顺序"
+    ],
+    "usphone": "tɝn",
+    "ukphone": "tɜːn",
+    "sentences": [
+      {
+        "english": "Ricky turned and walked away.",
+        "chinese": "里基转身走了。"
+      },
+      {
+        "english": "She turned her head in surprise.",
+        "chinese": "她惊讶地转过头来。"
+      },
+      {
+        "english": "Brigitte glared at him, turned on her heel (= turned away suddenly because of anger ) , and stomped out of the room.",
+        "chinese": "布丽吉特瞪了他一眼，猛地一转身，噔噔噔地走出了房间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "转动，使旋转；转弯；翻过来；兑换",
+        "english": "to move your body so that you are looking in a different direction"
+      },
+      {
+        "pos": "n",
+        "chinese": "转弯；变化；(损害或有益于别人的)行为，举动，举止",
+        "english": "a sudden or unexpected change that makes a situation develop in a different way"
+      }
+    ]
+  },
+  {
+    "name": "take turns",
+    "trans": [
+      "按顺序来"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "按顺序来",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "bamboo",
+    "trans": [
+      "竹子"
+    ],
+    "usphone": ",bæm'bu",
+    "ukphone": "bæm'buː",
+    "sentences": [
+      {
+        "english": "Everything there is made of bamboo.",
+        "chinese": "那里什么都是竹子做的。"
+      },
+      {
+        "english": "Do you like bamboo?",
+        "chinese": "你喜欢竹子吗?"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "竹，竹子",
+        "english": "a tall tropical plant with hollow stems that is used for making furniture"
+      },
+      {
+        "pos": "vt",
+        "chinese": "为…装上篾条",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "竹制的；土著居民的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "its",
+    "trans": [
+      "它的"
+    ],
+    "usphone": "ɪts",
+    "ukphone": "ɪts",
+    "sentences": [
+      {
+        "english": "He emphasized its importance to me.",
+        "chinese": "他向我强调它的重要性。"
+      },
+      {
+        "english": "The child read the story but did not comprehend its meaning.",
+        "chinese": "这个孩子读了这篇故事，但不能理解它的意思。"
+      },
+      {
+        "english": "The company disseminated information about its new programmes.",
+        "chinese": "公司传播有关其新计划的信息。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "它的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "show",
+    "trans": [
+      "指导，引导"
+    ],
+    "usphone": "ʃo",
+    "ukphone": "ʃəʊ",
+    "sentences": [
+      {
+        "english": "Think positively and show some determination.",
+        "chinese": "要往好的方面想，拿出决心来。"
+      },
+      {
+        "english": "She had learned not to show her emotions .",
+        "chinese": "她早就学会了不流露出自己的感情。"
+      },
+      {
+        "english": "It was the sound a man might make when in pain but trying not to show it.",
+        "chinese": "那是一个人强忍着疼痛不愿表露出来时发出的声音。"
+      },
+      {
+        "english": "Mary showed great interest in the children.",
+        "chinese": "玛丽对这些小孩子表示出极大的兴趣。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 显现， 显露， 露面； 演出， 放映",
+        "english": "to let your feelings, attitudes, or personal qualities be clearly seen"
+      },
+      {
+        "pos": "n",
+        "chinese": "表演，节目；演出，上映；展览，展览物，展览会；显示，展示；表面，外观",
+        "english": "a performance for the public, especially one that includes singing, dancing, or jokes"
+      },
+      {
+        "pos": "vt",
+        "chinese": "给看，显示，出示；引领，带领；教，告知，说明；表明，证明",
+        "english": "to let someone see something"
+      }
+    ]
+  },
+  {
+    "name": "anything",
+    "trans": [
+      "任何事物"
+    ],
+    "usphone": "'ɛnɪ'θɪŋ",
+    "ukphone": "'enɪθɪŋ",
+    "sentences": [
+      {
+        "english": "You can buy anything you want.",
+        "chinese": "你想要什么都可以买。"
+      },
+      {
+        "english": "He was prepared to do anything to make a bit of money.",
+        "chinese": "只要能赚一点钱，他什么都愿意做。"
+      },
+      {
+        "english": "Anything would be better than staying at home!",
+        "chinese": "做什么都比待在家里好！"
+      },
+      {
+        "english": "You can write about swimming, skiing, or anything else you enjoy doing.",
+        "chinese": "你可以写游泳、写滑雪或者其他任何你喜欢的活动。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "任何事物；一切",
+        "english": "any thing, event, situation etc, when it is not important to say exactly which"
+      }
+    ]
+  },
+  {
+    "name": "else",
+    "trans": [
+      "另外"
+    ],
+    "usphone": "ɛls",
+    "ukphone": "els",
+    "sentences": [
+      {
+        "english": "There’s something else I’d like to talk about as well.",
+        "chinese": "我还有其他事情要谈一谈。"
+      },
+      {
+        "english": "I’d like you to come, and anyone else who’s free.",
+        "chinese": "我想请你过来，其他人有空也可以来。"
+      },
+      {
+        "english": "He was awake now, as was everyone else.",
+        "chinese": "他现在已经醒了，其他人也都醒了。"
+      },
+      {
+        "english": "Who else was at the party?",
+        "chinese": "还有谁参加了聚会？"
+      },
+      {
+        "english": "‘Two coffees, please.’ ‘Anything else?’ ‘No, thanks.’",
+        "chinese": "“请来两杯咖啡。”“还要别的吗？”“不要了，谢谢。"
+      },
+      {
+        "english": "(= more than any other things ) she was seeking love.",
+        "chinese": "她追求爱情胜过一切。"
+      },
+      {
+        "english": "If I can't make a living at painting, at least I can teach someone else to paint.",
+        "chinese": "如果我不能以画画谋生的话，至少我能教别人画画。"
+      },
+      {
+        "english": "We had nothing else to do on those long trips.",
+        "chinese": "在那些漫长的旅途中我们别无他事可做。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "其它，另外",
+        "english": "besides or in addition to someone or something"
+      },
+      {
+        "pos": "adj",
+        "chinese": "别的",
+        "english": "You use else after words such as \"anywhere,\" \"someone,\" and \"what\" to refer in a vague way to another person, place, or thing"
+      }
+    ]
+  },
+  {
+    "name": "exhibition",
+    "trans": [
+      "展览"
+    ],
+    "usphone": "ˌɛksəˈbɪʃən",
+    "ukphone": "ˌeksɪˈbɪʃn",
+    "sentences": [
+      {
+        "english": "All visitors to the exhibition must report to the main service desk.",
+        "chinese": "到展览会参观的人都必须先到总服务台报到。"
+      },
+      {
+        "english": "Our country will tie up with another country to host this exhibition.",
+        "chinese": "我国将和另外一个国家联合主办这次展览会。"
+      },
+      {
+        "english": "You go to the exhibition centre, I must hie myself to tell the new matters.",
+        "chinese": "你去展览中心吧，我得赶紧汇报一下这个新情况。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "展览",
+        "english": "a show of paintings, photographs, or other objects that people can go to see"
+      }
+    ]
+  },
+  {
+    "name": "say",
+    "trans": [
+      "说；讲"
+    ],
+    "usphone": "se",
+    "ukphone": "seɪ",
+    "sentences": [
+      {
+        "english": "‘I’m so tired,’ she said.",
+        "chinese": "“我太累了。”她说。"
+      },
+      {
+        "english": "‘Don’t cry,’ he said softly.",
+        "chinese": "“别哭了。”他柔声说道。"
+      },
+      {
+        "english": "Don’t believe anything he says.",
+        "chinese": "他说什么都不要相信。"
+      },
+      {
+        "english": "I always said I would buy a motorbike when I had enough money.",
+        "chinese": "我一直说等我有了足够的钱就买一辆摩托车。"
+      },
+      {
+        "english": "I would like to say how much we appreciate your hard work.",
+        "chinese": "我想说我们对你的辛勤劳动非常感谢。"
+      },
+      {
+        "english": "‘Why did she leave?’ ‘I don’t know – she didn’t say .’",
+        "chinese": "“她为什么要离开？”“我不知道——她没说。”"
+      },
+      {
+        "english": "Although he didn’t say so , it was clear that he was in pain.",
+        "chinese": "虽然他没说，但是他明显很痛苦。"
+      },
+      {
+        "english": "(= why do you think that ) ?",
+        "chinese": "你怎么会那么说呢？"
+      },
+      {
+        "english": "I’d like to say a few words (= make a short speech ) .",
+        "chinese": "我想简单地说几句。"
+      },
+      {
+        "english": "‘So what are your plans now?’‘ I’d rather not say .’",
+        "chinese": "“那么你现在的计划是什么？”“我还是不说的好。”"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "比如说[用于举例]",
+        "english": "to express an idea, feeling, thought etc using words"
+      }
+    ]
+  },
+  {
+    "name": "have a look",
+    "trans": [
+      "看一看"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "She was greatly tempted to have a look at it.",
+        "chinese": "她非常想看一看。"
+      },
+      {
+        "english": "Today we’ll have a look at a hadron collider of the Nuclear Physics Institute in Novosibirsk.",
+        "chinese": "今天让我们来看一看位于新西伯利亚市核物理研究所的强子对撞机。"
+      },
+      {
+        "english": "The children really believed that there was a rabbit on the moon. They wanted to go to the moon and have a look one day.",
+        "chinese": "这个时候；一些老人会讲述许多古老的故事，如月亮上的玉兔，孩子们信以为真，他们真想有一天登上月球看个究竟。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "看一看",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "sushi",
+    "trans": [
+      "寿司"
+    ],
+    "usphone": "'sʊʃi",
+    "ukphone": "'suːʃɪ",
+    "sentences": [
+      {
+        "english": "No, I do not like sushi.",
+        "chinese": "不，我不喜欢寿司。"
+      },
+      {
+        "english": "Do you like sushi?",
+        "chinese": "你喜欢寿司吗？"
+      },
+      {
+        "english": "I want sushi.",
+        "chinese": "我想要寿司。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "寿司",
+        "english": "a Japanese dish that consists of small cakes of cooked rice served with raw fish"
+      }
+    ]
+  },
+  {
+    "name": "teach",
+    "trans": [
+      "教"
+    ],
+    "usphone": "titʃ",
+    "ukphone": "tiːtʃ",
+    "sentences": [
+      {
+        "english": "She taught me fractions and counting.",
+        "chinese": "他教我分数和计算。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "教；教授；教导",
+        "english": "to give lessons in a school, college, or university, or to help someone learn about something by giving them information"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Teach)人名；(英)蒂奇",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "sure",
+    "trans": [
+      "当然"
+    ],
+    "usphone": "ʃʊər; ʃʊr",
+    "ukphone": "ʃɔ:(r)",
+    "sentences": [
+      {
+        "english": "‘That’s Sarah’s cousin.’ ‘Are you sure?’",
+        "chinese": "“那是萨拉的表妹。”“你肯定吗？”"
+      },
+      {
+        "english": "‘What time does the show start?’ ‘I’m not sure.’",
+        "chinese": "“表演什么时候开始？”“我说不准。”"
+      },
+      {
+        "english": "My mother, I felt sure , had not met him before.",
+        "chinese": "我敢肯定我妈妈以前从未见过他。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "确信的；可靠的；必定的",
+        "english": "confident that you know something or that something is true or correct"
+      },
+      {
+        "pos": "adv",
+        "chinese": "当然；的确",
+        "english": "used to say ‘yes’ to someone"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Sure)人名；(英)休尔",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "Canadian",
+    "trans": [
+      "加拿大的"
+    ],
+    "usphone": "kə'nedɪən",
+    "ukphone": "kə'neɪdɪən",
+    "sentences": [
+      {
+        "english": "What about the Canadian policy?",
+        "chinese": "那么加拿大的政策呢？"
+      },
+      {
+        "english": "The fugitive is believed to be headed for the Canadian border.",
+        "chinese": "据信，逃亡者正向加拿大边界方向逃窜。"
+      },
+      {
+        "english": "Most English people bracket American and Canadian accents together.",
+        "chinese": "大多数英国人都把美国音和加拿大音相提并论。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "加拿大（人）的",
+        "english": "relating to Canada or its people"
+      },
+      {
+        "pos": "n",
+        "chinese": "加拿大人",
+        "english": "someone from Canada"
+      }
+    ]
+  },
+  {
+    "name": "Spanish",
+    "trans": [
+      "西班牙的"
+    ],
+    "usphone": "'spænɪʃ",
+    "ukphone": "'spænɪʃ",
+    "sentences": [
+      {
+        "english": "First-year students may elect  French, Spanish, or German.",
+        "chinese": "一年级学生可选修法语、西班牙语或德语。"
+      },
+      {
+        "english": "The English and the Spanish were among the first to colonize North America.",
+        "chinese": "英国人和西班牙人是首先向北美洲开拓殖民地的。"
+      },
+      {
+        "english": "At his lordship's death in the Spanish campaign in the year 1811,his estate fell in to the family of the Tiptoffs.",
+        "chinese": "这位爵爷在1811年西班牙战役中死亡后，他的产业归蒂普托夫家族支配。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "西班牙的",
+        "english": "relating to Spain, its people, or its language"
+      }
+    ]
+  }
 ]

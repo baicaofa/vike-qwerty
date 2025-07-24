@@ -1,158 +1,685 @@
 [
-    {
-        "name": "species",
-        "trans": [
-            "n. 物种"
-        ]
-    },
-    {
-        "name": "rare",
-        "trans": [
-            "adj. 稀有的"
-        ]
-    },
-    {
-        "name": "female",
-        "trans": [
-            "adj. 雌性的"
-        ]
-    },
-    {
-        "name": "mammal",
-        "trans": [
-            "n. 哺乳动物"
-        ]
-    },
-    {
-        "name": "reptile",
-        "trans": [
-            "n. 爬行动物"
-        ]
-    },
-    {
-        "name": "amphibian",
-        "trans": [
-            "n. 两栖动物"
-        ]
-    },
-    {
-        "name": "livestock",
-        "trans": [
-            "n. 牲畜"
-        ]
-    },
-    {
-        "name": "cattle",
-        "trans": [
-            "n. 牛"
-        ]
-    },
-    {
-        "name": "distribution",
-        "trans": [
-            "n. 分布、分配"
-        ]
-    },
-    {
-        "name": "habitat",
-        "trans": [
-            "n. 栖息地"
-        ]
-    },
-    {
-        "name": "inhabit",
-        "trans": [
-            "v. 居住"
-        ]
-    },
-    {
-        "name": "territory",
-        "trans": [
-            "n. 领地"
-        ]
-    },
-    {
-        "name": "nest",
-        "trans": [
-            "n. 巢"
-        ]
-    },
-    {
-        "name": "reserve",
-        "trans": [
-            "n. 保护区"
-        ]
-    },
-    {
-        "name": "sanctuary",
-        "trans": [
-            "n. 保护区"
-        ]
-    },
-    {
-        "name": "conservation",
-        "trans": [
-            "n. 保护"
-        ]
-    },
-    {
-        "name": "zoo",
-        "trans": [
-            "n. 动物园"
-        ]
-    },
-    {
-        "name": "tail",
-        "trans": [
-            "n. 尾巴"
-        ]
-    },
-    {
-        "name": "pattern",
-        "trans": [
-            "n. 图案，样式"
-        ]
-    },
-    {
-        "name": "jaw",
-        "trans": [
-            "n. 颌，下巴"
-        ]
-    },
-    {
-        "name": "tongue",
-        "trans": [
-            "n. 舌头"
-        ]
-    },
-    {
-        "name": "mane",
-        "trans": [
-            "n. 鬃毛"
-        ]
-    },
-    {
-        "name": "teeth",
-        "trans": [
-            "n. 牙齿"
-        ]
-    },
-    {
-        "name": "beak",
-        "trans": [
-            "n. 喙"
-        ]
-    },
-    {
-        "name": "claw",
-        "trans": [
-            "n. 爪"
-        ]
-    },
-    {
-        "name": "feather",
-        "trans": [
-            "n. 羽毛"
-        ]
-    }
+  {
+    "name": "species",
+    "trans": [
+      "n. 物种"
+    ],
+    "usphone": "'spiʃiz",
+    "ukphone": "'spi:ʃi:z",
+    "sentences": [
+      {
+        "english": "Seven species of birds of prey have been observed.",
+        "chinese": "已有七种猛禽被观察到。"
+      },
+      {
+        "english": "pandas and other endangered species",
+        "chinese": "熊猫以及其他濒危物种"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "物种",
+        "english": "a group of animals or plants whose members are similar and can breed together to produce young animals or plants"
+      }
+    ]
+  },
+  {
+    "name": "rare",
+    "trans": [
+      "adj. 稀有的"
+    ],
+    "usphone": "rɛr",
+    "ukphone": "reə(r)",
+    "sentences": [
+      {
+        "english": "This species of plant is becoming increasingly rare.",
+        "chinese": "这种植物越来越罕见。"
+      },
+      {
+        "english": "I only saw Helen on the rare occasions when I went into her shop.",
+        "chinese": "我只有偶尔去海伦店里时才会见到她。"
+      },
+      {
+        "english": "It is very rare for her to miss a day at school.",
+        "chinese": "她很少有哪一天不上学的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "罕有的，少见的",
+        "english": "not seen or found very often, or not happening very often"
+      }
+    ]
+  },
+  {
+    "name": "female",
+    "trans": [
+      "adj. 雌性的"
+    ],
+    "usphone": "'fimel",
+    "ukphone": "'fiːmeɪl",
+    "sentences": [
+      {
+        "english": "female voters",
+        "chinese": "女性选民"
+      },
+      {
+        "english": "Over half of the staff is female.",
+        "chinese": "半数以上的员工是女性。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 雌的； 女的",
+        "english": "relating to women or girls"
+      },
+      {
+        "pos": "n",
+        "chinese": "雌性动物；女子",
+        "english": "an animal that belongs to the sex that can have babies or produce eggs"
+      }
+    ]
+  },
+  {
+    "name": "mammal",
+    "trans": [
+      "n. 哺乳动物"
+    ],
+    "usphone": "'mæml",
+    "ukphone": "'mæm(ə)l",
+    "sentences": [
+      {
+        "english": "A whale is a kind of mammal.",
+        "chinese": "鲸是一种哺乳动物。"
+      },
+      {
+        "english": "The whale is a mammal.",
+        "chinese": "鲸鱼是哺乳动物。"
+      },
+      {
+        "english": "The problem with that theory is that no other mammal has resorted to this method of cooling down.",
+        "chinese": "这一理论的问题在于，没有其他的哺乳动物采取了这种降低体温的方式。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "哺乳动物",
+        "english": "a type of animal that drinks milk from its mother’s body when it is young. Humans, dogs, and whales are mammals."
+      }
+    ]
+  },
+  {
+    "name": "reptile",
+    "trans": [
+      "n. 爬行动物"
+    ],
+    "usphone": "'rɛptaɪl",
+    "ukphone": "'reptaɪl",
+    "sentences": [
+      {
+        "english": "Bird evolved from reptiles, so the first bird must have come out of an egg--laid by a reptile.",
+        "chinese": "禽类是由爬虫类进化而来，所以，第一只禽鸟肯定是从爬虫类孵化的蛋里出来的。"
+      },
+      {
+        "english": "No matter how dry your skin gets, you will never turn into an alligator or any other type of reptile.",
+        "chinese": "不论皮肤多么干燥，你永远不会变成美洲鳄或任何其他一种皮肤粗糙的爬行动物。"
+      },
+      {
+        "english": "This small reptile, which measures just 10 centimeters long, can swim through the sand dunes at up to 15 centimeters per second.",
+        "chinese": "这种身长只有10厘米小型爬行动物，可以在沙子中以最快每秒15厘米的速度游动。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "爬行动物；爬虫",
+        "english": "a type of animal, such as a snake or  lizard  , whose body temperature changes according to the temperature around it, and that usually lays eggs to have babies"
+      }
+    ]
+  },
+  {
+    "name": "amphibian",
+    "trans": [
+      "n. 两栖动物"
+    ],
+    "usphone": "æm'fɪbɪən",
+    "ukphone": "æm'fɪbɪən",
+    "sentences": [
+      {
+        "english": "At first this amphibian deals with the cooler days by burying itself in the soil.",
+        "chinese": "起初，天气乍凉的时候，这种两栖动物将自己埋在土壤里。"
+      },
+      {
+        "english": "Why does the speaker choose that amphibian as her representative of a public creature?",
+        "chinese": "诗人为何选择这个两栖动物作为公众人物的代表？"
+      },
+      {
+        "english": "\"Almost all of them were abandoned somewhere in the city, \" said Wu Weichun, the director of the zoo's amphibian department, to the Shanghai Dailynewspaper.",
+        "chinese": "“它们中几乎所有都是在城市里被遗弃的，”动物园两栖动物馆主任吴文春对《上海每日新闻报》说。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "两栖动物",
+        "english": "an animal such as a  frog  that can live both on land and in water"
+      }
+    ]
+  },
+  {
+    "name": "livestock",
+    "trans": [
+      "n. 牲畜"
+    ],
+    "usphone": "'laɪvstɑk",
+    "ukphone": "'laɪvstɒk",
+    "sentences": [
+      {
+        "english": "The heavy rains and flooding killed scores of livestock.",
+        "chinese": "大雨和洪水淹死了许多家畜。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "家畜，牲畜",
+        "english": "animals such as cows and sheep that are kept on a farm"
+      }
+    ]
+  },
+  {
+    "name": "cattle",
+    "trans": [
+      "n. 牛"
+    ],
+    "usphone": "'kætl",
+    "ukphone": "'kæt(ə)l",
+    "sentences": [
+      {
+        "english": "herds of cattle",
+        "chinese": "成群的牛"
+      },
+      {
+        "english": "a cattle rancher",
+        "chinese": "牧牛场场主"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "牛；牲口，家畜",
+        "english": "cows and  bulls  kept on a farm for their meat or milk"
+      }
+    ]
+  },
+  {
+    "name": "distribution",
+    "trans": [
+      "n. 分布、分配"
+    ],
+    "usphone": "'dɪstrə'bjʊʃən",
+    "ukphone": "ˌdɪstrɪ'bju:ʃn",
+    "sentences": [
+      {
+        "english": "a distribution centre",
+        "chinese": "经销中心"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "分布，分配",
+        "english": "the act of sharing things among a large group of people in a planned way"
+      }
+    ]
+  },
+  {
+    "name": "habitat",
+    "trans": [
+      "n. 栖息地"
+    ],
+    "usphone": "'hæbə'tæt",
+    "ukphone": "'hæbɪtæt",
+    "sentences": [
+      {
+        "english": "watching monkeys in their natural habitat",
+        "chinese": "观察自然生活环境中的猴子"
+      },
+      {
+        "english": "The grassland is an important habitat for many wild flowers.",
+        "chinese": "这片草原是很多野花的重要生长地。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[生态] 栖息地，产地",
+        "english": "the natural home of a plant or animal"
+      }
+    ]
+  },
+  {
+    "name": "inhabit",
+    "trans": [
+      "v. 居住"
+    ],
+    "usphone": "ɪn'hæbɪt",
+    "ukphone": "ɪn'hæbɪt",
+    "sentences": [
+      {
+        "english": "The woods are inhabited by many wild animals.",
+        "chinese": "很多野生动物栖居在这片森林里。"
+      },
+      {
+        "english": "inhabited islands",
+        "chinese": "有人居住的岛屿"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "栖息；居住于；占据",
+        "english": "if animals or people inhabit an area or place, they live there"
+      }
+    ]
+  },
+  {
+    "name": "territory",
+    "trans": [
+      "n. 领地"
+    ],
+    "usphone": "'tɛrətɔri",
+    "ukphone": "'terɪt(ə)rɪ",
+    "sentences": [
+      {
+        "english": "Hong Kong is a Chinese territory.",
+        "chinese": "香港是中国的领土。"
+      },
+      {
+        "english": "The company is moving into unfamiliar territory with this new software.",
+        "chinese": "该公司正通过这种新软件进入一个不熟悉的领域。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "领土，版图；领域",
+        "english": "land that is owned or controlled by a particular country, ruler, or military force"
+      }
+    ]
+  },
+  {
+    "name": "nest",
+    "trans": [
+      "n. 巢"
+    ],
+    "usphone": "nɛst",
+    "ukphone": "nest",
+    "sentences": [
+      {
+        "english": "a bird’s nest",
+        "chinese": "鸟窝"
+      },
+      {
+        "english": "In May the females build a nest and lay their eggs.",
+        "chinese": "雌鸟在5月份筑巢产蛋。"
+      },
+      {
+        "english": "Young eagles leave the nest after only two months.",
+        "chinese": "雏鹰仅仅两个月以后就会飞离鸟巢。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "巢，窝；安乐窝；温床",
+        "english": "a place made or chosen by a bird to lay its eggs in and to live in"
+      },
+      {
+        "pos": "v",
+        "chinese": "筑巢；嵌套",
+        "english": "to build or use a nest"
+      }
+    ]
+  },
+  {
+    "name": "reserve",
+    "trans": [
+      "n. 保护区"
+    ],
+    "usphone": "rɪ'zɝv",
+    "ukphone": "rɪ'zɜːv",
+    "sentences": [
+      {
+        "english": "Do you have to reserve tickets in advance?",
+        "chinese": "你必须预先订票吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "保留，留存；预订",
+        "english": "to arrange for a place in a hotel, restaurant, plane etc to be kept for you to use at a particular time in the future"
+      },
+      {
+        "pos": "n",
+        "chinese": " 储备； 保留； 拘谨， 矜持； 替补队员， 后备部队； 自然保护区",
+        "english": "a supply of something kept to be used if it is needed"
+      }
+    ]
+  },
+  {
+    "name": "sanctuary",
+    "trans": [
+      "n. 保护区"
+    ],
+    "usphone": "'sæŋktʃuɛri",
+    "ukphone": "'sæŋ(k)tjʊərɪ",
+    "sentences": [
+      {
+        "english": "His church became a sanctuary for thousands of people who fled the civil war.",
+        "chinese": "他的教堂成了数千逃避内战的人们的一个避难所。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "避难所；至圣所；耶路撒冷的神殿",
+        "english": "a peaceful place that is safe and provides protection, especially for people who are in danger"
+      }
+    ]
+  },
+  {
+    "name": "conservation",
+    "trans": [
+      "n. 保护"
+    ],
+    "usphone": ",kɑnsɚ'veʃən",
+    "ukphone": "ˌkɒnsəˈveɪʃn",
+    "sentences": [
+      {
+        "english": "wildlife conservation",
+        "chinese": "野生生物保护"
+      },
+      {
+        "english": "a local conservation group",
+        "chinese": "当地的一个环境保护团体"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "保护，保存",
+        "english": "the protection of natural things such as animals, plants, forests etc, to prevent them from being spoiled or destroyed"
+      }
+    ]
+  },
+  {
+    "name": "zoo",
+    "trans": [
+      "n. 动物园"
+    ],
+    "usphone": "zu",
+    "ukphone": "zuː",
+    "sentences": [
+      {
+        "english": "The road to the zoo turns off here.",
+        "chinese": "通向动物园的路由这儿拐弯。"
+      },
+      {
+        "english": "The parrots in the zoo are popping all the time.",
+        "chinese": "动物园里的鹦鹉一直在生小鹦鹉。"
+      },
+      {
+        "english": "Lionesses bearing cubs in the zoo is nothing new now.",
+        "chinese": "狮子在动物园繁殖早已屡见不鲜了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "动物园",
+        "english": "a place, usually in a city, where animals of many kinds are kept so that people can go to look at them"
+      }
+    ]
+  },
+  {
+    "name": "tail",
+    "trans": [
+      "n. 尾巴"
+    ],
+    "usphone": "tel",
+    "ukphone": "teɪl",
+    "sentences": [
+      {
+        "english": "The dog wagged its tail .",
+        "chinese": "那条狗摇了摇尾巴。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "尾巴；踪迹；辫子；燕尾服",
+        "english": "the part that sticks out at the back of an animal’s body, and that it can move"
+      },
+      {
+        "pos": "v",
+        "chinese": "尾随；装上尾巴",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "从后面而来的；尾部的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "pattern",
+    "trans": [
+      "n. 图案，样式"
+    ],
+    "usphone": "'pætɚn",
+    "ukphone": "'pæt(ə)n",
+    "sentences": [
+      {
+        "english": "Weather patterns have changed in recent years.",
+        "chinese": "气候模式近年已经发生了变化。"
+      },
+      {
+        "english": "A general pattern began to emerge .",
+        "chinese": "一个总体模式开始显现。"
+      },
+      {
+        "english": "Their descriptions seemed to follow a set pattern (= always develop in the same way ) .",
+        "chinese": "他们的描述似乎依据固定的模式。"
+      },
+      {
+        "english": "His behavior fits a pattern of violent acts.",
+        "chinese": "他的举动符合暴力行为的模式。"
+      },
+      {
+        "english": "a dress pattern",
+        "chinese": "连衣裙的纸样"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "型，式样；模，模型",
+        "english": "the regular way in which something happens, develops, or is done"
+      }
+    ]
+  },
+  {
+    "name": "jaw",
+    "trans": [
+      "n. 颌，下巴"
+    ],
+    "usphone": "dʒɔ",
+    "ukphone": "dʒɔː",
+    "sentences": [
+      {
+        "english": "He punched him on the jaw.",
+        "chinese": "他一拳打在他的下巴上。"
+      },
+      {
+        "english": "a rugged physique and a strong square jaw",
+        "chinese": "强健的体格以及结实的方下巴"
+      },
+      {
+        "english": "She’s got a very determined jaw.",
+        "chinese": "她一脸坚毅。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "颚,下巴",
+        "english": "the lower part of your face. Its shape is sometimes thought to show your character"
+      }
+    ]
+  },
+  {
+    "name": "tongue",
+    "trans": [
+      "n. 舌头"
+    ],
+    "usphone": "tʌŋ",
+    "ukphone": "tʌŋ",
+    "sentences": [
+      {
+        "english": "Joe ran his tongue over his dry lips.",
+        "chinese": "乔舔了舔干燥的嘴唇。"
+      },
+      {
+        "english": "The taste of the chocolate was still on her tongue.",
+        "chinese": "巧克力的余味依然留在她的舌尖。"
+      },
+      {
+        "english": "The girl scowled at me, then stuck out her tongue .",
+        "chinese": "女孩怒视着我，然后吐了一下舌头。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "舌头；语言",
+        "english": "the soft part inside your mouth that you can move about and use for eating and speaking"
+      },
+      {
+        "pos": "v",
+        "chinese": "舔；斥责；用舌吹",
+        "english": "to use your tongue to make separate sounds when playing a musical instrument"
+      }
+    ]
+  },
+  {
+    "name": "mane",
+    "trans": [
+      "n. 鬃毛"
+    ],
+    "usphone": "men",
+    "ukphone": "meɪn",
+    "sentences": [
+      {
+        "english": "The horse's mane can be washed at the same time as his body.",
+        "chinese": "马的鬃毛可以随其身体一起刷洗。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "（马等的）鬃毛",
+        "english": "the long hair on the back of a horse’s neck, or around the face and neck of a lion"
+      }
+    ]
+  },
+  {
+    "name": "teeth",
+    "trans": [
+      "n. 牙齿"
+    ]
+  },
+  {
+    "name": "beak",
+    "trans": [
+      "n. 喙"
+    ],
+    "usphone": "bik",
+    "ukphone": "biːk",
+    "sentences": [
+      {
+        "english": "...a black bird with a yellow beak.",
+        "chinese": "…一只有着黄喙的黑鸟。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "鸟嘴, 喙",
+        "english": "the hard pointed mouth of a bird"
+      }
+    ]
+  },
+  {
+    "name": "claw",
+    "trans": [
+      "n. 爪"
+    ],
+    "usphone": "klɔ",
+    "ukphone": "klɔː",
+    "sentences": [
+      {
+        "english": "The cat dug his claws into my leg.",
+        "chinese": "猫的爪子抓进了我的腿中。"
+      },
+      {
+        "english": "lobster claws",
+        "chinese": "龙虾的螯"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "爪；螯，钳；爪形器具",
+        "english": "a sharp curved nail on an animal, bird, or some insects"
+      },
+      {
+        "pos": "v",
+        "chinese": "用爪抓（或挖）",
+        "english": "to tear or pull at something, using claws or your fingers"
+      }
+    ]
+  },
+  {
+    "name": "feather",
+    "trans": [
+      "n. 羽毛"
+    ],
+    "usphone": "'fɛðɚ",
+    "ukphone": "'feðə",
+    "sentences": [
+      {
+        "english": "an ostrich feather",
+        "chinese": "一根鸵鸟羽毛"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "羽毛",
+        "english": "one of the light soft things that cover a bird’s body"
+      },
+      {
+        "pos": "v",
+        "chinese": "用羽毛装饰",
+        "english": ""
+      }
+    ]
+  }
 ]

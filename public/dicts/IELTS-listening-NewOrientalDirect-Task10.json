@@ -1,266 +1,1186 @@
 [
-    {
-        "name": "reserve",
-        "trans": [
-            "v. 预定"
-        ]
-    },
-    {
-        "name": "book",
-        "trans": [
-            "v. 预定"
-        ]
-    },
-    {
-        "name": "rent",
-        "trans": [
-            "v. 租"
-        ]
-    },
-    {
-        "name": "hire",
-        "trans": [
-            "v. 租"
-        ]
-    },
-    {
-        "name": "room",
-        "trans": [
-            "n. 房间；空间"
-        ]
-    },
-    {
-        "name": "in advance",
-        "trans": [
-            "adv. 提前"
-        ]
-    },
-    {
-        "name": "event",
-        "trans": [
-            "n. 事由，事件"
-        ]
-    },
-    {
-        "name": "ceremony",
-        "trans": [
-            "n. 仪式，典礼"
-        ]
-    },
-    {
-        "name": "conference",
-        "trans": [
-            "n. 会议"
-        ]
-    },
-    {
-        "name": "anniversary",
-        "trans": [
-            "n. 纪念日"
-        ]
-    },
-    {
-        "name": "facility",
-        "trans": [
-            "n. 设施"
-        ]
-    },
-    {
-        "name": "hall",
-        "trans": [
-            "n. 礼堂"
-        ]
-    },
-    {
-        "name": "projector",
-        "trans": [
-            "n. 投影仪"
-        ]
-    },
-    {
-        "name": "microphone",
-        "trans": [
-            "n. 话筒"
-        ]
-    },
-    {
-        "name": "cater",
-        "trans": [
-            "v. 为……提供餐饮"
-        ]
-    },
-    {
-        "name": "buffet",
-        "trans": [
-            "n. 自助餐"
-        ]
-    },
-    {
-        "name": "entertainment",
-        "trans": [
-            "n. 娱乐"
-        ]
-    },
-    {
-        "name": "gym",
-        "trans": [
-            "n. 健身房"
-        ]
-    },
-    {
-        "name": "spa",
-        "trans": [
-            "n. 水疗"
-        ]
-    },
-    {
-        "name": "live",
-        "trans": [
-            "adj. 现场的"
-        ]
-    },
-    {
-        "name": "band",
-        "trans": [
-            "n. 乐队"
-        ]
-    },
-    {
-        "name": "rooftop",
-        "trans": [
-            "n. 屋顶"
-        ]
-    },
-    {
-        "name": "gallery",
-        "trans": [
-            "n. 画廊"
-        ]
-    },
-    {
-        "name": "payment",
-        "trans": [
-            "n. 付款"
-        ]
-    },
-    {
-        "name": "charge",
-        "trans": [
-            "v. 收费"
-        ]
-    },
-    {
-        "name": "discount",
-        "trans": [
-            "n. 折扣"
-        ]
-    },
-    {
-        "name": "deposit",
-        "trans": [
-            "n. 定金, 存款"
-        ]
-    },
-    {
-        "name": "cash",
-        "trans": [
-            "n. 现金"
-        ]
-    },
-    {
-        "name": "credit card",
-        "trans": [
-            "n. 信用卡"
-        ]
-    },
-    {
-        "name": "check / cheque",
-        "trans": [
-            "n. 支票"
-        ]
-    },
-    {
-        "name": "transport",
-        "trans": [
-            "n. 交通"
-        ]
-    },
-    {
-        "name": "flight",
-        "trans": [
-            "n. 飞机，航班"
-        ]
-    },
-    {
-        "name": "shuttle",
-        "trans": [
-            "n. 通勤大巴"
-        ]
-    },
-    {
-        "name": "door-to-door",
-        "trans": [
-            "adj. 门对门的"
-        ]
-    },
-    {
-        "name": "departure",
-        "trans": [
-            "n. 出发"
-        ]
-    },
-    {
-        "name": "arrival",
-        "trans": [
-            "n. 到达"
-        ]
-    },
-    {
-        "name": "transfer",
-        "trans": [
-            "v. 换乘"
-        ]
-    },
-    {
-        "name": "connection",
-        "trans": [
-            "n. 联运，转机转车"
-        ]
-    },
-    {
-        "name": "solar",
-        "trans": [
-            "adj. 太阳能的"
-        ]
-    },
-    {
-        "name": "licence / license",
-        "trans": [
-            "n. 许可证"
-        ]
-    },
-    {
-        "name": "taxi",
-        "trans": [
-            "n. 出租车"
-        ]
-    },
-    {
-        "name": "cab",
-        "trans": [
-            "n. 出租车"
-        ]
-    },
-    {
-        "name": "tram",
-        "trans": [
-            "n. 有轨电车"
-        ]
-    },
-    {
-        "name": "helicopter",
-        "trans": [
-            "n. 直升机"
-        ]
-    }
+  {
+    "name": "reserve",
+    "trans": [
+      "v. 预定"
+    ],
+    "usphone": "rɪ'zɝv",
+    "ukphone": "rɪ'zɜːv",
+    "sentences": [
+      {
+        "english": "Do you have to reserve tickets in advance?",
+        "chinese": "你必须预先订票吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "保留，留存；预订",
+        "english": "to arrange for a place in a hotel, restaurant, plane etc to be kept for you to use at a particular time in the future"
+      },
+      {
+        "pos": "n",
+        "chinese": " 储备； 保留； 拘谨， 矜持； 替补队员， 后备部队； 自然保护区",
+        "english": "a supply of something kept to be used if it is needed"
+      }
+    ]
+  },
+  {
+    "name": "book",
+    "trans": [
+      "v. 预定"
+    ],
+    "usphone": "bʊk",
+    "ukphone": "bʊk",
+    "sentences": [
+      {
+        "english": "I’ve just started reading a book by Graham Greene.",
+        "chinese": "我刚开始看格雷厄姆·格林写的一本书。"
+      },
+      {
+        "english": "a cookery book",
+        "chinese": "烹饪书"
+      },
+      {
+        "english": "Have you booked a holiday this year?",
+        "chinese": "你今年有没有预订去度假？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "书，书籍",
+        "english": "a set of printed pages that are held together in a cover so that you can read them"
+      },
+      {
+        "pos": "v",
+        "chinese": "预定",
+        "english": "to make arrangements to stay in a place, eat in a restaurant, go to a theatre etc at a particular time in the future"
+      }
+    ]
+  },
+  {
+    "name": "rent",
+    "trans": [
+      "v. 租"
+    ],
+    "usphone": "rɛnt",
+    "ukphone": "rent",
+    "sentences": [
+      {
+        "english": "I pay the rent at the beginning of every month.",
+        "chinese": "我每逢月初交付房租。"
+      },
+      {
+        "english": "She rents out two rooms to students.",
+        "chinese": "她把两个房间出租给学生"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "租金",
+        "english": "the money that someone pays regularly to use a room, house etc that belongs to someone else"
+      },
+      {
+        "pos": "v",
+        "chinese": "出租",
+        "english": "to let someone live in a house, room etc that you own, or use your land, in return for money"
+      }
+    ]
+  },
+  {
+    "name": "hire",
+    "trans": [
+      "v. 租"
+    ],
+    "usphone": "'haɪɚ",
+    "ukphone": "'haɪə",
+    "sentences": [
+      {
+        "english": "The best way to explore the island is to hire a car.",
+        "chinese": "在该岛寻幽访胜的最好方式就是租用一辆汽车。"
+      },
+      {
+        "english": "What does it cost to hire a boat for a week?",
+        "chinese": "一艘小船租用一星期的费用是多少？"
+      },
+      {
+        "english": "a car hire company",
+        "chinese": "汽车租赁公司"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "租借",
+        "english": "to pay money to borrow something for a short period of time"
+      },
+      {
+        "pos": "n",
+        "chinese": "租用，雇用",
+        "english": "an arrangement in which you pay a sum of money to borrow something for a short time"
+      }
+    ]
+  },
+  {
+    "name": "room",
+    "trans": [
+      "n. 房间；空间"
+    ],
+    "usphone": "rum",
+    "ukphone": "ruːm; rʊm",
+    "sentences": [
+      {
+        "english": "I looked around the room.",
+        "chinese": "我四下看了看房间。"
+      },
+      {
+        "english": "She nodded toward a man who was standing across the room (= on the other side of the room ) .",
+        "chinese": "她朝站在屋子另一头的一个男人点点头。"
+      },
+      {
+        "english": "Someone was laughing in the next room (= the one beside the one you are in ) .",
+        "chinese": "隔壁房间有人在笑。"
+      },
+      {
+        "english": "Here’s your key - room 348.",
+        "chinese": "这是你的钥匙——348号房间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "房间；空间；余地；机会；房间里所有的人",
+        "english": "a part of the inside of a building that has its own walls, floor, and ceiling"
+      },
+      {
+        "pos": "v",
+        "chinese": "为…提供住处；租房，合住；投宿，住宿；留…住宿",
+        "english": "to rent and live in a room somewhere"
+      }
+    ]
+  },
+  {
+    "name": "in advance",
+    "trans": [
+      "adv. 提前"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "If there is any change about the time of the meeting, please notify us in advance.",
+        "chinese": "开会时间如有变， 请提前告诉我们。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "提前",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "event",
+    "trans": [
+      "n. 事由，事件"
+    ],
+    "usphone": "ɪ'vɛnt",
+    "ukphone": "ɪ'vent",
+    "sentences": [
+      {
+        "english": "one of the most important events in the history of mankind",
+        "chinese": "人类历史上最重大的事件之一"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "事件，大事；事变",
+        "english": "something that happens, especially something important, interesting or unusual"
+      }
+    ]
+  },
+  {
+    "name": "ceremony",
+    "trans": [
+      "n. 仪式，典礼"
+    ],
+    "usphone": "ˈsɛrəˌmoʊni",
+    "ukphone": "'serɪmənɪ",
+    "sentences": [
+      {
+        "english": "a wedding ceremony",
+        "chinese": "婚礼"
+      },
+      {
+        "english": "the opening ceremony of the Olympic Games",
+        "chinese": "奥运会开幕式"
+      },
+      {
+        "english": "The queen was crowned with due ceremony.",
+        "chinese": "女王按照规定的礼仪加冕。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "典礼，仪式；礼节",
+        "english": "an important social or religious event, when a traditional set of actions is performed in a formal way"
+      }
+    ]
+  },
+  {
+    "name": "conference",
+    "trans": [
+      "n. 会议"
+    ],
+    "usphone": "'kɑnfərəns",
+    "ukphone": "'kɒnf(ə)r(ə)ns",
+    "sentences": [
+      {
+        "english": "Representatives from over 100 countries attended the International Peace Conference in Geneva.",
+        "chinese": "来自一百多个国家的代表出席了在日内瓦举行的国际和平大会。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "会议，讨论会",
+        "english": "a large formal meeting where a lot of people discuss important matters such as business, politics, or science, especially for several days"
+      }
+    ]
+  },
+  {
+    "name": "anniversary",
+    "trans": [
+      "n. 纪念日"
+    ],
+    "usphone": ",ænɪ'vɝsəri",
+    "ukphone": "ænɪ'vɜːs(ə)rɪ",
+    "sentences": [
+      {
+        "english": "Jack and Kim celebrated their twentieth wedding anniversary in January.",
+        "chinese": "1月，杰克和金庆祝了他们的结婚20周年纪念日。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "周年纪念日",
+        "english": "a date on which something special or important happened in a previous year"
+      }
+    ]
+  },
+  {
+    "name": "facility",
+    "trans": [
+      "n. 设施"
+    ],
+    "usphone": "fə'sɪləti",
+    "ukphone": "fə'sɪləti",
+    "sentences": [
+      {
+        "english": "What recreational facilities are now available?",
+        "chinese": "什么娱乐设施现在是可用的？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "设施",
+        "english": "Facilities are buildings, pieces of equipment, or services that are provided for a particular purpose"
+      }
+    ]
+  },
+  {
+    "name": "hall",
+    "trans": [
+      "n. 礼堂"
+    ],
+    "usphone": "hɔl",
+    "ukphone": "hɔːl",
+    "sentences": [
+      {
+        "english": "a huge tiled entrance hall",
+        "chinese": "铺着地砖的大门厅"
+      },
+      {
+        "english": "Each floor had ten rooms on both sides of the hall.",
+        "chinese": "每一层在走廊的两边都各有十个房间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "门厅；过道；会堂",
+        "english": "the area just inside the door of a house or other building, that leads to other rooms"
+      }
+    ]
+  },
+  {
+    "name": "projector",
+    "trans": [
+      "n. 投影仪"
+    ],
+    "usphone": "prə'dʒɛktɚ",
+    "ukphone": "prə'dʒektə",
+    "sentences": [
+      {
+        "english": "...a slide projector.",
+        "chinese": "…幻灯机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[仪] 投影仪；放映机；探照灯；设计者",
+        "english": "a piece of equipment that makes a film or picture appear on a screen or flat surface"
+      }
+    ]
+  },
+  {
+    "name": "microphone",
+    "trans": [
+      "n. 话筒"
+    ],
+    "usphone": "'maɪkrə'fon",
+    "ukphone": "'maɪkrəfəʊn",
+    "sentences": [
+      {
+        "english": "She spoke confidently into the microphone.",
+        "chinese": "她自信地对着麦克风说话。"
+      },
+      {
+        "english": "They searched the room for hidden microphones.",
+        "chinese": "他们在屋里翻找隐藏的话筒。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "话筒，麦克风",
+        "english": "a piece of equipment that you speak into to record your voice or make it louder when you are speaking or performing in public"
+      }
+    ]
+  },
+  {
+    "name": "cater",
+    "trans": [
+      "v. 为……提供餐饮"
+    ],
+    "usphone": "'ketɚ",
+    "ukphone": "'keɪtə",
+    "sentences": [
+      {
+        "english": "We cater to an exclusive clientele.",
+        "chinese": "我们满足一个特殊客户群的需求。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "投合，迎合；满足需要；提供饮食及服务",
+        "english": "to provide and serve food and drinks at a party, meeting etc, usually as a business"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Cater)人名；(英)凯特",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "buffet",
+    "trans": [
+      "n. 自助餐"
+    ],
+    "usphone": "bə'fe",
+    "ukphone": "'bʊfeɪ; 'bʌfeɪ",
+    "sentences": [
+      {
+        "english": "a cold buffet",
+        "chinese": "冷餐会"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "自助餐；小卖部；打击；猛烈冲击",
+        "english": "a meal at a party or other occasion, in which people serve themselves at a table and then move away to eat"
+      },
+      {
+        "pos": "v",
+        "chinese": "与…搏斗；连续猛击",
+        "english": "if something, especially wind, rain, or the sea, buffets something, it hits it with a lot of force"
+      },
+      {
+        "pos": "adj",
+        "chinese": "自助的；自助餐的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "entertainment",
+    "trans": [
+      "n. 娱乐"
+    ],
+    "usphone": "ˌɛntɚ'tenmənt",
+    "ukphone": "ˌentə'teɪnmənt",
+    "sentences": [
+      {
+        "english": "The town provides a wide choice of entertainment.",
+        "chinese": "该镇提供各式各样的娱乐活动。"
+      },
+      {
+        "english": "There will be live entertainment (= performed then, not recorded ) throughout the day.",
+        "chinese": "现场表演将持续一整天。"
+      },
+      {
+        "english": "The dolphins give good entertainment value (= a lot of amusement and interest ).",
+        "chinese": "海豚具有很高的娱乐价值。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 娱乐， 文娱节目， 表演会； 招待， 款待， 请客",
+        "english": "things such as films, television, performances etc that are intended to amuse or interest people"
+      }
+    ]
+  },
+  {
+    "name": "gym",
+    "trans": [
+      "n. 健身房"
+    ],
+    "usphone": "dʒɪm",
+    "ukphone": "dʒim",
+    "sentences": [
+      {
+        "english": "I go to the gym as often as I can.",
+        "chinese": "我一有空就去健身房健身。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "体育馆，健身房",
+        "english": "a special building or room that has equipment for doing physical exercise"
+      }
+    ]
+  },
+  {
+    "name": "spa",
+    "trans": [
+      "n. 水疗"
+    ],
+    "usphone": "spɑ",
+    "ukphone": "spɑː",
+    "sentences": [
+      {
+        "english": "a historic spa town",
+        "chinese": "一座历史上有名的矿泉城镇"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "矿泉；温泉浴场；矿泉治疗地",
+        "english": "a place where the water has special minerals in it, and where people go to improve their health by drinking the water or swimming in it"
+      }
+    ]
+  },
+  {
+    "name": "live",
+    "trans": [
+      "adj. 现场的"
+    ],
+    "usphone": "laɪv；lɪv",
+    "ukphone": "laɪv；lɪv",
+    "sentences": [
+      {
+        "english": "He lives just across the street from me.",
+        "chinese": "他就住在我街对面。"
+      },
+      {
+        "english": "We live only a few miles from the coast.",
+        "chinese": "我们住的地方离海边只有几英里远。"
+      },
+      {
+        "english": "A rather odd family came tolive next door to us.",
+        "chinese": "有一户相当奇怪的人家搬到了我们隔壁。"
+      },
+      {
+        "english": "As soon as I saw the place, I knew I didn’t want to live there.",
+        "chinese": "我一看到那地方，就觉得不想住在那儿。"
+      },
+      {
+        "english": "Does Paul stilllive here?",
+        "chinese": "保罗还住在这儿吗？"
+      },
+      {
+        "english": "We’re still looking for somewhere to live.",
+        "chinese": "我们还在找住的地方。"
+      },
+      {
+        "english": "They’ve finally found a place to live.",
+        "chinese": "他们终于找到了住的地方。"
+      },
+      {
+        "english": "Most seventeen-year-olds still live at home(= live with their parents ).",
+        "chinese": "17 岁的孩子大都还住在家里。"
+      },
+      {
+        "english": "I’m quite happy living alone.",
+        "chinese": "我一个人住很开心。"
+      },
+      {
+        "english": "The house has 3,600 square feet of living space(= the areas of a house you live in ).",
+        "chinese": "这房子有3,600平方英尺的居住空间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "居住；活",
+        "english": "if you live in a place, you have your home there"
+      },
+      {
+        "pos": "adj",
+        "chinese": "活的",
+        "english": "not dead or artificial"
+      }
+    ]
+  },
+  {
+    "name": "band",
+    "trans": [
+      "n. 乐队"
+    ],
+    "usphone": "bænd",
+    "ukphone": "bænd",
+    "sentences": [
+      {
+        "english": "The band was playing old Beatles songs.",
+        "chinese": "乐队正在演奏披头士的老歌。"
+      },
+      {
+        "english": "I grew up playing in rock bands.",
+        "chinese": "我是在摇滚乐队里玩音乐长大的。"
+      },
+      {
+        "english": "Smith joined the band in 1989.",
+        "chinese": "史密斯在1989年加入这个乐队。"
+      },
+      {
+        "english": "They formed a band when they were still at school.",
+        "chinese": "他们还在读书的时候就组建了一个乐队。"
+      },
+      {
+        "english": "The entertainment includes a disco and live band .",
+        "chinese": "娱乐活动有跳迪斯科和乐队现场演奏。"
+      },
+      {
+        "english": "interviews with band members",
+        "chinese": "对乐队成员的采访"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "乐队；群，伙；带；条纹；波段",
+        "english": "a group of musicians, especially a group that plays popular music"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 用带绑扎",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "rooftop",
+    "trans": [
+      "n. 屋顶"
+    ],
+    "usphone": "'rʊf'tɑp",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "Spectators stood on rooftops to watch the parade.",
+        "chinese": "观众站在屋顶上观看庆祝游行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "屋顶",
+        "english": "the upper surface of a roof"
+      },
+      {
+        "pos": "adj",
+        "chinese": "屋顶上的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "gallery",
+    "trans": [
+      "n. 画廊"
+    ],
+    "usphone": "'gæləri",
+    "ukphone": "'gæl(ə)rɪ",
+    "sentences": [
+      {
+        "english": "The bright modern painting stares out at you in the otherwise conservative gallery.",
+        "chinese": "有些古典派画廊也会陈列出明亮色彩的现代派绘画。"
+      },
+      {
+        "english": "Statement and portrait together form a single image of a thinker. (See the interactive gallery, “Why Philosophy?",
+        "chinese": "陈述和肖像一起构成了一位思想家的独有影像。 （参见互动画廊，“何为哲学？”）"
+      },
+      {
+        "english": "Whether you just want to browse our huge image gallery or want to share your personal photos with others, this is the site for you!",
+        "chinese": "无论你是想要浏览我们众多的画廊图片还是想要和其他人分享你的个人照片,这个网站绝对对你的味口。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "画廊",
+        "english": "a small privately owned shop or studio where you can see and buy pieces of art"
+      }
+    ]
+  },
+  {
+    "name": "payment",
+    "trans": [
+      "n. 付款"
+    ],
+    "usphone": "'pemənt",
+    "ukphone": "'peɪm(ə)nt",
+    "sentences": [
+      {
+        "english": "She demanded payment in advance.",
+        "chinese": "她要求预先付款。"
+      },
+      {
+        "english": "Payment can be made by cheque or credit card.",
+        "chinese": "可以用支票或信用卡付款。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "支付",
+        "english": "the act of paying for something"
+      }
+    ]
+  },
+  {
+    "name": "charge",
+    "trans": [
+      "v. 收费"
+    ],
+    "usphone": "tʃɑrdʒ",
+    "ukphone": "tʃɑːdʒ",
+    "sentences": [
+      {
+        "english": "Leave the battery on charge all night.",
+        "chinese": "让电池充一晚上的电"
+      },
+      {
+        "english": "Please charge your glasses and drink a toast to the bride and groom!",
+        "chinese": "请各位斟满酒杯向新娘、新郎敬酒！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "负荷；充电",
+        "english": "electricity that is put into a piece of electrical equipment such as a battery"
+      },
+      {
+        "pos": "v",
+        "chinese": "装满",
+        "english": "to fill a glass"
+      }
+    ]
+  },
+  {
+    "name": "discount",
+    "trans": [
+      "n. 折扣"
+    ],
+    "usphone": "dɪs'kaʊnt",
+    "ukphone": "'dɪskaʊnt",
+    "sentences": [
+      {
+        "english": "They are often available at a discount.",
+        "chinese": "它们经常可以以折扣价买到。"
+      },
+      {
+        "english": "This has forced airlines to discount fares heavily in order to spur demand.",
+        "chinese": "这已经迫使多家航空公司对机票大幅打折以刺激需求。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 折扣",
+        "english": "a reduction in the usual price of something"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 将…打折扣； 不信； 漠视， 低估",
+        "english": "If a shop or company discounts an amount or percentage from something that they are selling, they take the amount or percentage off the usual price"
+      }
+    ]
+  },
+  {
+    "name": "deposit",
+    "trans": [
+      "n. 定金, 存款"
+    ],
+    "usphone": "dɪ'pɑzɪt",
+    "ukphone": "dɪ'pɒzɪt",
+    "sentences": [
+      {
+        "english": "You are advised to deposit your valuables in the hotel safe.",
+        "chinese": "建议您把贵重物品存到酒店保险箱里。"
+      },
+      {
+        "english": "As the river slows down, it deposits a layer of soil.",
+        "chinese": "河水流速变慢时，一层泥土便沉积下来。"
+      },
+      {
+        "english": "I’d like to make a deposit (= pay some money ) into my savings account.",
+        "chinese": "我想存一笔钱到我的储蓄账户里。"
+      },
+      {
+        "english": "fatty deposits on the heart",
+        "chinese": "心脏上沉积的脂肪层"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "存放；使沉淀",
+        "english": "to put money or something valuable in a bank or other place where it will be safe"
+      },
+      {
+        "pos": "n",
+        "chinese": "存款；沉积物",
+        "english": "an amount of money that is paid into a bank account"
+      }
+    ]
+  },
+  {
+    "name": "cash",
+    "trans": [
+      "n. 现金"
+    ],
+    "usphone": "kæʃ",
+    "ukphone": "kæʃ",
+    "sentences": [
+      {
+        "english": "Cash was taken during a burglary of the apartment.",
+        "chinese": "在一次公寓盗窃案中现金被盗。"
+      },
+      {
+        "english": "There are similar charges if you want to cash a cheque or withdraw money at a branch other than your own.",
+        "chinese": "如果你在其他银行兑现支票或支取现金，将会产生差不多的手续费。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "现金，现款",
+        "english": "money in the form of coins or notes rather than cheques,  credit card s  etc"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 把…兑现",
+        "english": "If you cash a cheque, you exchange it at a bank for the amount of money that it is worth"
+      }
+    ]
+  },
+  {
+    "name": "credit card",
+    "trans": [
+      "n. 信用卡"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "We accept all major credit cards.",
+        "chinese": "我们接受所有主要的信用卡。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "信用卡",
+        "english": "a small plastic card that you use to buy goods or services and pay for them later"
+      }
+    ]
+  },
+  {
+    "name": "check / cheque",
+    "trans": [
+      "n. 支票"
+    ]
+  },
+  {
+    "name": "transport",
+    "trans": [
+      "n. 交通"
+    ],
+    "usphone": "'trænspɔrt",
+    "ukphone": "træn'spɔːt; trɑːn-",
+    "sentences": [
+      {
+        "english": "trucks used for transporting oil",
+        "chinese": "运输石油的卡车"
+      },
+      {
+        "english": "Canals were used for the transport of goods.",
+        "chinese": "利用运河来运输货物。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "运输",
+        "english": "to take goods, people etc from one place to another in a vehicle"
+      },
+      {
+        "pos": "n",
+        "chinese": "运输",
+        "english": "the process or business of taking goods from one place to another"
+      }
+    ]
+  },
+  {
+    "name": "flight",
+    "trans": [
+      "n. 飞机，航班"
+    ],
+    "usphone": "flaɪt",
+    "ukphone": "flaɪt",
+    "sentences": [
+      {
+        "english": "He immediately booked a flight to Toulouse.",
+        "chinese": "他当即就订了去图卢兹的航班。"
+      },
+      {
+        "english": "In 1968, the first supersonic airliner took flight (= began flying ) .",
+        "chinese": "1968年，首架超音速客机飞上天空。"
+      },
+      {
+        "english": "When the alarm sounded, the whole gang took flight.",
+        "chinese": "警报响起，一帮人全逃跑了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "航班；飞行；逃跑",
+        "english": "a journey in a plane or space vehicle, or the plane or vehicle that is making the journey"
+      }
+    ]
+  },
+  {
+    "name": "shuttle",
+    "trans": [
+      "n. 通勤大巴"
+    ],
+    "usphone": "'ʃʌtl",
+    "ukphone": "'ʃʌtl",
+    "sentences": [
+      {
+        "english": "He took the Washington - New York shuttle.",
+        "chinese": "他乘坐华盛顿－纽约的往返班机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "穿梭般来回",
+        "english": "to travel frequently between two places"
+      },
+      {
+        "pos": "n",
+        "chinese": "短程穿梭运行的飞机；航天飞机；梭子",
+        "english": "a  space shuttle "
+      },
+      {
+        "pos": "vt",
+        "chinese": " 短程穿梭运送",
+        "english": "to travel frequently between two places"
+      }
+    ]
+  },
+  {
+    "name": "door-to-door",
+    "trans": [
+      "adj. 门对门的"
+    ]
+  },
+  {
+    "name": "departure",
+    "trans": [
+      "n. 出发"
+    ],
+    "usphone": "dɪ'pɑrtʃɚ",
+    "ukphone": "dɪ'pɑːtʃə",
+    "sentences": [
+      {
+        "english": "There are several departures for New York every day.",
+        "chinese": "每天有好几个班次去纽约。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "离开；出发；违背",
+        "english": "an act of leaving a place, especially at the start of a journey"
+      }
+    ]
+  },
+  {
+    "name": "arrival",
+    "trans": [
+      "n. 到达"
+    ],
+    "usphone": "ə'raɪvəl",
+    "ukphone": "ə'raɪv(ə)l",
+    "sentences": [
+      {
+        "english": "Only the timely arrival of the police prevented the situation from becoming worse.",
+        "chinese": "警方及时赶到才阻止了事态恶化。"
+      },
+      {
+        "english": "Traffic problems account for one third of late arrivals.",
+        "chinese": "迟到的人有三分之一是因为交通问题。"
+      },
+      {
+        "english": "The first arrivals at the concert got the best seats.",
+        "chinese": "最早来到音乐会的人坐上了最好的座位。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "到达；到来；到达者",
+        "english": "when someone or something arrives somewhere"
+      }
+    ]
+  },
+  {
+    "name": "transfer",
+    "trans": [
+      "v. 换乘"
+    ],
+    "usphone": "træns'fɝ",
+    "ukphone": "træns'fɜː",
+    "sentences": [
+      {
+        "english": "He was transferred for a fee of £8 million.",
+        "chinese": "他以800万英镑的转会费转到了其他球队。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": " 搬， 转移； 调动， 转学； 转让， 过户； 乘车， 转乘",
+        "english": "to move from one place, school, job etc to another, or to make someone do this, especially within the same organization"
+      }
+    ]
+  },
+  {
+    "name": "connection",
+    "trans": [
+      "n. 联运，转机转车"
+    ],
+    "usphone": "kə'nɛkʃən",
+    "ukphone": "kə'nekʃn",
+    "sentences": [
+      {
+        "english": "Police have so far failed to establish a connection between the two murders.",
+        "chinese": "到目前为止警方尚未确定两宗凶杀案之间有关联。"
+      },
+      {
+        "english": "The evidence was there in the file but no one made the connection .",
+        "chinese": "证据就在档案里，但没有人把它们联系起来。"
+      },
+      {
+        "english": "Students often see little connection between school and the rest of their lives.",
+        "chinese": "学生往往看不到上学和今后生活的联系。"
+      },
+      {
+        "english": "He demonstrated the close connection between social conditions and health.",
+        "chinese": "他证明了社会条件和健康之间的密切联系。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 连接； 联系； 连接物， 连接点； 亲戚",
+        "english": "the way in which two facts, ideas, events etc are related to each other, and one is affected or caused by the other"
+      }
+    ]
+  },
+  {
+    "name": "solar",
+    "trans": [
+      "adj. 太阳能的"
+    ],
+    "usphone": "'solɚ",
+    "ukphone": "'səʊlə",
+    "sentences": [
+      {
+        "english": "a solar eclipse",
+        "chinese": "日食"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "太阳的，日光的",
+        "english": "relating to the sun"
+      }
+    ]
+  },
+  {
+    "name": "licence / license",
+    "trans": [
+      "n. 许可证"
+    ]
+  },
+  {
+    "name": "taxi",
+    "trans": [
+      "n. 出租车"
+    ],
+    "usphone": "'tæksi",
+    "ukphone": "'tæksɪ",
+    "sentences": [
+      {
+        "english": "The plane taxied to a halt.",
+        "chinese": "飞机滑行一段距离后停下来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "乘出租车；滑行",
+        "english": "if a plane taxis, it moves along the ground before taking off or after landing"
+      },
+      {
+        "pos": "n",
+        "chinese": "出租汽车",
+        "english": "a car and driver that you pay to take you somewhere"
+      }
+    ]
+  },
+  {
+    "name": "cab",
+    "trans": [
+      "n. 出租车"
+    ],
+    "usphone": "kæb",
+    "ukphone": "kæb",
+    "sentences": [
+      {
+        "english": "New York’s yellow cabs",
+        "chinese": "纽约的黄色出租车"
+      },
+      {
+        "english": "Ralph tried to hail a cab (= wave to get a cab to stop for you ) .",
+        "chinese": "拉尔夫招手想叫一辆出租车。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "驾驶室；出租汽车；出租马车",
+        "english": "a taxi"
+      },
+      {
+        "pos": "v",
+        "chinese": "乘出租马车（或汽车）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "tram",
+    "trans": [
+      "n. 有轨电车"
+    ],
+    "usphone": "træm",
+    "ukphone": "træm",
+    "sentences": [
+      {
+        "english": "The tramp from the tram swamped the ham hamburge with shampoo.",
+        "chinese": "有轨电车的脚步声淹没了带有香波的火腿汉堡。"
+      },
+      {
+        "english": "The tramp from the tram swamped the ham hamburger with shampoo.",
+        "chinese": "来自有轨电车的流浪者用洗发水淹没火腿汉堡。"
+      },
+      {
+        "english": "In Rio de Janeiro, an extensive network of tram lines, including the Santa Teresa line, operated for more than a century.",
+        "chinese": "在里约热内卢，一个包括圣特雷莎线在内的巨大电车线路网络运行了逾一个世纪。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": " 乘电车",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "有轨电车，电车轨道",
+        "english": "a vehicle for passengers, which travels along metal tracks in the street"
+      }
+    ]
+  },
+  {
+    "name": "helicopter",
+    "trans": [
+      "n. 直升机"
+    ],
+    "usphone": "'hɛlɪkɑptɚ",
+    "ukphone": "ˈhelɪkɒptə(r)",
+    "sentences": [
+      {
+        "english": "You can helicopter to the island.",
+        "chinese": "你可以乘坐直升机去那个岛。"
+      },
+      {
+        "english": "The helicopter is staying over our heads.",
+        "chinese": "那架直升机就在我们头顶的上方。"
+      },
+      {
+        "english": "They were succoured from the fire by the rescue helicopter.",
+        "chinese": "他们被援救的直升机从大火中解救了出来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "直升飞机",
+        "english": "a type of aircraft with large metal blades on top which turn around very quickly to make it fly"
+      }
+    ]
+  }
 ]

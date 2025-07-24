@@ -1,278 +1,998 @@
 [
-    {
-        "name": "personal details",
-        "trans": [
-            "pl. n. 个人信息"
-        ]
-    },
-    {
-        "name": "last name",
-        "trans": [
-            "n. 姓"
-        ]
-    },
-    {
-        "name": "family name",
-        "trans": [
-            "n. 姓"
-        ]
-    },
-    {
-        "name": "surname",
-        "trans": [
-            "n. 姓"
-        ]
-    },
-    {
-        "name": "first name",
-        "trans": [
-            "n. 名"
-        ]
-    },
-    {
-        "name": "given name",
-        "trans": [
-            "n. 名"
-        ]
-    },
-    {
-        "name": "title",
-        "trans": [
-            "n. 称谓"
-        ]
-    },
-    {
-        "name": "country of origin",
-        "trans": [
-            "n. 出生国"
-        ]
-    },
-    {
-        "name": "nationality",
-        "trans": [
-            "n. 国籍"
-        ]
-    },
-    {
-        "name": "occupation",
-        "trans": [
-            "n. 职业"
-        ]
-    },
-    {
-        "name": "dentist",
-        "trans": [
-            "n. 牙医"
-        ]
-    },
-    {
-        "name": "surgeon",
-        "trans": [
-            "n. 外科医生"
-        ]
-    },
-    {
-        "name": "interior designer",
-        "trans": [
-            "n. 室内设计师"
-        ]
-    },
-    {
-        "name": "medical condition",
-        "trans": [
-            "n. 身体情况"
-        ]
-    },
-    {
-        "name": "glasses",
-        "trans": [
-            "pl. n. 眼镜"
-        ]
-    },
-    {
-        "name": "asthma",
-        "trans": [
-            "n. 哮喘"
-        ]
-    },
-    {
-        "name": "heart disease",
-        "trans": [
-            "n. 心脏病"
-        ]
-    },
-    {
-        "name": "address",
-        "trans": [
-            "n. 地址"
-        ]
-    },
-    {
-        "name": "road",
-        "trans": [
-            "n. 路"
-        ]
-    },
-    {
-        "name": "street",
-        "trans": [
-            "n. 街"
-        ]
-    },
-    {
-        "name": "avenue",
-        "trans": [
-            "n. 大街"
-        ]
-    },
-    {
-        "name": "lane",
-        "trans": [
-            "n. 小路"
-        ]
-    },
-    {
-        "name": "postcode",
-        "trans": [
-            "n. 【英】邮政编码"
-        ]
-    },
-    {
-        "name": "zip code",
-        "trans": [
-            "n. 【美】邮政编码"
-        ]
-    },
-    {
-        "name": "emergency",
-        "trans": [
-            "n. 紧急情况"
-        ]
-    },
-    {
-        "name": "diet",
-        "trans": [
-            "n. 饮食"
-        ]
-    },
-    {
-        "name": "vegetarian",
-        "trans": [
-            "n. 素食主义者"
-        ]
-    },
-    {
-        "name": "no red meat",
-        "trans": [
-            "n. 不吃红肉"
-        ]
-    },
-    {
-        "name": "elementary",
-        "trans": [
-            "adj. 基础的，初级的"
-        ]
-    },
-    {
-        "name": "basic",
-        "trans": [
-            "adj. 基础的，初级的"
-        ]
-    },
-    {
-        "name": "intermediate",
-        "trans": [
-            "adj. 中级的"
-        ]
-    },
-    {
-        "name": "advanced",
-        "trans": [
-            "adj. 高级的"
-        ]
-    },
-    {
-        "name": "membership",
-        "trans": [
-            "n. 会员资格"
-        ]
-    },
-    {
-        "name": "apply",
-        "trans": [
-            "v. 申请"
-        ]
-    },
-    {
-        "name": "entitlement",
-        "trans": [
-            "n. 权利"
-        ]
-    },
-    {
-        "name": "facilities",
-        "trans": [
-            "pl. n. 设施"
-        ]
-    },
-    {
-        "name": "restricted",
-        "trans": [
-            "adj. 限制的"
-        ]
-    },
-    {
-        "name": "swimming pool",
-        "trans": [
-            "n. 游泳池"
-        ]
-    },
-    {
-        "name": "studio",
-        "trans": [
-            "n. 工作室"
-        ]
-    },
-    {
-        "name": "preference",
-        "trans": [
-            "n. 偏好，偏爱"
-        ]
-    },
-    {
-        "name": "priority",
-        "trans": [
-            "n. 优先权，优先做的事"
-        ]
-    },
-    {
-        "name": "session",
-        "trans": [
-            "n. 一段时间"
-        ]
-    },
-    {
-        "name": "assess",
-        "trans": [
-            "v. 评价，评估"
-        ]
-    },
-    {
-        "name": "restaurant",
-        "trans": [
-            "n. 餐厅"
-        ]
-    },
-    {
-        "name": "changing room",
-        "trans": [
-            "n. 更衣室"
-        ]
-    },
-    {
-        "name": "fee",
-        "trans": [
-            "n. 费用"
-        ]
-    }
+  {
+    "name": "personal details",
+    "trans": [
+      "pl. n. 个人信息"
+    ]
+  },
+  {
+    "name": "last name",
+    "trans": [
+      "n. 姓"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "OK. May I have your last name and first initial, please?",
+        "chinese": "好的. 请您告诉我贵姓及大名的头一个字母?"
+      },
+      {
+        "english": "Each row contains a user ID, an email address, first and last name, phone number, and mailing address.",
+        "chinese": "每行包含一个用户 ID、一个电子邮件地址、姓名、电话号码和邮寄地址。"
+      },
+      {
+        "english": "Blizzard's new system - called Real ID - means that users will have to post under their real first and last name.",
+        "chinese": "暴雪的新系统被叫做“真实身份”，这将意味着玩家在登录时必须填写他们真实的姓和名。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "姓",
+        "english": "a surname"
+      }
+    ]
+  },
+  {
+    "name": "family name",
+    "trans": [
+      "n. 姓"
+    ]
+  },
+  {
+    "name": "surname",
+    "trans": [
+      "n. 姓"
+    ],
+    "usphone": "'sɝ'nem",
+    "ukphone": "'sɜːneɪm",
+    "sentences": [
+      {
+        "english": "What is your surname?",
+        "chinese": "你姓什么?"
+      },
+      {
+        "english": "Your surname may be derived from a place, such as Lancaster, for example, or an occupation, such as Weaver, but this is not necessarily of relevance to your family history.",
+        "chinese": "或许，你的姓氏来源于一个地方名，例如兰开斯特，或者来源于职业，例如编织工。 但是，这并不能中肯地说出你家族的历史。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "姓",
+        "english": "the name that you share with your parents, or often with your husband if you are a married woman, and which in English comes at the end of your full name"
+      }
+    ]
+  },
+  {
+    "name": "first name",
+    "trans": [
+      "n. 名"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "Her first name’s Helen, but I don’t know her surname.",
+        "chinese": "她的名字叫海伦，但我不知道她姓什么。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "名字",
+        "english": "the name or names that come before your family name"
+      }
+    ]
+  },
+  {
+    "name": "given name",
+    "trans": [
+      "n. 名"
+    ]
+  },
+  {
+    "name": "title",
+    "trans": [
+      "n. 称谓"
+    ],
+    "usphone": "'taɪtl",
+    "ukphone": "'taɪt(ə)l",
+    "sentences": [
+      {
+        "english": "\"Patience and Sarah\" was first published in 1969 under the title \"A Place for Us.\"",
+        "chinese": "《耐心与萨拉》于1969年以《我们的地方》为书名首次出版。"
+      },
+      {
+        "english": "Pirandello titled his play \"Six Characters in Search of an Author.\"",
+        "chinese": "皮兰德娄将其戏剧命名为《六个寻找作者的剧中人》。"
+      },
+      {
+        "english": "The single is titled \"White Love.\"",
+        "chinese": "这支单曲名为《白色之恋》。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "冠军；标题；头衔；权利；字幕",
+        "english": "the name given to a particular book, painting, play etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "加标题于；赋予头衔；把…称为",
+        "english": "When a writer, composer, or artist titles a work, they give it a name"
+      },
+      {
+        "pos": "adj",
+        "chinese": "冠军的；标题的；头衔的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "country of origin",
+    "trans": [
+      "n. 出生国"
+    ]
+  },
+  {
+    "name": "nationality",
+    "trans": [
+      "n. 国籍"
+    ],
+    "usphone": ",næʃə'næləti",
+    "ukphone": "næʃə'nælɪtɪ",
+    "sentences": [
+      {
+        "english": "people of the same nationality",
+        "chinese": "同国籍的人"
+      },
+      {
+        "english": "the different nationalities within the former USSR",
+        "chinese": "前苏联的各个民族"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "国籍；民族，族",
+        "english": "the state of being legally a citizen of a particular country"
+      }
+    ]
+  },
+  {
+    "name": "occupation",
+    "trans": [
+      "n. 职业"
+    ],
+    "usphone": ",ɑkju'peʃən",
+    "ukphone": "ɒkjʊ'peɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Please state your name, address and occupation.",
+        "chinese": "请写明你的姓名、地址和职业。"
+      },
+      {
+        "english": "professional and managerial occupations",
+        "chinese": "专业及管理工作"
+      },
+      {
+        "english": "manual occupations",
+        "chinese": "体力工作"
+      },
+      {
+        "english": "the German occupation of France",
+        "chinese": "德军对法国的占领"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "职业；占领，占据",
+        "english": "a job or profession"
+      }
+    ]
+  },
+  {
+    "name": "dentist",
+    "trans": [
+      "n. 牙医"
+    ],
+    "usphone": "'dɛntɪst",
+    "ukphone": "'dentɪst",
+    "sentences": [
+      {
+        "english": "Visit your dentist twice a year for a checkup.",
+        "chinese": "每年看两次牙医做检查。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "牙科医生",
+        "english": "someone whose job is to treat people’s teeth"
+      }
+    ]
+  },
+  {
+    "name": "surgeon",
+    "trans": [
+      "n. 外科医生"
+    ],
+    "usphone": "'sɝdʒən",
+    "ukphone": "'sɜːdʒ(ə)n",
+    "sentences": [
+      {
+        "english": "...a heart surgeon.",
+        "chinese": "…一位心脏外科医生。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "外科医生",
+        "english": "a doctor who does operations in a hospital"
+      }
+    ]
+  },
+  {
+    "name": "interior designer",
+    "trans": [
+      "n. 室内设计师"
+    ]
+  },
+  {
+    "name": "medical condition",
+    "trans": [
+      "n. 身体情况"
+    ]
+  },
+  {
+    "name": "glasses",
+    "trans": [
+      "pl. n. 眼镜"
+    ],
+    "usphone": "'glæsɪz",
+    "ukphone": "'glɑːsɪz",
+    "sentences": [
+      {
+        "english": "...the 140 million Americans who wear glasses or contact lenses.",
+        "chinese": "…1.4亿戴眼镜或者隐性眼镜的美国人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "眼镜",
+        "english": "Glasses are two lenses in a frame that some people wear in front of their eyes in order to help them see better"
+      }
+    ]
+  },
+  {
+    "name": "asthma",
+    "trans": [
+      "n. 哮喘"
+    ],
+    "usphone": "'æzmə",
+    "ukphone": "'æzmə",
+    "sentences": [
+      {
+        "english": "Any illness of the lungs or throat , such as asthma or a cough.",
+        "chinese": "消耗病，痨病肺部或喉咙的任何一种病变，如哮喘或咳嗽。"
+      },
+      {
+        "english": "It scares me sometimes because I do have asthma and when I walk, I do gasp for air.",
+        "chinese": "她说：“我会担心体重，因为我有哮喘，我走路的时候总是气喘吁吁。"
+      },
+      {
+        "english": "Another aspect of this problem is control of asthma among children in these populations.",
+        "chinese": "这个问题的另一个方面是在这些群体的儿童中控制哮喘。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 哮喘",
+        "english": "a medical condition that causes difficulties in breathing"
+      }
+    ]
+  },
+  {
+    "name": "heart disease",
+    "trans": [
+      "n. 心脏病"
+    ]
+  },
+  {
+    "name": "address",
+    "trans": [
+      "n. 地址"
+    ],
+    "usphone": "ə'drɛs",
+    "ukphone": "ə'dres",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "解决",
+        "english": "if you address a problem, you start trying to solve it"
+      }
+    ]
+  },
+  {
+    "name": "road",
+    "trans": [
+      "n. 路"
+    ],
+    "usphone": "rod",
+    "ukphone": "rəʊd",
+    "sentences": [
+      {
+        "english": "65 Maple Road",
+        "chinese": "枫树路65号"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "公路，马路；道路；手段",
+        "english": "a specially prepared hard surface for cars, buses, bicycles etc to travel on"
+      },
+      {
+        "pos": "vt",
+        "chinese": "（狗）沿臭迹追逐（猎物）",
+        "english": ""
+      },
+      {
+        "pos": "adj",
+        "chinese": "（美）巡回的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "street",
+    "trans": [
+      "n. 街"
+    ],
+    "usphone": "strit",
+    "ukphone": "striːt",
+    "sentences": [
+      {
+        "english": "We moved to Center Street when I was young.",
+        "chinese": "在我小时候，我们搬到了中心大街。"
+      },
+      {
+        "english": "She lives just a few streets away.",
+        "chinese": "她的住处就在几条街外。"
+      },
+      {
+        "english": "I walked on further down the street .",
+        "chinese": "我继续沿着马路走。"
+      },
+      {
+        "english": "Someone just moved in across the street .",
+        "chinese": "街对面有人刚刚搬进来。"
+      },
+      {
+        "english": "a car parked on the other side of the street",
+        "chinese": "停在街对面的一辆车"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "街道",
+        "english": "a public road in a city or town that has houses, shops etc on one or both sides"
+      },
+      {
+        "pos": "adj",
+        "chinese": "街道的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "avenue",
+    "trans": [
+      "n. 大街"
+    ],
+    "usphone": "'ævənu",
+    "ukphone": "'æv(ə)njuː",
+    "sentences": [
+      {
+        "english": "Fifth Avenue",
+        "chinese": "第五大街"
+      },
+      {
+        "english": "Shaftesbury Avenue",
+        "chinese": "沙夫茨伯里街"
+      },
+      {
+        "english": "a tree-lined avenue",
+        "chinese": "林荫道"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "大街；林荫道，道路",
+        "english": "used in the names of streets in a town or city"
+      }
+    ]
+  },
+  {
+    "name": "lane",
+    "trans": [
+      "n. 小路"
+    ],
+    "usphone": "len",
+    "ukphone": "leɪn",
+    "sentences": [
+      {
+        "english": "a quiet country lane",
+        "chinese": "一条宁静的乡间小路"
+      },
+      {
+        "english": "...after being disqualified for running out of his lane in the 200 metres.",
+        "chinese": "…在200米比赛中由于冲出跑道而被取消比赛资格以后。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "（乡间）小路；跑道",
+        "english": "a narrow road in the countryside"
+      }
+    ]
+  },
+  {
+    "name": "postcode",
+    "trans": [
+      "n. 【英】邮政编码"
+    ],
+    "usphone": "'post'kod",
+    "ukphone": "'pəʊs(t)kəʊd",
+    "sentences": [
+      {
+        "english": "Type your street address and postcode.",
+        "chinese": "键入你的街道地址和邮政编码。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "（英）邮政编码；邮区号",
+        "english": "a group of numbers and letters that you write at the end of an address on an envelope, package etc. The postcode shows the exact area where someone lives and helps the post office deliver the post more quickly."
+      }
+    ]
+  },
+  {
+    "name": "zip code",
+    "trans": [
+      "n. 【美】邮政编码"
+    ]
+  },
+  {
+    "name": "emergency",
+    "trans": [
+      "n. 紧急情况"
+    ],
+    "usphone": "ɪ'mɝdʒənsi",
+    "ukphone": "i'mə:dʒənsi",
+    "sentences": [
+      {
+        "english": "Lifeguards are trained to deal with emergencies.",
+        "chinese": "救生员接受过应对紧急情况的训练。"
+      },
+      {
+        "english": "(= In case of emergency ), press the alarm button.",
+        "chinese": "遇到紧急情况，请按报警按钮。"
+      },
+      {
+        "english": "The plane had to make an emergency landing.",
+        "chinese": "那架飞机不得不紧急着陆。"
+      },
+      {
+        "english": "The government called an emergency meeting to discuss the crisis.",
+        "chinese": "政府召开了紧急会议，讨论这次危机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "紧急情况",
+        "english": "an unexpected and dangerous situation that must be dealt with immediately"
+      }
+    ]
+  },
+  {
+    "name": "diet",
+    "trans": [
+      "n. 饮食"
+    ],
+    "usphone": "'daɪət",
+    "ukphone": "'daɪət",
+    "sentences": [
+      {
+        "english": "She doesn’t eat a very healthy diet.",
+        "chinese": "她的饮食不是很健康。"
+      },
+      {
+        "english": "It is important to have a balanced diet.",
+        "chinese": "饮食均衡很重要。"
+      },
+      {
+        "english": "Rice is the staple diet (= the main food that a group of people usually eat ) .",
+        "chinese": "大米是主食。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "日常饮食，日常食物",
+        "english": "the kind of food that a person or animal eats each day"
+      }
+    ]
+  },
+  {
+    "name": "vegetarian",
+    "trans": [
+      "n. 素食主义者"
+    ],
+    "usphone": "ˌvedʒə'teriən",
+    "ukphone": "vɛdʒɪˈtɛːrɪən",
+    "sentences": [
+      {
+        "english": "Our youngest daughter is a vegetarian.",
+        "chinese": "我们的小女儿是个素食主义者。"
+      },
+      {
+        "english": "dishes suitable for vegetarians",
+        "chinese": "适合素食者的菜肴"
+      },
+      {
+        "english": "I’m thinking about becoming a vegetarian.",
+        "chinese": "我在考虑戒除荤食。"
+      },
+      {
+        "english": "Yasmin sticks to a strict vegetarian diet.",
+        "chinese": "亚斯敏坚持一种严格的纯素饮食。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "素食者；食草动物",
+        "english": "someone who does not eat meat or fish"
+      },
+      {
+        "pos": "adj",
+        "chinese": "素食的",
+        "english": "Someone who is vegetarian never eats meat or fish"
+      }
+    ]
+  },
+  {
+    "name": "no red meat",
+    "trans": [
+      "n. 不吃红肉"
+    ]
+  },
+  {
+    "name": "elementary",
+    "trans": [
+      "adj. 基础的，初级的"
+    ],
+    "usphone": ",ɛlɪ'mɛntri",
+    "ukphone": "elɪ'ment(ə)rɪ",
+    "sentences": [
+      {
+        "english": "the elementary principles of justice and democracy",
+        "chinese": "正义和民主的基本信条"
+      },
+      {
+        "english": "You’ve made a very elementary mistake.",
+        "chinese": "你犯了一个非常基本的错误。"
+      },
+      {
+        "english": "I’m only familiar with the subject at an elementary level.",
+        "chinese": "我对这门学科的了解只是初级水平。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "基本的；初级的",
+        "english": "simple or basic"
+      }
+    ]
+  },
+  {
+    "name": "basic",
+    "trans": [
+      "adj. 基础的，初级的"
+    ],
+    "usphone": "'besɪk",
+    "ukphone": "'beɪsɪk",
+    "sentences": [
+      {
+        "english": "the basic principles of chemistry",
+        "chinese": "化学的基本原理"
+      },
+      {
+        "english": "The basic idea is simple.",
+        "chinese": "基本思想很简单。"
+      },
+      {
+        "english": "basic research",
+        "chinese": "基础研究"
+      },
+      {
+        "english": "basic information",
+        "chinese": "基本信息"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "基本的，基础的",
+        "english": "forming the most important or most necessary part of something"
+      }
+    ]
+  },
+  {
+    "name": "intermediate",
+    "trans": [
+      "adj. 中级的"
+    ],
+    "usphone": ",ɪntɚ'midɪət",
+    "ukphone": ",ɪntə'miːdɪət",
+    "sentences": [
+      {
+        "english": "an intermediate coursebook",
+        "chinese": "中级课本"
+      },
+      {
+        "english": "an intermediate stage/step in a process",
+        "chinese": "中间阶段 / 步骤"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "中级的；中间的",
+        "english": "having more than a basic knowledge of sth but not yet advanced"
+      }
+    ]
+  },
+  {
+    "name": "advanced",
+    "trans": [
+      "adj. 高级的"
+    ],
+    "usphone": "əd'vænst",
+    "ukphone": "ədˈvɑ:nst",
+    "sentences": [
+      {
+        "english": "advanced learners of English",
+        "chinese": "高级程度的英语学习者"
+      },
+      {
+        "english": "advanced physics",
+        "chinese": "高等物理（学）"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "高级的",
+        "english": "studying or dealing with a school subject at a difficult level"
+      }
+    ]
+  },
+  {
+    "name": "membership",
+    "trans": [
+      "n. 会员资格"
+    ],
+    "usphone": "'mɛmbɚʃɪp",
+    "ukphone": "'membəʃɪp",
+    "sentences": [
+      {
+        "english": "You should carry your membership card with you at all times.",
+        "chinese": "你应该随身携带会员卡。"
+      },
+      {
+        "english": "Membership fees are being increased this year.",
+        "chinese": "会费今年提高了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 会员身份， 会籍； 全体会员， 会员数",
+        "english": "when someone is a member of a club, group, or organization"
+      }
+    ]
+  },
+  {
+    "name": "apply",
+    "trans": [
+      "v. 申请"
+    ],
+    "usphone": "ə'plaɪ",
+    "ukphone": "ə'plaɪ",
+    "sentences": [
+      {
+        "english": "We need to apply for planning permission to build a garage.",
+        "chinese": "我们建车库需要申请规划许可。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "应用，实施，使用；适用；申请，请求",
+        "english": "to make a formal request, usually written, for something such as a job, a place at a university, or permission to do something"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 涂， 敷， 施",
+        "english": "to put or spread something such as paint, liquid, or medicine onto a surface"
+      }
+    ]
+  },
+  {
+    "name": "entitlement",
+    "trans": [
+      "n. 权利"
+    ],
+    "usphone": "ɪn'taɪtlmənt",
+    "ukphone": "ɪn'taɪt(ə)lmənt",
+    "sentences": [
+      {
+        "english": "They lose their entitlement to welfare when they start work.",
+        "chinese": "他们开始工作时就丧失了享受福利的权利。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "权利；津贴",
+        "english": "the official right to have or do something, or the amount that you have a right to receive"
+      }
+    ]
+  },
+  {
+    "name": "facilities",
+    "trans": [
+      "pl. n. 设施"
+    ],
+    "usphone": "fə'silitiz",
+    "ukphone": "fə'sɪlɪtɪz",
+    "sentences": [
+      {
+        "english": "What recreational facilities are now available?",
+        "chinese": "什么娱乐设施现在是可用的？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "设施；工具，设备",
+        "english": "Facilities are buildings, pieces of equipment, or services that are provided for a particular purpose"
+      }
+    ]
+  },
+  {
+    "name": "restricted",
+    "trans": [
+      "adj. 限制的"
+    ]
+  },
+  {
+    "name": "swimming pool",
+    "trans": [
+      "n. 游泳池"
+    ]
+  },
+  {
+    "name": "studio",
+    "trans": [
+      "n. 工作室"
+    ],
+    "usphone": "'studɪo",
+    "ukphone": "'stjuːdɪəʊ",
+    "sentences": [
+      {
+        "english": "a recording studio in Nashville",
+        "chinese": "在纳什维尔的一间录音室"
+      },
+      {
+        "english": "a photographer’s studio",
+        "chinese": "摄影师的工作室"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "播音室；工作室",
+        "english": "a room where television and radio programmes are made and broadcast or where music is recorded"
+      }
+    ]
+  },
+  {
+    "name": "preference",
+    "trans": [
+      "n. 偏好，偏爱"
+    ],
+    "usphone": "'prɛfrəns",
+    "ukphone": "'pref(ə)r(ə)ns",
+    "sentences": [
+      {
+        "english": "Do you have a colour preference ?",
+        "chinese": "你有什么颜色上的偏好吗？"
+      },
+      {
+        "english": "Parents may be able to express a preference as to the school their child will attend.",
+        "chinese": "家长也许可以表明愿意让孩子就读哪所学校。"
+      },
+      {
+        "english": "The amount of sugar you add will depend on personal preference .",
+        "chinese": "加多少糖取决于个人的喜好。"
+      },
+      {
+        "english": "Many elderly people expressed a strong preference to live in their own homes.",
+        "chinese": "许多老年人强烈表示喜欢住在自己的家里。"
+      },
+      {
+        "english": "In allocating housing, preference is given to families with young children.",
+        "chinese": "房屋优先分配给有年幼孩子的家庭。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "偏爱；优先；优先权",
+        "english": "if you have a preference for something, you like it more than another thing and will choose it if you can"
+      }
+    ]
+  },
+  {
+    "name": "priority",
+    "trans": [
+      "n. 优先权，优先做的事"
+    ],
+    "usphone": "praɪ'ɔrəti",
+    "ukphone": "praɪ'ɒrɪtɪ",
+    "sentences": [
+      {
+        "english": "The club’s priority is to win the League.",
+        "chinese": "该俱乐部首先考虑的是要赢得联赛。"
+      },
+      {
+        "english": "After several burglaries in the area, security is now a high priority (= very important and needing attention soon ) .",
+        "chinese": "该地区发生了几宗入室盗窃案以后，治安成了当务之急。"
+      },
+      {
+        "english": "With so little money available, repairs must remain a low priority (= not important and not needing attention soon ) .",
+        "chinese": "可用的钱这么少，只好暂时放下维修事宜了。"
+      },
+      {
+        "english": "The customer is high on our list of priorities .",
+        "chinese": "顾客在我们的心目中排在第一位。"
+      },
+      {
+        "english": "List your tasks in order of priority (= most important first ) .",
+        "chinese": "按照轻重缓急列出你的工作。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "先，前；优先，重点",
+        "english": "the thing that you think is most important and that needs attention before anything else"
+      }
+    ]
+  },
+  {
+    "name": "session",
+    "trans": [
+      "n. 一段时间"
+    ],
+    "usphone": "'sɛʃən",
+    "ukphone": "ˈseʃn",
+    "sentences": [
+      {
+        "english": "Board members met in closed session (= with nobody else present ) .",
+        "chinese": "委员会成员举行了闭门会议。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "会议，学年",
+        "english": "a formal meeting or group of meetings, especially of a law court or parliament"
+      }
+    ]
+  },
+  {
+    "name": "assess",
+    "trans": [
+      "v. 评价，评估"
+    ],
+    "usphone": "ə'sɛs",
+    "ukphone": "ə'ses",
+    "sentences": [
+      {
+        "english": "The test was to assess aptitude rather than academic achievement.",
+        "chinese": "该测试将评估能力而不是学业成绩。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": " 对估价； 评价， 评论",
+        "english": "to make a judgment about a person or situation after thinking carefully about it"
+      }
+    ]
+  },
+  {
+    "name": "restaurant",
+    "trans": [
+      "n. 餐厅"
+    ],
+    "usphone": "ˈrɛstəˌrɑnt; ˈrɛstərənt; ˈrɛsˌtrɑnt",
+    "ukphone": "ˈrɛstəˌrɒŋ; ˈrɛstrɒŋ; -rɒnt",
+    "sentences": [
+      {
+        "english": "He took her out for a five-course dinner in a fancy restaurant.",
+        "chinese": "他带她到一家豪华餐厅吃了一顿有五道菜的晚餐。"
+      },
+      {
+        "english": "The company runs a chain of restaurants.",
+        "chinese": "公司经营连锁饭店。"
+      },
+      {
+        "english": "A new restaurant has just opened across the road.",
+        "chinese": "马路对面刚开了一家新饭馆。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "餐馆；[经] 饭店",
+        "english": "a place where you can buy and eat a meal"
+      }
+    ]
+  },
+  {
+    "name": "changing room",
+    "trans": [
+      "n. 更衣室"
+    ]
+  },
+  {
+    "name": "fee",
+    "trans": [
+      "n. 费用"
+    ],
+    "usphone": "fi",
+    "ukphone": "fiː",
+    "sentences": [
+      {
+        "english": "You can use the gym and pool for a fee of £35 a month.",
+        "chinese": "月付35英镑，即可使用健身房和游泳池。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "费，酬金；赏金",
+        "english": "an amount of money that you pay to do something or that you pay to a professional person for their work"
+      }
+    ]
+  }
 ]

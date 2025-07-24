@@ -1,200 +1,746 @@
 [
-    {
-        "name": "pulse",
-        "trans": [
-            "n. 脉搏"
-        ]
-    },
-    {
-        "name": "take one's temperature",
-        "trans": [
-            "测量体温"
-        ]
-    },
-    {
-        "name": "blood pressure",
-        "trans": [
-            "n. 血压"
-        ]
-    },
-    {
-        "name": "have a blood analysis",
-        "trans": [
-            "血样分析"
-        ]
-    },
-    {
-        "name": "X-Ray film",
-        "trans": [
-            "n. X光片"
-        ]
-    },
-    {
-        "name": "asthma",
-        "trans": [
-            "n. 哮喘"
-        ]
-    },
-    {
-        "name": "heart disease",
-        "trans": [
-            "n. 心脏病"
-        ]
-    },
-    {
-        "name": "obesity",
-        "trans": [
-            "n. 肥胖症"
-        ]
-    },
-    {
-        "name": "overweight",
-        "trans": [
-            "n. 超重；adj. 超重的"
-        ]
-    },
-    {
-        "name": "depression",
-        "trans": [
-            "n. 抑郁"
-        ]
-    },
-    {
-        "name": "Yellow Fever",
-        "trans": [
-            "n. 黄热病"
-        ]
-    },
-    {
-        "name": "diabetes",
-        "trans": [
-            "n. 糖尿病"
-        ]
-    },
-    {
-        "name": "diabetic",
-        "trans": [
-            "n. 糖尿病人；adj. 患糖尿病的"
-        ]
-    },
-    {
-        "name": "treatment",
-        "trans": [
-            "n. 治疗"
-        ]
-    },
-    {
-        "name": "remedy",
-        "trans": [
-            "n. 治疗"
-        ]
-    },
-    {
-        "name": "therapy",
-        "trans": [
-            "n. 治疗"
-        ]
-    },
-    {
-        "name": "massage",
-        "trans": [
-            "n. 按摩"
-        ]
-    },
-    {
-        "name": "message",
-        "trans": [
-            "n. 信息"
-        ]
-    },
-    {
-        "name": "acupuncture",
-        "trans": [
-            "n. 针灸治疗"
-        ]
-    },
-    {
-        "name": "operate",
-        "trans": [
-            "v. 做手术"
-        ]
-    },
-    {
-        "name": "vaccinate",
-        "trans": [
-            "v. 接种疫苗"
-        ]
-    },
-    {
-        "name": "prescribe",
-        "trans": [
-            "v. 开处方"
-        ]
-    },
-    {
-        "name": "pharmacy",
-        "trans": [
-            "n. 药店"
-        ]
-    },
-    {
-        "name": "tablet",
-        "trans": [
-            "n. 药片"
-        ]
-    },
-    {
-        "name": "pill",
-        "trans": [
-            "n. 药片"
-        ]
-    },
-    {
-        "name": "capsule",
-        "trans": [
-            "n. 胶囊"
-        ]
-    },
-    {
-        "name": "antibiotic",
-        "trans": [
-            "n. 抗生素"
-        ]
-    },
-    {
-        "name": "painkiller",
-        "trans": [
-            "n. 止痛药"
-        ]
-    },
-    {
-        "name": "aspirin",
-        "trans": [
-            "n. 阿司匹林"
-        ]
-    },
-    {
-        "name": "penicillin",
-        "trans": [
-            "n. 青霉素"
-        ]
-    },
-    {
-        "name": "vitamin",
-        "trans": [
-            "n. 维他命"
-        ]
-    },
-    {
-        "name": "side effect",
-        "trans": [
-            "n. 副作用"
-        ]
-    },
-    {
-        "name": "first-aid kit",
-        "trans": [
-            "n. 急救药箱"
-        ]
-    }
+  {
+    "name": "pulse",
+    "trans": [
+      "n. 脉搏"
+    ],
+    "usphone": "pʌls",
+    "ukphone": "pʌls",
+    "sentences": [
+      {
+        "english": "His breathing was shallow and his pulse was weak .",
+        "chinese": "他呼吸很浅，脉搏微弱。"
+      },
+      {
+        "english": "She felt his neck. There was no pulse.",
+        "chinese": "她摸了摸他的颈部，没有脉搏。"
+      },
+      {
+        "english": "Her pulse raced (= beat very quickly ) with excitement.",
+        "chinese": "她激动得脉搏急速跳动。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[电子] 脉冲；脉搏",
+        "english": "the regular beat that can be felt, for example at your wrist, as your heart pumps blood around your body"
+      },
+      {
+        "pos": "v",
+        "chinese": "使跳动",
+        "english": "to move or flow with a steady quickbeat or sound"
+      }
+    ]
+  },
+  {
+    "name": "take one's temperature",
+    "trans": [
+      "测量体温"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "量体温",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "blood pressure",
+    "trans": [
+      "n. 血压"
+    ]
+  },
+  {
+    "name": "have a blood analysis",
+    "trans": [
+      "血样分析"
+    ]
+  },
+  {
+    "name": "X-Ray film",
+    "trans": [
+      "n. X光片"
+    ]
+  },
+  {
+    "name": "asthma",
+    "trans": [
+      "n. 哮喘"
+    ],
+    "usphone": "'æzmə",
+    "ukphone": "'æzmə",
+    "sentences": [
+      {
+        "english": "Any illness of the lungs or throat , such as asthma or a cough.",
+        "chinese": "消耗病，痨病肺部或喉咙的任何一种病变，如哮喘或咳嗽。"
+      },
+      {
+        "english": "It scares me sometimes because I do have asthma and when I walk, I do gasp for air.",
+        "chinese": "她说：“我会担心体重，因为我有哮喘，我走路的时候总是气喘吁吁。"
+      },
+      {
+        "english": "Another aspect of this problem is control of asthma among children in these populations.",
+        "chinese": "这个问题的另一个方面是在这些群体的儿童中控制哮喘。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 哮喘",
+        "english": "a medical condition that causes difficulties in breathing"
+      }
+    ]
+  },
+  {
+    "name": "heart disease",
+    "trans": [
+      "n. 心脏病"
+    ]
+  },
+  {
+    "name": "obesity",
+    "trans": [
+      "n. 肥胖症"
+    ],
+    "usphone": "o'bisəti",
+    "ukphone": "əʊ'bi:sətɪ",
+    "sentences": [
+      {
+        "english": "So, what of the future of obesity in America?",
+        "chinese": "那么，未来美国的肥胖状况会怎么发展呢？"
+      },
+      {
+        "english": "Dr.Watson is great on exercise as a cure for obesity.",
+        "chinese": "沃森医生把运动看做是治疗肥胖症的良方。"
+      },
+      {
+        "english": "What is obesity?",
+        "chinese": "什么是肥胖？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "肥胖",
+        "english": "when someone is very fat in a way that is unhealthy"
+      }
+    ]
+  },
+  {
+    "name": "overweight",
+    "trans": [
+      "n. 超重；adj. 超重的"
+    ],
+    "usphone": "'ovə'wet",
+    "ukphone": "ˌəʊvə'weɪt",
+    "sentences": [
+      {
+        "english": "I wonder if this letter is overweight.",
+        "chinese": "我想知道这封信是否超重。"
+      },
+      {
+        "english": "If your luggage is overweight, you'll have to pay extra.",
+        "chinese": "假如你的行李过重了， 你得付额外的运费。"
+      },
+      {
+        "english": "Why are so many of us overweight?",
+        "chinese": "为什么我们中的许多人会超重？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "超重的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "depression",
+    "trans": [
+      "n. 抑郁"
+    ],
+    "usphone": "dɪ'prɛʃən",
+    "ukphone": "dɪ'preʃn",
+    "sentences": [
+      {
+        "english": "Mr. Thomas was suffering from depression.",
+        "chinese": "托马斯先生当时正受抑郁症折磨。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 抑郁， 沮丧； 不景气， 萧条； 洼地， 凹陷",
+        "english": "the period during the 1930s when there was not much business activity and not many jobs"
+      }
+    ]
+  },
+  {
+    "name": "Yellow Fever",
+    "trans": [
+      "n. 黄热病"
+    ]
+  },
+  {
+    "name": "diabetes",
+    "trans": [
+      "n. 糖尿病"
+    ],
+    "usphone": ",daɪə'bitiz",
+    "ukphone": ",daɪə'biːtiːz",
+    "sentences": [
+      {
+        "english": "You have diabetes, or liver or kidney disease.",
+        "chinese": "有糖尿病，或者是有肝病或肾病者。"
+      },
+      {
+        "english": "It is like diabetes or asthma, an illness, due to a build up of pressures, which can happen to anyone.",
+        "chinese": "就像是糖尿病或者哮喘，由于压力的形成，这种病有可能发生在任何人身上。"
+      },
+      {
+        "english": "We can then translate this information into estimates of the current diabetes and cardiovascular disease that can be attributed to the rise in consumption of these drinks.",
+        "chinese": "然后我们可以将这些信息转变成对当前糖尿病和冠心病的估计，而这些疾病是软饮料消耗量的增加所导致的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "糖尿病；多尿症",
+        "english": "a serious disease in which there is too much sugar in your blood"
+      }
+    ]
+  },
+  {
+    "name": "diabetic",
+    "trans": [
+      "n. 糖尿病人；adj. 患糖尿病的"
+    ]
+  },
+  {
+    "name": "treatment",
+    "trans": [
+      "n. 治疗"
+    ],
+    "usphone": "'tritmənt",
+    "ukphone": "ˈtri:tmənt",
+    "sentences": [
+      {
+        "english": "There have been great advances in the treatment of cancer.",
+        "chinese": "癌症治疗有了很大的进展。"
+      },
+      {
+        "english": "Just lately, Kyra has been giving me the silent treatment (= refusing to speak to me because she is angry with me ) .",
+        "chinese": "就在最近，凯拉一直对我不理不睬。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "治疗；对待",
+        "english": "something that is done to cure someone who is injured or ill"
+      }
+    ]
+  },
+  {
+    "name": "remedy",
+    "trans": [
+      "n. 治疗"
+    ],
+    "usphone": "'rɛmədi",
+    "ukphone": "'remɪdɪ",
+    "sentences": [
+      {
+        "english": "The problems in our schools do not have a simple remedy.",
+        "chinese": "我们学校的问题没有简单的解决办法。"
+      },
+      {
+        "english": "To remedy the situation, the water must be chemically treated.",
+        "chinese": "为了改善这种情况，水必须进行化学处理。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "治疗；补救",
+        "english": "a way of dealing with a problem or making a bad situation better"
+      },
+      {
+        "pos": "v",
+        "chinese": "治疗；补救",
+        "english": "to deal with a problem or improve a bad situation"
+      }
+    ]
+  },
+  {
+    "name": "therapy",
+    "trans": [
+      "n. 治疗"
+    ],
+    "usphone": "'θɛrəpi",
+    "ukphone": "'θerəpi",
+    "sentences": [
+      {
+        "english": "new drug therapies",
+        "chinese": "新的药物疗法"
+      },
+      {
+        "english": "radiation therapy for cancer treatment",
+        "chinese": "治疗癌症的放射疗法"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "疗法 治疗",
+        "english": "the treatment of an illness or injury over a fairly long period of time"
+      }
+    ]
+  },
+  {
+    "name": "massage",
+    "trans": [
+      "n. 按摩"
+    ],
+    "usphone": "mə'sɑʒ",
+    "ukphone": "'mæsɑːʒ; mə'sɑːʒ; -dʒ",
+    "sentences": [
+      {
+        "english": "Alex massaged Helena’s aching back.",
+        "chinese": "亚历克斯给海伦娜疼痛的背部做了推拿。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "按摩；揉",
+        "english": "to press and rub someone’s body with your hands, to help them relax or to reduce pain in their muscles"
+      },
+      {
+        "pos": "n",
+        "chinese": "按摩；揉",
+        "english": "the action of pressing and rubbing someone’s body with your hands, to help them relax or to reduce pain in their muscles or joints"
+      }
+    ]
+  },
+  {
+    "name": "message",
+    "trans": [
+      "n. 信息"
+    ],
+    "usphone": "'mɛsɪdʒ",
+    "ukphone": "'mesɪdʒ",
+    "sentences": [
+      {
+        "english": "The message of the film is that good always triumphs over evil.",
+        "chinese": "这部电影的主题思想是善良终必战胜邪恶。"
+      },
+      {
+        "english": "The result of this legal battle sends an important message to people in similar situations.",
+        "chinese": "这场诉讼战的结果给情况相似的人们传递了一个重要的信息。"
+      },
+      {
+        "english": "It’s perfectly possible to get your message across (= communicate what you want to say ) without being so angry.",
+        "chinese": "就算不这么生气，你也完全可以把意思说清楚。"
+      },
+      {
+        "english": "They use illustrations to convey their message.",
+        "chinese": "他们用图示来表达他们的意思。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "启示，要旨，教训",
+        "english": "the main or most important idea that someone is trying to tell people about in a film, book, speech etc"
+      }
+    ]
+  },
+  {
+    "name": "acupuncture",
+    "trans": [
+      "n. 针灸治疗"
+    ],
+    "usphone": "'ækjupʌŋktʃɚ",
+    "ukphone": "'ækjʊ,pʌŋ(k)tʃə",
+    "sentences": [
+      {
+        "english": "the four main acupuncture points",
+        "chinese": "四大穴位"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "对…施行针刺疗法",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "针刺；[中医] 针刺疗法",
+        "english": "a treatment for pain and disease that involves pushing special needles into parts of the body"
+      }
+    ]
+  },
+  {
+    "name": "operate",
+    "trans": [
+      "v. 做手术"
+    ],
+    "usphone": "'ɑpə'ret",
+    "ukphone": "'ɒpəreɪt",
+    "sentences": [
+      {
+        "english": "The whole tax system is now operating more efficiently.",
+        "chinese": "现在整个税收制度运作效率更高了。"
+      },
+      {
+        "english": "The new law doesn’t operate in our favour.",
+        "chinese": "这项新法规对我们不利。"
+      },
+      {
+        "english": "The car parks operate a pay-as-you-leave system.",
+        "chinese": "这些停车场按“离开时付费”的模式运作。"
+      },
+      {
+        "english": "The bus company operates a Monday to Saturday service.",
+        "chinese": "这家公共汽车公司周一至周六运营。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "运转,运作",
+        "english": "if a system, process, or service operates, or if you operate it, it works"
+      },
+      {
+        "pos": "vt",
+        "chinese": "操作；经营，管理",
+        "english": "to use and control a machine or equipment"
+      }
+    ]
+  },
+  {
+    "name": "vaccinate",
+    "trans": [
+      "v. 接种疫苗"
+    ],
+    "usphone": "'væksə'net",
+    "ukphone": "'væksɪneɪt",
+    "sentences": [
+      {
+        "english": "Dogs must be vaccinated against distemper.",
+        "chinese": "犬类必须接种疫苗以防犬热病。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "接种疫苗",
+        "english": "to protect a person or animal from a disease by giving them a vaccine"
+      },
+      {
+        "pos": "n",
+        "chinese": "被接种牛痘者",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "prescribe",
+    "trans": [
+      "v. 开处方"
+    ],
+    "usphone": "prɪ'skraɪb",
+    "ukphone": "prɪ'skraɪb",
+    "sentences": [
+      {
+        "english": "The physician examines the patient then diagnoses the disease and prescribes medication.",
+        "chinese": "内科医生检查了病人，然后对疾病作出诊断，并开出药方。"
+      },
+      {
+        "english": "What punishment does the law prescribe for this crime?",
+        "chinese": "法律规定这种罪行应受何处罚？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "开处（方）；命令",
+        "english": "to say what medicine or treatment a sick person should have"
+      }
+    ]
+  },
+  {
+    "name": "pharmacy",
+    "trans": [
+      "n. 药店"
+    ],
+    "usphone": "'fɑrməsi",
+    "ukphone": "'fɑːməsɪ",
+    "sentences": [
+      {
+        "english": "an all-night pharmacy",
+        "chinese": "通宵药店"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "药房；配药学，药剂学；制药业；一批备用药品",
+        "english": "a shop or a part of a shop where medicines are prepared and sold"
+      }
+    ]
+  },
+  {
+    "name": "tablet",
+    "trans": [
+      "n. 药片"
+    ],
+    "usphone": "'tæblət",
+    "ukphone": "'tæblɪt",
+    "sentences": [
+      {
+        "english": "She took a couple of headache tablets .",
+        "chinese": "她吃了几片头痛药。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "碑；药片；写字板；小块；平板电脑",
+        "english": "a small round hard piece of medicine which you swallow"
+      },
+      {
+        "pos": "vt",
+        "chinese": "用碑牌纪念；将(备忘录等)写在板上；将…制成小片或小块",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "pill",
+    "trans": [
+      "n. 药片"
+    ],
+    "usphone": "pɪl",
+    "ukphone": "pɪl",
+    "sentences": [
+      {
+        "english": "He has to take pills to control his blood pressure.",
+        "chinese": "他必须服药控制血压。"
+      },
+      {
+        "english": "{\"COLLOINEXA\":[\"sleeping pills\"]}",
+        "chinese": "安眠药"
+      },
+      {
+        "english": "a bottle of vitamin pills",
+        "chinese": "一瓶维生素片"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "药丸；弹丸，子弹；口服避孕药",
+        "english": "a small solid piece of medicine that you swallow whole"
+      },
+      {
+        "pos": "v",
+        "chinese": "把…制成丸剂；使服用药丸；抢劫，掠夺（古语）",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "capsule",
+    "trans": [
+      "n. 胶囊"
+    ],
+    "usphone": "ˈkæpsl;",
+    "ukphone": "'kæpsjuːl",
+    "sentences": [
+      {
+        "english": "a space capsule orbiting the Earth",
+        "chinese": "沿地球轨道飞行的太空舱"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 胶囊； 航天舱， 密封舱",
+        "english": "a plastic container shaped like a very small tube with medicine inside that you swallow whole"
+      }
+    ]
+  },
+  {
+    "name": "antibiotic",
+    "trans": [
+      "n. 抗生素"
+    ],
+    "usphone": ",æntɪbaɪ'ɑtɪk; ˌæntaɪ-",
+    "ukphone": ",æntɪbaɪ'ɒtɪk",
+    "sentences": [
+      {
+        "english": "\"If you can stop the enzymes involved in that process with a small molecule or chemical,\" says Dunman, \"that chemical could be an antibiotic.",
+        "chinese": "“如果能用一小分子或化学物质阻止这一酶的活性过程，”德明说，“这种化学物质就能够用来做抗生素。”"
+      },
+      {
+        "english": "If we all recognize that antibiotic resistance is one of the greatest threats to public health that we face today, we have to do something about this.",
+        "chinese": "如果我们大家都能认识到耐抗生素（药性）已经成为我们今天面对的最大的公众健康威胁之一，我们就真的需要做点什么了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "抗生的；抗菌的",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "抗生素，抗菌素",
+        "english": "a drug that is used to kill  bacteria  and cure infections"
+      }
+    ]
+  },
+  {
+    "name": "painkiller",
+    "trans": [
+      "n. 止痛药"
+    ],
+    "usphone": "'penkɪlɚ",
+    "ukphone": "'peɪnkɪlə",
+    "sentences": [
+      {
+        "english": "an overdose of painkillers",
+        "chinese": "过量止痛药"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "止痛药",
+        "english": "a medicine which reduces or removes pain"
+      }
+    ]
+  },
+  {
+    "name": "aspirin",
+    "trans": [
+      "n. 阿司匹林"
+    ],
+    "usphone": "'æsprɪn",
+    "ukphone": "'æsp(ə)rɪn",
+    "sentences": [
+      {
+        "english": "The nurse dosed the patient with aspirin.",
+        "chinese": "护士给病人服阿司匹林。"
+      },
+      {
+        "english": "The nurse dosed out aspirin to a patient.",
+        "chinese": "护士给病人服阿司匹林。"
+      },
+      {
+        "english": "She dosed him with non-aspirin tablets to reduce the fever.",
+        "chinese": "她让他服用非阿司匹林药片降温退烧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "阿司匹林（解热镇痛药）",
+        "english": "a medicine that reduces pain,  inflammation  , and fever"
+      }
+    ]
+  },
+  {
+    "name": "penicillin",
+    "trans": [
+      "n. 青霉素"
+    ],
+    "usphone": ",pɛnɪ'sɪlɪn",
+    "ukphone": "ˌpenɪ'sɪlɪn",
+    "sentences": [
+      {
+        "english": "I think we were fooled by penicillin.",
+        "chinese": "我觉得我们都被青霉素愚弄了。"
+      },
+      {
+        "english": "I should have asked him for a shot of penicillin.",
+        "chinese": "我应当让他给我打一针青霉素的。"
+      },
+      {
+        "english": "Thatreally sped up the development of penicillin as an antibiotic.",
+        "chinese": "这确实加快了青霉素作为抗生素的发展。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 青霉素",
+        "english": "a type of medicine that is used to treat infections caused by  bacteria "
+      }
+    ]
+  },
+  {
+    "name": "vitamin",
+    "trans": [
+      "n. 维他命"
+    ],
+    "usphone": "'vaɪtəmɪn",
+    "ukphone": "'vɪtəmɪn; 'vaɪt-",
+    "sentences": [
+      {
+        "english": "Try to eat foods that are rich in vitamins and minerals.",
+        "chinese": "尽量吃富含维生素和矿物质的食物。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "维生素，维他命",
+        "english": "a chemical substance in food that is necessary for good health"
+      }
+    ]
+  },
+  {
+    "name": "side effect",
+    "trans": [
+      "n. 副作用"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "That had an interesting and extremely useful side effect.",
+        "chinese": "那有一个有趣和非常有用的负作用。"
+      },
+      {
+        "english": "Yet another side effect is that I seem to think much better when I eat this way.",
+        "chinese": "而且，还有第三种作用，那就是我的思考能力通过这种饮食法大大提高了。"
+      },
+      {
+        "english": "As a side effect of all this, you can use a stylesheet that doesn't do anything to a document, and simply take one format as input and output that document to any other format.",
+        "chinese": "这种方法的另外一个作用是，您可以使用一个不含任何文档操作的样式表，并使用某种格式作为输入，然后将这种格式输出为任意其他的格式。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "(药物等的)副作用",
+        "english": "an effect that a drug has on your body in addition to curing pain or illness"
+      }
+    ]
+  },
+  {
+    "name": "first-aid kit",
+    "trans": [
+      "n. 急救药箱"
+    ]
+  }
 ]

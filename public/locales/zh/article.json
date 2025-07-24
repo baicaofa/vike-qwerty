@@ -1,0 +1,56 @@
+{
+  "title": "文章练习",
+  "subtitle": "通过文章练习提升打字技能",
+  "history": {
+    "title": "文章列表",
+    "userArticles": "自定义文章",
+    "officialArticles": "官方文章",
+    "empty": "暂无文章",
+    "loadMore": "加载更多",
+    "delete": "删除文章",
+    "edit": "编辑文章"
+  },
+  "practice": {
+    "title": "文章练习",
+    "startPractice": "开始练习",
+    "pausePractice": "暂停练习",
+    "resumePractice": "继续练习",
+    "finishPractice": "完成练习",
+    "progress": "练习进度",
+    "currentParagraph": "当前段落",
+    "totalParagraphs": "总段落数"
+  },
+  "editor": {
+    "title": "文章编辑",
+    "articleTitle": "文章标题",
+    "articleContent": "文章内容",
+    "placeholder": {
+      "title": "请输入文章标题",
+      "content": "请输入文章内容"
+    },
+    "save": "保存文章",
+    "cancel": "取消编辑",
+    "preview": "预览文章"
+  },
+  "guide": {
+    "title": "使用指南",
+    "step1": "选择或创建文章",
+    "step2": "开始打字练习",
+    "step3": "查看练习结果",
+    "tips": "小贴士",
+    "tip1": "建议选择适合自己水平的文章",
+    "tip2": "保持正确的打字姿势",
+    "tip3": "注意准确率比速度更重要"
+  },
+  "results": {
+    "title": "练习结果",
+    "articleTitle": "文章标题",
+    "practiceTime": "练习时间",
+    "typingSpeed": "打字速度",
+    "accuracy": "准确率",
+    "errorCount": "错误次数",
+    "share": "分享结果",
+    "practiceAgain": "再次练习",
+    "backToList": "返回列表"
+  }
+}

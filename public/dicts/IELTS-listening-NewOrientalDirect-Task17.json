@@ -1,134 +1,605 @@
 [
-    {
-        "name": "assignment",
-        "trans": [
-            "n. 任务，作业"
-        ]
-    },
-    {
-        "name": "case study",
-        "trans": [
-            "N. phrase 案例研究"
-        ]
-    },
-    {
-        "name": "dissertation",
-        "trans": [
-            "n. 专题论文；学位论文"
-        ]
-    },
-    {
-        "name": "focus",
-        "trans": [
-            "n. 中心，焦点；v. 集中目光"
-        ]
-    },
-    {
-        "name": "aim",
-        "trans": [
-            "n. 目标；v. 打算"
-        ]
-    },
-    {
-        "name": "purpose",
-        "trans": [
-            "n. 目标，意图"
-        ]
-    },
-    {
-        "name": "target",
-        "trans": [
-            "n. 目标，对象；v. 以…为目标"
-        ]
-    },
-    {
-        "name": "article",
-        "trans": [
-            "n. 文章"
-        ]
-    },
-    {
-        "name": "editorial",
-        "trans": [
-            "n. 社评"
-        ]
-    },
-    {
-        "name": "interview",
-        "trans": [
-            "n. 面试，面谈；v. 采访"
-        ]
-    },
-    {
-        "name": "questionnaire",
-        "trans": [
-            "n. 问卷；情况调查表"
-        ]
-    },
-    {
-        "name": "fact",
-        "trans": [
-            "n. 现实，实际情况；（尤指）事实，真相"
-        ]
-    },
-    {
-        "name": "statistic",
-        "trans": [
-            "n. 统计数据；统计资料"
-        ]
-    },
-    {
-        "name": "data",
-        "trans": [
-            "n. 信息，数据"
-        ]
-    },
-    {
-        "name": "chart",
-        "trans": [
-            "n. 图表；示意图；曲线图"
-        ]
-    },
-    {
-        "name": "table",
-        "trans": [
-            "n. （一览）表，表格"
-        ]
-    },
-    {
-        "name": "trend",
-        "trans": [
-            "n. 趋势，趋向；倾向，动向"
-        ]
-    },
-    {
-        "name": "regularity",
-        "trans": [
-            "n. 规则;规律"
-        ]
-    },
-    {
-        "name": "section",
-        "trans": [
-            "n. 章节；部分；片段"
-        ]
-    },
-    {
-        "name": "catalogue",
-        "trans": [
-            "n. 目录"
-        ]
-    },
-    {
-        "name": "headline",
-        "trans": [
-            "n. 大字标题"
-        ]
-    },
-    {
-        "name": "bibliography",
-        "trans": [
-            "n. 参考书目，文献目录"
-        ]
-    }
+  {
+    "name": "assignment",
+    "trans": [
+      "n. 任务，作业"
+    ],
+    "usphone": "ə'saɪnmənt",
+    "ukphone": "ə'saɪnm(ə)nt",
+    "sentences": [
+      {
+        "english": "She’s gone to Italy on a special assignment.",
+        "chinese": "她去意大利执行一项特殊任务。"
+      },
+      {
+        "english": "a history assignment",
+        "chinese": "历史作业"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "任务；指定的作业",
+        "english": "a piece of work that is given to someone as part of their job"
+      }
+    ]
+  },
+  {
+    "name": "case study",
+    "trans": [
+      "N. phrase 案例研究"
+    ]
+  },
+  {
+    "name": "dissertation",
+    "trans": [
+      "n. 专题论文；学位论文"
+    ],
+    "usphone": "'dɪsɚ'teʃən",
+    "ukphone": ",dɪsə'teɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "He is currently writing a dissertation on the Somali civil war.",
+        "chinese": "他正在写一篇关于索马里内战的论文。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "(博士学位)论文，学术演讲，专题论文",
+        "english": "a long piece of writing on a particular subject, especially one written for a university degree"
+      }
+    ]
+  },
+  {
+    "name": "focus",
+    "trans": [
+      "n. 中心，焦点；v. 集中目光"
+    ],
+    "usphone": "'fokəs",
+    "ukphone": "'fəʊkəs",
+    "sentences": [
+      {
+        "english": "She tried to focus her mind on her work.",
+        "chinese": "她试图集中精神干活。"
+      },
+      {
+        "english": "He focused his blue eyes on her.",
+        "chinese": "他那蓝色的眼睛注视着她。"
+      },
+      {
+        "english": "Eggs became the focus for the food poisoning scare.",
+        "chinese": "鸡蛋成了食物中毒恐慌的焦点。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "聚焦；注视",
+        "english": "to give attention, effort, etc. to one particular subject, situation or person rather than another"
+      },
+      {
+        "pos": "n",
+        "chinese": "焦点",
+        "english": "the thing, person, situation etc that people pay special attention to"
+      }
+    ]
+  },
+  {
+    "name": "aim",
+    "trans": [
+      "n. 目标；v. 打算"
+    ],
+    "usphone": "em",
+    "ukphone": "eɪm",
+    "sentences": [
+      {
+        "english": "Denver aimed his gun but did not shoot.",
+        "chinese": "丹佛举枪瞄准，但是没有射击。"
+      },
+      {
+        "english": "My criticism wasn't aimed at you.",
+        "chinese": "我的批评不是针对你的。"
+      },
+      {
+        "english": "They are aiming to reduce unemployment by 50%.",
+        "chinese": "他们正力求使失业人数下降50%。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "瞄准；针对；致力",
+        "english": "to point or direct a weapon, a shot, a kick, etc. at sb/sth"
+      }
+    ]
+  },
+  {
+    "name": "purpose",
+    "trans": [
+      "n. 目标，意图"
+    ],
+    "usphone": "'pɝpəs",
+    "ukphone": "'pɜːpəs",
+    "sentences": [
+      {
+        "english": "The purpose of this meeting is to elect a new chairman.",
+        "chinese": "这次会议的目的是选出一位新主席。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "目的；意图",
+        "english": "the purpose of something is what it is intended to achieve"
+      }
+    ]
+  },
+  {
+    "name": "target",
+    "trans": [
+      "n. 目标，对象；v. 以…为目标"
+    ],
+    "usphone": "'tɑrɡɪt",
+    "ukphone": "'tɑːgɪt",
+    "sentences": [
+      {
+        "english": "There is no target date for completion of the new project.",
+        "chinese": "这个新的项目何时完工没有预定日期。"
+      },
+      {
+        "english": "The government may fail to meet (= achieve ) its target of recycling 25% of domestic waste.",
+        "chinese": "政府可能达不到回收利用25%的生活垃圾的目标。"
+      },
+      {
+        "english": "Jiang set annual growth targets of 8–9%.",
+        "chinese": "江确定了8%至9%的年增长目标。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "目标",
+        "english": "something that you are trying to achieve, such as a total, an amount, or a time"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 把…作为目标； 瞄准",
+        "english": "to make something have an effect on a particular limited group or area"
+      }
+    ]
+  },
+  {
+    "name": "article",
+    "trans": [
+      "n. 文章"
+    ],
+    "usphone": "'ɑrtɪkl",
+    "ukphone": "'ɑːtɪk(ə)l",
+    "sentences": [
+      {
+        "english": "The paper’s leading article (=  the main article  ) described the government as weak.",
+        "chinese": "该报社论称政府软弱。"
+      },
+      {
+        "english": "newspaper articles",
+        "chinese": "报纸上的文章"
+      },
+      {
+        "english": "household articles",
+        "chinese": "家居用品"
+      },
+      {
+        "english": "Article 1 of the constitution guarantees freedom of religion.",
+        "chinese": "宪法的第一条保障宗教信仰自由。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "文章；物品；条款",
+        "english": "a piece of writing about a particular subject in a newspaper or magazine"
+      }
+    ]
+  },
+  {
+    "name": "editorial",
+    "trans": [
+      "n. 社评"
+    ],
+    "usphone": ",ɛdɪ'tɔrɪəl",
+    "ukphone": "edɪ'tɔːrɪəl",
+    "sentences": [
+      {
+        "english": "an editorial assistant",
+        "chinese": "编辑助理"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "编辑的；社论的",
+        "english": "relating to the preparation of a newspaper, book, television programme etc for printing or broadcasting"
+      },
+      {
+        "pos": "n",
+        "chinese": "社论",
+        "english": "a piece of writing in a newspaper that gives the editor’s opinion about something, rather than reporting facts"
+      }
+    ]
+  },
+  {
+    "name": "interview",
+    "trans": [
+      "n. 面试，面谈；v. 采访"
+    ],
+    "usphone": "'ɪntɚvju",
+    "ukphone": "'intəvju:",
+    "sentences": [
+      {
+        "english": "a portfolio of work presented at interview",
+        "chinese": "在面试时呈递的工作成果样本"
+      },
+      {
+        "english": "a police interview",
+        "chinese": "警方问讯"
+      },
+      {
+        "english": "We’re interviewing six candidates for the job.",
+        "chinese": "这份工作我们要面试六名申请人。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "面谈（试）；会见；",
+        "english": "a formal meeting at which someone is asked questions in order to find out whether they are suitable for a job, course of study etc"
+      },
+      {
+        "pos": "v",
+        "chinese": "采访 ；面试",
+        "english": "to ask someone questions during an interview"
+      }
+    ]
+  },
+  {
+    "name": "questionnaire",
+    "trans": [
+      "n. 问卷；情况调查表"
+    ],
+    "usphone": "ˌkwɛstʃənˈɛr",
+    "ukphone": "ˌkwestʃəˈneə(r)",
+    "sentences": [
+      {
+        "english": "Teachers will be asked to fill in a questionnaire.",
+        "chinese": "教师们将被要求填写一份调查问卷。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "调查表，征求意见表",
+        "english": "a written set of questions which you give to a large number of people in order to collect information"
+      }
+    ]
+  },
+  {
+    "name": "fact",
+    "trans": [
+      "n. 现实，实际情况；（尤指）事实，真相"
+    ],
+    "usphone": "fækt",
+    "ukphone": "fækt",
+    "sentences": [
+      {
+        "english": "First of all, we need to know the facts of the case.",
+        "chinese": "首先，我们需要了解案子的相关事实。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "事实；实际，实情",
+        "english": "a piece of information that is known to be true"
+      }
+    ]
+  },
+  {
+    "name": "statistic",
+    "trans": [
+      "n. 统计数据；统计资料"
+    ],
+    "usphone": "stə'tɪstɪk",
+    "ukphone": "stə'tɪstɪk",
+    "sentences": [
+      {
+        "english": "They say that one sad story is tragic, but a thousand of them is a statistic.",
+        "chinese": "他们说一个悲惨的故事是悲剧，但一千个这样的故事就只是一个统计了。"
+      },
+      {
+        "english": "You can track your time many different ways but some of the best apps that I have found for Android and iPhone are great when you are on the run and need to get a quick statistic to use for planning.",
+        "chinese": "你可以通过许多不同的方式来追踪你的时间，但是我发现当你正在进行或者为了制订计划需要快速统计时，一些适用于安卓手机或者苹果手机的应用软件十分有效。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "统计的，统计学的",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "统计数值",
+        "english": "a single number which represents a fact or measurement"
+      }
+    ]
+  },
+  {
+    "name": "data",
+    "trans": [
+      "n. 信息，数据"
+    ],
+    "usphone": "'detə",
+    "ukphone": "'deɪtə",
+    "sentences": [
+      {
+        "english": "The research involves collecting data from two random samples.",
+        "chinese": "该项研究需要从两个随机样本里收集资料。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "数据;",
+        "english": "information or facts"
+      },
+      {
+        "pos": "n",
+        "chinese": "资料",
+        "english": "information or facts"
+      }
+    ]
+  },
+  {
+    "name": "chart",
+    "trans": [
+      "n. 图表；示意图；曲线图"
+    ],
+    "usphone": "tʃɑrt",
+    "ukphone": "tʃɑːt",
+    "sentences": [
+      {
+        "english": "a chart showing last year’s sales",
+        "chinese": "显示去年销售情况的一份图表"
+      },
+      {
+        "english": "a weather chart",
+        "chinese": "天气图"
+      },
+      {
+        "english": "the theatre’s seating chart",
+        "chinese": "剧场的座位图"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "图表；航海图",
+        "english": "information that is clearly arranged in the form of a simple picture, set of figures,  graph  etc, or a piece of paper with this information on it"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 用图表表示， 在图上表示",
+        "english": "if a record charts, it enters the weekly list of the most popular records"
+      }
+    ]
+  },
+  {
+    "name": "table",
+    "trans": [
+      "n. （一览）表，表格"
+    ],
+    "usphone": "'tebl",
+    "ukphone": "'teɪb(ə)l",
+    "sentences": [
+      {
+        "english": "The food was served on long tables.",
+        "chinese": "食物放在长餐桌上供应。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "桌子；表格；平地层",
+        "english": "a piece of furniture with a flat top supported by legs"
+      },
+      {
+        "pos": "v",
+        "chinese": "制表；搁置；嵌合",
+        "english": "to leave a bill etc to be discussed or dealt with in the future"
+      },
+      {
+        "pos": "adj",
+        "chinese": "桌子的",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "trend",
+    "trans": [
+      "n. 趋势，趋向；倾向，动向"
+    ],
+    "usphone": "trɛnd",
+    "ukphone": "trend",
+    "sentences": [
+      {
+        "english": "The current trend is towards more part-time employment.",
+        "chinese": "当前的趋势是雇用更多的兼职人员。"
+      },
+      {
+        "english": "the general trend towards the centralization of political power",
+        "chinese": "政治权力集中化的普遍趋势"
+      },
+      {
+        "english": "A disturbing trend is that victims of violence are getting younger.",
+        "chinese": "一个令人担心的趋势是，暴力行为的受害者越来越年轻。"
+      },
+      {
+        "english": "The growing trend is for single mothers to bring up children by themselves.",
+        "chinese": "单身母亲独自抚养孩子的趋势在上升。"
+      },
+      {
+        "english": "Even so, the underlying trend is positive.",
+        "chinese": "尽管如此，基本趋势仍是乐观的。"
+      },
+      {
+        "english": "national and international economic trends",
+        "chinese": "国内和国际的经济趋势"
+      },
+      {
+        "english": "the downward trend in the price of gold",
+        "chinese": "黄金价格的下滑势头"
+      },
+      {
+        "english": "Successive presidents have tried to reverse this trend , but without success.",
+        "chinese": "连续几任总统都试图扭转这一趋势，但均未成功。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": "伸向；倾向",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": " 倾向",
+        "english": "a general tendency in the way a situation is changing or developing"
+      }
+    ]
+  },
+  {
+    "name": "regularity",
+    "trans": [
+      "n. 规则;规律"
+    ],
+    "usphone": "ˌrɛɡjəˈlærətɪ",
+    "ukphone": "reɡjʊ'lærətɪ",
+    "sentences": [
+      {
+        "english": "the regularity of his features",
+        "chinese": "他端正的五官"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "规则性；整齐；正规；匀称",
+        "english": "when something is arranged in an even way"
+      }
+    ]
+  },
+  {
+    "name": "section",
+    "trans": [
+      "n. 章节；部分；片段"
+    ],
+    "usphone": "'sɛkʃən",
+    "ukphone": "'sekʃ(ə)n",
+    "sentences": [
+      {
+        "english": "The plane’s tail section was found in a cornfield.",
+        "chinese": "飞机的尾部在玉米田里找到了。"
+      },
+      {
+        "english": "the smoking section (= where you can smoke )",
+        "chinese": "吸烟区"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "部分",
+        "english": "one of the parts that something such as an object or place is divided into"
+      }
+    ]
+  },
+  {
+    "name": "catalogue",
+    "trans": [
+      "n. 目录"
+    ],
+    "usphone": "'kætəlɔɡ",
+    "ukphone": "'kæt(ə)lɒg",
+    "sentences": [
+      {
+        "english": "a mail order catalog",
+        "chinese": "邮购商品目录"
+      },
+      {
+        "english": "an online catalogue",
+        "chinese": "网上目录"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "目录；（美）大学情况一览",
+        "english": "a complete list of things that you can look at, buy, or use, for example in a library or at an art show"
+      },
+      {
+        "pos": "v",
+        "chinese": "把…编入目录",
+        "english": "to make a complete list of all the things in a group"
+      }
+    ]
+  },
+  {
+    "name": "headline",
+    "trans": [
+      "n. 大字标题"
+    ],
+    "usphone": "'hɛdlaɪn",
+    "ukphone": "'hedlaɪn",
+    "sentences": [
+      {
+        "english": "a paper carrying the front-page headline: ‘Space Aliens meet with President’",
+        "chinese": "头版报道题为“天外来客会见总统”的报纸"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "大标题；内容提要；栏外标题；头版头条新闻",
+        "english": "the title of a newspaper report, which is printed in large letters above the report"
+      },
+      {
+        "pos": "v",
+        "chinese": "给…加标题；使成为注意中心；大力宣传",
+        "english": "to give a headline to an article or story"
+      }
+    ]
+  },
+  {
+    "name": "bibliography",
+    "trans": [
+      "n. 参考书目，文献目录"
+    ],
+    "usphone": ",bɪblɪ'ɑɡrəfi",
+    "ukphone": "ˌbɪbli'ɒgrəfi",
+    "sentences": [
+      {
+        "english": "At the end of this chapter there is a select bibliography of useful books.",
+        "chinese": "本章末尾附着有用书籍的精选书目。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 参考书目； 书目",
+        "english": "a list of all the books and articles used in preparing a piece of writing"
+      }
+    ]
+  }
 ]

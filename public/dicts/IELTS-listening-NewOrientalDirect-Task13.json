@@ -1,296 +1,956 @@
 [
-    {
-        "name": "tour",
-        "trans": [
-            "n. 参观；游历，观光"
-        ]
-    },
-    {
-        "name": "tourism",
-        "trans": [
-            "n. 旅游业"
-        ]
-    },
-    {
-        "name": "travel",
-        "trans": [
-            "v. （通常指长途）旅行"
-        ]
-    },
-    {
-        "name": "trip",
-        "trans": [
-            "n. （通常指短途的）旅行，行程"
-        ]
-    },
-    {
-        "name": "self-drive tour",
-        "trans": [
-            "n. 自驾游"
-        ]
-    },
-    {
-        "name": "cruise",
-        "trans": [
-            "n. 航游，乘船游览"
-        ]
-    },
-    {
-        "name": "excursion",
-        "trans": [
-            "n. （常指结伴同行的）远足，短途旅行"
-        ]
-    },
-    {
-        "name": "tourist",
-        "trans": [
-            "n. 旅游者，游客"
-        ]
-    },
-    {
-        "name": "traveler",
-        "trans": [
-            "n. 旅行者；游客"
-        ]
-    },
-    {
-        "name": "visitor",
-        "trans": [
-            "n. 访问者；参观者；游客"
-        ]
-    },
-    {
-        "name": "holiday maker",
-        "trans": [
-            "n. 度假者"
-        ]
-    },
-    {
-        "name": "tour guide",
-        "trans": [
-            "n. 导游"
-        ]
-    },
-    {
-        "name": "accommodation",
-        "trans": [
-            "n. 住处；工作场所；停留处"
-        ]
-    },
-    {
-        "name": "car hire",
-        "trans": [
-            "n. 汽车租赁"
-        ]
-    },
-    {
-        "name": "car rental",
-        "trans": [
-            "n. 汽车租赁"
-        ]
-    },
-    {
-        "name": "hire a car",
-        "trans": [
-            "v. 租用汽车"
-        ]
-    },
-    {
-        "name": "rent a car",
-        "trans": [
-            "v. 租车"
-        ]
-    },
-    {
-        "name": "flight",
-        "trans": [
-            "n. 空中航行，航程"
-        ]
-    },
-    {
-        "name": "meal",
-        "trans": [
-            "n. 进餐；餐，一顿饭"
-        ]
-    },
-    {
-        "name": "book",
-        "trans": [
-            "n. (纸版或电子版的)书"
-        ]
-    },
-    {
-        "name": "booking",
-        "trans": [
-            "n. 预订；预约"
-        ]
-    },
-    {
-        "name": "reserve",
-        "trans": [
-            "v. 把…专门留给；把…留作；保留"
-        ]
-    },
-    {
-        "name": "reservation",
-        "trans": [
-            "n. 预订；预约"
-        ]
-    },
-    {
-        "name": "travel agency",
-        "trans": [
-            "n. 旅行社"
-        ]
-    },
-    {
-        "name": "in advance",
-        "trans": [
-            "adv. 提前"
-        ]
-    },
-    {
-        "name": "available",
-        "trans": [
-            "adj. 可获得的；可用的"
-        ]
-    },
-    {
-        "name": "cancel",
-        "trans": [
-            "v. 取消；终止；撤销"
-        ]
-    },
-    {
-        "name": "cancellation",
-        "trans": [
-            "n. 取消"
-        ]
-    },
-    {
-        "name": "full refund",
-        "trans": [
-            "n. 全额退款"
-        ]
-    },
-    {
-        "name": "cost",
-        "trans": [
-            "n. 价格；费用；成本"
-        ]
-    },
-    {
-        "name": "charge",
-        "trans": [
-            "v. （尤指对某一服务或活动）收费，要价，开价"
-        ]
-    },
-    {
-        "name": "extra charge",
-        "trans": [
-            "n. 额外费用"
-        ]
-    },
-    {
-        "name": "adult fare",
-        "trans": [
-            "n. 成人票价"
-        ]
-    },
-    {
-        "name": "child fare",
-        "trans": [
-            "n. 儿童票"
-        ]
-    },
-    {
-        "name": "cash",
-        "trans": [
-            "n. 现金；现款"
-        ]
-    },
-    {
-        "name": "credit card",
-        "trans": [
-            "n. 信用卡"
-        ]
-    },
-    {
-        "name": "brochure",
-        "trans": [
-            "n. 小册子；资料（或广告）手册"
-        ]
-    },
-    {
-        "name": "map",
-        "trans": [
-            "n. 地图"
-        ]
-    },
-    {
-        "name": "passport",
-        "trans": [
-            "n. 护照"
-        ]
-    },
-    {
-        "name": "visa",
-        "trans": [
-            "n. 签证"
-        ]
-    },
-    {
-        "name": "driving license",
-        "trans": [
-            "n. 驾驶证"
-        ]
-    },
-    {
-        "name": "first-aid kit",
-        "trans": [
-            "n. 急救箱"
-        ]
-    },
-    {
-        "name": "repair kit",
-        "trans": [
-            "n. 修理包"
-        ]
-    },
-    {
-        "name": "helmet",
-        "trans": [
-            "n. 头盔，安全帽"
-        ]
-    },
-    {
-        "name": "life jacket",
-        "trans": [
-            "n. 救生衣"
-        ]
-    },
-    {
-        "name": "swimming costume",
-        "trans": [
-            "n. 泳衣"
-        ]
-    },
-    {
-        "name": "sun cream",
-        "trans": [
-            "n. 防晒霜"
-        ]
-    },
-    {
-        "name": "tent",
-        "trans": [
-            "n. 帐篷"
-        ]
-    },
-    {
-        "name": "sleeping bag",
-        "trans": [
-            "n. 睡袋"
-        ]
-    }
+  {
+    "name": "tour",
+    "trans": [
+      "n. 参观；游历，观光"
+    ],
+    "usphone": "tʊr",
+    "ukphone": "tuə",
+    "sentences": [
+      {
+        "english": "We met on a coach tour in Italy.",
+        "chinese": "我们是在意大利乘长途客车旅游时相识的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n&vi",
+        "chinese": " 旅行， 游历",
+        "english": "a journey for pleasure, during which you visit several different towns, areas etc"
+      }
+    ]
+  },
+  {
+    "name": "tourism",
+    "trans": [
+      "n. 旅游业"
+    ],
+    "usphone": "'tʊrɪzəm",
+    "ukphone": "'tʊərɪz(ə)m",
+    "sentences": [
+      {
+        "english": "The country depends on tourism for much of its income.",
+        "chinese": "该国的大部分收入依靠旅游业。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "旅游业；游览",
+        "english": "the business of providing things for people to do, places for them to stay etc while they are on holiday"
+      }
+    ]
+  },
+  {
+    "name": "travel",
+    "trans": [
+      "v. （通常指长途）旅行"
+    ],
+    "usphone": "'trævl",
+    "ukphone": "'trævl",
+    "sentences": [
+      {
+        "english": "Light travels faster than sound.",
+        "chinese": "光比声音传播得快。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": " 旅行； 行进； 被传送， 被传播； 走过， 驶过",
+        "english": "to move at a particular speed or in a particular direction"
+      },
+      {
+        "pos": "n",
+        "chinese": "旅行，游历",
+        "english": "the activity of travelling"
+      }
+    ]
+  },
+  {
+    "name": "trip",
+    "trans": [
+      "n. （通常指短途的）旅行，行程"
+    ],
+    "usphone": "trɪp",
+    "ukphone": "trɪp",
+    "sentences": [
+      {
+        "english": "Two lucky employees won a round-the-world trip.",
+        "chinese": "两名幸运的雇员赢得一次环游世界的机会。"
+      },
+      {
+        "english": "It’s an 80-mile round trip (= a journey to a place and back again ) to Exeter.",
+        "chinese": "到埃克塞特往返有80英里。"
+      },
+      {
+        "english": "I’m afraid you’ve had a wasted trip (= a trip in which you do not achieve your purpose ) . Mr Burgess has already left.",
+        "chinese": "恐怕你是白来一趟了，伯吉斯先生已经走了。"
+      },
+      {
+        "english": "He was unable to make the trip to accept the award.",
+        "chinese": "他无法前去领奖。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "旅游；旅行，出行",
+        "english": "a visit to a place that involves a journey, for pleasure or a particular purpose"
+      },
+      {
+        "pos": "v",
+        "chinese": "绊；绊倒",
+        "english": "to hit something with your foot by accident so that you fall or almost fall"
+      }
+    ]
+  },
+  {
+    "name": "self-drive tour",
+    "trans": [
+      "n. 自驾游"
+    ]
+  },
+  {
+    "name": "cruise",
+    "trans": [
+      "n. 航游，乘船游览"
+    ],
+    "usphone": "krʊz",
+    "ukphone": "kruːz",
+    "sentences": [
+      {
+        "english": "We were cruising along at 50 miles per hour.",
+        "chinese": "我们以每小时50英里的速度平稳行驶。"
+      },
+      {
+        "english": "We fly at a cruising speed of 500 mph.",
+        "chinese": "我们以每小时500英里的巡航速度平稳飞行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "巡航；以节省燃料的速度前进",
+        "english": "to move at a steady speed in a car, aircraft etc"
+      },
+      {
+        "pos": "n",
+        "chinese": "乘船巡游",
+        "english": "a holiday on a large ship"
+      }
+    ]
+  },
+  {
+    "name": "excursion",
+    "trans": [
+      "n. （常指结伴同行的）远足，短途旅行"
+    ],
+    "usphone": "ɪk'skɝʒn",
+    "ukphone": "ɪk'skɜːʃ(ə)n; ek-",
+    "sentences": [
+      {
+        "english": "They've gone on an excursion to York.",
+        "chinese": "他们到约克旅游去了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "远足；短途旅行",
+        "english": "a short journey made for pleasure, especially one that has been organized for a group of people"
+      }
+    ]
+  },
+  {
+    "name": "tourist",
+    "trans": [
+      "n. 旅游者，游客"
+    ],
+    "usphone": "'tʊrɪst",
+    "ukphone": "'tʊərɪst",
+    "sentences": [
+      {
+        "english": "Cambridge is always full of tourists in the summer.",
+        "chinese": "剑桥在夏季总是挤满了游客。"
+      },
+      {
+        "english": "The Statue of Liberty is a major tourist attraction .",
+        "chinese": "自由女神像是主要的旅游景点。"
+      },
+      {
+        "english": "What effect will this have on the local tourist industry ?",
+        "chinese": "这对当地的旅游业会有什么影响？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "旅游者，观光者",
+        "english": "someone who is visiting a place for pleasure on holiday"
+      }
+    ]
+  },
+  {
+    "name": "traveler",
+    "trans": [
+      "n. 旅行者；游客"
+    ],
+    "usphone": "'trævlɚ",
+    "ukphone": "'trævələ",
+    "sentences": [
+      {
+        "english": "The message is the traveler, moving from one specific airport to another specific airport.",
+        "chinese": "消息是这个旅行者，要从一个特定的机场到另一个特定的机场。"
+      },
+      {
+        "english": "By thus sweeping over centuries and minds, by miming man as he can be and as he is, the actor has much in common with that other absurd individual, the traveler.",
+        "chinese": "就这样，演员不知经历了多少世纪，横跨过多少心智，模仿着他们的所能与所是，渐渐的，他和那个荒谬的个体，那个旅行者，有了许多共同之处。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "旅行者",
+        "english": "a person who is travelling or who often travels"
+      }
+    ]
+  },
+  {
+    "name": "visitor",
+    "trans": [
+      "n. 访问者；参观者；游客"
+    ],
+    "usphone": "'vɪzɪtɚ",
+    "ukphone": "'vɪzɪtə",
+    "sentences": [
+      {
+        "english": "Times Square attracts more than 30 million visitors annually.",
+        "chinese": "时代广场每年吸引三千多万游客。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "访问者，参观者；视察者；候鸟",
+        "english": "someone who comes to visit a place or a person"
+      }
+    ]
+  },
+  {
+    "name": "holiday maker",
+    "trans": [
+      "n. 度假者"
+    ]
+  },
+  {
+    "name": "tour guide",
+    "trans": [
+      "n. 导游"
+    ]
+  },
+  {
+    "name": "accommodation",
+    "trans": [
+      "n. 住处；工作场所；停留处"
+    ],
+    "usphone": "ə,kɑmə'deʃən",
+    "ukphone": "əˌkɒmə'deɪʃn",
+    "sentences": [
+      {
+        "english": "The price for the holiday includes flights and accommodation.",
+        "chinese": "度假的价格包括机票和住宿。"
+      },
+      {
+        "english": "living accommodations for the crews",
+        "chinese": "船员的起居舱"
+      },
+      {
+        "english": "travel and hotel accommodations",
+        "chinese": "旅行及酒店住宿"
+      },
+      {
+        "english": "{\"COLLOINEXA\":[\"rented accommodation\"]}",
+        "chinese": "租用的住处"
+      },
+      {
+        "english": "secure accommodation for young offenders",
+        "chinese": "严密看管的少年犯囚室"
+      },
+      {
+        "english": "Universities have to provide student accommodation for first-year students.",
+        "chinese": "大学必须为一年级生提供学生宿舍。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 住处； 膳宿",
+        "english": "a place for someone to stay, live, or work"
+      }
+    ]
+  },
+  {
+    "name": "car hire",
+    "trans": [
+      "n. 汽车租赁"
+    ]
+  },
+  {
+    "name": "car rental",
+    "trans": [
+      "n. 汽车租赁"
+    ]
+  },
+  {
+    "name": "hire a car",
+    "trans": [
+      "v. 租用汽车"
+    ]
+  },
+  {
+    "name": "rent a car",
+    "trans": [
+      "v. 租车"
+    ]
+  },
+  {
+    "name": "flight",
+    "trans": [
+      "n. 空中航行，航程"
+    ],
+    "usphone": "flaɪt",
+    "ukphone": "flaɪt",
+    "sentences": [
+      {
+        "english": "He immediately booked a flight to Toulouse.",
+        "chinese": "他当即就订了去图卢兹的航班。"
+      },
+      {
+        "english": "In 1968, the first supersonic airliner took flight (= began flying ) .",
+        "chinese": "1968年，首架超音速客机飞上天空。"
+      },
+      {
+        "english": "When the alarm sounded, the whole gang took flight.",
+        "chinese": "警报响起，一帮人全逃跑了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "航班；飞行；逃跑",
+        "english": "a journey in a plane or space vehicle, or the plane or vehicle that is making the journey"
+      }
+    ]
+  },
+  {
+    "name": "meal",
+    "trans": [
+      "n. 进餐；餐，一顿饭"
+    ],
+    "usphone": "mil",
+    "ukphone": "miːl",
+    "sentences": [
+      {
+        "english": "We must have a meal together some time.",
+        "chinese": "我们一定要找个时间一起吃顿饭。"
+      },
+      {
+        "english": "Dinner is the main meal of the day for most people.",
+        "chinese": "晚饭是大多数人一天中的主餐。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "膳食，一餐",
+        "english": "an occasion when you eat food, for example breakfast or dinner, or the food that you eat on that occasion"
+      }
+    ]
+  },
+  {
+    "name": "book",
+    "trans": [
+      "n. (纸版或电子版的)书"
+    ],
+    "usphone": "bʊk",
+    "ukphone": "bʊk",
+    "sentences": [
+      {
+        "english": "I’ve just started reading a book by Graham Greene.",
+        "chinese": "我刚开始看格雷厄姆·格林写的一本书。"
+      },
+      {
+        "english": "a cookery book",
+        "chinese": "烹饪书"
+      },
+      {
+        "english": "Have you booked a holiday this year?",
+        "chinese": "你今年有没有预订去度假？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "书，书籍",
+        "english": "a set of printed pages that are held together in a cover so that you can read them"
+      },
+      {
+        "pos": "v",
+        "chinese": "预定",
+        "english": "to make arrangements to stay in a place, eat in a restaurant, go to a theatre etc at a particular time in the future"
+      }
+    ]
+  },
+  {
+    "name": "booking",
+    "trans": [
+      "n. 预订；预约"
+    ],
+    "usphone": "'bʊkɪŋ",
+    "ukphone": "'bʊkɪŋ",
+    "sentences": [
+      {
+        "english": "bookings on cruise ships",
+        "chinese": "预订游船船位"
+      },
+      {
+        "english": "I made a booking for two double rooms.",
+        "chinese": "我预订了两个双人房间。"
+      },
+      {
+        "english": "I’m calling to confirm my booking (=  say definitely that I want to travel etc  ) .",
+        "chinese": "我打电话是想确认一下我的预订。"
+      },
+      {
+        "english": "If you cancel your booking , there will be a small charge.",
+        "chinese": "如果你取消预订，就要付一小额费用。"
+      },
+      {
+        "english": "Places on the course are limited and advance booking is essential.",
+        "chinese": "课程名额有限，必须预订。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "预订；预约；演出契约",
+        "english": "an arrangement to travel by train, use a hotel room etc at a particular time in the future"
+      }
+    ]
+  },
+  {
+    "name": "reserve",
+    "trans": [
+      "v. 把…专门留给；把…留作；保留"
+    ],
+    "usphone": "rɪ'zɝv",
+    "ukphone": "rɪ'zɜːv",
+    "sentences": [
+      {
+        "english": "Do you have to reserve tickets in advance?",
+        "chinese": "你必须预先订票吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vt",
+        "chinese": "保留，留存；预订",
+        "english": "to arrange for a place in a hotel, restaurant, plane etc to be kept for you to use at a particular time in the future"
+      },
+      {
+        "pos": "n",
+        "chinese": " 储备； 保留； 拘谨， 矜持； 替补队员， 后备部队； 自然保护区",
+        "english": "a supply of something kept to be used if it is needed"
+      }
+    ]
+  },
+  {
+    "name": "reservation",
+    "trans": [
+      "n. 预订；预约"
+    ],
+    "usphone": ",rɛzɚ'veʃən",
+    "ukphone": "ˌrezə'veɪʃn",
+    "sentences": [
+      {
+        "english": "a dinner reservation",
+        "chinese": "预订晚餐"
+      },
+      {
+        "english": "Customers are advised to make seat reservations well in advance.",
+        "chinese": "建议顾客提前订座。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "预定",
+        "english": "an arrangement which you make so that a place in a hotel, restaurant, plane etc is kept for you at a particular time in the future"
+      }
+    ]
+  },
+  {
+    "name": "travel agency",
+    "trans": [
+      "n. 旅行社"
+    ]
+  },
+  {
+    "name": "in advance",
+    "trans": [
+      "adv. 提前"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "If there is any change about the time of the meeting, please notify us in advance.",
+        "chinese": "开会时间如有变， 请提前告诉我们。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "提前",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "available",
+    "trans": [
+      "adj. 可获得的；可用的"
+    ],
+    "usphone": "ə'veləbl",
+    "ukphone": "ə'veiləbl",
+    "sentences": [
+      {
+        "english": "Tickets are available from the box office.",
+        "chinese": "售票处有票出售。"
+      },
+      {
+        "english": "Meetings were held to update employees as soon as new information became available .",
+        "chinese": "一有新的信息就开会告诉员工。"
+      },
+      {
+        "english": "Further building can continue when money is made available .",
+        "chinese": "有了资金就可以继续进一步的施工。"
+      },
+      {
+        "english": "Every available space on the wall was covered in pictures.",
+        "chinese": "墙上每一个可用的地方都挂上了画。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "可利用的，现有的；可获得的",
+        "english": "something that is available is able to be used or can easily be bought or found"
+      }
+    ]
+  },
+  {
+    "name": "cancel",
+    "trans": [
+      "v. 取消；终止；撤销"
+    ],
+    "usphone": "'kænsl",
+    "ukphone": "'kænsl",
+    "sentences": [
+      {
+        "english": "Our flight was cancelled.",
+        "chinese": "我们的航班取消了。"
+      },
+      {
+        "english": "I’m afraid I’ll have to cancel our meeting tomorrow.",
+        "chinese": "恐怕我得取消我们明天的会议。"
+      },
+      {
+        "english": "You’ll just have to ring John and cancel.",
+        "chinese": "你只能打电话给约翰取消了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "取消",
+        "english": "to decide that something that was officially planned will not happen"
+      }
+    ]
+  },
+  {
+    "name": "cancellation",
+    "trans": [
+      "n. 取消"
+    ],
+    "usphone": ",kænsə'leʃən",
+    "ukphone": ",kænsə'leɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Rail passengers are fed up with cancellations and delays.",
+        "chinese": "火车乘客厌烦取消班次和误点的问题。"
+      },
+      {
+        "english": "Bad weather led to the cancellation of the game.",
+        "chinese": "天气不好导致比赛取消了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "取消；删除",
+        "english": "a decision that an event that was planned will not happen"
+      }
+    ]
+  },
+  {
+    "name": "full refund",
+    "trans": [
+      "n. 全额退款"
+    ]
+  },
+  {
+    "name": "cost",
+    "trans": [
+      "n. 价格；费用；成本"
+    ],
+    "usphone": "kɔst",
+    "ukphone": "kɒst",
+    "sentences": [
+      {
+        "english": "I offered to pay the cost of the taxi.",
+        "chinese": "我提出支付出租车费。"
+      },
+      {
+        "english": "Insurance to cover the cost of a funeral is possible.",
+        "chinese": "可以用保险支付葬礼费用。"
+      },
+      {
+        "english": "This doesn’t include the cost of repairing the damage.",
+        "chinese": "这不包括修理破损的费用。"
+      },
+      {
+        "english": "the terrible cost of the war in death and suffering",
+        "chinese": "这场战争造成的死亡与苦难的惨重代价"
+      },
+      {
+        "english": "low cost housing",
+        "chinese": "低成本住宅"
+      },
+      {
+        "english": "the high cost of production",
+        "chinese": "很高的生产成本"
+      },
+      {
+        "english": "A cassette/radio is included at no extra cost .",
+        "chinese": "附送一台卡式收录机。"
+      },
+      {
+        "english": "The funds will just cover the museum’s running costs .",
+        "chinese": "这些资金只够支付博物馆的运转费用。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "价格；代价；成本",
+        "english": "the amount of money that you have to pay in order to buy, do, or produce something"
+      }
+    ]
+  },
+  {
+    "name": "charge",
+    "trans": [
+      "v. （尤指对某一服务或活动）收费，要价，开价"
+    ],
+    "usphone": "tʃɑrdʒ",
+    "ukphone": "tʃɑːdʒ",
+    "sentences": [
+      {
+        "english": "Leave the battery on charge all night.",
+        "chinese": "让电池充一晚上的电"
+      },
+      {
+        "english": "Please charge your glasses and drink a toast to the bride and groom!",
+        "chinese": "请各位斟满酒杯向新娘、新郎敬酒！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "负荷；充电",
+        "english": "electricity that is put into a piece of electrical equipment such as a battery"
+      },
+      {
+        "pos": "v",
+        "chinese": "装满",
+        "english": "to fill a glass"
+      }
+    ]
+  },
+  {
+    "name": "extra charge",
+    "trans": [
+      "n. 额外费用"
+    ]
+  },
+  {
+    "name": "adult fare",
+    "trans": [
+      "n. 成人票价"
+    ]
+  },
+  {
+    "name": "child fare",
+    "trans": [
+      "n. 儿童票"
+    ]
+  },
+  {
+    "name": "cash",
+    "trans": [
+      "n. 现金；现款"
+    ],
+    "usphone": "kæʃ",
+    "ukphone": "kæʃ",
+    "sentences": [
+      {
+        "english": "Cash was taken during a burglary of the apartment.",
+        "chinese": "在一次公寓盗窃案中现金被盗。"
+      },
+      {
+        "english": "There are similar charges if you want to cash a cheque or withdraw money at a branch other than your own.",
+        "chinese": "如果你在其他银行兑现支票或支取现金，将会产生差不多的手续费。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "现金，现款",
+        "english": "money in the form of coins or notes rather than cheques,  credit card s  etc"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 把…兑现",
+        "english": "If you cash a cheque, you exchange it at a bank for the amount of money that it is worth"
+      }
+    ]
+  },
+  {
+    "name": "credit card",
+    "trans": [
+      "n. 信用卡"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "We accept all major credit cards.",
+        "chinese": "我们接受所有主要的信用卡。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "信用卡",
+        "english": "a small plastic card that you use to buy goods or services and pay for them later"
+      }
+    ]
+  },
+  {
+    "name": "brochure",
+    "trans": [
+      "n. 小册子；资料（或广告）手册"
+    ],
+    "usphone": "bro'ʃʊr",
+    "ukphone": "'brəʊʃə; brɒ'ʃʊə",
+    "sentences": [
+      {
+        "english": "a holiday brochure",
+        "chinese": "度假手册"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "手册，小册子",
+        "english": "a thin book giving information or advertising something"
+      }
+    ]
+  },
+  {
+    "name": "map",
+    "trans": [
+      "n. 地图"
+    ],
+    "usphone": "mæp",
+    "ukphone": "mæp",
+    "sentences": [
+      {
+        "english": "He spent the next fifteen years mapping the Isle of Anglesey.",
+        "chinese": "他在后来的十五年里绘制了安格尔西岛的地图。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "映射；计划；绘制地图；确定基因在染色体中的位置",
+        "english": "to make a map of a particular area"
+      },
+      {
+        "pos": "n",
+        "chinese": "地图；示意图；染色体图",
+        "english": "a drawing of a particular area, for example a city or country, which shows its main features, such as its roads, rivers, mountains etc"
+      }
+    ]
+  },
+  {
+    "name": "passport",
+    "trans": [
+      "n. 护照"
+    ],
+    "usphone": "'pæspɔrt",
+    "ukphone": "'pɑːspɔːt",
+    "sentences": [
+      {
+        "english": "I have an Irish passport.",
+        "chinese": "我持爱尔兰护照。"
+      },
+      {
+        "english": "They need to check that your passport is in order.",
+        "chinese": "他们要检查一下你的护照是否有效。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "护照",
+        "english": "a small official document that you get from your government, that proves who you are, and which you need in order to leave your country and enter other countries"
+      }
+    ]
+  },
+  {
+    "name": "visa",
+    "trans": [
+      "n. 签证"
+    ],
+    "usphone": "'vizə",
+    "ukphone": "'viːzə",
+    "sentences": [
+      {
+        "english": "I was still in New York, trying to get a visa to visit Russia.",
+        "chinese": "我仍在纽约，正在办理去俄罗斯的签证。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "签证",
+        "english": "an official mark put on your passport that gives you permission to temporarily enter or leave a foreign country"
+      },
+      {
+        "pos": "v",
+        "chinese": "签发签证",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "driving license",
+    "trans": [
+      "n. 驾驶证"
+    ]
+  },
+  {
+    "name": "first-aid kit",
+    "trans": [
+      "n. 急救箱"
+    ]
+  },
+  {
+    "name": "repair kit",
+    "trans": [
+      "n. 修理包"
+    ]
+  },
+  {
+    "name": "helmet",
+    "trans": [
+      "n. 头盔，安全帽"
+    ],
+    "usphone": "'hɛlmɪt",
+    "ukphone": "'helmɪt",
+    "sentences": [
+      {
+        "english": "The Sword split the Knight's helmet and bit him fatally.",
+        "chinese": "剑劈开了骑士的头盔并致命地刺进他。"
+      },
+      {
+        "english": "Instead, he was told the last time that she loved him, got a hug from her, put his helmet on her so that she can live, and die himself...",
+        "chinese": "相反，他叫女孩最后一次说她爱他，最后一次拥抱他，并让她戴上自己的头盔，因而，女孩可以幸免于难，而他自己却离开了人世……"
+      },
+      {
+        "english": "Without Christ we are defenseless against the Devil, but with \"the helmet of salvation\" our minds are protected by God.",
+        "chinese": "没有基督，我们无力防御魔鬼的攻击；但有救恩的头盔，我们的心思便有神的保护。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "头盔，钢盔",
+        "english": "a strong hard hat that soldiers,  motorcycle  riders, the police etc wear to protect their heads"
+      }
+    ]
+  },
+  {
+    "name": "life jacket",
+    "trans": [
+      "n. 救生衣"
+    ]
+  },
+  {
+    "name": "swimming costume",
+    "trans": [
+      "n. 泳衣"
+    ]
+  },
+  {
+    "name": "sun cream",
+    "trans": [
+      "n. 防晒霜"
+    ]
+  },
+  {
+    "name": "tent",
+    "trans": [
+      "n. 帐篷"
+    ],
+    "usphone": "tɛnt",
+    "ukphone": "tent",
+    "sentences": [
+      {
+        "english": "We looked for a flat spot where we could pitch our tent (= put up our tent ) .",
+        "chinese": "我们寻找一个平缓的地方搭帐篷。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "帐篷；住处；帷幕",
+        "english": "a shelter consisting of a sheet of cloth supported by poles and ropes, used especially for camping"
+      },
+      {
+        "pos": "v",
+        "chinese": "用帐篷遮盖；使在帐篷里住宿",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "sleeping bag",
+    "trans": [
+      "n. 睡袋"
+    ]
+  }
 ]

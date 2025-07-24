@@ -1,0 +1,58 @@
+{
+  "title": "打字练习",
+  "subtitle": "提升你的英语打字速度和准确率",
+  "wordPanel": {
+    "currentWord": "当前单词",
+    "translation": "翻译",
+    "pronunciation": "发音",
+    "phonetic": "音标",
+    "sentences": "例句",
+    "showTranslation": "显示翻译",
+    "hideTranslation": "隐藏翻译"
+  },
+  "progress": {
+    "chapter": "章节",
+    "progress": "进度",
+    "completed": "已完成",
+    "remaining": "剩余",
+    "accuracy": "准确率",
+    "speed": "速度",
+    "wpm": "词/分钟"
+  },
+  "settings": {
+    "title": "设置",
+    "pronunciation": "发音设置",
+    "keySound": "按键音效",
+    "volume": "音量",
+    "loopWord": "单词循环",
+    "times": "次数",
+    "fontSize": "字体大小",
+    "theme": "主题设置"
+  },
+  "results": {
+    "title": "练习结果",
+    "congratulations": "恭喜完成练习！",
+    "statistics": "统计信息",
+    "totalTime": "总用时",
+    "averageSpeed": "平均速度",
+    "totalAccuracy": "总准确率",
+    "errorCount": "错误次数",
+    "share": "分享成绩",
+    "continue": "继续练习",
+    "restart": "重新开始"
+  },
+  "dictionary": {
+    "select": "选择词典",
+    "chapter": "选择章节",
+    "total": "共",
+    "words": "个单词",
+    "difficulty": "难度",
+    "category": "分类"
+  },
+  "errors": {
+    "loadFailed": "加载失败",
+    "networkError": "网络错误",
+    "dictNotFound": "词典未找到",
+    "chapterNotFound": "章节未找到"
+  }
+}

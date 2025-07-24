@@ -726,7 +726,22 @@
       "Persian",
       "Парсы"
     ],
-    "notation": "پارسى"
+    "notation": "پارسى",
+    "usphone": "pɑrs",
+    "ukphone": "pɑːz",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "解析；从语法上分析",
+        "english": "to describe the grammar of a word when it is in a particular sentence, or the grammar of the whole sentence"
+      },
+      {
+        "pos": "n",
+        "chinese": "从语法上分析；分列",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "rim",
@@ -735,7 +750,27 @@
       "Roman",
       "Рим"
     ],
-    "notation": "ريم"
+    "notation": "ريم",
+    "usphone": "rɪm",
+    "ukphone": "rɪm",
+    "sentences": [
+      {
+        "english": "She looked at him over the rim of her glass.",
+        "chinese": "她沿玻璃杯口看着他。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "边, 轮缘",
+        "english": "the outside edge of something circular"
+      },
+      {
+        "pos": "v",
+        "chinese": "镶边",
+        "english": "to be around the edge of something"
+      }
+    ]
   },
   {
     "name": "rojdyestvo",
@@ -987,7 +1022,27 @@
       "abortion",
       "аборт"
     ],
-    "notation": "ابورت"
+    "notation": "ابورت",
+    "usphone": "ə'bɔrt",
+    "ukphone": "ə'bɔːt",
+    "sentences": [
+      {
+        "english": "The disease causes pregnant animals to abort.",
+        "chinese": "这种疾病会导致怀孕的动物流产。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "流产；堕胎；夭折；发育不全",
+        "english": "to deliberately end a  pregnancy  when the baby is still too young to live"
+      },
+      {
+        "pos": "n",
+        "chinese": "中止计划",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "absoliwttxe",
@@ -1716,7 +1771,26 @@
       "swear",
       "ант"
     ],
-    "notation": "انت"
+    "notation": "انت",
+    "usphone": "ænt",
+    "ukphone": "ænt",
+    "sentences": [
+      {
+        "english": "In the dry season, it could be attacked by another species of ant.",
+        "chinese": "在干燥的季节里,它可能会遭到另一个种类的蚂蚁攻击。"
+      },
+      {
+        "english": "He later learned that another entomologist in New Jersey, 260 miles away, observed a wedding flight by the same species of ant, on the same day, and at exactly the same time!",
+        "chinese": "他后来知道，在260英里以外纽泽西州另一个昆虫学家也观察到同一种类蚂蚁举行飞行婚礼的时间，竟和他记录的在同一天、同一个时刻！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "蚂蚁",
+        "english": "a small insect that lives in large groups"
+      }
+    ]
   },
   {
     "name": "aneq",
@@ -2256,7 +2330,30 @@
       "name",
       "аты"
     ],
-    "notation": "اتى"
+    "notation": "اتى",
+    "usphone": "ɛt; et",
+    "ukphone": "et; eit",
+    "sentences": [
+      {
+        "english": "The boy ate several dishfuls of ice cream.",
+        "chinese": "那小男孩吃了好几满盘冰淇淋。"
+      },
+      {
+        "english": "They cut the cake in two and ate half each.",
+        "chinese": "他们把蛋糕分成两块，每人吃半块。"
+      },
+      {
+        "english": "He nibbled away the apple peel, then ate the flesh.",
+        "chinese": "他先慢慢地咬去苹果皮，然后再吃果肉。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "吃",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "atenan",
@@ -2517,7 +2614,27 @@
       "ah",
       "ах"
     ],
-    "notation": "اح"
+    "notation": "اح",
+    "usphone": "ɑ",
+    "ukphone": "ɑː",
+    "sentences": [
+      {
+        "english": "Ah! There you are!",
+        "chinese": "啊！ 你在这里呀！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "int",
+        "chinese": "啊；呀",
+        "english": "used to show surprise, happiness, agreement etc"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Ah)人名；(中)亚(广东话·威妥玛)；(缅)阿",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "ash",
@@ -2526,7 +2643,30 @@
       "hungry",
       "аш"
     ],
-    "notation": "اش"
+    "notation": "اش",
+    "usphone": "æʃ",
+    "ukphone": "æʃ",
+    "sentences": [
+      {
+        "english": "cigarette ash",
+        "chinese": "香烟灰"
+      },
+      {
+        "english": "The house burnt to ashes.",
+        "chinese": "那房子烧成了灰烬。"
+      },
+      {
+        "english": "His ashes were scattered at sea.",
+        "chinese": "他的骨灰被撒向大海。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "灰，灰末；骨灰",
+        "english": "the soft grey powder that remains after something has been burned"
+      }
+    ]
   },
   {
     "name": "ashteq",
@@ -3084,7 +3224,22 @@
       "bank",
       "банк"
     ],
-    "notation": "بانك"
+    "notation": "بانك",
+    "usphone": "bæŋk",
+    "ukphone": "bæŋk",
+    "sentences": [
+      {
+        "english": "Did you bank that check?",
+        "chinese": "你把那张支票存入银行了吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "把钱存入银行",
+        "english": "to put or keep money in a bank"
+      }
+    ]
   },
   {
     "name": "bank dyelo",
@@ -3111,7 +3266,30 @@
       "have,exist,existing,bar,eat",
       "бар"
     ],
-    "notation": "بار"
+    "notation": "بار",
+    "usphone": "bɑr",
+    "ukphone": "bɑː",
+    "sentences": [
+      {
+        "english": "The public bar was crowded.",
+        "chinese": "大众酒吧间里人很多。"
+      },
+      {
+        "english": "a candy bar",
+        "chinese": "一根糖果棒"
+      },
+      {
+        "english": "houses with bars across the windows",
+        "chinese": "窗户上钉有铁条的房屋"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "酒吧间；条，杆；栅",
+        "english": "one of the rooms inside a pub"
+      }
+    ]
   },
   {
     "name": "baraban",
@@ -4119,7 +4297,22 @@
       "bean",
       "боб"
     ],
-    "notation": "بوب"
+    "notation": "بوب",
+    "usphone": "bɑb",
+    "ukphone": "bɑːb",
+    "sentences": [
+      {
+        "english": "The boat bobbed gently up and down on the water.",
+        "chinese": "小船在水面上轻轻起伏。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": " 轻拍， 轻扣； 使上下快速摆动",
+        "english": "to move up and down when floating on the surface of water"
+      }
+    ]
   },
   {
     "name": "bozghelt",
@@ -4227,7 +4420,36 @@
       "bolt",
       "болт"
     ],
-    "notation": "بولت"
+    "notation": "بولت",
+    "usphone": "bolt",
+    "ukphone": "bəʊlt",
+    "sentences": [
+      {
+        "english": "Was this money a bolt from the blue or did you know you were going to get it?",
+        "chinese": "这是一笔意料之财呢，还是你本来就知道会有的？"
+      },
+      {
+        "english": "The pig rose squealing and bolted.",
+        "chinese": "那头猪尖叫着站起来，飞快地跑开了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "螺栓，螺钉；闪电，雷电；门闩；弩箭;（布的）一匹，一卷",
+        "english": "a screw with a flat head and no point, for fastening things together"
+      },
+      {
+        "pos": "v",
+        "chinese": "筛选；囫囵吞下；（把门、窗等）闩上；突然说出，脱口说出",
+        "english": "to lock a door or window by sliding a bolt across"
+      },
+      {
+        "pos": "adv",
+        "chinese": "突然地；像箭似地；直立地",
+        "english": "If a person or animal bolts, they suddenly start to run very fast, often because something has frightened them"
+      }
+    ]
   },
   {
     "name": "bolw",
@@ -5109,7 +5331,22 @@
       "vitamin",
       "витамин"
     ],
-    "notation": "ۆيتامين"
+    "notation": "ۆيتامين",
+    "usphone": "'vaɪtəmɪn",
+    "ukphone": "'vɪtəmɪn; 'vaɪt-",
+    "sentences": [
+      {
+        "english": "Try to eat foods that are rich in vitamins and minerals.",
+        "chinese": "尽量吃富含维生素和矿物质的食物。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "维生素，维他命",
+        "english": "a chemical substance in food that is necessary for good health"
+      }
+    ]
   },
   {
     "name": "vokalde",
@@ -5217,7 +5454,31 @@
       "golf",
       "гольф"
     ],
-    "notation": "گولف"
+    "notation": "گولف",
+    "usphone": "gɔlf",
+    "ukphone": "gɒlf",
+    "sentences": [
+      {
+        "english": "He plays golf on Sundays.",
+        "chinese": "他星期天都去打高尔夫球。"
+      },
+      {
+        "english": "a round of golf",
+        "chinese": "一场高尔夫球赛"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "高尔夫球；高尔夫球运动",
+        "english": "a game in which the players hit a small white ball into holes in the ground with a set of golf clubs, using as few hits as possible"
+      },
+      {
+        "pos": "v",
+        "chinese": "打高尔夫球",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "gomosyekswal",
@@ -5253,7 +5514,31 @@
       "grant",
       "грант"
     ],
-    "notation": "گرانت"
+    "notation": "گرانت",
+    "usphone": "ɡrænt",
+    "ukphone": "grɑːnt",
+    "sentences": [
+      {
+        "english": "Britain could grant Spain’s request .",
+        "chinese": "英国可能会同意西班牙的请求。"
+      },
+      {
+        "english": "I would love to be able to grant her wish.",
+        "chinese": "我很希望能够满足她的愿望。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "授给物",
+        "english": ""
+      },
+      {
+        "pos": "vt",
+        "chinese": " 授予， 给予",
+        "english": "to give someone something or allow them to have something that they have asked for"
+      }
+    ]
   },
   {
     "name": "gwbyernator",
@@ -5739,7 +6024,26 @@
       "dialogue",
       "диалог"
     ],
-    "notation": "ديالوگ"
+    "notation": "ديالوگ",
+    "usphone": "'daɪə,lɑg",
+    "ukphone": "'daɪəlɒɡ",
+    "sentences": [
+      {
+        "english": "In this dialog, you can only open an artifact in the editor.",
+        "chinese": "在这个对话框中，您只可以在编辑器中打开一个工件。"
+      },
+      {
+        "english": "For other pages/dialogs, it should go back one page or close the dialog.",
+        "chinese": "至于其他页面/对话框，它应该回退一个页面或者关闭对话框。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "对话，对白",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "divan",
@@ -5838,7 +6142,22 @@
       "diplomat",
       "дипломат"
     ],
-    "notation": "ديپلومات"
+    "notation": "ديپلومات",
+    "usphone": "'dɪpləmæt",
+    "ukphone": "'dɪpləmæt",
+    "sentences": [
+      {
+        "english": "French diplomats",
+        "chinese": "法国外交官"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "外交家",
+        "english": "someone who officially represents their government in a foreign country"
+      }
+    ]
   },
   {
     "name": "diplomatiialeq",
@@ -5874,7 +6193,26 @@
       "disc,disk",
       "диск"
     ],
-    "notation": "ديسك"
+    "notation": "ديسك",
+    "usphone": "dɪsk",
+    "ukphone": "dɪsk",
+    "sentences": [
+      {
+        "english": "Red blood cells are roughly the shape of a disk.",
+        "chinese": "红细胞大致呈圆盘状。"
+      },
+      {
+        "english": "The program takes up 2.5 megabytes of disk space and can be run on a standard personal computer.",
+        "chinese": "这个程序占用2.5 兆字节的磁盘空间，可以在标准个人电脑上运行。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "圆盘，唱片；磁盘",
+        "english": "(<英> disc)a small flat piece of plastic or metal which is used for storing computer or electronic information"
+      }
+    ]
   },
   {
     "name": "displyei",
@@ -5946,7 +6284,35 @@
       "donor",
       "донор"
     ],
-    "notation": "دونور"
+    "notation": "دونور",
+    "usphone": "'donɚ",
+    "ukphone": "'dəʊnə; -nɔː",
+    "sentences": [
+      {
+        "english": "We urgently need more assistance from donor countries (= countries that give money, food etc to help in poor countries or disaster areas ) .",
+        "chinese": "我们急需捐赠国的更多援助。"
+      },
+      {
+        "english": "An anonymous donor (= whose name is unknown ) has given £500 towards the restoration fund.",
+        "chinese": "一位匿名捐赠者向重建基金捐了500英镑。"
+      },
+      {
+        "english": "...the severe shortage of donor organs.",
+        "chinese": "…捐献器官的严重匮乏。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "捐赠者；供者；赠送人",
+        "english": "a person, group etc that gives something, especially money, to help an organization or country"
+      },
+      {
+        "pos": "adj",
+        "chinese": "捐献的；经人工授精出生的",
+        "english": "Donor organs or parts are organs or parts of the body which people allow doctors to use to help people who are ill"
+      }
+    ]
   },
   {
     "name": "dop",
@@ -5973,7 +6339,42 @@
       "drama",
       "драма"
     ],
-    "notation": "دراما"
+    "notation": "دراما",
+    "usphone": "'drɑmə",
+    "ukphone": "'drɑːmə",
+    "sentences": [
+      {
+        "english": "the great traditions of ancient Greek drama",
+        "chinese": "古希腊戏剧的伟大传统"
+      },
+      {
+        "english": "a new drama series for Saturday nights",
+        "chinese": "周六晚上播放的新连续剧"
+      },
+      {
+        "english": "a drama critic",
+        "chinese": "戏剧评论员"
+      },
+      {
+        "english": "a courtroom drama",
+        "chinese": "法庭剧"
+      },
+      {
+        "english": "a lavish costume drama",
+        "chinese": "豪华古装剧"
+      },
+      {
+        "english": "He plays a Russian spy in the comedy drama ‘Sleepers’.",
+        "chinese": "他在喜剧片《潜伏特工》中扮演一名俄罗斯间谍。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 戏剧， 剧本； 戏剧性事件",
+        "english": "a play for the theatre, television, radio etc, usually a serious one, or plays in general"
+      }
+    ]
   },
   {
     "name": "dramaleq",
@@ -6819,7 +7220,36 @@
       "meat,flesh",
       "ет"
     ],
-    "notation": "ەت"
+    "notation": "ەت",
+    "usphone": "jɛt",
+    "ukphone": "jet",
+    "sentences": [
+      {
+        "english": "‘When’s your holiday?’ ‘Oh, not for ages yet.’",
+        "chinese": "“你什么时候去休假？”“噢，不知何年何月呢。”"
+      },
+      {
+        "english": "It could be months yet before they know their fate.",
+        "chinese": "可能要好几个月他们才能知道自己的命运。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "还；但是；已经",
+        "english": "used to emphasize how much time will pass before something happens, or how long a situation will continue"
+      },
+      {
+        "pos": "conj",
+        "chinese": "但是；然而",
+        "english": "used to introduce a fact, situation, or quality that is surprising after what you have just said"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Yet)人名；(东南亚国家华语)一",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "yetxek",
@@ -7620,7 +8050,30 @@
       "enemy",
       "жау"
     ],
-    "notation": "جاۋ"
+    "notation": "جاۋ",
+    "usphone": "dʒɔ",
+    "ukphone": "dʒɔː",
+    "sentences": [
+      {
+        "english": "He punched him on the jaw.",
+        "chinese": "他一拳打在他的下巴上。"
+      },
+      {
+        "english": "a rugged physique and a strong square jaw",
+        "chinese": "强健的体格以及结实的方下巴"
+      },
+      {
+        "english": "She’s got a very determined jaw.",
+        "chinese": "她一脸坚毅。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "颚,下巴",
+        "english": "the lower part of your face. Its shape is sometimes thought to show your character"
+      }
+    ]
   },
   {
     "name": "jawap",
@@ -9573,7 +10026,26 @@
       "immigrant",
       "иммигрант"
     ],
-    "notation": "يمميگرانت"
+    "notation": "يمميگرانت",
+    "usphone": "'ɪmɪɡrənt",
+    "ukphone": "ˈɪmɪgrənt",
+    "sentences": [
+      {
+        "english": "an illegal immigrant",
+        "chinese": "非法移民"
+      },
+      {
+        "english": "a new wave of immigrants from the Middle East",
+        "chinese": "来自中东的一股新兴的移民浪潮"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "移民",
+        "english": "someone who enters another country to live there permanently"
+      }
+    ]
   },
   {
     "name": "immigratsiia",
@@ -9816,7 +10288,38 @@
       "dog",
       "ит"
     ],
-    "notation": "يت"
+    "notation": "يت",
+    "usphone": "aɪ ti",
+    "ukphone": "aɪ ti",
+    "sentences": [
+      {
+        "english": "‘Where’s your office?’ ‘It’s on the third floor.’",
+        "chinese": "“你的办公室在哪儿？”“在三楼。”"
+      },
+      {
+        "english": "I love the spring – it’s a wonderful time of the year.",
+        "chinese": "我喜欢春季——这是一年里最美妙的时节。"
+      },
+      {
+        "english": "There were people crying, buildings on fire. It was terrible!",
+        "chinese": "有人在哭喊，楼房在燃烧―太可怕了！"
+      },
+      {
+        "english": "Don’t blame me. It wasn’t my idea.",
+        "chinese": "不要责备我，这不是我的主意。"
+      },
+      {
+        "english": "This little beast is a lemur and it lives in Madagascar.",
+        "chinese": "这小动物是狐猴，生活在马达加斯加。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "pron",
+        "chinese": "这，那，它",
+        "english": "used to refer to a thing, animal, situation, idea etc that has already been mentioned or is already known about"
+      }
+    ]
   },
   {
     "name": "ityerw",
@@ -10563,7 +11066,34 @@
       "whale",
       "кит"
     ],
-    "notation": "كيت"
+    "notation": "كيت",
+    "usphone": "",
+    "ukphone": "kɪt",
+    "sentences": [
+      {
+        "english": "Sally keeps her make-up kit in her bag.",
+        "chinese": "萨莉把化妆包放在手提包里。"
+      },
+      {
+        "english": "a bike repair kit",
+        "chinese": "一套自行车修理工具"
+      },
+      {
+        "english": "a shaving kit",
+        "chinese": "一套剃须用具"
+      },
+      {
+        "english": "a drum kit",
+        "chinese": "一套架子鼓"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "成套工具；用具包",
+        "english": "a set of tools, equipment etc that you use for a particular purpose or activity"
+      }
+    ]
   },
   {
     "name": "kiiw",
@@ -12246,7 +12776,43 @@
       "elevator",
       "лифт"
     ],
-    "notation": "ليفت"
+    "notation": "ليفت",
+    "usphone": "lɪft",
+    "ukphone": "lɪft",
+    "sentences": [
+      {
+        "english": "Sophie lifted the phone before the second ring.",
+        "chinese": "铃响了一下苏菲就接起了电话。"
+      },
+      {
+        "english": "He lifted the lid on the pot of soup.",
+        "chinese": "他揭开汤锅的盖子。"
+      },
+      {
+        "english": "The lumber was lifted by crane and dropped into the truck.",
+        "chinese": "木材由起重机搬运到卡车上。"
+      },
+      {
+        "english": "They took the lift down to the bar.",
+        "chinese": "他们乘电梯去楼下的酒吧。"
+      },
+      {
+        "english": "It’s on the 3rd floor. Let’s use the lift.",
+        "chinese": "在三楼，我们乘电梯上去吧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "提起，提高",
+        "english": "to move something or someone upwards into the air"
+      },
+      {
+        "pos": "n",
+        "chinese": "电梯",
+        "english": "a machine that you can ride in, that moves up and down between the floors in a tall building"
+      }
+    ]
   },
   {
     "name": "litsyenziia",
@@ -12939,7 +13505,31 @@
       "million",
       "миллион"
     ],
-    "notation": "ميلليون"
+    "notation": "ميلليون",
+    "usphone": "'mɪljən",
+    "ukphone": "'mɪljən",
+    "sentences": [
+      {
+        "english": "The book sold more than a million copies.",
+        "chinese": "这本书售出了一百多万册。"
+      },
+      {
+        "english": "I’ve got a million ideas.",
+        "chinese": "我主意多得很。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "num",
+        "chinese": "百万",
+        "english": "the number 1,000,000"
+      },
+      {
+        "pos": "n",
+        "chinese": "许多",
+        "english": "an extremely large number of people or things"
+      }
+    ]
   },
   {
     "name": "minyeral",
@@ -12993,7 +13583,22 @@
       "miss",
       "мисс"
     ],
-    "notation": "ميسس"
+    "notation": "ميسس",
+    "usphone": "mɪs",
+    "ukphone": "mɪs",
+    "sentences": [
+      {
+        "english": "I’d like to make an appointment with Miss Taylor.",
+        "chinese": "我想约一下泰勒小姐。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "小姐",
+        "english": "used in front of the family name of a woman who is not married to address her politely, to write to her, or to talk about her"
+      }
+    ]
   },
   {
     "name": "missionyerlxek",
@@ -13074,7 +13679,27 @@
       "monitor",
       "монитор"
     ],
-    "notation": "مونيتور"
+    "notation": "مونيتور",
+    "usphone": "'mɔnɪtɚ",
+    "ukphone": "'mɒnɪtə",
+    "sentences": [
+      {
+        "english": "a heart monitor",
+        "chinese": "心脏监测仪"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "班长；监视器，检测器；显示器",
+        "english": "a television or part of a computer with a screen, on which you can see pictures or information"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 监听， 检测",
+        "english": "to carefully watch and check a situation in order to see how it changes over a period of time"
+      }
+    ]
   },
   {
     "name": "moraldeq",
@@ -14181,7 +14806,26 @@
       "ten",
       "он"
     ],
-    "notation": "ون"
+    "notation": "ون",
+    "usphone": "ɑn",
+    "ukphone": "ɒn",
+    "sentences": [
+      {
+        "english": "I wanted to punch him on the nose.",
+        "chinese": "我真想一拳打到他鼻子上。"
+      },
+      {
+        "english": "Matt kissed her on the cheek.",
+        "chinese": "马特亲吻了她的脸颊。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "prep",
+        "chinese": "在…上",
+        "english": "used to say what part of someone or something is hit or touched"
+      }
+    ]
   },
   {
     "name": "on byes",
@@ -14343,7 +14987,38 @@
       "organ",
       "орган"
     ],
-    "notation": "ورگان"
+    "notation": "ورگان",
+    "usphone": "'ɔrɡən",
+    "ukphone": "'ɔ:ɡən",
+    "sentences": [
+      {
+        "english": "the liver, heart, and other internal organs",
+        "chinese": "肝脏、心脏及其他内脏器官"
+      },
+      {
+        "english": "loss of blood flow to his vital organs",
+        "chinese": "他的生命器官供血不足"
+      },
+      {
+        "english": "Extra doses of the hormone caused the animals’ reproductive organs to develop sooner than usual.",
+        "chinese": "额外使用激素使得这些动物的生殖器官比正常情况下发育得更快。"
+      },
+      {
+        "english": "In Arizona, 480 people are waiting for organ transplants.",
+        "chinese": "亚利桑那州有480人在等待器官移植。"
+      },
+      {
+        "english": "dying people who have agreed to be organ donors",
+        "chinese": "愿意捐献器官的垂死的病人"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "器官",
+        "english": "a part of the body, such as the heart or lungs, that has a particular purpose"
+      }
+    ]
   },
   {
     "name": "organikaleq",
@@ -14883,7 +15558,35 @@
       "patch",
       "патч"
     ],
-    "notation": "پاتچ"
+    "notation": "پاتچ",
+    "usphone": "pætʃ",
+    "ukphone": "pætʃ",
+    "sentences": [
+      {
+        "english": "Look out for icy patches on the road.",
+        "chinese": "小心路上结冰的地方。"
+      },
+      {
+        "english": "a cat with a white patch on its chest",
+        "chinese": "胸部有一块白斑的猫"
+      },
+      {
+        "english": "He combs his hair over his bald patch .",
+        "chinese": "他把头发梳过来盖住秃掉的地方。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "眼罩；斑点；碎片；小块土地",
+        "english": "a small area of something that is different from the area around it"
+      },
+      {
+        "pos": "v",
+        "chinese": "修补；解决；掩饰",
+        "english": "to repair a hole in something by putting a piece of something else over it"
+      }
+    ]
   },
   {
     "name": "patsha",
@@ -14991,7 +15694,31 @@
       "pin",
       "пин"
     ],
-    "notation": "پين"
+    "notation": "پين",
+    "usphone": "pɪn",
+    "ukphone": "pɪn",
+    "sentences": [
+      {
+        "english": "a diamond pin",
+        "chinese": "一枚钻石胸针"
+      },
+      {
+        "english": "He pinned the name tag on his jacket.",
+        "chinese": "他把姓名牌别在自己的短外套上。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "针，饰针",
+        "english": "a piece of metal, sometimes containing jewels, that you fasten to your clothes to wear as a decoration"
+      },
+      {
+        "pos": "v",
+        "chinese": "别住",
+        "english": "to fasten something somewhere, or to join two things together, using a pin"
+      }
+    ]
   },
   {
     "name": "pionyer",
@@ -15054,7 +15781,26 @@
       "playoff",
       "офф"
     ],
-    "notation": "وفف"
+    "notation": "وفف",
+    "usphone": "ɔf",
+    "ukphone": "ɒf",
+    "sentences": [
+      {
+        "english": "He got into his car and drove off.",
+        "chinese": "他上了车，随即开车走了。"
+      },
+      {
+        "english": "Will someone switch the radio off?",
+        "chinese": "谁把收音机关掉好吗？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "（离）开；（停）止",
+        "english": "away from a place"
+      }
+    ]
   },
   {
     "name": "plitka",
@@ -15135,7 +15881,27 @@
       "port",
       "порт"
     ],
-    "notation": "پورت"
+    "notation": "پورت",
+    "usphone": "pɔrt",
+    "ukphone": "pɔːt",
+    "sentences": [
+      {
+        "english": "Britain’s largest port",
+        "chinese": "英国最大的港口城市"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "港口，口岸；（计算机的）端口；左舷；舱门",
+        "english": "a place where ships can be loaded and unloaded"
+      },
+      {
+        "pos": "v",
+        "chinese": "转向左舷",
+        "english": "to turn or be turned towards the port "
+      }
+    ]
   },
   {
     "name": "portryet",
@@ -15153,7 +15919,22 @@
       "portfolio",
       "портфолио"
     ],
-    "notation": "پورتفوليو"
+    "notation": "پورتفوليو",
+    "usphone": "pɔrt'folɪo",
+    "ukphone": "pɔːt'fəʊlɪəʊ",
+    "sentences": [
+      {
+        "english": "an investment portfolio",
+        "chinese": "投资组合"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "公文包；文件夹；证券投资组合；部长职务",
+        "english": "a large flat case used especially for carrying pictures, documents etc"
+      }
+    ]
   },
   {
     "name": "post",
@@ -15162,7 +15943,31 @@
       "post",
       "пост"
     ],
-    "notation": "پوست"
+    "notation": "پوست",
+    "usphone": "post",
+    "ukphone": "pəʊst",
+    "sentences": [
+      {
+        "english": "a fence post",
+        "chinese": "篱笆桩"
+      },
+      {
+        "english": "The exam results were posted on the bulletin board yesterday.",
+        "chinese": "考试成绩昨天在布告板上贴出来了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "柱，桩，杆",
+        "english": "a strong upright piece of wood, metal etc that is fixed into the ground, especially to support something"
+      },
+      {
+        "pos": "v",
+        "chinese": "贴出",
+        "english": "to put up a public notice about something on a wall or notice board"
+      }
+    ]
   },
   {
     "name": "postyer",
@@ -15441,7 +16246,26 @@
       "radar",
       "радар"
     ],
-    "notation": "رادار"
+    "notation": "رادار",
+    "usphone": "'redɑr",
+    "ukphone": "'reɪdɑː",
+    "sentences": [
+      {
+        "english": "The coastline can now be monitored by radar.",
+        "chinese": "现在能用雷达监测海岸线了。"
+      },
+      {
+        "english": "We could see the plane quite clearly on the radar screen.",
+        "chinese": "我们在雷达屏幕上可清晰地看到飞机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "雷达，无线电探测器",
+        "english": "a piece of equipment that uses radio waves to find the position of things and watch their movement"
+      }
+    ]
   },
   {
     "name": "radikalde",
@@ -15459,7 +16283,26 @@
       "radio",
       "радио"
     ],
-    "notation": "راديو"
+    "notation": "راديو",
+    "usphone": "'redɪo",
+    "ukphone": "'reɪdɪəʊ",
+    "sentences": [
+      {
+        "english": "We’ve lost radio contact with the plane.",
+        "chinese": "我们和这架飞机失去了无线电联络。"
+      },
+      {
+        "english": "I sat down and turned on the radio.",
+        "chinese": "我坐下来打开收音机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "无线电；收音机",
+        "english": "when messages are sent or received in this way"
+      }
+    ]
   },
   {
     "name": "rakovina",
@@ -15486,7 +16329,17 @@
       "ranch",
       "ранчо"
     ],
-    "notation": "رانچو"
+    "notation": "رانچو",
+    "usphone": "'ræntʃo",
+    "ukphone": "'rɑːntʃəʊ",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "大牧场(或大农场)工人住的棚屋",
+        "english": "a hut or group of huts for housing ranch workers "
+      }
+    ]
   },
   {
     "name": "ras",
@@ -15549,7 +16402,27 @@
       "re",
       "ре"
     ],
-    "notation": "رە"
+    "notation": "رە",
+    "usphone": "raɪ",
+    "ukphone": "raɪ",
+    "sentences": [
+      {
+        "english": "rye bread",
+        "chinese": "黑麦面包"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "黑麦；吉卜赛绅士",
+        "english": "a type of grain that is used for making bread and  whisky "
+      },
+      {
+        "pos": "adj",
+        "chinese": "用黑麦制成的",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "ryeaktsiia",
@@ -15801,7 +16674,22 @@
       "robot",
       "робот"
     ],
-    "notation": "روبوت"
+    "notation": "روبوت",
+    "usphone": "'robɑt",
+    "ukphone": "'rəʊbɒt",
+    "sentences": [
+      {
+        "english": "cars built by robots",
+        "chinese": "机器人制造的汽车"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "机器人；自动机",
+        "english": "a machine that can move and do some of the work of a person, and is usually controlled by a computer"
+      }
+    ]
   },
   {
     "name": "rok",
@@ -15819,7 +16707,17 @@
       "novel",
       "роман"
     ],
-    "notation": "رومان"
+    "notation": "رومان",
+    "usphone": "'romən",
+    "ukphone": "'rəʊmən",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "a&n",
+        "chinese": "罗马(的),罗马人(的)",
+        "english": "roman type or print "
+      }
+    ]
   },
   {
     "name": "romans",
@@ -16170,7 +17068,31 @@
       "quantity",
       "саны"
     ],
-    "notation": "سانى"
+    "notation": "سانى",
+    "usphone": "sen",
+    "ukphone": "seɪn",
+    "sentences": [
+      {
+        "english": "He seems perfectly sane (= completely sane ) to me.",
+        "chinese": "在我看来他神志完全正常。"
+      },
+      {
+        "english": "No sane person would want to kill a baby.",
+        "chinese": "神志正常的人不会去杀一个婴儿。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "健全的；理智的；[临床] 神志正常的",
+        "english": "able to think in a normal and reasonable way"
+      },
+      {
+        "pos": "n",
+        "chinese": "(Sane)人名；(日)实(姓)；(日)实(名)；(芬、塞、冈、几比、塞内)萨内",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "sapar",
@@ -16701,7 +17623,32 @@
       "signal",
       "сигнал"
     ],
-    "notation": "سيگنال"
+    "notation": "سيگنال",
+    "usphone": "'sɪgnl",
+    "ukphone": "'sɪgnəl",
+    "sentences": [
+      {
+        "english": "He pressed the red alarm signal to see if it was on or off.",
+        "chinese": "他按了一下红色报警信号钮，检查一下它是开著的还是关著的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 显著的， 重大的",
+        "english": "important"
+      },
+      {
+        "pos": "n",
+        "chinese": "信号，暗号；标志，表示",
+        "english": "a sound or action that you make in order to give information to someone or tell them to do something"
+      },
+      {
+        "pos": "vt",
+        "chinese": "发信号；标志着",
+        "english": "to make a sound or action in order to give information or tell someone to do something"
+      }
+    ]
   },
   {
     "name": "simvoldeq",
@@ -16854,7 +17801,35 @@
       "slot",
       "слот"
     ],
-    "notation": "سلوت"
+    "notation": "سلوت",
+    "usphone": "slɑt",
+    "ukphone": "slɒt",
+    "sentences": [
+      {
+        "english": "Alan dropped another quarter into the slot on the pay phone.",
+        "chinese": "艾伦往付费电话的投币口里又塞了一枚 25 分的硬币。"
+      },
+      {
+        "english": "He was slotting a CD into a CD player.",
+        "chinese": "他正把一张光盘放入光盘播放器中。"
+      },
+      {
+        "english": "The car seat belt slotted into place easily.",
+        "chinese": "那个汽车安全带很容易就扣好了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "狭缝，狭槽；位置，空位",
+        "english": "a long narrow hole in a surface, that you can put something into"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 把…放入狭长开口中； 把…纳入其中， 使有位置",
+        "english": "If you slot something into something else, or if it slots into it, you put it into a space where it fits"
+      }
+    ]
   },
   {
     "name": "sovat",
@@ -16917,7 +17892,22 @@
       "those",
       "солар"
     ],
-    "notation": "سولار"
+    "notation": "سولار",
+    "usphone": "'solɚ",
+    "ukphone": "'səʊlə",
+    "sentences": [
+      {
+        "english": "a solar eclipse",
+        "chinese": "日食"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "太阳的，日光的",
+        "english": "relating to the sun"
+      }
+    ]
   },
   {
     "name": "bates",
@@ -17142,7 +18132,36 @@
       "sport",
       "спорт"
     ],
-    "notation": "سپورت"
+    "notation": "سپورت",
+    "usphone": "spɔrt",
+    "ukphone": "spɔːt",
+    "sentences": [
+      {
+        "english": "the sport of falconry",
+        "chinese": "放鹰狩猎运动"
+      },
+      {
+        "english": "a demonstration by people opposed to blood sports",
+        "chinese": "反对猎杀动物运动的人士举行的示威游行"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "运动；游戏；娱乐；运动会；玩笑",
+        "english": "an activity that people do in the countryside, especially hunting or fishing"
+      },
+      {
+        "pos": "v",
+        "chinese": "游戏",
+        "english": "to play together happily"
+      },
+      {
+        "pos": "adj",
+        "chinese": "运动的",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "sport zale",
@@ -18357,7 +19376,30 @@
       "tank",
       "танк"
     ],
-    "notation": "تانك"
+    "notation": "تانك",
+    "usphone": "tæŋk",
+    "ukphone": "tæŋk",
+    "sentences": [
+      {
+        "english": "The water tank is leaking.",
+        "chinese": "水箱在漏水。"
+      },
+      {
+        "english": "Somehow the chemical got from a storage tank into water supplies.",
+        "chinese": "不知怎么的，这种化学物从储存箱进入了供水系统。"
+      },
+      {
+        "english": "the plane’s fuel tank",
+        "chinese": "飞机的油箱"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "油箱，水箱",
+        "english": "a large container for storing liquid or gas"
+      }
+    ]
   },
   {
     "name": "tanw",
@@ -18429,7 +19471,27 @@
       "narrow",
       "тар"
     ],
-    "notation": "تار"
+    "notation": "تار",
+    "usphone": "tɑr",
+    "ukphone": "tɑː",
+    "sentences": [
+      {
+        "english": "high tar cigarettes",
+        "chinese": "高焦香烟"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "焦油；柏油；水手",
+        "english": "a black substance, thick and sticky when hot but hard when cold, used especially for making road surfaces"
+      },
+      {
+        "pos": "v",
+        "chinese": "涂以焦油；玷污",
+        "english": "to coat with tar "
+      }
+    ]
   },
   {
     "name": "taratw",
@@ -18672,7 +19734,17 @@
       "dawn,morning",
       "таң"
     ],
-    "notation": "تاڭ"
+    "notation": "تاڭ",
+    "usphone": "",
+    "ukphone": "tæŋ",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "有浓味 n特殊气味",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "tang qalde",
@@ -19338,7 +20410,22 @@
       "tone",
       "тон"
     ],
-    "notation": "تون"
+    "notation": "تون",
+    "usphone": "tʌn",
+    "ukphone": "tʌn",
+    "sentences": [
+      {
+        "english": "I’ve got tons of work to do.",
+        "chinese": "我有很多工作要做。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "吨；很多，大量",
+        "english": "a unit for measuring weight, equal to 2,240 pounds or 1,016 kilograms in Britain, and 2,000 pounds or 907.2 kilograms in the US"
+      }
+    ]
   },
   {
     "name": "top",
@@ -19347,7 +20434,32 @@
       "band,group",
       "топ"
     ],
-    "notation": "توپ"
+    "notation": "توپ",
+    "usphone": "tɑp",
+    "ukphone": "tɒp",
+    "sentences": [
+      {
+        "english": "a low wooden table with a glass top",
+        "chinese": "玻璃桌面的矮木桌"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "顶部，顶端；上部；首席；陀螺",
+        "english": "the highest part of something"
+      },
+      {
+        "pos": "v",
+        "chinese": "高出，超越；结束；达到顶点",
+        "english": "to be higher than a particular amount"
+      },
+      {
+        "pos": "adj",
+        "chinese": "最高的，顶上的；头等的",
+        "english": "nearest to the top of something"
+      }
+    ]
   },
   {
     "name": "toperaq",
@@ -20697,7 +21809,34 @@
       "file",
       "файл"
     ],
-    "notation": "فايل"
+    "notation": "فايل",
+    "usphone": "fel",
+    "ukphone": "feɪl",
+    "sentences": [
+      {
+        "english": "It looks likely that the peace talks will fail.",
+        "chinese": "看来和平谈判可能会失败。"
+      },
+      {
+        "english": "Millions of people have tried to quit smoking and failed miserably (= been completely unsuccessful ).",
+        "chinese": "数百万人戒过烟，都以惨败告终。"
+      },
+      {
+        "english": "his efforts to save his failing marriage",
+        "chinese": "他挽救自己濒危婚姻的努力"
+      },
+      {
+        "english": "The brakes on my bike failed half way down the hill.",
+        "chinese": "我骑自行车下山到中途刹车失灵了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "失败；不能；失灵",
+        "english": "to not succeed in achieving something"
+      }
+    ]
   },
   {
     "name": "fakt",
@@ -20814,7 +21953,22 @@
       "branch",
       "филиал"
     ],
-    "notation": "فيليال"
+    "notation": "فيليال",
+    "usphone": "'fɪlɪəl",
+    "ukphone": "'fɪlɪəl",
+    "sentences": [
+      {
+        "english": "her filial duty",
+        "chinese": "她的孝道"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "孝顺的；子女的，当做子女的",
+        "english": "relating to the relationship of a son or daughter to their parents"
+      }
+    ]
   },
   {
     "name": "filosofiia",
@@ -20841,7 +21995,30 @@
       "film",
       "фильм"
     ],
-    "notation": "فيلم"
+    "notation": "فيلم",
+    "usphone": "fɪlm",
+    "ukphone": "fɪlm",
+    "sentences": [
+      {
+        "english": "Have you seen any good films recently?",
+        "chinese": "你最近看过什么好的影片吗？"
+      },
+      {
+        "english": "I shot five rolls of film on vacation.",
+        "chinese": "我在度假时拍了五卷胶卷。"
+      },
+      {
+        "english": "a film of oil on the surface of the water",
+        "chinese": "水面上的一层油"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "影片；胶卷；薄层",
+        "english": "a story that is told using sound and moving pictures, shown at a cinema or on television"
+      }
+    ]
   },
   {
     "name": "fiskaldeq",
@@ -20904,7 +22081,27 @@
       "format",
       "формат"
     ],
-    "notation": "فورمات"
+    "notation": "فورمات",
+    "usphone": "'fɔrmæt",
+    "ukphone": "'fɔːmæt",
+    "sentences": [
+      {
+        "english": "The courses were run to a consistent format.",
+        "chinese": "这些课程的编排是有连续性的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "设计，安排；格式，样式，版式",
+        "english": "the way in which something such as a television show or meeting is organized or arranged"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 使格式化",
+        "english": "to organize the space on a computer  disk  so that information can be stored on it"
+      }
+    ]
   },
   {
     "name": "formwla",
@@ -21021,7 +22218,32 @@
       "ha,huh",
       "ха"
     ],
-    "notation": "حا"
+    "notation": "حا",
+    "usphone": "hɑ",
+    "ukphone": "hɑː",
+    "sentences": [
+      {
+        "english": "Ha! I thought it might be you hiding there!",
+        "chinese": "哈！我想可能就是你藏在那里！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "int",
+        "chinese": "哈！（表示惊异，愉快，怀疑，胜利等）",
+        "english": "used when you are surprised or have discovered something interesting"
+      },
+      {
+        "pos": "abbr",
+        "chinese": "一种元素(hahnium,原子序105)",
+        "english": ""
+      },
+      {
+        "pos": "n",
+        "chinese": "(Ha)人名；(德)哈；(日)巴 (姓)",
+        "english": "used when you are surprised or have discovered something interesting"
+      }
+    ]
   },
   {
     "name": "habar",
@@ -21120,7 +22342,27 @@
       "letter",
       "хат"
     ],
-    "notation": "حات"
+    "notation": "حات",
+    "usphone": "hæt",
+    "ukphone": "hæt",
+    "sentences": [
+      {
+        "english": "Maria was wearing a beautiful new hat.",
+        "chinese": "玛丽亚戴着一顶漂亮的新帽子。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "帽子",
+        "english": "a piece of clothing that you wear on your head"
+      },
+      {
+        "pos": "v",
+        "chinese": "给……戴上帽子",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "hattama",
@@ -21201,7 +22443,22 @@
       "host",
       "хост"
     ],
-    "notation": "حوست"
+    "notation": "حوست",
+    "usphone": "host",
+    "ukphone": "həʊst",
+    "sentences": [
+      {
+        "english": "Which country is going to host the next World Cup?",
+        "chinese": "哪个国家将主办下一届世界杯？"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "主持",
+        "english": "to provide the place and everything that is needed for an organized event"
+      }
+    ]
   },
   {
     "name": "hosh ixes",
@@ -21246,7 +22503,26 @@
       "chip",
       "чип"
     ],
-    "notation": "چيپ"
+    "notation": "چيپ",
+    "usphone": "tʃɪp",
+    "ukphone": "tʃɪp",
+    "sentences": [
+      {
+        "english": "the age of the silicon chip",
+        "chinese": "芯片时代"
+      },
+      {
+        "english": "chip technology",
+        "chinese": "芯片技术"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 屑片， 碎片； 炸土豆条； 集成电路片， 集成块； 缺口， 瑕疵",
+        "english": "a small piece of  silicon  that has a set of complicated electrical connections on it and is used to store and  process  information in computers"
+      }
+    ]
   },
   {
     "name": "shabandoz",
@@ -21327,7 +22603,32 @@
       "candle,lamp",
       "шам"
     ],
-    "notation": "شام"
+    "notation": "شام",
+    "usphone": "ʃæm",
+    "ukphone": "ʃæm",
+    "sentences": [
+      {
+        "english": "The elections were a complete sham.",
+        "chinese": "这次大选完全是一场骗局。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "假装；骗子；赝品",
+        "english": "someone or something that is not what they are claimed to be – used to show disapproval"
+      },
+      {
+        "pos": "v",
+        "chinese": "假装；冒充",
+        "english": "to pretend to be upset, ill etc to gain sympathy or an advantage"
+      },
+      {
+        "pos": "adj",
+        "chinese": "假的；虚假的；假装的",
+        "english": "made to appear real in order to deceive people"
+      }
+    ]
   },
   {
     "name": "shamadan tes",
@@ -21750,7 +23051,72 @@
       "shorts",
       "шорт"
     ],
-    "notation": "شورت"
+    "notation": "شورت",
+    "usphone": "ʃɔrt",
+    "ukphone": "ʃɔːt",
+    "sentences": [
+      {
+        "english": "a short meeting",
+        "chinese": "一个短会"
+      },
+      {
+        "english": "Morris gave a short laugh.",
+        "chinese": "莫里斯笑了一声。"
+      },
+      {
+        "english": "a short course on business English",
+        "chinese": "商业英语短期课程"
+      },
+      {
+        "english": "Winter is coming and the days are getting shorter.",
+        "chinese": "冬天来临，白天变短了。"
+      },
+      {
+        "english": "I’ve only been in Brisbane a short time .",
+        "chinese": "我才来布里斯班不久。"
+      },
+      {
+        "english": "For a short while (= a short time ) , the city functioned as the region’s capital.",
+        "chinese": "这座城市曾经在很短的一段时间里是这个地区的首府。"
+      },
+      {
+        "english": "I learned a lot during my short period as a junior reporter.",
+        "chinese": "在当初级记者的这段短暂时间里，我学到了许多。"
+      },
+      {
+        "english": "Germany achieved spectacular economic success in a relatively short period of time .",
+        "chinese": "德国在相对较短的时间里取得了非凡的经济成就。"
+      },
+      {
+        "english": "They met and married within a short space of time .",
+        "chinese": "他们从相识到结婚时间很短。"
+      },
+      {
+        "english": "I promise to keep the meeting short and sweet (= short in a way that is good, especially not talking for a long time ) .",
+        "chinese": "我保证会议开得简短不拖拉。"
+      },
+      {
+        "english": "For a few short weeks (= they seemed to pass very quickly ) the sun shone and the fields turned gold.",
+        "chinese": "短短的几个星期里，阳光照耀，田野变成了一片金黄。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "短的；不足的；矮的，低的",
+        "english": "happening or continuing for only a little time or for less time than usual"
+      },
+      {
+        "pos": "n",
+        "chinese": "短；缺乏；短路；短裤",
+        "english": "a short film shown in the cinema"
+      },
+      {
+        "pos": "adv",
+        "chinese": "不足；突然；唐突地",
+        "english": "to almost do something but then decide not to do it"
+      }
+    ]
   },
   {
     "name": "shot",
@@ -21759,7 +23125,32 @@
       "score,account",
       "шот"
     ],
-    "notation": "شوت"
+    "notation": "شوت",
+    "usphone": "ʃɑt",
+    "ukphone": "ʃɒt",
+    "sentences": [
+      {
+        "english": "In the opening shot, we see Travolta’s feet walking down the sidewalk.",
+        "chinese": "在开场的镜头中，我们看到特拉沃尔塔的脚在人行道上行走。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "发射；炮弹；射手；镜头",
+        "english": "the view of something in a film or television programme that is produced by having the camera in a particular position"
+      },
+      {
+        "pos": "adj",
+        "chinese": "用尽的；破旧的；杂色的，闪光的",
+        "english": "in bad condition because of being used too much or treated badly"
+      },
+      {
+        "pos": "v",
+        "chinese": "射击（shoot的过去式和过去分词）",
+        "english": ""
+      }
+    ]
   },
   {
     "name": "shoshqa",

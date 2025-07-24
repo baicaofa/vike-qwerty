@@ -1,194 +1,747 @@
 [
-    {
-        "name": "administration",
-        "trans": [
-            "n. 行政，管理"
-        ]
-    },
-    {
-        "name": "office",
-        "trans": [
-            "n. 办公室"
-        ]
-    },
-    {
-        "name": "clerical",
-        "trans": [
-            "adj. 文书的"
-        ]
-    },
-    {
-        "name": "file",
-        "trans": [
-            "v. 归档；n. 文件夹"
-        ]
-    },
-    {
-        "name": "computer-literate",
-        "trans": [
-            "adj. 精通电脑的"
-        ]
-    },
-    {
-        "name": "teleconference",
-        "trans": [
-            "n. 电信会议"
-        ]
-    },
-    {
-        "name": "type",
-        "trans": [
-            "v. 打字；n. 类型"
-        ]
-    },
-    {
-        "name": "spreadsheet",
-        "trans": [
-            "n. 电子数据表"
-        ]
-    },
-    {
-        "name": "data entry",
-        "trans": [
-            "n. 数据录入"
-        ]
-    },
-    {
-        "name": "interpersonal",
-        "trans": [
-            "adj. 人际的"
-        ]
-    },
-    {
-        "name": "organisational",
-        "trans": [
-            "adj. 组织的"
-        ]
-    },
-    {
-        "name": "communicate",
-        "trans": [
-            "v. 沟通"
-        ]
-    },
-    {
-        "name": "flexible",
-        "trans": [
-            "adj. 灵活的，有弹性的"
-        ]
-    },
-    {
-        "name": "overtime",
-        "trans": [
-            "adv. 超时地；adj. 超时的"
-        ]
-    },
-    {
-        "name": "position",
-        "trans": [
-            "n. 职位"
-        ]
-    },
-    {
-        "name": "occupation",
-        "trans": [
-            "n. 职业"
-        ]
-    },
-    {
-        "name": "part-time",
-        "trans": [
-            "adj. 兼职的"
-        ]
-    },
-    {
-        "name": "full-time",
-        "trans": [
-            "adj. 全职的"
-        ]
-    },
-    {
-        "name": "temporary",
-        "trans": [
-            "adj. 临时的，暂时的"
-        ]
-    },
-    {
-        "name": "internship",
-        "trans": [
-            "n. 实习"
-        ]
-    },
-    {
-        "name": "intern",
-        "trans": [
-            "n. 实习生"
-        ]
-    },
-    {
-        "name": "cleaner",
-        "trans": [
-            "n. 清洁工"
-        ]
-    },
-    {
-        "name": "receptionist",
-        "trans": [
-            "n. 接待员"
-        ]
-    },
-    {
-        "name": "secretary",
-        "trans": [
-            "n. 秘书"
-        ]
-    },
-    {
-        "name": "representative",
-        "trans": [
-            "n. 代表"
-        ]
-    },
-    {
-        "name": "engineer",
-        "trans": [
-            "n. 工程师"
-        ]
-    },
-    {
-        "name": "accountant",
-        "trans": [
-            "n. 会计师"
-        ]
-    },
-    {
-        "name": "staff",
-        "trans": [
-            "n. 员工"
-        ]
-    },
-    {
-        "name": "manager",
-        "trans": [
-            "n. 经理"
-        ]
-    },
-    {
-        "name": "freelancer",
-        "trans": [
-            "n. 自由职业者"
-        ]
-    },
-    {
-        "name": "assistant",
-        "trans": [
-            "n. 助手，助理"
-        ]
-    },
-    {
-        "name": "customer service",
-        "trans": [
-            "n. 客户服务"
-        ]
-    }
+  {
+    "name": "administration",
+    "trans": [
+      "n. 行政，管理"
+    ],
+    "usphone": "əd,mɪnɪ'streʃən",
+    "ukphone": "ədˌmɪnɪˈstreɪʃn",
+    "sentences": [
+      {
+        "english": "We’re looking for someone with experience in administration.",
+        "chinese": "我们正在寻找一个有管理经验的人。"
+      },
+      {
+        "english": "The health service spends too much on administration.",
+        "chinese": "医疗服务部门在行政方面花费太多。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "管理，政府",
+        "english": "the activities that are involved in managing the work of a company or organization"
+      }
+    ]
+  },
+  {
+    "name": "office",
+    "trans": [
+      "n. 办公室"
+    ],
+    "usphone": "'ɔfɪs",
+    "ukphone": "'ɒfɪs",
+    "sentences": [
+      {
+        "english": "The department occupies an office just a mile from the White House.",
+        "chinese": "该部门就在离白宫一英里远的地方有个办公楼。"
+      },
+      {
+        "english": "Did you go to the office (= the office where you work ) today?",
+        "chinese": "今天你去办公室了吗？"
+      },
+      {
+        "english": "the increased demand for office space",
+        "chinese": "对办公室空间日益增长的需求"
+      },
+      {
+        "english": "the Foreign Office",
+        "chinese": "外交部"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "办公室；处，局，社",
+        "english": "a building that belongs to a company or organization, with rooms where people can work at desks"
+      }
+    ]
+  },
+  {
+    "name": "clerical",
+    "trans": [
+      "adj. 文书的"
+    ]
+  },
+  {
+    "name": "file",
+    "trans": [
+      "v. 归档；n. 文件夹"
+    ],
+    "usphone": "faɪl",
+    "ukphone": "faɪl",
+    "sentences": [
+      {
+        "english": "We will keep your details on file (= store them for later use ) .",
+        "chinese": "我们将把你的详细资料存档。"
+      },
+      {
+        "english": "The contracts are filed alphabetically.",
+        "chinese": "这些合同是按字母顺序归档的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "档案",
+        "english": "a set of papers, records etc that contain information about a particular person or subject"
+      },
+      {
+        "pos": "v",
+        "chinese": "把…归档",
+        "english": "to keep papers, documents etc in a particular place so that you can find them easily"
+      }
+    ]
+  },
+  {
+    "name": "computer-literate",
+    "trans": [
+      "adj. 精通电脑的"
+    ]
+  },
+  {
+    "name": "teleconference",
+    "trans": [
+      "n. 电信会议"
+    ]
+  },
+  {
+    "name": "type",
+    "trans": [
+      "v. 打字；n. 类型"
+    ],
+    "usphone": "taɪp",
+    "ukphone": "taɪp",
+    "sentences": [
+      {
+        "english": "I’ve already seen a few movies of this type.",
+        "chinese": "我已经看过几部这种类型的影片了。"
+      },
+      {
+        "english": "He types with two fingers.",
+        "chinese": "他用两个手指打字。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "型，类型",
+        "english": "one member of a group of people or things that have similar features or qualities"
+      },
+      {
+        "pos": "v",
+        "chinese": "打字",
+        "english": "to write something using a computer or a typewriter"
+      }
+    ]
+  },
+  {
+    "name": "spreadsheet",
+    "trans": [
+      "n. 电子数据表"
+    ],
+    "usphone": "'sprɛdʃit",
+    "ukphone": "'spredʃiːt",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "电子制表软件；电子数据表；试算表",
+        "english": "a computer program that can show and calculate financial information"
+      }
+    ]
+  },
+  {
+    "name": "data entry",
+    "trans": [
+      "n. 数据录入"
+    ]
+  },
+  {
+    "name": "interpersonal",
+    "trans": [
+      "adj. 人际的"
+    ],
+    "usphone": "'ɪntɚ'pɝsnl",
+    "ukphone": "ˌɪntə'pɜːsənl",
+    "sentences": [
+      {
+        "english": "interpersonal skills",
+        "chinese": "人际交往技巧"
+      },
+      {
+        "english": "interpersonal communication",
+        "chinese": "人际沟通"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 人与人之间的， 关于人与人之间关系的",
+        "english": "relating to relationships between people"
+      }
+    ]
+  },
+  {
+    "name": "organisational",
+    "trans": [
+      "adj. 组织的"
+    ]
+  },
+  {
+    "name": "communicate",
+    "trans": [
+      "v. 沟通"
+    ],
+    "usphone": "kə'mjunɪket",
+    "ukphone": "kə'mjuːnɪkeɪt",
+    "sentences": [
+      {
+        "english": "We communicated mostly by e-mail.",
+        "chinese": "我们主要是用电子邮件沟通。"
+      },
+      {
+        "english": "A baby communicates its needs by crying.",
+        "chinese": "婴儿用哭来表达需要。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "通讯；传达",
+        "english": "to exchange information or conversation with other people, using words, signs, writing etc"
+      }
+    ]
+  },
+  {
+    "name": "flexible",
+    "trans": [
+      "adj. 灵活的，有弹性的"
+    ],
+    "usphone": "'flɛksəbl",
+    "ukphone": "ˈfleksəbl",
+    "sentences": [
+      {
+        "english": "We can be flexible about your starting date.",
+        "chinese": "你具体从哪天开始，我们可以灵活一点。"
+      },
+      {
+        "english": "The government needs a more flexible approach to education.",
+        "chinese": "政府在处理教育问题上需要更加灵活。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "灵活的",
+        "english": "a person, plan etc that is flexible can change or be changed easily to suit any new situation"
+      }
+    ]
+  },
+  {
+    "name": "overtime",
+    "trans": [
+      "adv. 超时地；adj. 超时的"
+    ],
+    "usphone": ",ovə'taɪm",
+    "ukphone": "'əʊvətaɪm",
+    "sentences": [
+      {
+        "english": "six hours’ overtime",
+        "chinese": "六小时的加班"
+      },
+      {
+        "english": "They’re working overtime to get the job finished.",
+        "chinese": "他们正在加班赶工。"
+      },
+      {
+        "english": "He’s been doing a lot of overtime recently.",
+        "chinese": "他近来加班很多。"
+      },
+      {
+        "english": "Many employees work countless hours of unpaid overtime.",
+        "chinese": "许多员工无偿加班无数个小时。"
+      },
+      {
+        "english": "Many of our offices will be working on overtime until the end of the year.",
+        "chinese": "我们的许多办事处都要加班到年底。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[劳经] 加班时间；延长时间；加时赛",
+        "english": "time that you spend working in your job in addition to your normal working hours"
+      },
+      {
+        "pos": "adj",
+        "chinese": "超时的；加班的",
+        "english": ""
+      },
+      {
+        "pos": "vt",
+        "chinese": "使超过时间",
+        "english": ""
+      },
+      {
+        "pos": "adv",
+        "chinese": "加班地",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "position",
+    "trans": [
+      "n. 职位"
+    ],
+    "usphone": "pə'zɪʃən",
+    "ukphone": "pə'zɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Lie in a comfortable position .",
+        "chinese": "以一个舒服的姿势躺下。"
+      },
+      {
+        "english": "Our hotel was in a superb central position near St Mark’s Square.",
+        "chinese": "我们的酒店处于极佳的中心位置，在圣马克广场附近。"
+      },
+      {
+        "english": "Bruce is thinking of applying for the position.",
+        "chinese": "布鲁斯正在考虑申请那个职位。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "姿势；位置；职位",
+        "english": "the way someone is standing, sitting, or lying"
+      }
+    ]
+  },
+  {
+    "name": "occupation",
+    "trans": [
+      "n. 职业"
+    ],
+    "usphone": ",ɑkju'peʃən",
+    "ukphone": "ɒkjʊ'peɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "Please state your name, address and occupation.",
+        "chinese": "请写明你的姓名、地址和职业。"
+      },
+      {
+        "english": "professional and managerial occupations",
+        "chinese": "专业及管理工作"
+      },
+      {
+        "english": "manual occupations",
+        "chinese": "体力工作"
+      },
+      {
+        "english": "the German occupation of France",
+        "chinese": "德军对法国的占领"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "职业；占领，占据",
+        "english": "a job or profession"
+      }
+    ]
+  },
+  {
+    "name": "part-time",
+    "trans": [
+      "adj. 兼职的"
+    ],
+    "usphone": ",pɑrt'taɪm",
+    "ukphone": "'pɑːt'taim",
+    "sentences": [
+      {
+        "english": "a part-time job",
+        "chinese": "兼职工作"
+      },
+      {
+        "english": "women wishing to return to work on a part-time basis",
+        "chinese": "希望以兼职形式重返职场的女性"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": " 兼职的",
+        "english": "someone who has a part-time job works for only part of each day or week"
+      }
+    ]
+  },
+  {
+    "name": "full-time",
+    "trans": [
+      "adj. 全职的"
+    ],
+    "usphone": ",ful'taɪm",
+    "ukphone": ",fʊl'taɪm",
+    "sentences": [
+      {
+        "english": "...a full-time job.",
+        "chinese": "…一份全职工作。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "专职的；全日制的",
+        "english": "for all the hours of a week during which it is usual for people to work, study etc"
+      }
+    ]
+  },
+  {
+    "name": "temporary",
+    "trans": [
+      "adj. 临时的，暂时的"
+    ],
+    "usphone": "'tɛmpə'rɛri",
+    "ukphone": "'temp(ə)rərɪ",
+    "sentences": [
+      {
+        "english": "temporary pain relief",
+        "chinese": "疼痛的暂时缓解"
+      },
+      {
+        "english": "I’m living with my parents, but it’s only temporary.",
+        "chinese": "我和父母住在一起，但这只是暂时的。"
+      },
+      {
+        "english": "You might want to consider temporary work until you decide what you want to do.",
+        "chinese": "在你定下来想做什么之前，也许可以考虑干点临时性工作。"
+      },
+      {
+        "english": "She was employed on a temporary basis .",
+        "chinese": "她是受雇干临时性工作的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "暂时的，临时的",
+        "english": "continuing for only a limited period of time"
+      }
+    ]
+  },
+  {
+    "name": "internship",
+    "trans": [
+      "n. 实习"
+    ],
+    "usphone": "'ɪntɝnʃɪp",
+    "ukphone": "ˈɪntɜ:nʃɪp",
+    "sentences": [
+      {
+        "english": "...an internship in surgery in New York.",
+        "chinese": "…一个在纽约做外科实习的职位。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "<美>实习医师",
+        "english": "a job that lasts for a short time, that someone, especially a student, does in order to gain experience"
+      }
+    ]
+  },
+  {
+    "name": "intern",
+    "trans": [
+      "n. 实习生"
+    ],
+    "usphone": "'ɪntɝn",
+    "ukphone": "'ɪntɜːn",
+    "sentences": [
+      {
+        "english": "...a medical intern.",
+        "chinese": "…一位实习医生。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "实习生，实习医师",
+        "english": "someone who has nearly finished training as a doctor and is working in a hospital"
+      },
+      {
+        "pos": "v",
+        "chinese": "拘留，软禁",
+        "english": "to put someone in prison without charging them with a crime, for political reasons or during a war"
+      }
+    ]
+  },
+  {
+    "name": "cleaner",
+    "trans": [
+      "n. 清洁工"
+    ],
+    "usphone": "'klinɚ",
+    "ukphone": "'kliːnə",
+    "sentences": [
+      {
+        "english": "a vacuum cleaner",
+        "chinese": "真空吸尘器"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "[化工] 清洁剂；清洁工；干洗店；干洗商；洗洁器",
+        "english": "someone whose job is to clean other people’s houses, offices etc"
+      }
+    ]
+  },
+  {
+    "name": "receptionist",
+    "trans": [
+      "n. 接待员"
+    ],
+    "usphone": "rɪ'sɛpʃənɪst",
+    "ukphone": "rɪˈsepʃənɪst",
+    "sentences": [
+      {
+        "english": "You tell the receptionist that you are expecting a call from this client and to put them through.",
+        "chinese": "你告诉传达员你正在等待一个来自这个客户的电话，并允许将他们接进来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "接待员",
+        "english": "someone whose job is to welcome and deal with people arriving in a hotel or office building, visiting a doctor etc"
+      }
+    ]
+  },
+  {
+    "name": "secretary",
+    "trans": [
+      "n. 秘书"
+    ],
+    "usphone": "'sɛkrətɛrɪ",
+    "ukphone": "'sekrɪt(ə)rɪ",
+    "sentences": [
+      {
+        "english": "My secretary will fax you all the details.",
+        "chinese": "我的秘书会把所有的细节发传真给你。"
+      },
+      {
+        "english": "the secretary of the tennis club",
+        "chinese": "网球俱乐部的干事"
+      },
+      {
+        "english": "the Foreign Secretary",
+        "chinese": "外交大臣"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "秘书；书记；大臣",
+        "english": "someone who works in an office typing letters, keeping records, answering telephone calls, arranging meetings etc"
+      }
+    ]
+  },
+  {
+    "name": "representative",
+    "trans": [
+      "n. 代表"
+    ],
+    "usphone": "'rɛprɪ'zɛntətɪv",
+    "ukphone": "reprɪ'zentətɪv",
+    "sentences": [
+      {
+        "english": "The latest incident is representative of a wider trend.",
+        "chinese": "最近发生的事件代表了一个更大的趋势。"
+      },
+      {
+        "english": "an elected representative of the people",
+        "chinese": "民选代表"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "代表性的",
+        "english": "typical of a particular group or thing"
+      },
+      {
+        "pos": "n",
+        "chinese": "代表",
+        "english": "someone who has been chosen to speak, vote, or make decisions for someone else"
+      }
+    ]
+  },
+  {
+    "name": "engineer",
+    "trans": [
+      "n. 工程师"
+    ],
+    "usphone": ",ɛndʒɪ'nɪr",
+    "ukphone": "endʒɪ'nɪə",
+    "sentences": [
+      {
+        "english": "He trained as a civil engineer (= one who designs and builds roads, bridges etc ).",
+        "chinese": "他接受过土木工程师培训。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "工程师，技师",
+        "english": "someone whose job is to design or build roads, bridges, machines etc"
+      }
+    ]
+  },
+  {
+    "name": "accountant",
+    "trans": [
+      "n. 会计师"
+    ],
+    "usphone": "ə'kaʊntənt",
+    "ukphone": "ə'kaʊnt(ə)nt",
+    "sentences": [
+      {
+        "english": "The boss dropped an accountant from the payroll.",
+        "chinese": "老板把一名会计师从在职人员名单中除了名。"
+      },
+      {
+        "english": "The accountant checked this unnecessary spending in good time.",
+        "chinese": "会计及时卡住了这笔不必要的开支。"
+      },
+      {
+        "english": "They conferred with the accountant vis-à-vis the proposed budget.",
+        "chinese": "他们与会计商量有关预算提案的事。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "会计员",
+        "english": "someone whose job is to keep and check financial accounts, calculate taxes etc"
+      }
+    ]
+  },
+  {
+    "name": "staff",
+    "trans": [
+      "n. 员工"
+    ],
+    "usphone": "stæf",
+    "ukphone": "stɑːf",
+    "sentences": [
+      {
+        "english": "The staff were very good.",
+        "chinese": "员工们都很棒。"
+      },
+      {
+        "english": "10 staff were allocated to the task.",
+        "chinese": "10名员工被分派做这项任务。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "全体职员，员工；工作人员；参谋",
+        "english": "the people who work for an organization"
+      }
+    ]
+  },
+  {
+    "name": "manager",
+    "trans": [
+      "n. 经理"
+    ],
+    "usphone": "'mænɪdʒɚ",
+    "ukphone": "'mænɪdʒə",
+    "sentences": [
+      {
+        "english": "one of our regional managers",
+        "chinese": "我们的一位地区经理"
+      },
+      {
+        "english": "a middle manager in a computer company",
+        "chinese": "一家计算机公司的中层管理人员"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "经理，管理人",
+        "english": "someone whose job is to manage part or all of a company or other organization"
+      }
+    ]
+  },
+  {
+    "name": "freelancer",
+    "trans": [
+      "n. 自由职业者"
+    ],
+    "usphone": "'frilænsɚ",
+    "ukphone": "'friːlɑːnsə(r)",
+    "sentences": [
+      {
+        "english": "Are you the average business owner or freelancer like I am?",
+        "chinese": "你是像我一样的中型企业主或者自由作家吗？"
+      },
+      {
+        "english": "When one client takes all your time that is a boss and you have a job, not a client and freelancer relationship.",
+        "chinese": "当客户占光你的时间的时候，你们是老板和员工的关系，而非客户和自由职业者。"
+      },
+      {
+        "english": "There are a lot of benefits of moving ahead from simply being a freelancer. But there are quite a few risks involved too.",
+        "chinese": "比起只是简单地成为一名自由职业者，成立自己的公司有非常多的好处，当然也涉及一些风险。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "自由职业者",
+        "english": "A freelancer is someone who does freelance work"
+      }
+    ]
+  },
+  {
+    "name": "assistant",
+    "trans": [
+      "n. 助手，助理"
+    ],
+    "usphone": "ə'sɪstənt",
+    "ukphone": "ə'sɪst(ə)nt",
+    "sentences": [
+      {
+        "english": "a clerical assistant",
+        "chinese": "文书助理"
+      },
+      {
+        "english": "...the assistant secretary of defence.",
+        "chinese": "…助理国防部长。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "助手，助理，助教",
+        "english": "someone who helps someone else in their work, especially by doing the less important jobs"
+      },
+      {
+        "pos": "adj",
+        "chinese": "辅助的，助理的；有帮助的",
+        "english": "Assistant is used in front of titles or jobs to indicate a slightly lower rank. For example, an assistant director is one rank lower than a director in an organization. "
+      }
+    ]
+  },
+  {
+    "name": "customer service",
+    "trans": [
+      "n. 客户服务"
+    ]
+  }
 ]

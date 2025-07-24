@@ -1,230 +1,815 @@
 [
-    {
-        "name": "general practice",
-        "trans": [
-            "n. 全科诊所；一般医师"
-        ]
-    },
-    {
-        "name": "health center",
-        "trans": [
-            "n. 健康中心"
-        ]
-    },
-    {
-        "name": "clinic",
-        "trans": [
-            "n. 诊所"
-        ]
-    },
-    {
-        "name": "infirmary",
-        "trans": [
-            "n. 医务室"
-        ]
-    },
-    {
-        "name": "emergency",
-        "trans": [
-            "n. 紧急情况"
-        ]
-    },
-    {
-        "name": "outpatient",
-        "trans": [
-            "n. 门诊；门诊病人"
-        ]
-    },
-    {
-        "name": "practitioner",
-        "trans": [
-            "n. （医学界或法律界的）从业人员"
-        ]
-    },
-    {
-        "name": "dentist",
-        "trans": [
-            "n. 牙医"
-        ]
-    },
-    {
-        "name": "veterinarian",
-        "trans": [
-            "n. 兽医"
-        ]
-    },
-    {
-        "name": "surgeon",
-        "trans": [
-            "n. 外科医生"
-        ]
-    },
-    {
-        "name": "physician",
-        "trans": [
-            "n. 内科医生"
-        ]
-    },
-    {
-        "name": "physicist",
-        "trans": [
-            "n. 物理学家"
-        ]
-    },
-    {
-        "name": "have a flu",
-        "trans": [
-            "患流感"
-        ]
-    },
-    {
-        "name": "have a cold",
-        "trans": [
-            "感冒"
-        ]
-    },
-    {
-        "name": "infectious",
-        "trans": [
-            "adj. 传染的"
-        ]
-    },
-    {
-        "name": "fever",
-        "trans": [
-            "n. 发烧；v. 发烧"
-        ]
-    },
-    {
-        "name": "headache",
-        "trans": [
-            "n. 头疼"
-        ]
-    },
-    {
-        "name": "cough",
-        "trans": [
-            "n. 咳嗽；v. 咳嗽"
-        ]
-    },
-    {
-        "name": "sneeze",
-        "trans": [
-            "n. 喷嚏；v. 打喷嚏"
-        ]
-    },
-    {
-        "name": "have a stuffed nose",
-        "trans": [
-            "鼻塞"
-        ]
-    },
-    {
-        "name": "have a running nose",
-        "trans": [
-            "流鼻涕"
-        ]
-    },
-    {
-        "name": "have a sore throat",
-        "trans": [
-            "咽喉痛"
-        ]
-    },
-    {
-        "name": "have a dry throat",
-        "trans": [
-            "咽喉干燥"
-        ]
-    },
-    {
-        "name": "have sore eyes",
-        "trans": [
-            "眼睛酸痛"
-        ]
-    },
-    {
-        "name": "shoulder",
-        "trans": [
-            "n. 肩膀"
-        ]
-    },
-    {
-        "name": "back",
-        "trans": [
-            "n. 背"
-        ]
-    },
-    {
-        "name": "wrist",
-        "trans": [
-            "n. 手腕"
-        ]
-    },
-    {
-        "name": "elbow",
-        "trans": [
-            "n. 手肘"
-        ]
-    },
-    {
-        "name": "knee",
-        "trans": [
-            "n. 膝盖"
-        ]
-    },
-    {
-        "name": "toe",
-        "trans": [
-            "n. 脚趾"
-        ]
-    },
-    {
-        "name": "waist",
-        "trans": [
-            "n. 腰"
-        ]
-    },
-    {
-        "name": "finger",
-        "trans": [
-            "n. 手指"
-        ]
-    },
-    {
-        "name": "ankle",
-        "trans": [
-            "n. 脚踝"
-        ]
-    },
-    {
-        "name": "get a pounding",
-        "trans": [
-            "受到撞击"
-        ]
-    },
-    {
-        "name": "sprain",
-        "trans": [
-            "n. 扭伤；v. 扭伤"
-        ]
-    },
-    {
-        "name": "insomnia",
-        "trans": [
-            "n. 失眠"
-        ]
-    },
-    {
-        "name": "vomit",
-        "trans": [
-            "n. 呕吐；v. 呕吐"
-        ]
-    },
-    {
-        "name": "allergy",
-        "trans": [
-            "n. 过敏"
-        ]
-    }
+  {
+    "name": "general practice",
+    "trans": [
+      "n. 全科诊所；一般医师"
+    ]
+  },
+  {
+    "name": "health center",
+    "trans": [
+      "n. 健康中心"
+    ]
+  },
+  {
+    "name": "clinic",
+    "trans": [
+      "n. 诊所"
+    ],
+    "usphone": "'klɪnɪk",
+    "ukphone": "'klɪnɪk",
+    "sentences": [
+      {
+        "english": "an appointment at an outpatient clinic",
+        "chinese": "门诊预约"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "诊所",
+        "english": "a place, often in a hospital, where medical treatment is given to people who do not need to stay in the hospital"
+      }
+    ]
+  },
+  {
+    "name": "infirmary",
+    "trans": [
+      "n. 医务室"
+    ],
+    "usphone": "ɪn'fɝməri",
+    "ukphone": "ɪn'fɜːm(ə)rɪ",
+    "sentences": [
+      {
+        "english": "All they need now are the keys to the infirmary.",
+        "chinese": "现在所需要的就是医务室的门钥匙。"
+      },
+      {
+        "english": "A smile creeps onto his face as he realizes that he’s in the infirmary.",
+        "chinese": "一丝笑容爬上他的脸上，他意识到自己身处于医务室中。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "医务，医务室",
+        "english": "a hospital – often used in the names of hospitals in Britain"
+      }
+    ]
+  },
+  {
+    "name": "emergency",
+    "trans": [
+      "n. 紧急情况"
+    ],
+    "usphone": "ɪ'mɝdʒənsi",
+    "ukphone": "i'mə:dʒənsi",
+    "sentences": [
+      {
+        "english": "Lifeguards are trained to deal with emergencies.",
+        "chinese": "救生员接受过应对紧急情况的训练。"
+      },
+      {
+        "english": "(= In case of emergency ), press the alarm button.",
+        "chinese": "遇到紧急情况，请按报警按钮。"
+      },
+      {
+        "english": "The plane had to make an emergency landing.",
+        "chinese": "那架飞机不得不紧急着陆。"
+      },
+      {
+        "english": "The government called an emergency meeting to discuss the crisis.",
+        "chinese": "政府召开了紧急会议，讨论这次危机。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "紧急情况",
+        "english": "an unexpected and dangerous situation that must be dealt with immediately"
+      }
+    ]
+  },
+  {
+    "name": "outpatient",
+    "trans": [
+      "n. 门诊；门诊病人"
+    ],
+    "usphone": "'aʊt'peʃənt",
+    "ukphone": "'aʊtpeɪʃ(ə)nt",
+    "sentences": [
+      {
+        "english": "an outpatient clinic",
+        "chinese": "门诊诊所"
+      },
+      {
+        "english": "a routine examination in outpatients",
+        "chinese": "在医院门诊部的例行检查"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "门诊病人",
+        "english": "someone who goes to a hospital for treatment but does not stay for the night"
+      }
+    ]
+  },
+  {
+    "name": "practitioner",
+    "trans": [
+      "n. （医学界或法律界的）从业人员"
+    ],
+    "usphone": "præk'tɪʃənɚ",
+    "ukphone": "præk'tɪʃənər",
+    "sentences": [
+      {
+        "english": "RMC provides structure in three areas for the practitioner: productivity, guidance , and personalization.",
+        "chinese": "RMC在三个领域为从业者提供了结构：生产力，指导和个性化。"
+      },
+      {
+        "english": "The dictionary is mainly for civil aviation practitioner, aviation majored students and Aviation enthusiasts.",
+        "chinese": "词典主要面向民航从业人员、航空专业学员以及航空爱好者。"
+      },
+      {
+        "english": "The articulation of work and life, cast as work-life balance, has become a key feature of much current government, practitioner and academic debate.",
+        "chinese": "当今的工作和生活，扮演工作与生活的平衡，已成为一个关键特性当前的很多政府、从业者和学术争论。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 开业者",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "dentist",
+    "trans": [
+      "n. 牙医"
+    ],
+    "usphone": "'dɛntɪst",
+    "ukphone": "'dentɪst",
+    "sentences": [
+      {
+        "english": "Visit your dentist twice a year for a checkup.",
+        "chinese": "每年看两次牙医做检查。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "牙科医生",
+        "english": "someone whose job is to treat people’s teeth"
+      }
+    ]
+  },
+  {
+    "name": "veterinarian",
+    "trans": [
+      "n. 兽医"
+    ],
+    "usphone": "'vɛtərə'nɛrɪən",
+    "ukphone": "ˌvetərɪ'neəriən",
+    "sentences": [
+      {
+        "english": "Include your ferret's medical records and veterinarian information in the package.",
+        "chinese": "救济包里面记得包含貂儿的医疗记录和兽医的信息。"
+      },
+      {
+        "english": "This is not normally an issue that needs professional treatment by a veterinarian.",
+        "chinese": "小小的崩坏通常不需要兽医来为貂儿提供专业的诊疗。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 兽医",
+        "english": "someone who is trained to give medical care and treatment to sick animals"
+      }
+    ]
+  },
+  {
+    "name": "surgeon",
+    "trans": [
+      "n. 外科医生"
+    ],
+    "usphone": "'sɝdʒən",
+    "ukphone": "'sɜːdʒ(ə)n",
+    "sentences": [
+      {
+        "english": "...a heart surgeon.",
+        "chinese": "…一位心脏外科医生。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "外科医生",
+        "english": "a doctor who does operations in a hospital"
+      }
+    ]
+  },
+  {
+    "name": "physician",
+    "trans": [
+      "n. 内科医生"
+    ],
+    "usphone": "fɪ'zɪʃən",
+    "ukphone": "fɪ'zɪʃ(ə)n",
+    "sentences": [
+      {
+        "english": "your family physician",
+        "chinese": "你的家庭医生"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "医生，内科医生",
+        "english": "a doctor"
+      }
+    ]
+  },
+  {
+    "name": "physicist",
+    "trans": [
+      "n. 物理学家"
+    ],
+    "usphone": "'fɪzɪsɪst",
+    "ukphone": "'fɪzɪsɪst",
+    "sentences": [
+      {
+        "english": "a nuclear physicist",
+        "chinese": "一位核物理学家"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "物理学家",
+        "english": "a scientist who has special knowledge and training in physics"
+      }
+    ]
+  },
+  {
+    "name": "have a flu",
+    "trans": [
+      "患流感"
+    ]
+  },
+  {
+    "name": "have a cold",
+    "trans": [
+      "感冒"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "A lot of people think that drinking milk while you have a cold is a bad idea because it causes more mucous to build up.",
+        "chinese": "许多人认为感冒了喝牛奶是不对的，因为这样会在你口腔内积聚更多粘稠液。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "",
+        "chinese": "感冒",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "infectious",
+    "trans": [
+      "adj. 传染的"
+    ],
+    "usphone": "",
+    "ukphone": "",
+    "sentences": [
+      {
+        "english": "infectious diseases",
+        "chinese": "传染性疾病"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "传染的",
+        "english": "an infectious illness can be passed from one person to another, especially through the air you breathe"
+      }
+    ]
+  },
+  {
+    "name": "fever",
+    "trans": [
+      "n. 发烧；v. 发烧"
+    ],
+    "usphone": "'fivɚ",
+    "ukphone": "'fiːvə",
+    "sentences": [
+      {
+        "english": "Andy has a fever and won’t be coming into work today.",
+        "chinese": "安迪发烧了，今天不来上班。"
+      },
+      {
+        "english": "I woke up this morning with a fever and an upset stomach.",
+        "chinese": "今天早上醒来时我发烧了，胃也不舒服。"
+      },
+      {
+        "english": "She’s running a fever (= has a fever ) .",
+        "chinese": "她在发烧。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "发烧，发热；狂热",
+        "english": "an illness or a medical condition in which you have a very high temperature"
+      },
+      {
+        "pos": "vt",
+        "chinese": "使发烧；使狂热；使患热病",
+        "english": ""
+      },
+      {
+        "pos": "vi",
+        "chinese": "发烧；狂热；患热病",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "headache",
+    "trans": [
+      "n. 头疼"
+    ],
+    "usphone": "ˈhɛdˌek",
+    "ukphone": "'hedeɪk",
+    "sentences": [
+      {
+        "english": "If you have a headache, you should take some aspirin.",
+        "chinese": "要是头痛，你该吃点阿司匹林。"
+      },
+      {
+        "english": "The airline's biggest headache is the increase in the price of aviation fuel.",
+        "chinese": "令航空公司最头疼的问题是航空燃料价格的上涨。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "头痛；头痛的事",
+        "english": "a pain in your head"
+      }
+    ]
+  },
+  {
+    "name": "cough",
+    "trans": [
+      "n. 咳嗽；v. 咳嗽"
+    ],
+    "usphone": "kɔf",
+    "ukphone": "kɒf",
+    "sentences": [
+      {
+        "english": "Matthew coughed and cleared his throat.",
+        "chinese": "马修咳了一声清清喉咙。"
+      },
+      {
+        "english": "I think I’m getting a cold or flu – I’ve been coughing and sneezing all day.",
+        "chinese": "我想我是着凉了，或者得了流感——我整天都在咳嗽和打喷嚏。"
+      },
+      {
+        "english": "He’s got a bad cough.",
+        "chinese": "他咳嗽得很厉害。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "咳，咳嗽",
+        "english": "to suddenly push air out of your throat with a short sound, often repeatedly"
+      },
+      {
+        "pos": "n",
+        "chinese": "咳嗽",
+        "english": "a medical condition that makes you cough a lot"
+      }
+    ]
+  },
+  {
+    "name": "sneeze",
+    "trans": [
+      "n. 喷嚏；v. 打喷嚏"
+    ],
+    "usphone": "sniz",
+    "ukphone": "sniːz",
+    "sentences": [
+      {
+        "english": "She started coughing and sneezing.",
+        "chinese": "她开始咳嗽、打喷嚏。"
+      },
+      {
+        "english": "The dust was making him sneeze .",
+        "chinese": "灰尘使他打起了喷嚏。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "打喷嚏",
+        "english": "if you sneeze, air suddenly comes from your nose, making a noise, for example when you have a cold"
+      },
+      {
+        "pos": "n",
+        "chinese": "喷嚏",
+        "english": "the act or sound of sneezing"
+      }
+    ]
+  },
+  {
+    "name": "have a stuffed nose",
+    "trans": [
+      "鼻塞"
+    ]
+  },
+  {
+    "name": "have a running nose",
+    "trans": [
+      "流鼻涕"
+    ]
+  },
+  {
+    "name": "have a sore throat",
+    "trans": [
+      "咽喉痛"
+    ]
+  },
+  {
+    "name": "have a dry throat",
+    "trans": [
+      "咽喉干燥"
+    ]
+  },
+  {
+    "name": "have sore eyes",
+    "trans": [
+      "眼睛酸痛"
+    ]
+  },
+  {
+    "name": "shoulder",
+    "trans": [
+      "n. 肩膀"
+    ],
+    "usphone": "'ʃoldɚ",
+    "ukphone": "'ʃəʊldə",
+    "sentences": [
+      {
+        "english": "The residents are being asked to shoulder the costs of the repairs.",
+        "chinese": "居民们被要求承担这笔修理费用。"
+      },
+      {
+        "english": "They shouldered the boat and took it down to the river.",
+        "chinese": "他们把船扛在肩上抬到河里。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "承担；挑起",
+        "english": "to accept a difficult or unpleasant responsibility, duty etc"
+      }
+    ]
+  },
+  {
+    "name": "back",
+    "trans": [
+      "n. 背"
+    ],
+    "usphone": "bæk",
+    "ukphone": "bæk",
+    "sentences": [
+      {
+        "english": "I’ll be back in a minute.",
+        "chinese": "我马上回来。"
+      },
+      {
+        "english": "Put that book back where you found it!",
+        "chinese": "把那本书放回原处！"
+      },
+      {
+        "english": "He was back home by half past eleven.",
+        "chinese": "他是11点半之前回家的。"
+      },
+      {
+        "english": "It’s possible to travel there and back in a day.",
+        "chinese": "到那里一天来回是可以的。"
+      },
+      {
+        "english": "Kirov stepped back a pace.",
+        "chinese": "基洛夫往后退了一步。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "回原处；回；在后",
+        "english": "in, into, or to the place or position where someone or something was before"
+      }
+    ]
+  },
+  {
+    "name": "wrist",
+    "trans": [
+      "n. 手腕"
+    ],
+    "usphone": "rɪst",
+    "ukphone": "rɪst",
+    "sentences": [
+      {
+        "english": "He broke his wrist climbing rocks for a cigarette ad.",
+        "chinese": "他为了一个香烟广告攀岩折断了手腕。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "手腕；腕关节",
+        "english": "the part of your body where your hand joins your arm"
+      },
+      {
+        "pos": "vt",
+        "chinese": "用腕力移动",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "elbow",
+    "trans": [
+      "n. 手肘"
+    ],
+    "usphone": "'ɛlbo",
+    "ukphone": "'elbəʊ",
+    "sentences": [
+      {
+        "english": "He slipped and fell, badly bruising an elbow.",
+        "chinese": "他滑倒了，严重挫伤了一只胳膊肘。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "肘；衣服肘部",
+        "english": "the joint where your arm bends"
+      },
+      {
+        "pos": "v",
+        "chinese": "用肘推、挤",
+        "english": "to push someone with your elbows, especially in order to move past them"
+      }
+    ]
+  },
+  {
+    "name": "knee",
+    "trans": [
+      "n. 膝盖"
+    ],
+    "usphone": "ni",
+    "ukphone": "niː",
+    "sentences": [
+      {
+        "english": "Lucy had a bandage round her knee.",
+        "chinese": "露西的膝盖上缠着绷带。"
+      },
+      {
+        "english": "a knee injury",
+        "chinese": "膝伤"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "膝盖，膝",
+        "english": "the joint that bends in the middle of your leg"
+      },
+      {
+        "pos": "v",
+        "chinese": "用膝盖碰",
+        "english": "to hit someone with your knee"
+      }
+    ]
+  },
+  {
+    "name": "toe",
+    "trans": [
+      "n. 脚趾"
+    ],
+    "usphone": "to",
+    "ukphone": "təʊ",
+    "sentences": [
+      {
+        "english": "He stubbed his toe (= hurt it by kicking it against something ) on a rock.",
+        "chinese": "他的脚趾踢到一块石头上受了伤。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "脚趾；足尖",
+        "english": "one of the five movable parts at the end of your foot"
+      },
+      {
+        "pos": "v",
+        "chinese": "用脚尖走；以趾踏触",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "waist",
+    "trans": [
+      "n. 腰"
+    ],
+    "usphone": "west",
+    "ukphone": "weɪst",
+    "sentences": [
+      {
+        "english": "The skirt was too big around the waist.",
+        "chinese": "那条裙子腰围太大。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "腰，腰部",
+        "english": "the narrow part in the middle of the human body"
+      }
+    ]
+  },
+  {
+    "name": "finger",
+    "trans": [
+      "n. 手指"
+    ],
+    "usphone": "'fɪŋɡɚ",
+    "ukphone": "'fɪŋgə",
+    "sentences": [
+      {
+        "english": "The woman had a ring on her finger, so I assumed she was married.",
+        "chinese": "那女人手指上戴着戒指，因此我猜想她已经结婚了。"
+      },
+      {
+        "english": "We ate with our fingers.",
+        "chinese": "我们用手抓着吃。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "手指；指状物",
+        "english": "one of the four long thin parts on your hand, not including your thumb"
+      }
+    ]
+  },
+  {
+    "name": "ankle",
+    "trans": [
+      "n. 脚踝"
+    ],
+    "usphone": "'æŋkl",
+    "ukphone": "'æŋk(ə)l",
+    "sentences": [
+      {
+        "english": "slender ankles",
+        "chinese": "纤细的脚踝"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "踝，踝节部",
+        "english": "the joint between your foot and your leg"
+      }
+    ]
+  },
+  {
+    "name": "get a pounding",
+    "trans": [
+      "受到撞击"
+    ]
+  },
+  {
+    "name": "sprain",
+    "trans": [
+      "n. 扭伤；v. 扭伤"
+    ],
+    "usphone": "spren",
+    "ukphone": "spreɪn",
+    "sentences": [
+      {
+        "english": "I fell down the steps and sprained my ankle .",
+        "chinese": "我从台阶上摔下来，扭伤了脚踝。"
+      },
+      {
+        "english": "Rubin suffered a right ankle sprain when she rolled over on her ankle.",
+        "chinese": "鲁宾摔倒时身体压到了脚踝上导致右脚踝扭伤。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "扭伤",
+        "english": "to damage a joint in your body by suddenly twisting it"
+      },
+      {
+        "pos": "n",
+        "chinese": "扭伤",
+        "english": "A sprain is the injury caused by spraining a joint"
+      }
+    ]
+  },
+  {
+    "name": "insomnia",
+    "trans": [
+      "n. 失眠"
+    ],
+    "usphone": "ɪn'sɑmnɪə",
+    "ukphone": "ɪn'sɑːmniə",
+    "sentences": [
+      {
+        "english": "If you have insomnia, try my simple cure.",
+        "chinese": "如果你有失眠症，试试我的简单疗法。"
+      },
+      {
+        "english": "In my insomnia, you have to hold me to sleep.",
+        "chinese": "在我失眠的时候，你要抱着我睡。"
+      },
+      {
+        "english": "I know someone with insomnia who only gets two hours of sleep each night.",
+        "chinese": "我认识一个患有失眠症的人，他每天晚上只能睡上两个小时。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 失眠",
+        "english": "if you suffer from insomnia, you are not able to sleep"
+      }
+    ]
+  },
+  {
+    "name": "vomit",
+    "trans": [
+      "n. 呕吐；v. 呕吐"
+    ],
+    "usphone": "'vɑmɪt",
+    "ukphone": "'vɒmɪt",
+    "sentences": [
+      {
+        "english": "He had swallowed so much sea water he wanted to vomit.",
+        "chinese": "他呛了这么多海水，所以想吐。"
+      },
+      {
+        "english": "I knew I was really in trouble when I began vomiting blood.",
+        "chinese": "我开始吐血的时候才知道我的麻烦大了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "吐出；使……呕吐",
+        "english": "to bring food or drink up from your stomach out through your mouth, because you are ill"
+      },
+      {
+        "pos": "n",
+        "chinese": "呕吐；呕吐物；催吐剂",
+        "english": "food or other substances that come up from your stomach and through your mouth when you vomit"
+      }
+    ]
+  },
+  {
+    "name": "allergy",
+    "trans": [
+      "n. 过敏"
+    ],
+    "usphone": "'ælɚdʒi",
+    "ukphone": "'ælədʒɪ",
+    "sentences": [
+      {
+        "english": "a food allergy",
+        "chinese": "食物过敏"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "过敏症；反感；厌恶",
+        "english": "a medical condition in which you become ill or in which your skin becomes red and painful because you have eaten or touched a particular substance"
+      }
+    ]
+  }
 ]

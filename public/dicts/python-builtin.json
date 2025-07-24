@@ -1,89 +1,1000 @@
 [
-  { "name": "abs", "trans": ["返回一个数的绝对值"] },
+  {
+    "name": "abs",
+    "trans": [
+      "返回一个数的绝对值"
+    ]
+  },
   {
     "name": "all",
-    "trans": ["如果 iterable对象 的所有元素均为真值则返回 True"]
+    "trans": [
+      "如果 iterable对象 的所有元素均为真值则返回 True"
+    ],
+    "usphone": "ɔl",
+    "ukphone": "ɔːl",
+    "sentences": [
+      {
+        "english": "There is built-in storage space in all bedrooms.",
+        "chinese": "所有卧室里都有内置储藏空间。"
+      },
+      {
+        "english": "the restaurant that Hugh and all his friends go to",
+        "chinese": "休和他所有的朋友们去的那家饭馆"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "det",
+        "chinese": "全部的",
+        "english": "the whole of an amount, thing, or type of thing"
+      },
+      {
+        "pos": "pron",
+        "chinese": "全部",
+        "english": "the whole of a particular group or thing or to everyone or everything of a particular kind"
+      }
+    ]
   },
-  { "name": "any", "trans": ["如果 iterable对象 的任一元素为真值则返回 True"] },
-  { "name": "ascii", "trans": ["返回一个包含对象的可打印表示形式的字符串"] },
-  { "name": "bin", "trans": ["将一个整数转变为二进制字符串"] },
-  { "name": "bool", "trans": ["布尔"] },
-  { "name": "breakpoint", "trans": ["此函数会在调用时将你陷入调试器中"] },
-  { "name": "bytearray", "trans": ["返回一个新的 bytes 数组"] },
-  { "name": "bytes", "trans": ["返回一个新的 bytes 对象"] },
-  { "name": "callable", "trans": ["检测对象是否可调用"] },
-  { "name": "chr", "trans": ["返回 Unicode 码位为整数 i 的字符的字符串格式"] },
-  { "name": "complex", "trans": ["返回值为 real + imag*1j 的复数"] },
-  { "name": "delattr", "trans": ["删除对象指定的属性"] },
-  { "name": "dict", "trans": ["创建一个新的字典"] },
+  {
+    "name": "any",
+    "trans": [
+      "如果 iterable对象 的任一元素为真值则返回 True"
+    ],
+    "usphone": "'ɛni",
+    "ukphone": "'enɪ",
+    "sentences": [
+      {
+        "english": "Have you got any money?",
+        "chinese": "你身上有没有钱？"
+      },
+      {
+        "english": "Any child who breaks the rules will be punished.",
+        "chinese": "凡违反规定的孩子都要受罚。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "什么，一些；任何的",
+        "english": "some or even the smallest amount or number"
+      }
+    ]
+  },
+  {
+    "name": "ascii",
+    "trans": [
+      "返回一个包含对象的可打印表示形式的字符串"
+    ]
+  },
+  {
+    "name": "bin",
+    "trans": [
+      "将一个整数转变为二进制字符串"
+    ],
+    "usphone": "bɪn",
+    "ukphone": "bɪn",
+    "sentences": [
+      {
+        "english": "Put your rubbish in the bin.",
+        "chinese": "把你的垃圾放进箱子。"
+      },
+      {
+        "english": "But you know how it is with us human you take something good you dissect it scrutinise it time and again not believing your good fortune and finally cast it to the \"no\" bin.",
+        "chinese": "可是你知道的，对我们人类来说，你以为某件事物很好、你仔细分析它、细看它一次又一次，不相信你的好运，最后又把它丢到「不」的箱子里（不再理它），这真是很消极又愚蠢的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": " 大箱子",
+        "english": "a large container for storing things, such as goods in a shop or substances in a factory"
+      }
+    ]
+  },
+  {
+    "name": "bool",
+    "trans": [
+      "布尔"
+    ]
+  },
+  {
+    "name": "breakpoint",
+    "trans": [
+      "此函数会在调用时将你陷入调试器中"
+    ]
+  },
+  {
+    "name": "bytearray",
+    "trans": [
+      "返回一个新的 bytes 数组"
+    ]
+  },
+  {
+    "name": "bytes",
+    "trans": [
+      "返回一个新的 bytes 对象"
+    ]
+  },
+  {
+    "name": "callable",
+    "trans": [
+      "检测对象是否可调用"
+    ]
+  },
+  {
+    "name": "chr",
+    "trans": [
+      "返回 Unicode 码位为整数 i 的字符的字符串格式"
+    ]
+  },
+  {
+    "name": "complex",
+    "trans": [
+      "返回值为 real + imag*1j 的复数"
+    ],
+    "usphone": "ˈkɑmplɛks;kəmˈplɛks",
+    "ukphone": "'kɒmpleks",
+    "sentences": [
+      {
+        "english": "a complex system of highways",
+        "chinese": "复杂的公路网"
+      },
+      {
+        "english": "Photosynthesis is a highly complex process.",
+        "chinese": "光合作用是一个非常复杂的过程。"
+      },
+      {
+        "english": "Peter seemed to have an instant understanding of the most complex issues.",
+        "chinese": "再复杂的问题彼得似乎也是一看就明白。"
+      },
+      {
+        "english": "It was a very complex relationship between two complex people.",
+        "chinese": "这是两个复杂的人之间非常复杂的关系。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "由许多部分组成的，复合的；复杂的，难懂的",
+        "english": "consisting of many different parts and often difficult to understand"
+      },
+      {
+        "pos": "n",
+        "chinese": " 综合体， 集合体； 情结， 夸大的情绪反应",
+        "english": "a group of buildings, or a large building with many parts, used for a particular purpose"
+      }
+    ]
+  },
+  {
+    "name": "delattr",
+    "trans": [
+      "删除对象指定的属性"
+    ]
+  },
+  {
+    "name": "dict",
+    "trans": [
+      "创建一个新的字典"
+    ]
+  },
   {
     "name": "dir",
     "trans": [
       "如果没有实参，则返回当前本地作用域中的名称列表。如果有实参，它会尝试返回该对象的有效属性列表。"
     ]
   },
-  { "name": "divmod", "trans": ["执行整数除法时返回一对商和余数"] },
-  { "name": "enumerate", "trans": ["返回一个枚举对象"] },
-  { "name": "eval", "trans": ["解析并求值一个 Python 表达式"] },
-  { "name": "exec", "trans": ["执行 Python 代码"] },
+  {
+    "name": "divmod",
+    "trans": [
+      "执行整数除法时返回一对商和余数"
+    ]
+  },
+  {
+    "name": "enumerate",
+    "trans": [
+      "返回一个枚举对象"
+    ],
+    "usphone": "ɪ'numəret",
+    "ukphone": "ɪ'njuːməreɪt",
+    "sentences": [
+      {
+        "english": "I enumerate the work that will have to be done.",
+        "chinese": "我将必须要做的工作一一列举出来。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "列举；枚举；计算",
+        "english": "to name a list of things one by one"
+      }
+    ]
+  },
+  {
+    "name": "eval",
+    "trans": [
+      "解析并求值一个 Python 表达式"
+    ]
+  },
+  {
+    "name": "exec",
+    "trans": [
+      "执行 Python 代码"
+    ]
+  },
   {
     "name": "filter",
-    "trans": ["用 iterable 中函数 function 返回真的那些元素"]
+    "trans": [
+      "用 iterable 中函数 function 返回真的那些元素"
+    ],
+    "usphone": "'fɪltɚ",
+    "ukphone": "'fɪltə",
+    "sentences": [
+      {
+        "english": "The water in the tank is constantly filtered.",
+        "chinese": "鱼缸里的水在不停地被过滤。"
+      },
+      {
+        "english": "The ozone layer filters harmful UV rays from the sun.",
+        "chinese": "臭氧层过滤掉有害的太阳紫外线。"
+      },
+      {
+        "english": "coffee filter papers",
+        "chinese": "咖啡滤纸"
+      },
+      {
+        "english": "filter cigarettes (= with a filter at the end )",
+        "chinese": "过滤嘴香烟"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "过滤",
+        "english": "to remove unwanted substances from water, air etc by passing it through a special substance or piece of equipment"
+      },
+      {
+        "pos": "n",
+        "chinese": "过滤器",
+        "english": "something that you pass water, air etc through in order to remove unwanted substances and make it clean or suitable to use"
+      }
+    ]
   },
-  { "name": "float", "trans": ["返回从数字或字符串 x 生成的浮点数"] },
+  {
+    "name": "float",
+    "trans": [
+      "返回从数字或字符串 x 生成的浮点数"
+    ],
+    "usphone": "flot",
+    "ukphone": "fləʊt",
+    "sentences": [
+      {
+        "english": "I looked up at the clouds floating in the sky.",
+        "chinese": "我仰望着天上的浮云。"
+      },
+      {
+        "english": "Leaves floated gently down from the trees.",
+        "chinese": "叶子从树上轻轻飘落。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "使漂浮；实行",
+        "english": "if something floats, it moves slowly through the air or stays up in the air"
+      },
+      {
+        "pos": "n",
+        "chinese": "彩车，花车；漂流物；浮舟；浮萍",
+        "english": "a large vehicle that is decorated to drive through the streets as part of a special event"
+      }
+    ]
+  },
   {
     "name": "format",
-    "trans": ["将 value 转换为 format_spec 控制的 格式化 表示"]
+    "trans": [
+      "将 value 转换为 format_spec 控制的 格式化 表示"
+    ],
+    "usphone": "'fɔrmæt",
+    "ukphone": "'fɔːmæt",
+    "sentences": [
+      {
+        "english": "The courses were run to a consistent format.",
+        "chinese": "这些课程的编排是有连续性的。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "设计，安排；格式，样式，版式",
+        "english": "the way in which something such as a television show or meeting is organized or arranged"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 使格式化",
+        "english": "to organize the space on a computer  disk  so that information can be stored on it"
+      }
+    ]
   },
-  { "name": "frozenset", "trans": ["返回一个新的 不可变集合 对象"] },
-  { "name": "getattr", "trans": ["返回对象命名属性的值"] },
-  { "name": "globals", "trans": ["返回表示当前全局符号表的字典"] },
-  { "name": "hasattr", "trans": ["检测对象是否含有指定属性"] },
-  { "name": "hash", "trans": ["返回该对象的哈希值"] },
-  { "name": "help", "trans": ["启动内置的帮助系统"] },
-  { "name": "hex", "trans": ["将整数转换为以 0x 为前缀的小写十六进制字符串"] },
-  { "name": "id", "trans": ["返回对象的 标识值 "] },
-  { "name": "input", "trans": ["从输入中读取一行"] },
-  { "name": "int", "trans": ["返回一个基于数字或字符串 x 构造的整数对象"] },
-  { "name": "isinstance", "trans": ["检测对象是否为类的实例"] },
-  { "name": "issubclass", "trans": ["检测类是否为类的子类"] },
-  { "name": "iter", "trans": ["返回一个 iterable 对象"] },
-  { "name": "len", "trans": ["返回对象的长度（元素个数）"] },
-  { "name": "list", "trans": ["创建一个新的列表"] },
-  { "name": "locals", "trans": ["更新并返回表示当前本地符号表的字典"] },
+  {
+    "name": "frozenset",
+    "trans": [
+      "返回一个新的 不可变集合 对象"
+    ]
+  },
+  {
+    "name": "getattr",
+    "trans": [
+      "返回对象命名属性的值"
+    ]
+  },
+  {
+    "name": "globals",
+    "trans": [
+      "返回表示当前全局符号表的字典"
+    ]
+  },
+  {
+    "name": "hasattr",
+    "trans": [
+      "检测对象是否含有指定属性"
+    ]
+  },
+  {
+    "name": "hash",
+    "trans": [
+      "返回该对象的哈希值"
+    ],
+    "usphone": "hæʃ",
+    "ukphone": "hæʃ",
+    "sentences": [],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "剁碎的食物；混杂，拼凑；重新表述",
+        "english": ""
+      },
+      {
+        "pos": "v",
+        "chinese": "搞糟，把…弄乱；切细；推敲",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "help",
+    "trans": [
+      "启动内置的帮助系统"
+    ],
+    "usphone": "hɛlp",
+    "ukphone": "help",
+    "sentences": [
+      {
+        "english": "If there’s anything I can do to help, just give me a call.",
+        "chinese": "如果需要我帮忙，就给我打个电话。"
+      },
+      {
+        "english": "Thank you for all your help.",
+        "chinese": "感谢你的一切帮助。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "帮助；援助",
+        "english": "to make it possible or easier for someone to do something by doing part of their work or by giving them something they need"
+      },
+      {
+        "pos": "n",
+        "chinese": "帮手",
+        "english": "things you do to make it easier or possible for someone to do something"
+      }
+    ]
+  },
+  {
+    "name": "hex",
+    "trans": [
+      "将整数转换为以 0x 为前缀的小写十六进制字符串"
+    ]
+  },
+  {
+    "name": "id",
+    "trans": [
+      "返回对象的 标识值 "
+    ]
+  },
+  {
+    "name": "input",
+    "trans": [
+      "从输入中读取一行"
+    ],
+    "usphone": "'ɪn'pʊt",
+    "ukphone": "'ɪnpʊt",
+    "sentences": [
+      {
+        "english": "to input text/data/figures",
+        "chinese": "把文本 / 数据 / 数字输入计算机"
+      },
+      {
+        "english": "data input",
+        "chinese": "数据输入"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "输入",
+        "english": "to put information into a computer"
+      },
+      {
+        "pos": "n",
+        "chinese": "输入",
+        "english": "the act of putting information into a computer; the information that you put in"
+      }
+    ]
+  },
+  {
+    "name": "int",
+    "trans": [
+      "返回一个基于数字或字符串 x 构造的整数对象"
+    ]
+  },
+  {
+    "name": "isinstance",
+    "trans": [
+      "检测对象是否为类的实例"
+    ]
+  },
+  {
+    "name": "issubclass",
+    "trans": [
+      "检测类是否为类的子类"
+    ]
+  },
+  {
+    "name": "iter",
+    "trans": [
+      "返回一个 iterable 对象"
+    ]
+  },
+  {
+    "name": "len",
+    "trans": [
+      "返回对象的长度（元素个数）"
+    ]
+  },
+  {
+    "name": "list",
+    "trans": [
+      "创建一个新的列表"
+    ],
+    "usphone": "lɪst",
+    "ukphone": "lɪst",
+    "sentences": [
+      {
+        "english": "Make a list of all the things you have to do.",
+        "chinese": "把你必须做的所有事情列一个清单。"
+      },
+      {
+        "english": "The first person on my list is Mrs Gilling.",
+        "chinese": "我的名单上排在第一位的是吉林夫人。"
+      },
+      {
+        "english": "The guidebook lists 1,000 hotels and restaurants.",
+        "chinese": "旅游手册上列有1,000家宾馆和餐厅。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "表，目录",
+        "english": "a set of names, numbers etc, usually written one below the other, for example so that you can remember or check them"
+      },
+      {
+        "pos": "v",
+        "chinese": "列举",
+        "english": "to write a list, or mention things one after the other"
+      }
+    ]
+  },
+  {
+    "name": "locals",
+    "trans": [
+      "更新并返回表示当前本地符号表的字典"
+    ]
+  },
   {
     "name": "map",
     "trans": [
       "返回一个将 function 应用于 iterable 中每一项并输出其结果的迭代器"
+    ],
+    "usphone": "mæp",
+    "ukphone": "mæp",
+    "sentences": [
+      {
+        "english": "He spent the next fifteen years mapping the Isle of Anglesey.",
+        "chinese": "他在后来的十五年里绘制了安格尔西岛的地图。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "映射；计划；绘制地图；确定基因在染色体中的位置",
+        "english": "to make a map of a particular area"
+      },
+      {
+        "pos": "n",
+        "chinese": "地图；示意图；染色体图",
+        "english": "a drawing of a particular area, for example a city or country, which shows its main features, such as its roads, rivers, mountains etc"
+      }
     ]
   },
-  { "name": "max", "trans": ["返回可迭代对象中最大的元素"] },
-  { "name": "memoryview", "trans": ["返回由给定实参创建的 内存视图 对象"] },
-  { "name": "min", "trans": ["返回可迭代对象中最小的元素"] },
+  {
+    "name": "max",
+    "trans": [
+      "返回可迭代对象中最大的元素"
+    ]
+  },
+  {
+    "name": "memoryview",
+    "trans": [
+      "返回由给定实参创建的 内存视图 对象"
+    ]
+  },
+  {
+    "name": "min",
+    "trans": [
+      "返回可迭代对象中最小的元素"
+    ]
+  },
   {
     "name": "next",
-    "trans": ["通过调用 iterator 的 __next__() 方法获取下一个元素"]
+    "trans": [
+      "通过调用 iterator 的 __next__() 方法获取下一个元素"
+    ],
+    "usphone": "nɛkst",
+    "ukphone": "nekst",
+    "sentences": [
+      {
+        "english": "The next six months will be the hardest.",
+        "chinese": "接下来的六个月将是最难熬的。"
+      },
+      {
+        "english": "The man in the next chair was asleep.",
+        "chinese": "邻座的男子睡着了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "紧接的；贴近的",
+        "english": "coming straight after sb/sth in time, order or space"
+      }
+    ]
   },
-  { "name": "object", "trans": ["返回一个没有特征的新对象"] },
-  { "name": "oct", "trans": ["将一个整数转变为一个前缀为 0o 的八进制字符串"] },
-  { "name": "open", "trans": ["打开 file 并返回对应的 file object"] },
-  { "name": "ord", "trans": ["对表示单个 Unicode 字符的字符串"] },
-  { "name": "pow", "trans": ["返回 base 的 exp 次幂"] },
-  { "name": "print", "trans": ["将 objects 打印到 file 指定的文本流"] },
-  { "name": "property", "trans": ["返回 property 属性"] },
-  { "name": "range", "trans": ["创建一个整数列表"] },
-  { "name": "repr", "trans": ["返回包含一个对象的可打印表示形式的字符串"] },
-  { "name": "reversed", "trans": ["返回一个反向的 iterator"] },
-  { "name": "round", "trans": ["回 number 舍入到小数点后 ndigits 位精度的值"] },
-  { "name": "set", "trans": ["返回一个新的 set 对象"] },
-  { "name": "setattr", "trans": ["设置对象属性"] },
-  { "name": "slice", "trans": ["返回一个指定索引集的 slice 对象"] },
-  { "name": "sorted", "trans": ["根据 iterable 中的项返回一个新的已排序列表"] },
-  { "name": "str", "trans": ["返回一个 str 版本的 object"] },
-  { "name": "sum", "trans": ["自左向右对 iterable 的项求和并返回总计值"] },
-  { "name": "super", "trans": ["返回一个代理对象"] },
-  { "name": "tuple", "trans": ["返回一个新的 元组 对象"] },
-  { "name": "type", "trans": ["返回 object 的类型"] },
+  {
+    "name": "object",
+    "trans": [
+      "返回一个没有特征的新对象"
+    ],
+    "usphone": "'ɑbdʒɛkt",
+    "ukphone": "'ɒbdʒɪkt; -dʒekt",
+    "sentences": [
+      {
+        "english": "If no one objects, I would like Mrs Harrison to be present.",
+        "chinese": "如果没人反对的话，我想请哈里森夫人出席。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "vi",
+        "chinese": " 反对， 不赞成",
+        "english": "to feel or say that you oppose or disapprove of something"
+      },
+      {
+        "pos": "n",
+        "chinese": " 实物， 物体； 目的， 目标； 对象， 客体； 宾语",
+        "english": "a solid thing that you can hold, touch, or see but that is not alive"
+      }
+    ]
+  },
+  {
+    "name": "oct",
+    "trans": [
+      "将一个整数转变为一个前缀为 0o 的八进制字符串"
+    ]
+  },
+  {
+    "name": "open",
+    "trans": [
+      "打开 file 并返回对应的 file object"
+    ],
+    "usphone": "'opən",
+    "ukphone": "'əʊp(ə)n",
+    "sentences": [
+      {
+        "english": "He threw the door open and ran down the stairs.",
+        "chinese": "他猛地打开门，往楼下跑去。"
+      },
+      {
+        "english": "an open window",
+        "chinese": "打开的窗户"
+      },
+      {
+        "english": "The gates swung silently open.",
+        "chinese": "大门悄悄地打开了。"
+      },
+      {
+        "english": "The bar door flew open and a noisy group burst in.",
+        "chinese": "酒吧的门猛地弹开，冲进来一群吵吵闹闹的人。"
+      },
+      {
+        "english": "All the windows were wide open (= completely open ).",
+        "chinese": "所有的窗户都大开着。"
+      },
+      {
+        "english": "The museum is open daily in the summer months.",
+        "chinese": "夏季里这座博物馆每天开放。"
+      },
+      {
+        "english": "Jack opened the window.",
+        "chinese": "杰克打开窗户。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "开的；开放的",
+        "english": "not closed, so that things, people, air etc can go in and out or be put in and out"
+      },
+      {
+        "pos": "v",
+        "chinese": "开",
+        "english": "to move a door, window etc so that people, things, air etc can pass through, or to be moved in this way"
+      }
+    ]
+  },
+  {
+    "name": "ord",
+    "trans": [
+      "对表示单个 Unicode 字符的字符串"
+    ]
+  },
+  {
+    "name": "pow",
+    "trans": [
+      "返回 base 的 exp 次幂"
+    ]
+  },
+  {
+    "name": "print",
+    "trans": [
+      "将 objects 打印到 file 指定的文本流"
+    ],
+    "usphone": "prɪnt",
+    "ukphone": "prɪnt",
+    "sentences": [
+      {
+        "english": "Over five million copies of the paper are printed every day.",
+        "chinese": "这份报纸每日印量超过五百万。"
+      },
+      {
+        "english": "When the book was first written no publisher would print it.",
+        "chinese": "这本书刚写成时没有出版商愿意出版。"
+      },
+      {
+        "english": "There was no print at all on the backs of the tickets.",
+        "chinese": "门票背面没有印任何文字。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "v",
+        "chinese": "印刷",
+        "english": "to produce many printed copies of a book, newspaper etc"
+      },
+      {
+        "pos": "n",
+        "chinese": "印刷的文字",
+        "english": "writing that has been printed, for example in books or newspapers"
+      }
+    ]
+  },
+  {
+    "name": "property",
+    "trans": [
+      "返回 property 属性"
+    ],
+    "usphone": "'prɑpɚti",
+    "ukphone": "'prɒpətɪ",
+    "sentences": [
+      {
+        "english": "The hotel is not responsible for any loss or damage to guests’ personal property .",
+        "chinese": "宾馆对住客个人财物的丢失和损坏概不负责。"
+      },
+      {
+        "english": "Some of the stolen property was found in Mason’s house.",
+        "chinese": "在梅森家里找到了部分被盗财物。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "财产",
+        "english": "the thing or things that someone owns"
+      }
+    ]
+  },
+  {
+    "name": "range",
+    "trans": [
+      "创建一个整数列表"
+    ],
+    "usphone": "rendʒ",
+    "ukphone": "reɪndʒ",
+    "sentences": [
+      {
+        "english": "a temperature range of 72-85˚",
+        "chinese": "72 度到85度之间的温度范围"
+      },
+      {
+        "english": "Even the cheapest property was out of our price range (= too expensive for us ) .",
+        "chinese": "即使是最便宜的房子也超出了我们能承受的价格范围。"
+      },
+      {
+        "english": "There were 120 students whose ages ranged from 10 to 18.",
+        "chinese": "有120名学生，年龄在10至18岁之间。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "范围",
+        "english": "the limits within which amounts, quantities, ages etc vary"
+      },
+      {
+        "pos": "v",
+        "chinese": "在范围内变化",
+        "english": "if prices, levels, temperatures etc range from one amount to another, they include both those amounts and anything in between"
+      }
+    ]
+  },
+  {
+    "name": "repr",
+    "trans": [
+      "返回包含一个对象的可打印表示形式的字符串"
+    ]
+  },
+  {
+    "name": "reversed",
+    "trans": [
+      "返回一个反向的 iterator"
+    ]
+  },
+  {
+    "name": "round",
+    "trans": [
+      "回 number 舍入到小数点后 ndigits 位精度的值"
+    ],
+    "usphone": "raʊnd",
+    "ukphone": "raund",
+    "sentences": [
+      {
+        "english": "We sat round the table playing cards.",
+        "chinese": "我们围桌而坐玩纸牌。"
+      },
+      {
+        "english": "Gather round! I have an important announcement to make.",
+        "chinese": "大家围拢来！我有重要事情要宣布。"
+      },
+      {
+        "english": "He put his arm gently round her waist.",
+        "chinese": "他轻轻地搂着她的腰。"
+      },
+      {
+        "english": "I kept the key on a chain round my neck.",
+        "chinese": "我给钥匙穿了根链子挂在脖子上。"
+      },
+      {
+        "english": "The ballroom’s huge, with windows all the way round .",
+        "chinese": "舞厅很大，四周都是窗户。"
+      },
+      {
+        "english": "There was a lovely courtyard with tables all round .",
+        "chinese": "有一个漂亮的庭院，四周都是桌子。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adv",
+        "chinese": "围绕；在…周围",
+        "english": "surrounding or on all sides of something or someone"
+      },
+      {
+        "pos": "adj",
+        "chinese": "圆的，圆形的",
+        "english": "shaped like a circle"
+      },
+      {
+        "pos": "n",
+        "chinese": "轮，轮次",
+        "english": "a round of events is a series of related events, which are part of a longer process"
+      },
+      {
+        "pos": "v",
+        "chinese": "环绕…而行，绕过，拐过",
+        "english": "on the other side of something, or to the other side of it without going through it or over it"
+      }
+    ]
+  },
+  {
+    "name": "set",
+    "trans": [
+      "返回一个新的 set 对象"
+    ],
+    "usphone": "sɛt",
+    "ukphone": "set",
+    "sentences": [
+      {
+        "english": "The set (x, y) has two members.",
+        "chinese": "（x, y）这个集里有两个项。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "集（合）",
+        "english": "a group of numbers, shapes etc in mathematics"
+      }
+    ]
+  },
+  {
+    "name": "setattr",
+    "trans": [
+      "设置对象属性"
+    ]
+  },
+  {
+    "name": "slice",
+    "trans": [
+      "返回一个指定索引集的 slice 对象"
+    ],
+    "usphone": "slaɪs",
+    "ukphone": "slaɪs",
+    "sentences": [
+      {
+        "english": "pizza slices",
+        "chinese": "比萨块"
+      },
+      {
+        "english": "Cut the tomatoes into slices .",
+        "chinese": "把番茄切成片。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "薄片，切片，部分",
+        "english": "a thin flat piece of food cut from a larger piece"
+      },
+      {
+        "pos": "vt",
+        "chinese": " 切， 削， 剁",
+        "english": "to hit a ball, for example in tennis or golf, so that it spins sideways instead of moving straight forward"
+      }
+    ]
+  },
+  {
+    "name": "sorted",
+    "trans": [
+      "根据 iterable 中的项返回一个新的已排序列表"
+    ]
+  },
+  {
+    "name": "str",
+    "trans": [
+      "返回一个 str 版本的 object"
+    ]
+  },
+  {
+    "name": "sum",
+    "trans": [
+      "自左向右对 iterable 的项求和并返回总计值"
+    ],
+    "usphone": "sʌm",
+    "ukphone": "sʌm",
+    "sentences": [
+      {
+        "english": "He owes me a large sum of money .",
+        "chinese": "他欠我一大笔钱。"
+      },
+      {
+        "english": "You will have to pay the sum of the two sets of costs.",
+        "chinese": "你得支付那两笔费用的总和。"
+      },
+      {
+        "english": "I was good at sums at school.",
+        "chinese": "我上学时擅长算术。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "金额；总数；算术题",
+        "english": "an amount of money"
+      }
+    ]
+  },
+  {
+    "name": "super",
+    "trans": [
+      "返回一个代理对象"
+    ],
+    "usphone": "'sʊpɚ",
+    "ukphone": "'suːpə; 'sjuː-",
+    "sentences": [
+      {
+        "english": "an old car in super condition",
+        "chinese": "一辆状况极好的旧车"
+      },
+      {
+        "english": "That sounds super.",
+        "chinese": "那听起来棒极了。"
+      },
+      {
+        "english": "What a super idea!",
+        "chinese": "这个主意太妙了！"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "adj",
+        "chinese": "特级的；极好的",
+        "english": "extremely good"
+      },
+      {
+        "pos": "n",
+        "chinese": "特级品，特大号；临时雇员",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "name": "tuple",
+    "trans": [
+      "返回一个新的 元组 对象"
+    ]
+  },
+  {
+    "name": "type",
+    "trans": [
+      "返回 object 的类型"
+    ],
+    "usphone": "taɪp",
+    "ukphone": "taɪp",
+    "sentences": [
+      {
+        "english": "I’ve already seen a few movies of this type.",
+        "chinese": "我已经看过几部这种类型的影片了。"
+      },
+      {
+        "english": "He types with two fingers.",
+        "chinese": "他用两个手指打字。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "型，类型",
+        "english": "one member of a group of people or things that have similar features or qualities"
+      },
+      {
+        "pos": "v",
+        "chinese": "打字",
+        "english": "to write something using a computer or a typewriter"
+      }
+    ]
+  },
   {
     "name": "vars",
     "trans": [
@@ -92,6 +1003,28 @@
   },
   {
     "name": "zip",
-    "trans": ["创建一个聚合了来自每个可迭代对象中的元素的迭代器"]
+    "trans": [
+      "创建一个聚合了来自每个可迭代对象中的元素的迭代器"
+    ],
+    "usphone": "zɪp",
+    "ukphone": "zɪp",
+    "sentences": [
+      {
+        "english": "The zip on my skirt had broken.",
+        "chinese": "我裙子上的拉链坏了。"
+      }
+    ],
+    "detailed_translations": [
+      {
+        "pos": "n",
+        "chinese": "拉链；活力，精力；尖啸声，撕裂声；一种程序压缩的档案文件格式",
+        "english": "two lines of small metal or plastic pieces that slide together to fasten a piece of clothing"
+      },
+      {
+        "pos": "v",
+        "chinese": "拉开或拉上；以尖啸声行进",
+        "english": "to fasten something using a zip"
+      }
+    ]
   }
 ]

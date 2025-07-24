@@ -3,6 +3,7 @@
 ## 问题描述
 
 服务器启动时出现 Mongoose 警告：
+
 ```
 (node:9632) [MONGOOSE] Warning: Duplicate schema index on {"userId":1} found. This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
 ```
@@ -10,6 +11,7 @@
 ## 问题根源
 
 在多个 Mongoose Schema 中，同时使用了：
+
 1. **字段级别的索引定义**：`index: true`
 2. **Schema 级别的索引定义**：`Schema.index()`
 
@@ -18,18 +20,22 @@
 ## 受影响的模型
 
 ### 1. ReviewConfig ✅ 已修复
+
 - **重复索引字段**: `userId`
 - **问题**: 字段级别 `index: true` + Schema 级别 `index({ userId: 1 })`
 
 ### 2. WordRecord ✅ 已修复
+
 - **重复索引字段**: `uuid`, `userId`, `dict`, `isDeleted`
 - **问题**: 字段级别索引与 Schema 级别复合索引重复
 
 ### 3. WordReviewRecord ✅ 已修复
+
 - **重复索引字段**: `uuid`, `userId`, `word`, `nextReviewAt`, `isDeleted`
 - **问题**: 字段级别索引与 Schema 级别复合索引重复
 
 ### 4. ReviewHistory ✅ 已修复
+
 - **重复索引字段**: `uuid`, `userId`, `wordReviewRecordId`, `word`, `reviewedAt`, `reviewResult`
 - **问题**: 字段级别索引与 Schema 级别复合索引重复
 
@@ -43,19 +49,23 @@
 ## 修复内容
 
 ### ReviewConfig 模型
+
 - 移除 `userId` 字段的 `index: true`
 - 保留 Schema 级别的 `{ userId: 1 }` 唯一索引
 
 ### WordRecord 模型
+
 - 移除 `uuid` 字段的 `index: true`（保留 `unique: true`）
 - 移除 `userId`, `dict`, `isDeleted` 字段的 `index: true`
 - 保留 Schema 级别的复合索引
 
 ### WordReviewRecord 模型
+
 - 移除 `uuid`, `userId`, `word`, `nextReviewAt`, `isDeleted` 字段的 `index: true`
 - 保留 Schema 级别的复合索引
 
 ### ReviewHistory 模型
+
 - 移除 `uuid`, `userId`, `wordReviewRecordId`, `word`, `reviewedAt`, `reviewResult` 字段的 `index: true`
 - 保留 Schema 级别的复合索引
 

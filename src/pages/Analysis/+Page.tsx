@@ -17,7 +17,7 @@ export function Page() {
 
   const onBack = useCallback(() => {
     navigate("/");
-  }, [navigate]);
+  }, []);
 
   const changeDarkModeState = () => {
     setIsOpenDarkMode((old) => !old);

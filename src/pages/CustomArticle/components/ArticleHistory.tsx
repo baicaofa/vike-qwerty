@@ -5,6 +5,7 @@ import type { CustomArticle } from "../store/type";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { timeStamp2String } from "@/utils";
 import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function ArticleHistory() {
   const { dispatch } = useContext(ArticleContext);
@@ -13,6 +14,10 @@ export default function ArticleHistory() {
   const [sortBy, setSortBy] = useState<"createdAt" | "lastPracticedAt">(
     "lastPracticedAt"
   );
+
+  // 使用i18n翻译
+  const { t } = useTranslation("article");
+  const { t: tCommon } = useTranslation("common");
   // 使用Tabs组件，不再需要单独的activeTab状态
 
   // 处理排序
@@ -79,12 +84,12 @@ export default function ArticleHistory() {
 
   // 删除文章
   const handleDeleteArticle = async (id: number) => {
-    if (window.confirm("确定要删除这篇文章吗？")) {
+    if (window.confirm(t("history.deleteConfirm"))) {
       const success = await deleteArticle(id);
       if (success) {
         refreshArticles();
       } else {
-        alert("删除文章失败，请重试。");
+        alert(t("history.deleteError"));
       }
     }
   };
@@ -109,15 +114,16 @@ export default function ArticleHistory() {
               </h3>
               {article.isOfficial && (
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                  官方
+                  {tCommon("status.official")}
                 </span>
               )}
             </div>
             <p className="text-sm text-gray-500 mb-1">
-              创建时间: {timeStamp2String(article.createdAt / 1000)}
+              {tCommon("time.created")}:{" "}
+              {timeStamp2String(article.createdAt / 1000)}
             </p>
             <p className="text-sm text-gray-500">
-              上次练习:{" "}
+              {tCommon("time.lastPracticed")}:{" "}
               {timeStamp2String(
                 (article.lastPracticedAt || article.createdAt) / 1000
               )}
@@ -129,16 +135,20 @@ export default function ArticleHistory() {
               className="my-btn-primary text-sm"
               onClick={() => handlePracticeArticle(article)}
             >
-              练习
+              {tCommon("buttons.practice")}
             </button>
             <button
               type="button"
               className="my-btn-secondary text-sm"
               onClick={() => handleDeleteArticle(article.id!)}
               disabled={article.isOfficial} // 官方文章不允许删除
-              title={article.isOfficial ? "官方文章不可删除" : "删除文章"}
+              title={
+                article.isOfficial
+                  ? t("history.deleteTooltipOfficial")
+                  : t("history.deleteTooltip")
+              }
             >
-              删除
+              {tCommon("buttons.delete")}
             </button>
           </div>
         </div>
@@ -163,14 +173,12 @@ export default function ArticleHistory() {
         />
       </svg>
       <h3 className="mt-2 text-sm font-medium text-gray-900">
-        暂无保存的自定义文章
+        {t("history.emptyUser")}
       </h3>
-      <p className="mt-1 text-sm text-gray-500">
-        开始创建一篇新的文章进行练习吧！
-      </p>
+      <p className="mt-1 text-sm text-gray-500">{t("history.emptyUserDesc")}</p>
       <div className="mt-6">
         <button type="button" className="my-btn-primary" onClick={handleBack}>
-          创建新文章
+          {tCommon("buttons.create")}
         </button>
       </div>
     </div>
@@ -192,13 +200,15 @@ export default function ArticleHistory() {
           d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
         />
       </svg>
-      <h3 className="mt-2 text-sm font-medium text-gray-900">暂无官方文章</h3>
+      <h3 className="mt-2 text-sm font-medium text-gray-900">
+        {t("history.emptyOfficial")}
+      </h3>
       <p className="mt-1 text-sm text-gray-500">
-        请尝试在推荐文章中保存官方文章
+        {t("history.emptyOfficialDesc")}
       </p>
       <div className="mt-6">
         <button type="button" className="my-btn-primary" onClick={handleBack}>
-          返回
+          {tCommon("buttons.back")}
         </button>
       </div>
     </div>
@@ -208,20 +218,22 @@ export default function ArticleHistory() {
   const renderLoading = () => (
     <div className="text-center py-10">
       <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-500 mx-auto"></div>
-      <p className="mt-2 text-gray-600">加载中...</p>
+      <p className="mt-2 text-gray-600">{tCommon("status.loading")}</p>
     </div>
   );
 
   // 渲染错误状态
   const renderError = () => (
     <div className="text-center py-10 text-red-500">
-      <p>加载文章失败: {error?.message}</p>
+      <p>
+        {t("history.loadError")}: {error?.message}
+      </p>
       <button
         type="button"
         className="my-btn-secondary mt-4"
         onClick={refreshArticles}
       >
-        重试
+        {tCommon("buttons.retry")}
       </button>
     </div>
   );
@@ -229,11 +241,11 @@ export default function ArticleHistory() {
   return (
     <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
       <div className="w-full flex justify-between items-center mb-6">
-        <h2 className="text-xl font-bold">文章列表</h2>
+        <h2 className="text-xl font-bold">{t("history.title")}</h2>
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <label htmlFor="sort-by" className="text-sm text-gray-600">
-              排序:
+              {tCommon("sort.label")}:
             </label>
             <select
               id="sort-by"
@@ -241,8 +253,10 @@ export default function ArticleHistory() {
               value={sortBy}
               onChange={handleSortChange}
             >
-              <option value="lastPracticedAt">最近练习</option>
-              <option value="createdAt">创建时间</option>
+              <option value="lastPracticedAt">
+                {tCommon("sort.lastPracticed")}
+              </option>
+              <option value="createdAt">{tCommon("sort.created")}</option>
             </select>
           </div>
           <button
@@ -250,7 +264,7 @@ export default function ArticleHistory() {
             className="my-btn-secondary"
             onClick={handleBack}
           >
-            返回
+            {tCommon("buttons.back")}
           </button>
         </div>
       </div>
@@ -264,10 +278,10 @@ export default function ArticleHistory() {
         <Tabs defaultValue="user" className="w-full">
           <TabsList className="w-full mb-6">
             <TabsTrigger value="user" className="flex-1">
-              自定义文章 ({userArticles.length})
+              {t("history.userArticles")} ({userArticles.length})
             </TabsTrigger>
             <TabsTrigger value="official" className="flex-1">
-              官方文章 ({officialArticles.length})
+              {t("history.officialArticles")} ({officialArticles.length})
             </TabsTrigger>
           </TabsList>
 

@@ -1,6 +1,10 @@
 import { initI18n } from "../i18n";
 import { TypingContext, initialState } from "../pages/Typing/store";
-import { detectBrowserLanguage } from "../store/languageAtom";
+import {
+  detectLanguageFromUrl,
+  detectBrowserLanguage,
+  type SupportedLanguage,
+} from "../store/languageAtom";
 import { ClientWrapper } from "./ClientWrapper";
 import "./PageLayout.css";
 import { Provider as JotaiProvider, createStore } from "jotai";
@@ -31,8 +35,13 @@ export async function onRenderClient(pageContext: PageContext) {
   }
 
   // 初始化i18n（客户端）
+  // 优先使用 pageContext 中的 locale，如果没有则从 URL 或浏览器检测
+  const pageLocale = (pageContext as any).locale as SupportedLanguage;
+  const urlLanguage = detectLanguageFromUrl();
   const browserLanguage = detectBrowserLanguage();
-  await initI18n(browserLanguage);
+
+  const finalLanguage = pageLocale || urlLanguage || browserLanguage;
+  await initI18n(finalLanguage);
 
   const typingContextValue = {
     state: initialState,

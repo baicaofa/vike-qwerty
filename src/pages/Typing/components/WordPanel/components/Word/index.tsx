@@ -30,6 +30,7 @@ import { useSaveWordRecord } from "@/utils/db";
 import { useAtomValue } from "jotai";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
+import { useTranslation } from "react-i18next";
 import { useImmer } from "use-immer";
 
 const vowelLetters = ["A", "E", "I", "O", "U"];
@@ -46,6 +47,7 @@ export default function WordComponent({
   const [wordState, setWordState] = useImmer<WordState>(
     structuredClone(initialWordState)
   );
+  const { t } = useTranslation("typing");
 
   const wordDictationConfig = useAtomValue(wordDictationConfigAtom);
   const isTextSelectable = useAtomValue(isTextSelectableAtom);
@@ -427,7 +429,7 @@ export default function WordComponent({
           className={`tooltip-info relative w-fit bg-transparent p-0 leading-normal shadow-none dark:bg-transparent ${
             wordDictationConfig.isOpen && !showCompletedWord ? "tooltip" : ""
           }`}
-          data-tip="按 Tab 快捷键显示完整单词"
+          data-tip={t("tooltips.showFullWord")}
         >
           <div
             onMouseEnter={() => handleHoverWord(true)}

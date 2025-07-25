@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { useSaveArticle } from "@/utils/db/article";
 import { useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface UploadArticleDialogProps {
   open: boolean;
@@ -39,6 +40,8 @@ export default function UploadArticleDialog({
   const [enableSound, setEnableSound] = useState(false);
 
   const saveArticle = useSaveArticle();
+  // i18n
+  const { t } = useTranslation("article");
 
   // 处理文本变化
   const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -50,7 +53,7 @@ export default function UploadArticleDialog({
 
     if (count > MAX_CHARS) {
       setIsError(true);
-      setErrorMessage(`超出字符限制 (${count}/${MAX_CHARS})`);
+      setErrorMessage(t("input.errorTooLong", { count, maxChars: MAX_CHARS }));
     } else {
       setIsError(false);
       setErrorMessage("");
@@ -105,20 +108,23 @@ export default function UploadArticleDialog({
     if (currentStep === 1) {
       if (!title.trim()) {
         setIsError(true);
-        setErrorMessage("请输入文章标题");
+        setErrorMessage(t("upload.errorTitleEmpty"));
         return;
       }
 
       if (!content.trim()) {
         setIsError(true);
-        setErrorMessage("请输入文章内容");
+        setErrorMessage(t("upload.errorContentEmpty"));
         return;
       }
 
       if (content.length > MAX_CHARS) {
         setIsError(true);
         setErrorMessage(
-          `文章内容超出字符限制 (${content.length}/${MAX_CHARS})`
+          t("input.errorTooLong", {
+            count: content.length,
+            maxChars: MAX_CHARS,
+          })
         );
         return;
       }
@@ -189,8 +195,8 @@ export default function UploadArticleDialog({
       // 直接进入练习步骤
       dispatch({ type: ArticleActionType.SET_STEP, payload: 3 });
     } catch (error) {
-      console.error("保存文章失败:", error);
-      alert("保存文章失败，请重试。");
+      console.error(t("upload.saveErrorLog"), error);
+      alert(t("upload.saveError"));
     }
   };
 
@@ -223,14 +229,14 @@ export default function UploadArticleDialog({
         {/* 标题输入 */}
         <div className="grid grid-cols-4 items-center gap-4">
           <label htmlFor="title" className="text-right text-sm font-medium">
-            文章标题
+            {t("editor.articleTitle")}
           </label>
           <input
             id="title"
             value={title}
             onChange={handleTitleChange}
             className="col-span-3 flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300"
-            placeholder="请输入文章标题"
+            placeholder={t("editor.articleTitlePlaceholder")}
           />
         </div>
 
@@ -238,7 +244,7 @@ export default function UploadArticleDialog({
         <div className="grid grid-cols-4 items-start gap-4">
           <div className="text-right">
             <label htmlFor="content" className="text-sm font-medium">
-              文章内容
+              {t("editor.articleContent")}
             </label>
             <p className="text-xs text-gray-500 mt-1">
               {charCount}/{MAX_CHARS}
@@ -251,7 +257,7 @@ export default function UploadArticleDialog({
             className={`col-span-3 flex min-h-[200px] w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300 ${
               isError ? "border-red-500" : ""
             }`}
-            placeholder="请输入或粘贴文章内容..."
+            placeholder={t("editor.articleContentPlaceholder")}
             maxLength={MAX_CHARS + 100} // 允许稍微超出以便显示错误信息
           ></textarea>
         </div>
@@ -270,7 +276,7 @@ export default function UploadArticleDialog({
           onClick={resetForm}
           className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 h-10 px-4 py-2"
         >
-          重置
+          {t("common:buttons.reset")}
         </button>
         <button
           type="button"
@@ -278,7 +284,7 @@ export default function UploadArticleDialog({
           disabled={isError || !title.trim() || !content.trim()}
           className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 px-4 py-2"
         >
-          下一步
+          {t("common:buttons.next")}
         </button>
       </DialogFooter>
     </>
@@ -298,8 +304,8 @@ export default function UploadArticleDialog({
                 className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                 checked={preprocessSettings.removePunctuation}
                 onChange={handleRemovePunctuationToggle}
-                aria-label="移除标点符号"
-                title="从文本中移除所有标点符号"
+                aria-label={t("preprocess.removePunctuation")}
+                title={t("preprocess.removePunctuationDesc")}
               />
             </div>
             <div className="ml-3 text-sm">
@@ -307,10 +313,10 @@ export default function UploadArticleDialog({
                 htmlFor="remove-punctuation"
                 className="font-medium text-gray-700"
               >
-                移除标点符号
+                {t("preprocess.removePunctuation")}
               </label>
               <p className="text-gray-500">
-                移除文本中的标点符号，专注于单词训练，提高打字效率
+                {t("preprocess.removePunctuationDesc")}
               </p>
             </div>
           </div>
@@ -323,8 +329,8 @@ export default function UploadArticleDialog({
                 className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                 checked={enableSound}
                 onChange={handleEnableSoundToggle}
-                aria-label="播放单词读音"
-                title="练习时播放当前单词的读音"
+                aria-label={t("preprocess.enableSound")}
+                title={t("preprocess.enableSoundDesc")}
               />
             </div>
             <div className="ml-3 text-sm">
@@ -332,11 +338,9 @@ export default function UploadArticleDialog({
                 htmlFor="enable-sound"
                 className="font-medium text-gray-700"
               >
-                播放单词读音
+                {t("preprocess.enableSound")}
               </label>
-              <p className="text-gray-500">
-                默认关闭，练习较快不建议开启，读音会加载不及时
-              </p>
+              <p className="text-gray-500">{t("preprocess.enableSoundDesc")}</p>
             </div>
           </div>
         </div>
@@ -344,8 +348,12 @@ export default function UploadArticleDialog({
         {/* 右侧：预览 */}
         <div>
           <div className="mb-2 flex justify-between items-center">
-            <h3 className="text-sm font-medium text-gray-700">预览</h3>
-            <span className="text-xs text-gray-500">单词数量: {wordCount}</span>
+            <h3 className="text-sm font-medium text-gray-700">
+              {t("preprocess.preview")}
+            </h3>
+            <span className="text-xs text-gray-500">
+              {t("preprocess.wordCount", { count: wordCount })}
+            </span>
           </div>
           <div className="border rounded-md p-4 h-64 overflow-auto bg-gray-50">
             <pre className="text-sm whitespace-pre-wrap">{previewText}</pre>
@@ -369,7 +377,7 @@ export default function UploadArticleDialog({
               onClick={handleStartPractice}
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 px-4 py-2"
             >
-              开始练习
+              {t("preprocess.startPractice")}
             </button>
           </div>
         </div>
@@ -411,11 +419,11 @@ export default function UploadArticleDialog({
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle>上传自定义文章</DialogTitle>
+          <DialogTitle>{t("upload.title")}</DialogTitle>
           <DialogDescription>
             {currentStep === 1
-              ? `输入您想要练习的文章标题和内容，最多${MAX_CHARS}个字符`
-              : "调整文本设置以获得最佳练习体验"}
+              ? t("upload.descStep1", { maxChars: MAX_CHARS })
+              : t("upload.descStep2")}
           </DialogDescription>
         </DialogHeader>
 

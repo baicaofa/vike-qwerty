@@ -17,19 +17,24 @@ export { onRenderHtml };
 function detectLanguageFromContext(
   pageContext: PageContext
 ): SupportedLanguage {
-  // 1. 从URL路径检测（如果有语言前缀）
+  // 1. 优先使用 onBeforeRoute 钩子提供的 locale 信息
+  if ((pageContext as any).locale) {
+    return (pageContext as any).locale as SupportedLanguage;
+  }
+
+  // 2. 从URL路径检测（如果有语言前缀）
   const urlPath = pageContext.urlPathname;
   if (urlPath.startsWith("/en/")) return "en";
   if (urlPath.startsWith("/zh/")) return "zh";
 
-  // 2. 从Accept-Language头检测
+  // 3. 从Accept-Language头检测
   const acceptLanguage = pageContext.headers?.["accept-language"];
   if (acceptLanguage) {
     if (acceptLanguage.includes("en")) return "en";
     if (acceptLanguage.includes("zh")) return "zh";
   }
 
-  // 3. 默认返回中文
+  // 4. 默认返回中文
   return "zh";
 }
 
@@ -38,6 +43,7 @@ interface PageContext extends PageContextServer {
   Page: React.ComponentType<any>;
   urlPathname: string;
   routeParams: Record<string, string>;
+  headers?: Record<string, string>;
   config: {
     Layout?:
       | React.ComponentType<{ children: React.ReactNode }>
@@ -93,7 +99,11 @@ async function onRenderHtml(pageContext: PageContext) {
   );
 
   // 动态设置语言属性
-  const htmlLang = detectedLanguage === "zh" ? "zh-CN" : "en";
+  const langMap: Record<SupportedLanguage, string> = {
+    zh: "zh-CN",
+    en: "en",
+  };
+  const htmlLang = langMap[detectedLanguage] || "zh-CN";
 
   // 使用escapeInject返回HTML
   return escapeInject`<!DOCTYPE html>

@@ -7,8 +7,8 @@ import { ArticleActionType } from "./store/type";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import { getRandomArticle } from "@/data/officialArticles";
-import { useNamespaceTranslation } from "@/hooks/useI18n";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useImmerReducer } from "use-immer";
 
 export function Page() {
@@ -17,7 +17,7 @@ export function Page() {
   const { articles, isLoading } = useArticleList();
 
   // 使用i18n翻译
-  const { t } = useNamespaceTranslation("article");
+  const { t } = useTranslation("article");
 
   // 页面加载时，加载最近的文章或默认文章，并直接进入练习步骤
   useEffect(() => {

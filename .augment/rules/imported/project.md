@@ -22,6 +22,8 @@ Always respond in Chinese-simplified
 
 应当在 src/pages/ 目录下创建一个全局的 +onHydrationEnd.ts 文件，将所有符合规定一的初始化逻辑集中管理。
 
+
+
 在开发时，应严格区分 onHydrationEnd, onRenderClient 以及组件级 useEffect 的使用场景。
 区分标准：
 onRenderClient: 用于执行 必须在 页面渲染前完成的核心逻辑。它是渲染流程的一部分，会阻塞页面显示。

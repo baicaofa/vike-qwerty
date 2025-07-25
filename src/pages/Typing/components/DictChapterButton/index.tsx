@@ -8,6 +8,7 @@ import range from "@/utils/range";
 import { Listbox, Transition } from "@headlessui/react";
 import { useAtom, useAtomValue } from "jotai";
 import { Fragment } from "react";
+import { useTranslation } from "react-i18next";
 import { navigate } from "vike/client/router";
 import IconCheck from "~icons/tabler/check";
 
@@ -16,6 +17,7 @@ export const DictChapterButton = () => {
   const [currentChapter, setCurrentChapter] = useAtom(currentChapterAtom);
   const chapterCount = currentDictInfo.chapterCount;
   const isReviewMode = useAtomValue(isReviewModeAtom);
+  const { t } = useTranslation("typing");
 
   const handleKeyDown: React.KeyboardEventHandler<HTMLButtonElement> = (
     event
@@ -31,22 +33,22 @@ export const DictChapterButton = () => {
 
   return (
     <>
-      <Tooltip content="词典切换">
+      <Tooltip content={t("tooltips.dictSwitch")}>
         <button
           onClick={toGallery}
           className="block rounded-lg px-3 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
         >
-          {currentDictInfo.name} {isReviewMode && "错题复习"}
+          {currentDictInfo.name} {isReviewMode && t("chapter.reviewMode")}
         </button>
       </Tooltip>
       {!isReviewMode && (
-        <Tooltip content="章节切换">
+        <Tooltip content={t("tooltips.chapterSwitch")}>
           <Listbox value={currentChapter} onChange={setCurrentChapter}>
             <Listbox.Button
               onKeyDown={handleKeyDown}
               className="rounded-lg px-3 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
             >
-              第 {currentChapter + 1} 章
+              {t("chapter.number", { number: currentChapter + 1 })}
             </Listbox.Button>
             <Transition
               as={Fragment}
@@ -64,7 +66,9 @@ export const DictChapterButton = () => {
                             <IconCheck className="focus:outline-none" />
                           </span>
                         ) : null}
-                        <span>第 {index + 1} 章</span>
+                        <span>
+                          {t("chapter.number", { number: index + 1 })}
+                        </span>
                       </div>
                     )}
                   </Listbox.Option>

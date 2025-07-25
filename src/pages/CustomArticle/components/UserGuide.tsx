@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function UserGuide() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { t } = useTranslation("article");
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
@@ -30,7 +32,7 @@ export default function UserGuide() {
                   d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                 />
               </svg>
-              自定义文章功能使用指南
+              {t("guide.customArticleTitle")}
             </h2>
             <svg
               className={`w-5 h-5 text-gray-600 transition-transform duration-200 ${
@@ -56,54 +58,59 @@ export default function UserGuide() {
             {/* 功能简介 */}
             <section>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                功能简介
+                {t("guide.introduction")}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                自定义文章功能允许您使用自己的文本内容进行练习，让您可以练习工作中常用的专业术语、学习材料或任何您感兴趣的文本内容。
+                {t("guide.introText")}
               </p>
             </section>
 
             {/* 主要特点 */}
             <section>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                主要特点
+                {t("guide.features")}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="flex items-center space-x-2">
                   <span className="text-green-500">✨</span>
                   <span className="text-gray-700">
-                    <strong>完全本地化</strong> -
-                    数据保存在浏览器中，不支持跨设备
+                    <strong>{t("guide.feature1")}</strong> -
+                    {t("guide.feature1Desc")}
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-blue-500">📝</span>
                   <span className="text-gray-700">
-                    <strong>灵活输入</strong> - 支持最多3000字符
+                    <strong>{t("guide.feature2")}</strong> -{" "}
+                    {t("guide.feature2Desc")}
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-purple-500">🎯</span>
                   <span className="text-gray-700">
-                    <strong>智能处理</strong> - 可选择移除标点符号
+                    <strong>{t("guide.feature3")}</strong> -{" "}
+                    {t("guide.feature3Desc")}
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-orange-500">🔊</span>
                   <span className="text-gray-700">
-                    <strong>声音反馈</strong> - 可启用按键音效
+                    <strong>{t("guide.feature4")}</strong> -{" "}
+                    {t("guide.feature4Desc")}
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-indigo-500">💾</span>
                   <span className="text-gray-700">
-                    <strong>便捷保存</strong> - 保存常用文章
+                    <strong>{t("guide.feature5")}</strong> -{" "}
+                    {t("guide.feature5Desc")}
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-red-500">📊</span>
                   <span className="text-gray-700">
-                    <strong>实时统计</strong> - 显示速度和准确率
+                    <strong>{t("guide.feature6")}</strong> -{" "}
+                    {t("guide.feature6Desc")}
                   </span>
                 </div>
               </div>
@@ -112,31 +119,31 @@ export default function UserGuide() {
             {/* 使用步骤 */}
             <section>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                使用步骤
+                {t("guide.steps")}
               </h3>
               <div className="space-y-4">
                 <div className="border-l-4 border-blue-500 pl-4">
                   <h4 className="font-medium text-gray-800">
-                    第一步：添加文本
+                    {t("guide.step1")}
                   </h4>
                   <p className="text-gray-600 text-sm mt-1">
-                    在文本框中输入或粘贴您想要练习的内容（最多3000字符），可以是文章、代码、专业术语等任何文本。
+                    {t("guide.step1Desc")}
                   </p>
                 </div>
                 <div className="border-l-4 border-green-500 pl-4">
                   <h4 className="font-medium text-gray-800">
-                    第二步：文本预处理
+                    {t("guide.step2")}
                   </h4>
                   <p className="text-gray-600 text-sm mt-1">
-                    选择是否移除标点符号、启用声音反馈，预览处理效果。如需重复练习，可点击&quot;保存文章&quot;。
+                    {t("guide.step2Desc")}
                   </p>
                 </div>
                 <div className="border-l-4 border-purple-500 pl-4">
                   <h4 className="font-medium text-gray-800">
-                    第三步：开始练习
+                    {t("guide.step3")}
                   </h4>
                   <p className="text-gray-600 text-sm mt-1">
-                    按单词进行练习，实时显示速度、准确率。支持暂停、继续、重新开始等操作。
+                    {t("guide.step3Desc")}
                   </p>
                 </div>
               </div>
@@ -145,31 +152,31 @@ export default function UserGuide() {
             {/* 常见问题 */}
             <section>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                常见问题
+                {t("guide.faq")}
               </h3>
               <div className="space-y-3">
                 <details className="group">
                   <summary className="cursor-pointer text-gray-700 hover:text-blue-600 font-medium">
-                    我的文章数据会丢失吗？
+                    {t("guide.faq1")}
                   </summary>
                   <p className="text-gray-600 text-sm mt-2 pl-4">
-                    文章数据保存在浏览器的本地存储中，只要不清除浏览器数据就不会丢失。切换浏览器、其他设备访问会丢失。
+                    {t("guide.faq1Answer")}
                   </p>
                 </details>
                 <details className="group">
                   <summary className="cursor-pointer text-gray-700 hover:text-blue-600 font-medium">
-                    可以练习代码吗？
+                    {t("guide.faq2")}
                   </summary>
                   <p className="text-gray-600 text-sm mt-2 pl-4">
-                    可以！建议开启&quot;移除标点符号&quot;选项来专注于代码中的关键词练习。
+                    {t("guide.faq2Answer")}
                   </p>
                 </details>
                 <details className="group">
                   <summary className="cursor-pointer text-gray-700 hover:text-blue-600 font-medium">
-                    后续可以支持云端保存吗？
+                    {t("guide.faq3")}
                   </summary>
                   <p className="text-gray-600 text-sm mt-2 pl-4">
-                    可能会在后续版本中支持云端保存，敬请期待。
+                    {t("guide.faq3Answer")}
                   </p>
                 </details>
               </div>
@@ -180,10 +187,11 @@ export default function UserGuide() {
               <div className="flex items-start space-x-2">
                 <span className="text-blue-500 text-lg">💡</span>
                 <div>
-                  <h4 className="font-medium text-blue-800">小贴士</h4>
+                  <h4 className="font-medium text-blue-800">
+                    {t("guide.tips")}
+                  </h4>
                   <p className="text-blue-700 text-sm mt-1">
-                    自定义文章功能特别适合练习专业领域的术语、准备考试材料或提高特定内容的熟练度。
-                    练习时不区分大小写，输入错误会自动重置，让您专注于提高打字速度和准确性。
+                    {t("guide.tipsText")}
                   </p>
                 </div>
               </div>

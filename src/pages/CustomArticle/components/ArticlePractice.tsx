@@ -12,6 +12,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { useTranslation } from "react-i18next";
 
 // 当前单词组件，使用memo优化渲染
 const CurrentWord = memo(
@@ -80,6 +81,9 @@ export default function ArticlePractice() {
   const { state, dispatch } = useContext(ArticleContext);
   const [isCompleted, setIsCompleted] = useState(false);
   const [playKeySound, playBeepSound, playHintSound] = useKeySounds();
+
+  // 使用i18n翻译
+  const { t } = useTranslation("article");
 
   // 弹窗状态
   const [showRecommendedDialog, setShowRecommendedDialog] = useState(false);
@@ -201,7 +205,7 @@ export default function ArticlePractice() {
       const char = e.key;
 
       if (isChineseSymbol(char)) {
-        alert("您正在使用输入法，请关闭输入法。");
+        alert(t("practice.inputMethodWarning"));
         return;
       }
 
@@ -409,7 +413,7 @@ export default function ArticlePractice() {
         {/* 提示信息 */}
         {!state.isTyping && (
           <div className="text-center text-gray-600 mb-4 animate-pulse">
-            按任意键开始练习
+            {t("practice.pressAnyKey")}
           </div>
         )}
       </div>
@@ -426,33 +430,44 @@ export default function ArticlePractice() {
   const renderResult = useCallback(() => {
     return (
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-2xl">
-        <h2 className="text-2xl font-bold mb-2 text-center">练习完成！</h2>
+        <h2 className="text-2xl font-bold mb-2 text-center">
+          {t("practice.completed")}
+        </h2>
         <h3 className="text-lg font-medium mb-4 text-center text-gray-600">
-          {state.articleTitle || "自定义文章"}
+          {state.articleTitle || t("practice.customArticle")}
         </h3>
 
         <div className="grid grid-cols-2 gap-4 mb-6">
           <div className="bg-gray-50 p-3 rounded">
-            <div className="text-sm text-gray-500">时间</div>
+            <div className="text-sm text-gray-500">
+              {t("practice.timeLabel")}
+            </div>
             <div className="text-xl font-semibold">
-              {Math.round(state.elapsedTime)}秒
+              {Math.round(state.elapsedTime)}
+              {t("practice.seconds")}
             </div>
           </div>
 
           <div className="bg-gray-50 p-3 rounded">
-            <div className="text-sm text-gray-500">速度</div>
+            <div className="text-sm text-gray-500">
+              {t("practice.speedLabel")}
+            </div>
             <div className="text-xl font-semibold">{state.speed} WPM</div>
           </div>
 
           <div className="bg-gray-50 p-3 rounded">
-            <div className="text-sm text-gray-500">准确率</div>
+            <div className="text-sm text-gray-500">
+              {t("practice.accuracyLabel")}
+            </div>
             <div className="text-xl font-semibold">
               {state.accuracy.toFixed(2)}%
             </div>
           </div>
 
           <div className="bg-gray-50 p-3 rounded">
-            <div className="text-sm text-gray-500">错误数</div>
+            <div className="text-sm text-gray-500">
+              {t("practice.errorsLabel")}
+            </div>
             <div className="text-xl font-semibold">{state.errors}</div>
           </div>
         </div>
@@ -463,11 +478,11 @@ export default function ArticlePractice() {
             className="my-btn-secondary"
             onClick={handleRestart}
           >
-            再次练习
+            {t("practice.practiceAgain")}
           </button>
 
           <button type="button" className="my-btn-primary" onClick={handleBack}>
-            返回文章列表
+            {t("practice.backToList")}
           </button>
         </div>
       </div>
@@ -491,7 +506,7 @@ export default function ArticlePractice() {
           onClick={handleOpenRecommendedDialog}
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
         >
-          文章库
+          {t("practice.articleLibrary")}
         </button>
         <button
           type="button"
@@ -511,21 +526,23 @@ export default function ArticlePractice() {
               d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
             />
           </svg>
-          <span>个人文章</span>
+          <span>{t("practice.personalArticles")}</span>
         </button>
         <button
           type="button"
           onClick={handleOpenUploadDialog}
           className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
         >
-          上传文章
+          {t("practice.uploadArticle")}
         </button>
       </div>
 
       {/* 文章标题 */}
       <div className="w-full mb-4 text-center">
         <h3 className="text-l  text-gray-800">
-          来源：{state.articleTitle || "自定义文章"}
+          {t("practice.source", {
+            title: state.articleTitle || t("practice.customArticle"),
+          })}
         </h3>
       </div>
 
@@ -534,14 +551,21 @@ export default function ArticlePractice() {
           <div className="w-full mb-4">
             <div className="flex justify-between items-center mb-2">
               <div className="text-sm font-medium">
-                单词: {state.currentWordIndex + 1} / {state.words.length}
+                {t("practice.wordProgress", {
+                  current: state.currentWordIndex + 1,
+                  total: state.words.length,
+                })}
               </div>
-              <div className="text-sm font-medium">速度: {state.speed} WPM</div>
               <div className="text-sm font-medium">
-                准确率: {state.accuracy.toFixed(2)}%
+                {t("practice.speed", { speed: state.speed })}
               </div>
               <div className="text-sm font-medium">
-                时间: {Math.round(state.elapsedTime)}秒
+                {t("practice.accuracy", {
+                  accuracy: state.accuracy.toFixed(2),
+                })}
+              </div>
+              <div className="text-sm font-medium">
+                {t("practice.time", { time: Math.round(state.elapsedTime) })}
               </div>
             </div>
 
@@ -567,7 +591,7 @@ export default function ArticlePractice() {
                 className="my-btn-secondary"
                 onClick={handlePause}
               >
-                暂停
+                {t("practice.pause")}
               </button>
             )}
 
@@ -577,7 +601,7 @@ export default function ArticlePractice() {
                 className="my-btn-primary"
                 onClick={handleResume}
               >
-                继续
+                {t("practice.resume")}
               </button>
             )}
 
@@ -587,7 +611,7 @@ export default function ArticlePractice() {
               onClick={handleRestart}
               disabled={!state.isTyping && !state.isFinished}
             >
-              重新开始
+              {t("practice.restart")}
             </button>
 
             <button
@@ -595,7 +619,7 @@ export default function ArticlePractice() {
               className="my-btn-secondary"
               onClick={handleBack}
             >
-              返回文章列表
+              {t("practice.backToList")}
             </button>
 
             {state.isTyping && (
@@ -604,7 +628,7 @@ export default function ArticlePractice() {
                 className="my-btn-secondary"
                 onClick={scrollToCurrentWord}
               >
-                返回当前位置
+                {t("practice.backToCurrentPosition")}
               </button>
             )}
           </div>
@@ -619,14 +643,14 @@ export default function ArticlePractice() {
                 className="my-btn-primary"
                 onClick={handleRestart}
               >
-                再次练习
+                {t("practice.practiceAgain")}
               </button>
               <button
                 type="button"
                 className="my-btn-secondary"
                 onClick={handleBack}
               >
-                返回文章列表
+                {t("practice.backToList")}
               </button>
             </div>
           )}

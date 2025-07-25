@@ -20,9 +20,34 @@ export const currentLanguageAtom = atomWithStorage<SupportedLanguage>(
 // 语言是否已初始化的状态
 export const languageInitializedAtom = atom<boolean>(false);
 
+/**
+ * 从 URL 路径中检测语言
+ * @returns 检测到的语言代码
+ */
+export function detectLanguageFromUrl(): SupportedLanguage {
+  if (typeof window === "undefined") return "zh";
+
+  const pathname = window.location.pathname;
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const firstSegment = pathSegments[0];
+
+  // 检查第一个路径段是否为支持的语言代码
+  if (["zh", "en"].includes(firstSegment)) {
+    return firstSegment as SupportedLanguage;
+  }
+
+  return "zh"; // 默认语言
+}
+
 // 检测浏览器语言的工具函数
 export const detectBrowserLanguage = (): SupportedLanguage => {
   if (typeof window === "undefined") return "zh";
+
+  // 首先尝试从 URL 检测语言
+  const urlLanguage = detectLanguageFromUrl();
+  if (urlLanguage !== "zh") {
+    return urlLanguage;
+  }
 
   const browserLang = navigator.language.toLowerCase();
 
@@ -44,7 +69,11 @@ export const createLanguageSwitcher = (
       setLanguage(newLanguage);
       // 更新HTML lang属性
       if (typeof document !== "undefined") {
-        document.documentElement.lang = newLanguage === "zh" ? "zh-CN" : "en";
+        const langMap: Record<SupportedLanguage, string> = {
+          zh: "zh-CN",
+          en: "en",
+        };
+        document.documentElement.lang = langMap[newLanguage];
       }
     }
   };

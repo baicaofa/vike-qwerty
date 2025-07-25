@@ -54,5 +54,35 @@
     "networkError": "网络错误",
     "dictNotFound": "词典未找到",
     "chapterNotFound": "章节未找到"
+  },
+  "buttons": {
+    "skip": "跳过",
+    "dictation": "默写本章节",
+    "repeat": "重复本章节",
+    "nextChapter": "下一章节",
+    "practiceOther": "练习其他章节"
+  },
+  "tooltips": {
+    "skipWord": "跳过该词",
+    "dictSwitch": "词典切换",
+    "chapterSwitch": "章节切换",
+    "showFullWord": "按 Tab 快捷键显示完整单词",
+    "closeResult": "关闭结果页面",
+    "dictationShortcut": "快捷键：shift + enter",
+    "repeatShortcut": "快捷键：space",
+    "nextShortcut": "快捷键：enter"
+  },
+  "messages": {
+    "mobileNotSupported": "Keybr 目的为提高键盘工作者的英语输入效率，目前暂未适配移动端，希望您使用桌面端浏览器访问。如您使用的是 Ipad 等平板电脑设备，可以使用外接键盘使用本软件。"
+  },
+  "stats": {
+    "time": "时间",
+    "inputCount": "输入数",
+    "correctCount": "正确数",
+    "chapterTime": "章节耗时"
+  },
+  "chapter": {
+    "number": "第 {{number}} 章",
+    "reviewMode": "错题复习"
   }
 }

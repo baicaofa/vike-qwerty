@@ -1,6 +1,7 @@
 import { ArticleContext } from "../store";
 import { ArticleActionType } from "../store/type";
 import { useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const MAX_CHARS = 3000;
 
@@ -9,6 +10,9 @@ export default function ArticleInput() {
   const [charCount, setCharCount] = useState(0);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  // 使用i18n翻译
+  const { t } = useTranslation("article");
 
   // 初始化时计算字符数
   useEffect(() => {
@@ -24,7 +28,7 @@ export default function ArticleInput() {
 
     if (count > MAX_CHARS) {
       setIsError(true);
-      setErrorMessage(`超出字符限制 (${count}/${MAX_CHARS})`);
+      setErrorMessage(t("input.errorTooLong", { count, maxChars: MAX_CHARS }));
       return;
     } else {
       setIsError(false);
@@ -52,7 +56,7 @@ export default function ArticleInput() {
   const handleNext = () => {
     if (state.articleText.trim().length === 0) {
       setIsError(true);
-      setErrorMessage("请输入文本内容");
+      setErrorMessage(t("input.errorEmpty"));
       return;
     }
 
@@ -61,9 +65,9 @@ export default function ArticleInput() {
 
   return (
     <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
-      <h2 className="text-xl font-bold mb-4">添加文本</h2>
+      <h2 className="text-xl font-bold mb-4">{t("input.title")}</h2>
       <p className="text-gray-600 mb-4">
-        请输入或粘贴您想要练习的文本内容，最多{MAX_CHARS}个字符。
+        {t("input.description", { maxChars: MAX_CHARS })}
       </p>
 
       <div className="w-full mb-2">
@@ -72,7 +76,7 @@ export default function ArticleInput() {
             htmlFor="article-text"
             className="text-sm font-medium text-gray-700"
           >
-            文本内容
+            {t("input.label")}
           </label>
           <span
             className={`text-sm ${isError ? "text-red-500" : "text-gray-500"}`}
@@ -86,7 +90,7 @@ export default function ArticleInput() {
           className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm h-64 ${
             isError ? "border-red-500" : ""
           }`}
-          placeholder="在此输入或粘贴文本..."
+          placeholder={t("input.placeholder")}
           value={state.articleText}
           onChange={handleTextChange}
           maxLength={MAX_CHARS}
@@ -101,7 +105,7 @@ export default function ArticleInput() {
           className="my-btn-secondary"
           onClick={handleClear}
         >
-          清空
+          {t("input.clear")}
         </button>
         <button
           type="button"
@@ -109,7 +113,7 @@ export default function ArticleInput() {
           onClick={handleNext}
           disabled={isError || state.articleText.trim().length === 0}
         >
-          下一步
+          {t("input.next")}
         </button>
       </div>
     </div>

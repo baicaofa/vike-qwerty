@@ -1,8 +1,8 @@
-import { changeLanguage, getCurrentLanguage } from "@/i18n";
+import i18n from "@/i18n";
 import {
+  type SupportedLanguage,
   currentLanguageAtom,
   languageInitializedAtom,
-  type SupportedLanguage,
 } from "@/store/languageAtom";
 import { useAtom, useSetAtom } from "jotai";
 import { useCallback, useEffect } from "react";
@@ -20,10 +20,8 @@ export function useI18n() {
   // 同步i18next语言状态到Jotai
   useEffect(() => {
     const syncLanguage = () => {
-      const i18nLanguage = getCurrentLanguage();
-      if (i18nLanguage !== currentLanguage) {
-        setCurrentLanguage(i18nLanguage);
-      }
+      const i18nLanguage = i18n.language === "en" ? "en" : "zh";
+      setCurrentLanguage(i18nLanguage);
       setLanguageInitialized(true);
     };
 
@@ -36,7 +34,7 @@ export function useI18n() {
     return () => {
       i18n.off("languageChanged", syncLanguage);
     };
-  }, [currentLanguage, setCurrentLanguage, setLanguageInitialized, i18n]);
+  }, [setCurrentLanguage, setLanguageInitialized]); // 移除currentLanguage依赖，避免无限循环
 
   // 切换语言函数
   const switchLanguage = useCallback(
@@ -44,8 +42,13 @@ export function useI18n() {
       if (newLanguage === currentLanguage) return;
 
       try {
-        await changeLanguage(newLanguage);
+        await i18n.changeLanguage(newLanguage);
         setCurrentLanguage(newLanguage);
+
+        // 更新HTML lang属性
+        if (typeof document !== "undefined") {
+          document.documentElement.lang = newLanguage === "zh" ? "zh-CN" : "en";
+        }
       } catch (error) {
         console.error("Failed to switch language:", error);
         throw error;
@@ -81,8 +84,35 @@ export function useI18n() {
  * 命名空间特定的翻译Hook
  */
 export function useNamespaceTranslation(namespace: string) {
-  const { t } = useTranslation(namespace);
-  const { currentLanguage, switchLanguage, toggleLanguage } = useI18n();
+  const { t, i18n } = useTranslation(namespace);
+  const [currentLanguage, setCurrentLanguage] = useAtom(currentLanguageAtom);
+
+  // 简化的语言切换函数，避免重复调用
+  const switchLanguage = useCallback(
+    async (newLanguage: SupportedLanguage) => {
+      if (newLanguage === currentLanguage) return;
+
+      try {
+        await i18n.changeLanguage(newLanguage);
+        setCurrentLanguage(newLanguage);
+
+        // 更新HTML lang属性
+        if (typeof document !== "undefined") {
+          document.documentElement.lang = newLanguage === "zh" ? "zh-CN" : "en";
+        }
+      } catch (error) {
+        console.error("Failed to switch language:", error);
+        throw error;
+      }
+    },
+    [currentLanguage, setCurrentLanguage, i18n]
+  );
+
+  const toggleLanguage = useCallback(async () => {
+    const nextLanguage: SupportedLanguage =
+      currentLanguage === "zh" ? "en" : "zh";
+    await switchLanguage(nextLanguage);
+  }, [currentLanguage, switchLanguage]);
 
   return {
     t,

@@ -31,7 +31,10 @@
     "refresh": "Refresh",
     "share": "Share",
     "download": "Download",
-    "upload": "Upload"
+    "upload": "Upload",
+    "retry": "Retry",
+    "practice": "Practice",
+    "create": "Create New Article"
   },
   "status": {
     "loading": "Loading...",
@@ -41,7 +44,8 @@
     "info": "Info",
     "completed": "Completed",
     "pending": "Pending",
-    "processing": "Processing"
+    "processing": "Processing",
+    "official": "Official"
   },
   "time": {
     "seconds": "seconds",
@@ -50,7 +54,9 @@
     "days": "days",
     "weeks": "weeks",
     "months": "months",
-    "years": "years"
+    "years": "years",
+    "created": "Created",
+    "lastPracticed": "Last Practiced"
   },
   "language": {
     "switch": "Switch Language",
@@ -62,5 +68,10 @@
     "light": "Light Mode",
     "dark": "Dark Mode",
     "auto": "Follow System"
+  },
+  "sort": {
+    "label": "Sort",
+    "lastPracticed": "Last Practiced",
+    "created": "Created Time"
   }
 }

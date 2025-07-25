@@ -1,6 +1,7 @@
 import BottomControlPanel from "../../components/BottomControlPanel";
 import CustomArticleButton from "../../components/CustomArticleButton";
 import Layout from "../../components/Layout";
+import { WebsiteLanguageSwitcher } from "../../components/WebsiteLanguageSwitcher";
 import { DictChapterButton } from "./components/DictChapterButton";
 import MarkWordButton from "./components/MarkWordButton";
 import ResultScreen from "./components/ResultScreen";
@@ -38,6 +39,7 @@ import { useMixPanelChapterLogUploader } from "@/utils/mixpanel";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import type React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useImmerReducer } from "use-immer";
 
 export function Page() {
@@ -47,6 +49,7 @@ export function Page() {
   );
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { words } = useWordList();
+  const { t } = useTranslation("typing");
 
   const [currentDictId, setCurrentDictId] = useAtom(currentDictIdAtom);
   const setCurrentChapter = useSetAtom(currentChapterAtom);
@@ -67,9 +70,7 @@ export function Page() {
     // 检测用户设备
     if (!IsDesktop()) {
       setTimeout(() => {
-        alert(
-          " Keybr 目的为提高键盘工作者的英语输入效率，目前暂未适配移动端，希望您使用桌面端浏览器访问。如您使用的是 Ipad 等平板电脑设备，可以使用外接键盘使用本软件。"
-        );
+        alert(t("messages.mobileNotSupported"));
       }, 500);
     }
   }, []);
@@ -214,7 +215,7 @@ export function Page() {
           <CustomArticleButton />
           <StartButton isLoading={isLoading} />
 
-          <Tooltip content="跳过该词">
+          <Tooltip content={t("tooltips.skipWord")}>
             <button
               type="button"
               className={`${
@@ -228,6 +229,11 @@ export function Page() {
             </button>
           </Tooltip>
           <ReviewStatusIndicator />
+
+          {/* 网站语言切换组件 - 只在 Typing 页面显示 */}
+          <div className="ml-auto">
+            <WebsiteLanguageSwitcher showLabel={false} />
+          </div>
         </Header>
         <div className="container mx-auto flex h-full flex-1 flex-col items-center justify-center pb-5">
           <div className="container relative mx-auto flex h-full flex-col items-center">

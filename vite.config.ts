@@ -15,7 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // 定义需要包含在sitemap中的重要路由及其优先级
-const sitemapRoutes = [
+const baseSitemapRoutes = [
   { path: "/", priority: 1.0, changefreq: "daily" },
   { path: "/gallery", priority: 0.9, changefreq: "daily" },
   { path: "/analysis", priority: 0.8, changefreq: "weekly" },
@@ -26,6 +26,23 @@ const sitemapRoutes = [
   { path: "/updates", priority: 0.4, changefreq: "monthly" },
   // 用户相关页面不需要添加到sitemap中
 ];
+
+// 生成多语言sitemap路由
+const supportedLanguages = ['zh', 'en'];
+const sitemapRoutes = baseSitemapRoutes.flatMap(route => {
+  return supportedLanguages.map(lang => {
+    if (lang === 'zh') {
+      // 默认语言，不添加前缀
+      return route;
+    } else {
+      // 非默认语言，添加语言前缀
+      return {
+        ...route,
+        path: `/${lang}${route.path}`,
+      };
+    }
+  });
+});
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {

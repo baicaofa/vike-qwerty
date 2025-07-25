@@ -17,6 +17,7 @@ import { Transition } from "@headlessui/react";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { useCallback, useContext, useEffect, useMemo } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
+import { useTranslation } from "react-i18next";
 import { navigate } from "vike/client/router";
 import IexportWords from "~icons/icon-park-outline/excel";
 import IconX from "~icons/tabler/x";
@@ -33,6 +34,7 @@ const ResultScreen = () => {
 
   const setReviewModeInfo = useSetAtom(reviewModeInfoAtom);
   const isReviewMode = useAtomValue(isReviewModeAtom);
+  const { t } = useTranslation("typing");
 
   useEffect(() => {
     // tick a zero timer to calc the stats
@@ -64,7 +66,9 @@ const ResultScreen = () => {
         utils.book_append_sheet(wb, ws, "Data");
         writeFileXLSX(
           wb,
-          `${currentDictInfo.name}第${currentChapter + 1}章.xlsx`
+          `${currentDictInfo.name}${t("chapter.number", {
+            number: currentChapter + 1,
+          })}.xlsx`
         );
       })
       .catch(() => {
@@ -225,14 +229,16 @@ const ResultScreen = () => {
           <div className="my-card fixed flex w-[90vw] max-w-6xl flex-col overflow-hidden rounded-3xl bg-white pb-14 pl-10 pr-5 pt-10 shadow-lg dark:bg-gray-800 md:w-4/5 lg:w-3/5">
             <div className="text-center font-sans text-xl font-normal text-gray-900 dark:text-gray-400 md:text-2xl">
               {`${currentDictInfo.name} ${
-                isReviewMode ? "错题复习" : "第" + (currentChapter + 1) + "章"
+                isReviewMode
+                  ? t("chapter.reviewMode")
+                  : t("chapter.number", { number: currentChapter + 1 })
               }`}
             </div>
             <button
               className="absolute right-7 top-5"
               onClick={exitButtonHandler}
-              title="关闭结果页面"
-              aria-label="关闭结果页面"
+              title={t("tooltips.closeResult")}
+              aria-label={t("tooltips.closeResult")}
             >
               <IconX className="text-gray-400" />
             </button>
@@ -240,11 +246,17 @@ const ResultScreen = () => {
               <div className="flex flex-shrink-0 flex-grow-0 flex-col gap-3 px-4 sm:px-1 md:px-2 lg:px-4">
                 <RemarkRing
                   remark={`${state.timerData.accuracy}%`}
-                  caption="正确率"
+                  caption={t("progress.accuracy")}
                   percentage={state.timerData.accuracy}
                 />
-                <RemarkRing remark={timeString} caption="章节耗时" />
-                <RemarkRing remark={state.timerData.wpm + ""} caption="WPM" />
+                <RemarkRing
+                  remark={timeString}
+                  caption={t("stats.chapterTime")}
+                />
+                <RemarkRing
+                  remark={state.timerData.wpm + ""}
+                  caption={t("progress.wpm")}
+                />
               </div>
               <div className="z-10 ml-6 flex-1 overflow-visible rounded-xl bg-indigo-50 dark:bg-gray-700">
                 <div className="customized-scrollbar z-20 ml-8 mr-1 flex h-80 flex-row flex-wrap content-start gap-4 overflow-y-auto overflow-x-hidden pr-7 pt-9">
@@ -276,37 +288,37 @@ const ResultScreen = () => {
             <div className="mt-10 flex w-full justify-center gap-5 px-5 text-xl">
               {!isReviewMode && (
                 <>
-                  <Tooltip content="快捷键：shift + enter">
+                  <Tooltip content={t("tooltips.dictationShortcut")}>
                     <button
                       className="my-btn-primary h-12 border-2 border-solid border-gray-300 bg-white text-base text-gray-700 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
                       type="button"
                       onClick={dictationButtonHandler}
-                      title="默写本章节"
+                      title={t("buttons.dictation")}
                     >
-                      默写本章节
+                      {t("buttons.dictation")}
                     </button>
                   </Tooltip>
-                  <Tooltip content="快捷键：space">
+                  <Tooltip content={t("tooltips.repeatShortcut")}>
                     <button
                       className="my-btn-primary h-12 border-2 border-solid border-gray-300 bg-white text-base text-gray-700 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
                       type="button"
                       onClick={repeatButtonHandler}
-                      title="重复本章节"
+                      title={t("buttons.repeat")}
                     >
-                      重复本章节
+                      {t("buttons.repeat")}
                     </button>
                   </Tooltip>
                 </>
               )}
               {!isLastChapter && !isReviewMode && (
-                <Tooltip content="快捷键：enter">
+                <Tooltip content={t("tooltips.nextShortcut")}>
                   <button
                     className={`{ isLastChapter ? 'cursor-not-allowed opacity-50' : ''} my-btn-primary h-12 text-base font-bold `}
                     type="button"
                     onClick={nextButtonHandler}
-                    title="下一章节"
+                    title={t("buttons.nextChapter")}
                   >
-                    下一章节
+                    {t("buttons.nextChapter")}
                   </button>
                 </Tooltip>
               )}
@@ -316,9 +328,9 @@ const ResultScreen = () => {
                   className="my-btn-primary h-12 text-base font-bold"
                   type="button"
                   onClick={onNavigateToGallery}
-                  title="练习其他章节"
+                  title={t("buttons.practiceOther")}
                 >
-                  练习其他章节
+                  {t("buttons.practiceOther")}
                 </button>
               )}
             </div>

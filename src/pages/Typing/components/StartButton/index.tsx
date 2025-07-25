@@ -11,11 +11,13 @@ import {
 import { useAtomValue } from "jotai";
 import { useCallback, useContext, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
+import { useTranslation } from "react-i18next";
 
 export default function StartButton({ isLoading }: { isLoading: boolean }) {
   // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
   const { state, dispatch } = useContext(TypingContext)!;
   const randomConfig = useAtomValue(randomConfigAtom);
+  const { t } = useTranslation("common");
 
   const onToggleIsTyping = useCallback(() => {
     !isLoading && dispatch({ type: TypingStateActionType.TOGGLE_IS_TYPING });
@@ -49,7 +51,9 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
 
   return (
     <Tooltip
-      content={`${state.isTyping ? "暂停" : "开始"} （Enter）`}
+      content={`${
+        state.isTyping ? t("buttons.pause") : t("buttons.start")
+      } （Enter）`}
       className="box-content h-7 w-8 px-6 py-1"
     >
       <div
@@ -71,7 +75,7 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
           } my-btn-primary w-20 shadow`}
           type="button"
           onClick={onToggleIsTyping}
-          aria-label={state.isTyping ? "暂停" : "开始"}
+          aria-label={state.isTyping ? t("buttons.pause") : t("buttons.start")}
         >
           <span className="font-medium">
             {state.isTyping ? "Pause" : "Start"}
@@ -91,7 +95,7 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
               } my-btn-primary mb-1 mt-1 w-18  transition-colors duration-200`}
               type="button"
               onClick={onClickRestart}
-              aria-label={"重新开始"}
+              aria-label={t("buttons.restart")}
             >
               Restart
             </button>

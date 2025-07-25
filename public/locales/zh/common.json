@@ -31,7 +31,10 @@
     "refresh": "刷新",
     "share": "分享",
     "download": "下载",
-    "upload": "上传"
+    "upload": "上传",
+    "retry": "重试",
+    "practice": "练习",
+    "create": "创建新文章"
   },
   "status": {
     "loading": "加载中...",
@@ -41,7 +44,8 @@
     "info": "信息",
     "completed": "已完成",
     "pending": "待处理",
-    "processing": "处理中"
+    "processing": "处理中",
+    "official": "官方"
   },
   "time": {
     "seconds": "秒",
@@ -50,7 +54,9 @@
     "days": "天",
     "weeks": "周",
     "months": "月",
-    "years": "年"
+    "years": "年",
+    "created": "创建时间",
+    "lastPracticed": "上次练习"
   },
   "language": {
     "switch": "切换语言",
@@ -62,5 +68,10 @@
     "light": "浅色模式",
     "dark": "深色模式",
     "auto": "跟随系统"
+  },
+  "sort": {
+    "label": "排序",
+    "lastPracticed": "最近练习",
+    "created": "创建时间"
   }
 }

@@ -1,6 +1,6 @@
 import {
-  languageNames,
   type SupportedLanguage,
+  languageNames,
   supportedLanguages,
 } from "@/store/languageAtom";
 import { Globe } from "lucide-react";

@@ -1,7 +1,7 @@
 import { initI18n } from "@/i18n";
 import {
-  detectLanguageFromUrl,
   detectBrowserLanguage,
+  detectLanguageFromUrl,
 } from "@/store/languageAtom";
 import type { OnHydrationEndAsync } from "vike/types";
 

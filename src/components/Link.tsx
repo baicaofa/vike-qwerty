@@ -1,5 +1,5 @@
 import type { SupportedLanguage } from "@/store/languageAtom";
-import React from "react";
+import type React from "react";
 import { usePageContext } from "vike-react/usePageContext";
 
 interface LinkProps {

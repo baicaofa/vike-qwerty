@@ -1,9 +1,9 @@
 import { initI18n } from "../i18n";
 import { TypingContext, initialState } from "../pages/Typing/store";
 import {
-  detectLanguageFromUrl,
-  detectBrowserLanguage,
   type SupportedLanguage,
+  detectBrowserLanguage,
+  detectLanguageFromUrl,
 } from "../store/languageAtom";
 import { ClientWrapper } from "./ClientWrapper";
 import "./PageLayout.css";

@@ -9,13 +9,15 @@
 ### 1. 核心路由系统 ✅
 
 #### 1.1 全局路由钩子
+
 - **文件**: `src/pages/+onBeforeRoute.ts`
 - **功能**: 从 URL 中提取语言信息，移除语言前缀，将语言信息存储在 pageContext 中
 - **支持**: `/zh/path`、`/en/path`、`/fr/path` 格式的路由
 
 #### 1.2 语言状态管理更新
+
 - **文件**: `src/store/languageAtom.ts`
-- **更新**: 
+- **更新**:
   - 添加法语支持
   - 新增 `detectLanguageFromUrl()` 函数
   - 更新 `detectBrowserLanguage()` 优先从 URL 检测语言
@@ -24,11 +26,13 @@
 ### 2. 组件系统 ✅
 
 #### 2.1 多语言链接组件
+
 - **文件**: `src/components/Link.tsx`
 - **功能**: 自动根据当前语言添加语言前缀到链接
 - **特性**: 支持手动指定语言、提供工具函数
 
 #### 2.2 网站语言切换组件
+
 - **文件**: `src/components/WebsiteLanguageSwitcher.tsx`
 
 - **功能**: 专门用于网站语言切换，支持下拉菜单和紧凑版本
@@ -37,30 +41,36 @@
 ### 3. 预渲染和 SEO ✅
 
 #### 3.1 预渲染配置
+
 - **文件**: `src/pages/+onPrerenderStart.ts`
 - **功能**: 为每种语言生成对应的预渲染页面
 
 #### 3.2 Sitemap 更新
+
 - **文件**: `vite.config.ts`
 - **更新**: 自动为每种语言生成对应的 sitemap 条目
 
 #### 3.3 水合钩子更新
+
 - **文件**: `src/pages/+onHydrationEnd.ts`
 - **更新**: 优先从 URL 检测语言，正确设置 HTML lang 属性
 
 ### 4. 翻译资源 ✅
 
 #### 4.1 客户端翻译资源
+
 - **文件**: `src/i18n/client.ts`
 - **更新**: 添加法语翻译资源，完善多语言支持
 
 ### 5. 测试和工具 ✅
 
 #### 5.1 测试页面
+
 - **文件**: `src/pages/i18n-test/+Page.tsx`
 - **功能**: 提供完整的国际化功能测试界面
 
 #### 5.2 工具函数
+
 - **文件**: `src/utils/i18nRedirect.ts`
 - **功能**: 提供国际化重定向和路径处理工具函数
 
@@ -68,7 +78,7 @@
 
 ### 路由处理流程
 
-1. **用户访问**: 用户访问 `/en/gallery` 
+1. **用户访问**: 用户访问 `/en/gallery`
 2. **onBeforeRoute**: 提取语言 `en`，移除前缀得到 `/gallery`
 3. **pageContext**: 设置 `locale: 'en'`，`urlLogical: '/gallery'`
 4. **页面渲染**: 页面组件接收到干净的路径和语言信息
@@ -88,10 +98,10 @@
 ## 支持的语言
 
 | 语言代码 | 语言名称 | URL 示例 | HTML Lang |
-|---------|---------|----------|-----------|
-| zh | 中文 | `/` | zh-CN |
-| en | English | `/en/` | en |
-| fr | Français | `/fr/` | fr |
+| -------- | -------- | -------- | --------- |
+| zh       | 中文     | `/`      | zh-CN     |
+| en       | English  | `/en/`   | en        |
+| fr       | Français | `/fr/`   | fr        |
 
 ## 使用方法
 
@@ -110,13 +120,13 @@ import { Link } from '@/components/Link'
 ### 2. 获取当前语言信息
 
 ```tsx
-import { usePageContext } from 'vike-react/usePageContext'
+import { usePageContext } from "vike-react/usePageContext";
 
 function MyComponent() {
-  const pageContext = usePageContext()
-  const currentLocale = (pageContext as any).locale || 'zh'
-  
-  return <div>当前语言: {currentLocale}</div>
+  const pageContext = usePageContext();
+  const currentLocale = (pageContext as any).locale || "zh";
+
+  return <div>当前语言: {currentLocale}</div>;
 }
 ```
 
@@ -135,13 +145,16 @@ import { WebsiteLanguageSwitcher } from '@/components/WebsiteLanguageSwitcher'
 ## 测试验证
 
 ### 访问测试页面
+
 访问 `/i18n-test` 页面可以测试以下功能：
+
 - 语言切换功能
 - 多语言链接生成
 - 翻译资源加载
 - URL 路径处理
 
 ### 多语言 URL 测试
+
 - 中文（默认）: `https://example.com/`
 - 英文: `https://example.com/en/`
 - 法文: `https://example.com/fr/`
@@ -160,12 +173,14 @@ import { WebsiteLanguageSwitcher } from '@/components/WebsiteLanguageSwitcher'
 
 ## 后续优化建议
 
-### 短期优化（1-2周）
+### 短期优化（1-2 周）
+
 1. 添加语言自动检测和重定向
 2. 完善错误处理和边界情况
 3. 添加更多翻译内容
 
-### 长期优化（1-2个月）
+### 长期优化（1-2 个月）
+
 1. 实现智能语言推荐
 2. 添加地区化内容支持
 3. 性能监控和优化
@@ -173,6 +188,7 @@ import { WebsiteLanguageSwitcher } from '@/components/WebsiteLanguageSwitcher'
 ## 总结
 
 我们成功实现了完整的国际化路由系统，支持：
+
 - ✅ 基于路径的多语言路由（/en、/fr）
 - ✅ SEO 友好的多语言页面
 - ✅ 自动语言检测和切换
@@ -182,5 +198,3 @@ import { WebsiteLanguageSwitcher } from '@/components/WebsiteLanguageSwitcher'
 系统架构清晰，组件职责分离，为后续扩展更多语言和功能奠定了良好基础。
 
 ---
-
-

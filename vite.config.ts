@@ -28,10 +28,10 @@ const baseSitemapRoutes = [
 ];
 
 // 生成多语言sitemap路由
-const supportedLanguages = ['zh', 'en'];
-const sitemapRoutes = baseSitemapRoutes.flatMap(route => {
-  return supportedLanguages.map(lang => {
-    if (lang === 'zh') {
+const supportedLanguages = ["zh", "en"];
+const sitemapRoutes = baseSitemapRoutes.flatMap((route) => {
+  return supportedLanguages.map((lang) => {
+    if (lang === "zh") {
       // 默认语言，不添加前缀
       return route;
     } else {

@@ -4,9 +4,9 @@
  */
 import type { ExcelParseResult } from "./excelParser";
 import {
+  type ExcelParsingMetrics,
   performanceMonitor,
   withExcelParsingMonitoring,
-  type ExcelParsingMetrics,
 } from "./performanceMonitor";
 
 // 复用现有的进度回调模式

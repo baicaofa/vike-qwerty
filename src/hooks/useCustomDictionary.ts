@@ -1,13 +1,13 @@
 import type {
+  GetCustomDictionariesParams,
+  GetCustomWordsParams,
   ICustomDictionary,
   ICustomWord,
   SaveCustomDictionaryResult,
   SaveCustomWordResult,
-  GetCustomDictionariesParams,
-  GetCustomWordsParams,
 } from "../utils/db/customDictionary";
 import * as customDictionaryService from "@/services/customDictionaryService";
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 
 /**
  * 自定义词库API钩子
@@ -170,7 +170,7 @@ export function useCustomWordAPI() {
 
   // 获取词库中的单词
   const getWords = useCallback(
-    async (dictId: string, page: number = 1, pageSize: number = 20) => {
+    async (dictId: string, page = 1, pageSize = 20) => {
       setLoading(true);
       setError(null);
       try {

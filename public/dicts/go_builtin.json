@@ -1,15 +1,11 @@
 [
   {
     "name": "bool",
-    "trans": [
-      "bool 是布尔值的集合，true 和 false。"
-    ]
+    "trans": ["bool 是布尔值的集合，true 和 false。"]
   },
   {
     "name": "true",
-    "trans": [
-      "true 和 false 是两个无类型布尔值。"
-    ],
+    "trans": ["true 和 false 是两个无类型布尔值。"],
     "usphone": "tru",
     "ukphone": "truː",
     "sentences": [
@@ -55,9 +51,7 @@
   },
   {
     "name": "false",
-    "trans": [
-      "true 和 false 是两个无类型布尔值。"
-    ],
+    "trans": ["true 和 false 是两个无类型布尔值。"],
     "usphone": "fɔls",
     "ukphone": "fɔːls; fɒls",
     "sentences": [
@@ -93,21 +87,15 @@
   },
   {
     "name": "uint8",
-    "trans": [
-      "uint8 是所有无符号8位整数的集合。范围：0 到 255。"
-    ]
+    "trans": ["uint8 是所有无符号8位整数的集合。范围：0 到 255。"]
   },
   {
     "name": "uint16",
-    "trans": [
-      "uint16 是所有无符号16位整数的集合。范围：0 到 65535。"
-    ]
+    "trans": ["uint16 是所有无符号16位整数的集合。范围：0 到 65535。"]
   },
   {
     "name": "uint32",
-    "trans": [
-      "uint32 是所有无符号32位整数的集合。范围：0 到 4294967295。"
-    ]
+    "trans": ["uint32 是所有无符号32位整数的集合。范围：0 到 4294967295。"]
   },
   {
     "name": "uint64",
@@ -117,15 +105,11 @@
   },
   {
     "name": "int8",
-    "trans": [
-      "int8 是所有有符号8位整数的集合。范围：-128 到 127。"
-    ]
+    "trans": ["int8 是所有有符号8位整数的集合。范围：-128 到 127。"]
   },
   {
     "name": "int16",
-    "trans": [
-      "int16 是所有有符号16位整数的集合。范围：-32768 到 32767。"
-    ]
+    "trans": ["int16 是所有有符号16位整数的集合。范围：-32768 到 32767。"]
   },
   {
     "name": "int32",
@@ -141,27 +125,19 @@
   },
   {
     "name": "float32",
-    "trans": [
-      "float32 是所有IEEE-754标准的32位浮点数的集合。"
-    ]
+    "trans": ["float32 是所有IEEE-754标准的32位浮点数的集合。"]
   },
   {
     "name": "float64",
-    "trans": [
-      "float64 是所有IEEE-754标准的64位浮点数的集合。"
-    ]
+    "trans": ["float64 是所有IEEE-754标准的64位浮点数的集合。"]
   },
   {
     "name": "complex64",
-    "trans": [
-      "complex64 是所有由float32实部和虚部构成的复数的集合。"
-    ]
+    "trans": ["complex64 是所有由float32实部和虚部构成的复数的集合。"]
   },
   {
     "name": "complex128",
-    "trans": [
-      "complex128 是所有由float64实部和虚部构成的复数的集合。"
-    ]
+    "trans": ["complex128 是所有由float64实部和虚部构成的复数的集合。"]
   },
   {
     "name": "string",
@@ -210,9 +186,7 @@
   },
   {
     "name": "uintptr",
-    "trans": [
-      "uintptr 是一个足够大以容纳任何指针的位模式的整数类型。"
-    ]
+    "trans": ["uintptr 是一个足够大以容纳任何指针的位模式的整数类型。"]
   },
   {
     "name": "byte",
@@ -243,9 +217,7 @@
   },
   {
     "name": "any",
-    "trans": [
-      "any 是 interface{} 的别名，在所有方面都等同于 interface{}。"
-    ],
+    "trans": ["any 是 interface{} 的别名，在所有方面都等同于 interface{}。"],
     "usphone": "'ɛni",
     "ukphone": "'enɪ",
     "sentences": [

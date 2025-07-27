@@ -13,9 +13,7 @@
   },
   {
     "name": "charAt()",
-    "trans": [
-      "charAt() 方法从一个字符串中返回指定的字符。"
-    ]
+    "trans": ["charAt() 方法从一个字符串中返回指定的字符。"]
   },
   {
     "name": "charCodeAt()",
@@ -25,9 +23,7 @@
   },
   {
     "name": "codePointAt()",
-    "trans": [
-      "codePointAt() 方法返回 一个 Unicode 编码点值的非负整数。"
-    ]
+    "trans": ["codePointAt() 方法返回 一个 Unicode 编码点值的非负整数。"]
   },
   {
     "name": "concat()",
@@ -67,9 +63,7 @@
   },
   {
     "name": "match()",
-    "trans": [
-      "match() 方法检索返回一个字符串匹配正则表达式的的结果。"
-    ]
+    "trans": ["match() 方法检索返回一个字符串匹配正则表达式的的结果。"]
   },
   {
     "name": "matchAll()",
@@ -109,9 +103,7 @@
   },
   {
     "name": "search()",
-    "trans": [
-      "search() 方法执行正则表达式和 String 对象之间的一个搜索匹配。"
-    ]
+    "trans": ["search() 方法执行正则表达式和 String 对象之间的一个搜索匹配。"]
   },
   {
     "name": "slice()",
@@ -151,21 +143,15 @@
   },
   {
     "name": "toLowerCase()",
-    "trans": [
-      "toLowerCase() 会将调用该方法的字符串值转为小写形式，并返回。"
-    ]
+    "trans": ["toLowerCase() 会将调用该方法的字符串值转为小写形式，并返回。"]
   },
   {
     "name": "toString()",
-    "trans": [
-      "toString() 方法返回指定对象的字符串形式。"
-    ]
+    "trans": ["toString() 方法返回指定对象的字符串形式。"]
   },
   {
     "name": "toUpperCase()",
-    "trans": [
-      "toUpperCase() 将调用该方法的字符串值转换为大写形式，并返回。"
-    ]
+    "trans": ["toUpperCase() 将调用该方法的字符串值转换为大写形式，并返回。"]
   },
   {
     "name": "trim()",
@@ -175,15 +161,11 @@
   },
   {
     "name": "trimRight()",
-    "trans": [
-      "trimRight() 方法从一个字符串的右端移除空白字符。"
-    ]
+    "trans": ["trimRight() 方法从一个字符串的右端移除空白字符。"]
   },
   {
     "name": "trimLeft()",
-    "trans": [
-      "一个新字符串，表示从其开头（左端）剥离空格的调用字符串。"
-    ]
+    "trans": ["一个新字符串，表示从其开头（左端）剥离空格的调用字符串。"]
   },
   {
     "name": "String.raw()",

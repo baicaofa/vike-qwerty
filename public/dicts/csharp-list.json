@@ -7,33 +7,23 @@
   },
   {
     "name": "Count",
-    "trans": [
-      "Count:获取 List<T> 中包含的元素数"
-    ]
+    "trans": ["Count:获取 List<T> 中包含的元素数"]
   },
   {
     "name": "item[]",
-    "trans": [
-      "item[]:获取或设置指定索引处的元素"
-    ]
+    "trans": ["item[]:获取或设置指定索引处的元素"]
   },
   {
     "name": "Add()",
-    "trans": [
-      "Add(T):将对象添加到 List<T> 的结尾处"
-    ]
+    "trans": ["Add(T):将对象添加到 List<T> 的结尾处"]
   },
   {
     "name": "AddRange()",
-    "trans": [
-      "AddRange(IEnumerable<T>):将指定集合的元素添加到 List<T> 的末尾"
-    ]
+    "trans": ["AddRange(IEnumerable<T>):将指定集合的元素添加到 List<T> 的末尾"]
   },
   {
     "name": "AsReadOnly()",
-    "trans": [
-      "AsReadOnly():返回当前集合的只读 ReadOnlyCollection<T> 包装器"
-    ]
+    "trans": ["AsReadOnly():返回当前集合的只读 ReadOnlyCollection<T> 包装器"]
   },
   {
     "name": "BinarySearch()",
@@ -45,15 +35,11 @@
   },
   {
     "name": "Clear()",
-    "trans": [
-      "Clear():从 List<T> 中移除所有元素"
-    ]
+    "trans": ["Clear():从 List<T> 中移除所有元素"]
   },
   {
     "name": "Contains()",
-    "trans": [
-      "Contains(T):确定某元素是否在 List<T> 中"
-    ]
+    "trans": ["Contains(T):确定某元素是否在 List<T> 中"]
   },
   {
     "name": "ConvertAll()",
@@ -71,9 +57,7 @@
   },
   {
     "name": "Equals()",
-    "trans": [
-      "Equals(Object):确定指定对象是否等于当前对象（继承自 Object）"
-    ]
+    "trans": ["Equals(Object):确定指定对象是否等于当前对象（继承自 Object）"]
   },
   {
     "name": "Exists()",
@@ -89,9 +73,7 @@
   },
   {
     "name": "FindAll()",
-    "trans": [
-      "FindAll(Predicate<T>):检索与指定谓词定义的条件匹配的所有元素"
-    ]
+    "trans": ["FindAll(Predicate<T>):检索与指定谓词定义的条件匹配的所有元素"]
   },
   {
     "name": "FindIndex()",
@@ -117,33 +99,23 @@
   },
   {
     "name": "ForEach()",
-    "trans": [
-      "ForEach(Action<T>):对 List<T> 的每个元素执行指定操作"
-    ]
+    "trans": ["ForEach(Action<T>):对 List<T> 的每个元素执行指定操作"]
   },
   {
     "name": "GetEnumerator()",
-    "trans": [
-      "GetEnumerator():返回循环访问 List<T> 的枚举数"
-    ]
+    "trans": ["GetEnumerator():返回循环访问 List<T> 的枚举数"]
   },
   {
     "name": "GetHashCode()",
-    "trans": [
-      "GetHashCode():作为默认哈希函数（继承自 Object）"
-    ]
+    "trans": ["GetHashCode():作为默认哈希函数（继承自 Object）"]
   },
   {
     "name": "GetRange()",
-    "trans": [
-      "GetRange(Int32, Int32):在源 List<T> 中创建元素范围的浅表复制"
-    ]
+    "trans": ["GetRange(Int32, Int32):在源 List<T> 中创建元素范围的浅表复制"]
   },
   {
     "name": "GetType()",
-    "trans": [
-      "GetType():获取当前实例的 Type（继承自 Object）"
-    ]
+    "trans": ["GetType():获取当前实例的 Type（继承自 Object）"]
   },
   {
     "name": "IndexOf()",
@@ -155,9 +127,7 @@
   },
   {
     "name": "Insert()",
-    "trans": [
-      "Insert(Int32, T):将元素插入 List<T> 的指定索引处"
-    ]
+    "trans": ["Insert(Int32, T):将元素插入 List<T> 的指定索引处"]
   },
   {
     "name": "InsertRange()",
@@ -175,15 +145,11 @@
   },
   {
     "name": "MemberwiseClone()",
-    "trans": [
-      "MemberwiseClone():创建当前 Object 的浅表副本（继承自 Object）"
-    ]
+    "trans": ["MemberwiseClone():创建当前 Object 的浅表副本（继承自 Object）"]
   },
   {
     "name": "Remove()",
-    "trans": [
-      "Remove(T):从 List<T> 中移除特定对象的第一个匹配项"
-    ]
+    "trans": ["Remove(T):从 List<T> 中移除特定对象的第一个匹配项"]
   },
   {
     "name": "RemoveAll()",
@@ -195,9 +161,7 @@
   },
   {
     "name": "Reverse()",
-    "trans": [
-      "Reverse(Int32, Int32):将指定范围中元素的顺序反转"
-    ]
+    "trans": ["Reverse(Int32, Int32):将指定范围中元素的顺序反转"]
   },
   {
     "name": "Sort()",
@@ -209,15 +173,11 @@
   },
   {
     "name": "ToArray()",
-    "trans": [
-      "将 List<T> 的元素复制到新数组中"
-    ]
+    "trans": ["将 List<T> 的元素复制到新数组中"]
   },
   {
     "name": "ToString()",
-    "trans": [
-      "返回表示当前对象的字符串（继承自 Object）"
-    ]
+    "trans": ["返回表示当前对象的字符串（继承自 Object）"]
   },
   {
     "name": "TrimExcess()",

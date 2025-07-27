@@ -1,9 +1,7 @@
 [
   {
     "name": "Vec::new()",
-    "trans": [
-      "`Vec::new()` 方法创建并返回一个新的空 `Vec`，它没有任何元素。"
-    ]
+    "trans": ["`Vec::new()` 方法创建并返回一个新的空 `Vec`，它没有任何元素。"]
   },
   {
     "name": "Vec::with_capacity()",
@@ -13,9 +11,7 @@
   },
   {
     "name": "Vec::push()",
-    "trans": [
-      "`Vec::push()` 方法将一个元素追加到 `Vec` 的末尾。"
-    ]
+    "trans": ["`Vec::push()` 方法将一个元素追加到 `Vec` 的末尾。"]
   },
   {
     "name": "Vec::pop()",
@@ -25,21 +21,15 @@
   },
   {
     "name": "Vec::len()",
-    "trans": [
-      "`Vec::len()` 方法返回 `Vec` 中元素的个数。"
-    ]
+    "trans": ["`Vec::len()` 方法返回 `Vec` 中元素的个数。"]
   },
   {
     "name": "Vec::is_empty()",
-    "trans": [
-      "`Vec::is_empty()` 方法返回一个布尔值，表示 `Vec` 是否为空。"
-    ]
+    "trans": ["`Vec::is_empty()` 方法返回一个布尔值，表示 `Vec` 是否为空。"]
   },
   {
     "name": "Vec::clear()",
-    "trans": [
-      "`Vec::clear()` 方法移除 `Vec` 中的所有元素，但不改变其容量。"
-    ]
+    "trans": ["`Vec::clear()` 方法移除 `Vec` 中的所有元素，但不改变其容量。"]
   },
   {
     "name": "Vec::contains()",
@@ -85,15 +75,11 @@
   },
   {
     "name": "Vec::index()",
-    "trans": [
-      "`Vec::index()` 方法与 `get()` 类似，但在越界时会引发 `panic`。"
-    ]
+    "trans": ["`Vec::index()` 方法与 `get()` 类似，但在越界时会引发 `panic`。"]
   },
   {
     "name": "Vec::clone()",
-    "trans": [
-      "`Vec::clone()` 方法返回一个 `Vec` 的克隆，包含相同的元素。"
-    ]
+    "trans": ["`Vec::clone()` 方法返回一个 `Vec` 的克隆，包含相同的元素。"]
   },
   {
     "name": "Vec::extend()",
@@ -103,15 +89,11 @@
   },
   {
     "name": "Vec::insert()",
-    "trans": [
-      "`Vec::insert()` 方法在指定位置插入一个元素，后续元素会右移。"
-    ]
+    "trans": ["`Vec::insert()` 方法在指定位置插入一个元素，后续元素会右移。"]
   },
   {
     "name": "Vec::insert_many()",
-    "trans": [
-      "`Vec::insert_many()` 方法在指定位置插入多个元素。"
-    ]
+    "trans": ["`Vec::insert_many()` 方法在指定位置插入多个元素。"]
   },
   {
     "name": "Vec::split_off()",
@@ -127,9 +109,7 @@
   },
   {
     "name": "Vec::sort()",
-    "trans": [
-      "`Vec::sort()` 方法对 `Vec` 中的元素进行排序，默认按升序排列。"
-    ]
+    "trans": ["`Vec::sort()` 方法对 `Vec` 中的元素进行排序，默认按升序排列。"]
   },
   {
     "name": "Vec::sort_by()",
@@ -151,9 +131,7 @@
   },
   {
     "name": "Vec::dedup()",
-    "trans": [
-      "`Vec::dedup()` 方法移除 `Vec` 中的相邻重复元素。"
-    ]
+    "trans": ["`Vec::dedup()` 方法移除 `Vec` 中的相邻重复元素。"]
   },
   {
     "name": "Vec::dedup_by()",

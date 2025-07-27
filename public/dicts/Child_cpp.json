@@ -1,9 +1,7 @@
 [
   {
     "name": "include",
-    "trans": [
-      "包含"
-    ],
+    "trans": ["包含"],
     "usphone": "ɪn'klud",
     "ukphone": "ɪn'kluːd",
     "sentences": [
@@ -30,33 +28,23 @@
   },
   {
     "name": "iostream",
-    "trans": [
-      "输入输出头文件"
-    ]
+    "trans": ["输入输出头文件"]
   },
   {
     "name": "using",
-    "trans": [
-      "使用"
-    ]
+    "trans": ["使用"]
   },
   {
     "name": "namespace",
-    "trans": [
-      "命名空间"
-    ]
+    "trans": ["命名空间"]
   },
   {
     "name": "std",
-    "trans": [
-      "标准的缩写"
-    ]
+    "trans": ["标准的缩写"]
   },
   {
     "name": "main",
-    "trans": [
-      "主函数"
-    ],
+    "trans": ["主函数"],
     "usphone": "",
     "ukphone": "meɪn",
     "sentences": [
@@ -99,15 +87,11 @@
   },
   {
     "name": "int",
-    "trans": [
-      "声明整型变量或函数"
-    ]
+    "trans": ["声明整型变量或函数"]
   },
   {
     "name": "char",
-    "trans": [
-      "声明字符型变量或函数"
-    ],
+    "trans": ["声明字符型变量或函数"],
     "usphone": "tʃɑr",
     "ukphone": "tʃɑː",
     "sentences": [
@@ -131,9 +115,7 @@
   },
   {
     "name": "double",
-    "trans": [
-      "声明双精度变量或函数"
-    ],
+    "trans": ["声明双精度变量或函数"],
     "usphone": "'dʌbl",
     "ukphone": "'dʌb(ə)l",
     "sentences": [
@@ -168,9 +150,7 @@
   },
   {
     "name": "float",
-    "trans": [
-      "声明浮点型变量或函数"
-    ],
+    "trans": ["声明浮点型变量或函数"],
     "usphone": "flot",
     "ukphone": "fləʊt",
     "sentences": [
@@ -198,9 +178,7 @@
   },
   {
     "name": "long",
-    "trans": [
-      "声明长整型变量或函数"
-    ],
+    "trans": ["声明长整型变量或函数"],
     "usphone": "lɔŋ",
     "ukphone": "lɒŋ",
     "sentences": [
@@ -223,9 +201,7 @@
   },
   {
     "name": "short",
-    "trans": [
-      "声明短整型变量或函数"
-    ],
+    "trans": ["声明短整型变量或函数"],
     "usphone": "ʃɔrt",
     "ukphone": "ʃɔːt",
     "sentences": [
@@ -294,33 +270,23 @@
   },
   {
     "name": "signed",
-    "trans": [
-      "声明有符号类型变量或函数"
-    ]
+    "trans": ["声明有符号类型变量或函数"]
   },
   {
     "name": "unsigned",
-    "trans": [
-      "声明无符号类型变量或函数"
-    ]
+    "trans": ["声明无符号类型变量或函数"]
   },
   {
     "name": "enum",
-    "trans": [
-      "声明枚举类型"
-    ]
+    "trans": ["声明枚举类型"]
   },
   {
     "name": "struct",
-    "trans": [
-      "声明结构体变量或函数"
-    ]
+    "trans": ["声明结构体变量或函数"]
   },
   {
     "name": "union",
-    "trans": [
-      "声明共用体（联合）数据类型"
-    ],
+    "trans": ["声明共用体（联合）数据类型"],
     "usphone": "'junɪən",
     "ukphone": "'juːnjən; -ɪən",
     "sentences": [
@@ -343,39 +309,27 @@
   },
   {
     "name": "cin",
-    "trans": [
-      "输入命令"
-    ]
+    "trans": ["输入命令"]
   },
   {
     "name": "cout",
-    "trans": [
-      "输出命令"
-    ]
+    "trans": ["输出命令"]
   },
   {
     "name": "endl",
-    "trans": [
-      "end line的缩写，换行"
-    ]
+    "trans": ["end line的缩写，换行"]
   },
   {
     "name": "scanf",
-    "trans": [
-      "输入命令"
-    ]
+    "trans": ["输入命令"]
   },
   {
     "name": "printf",
-    "trans": [
-      "输出命令"
-    ]
+    "trans": ["输出命令"]
   },
   {
     "name": "void",
-    "trans": [
-      "声明函数无返回值或无参数，声明无类型指针"
-    ],
+    "trans": ["声明函数无返回值或无参数，声明无类型指针"],
     "usphone": "vɔɪd",
     "ukphone": "vɔɪd",
     "sentences": [
@@ -404,9 +358,7 @@
   },
   {
     "name": "for",
-    "trans": [
-      "一种循环语句"
-    ],
+    "trans": ["一种循环语句"],
     "usphone": "fɚ; strong form fɔr",
     "ukphone": "fə(r); strong form fɔ:(r)",
     "sentences": [
@@ -441,9 +393,7 @@
   },
   {
     "name": "do",
-    "trans": [
-      "循环语句的循环体"
-    ],
+    "trans": ["循环语句的循环体"],
     "usphone": "du",
     "ukphone": "duː",
     "sentences": [
@@ -483,9 +433,7 @@
   },
   {
     "name": "while",
-    "trans": [
-      "循环语句的循环条件"
-    ],
+    "trans": ["循环语句的循环条件"],
     "usphone": "waɪl",
     "ukphone": "wʌɪl",
     "sentences": [
@@ -522,9 +470,7 @@
   },
   {
     "name": "break",
-    "trans": [
-      "跳出当前循环"
-    ],
+    "trans": ["跳出当前循环"],
     "usphone": "brek",
     "ukphone": "breɪk",
     "sentences": [
@@ -543,9 +489,7 @@
   },
   {
     "name": "continue",
-    "trans": [
-      "结束当前循环，开始下一轮循环"
-    ],
+    "trans": ["结束当前循环，开始下一轮循环"],
     "usphone": "kən'tɪnju",
     "ukphone": "kən'tɪnjuː",
     "sentences": [
@@ -572,9 +516,7 @@
   },
   {
     "name": "if",
-    "trans": [
-      "条件语句"
-    ],
+    "trans": ["条件语句"],
     "usphone": "ɪf",
     "ukphone": "ɪf",
     "sentences": [
@@ -641,9 +583,7 @@
   },
   {
     "name": "else",
-    "trans": [
-      "条件语句否定分支（与 if 连用）"
-    ],
+    "trans": ["条件语句否定分支（与 if 连用）"],
     "usphone": "ɛls",
     "ukphone": "els",
     "sentences": [
@@ -695,15 +635,11 @@
   },
   {
     "name": "goto",
-    "trans": [
-      "无条件跳转语句"
-    ]
+    "trans": ["无条件跳转语句"]
   },
   {
     "name": "switch",
-    "trans": [
-      "用于开关语句"
-    ],
+    "trans": ["用于开关语句"],
     "usphone": "swɪtʃ",
     "ukphone": "swɪtʃ",
     "sentences": [
@@ -722,9 +658,7 @@
   },
   {
     "name": "case",
-    "trans": [
-      "开关语句分支"
-    ],
+    "trans": ["开关语句分支"],
     "usphone": "kes",
     "ukphone": "keɪs",
     "sentences": [
@@ -751,9 +685,7 @@
   },
   {
     "name": "default",
-    "trans": [
-      "开关语句中的“其他”分支"
-    ],
+    "trans": ["开关语句中的“其他”分支"],
     "usphone": "dɪ'fɔlt",
     "ukphone": "dɪ'fɔːlt; 'diːfɔːlt",
     "sentences": [
@@ -781,9 +713,7 @@
   },
   {
     "name": "return",
-    "trans": [
-      "子程序返回语句（可以带参数，也看不带参数）"
-    ],
+    "trans": ["子程序返回语句（可以带参数，也看不带参数）"],
     "usphone": "rɪ'tɝn",
     "ukphone": "rɪ'tɜːn",
     "sentences": [
@@ -820,9 +750,7 @@
   },
   {
     "name": "static",
-    "trans": [
-      "声明静态变量"
-    ],
+    "trans": ["声明静态变量"],
     "usphone": "'stætɪk",
     "ukphone": "'stætɪk",
     "sentences": [
@@ -846,20 +774,14 @@
   },
   {
     "name": "const",
-    "trans": [
-      "声明只读变量 （*注意是变量*）"
-    ]
+    "trans": ["声明只读变量 （*注意是变量*）"]
   },
   {
     "name": "sizeof",
-    "trans": [
-      "计算数据类型长度"
-    ]
+    "trans": ["计算数据类型长度"]
   },
   {
     "name": "typedef",
-    "trans": [
-      "用以给数据类型取别名（当然还有其他作用）"
-    ]
+    "trans": ["用以给数据类型取别名（当然还有其他作用）"]
   }
 ]

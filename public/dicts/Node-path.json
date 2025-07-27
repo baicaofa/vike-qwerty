@@ -7,9 +7,7 @@
   },
   {
     "name": "path.delimiter",
-    "trans": [
-      "提供平台特定的路径定界符：'; 用于 Windows', ': 用于 POSIX' "
-    ]
+    "trans": ["提供平台特定的路径定界符：'; 用于 Windows', ': 用于 POSIX' "]
   },
   {
     "name": "path.dirname()",
@@ -25,15 +23,11 @@
   },
   {
     "name": "path.format()",
-    "trans": [
-      "path.format() 方法从对象返回路径字符串。 与 path.parse() 相反。"
-    ]
+    "trans": ["path.format() 方法从对象返回路径字符串。 与 path.parse() 相反。"]
   },
   {
     "name": "path.isAbsolute()",
-    "trans": [
-      "path.isAbsolute() 方法检测 path 是否为绝对路径。"
-    ]
+    "trans": ["path.isAbsolute() 方法检测 path 是否为绝对路径。"]
   },
   {
     "name": "path.join()",
@@ -55,9 +49,7 @@
   },
   {
     "name": "path.posix",
-    "trans": [
-      "path.posix 属性提供对 path 方法的 POSIX 特定实现的访问。"
-    ]
+    "trans": ["path.posix 属性提供对 path 方法的 POSIX 特定实现的访问。"]
   },
   {
     "name": "path.relative()",
@@ -67,9 +59,7 @@
   },
   {
     "name": "path.resolve()",
-    "trans": [
-      "path.resolve() 方法会将路径或路径片段的序列解析为绝对路径。    "
-    ]
+    "trans": ["path.resolve() 方法会将路径或路径片段的序列解析为绝对路径。    "]
   },
   {
     "name": "path.sep",
@@ -85,8 +75,6 @@
   },
   {
     "name": "path.win32",
-    "trans": [
-      "path.win32 属性提供对特定于 Windows 的 path 方法的实现的访问。"
-    ]
+    "trans": ["path.win32 属性提供对特定于 Windows 的 path 方法的实现的访问。"]
   }
 ]

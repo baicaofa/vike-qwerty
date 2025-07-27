@@ -5,8 +5,8 @@ import {
   fetchCustomDictionaryWords,
 } from "@/services/customDictionaryService";
 import {
-  isCustomDictionary,
   extractCustomDictionaryId,
+  isCustomDictionary,
 } from "@/store/customDictionary";
 import { wordListFetcher } from "@/utils/wordListFetcher";
 import type { PageContext } from "vike/types";

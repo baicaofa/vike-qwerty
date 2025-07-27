@@ -1,81 +1,55 @@
 [
   {
     "name": "Math.PI",
-    "trans": [
-      "Math.PI 表示一个圆的周长与直径的比例，约为 3.14159："
-    ]
+    "trans": ["Math.PI 表示一个圆的周长与直径的比例，约为 3.14159："]
   },
   {
     "name": "Math.SQRT1_2",
-    "trans": [
-      "Math.SQRT1_2 属性表示 1/2 的平方根，约为 0.707："
-    ]
+    "trans": ["Math.SQRT1_2 属性表示 1/2 的平方根，约为 0.707："]
   },
   {
     "name": "Math.SQRT2",
-    "trans": [
-      "Math.SQRT2 属性表示 2 的平方根，约为 1.414："
-    ]
+    "trans": ["Math.SQRT2 属性表示 2 的平方根，约为 1.414："]
   },
   {
     "name": "Math.abs()",
-    "trans": [
-      "Math.abs(x) 函数返回指定数字 “x“ 的绝对值。如下："
-    ]
+    "trans": ["Math.abs(x) 函数返回指定数字 “x“ 的绝对值。如下："]
   },
   {
     "name": "Math.acos()",
-    "trans": [
-      "Math.acos() 返回一个数的反余弦值（单位为弧度），即："
-    ]
+    "trans": ["Math.acos() 返回一个数的反余弦值（单位为弧度），即："]
   },
   {
     "name": "Math.acosh()",
-    "trans": [
-      "Math.acosh()返回一个数字的反双曲余弦值，即："
-    ]
+    "trans": ["Math.acosh()返回一个数字的反双曲余弦值，即："]
   },
   {
     "name": "Math.asin()",
-    "trans": [
-      "Math.asin() 方法返回一个数值的反正弦（单位为弧度），即："
-    ]
+    "trans": ["Math.asin() 方法返回一个数值的反正弦（单位为弧度），即："]
   },
   {
     "name": "Math.asinh()",
-    "trans": [
-      "Math.asinh() 函数返回给定数字的反双曲正弦值, 即："
-    ]
+    "trans": ["Math.asinh() 函数返回给定数字的反双曲正弦值, 即："]
   },
   {
     "name": "Math.atan()",
-    "trans": [
-      "Math.atan() 函数返回一个数值的反正切（以弧度为单位），即："
-    ]
+    "trans": ["Math.atan() 函数返回一个数值的反正切（以弧度为单位），即："]
   },
   {
     "name": "Math.atan2()",
-    "trans": [
-      "Math.atan2() 返回其参数比值的反正切值。"
-    ]
+    "trans": ["Math.atan2() 返回其参数比值的反正切值。"]
   },
   {
     "name": "Math.atanh()",
-    "trans": [
-      "Math.atanh() 函数返回一个数值反双曲正切值, 即："
-    ]
+    "trans": ["Math.atanh() 函数返回一个数值反双曲正切值, 即："]
   },
   {
     "name": "Math.cbrt()",
-    "trans": [
-      "Math.cbrt() 函数返回任意数字的立方根."
-    ]
+    "trans": ["Math.cbrt() 函数返回任意数字的立方根."]
   },
   {
     "name": "Math.ceil()",
-    "trans": [
-      "Math.ceil() 函数返回大于或等于一个给定数字的最小整数。"
-    ]
+    "trans": ["Math.ceil() 函数返回大于或等于一个给定数字的最小整数。"]
   },
   {
     "name": "Math.clz32()",
@@ -85,15 +59,11 @@
   },
   {
     "name": "Math.cos()",
-    "trans": [
-      "Math.cos() 函数返回一个数值的余弦值。"
-    ]
+    "trans": ["Math.cos() 函数返回一个数值的余弦值。"]
   },
   {
     "name": "Math.cosh()",
-    "trans": [
-      "Math.cosh() 函数返回数值的双曲余弦函数, 可用 constant e 表示:"
-    ]
+    "trans": ["Math.cosh() 函数返回数值的双曲余弦函数, 可用 constant e 表示:"]
   },
   {
     "name": "Math.exp()",
@@ -109,9 +79,7 @@
   },
   {
     "name": "Math.floor()",
-    "trans": [
-      "Math.floor() 返回小于或等于一个给定数字的最大整数。"
-    ]
+    "trans": ["Math.floor() 返回小于或等于一个给定数字的最大整数。"]
   },
   {
     "name": "Math.fround()",
@@ -121,27 +89,19 @@
   },
   {
     "name": "Math.hypot()",
-    "trans": [
-      "Math.hypot() 函数返回它的所有参数的平方和的平方根，即："
-    ]
+    "trans": ["Math.hypot() 函数返回它的所有参数的平方和的平方根，即："]
   },
   {
     "name": "Math.imul()",
-    "trans": [
-      "该函数返回两个参数的类C的32位整数乘法运算的运算结果."
-    ]
+    "trans": ["该函数返回两个参数的类C的32位整数乘法运算的运算结果."]
   },
   {
     "name": "Math.log()",
-    "trans": [
-      "Math.log() 函数返回一个数的自然对数，即："
-    ]
+    "trans": ["Math.log() 函数返回一个数的自然对数，即："]
   },
   {
     "name": "Math.log10()",
-    "trans": [
-      "Math.log10() 函数返回一个数字以 10 为底的对数."
-    ]
+    "trans": ["Math.log10() 函数返回一个数字以 10 为底的对数."]
   },
   {
     "name": "Math.log1p()",
@@ -151,21 +111,15 @@
   },
   {
     "name": "Math.log2()",
-    "trans": [
-      "Math.log2() 函数返回一个数字以 2 为底的对数."
-    ]
+    "trans": ["Math.log2() 函数返回一个数字以 2 为底的对数."]
   },
   {
     "name": "Math.max()",
-    "trans": [
-      "Math.max() 函数返回一组数中的最大值。"
-    ]
+    "trans": ["Math.max() 函数返回一组数中的最大值。"]
   },
   {
     "name": "Math.min()",
-    "trans": [
-      "Math.min() 返回零个或更多个数值的最小值。"
-    ]
+    "trans": ["Math.min() 返回零个或更多个数值的最小值。"]
   },
   {
     "name": "Math.pow()",
@@ -181,9 +135,7 @@
   },
   {
     "name": "Math.round()",
-    "trans": [
-      "Math.round() 函数返回一个数字四舍五入后最接近的整数。"
-    ]
+    "trans": ["Math.round() 函数返回一个数字四舍五入后最接近的整数。"]
   },
   {
     "name": "Math.sign()",
@@ -193,38 +145,26 @@
   },
   {
     "name": "Math.sin()",
-    "trans": [
-      "Math.sin() 函数返回一个数值的正弦值。"
-    ]
+    "trans": ["Math.sin() 函数返回一个数值的正弦值。"]
   },
   {
     "name": "Math.sinh()",
-    "trans": [
-      "Math.sinh() 函数返回一个数字(单位为角度)的双曲正弦值."
-    ]
+    "trans": ["Math.sinh() 函数返回一个数字(单位为角度)的双曲正弦值."]
   },
   {
     "name": "Math.sqrt()",
-    "trans": [
-      "Math.sqrt() 函数返回一个数的平方根，即："
-    ]
+    "trans": ["Math.sqrt() 函数返回一个数的平方根，即："]
   },
   {
     "name": "Math.tan()",
-    "trans": [
-      "Math.tan() 方法返回一个数值的正切值。"
-    ]
+    "trans": ["Math.tan() 方法返回一个数值的正切值。"]
   },
   {
     "name": "Math.tanh()",
-    "trans": [
-      "Math.tanh() 函数将会返回一个数的双曲正切函数值，计算如下:"
-    ]
+    "trans": ["Math.tanh() 函数将会返回一个数的双曲正切函数值，计算如下:"]
   },
   {
     "name": "Math.trunc()",
-    "trans": [
-      "Math.trunc() 方法会将数字的小数部分去掉，只保留整数部分。"
-    ]
+    "trans": ["Math.trunc() 方法会将数字的小数部分去掉，只保留整数部分。"]
   }
 ]

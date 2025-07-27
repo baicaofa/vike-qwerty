@@ -16,8 +16,10 @@
 ### 1. 导入必要依赖
 
 ```tsx
+import { Link } from "@/components/Link";
 import { useTranslation } from "react-i18next";
-import { Link } from "@/components/Link"; // 替换原生 a 标签
+
+// 替换原生 a 标签
 ```
 
 ### 2. 初始化翻译函数
@@ -33,13 +35,14 @@ export default function MyComponent() {
 
 - **common**: 通用按钮、状态、操作等
 - **typing**: 打字练习相关功能
-- **article**: 文章练习相关功能  
+- **article**: 文章练习相关功能
 - **gallery**: 词典展示相关功能
 - **errors**: 错误信息和提示
 
 ### 4. 替换硬编码文本
 
 #### 简单文本替换
+
 ```tsx
 // 原代码
 <span>是否跳过熟词</span>
@@ -49,6 +52,7 @@ export default function MyComponent() {
 ```
 
 #### 带插值的动态文本
+
 ```tsx
 // 原代码
 <span>{`跳过熟词已${isEnabled ? "开启" : "关闭"}`}</span>
@@ -62,6 +66,7 @@ export default function MyComponent() {
 ```
 
 #### 链接组件替换
+
 ```tsx
 // 原代码
 <a href="/familiar" title="查看熟词">查看熟词</a>
@@ -88,7 +93,7 @@ export default function MyComponent() {
   "功能模块名": {
     "设置项名": {
       "label": "标签文本",
-      "description": "描述文本", 
+      "description": "描述文本",
       "enabled": "开启",
       "disabled": "关闭",
       "status": "状态模板{{status}}"
@@ -102,6 +107,7 @@ export default function MyComponent() {
 ### 3. 实际示例
 
 #### 中文翻译 (zh/typing.json)
+
 ```json
 {
   "advancedSettings": {
@@ -109,7 +115,7 @@ export default function MyComponent() {
       "label": "是否跳过熟词",
       "description": "开启后，练习时会自动跳过已被标记为熟词的单词",
       "enabled": "开启",
-      "disabled": "关闭", 
+      "disabled": "关闭",
       "status": "跳过熟词已{{status}}"
     },
     "viewFamiliarWords": "查看熟词"
@@ -118,6 +124,7 @@ export default function MyComponent() {
 ```
 
 #### 英文翻译 (en/typing.json)
+
 ```json
 {
   "advancedSettings": {
@@ -136,6 +143,7 @@ export default function MyComponent() {
 ## 开发检查清单
 
 ### 组件修改
+
 - [ ] 导入 useTranslation hook
 - [ ] 选择正确的命名空间
 - [ ] 替换所有硬编码文本
@@ -144,6 +152,7 @@ export default function MyComponent() {
 - [ ] 确保 title、aria-label 等属性也国际化
 
 ### 翻译文件
+
 - [ ] 在对应语言的 JSON 文件中添加翻译键
 - [ ] 中英文翻译内容准确对应
 - [ ] JSON 格式正确，无语法错误
@@ -151,6 +160,7 @@ export default function MyComponent() {
 - [ ] 插值变量名保持一致
 
 ### 质量验证
+
 - [ ] 组件在中英文环境下显示正常
 - [ ] 动态文本插值工作正确
 - [ ] 链接跳转功能正常
@@ -160,14 +170,17 @@ export default function MyComponent() {
 ## 常见问题与解决方案
 
 ### 1. 翻译键找不到
+
 **问题**: 控制台显示翻译键未找到
 **解决**: 检查键名拼写、命名空间是否正确、JSON 文件格式
 
 ### 2. 插值不生效
+
 **问题**: 动态文本显示为模板字符串
 **解决**: 确认插值语法正确，变量名在中英文文件中一致
 
 ### 3. 链接跳转异常
+
 **问题**: 使用 Link 组件后跳转不正常
 **解决**: 检查 href 属性格式，确保符合项目路由规范
 

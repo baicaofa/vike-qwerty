@@ -1,9 +1,7 @@
 [
   {
     "name": "eval()",
-    "trans": [
-      "eval() 函数会将传入的字符串当做 JavaScript 代码进行执行。"
-    ]
+    "trans": ["eval() 函数会将传入的字符串当做 JavaScript 代码进行执行。"]
   },
   {
     "name": "isFinite()",

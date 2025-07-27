@@ -2,15 +2,15 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogFooter,
 } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/useToast";
-import { updateWord, addWords } from "@/services/customDictionaryService";
+import { addWords, updateWord } from "@/services/customDictionaryService";
 import type { ICustomWord } from "@/utils/db/customDictionary";
 import { createCustomWord } from "@/utils/db/customDictionary";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import IconCheck from "~icons/tabler/check";
 import IconX from "~icons/tabler/x";
 

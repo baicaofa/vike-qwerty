@@ -57,9 +57,7 @@
   },
   {
     "name": "break",
-    "trans": [
-      "`break` 用于跳出当前的循环或 `match` 语句，终止循环或匹配。"
-    ],
+    "trans": ["`break` 用于跳出当前的循环或 `match` 语句，终止循环或匹配。"],
     "usphone": "brek",
     "ukphone": "breɪk",
     "sentences": [
@@ -84,9 +82,7 @@
   },
   {
     "name": "continue",
-    "trans": [
-      "`continue` 用于跳过当前循环的剩余部分，继续执行下一次循环。"
-    ],
+    "trans": ["`continue` 用于跳过当前循环的剩余部分，继续执行下一次循环。"],
     "usphone": "kən'tɪnju",
     "ukphone": "kən'tɪnjuː",
     "sentences": [
@@ -113,9 +109,7 @@
   },
   {
     "name": "crate",
-    "trans": [
-      "`crate` 表示当前包（crate），用于标识模块或外部 crate 的路径。"
-    ],
+    "trans": ["`crate` 表示当前包（crate），用于标识模块或外部 crate 的路径。"],
     "usphone": "kret",
     "ukphone": "kreɪt",
     "sentences": [
@@ -145,9 +139,7 @@
   },
   {
     "name": "else",
-    "trans": [
-      "`else` 用于与 `if` 语句配合，指定条件不成立时执行的代码块。"
-    ],
+    "trans": ["`else` 用于与 `if` 语句配合，指定条件不成立时执行的代码块。"],
     "usphone": "ɛls",
     "ukphone": "els",
     "sentences": [
@@ -254,9 +246,7 @@
   },
   {
     "name": "if",
-    "trans": [
-      "`if` 用于执行条件判断语句，如果条件为真，则执行对应代码块。"
-    ],
+    "trans": ["`if` 用于执行条件判断语句，如果条件为真，则执行对应代码块。"],
     "usphone": "ɪf",
     "ukphone": "ɪf",
     "sentences": [
@@ -598,9 +588,7 @@
   },
   {
     "name": "self",
-    "trans": [
-      "`self` 表示当前实例，在方法定义中引用调用该方法的对象。"
-    ],
+    "trans": ["`self` 表示当前实例，在方法定义中引用调用该方法的对象。"],
     "usphone": "sɛlf",
     "ukphone": "self",
     "sentences": [
@@ -666,9 +654,7 @@
   },
   {
     "name": "super",
-    "trans": [
-      "`super` 用于引用父模块，通常用于访问父模块中的函数或类型。"
-    ],
+    "trans": ["`super` 用于引用父模块，通常用于访问父模块中的函数或类型。"],
     "usphone": "'sʊpɚ",
     "ukphone": "'suːpə; 'sjuː-",
     "sentences": [
@@ -721,9 +707,7 @@
   },
   {
     "name": "type",
-    "trans": [
-      "`type` 用于定义类型别名，或者在泛型中为类型参数指定约束条件。"
-    ],
+    "trans": ["`type` 用于定义类型别名，或者在泛型中为类型参数指定约束条件。"],
     "usphone": "taɪp",
     "ukphone": "taɪp",
     "sentences": [

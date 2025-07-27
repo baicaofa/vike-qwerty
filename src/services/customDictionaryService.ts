@@ -254,8 +254,8 @@ export async function deleteDictionary(
  */
 export async function getDictionaryWords(
   dictId: string,
-  page: number = 1,
-  pageSize: number = 20
+  page = 1,
+  pageSize = 20
 ): Promise<GetCustomWordsResult> {
   try {
     const queryParams = new URLSearchParams({

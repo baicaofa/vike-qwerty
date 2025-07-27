@@ -13,9 +13,7 @@
   },
   {
     "name": "Number.MAX_VALUE",
-    "trans": [
-      "Number.MAX_VALUE 属性表示在 JavaScript 里所能表示的最大数值。"
-    ]
+    "trans": ["Number.MAX_VALUE 属性表示在 JavaScript 里所能表示的最大数值。"]
   },
   {
     "name": "Number.MIN_SAFE_INTEGER",
@@ -25,27 +23,19 @@
   },
   {
     "name": "Number.MIN_VALUE",
-    "trans": [
-      "Number.MIN_VALUE 属性表示在 JavaScript 中所能表示的最小的正值。"
-    ]
+    "trans": ["Number.MIN_VALUE 属性表示在 JavaScript 中所能表示的最小的正值。"]
   },
   {
     "name": "Number.NEGATIVE_INFINITY",
-    "trans": [
-      "Number.NEGATIVE_INFINITY 属性表示负无穷大。"
-    ]
+    "trans": ["Number.NEGATIVE_INFINITY 属性表示负无穷大。"]
   },
   {
     "name": "Number.NaN",
-    "trans": [
-      "Number.NaN 表示“非数字”（Not-A-Number）。和 NaN 相同。"
-    ]
+    "trans": ["Number.NaN 表示“非数字”（Not-A-Number）。和 NaN 相同。"]
   },
   {
     "name": "Number.POSITIVE_INFINITY",
-    "trans": [
-      "Number.POSITIVE_INFINITY 属性表示正无穷大。"
-    ]
+    "trans": ["Number.POSITIVE_INFINITY 属性表示正无穷大。"]
   },
   {
     "name": "Number.isFinite()",
@@ -55,9 +45,7 @@
   },
   {
     "name": "Number.isInteger()",
-    "trans": [
-      "Number.isInteger() 方法用来判断给定的参数是否为整数。"
-    ]
+    "trans": ["Number.isInteger() 方法用来判断给定的参数是否为整数。"]
   },
   {
     "name": "Number.isNaN()",
@@ -85,50 +73,34 @@
   },
   {
     "name": "toExponential()",
-    "trans": [
-      "toExponential() 方法以指数表示法返回该数值字符串表示形式。"
-    ]
+    "trans": ["toExponential() 方法以指数表示法返回该数值字符串表示形式。"]
   },
   {
     "name": "toFixed()",
-    "trans": [
-      "toFixed() 方法使用定点表示法来格式化一个数。"
-    ]
+    "trans": ["toFixed() 方法使用定点表示法来格式化一个数。"]
   },
   {
     "name": "toLocaleString()",
-    "trans": [
-      "toLocaleString() 方法返回这个数字在特定语言环境下的表示字符串。"
-    ]
+    "trans": ["toLocaleString() 方法返回这个数字在特定语言环境下的表示字符串。"]
   },
   {
     "name": "toPrecision()",
-    "trans": [
-      "toPrecision() 方法以指定的精度返回该数值对象的字符串表示。"
-    ]
+    "trans": ["toPrecision() 方法以指定的精度返回该数值对象的字符串表示。"]
   },
   {
     "name": "toSource()",
-    "trans": [
-      "toSource() 方法返回该对象源码的字符串表示。"
-    ]
+    "trans": ["toSource() 方法返回该对象源码的字符串表示。"]
   },
   {
     "name": "toString()",
-    "trans": [
-      "toString() 方法返回指定 Number 对象的字符串表示形式。"
-    ]
+    "trans": ["toString() 方法返回指定 Number 对象的字符串表示形式。"]
   },
   {
     "name": "valueOf()",
-    "trans": [
-      "valueOf() 方法返回一个被 Number 对象包装的原始值。"
-    ]
+    "trans": ["valueOf() 方法返回一个被 Number 对象包装的原始值。"]
   },
   {
     "name": "Number.toInteger()",
-    "trans": [
-      "Number.toInteger() 用来将参数转换成整数,但该方法的实现已被移除."
-    ]
+    "trans": ["Number.toInteger() 用来将参数转换成整数,但该方法的实现已被移除."]
   }
 ]

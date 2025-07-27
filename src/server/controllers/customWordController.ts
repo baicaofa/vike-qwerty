@@ -102,7 +102,7 @@ export const addWords = async (req: Request, res: Response): Promise<void> => {
       .sort({ index: -1 })
       .limit(1);
 
-    let startIndex = maxIndexWord ? maxIndexWord.index + 1 : 0;
+    const startIndex = maxIndexWord ? maxIndexWord.index + 1 : 0;
 
     // 更新索引
     const wordsToInsert = uploadResult.words.map((word, i) => ({

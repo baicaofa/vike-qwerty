@@ -2,12 +2,12 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogFooter,
 } from "@/components/ui/dialog";
 import type { ICustomWord } from "@/utils/db/customDictionary";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import IconCheck from "~icons/tabler/check";
 import IconPlus from "~icons/tabler/plus";
 import IconX from "~icons/tabler/x";

@@ -1,7 +1,7 @@
 import atomForConfig from "./atomForConfig";
 import {
-  isCustomDictionary,
   extractCustomDictionaryId,
+  isCustomDictionary,
 } from "./customDictionary";
 import { adaptCustomDictionaryToDictionary } from "./customDictionary";
 import { customDictionariesAtom } from "./customDictionary";

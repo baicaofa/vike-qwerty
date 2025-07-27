@@ -1,15 +1,11 @@
 [
   {
     "name": "clear()",
-    "trans": [
-      "clear()方法会移除Map对象中的所有元素。"
-    ]
+    "trans": ["clear()方法会移除Map对象中的所有元素。"]
   },
   {
     "name": "delete()",
-    "trans": [
-      " delete() 方法用于移除 Map 对象中指定的元素。"
-    ]
+    "trans": [" delete() 方法用于移除 Map 对象中指定的元素。"]
   },
   {
     "name": "entries()",
@@ -25,15 +21,11 @@
   },
   {
     "name": "get()",
-    "trans": [
-      "get() 方法返回某个 Map 对象中的一个指定元素。"
-    ]
+    "trans": ["get() 方法返回某个 Map 对象中的一个指定元素。"]
   },
   {
     "name": "has()",
-    "trans": [
-      "方法has() 返回一个bool值，用来表明map 中是否存在指定元素."
-    ]
+    "trans": ["方法has() 返回一个bool值，用来表明map 中是否存在指定元素."]
   },
   {
     "name": "keys()",
@@ -49,27 +41,19 @@
   },
   {
     "name": "values()",
-    "trans": [
-      "一个新的 Map 可迭代对象."
-    ]
+    "trans": ["一个新的 Map 可迭代对象."]
   },
   {
     "name": "add()",
-    "trans": [
-      "add() 方法用来向一个 Set 对象的末尾添加一个指定的值。"
-    ]
+    "trans": ["add() 方法用来向一个 Set 对象的末尾添加一个指定的值。"]
   },
   {
     "name": "clear()",
-    "trans": [
-      "clear() 方法用来清空一个 Set 对象中的所有元素。"
-    ]
+    "trans": ["clear() 方法用来清空一个 Set 对象中的所有元素。"]
   },
   {
     "name": "delete()",
-    "trans": [
-      "delete() 方法可以从一个 Set 对象中删除指定的元素。"
-    ]
+    "trans": ["delete() 方法可以从一个 Set 对象中删除指定的元素。"]
   },
   {
     "name": "entries()",
@@ -85,9 +69,7 @@
   },
   {
     "name": "has()",
-    "trans": [
-      "has() 方法返回一个布尔值来指示对应的值value是否存在Set对象中。"
-    ]
+    "trans": ["has() 方法返回一个布尔值来指示对应的值value是否存在Set对象中。"]
   },
   {
     "name": "values()",

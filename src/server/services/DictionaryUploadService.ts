@@ -1,7 +1,7 @@
 import { generateUUID } from "../utils/uuid";
 import {
-  wordEnrichmentService,
   type EnrichmentResult,
+  wordEnrichmentService,
 } from "./WordEnrichmentService";
 
 // 定义普通对象类型，不包含Mongoose Document方法

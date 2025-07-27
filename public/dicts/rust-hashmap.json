@@ -37,15 +37,11 @@
   },
   {
     "name": "HashMap::len()",
-    "trans": [
-      "`HashMap::len()` 方法返回 `HashMap` 中键值对的个数。"
-    ]
+    "trans": ["`HashMap::len()` 方法返回 `HashMap` 中键值对的个数。"]
   },
   {
     "name": "HashMap::is_empty()",
-    "trans": [
-      "`HashMap::is_empty()` 方法返回布尔值，表示 `HashMap` 是否为空。"
-    ]
+    "trans": ["`HashMap::is_empty()` 方法返回布尔值，表示 `HashMap` 是否为空。"]
   },
   {
     "name": "HashMap::clear()",
@@ -85,9 +81,7 @@
   },
   {
     "name": "HashMap::clone()",
-    "trans": [
-      "`HashMap::clone()` 方法创建并返回 `HashMap` 的一个深拷贝。"
-    ]
+    "trans": ["`HashMap::clone()` 方法创建并返回 `HashMap` 的一个深拷贝。"]
   },
   {
     "name": "HashMap::extend()",

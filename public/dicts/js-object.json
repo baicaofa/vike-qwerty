@@ -73,9 +73,7 @@
   },
   {
     "name": "Object.is()",
-    "trans": [
-      "Object.is()方法判断两个值是否是相同的值。"
-    ]
+    "trans": ["Object.is()方法判断两个值是否是相同的值。"]
   },
   {
     "name": "Object.isExtensible()",
@@ -85,15 +83,11 @@
   },
   {
     "name": "Object.isFrozen()",
-    "trans": [
-      "Object.isFrozen()方法判断一个对象是否被冻结。"
-    ]
+    "trans": ["Object.isFrozen()方法判断一个对象是否被冻结。"]
   },
   {
     "name": "Object.isSealed()",
-    "trans": [
-      "Object.isSealed() 方法判断一个对象是否被密封。"
-    ]
+    "trans": ["Object.isSealed() 方法判断一个对象是否被密封。"]
   },
   {
     "name": "Object.keys()",
@@ -145,33 +139,23 @@
   },
   {
     "name": "toSource()",
-    "trans": [
-      "toSource()方法返回一个表示对象源代码的字符串。"
-    ]
+    "trans": ["toSource()方法返回一个表示对象源代码的字符串。"]
   },
   {
     "name": "toString()",
-    "trans": [
-      "toString() 方法返回一个表示该对象的字符串。"
-    ]
+    "trans": ["toString() 方法返回一个表示该对象的字符串。"]
   },
   {
     "name": "unwatch()",
-    "trans": [
-      "unwatch() 删除一个 watch() 设置的 watchpoint."
-    ]
+    "trans": ["unwatch() 删除一个 watch() 设置的 watchpoint."]
   },
   {
     "name": "valueOf()",
-    "trans": [
-      "valueOf() 方法返回指定对象的原始值。"
-    ]
+    "trans": ["valueOf() 方法返回指定对象的原始值。"]
   },
   {
     "name": "watch()",
-    "trans": [
-      ""
-    ]
+    "trans": [""]
   },
   {
     "name": "Object.seal()",
@@ -217,8 +201,6 @@
   },
   {
     "name": "isGenerator()",
-    "trans": [
-      "判断一个函数是否是一个生成器."
-    ]
+    "trans": ["判断一个函数是否是一个生成器."]
   }
 ]

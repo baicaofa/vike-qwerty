@@ -26,7 +26,7 @@
     "speed": "Speed",
     "wpm": "WPM"
   },
-   "result": {
+  "result": {
     "good": "{{isAllCorrect ? 'Perfect! All correct!' : `Good job! Only ${mistakeCount} mistakes`}}",
     "normal": "A few small issues, you can do better next time!",
     "bad": "Too many mistakes, try again?"
@@ -278,23 +278,71 @@
   },
   "share": {
     "promoteList": [
-      { "word": "One Step Ahead", "sentence": "So fast, it's like you have an extra hand." },
-      { "word": "Thunder Hands", "sentence": "Thunderous technique, stunning the audience." },
-      { "word": "Lightning Speed", "sentence": "Typing as fast as lightning across the keyboard." },
-      { "word": "Swift as the Wind", "sentence": "Your hands move with astonishing speed, like the wind." },
-      { "word": "Precision Arrow", "sentence": "Typing accuracy is as precise as an arrow hitting the target." },
-      { "word": "Full Throttle", "sentence": "Typing so fast, it feels like a full-throttle sprint." },
-      { "word": "Wind Speed", "sentence": "Typing at wind speed, as fast as the breeze." },
-      { "word": "Every Move Counts", "sentence": "Both speed and accuracy are on point, no mistakes." },
-      { "word": "Smooth Sailing", "sentence": "Typing is so skilled, it's like smooth sailing." },
-      { "word": "Surprise Attack", "sentence": "Typing skills are so advanced, you surprise and win." },
+      {
+        "word": "One Step Ahead",
+        "sentence": "So fast, it's like you have an extra hand."
+      },
+      {
+        "word": "Thunder Hands",
+        "sentence": "Thunderous technique, stunning the audience."
+      },
+      {
+        "word": "Lightning Speed",
+        "sentence": "Typing as fast as lightning across the keyboard."
+      },
+      {
+        "word": "Swift as the Wind",
+        "sentence": "Your hands move with astonishing speed, like the wind."
+      },
+      {
+        "word": "Precision Arrow",
+        "sentence": "Typing accuracy is as precise as an arrow hitting the target."
+      },
+      {
+        "word": "Full Throttle",
+        "sentence": "Typing so fast, it feels like a full-throttle sprint."
+      },
+      {
+        "word": "Wind Speed",
+        "sentence": "Typing at wind speed, as fast as the breeze."
+      },
+      {
+        "word": "Every Move Counts",
+        "sentence": "Both speed and accuracy are on point, no mistakes."
+      },
+      {
+        "word": "Smooth Sailing",
+        "sentence": "Typing is so skilled, it's like smooth sailing."
+      },
+      {
+        "word": "Surprise Attack",
+        "sentence": "Typing skills are so advanced, you surprise and win."
+      },
       { "word": "Wizard", "sentence": "Typing so fast, it's like magic." },
-      { "word": "Flexible Moves", "sentence": "Typing posture is flexible, like a snake." },
-      { "word": "Flying Bird", "sentence": "Typing as fast as a bird soaring over the keyboard." },
-      { "word": "Pearls of Wisdom", "sentence": "Typing skills are as fluent as pearls of wisdom." },
-      { "word": "Invincible", "sentence": "Typing speed and accuracy are so high, you're invincible." },
-      { "word": "Attack & Defense", "sentence": "Speed and accuracy are both excellent, unbeatable." },
-      { "word": "Vivid on Paper", "sentence": "Typing is flexible and vivid, lively and interesting." }
+      {
+        "word": "Flexible Moves",
+        "sentence": "Typing posture is flexible, like a snake."
+      },
+      {
+        "word": "Flying Bird",
+        "sentence": "Typing as fast as a bird soaring over the keyboard."
+      },
+      {
+        "word": "Pearls of Wisdom",
+        "sentence": "Typing skills are as fluent as pearls of wisdom."
+      },
+      {
+        "word": "Invincible",
+        "sentence": "Typing speed and accuracy are so high, you're invincible."
+      },
+      {
+        "word": "Attack & Defense",
+        "sentence": "Speed and accuracy are both excellent, unbeatable."
+      },
+      {
+        "word": "Vivid on Paper",
+        "sentence": "Typing is flexible and vivid, lively and interesting."
+      }
     ],
     "slogan": "A vocabulary and muscle memory training app designed for keyboard workers."
   }

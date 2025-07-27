@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { useCustomDictionaryAPI } from "@/hooks/useCustomDictionary";
 import { useToast } from "@/hooks/useToast";
 import type { ICustomDictionary } from "@/utils/db/customDictionary";
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 
 interface DictionaryEditFormProps {
   dictionary: ICustomDictionary;

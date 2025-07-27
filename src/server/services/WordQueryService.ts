@@ -38,8 +38,8 @@ export class WordQueryService {
    */
   async getDictionaryWords(
     dictId: string,
-    page: number = 1,
-    pageSize: number = 20
+    page = 1,
+    pageSize = 20
   ): Promise<{
     words: Word[];
     total: number;
@@ -172,7 +172,7 @@ export class WordQueryService {
         return null;
       }
 
-      let officialWordMap = new Map();
+      const officialWordMap = new Map();
       if (customWord.sourceType === "official" && customWord.officialWordId) {
         const officialWord = await OfficialWordLibrary.findOne({
           _id: customWord.officialWordId,

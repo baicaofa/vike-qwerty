@@ -7,9 +7,7 @@
   },
   {
     "name": "Array.isArray()",
-    "trans": [
-      "Array.isArray() 用于确定传递的值是否是一个 Array。"
-    ]
+    "trans": ["Array.isArray() 用于确定传递的值是否是一个 Array。"]
   },
   {
     "name": "Array.observe()",
@@ -31,9 +29,7 @@
   },
   {
     "name": "copyWithin()",
-    "trans": [
-      "改变了的数组。"
-    ]
+    "trans": ["改变了的数组。"]
   },
   {
     "name": "entries()",
@@ -43,9 +39,7 @@
   },
   {
     "name": "every()",
-    "trans": [
-      "every() 方法测试数组的所有元素是否都通过了指定函数的测试。"
-    ]
+    "trans": ["every() 方法测试数组的所有元素是否都通过了指定函数的测试。"]
   },
   {
     "name": "fill()",
@@ -73,9 +67,7 @@
   },
   {
     "name": "flat()",
-    "trans": [
-      "flat() 方法会递归到指定深度将所有子数组连接，并返回一个新数组。"
-    ]
+    "trans": ["flat() 方法会递归到指定深度将所有子数组连接，并返回一个新数组。"]
   },
   {
     "name": "flatMap()",
@@ -85,9 +77,7 @@
   },
   {
     "name": "forEach()",
-    "trans": [
-      "forEach() 方法对数组的每个元素执行一次提供的函数。"
-    ]
+    "trans": ["forEach() 方法对数组的每个元素执行一次提供的函数。"]
   },
   {
     "name": "includes()",
@@ -109,9 +99,7 @@
   },
   {
     "name": "keys()",
-    "trans": [
-      "keys() 方法返回一个新的Array迭代器，它包含数组中每个索引的键。"
-    ]
+    "trans": ["keys() 方法返回一个新的Array迭代器，它包含数组中每个索引的键。"]
   },
   {
     "name": "lastIndexOf()",
@@ -151,9 +139,7 @@
   },
   {
     "name": "reverse()",
-    "trans": [
-      "reverse() 方法将数组中元素的位置颠倒。"
-    ]
+    "trans": ["reverse() 方法将数组中元素的位置颠倒。"]
   },
   {
     "name": "shift()",
@@ -169,9 +155,7 @@
   },
   {
     "name": "some()",
-    "trans": [
-      "some() 方法测试数组中的某些元素是否通过由提供的函数实现的测试。"
-    ]
+    "trans": ["some() 方法测试数组中的某些元素是否通过由提供的函数实现的测试。"]
   },
   {
     "name": "sort()",
@@ -193,15 +177,11 @@
   },
   {
     "name": "toSource()",
-    "trans": [
-      "返回一个字符串,代表该数组的源代码."
-    ]
+    "trans": ["返回一个字符串,代表该数组的源代码."]
   },
   {
     "name": "toString()",
-    "trans": [
-      "toString() 返回一个字符串，表示指定的数组及其元素。"
-    ]
+    "trans": ["toString() 返回一个字符串，表示指定的数组及其元素。"]
   },
   {
     "name": "unshift()",

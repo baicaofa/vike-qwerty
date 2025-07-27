@@ -1,8 +1,8 @@
-# Gallery页面集成自定义词典功能方案
+# Gallery 页面集成自定义词典功能方案
 
 ## 背景
 
-目前，自定义词典功能已集成在Gallery页面中，通过LanguageTabSwitcher中的"我的词典"选项卡实现。用户可以在Gallery页面直接上传、查看和管理自己的自定义词典。
+目前，自定义词典功能已集成在 Gallery 页面中，通过 LanguageTabSwitcher 中的"我的词典"选项卡实现。用户可以在 Gallery 页面直接上传、查看和管理自己的自定义词典。
 
 ## 已实现的功能
 
@@ -11,10 +11,17 @@
 在`src/typings/index.ts`中扩展`LanguageCategoryType`类型，添加"my-dict"选项：
 
 ```typescript
-export type LanguageCategoryType = "en" | "ja" | "de" | "code" | "kk" | "id" | "my-dict";
+export type LanguageCategoryType =
+  | "en"
+  | "ja"
+  | "de"
+  | "code"
+  | "kk"
+  | "id"
+  | "my-dict";
 ```
 
-### 2. LanguageTabSwitcher组件
+### 2. LanguageTabSwitcher 组件
 
 在`src/pages/gallery/LanguageTabSwitcher.tsx`中已添加"我的词典"选项：
 
@@ -33,7 +40,7 @@ const options: LanguageTabOption[] = [
 ];
 ```
 
-### 3. Gallery页面组件
+### 3. Gallery 页面组件
 
 在`src/pages/gallery/+Page.tsx`中已实现词典过滤逻辑，处理"my-dict"标签的特殊情况：
 
@@ -89,14 +96,14 @@ const { groupedByCategoryAndTag } = useMemo(() => {
 )}
 
 // 添加上传弹窗组件
-<UploadDictionaryModal 
+<UploadDictionaryModal
   isOpen={galleryState.isUploadModalOpen}
   onClose={handleCloseUploadModal}
   onSuccess={() => {}}
 />
 ```
 
-`CustomDictionaryList.tsx`组件负责从API获取和展示自定义词典列表，并提供管理功能：
+`CustomDictionaryList.tsx`组件负责从 API 获取和展示自定义词典列表，并提供管理功能：
 
 ```typescript
 // 加载自定义词库列表
@@ -107,10 +114,10 @@ useEffect(() => {
       if (result.success && result.dictionaries) {
         setCustomDictionaries(result.dictionaries);
       } else {
-        showError(result.error || '获取词库列表失败');
+        showError(result.error || "获取词库列表失败");
       }
     } catch (err) {
-      showError(err instanceof Error ? err.message : '获取词库列表失败');
+      showError(err instanceof Error ? err.message : "获取词库列表失败");
     }
   };
 
@@ -136,7 +143,7 @@ export const initialGalleryState: GalleryState = {
 
 ### 6. 空状态处理
 
-在`CustomDictionaryList.tsx`中已实现空状态UI：
+在`CustomDictionaryList.tsx`中已实现空状态 UI：
 
 ```tsx
 if (customDictionaries.length === 0) {
@@ -167,15 +174,17 @@ if (customDictionaries.length === 0) {
 
 ### 1. 词典适配器
 
-在`src/store/customDictionary.ts`中实现了自定义词典适配器，将自定义词典转换为应用内Dictionary格式：
+在`src/store/customDictionary.ts`中实现了自定义词典适配器，将自定义词典转换为应用内 Dictionary 格式：
 
 ```typescript
-export function adaptCustomDictionaryToDictionary(customDict: ICustomDictionary): Dictionary {
+export function adaptCustomDictionaryToDictionary(
+  customDict: ICustomDictionary
+): Dictionary {
   return {
-    id: `custom_${customDict.id}`,  // 添加前缀区分自定义词库
+    id: `custom_${customDict.id}`, // 添加前缀区分自定义词库
     name: customDict.name,
     description: customDict.description,
-    category: customDict.category || "我的词库",  // 默认分类
+    category: customDict.category || "我的词库", // 默认分类
     tags: customDict.tags,
     url: `api://custom-dictionaries/${customDict.id}`,
     length: customDict.length,
@@ -186,9 +195,9 @@ export function adaptCustomDictionaryToDictionary(customDict: ICustomDictionary)
 }
 ```
 
-### 2. Excel解析功能
+### 2. Excel 解析功能
 
-在`src/utils/excelParser.ts`中实现了Excel文件解析功能：
+在`src/utils/excelParser.ts`中实现了 Excel 文件解析功能：
 
 ```typescript
 export async function parseExcelFile(file: File): Promise<ExcelParseResult> {
@@ -196,9 +205,9 @@ export async function parseExcelFile(file: File): Promise<ExcelParseResult> {
 }
 ```
 
-### 3. 自定义词典API
+### 3. 自定义词典 API
 
-在`src/hooks/useCustomDictionary.ts`和`src/services/customDictionaryService.ts`中实现了自定义词典的API调用：
+在`src/hooks/useCustomDictionary.ts`和`src/services/customDictionaryService.ts`中实现了自定义词典的 API 调用：
 
 ```typescript
 export function useCustomDictionaryAPI() {
@@ -239,19 +248,21 @@ export function useCustomDictionaryAPI() {
 </div>
 ```
 
-## DRY原则应用
+## DRY 原则应用
 
-本实现严格遵循DRY原则：
+本实现严格遵循 DRY 原则：
 
 1. **代码复用**：
+
    - 复用现有的词典展示逻辑和分组机制
-   - 通过适配器模式将自定义词典转换为通用Dictionary格式
-   - 使用统一的API调用模式
+   - 通过适配器模式将自定义词典转换为通用 Dictionary 格式
+   - 使用统一的 API 调用模式
 
 2. **功能复用**：
+
    - 利用现有的分组逻辑对自定义词典进行分类展示
-   - 复用现有的练习流程，通过设置currentDictId和currentChapter实现
+   - 复用现有的练习流程，通过设置 currentDictId 和 currentChapter 实现
 
 3. **数据复用**：
-   - 使用customDictionariesAtom管理自定义词典状态
+   - 使用 customDictionariesAtom 管理自定义词典状态
    - 通过适配器函数将自定义词典转换为通用格式，避免数据冗余

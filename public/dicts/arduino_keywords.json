@@ -1,9 +1,7 @@
 [
   {
     "name": "do",
-    "trans": [
-      "做; 执行代码块"
-    ],
+    "trans": ["做; 执行代码块"],
     "usphone": "du",
     "ukphone": "duː",
     "sentences": [
@@ -43,9 +41,7 @@
   },
   {
     "name": "if",
-    "trans": [
-      "如果; 条件语句"
-    ],
+    "trans": ["如果; 条件语句"],
     "usphone": "ɪf",
     "ukphone": "ɪf",
     "sentences": [
@@ -112,9 +108,7 @@
   },
   {
     "name": "for",
-    "trans": [
-      "循环; 循环结构"
-    ],
+    "trans": ["循环; 循环结构"],
     "usphone": "fɚ; strong form fɔr",
     "ukphone": "fə(r); strong form fɔ:(r)",
     "sentences": [
@@ -149,21 +143,15 @@
   },
   {
     "name": "abs",
-    "trans": [
-      "绝对值; 返回绝对值"
-    ]
+    "trans": ["绝对值; 返回绝对值"]
   },
   {
     "name": "max",
-    "trans": [
-      "最大; 返回最大值"
-    ]
+    "trans": ["最大; 返回最大值"]
   },
   {
     "name": "sin",
-    "trans": [
-      "正弦; 计算角度的正弦值"
-    ],
+    "trans": ["正弦; 计算角度的正弦值"],
     "usphone": "sɪn",
     "ukphone": "sɪn",
     "sentences": [
@@ -191,27 +179,19 @@
   },
   {
     "name": "int",
-    "trans": [
-      "整数; 定义整数变量"
-    ]
+    "trans": ["整数; 定义整数变量"]
   },
   {
     "name": "LOW",
-    "trans": [
-      "低; 低电平"
-    ]
+    "trans": ["低; 低电平"]
   },
   {
     "name": "min",
-    "trans": [
-      "最小; 返回最小值"
-    ]
+    "trans": ["最小; 返回最小值"]
   },
   {
     "name": "map",
-    "trans": [
-      "映射; 将一个范围内的值映射到另一个范围"
-    ],
+    "trans": ["映射; 将一个范围内的值映射到另一个范围"],
     "usphone": "mæp",
     "ukphone": "mæp",
     "sentences": [
@@ -235,9 +215,7 @@
   },
   {
     "name": "tan",
-    "trans": [
-      "正切; 计算角度的正切值"
-    ],
+    "trans": ["正切; 计算角度的正切值"],
     "usphone": "tæn",
     "ukphone": "tæn",
     "sentences": [
@@ -266,15 +244,11 @@
   },
   {
     "name": "pow",
-    "trans": [
-      "幂; 计算一个数的幂"
-    ]
+    "trans": ["幂; 计算一个数的幂"]
   },
   {
     "name": "bit",
-    "trans": [
-      "位; 单个二进制位"
-    ],
+    "trans": ["位; 单个二进制位"],
     "usphone": "bɪt",
     "ukphone": "bɪt",
     "sentences": [
@@ -293,15 +267,11 @@
   },
   {
     "name": "cos",
-    "trans": [
-      "余弦; 计算角度的余弦值"
-    ]
+    "trans": ["余弦; 计算角度的余弦值"]
   },
   {
     "name": "true",
-    "trans": [
-      "真; 布尔值“真”"
-    ],
+    "trans": ["真; 布尔值“真”"],
     "usphone": "tru",
     "ukphone": "truː",
     "sentences": [
@@ -347,9 +317,7 @@
   },
   {
     "name": "data",
-    "trans": [
-      "数据; 存储在变量中的信息"
-    ],
+    "trans": ["数据; 存储在变量中的信息"],
     "usphone": "'detə",
     "ukphone": "'deɪtə",
     "sentences": [
@@ -373,9 +341,7 @@
   },
   {
     "name": "void",
-    "trans": [
-      "无效; 表示无返回值"
-    ],
+    "trans": ["无效; 表示无返回值"],
     "usphone": "vɔɪd",
     "ukphone": "vɔɪd",
     "sentences": [
@@ -404,9 +370,7 @@
   },
   {
     "name": "else",
-    "trans": [
-      "否则; 条件的替代分支"
-    ],
+    "trans": ["否则; 条件的替代分支"],
     "usphone": "ɛls",
     "ukphone": "els",
     "sentences": [
@@ -458,9 +422,7 @@
   },
   {
     "name": "word",
-    "trans": [
-      "单词; 16位无符号数据类型"
-    ],
+    "trans": ["单词; 16位无符号数据类型"],
     "usphone": "wɝd",
     "ukphone": "wɜːd",
     "sentences": [
@@ -496,21 +458,15 @@
   },
   {
     "name": "sqrt",
-    "trans": [
-      "平方根; 计算平方根"
-    ]
+    "trans": ["平方根; 计算平方根"]
   },
   {
     "name": "HIGH",
-    "trans": [
-      "高; 高电平"
-    ]
+    "trans": ["高; 高电平"]
   },
   {
     "name": "case",
-    "trans": [
-      "情况; switch语句中的情况"
-    ],
+    "trans": ["情况; switch语句中的情况"],
     "usphone": "kes",
     "ukphone": "keɪs",
     "sentences": [
@@ -537,9 +493,7 @@
   },
   {
     "name": "long",
-    "trans": [
-      "长; 定义长整数变量"
-    ],
+    "trans": ["长; 定义长整数变量"],
     "usphone": "lɔŋ",
     "ukphone": "lɒŋ",
     "sentences": [
@@ -562,9 +516,7 @@
   },
   {
     "name": "code",
-    "trans": [
-      "代码; 编程指令"
-    ],
+    "trans": ["代码; 编程指令"],
     "usphone": "kod",
     "ukphone": "kəʊd",
     "sentences": [
@@ -591,9 +543,7 @@
   },
   {
     "name": "tone",
-    "trans": [
-      "音调; 生成音频频率"
-    ],
+    "trans": ["音调; 生成音频频率"],
     "usphone": "ton",
     "ukphone": "təʊn",
     "sentences": [
@@ -621,9 +571,7 @@
   },
   {
     "name": "char",
-    "trans": [
-      "字符; 定义字符变量"
-    ],
+    "trans": ["字符; 定义字符变量"],
     "usphone": "tʃɑr",
     "ukphone": "tʃɑː",
     "sentences": [
@@ -647,9 +595,7 @@
   },
   {
     "name": "byte",
-    "trans": [
-      "字节; 8位无符号数据类型"
-    ],
+    "trans": ["字节; 8位无符号数据类型"],
     "usphone": "baɪt",
     "ukphone": "baɪt",
     "sentences": [
@@ -668,9 +614,7 @@
   },
   {
     "name": "array",
-    "trans": [
-      "数组; 元素的集合"
-    ],
+    "trans": ["数组; 元素的集合"],
     "usphone": "ə're",
     "ukphone": "ə'reɪ",
     "sentences": [
@@ -698,9 +642,7 @@
   },
   {
     "name": "index",
-    "trans": [
-      "索引; 数组中的位置"
-    ],
+    "trans": ["索引; 数组中的位置"],
     "usphone": "'ɪndɛks",
     "ukphone": "'ɪndeks",
     "sentences": [
@@ -719,15 +661,11 @@
   },
   {
     "name": "const",
-    "trans": [
-      "常量; 常量值"
-    ]
+    "trans": ["常量; 常量值"]
   },
   {
     "name": "float",
-    "trans": [
-      "浮点; 定义浮点变量"
-    ],
+    "trans": ["浮点; 定义浮点变量"],
     "usphone": "flot",
     "ukphone": "fləʊt",
     "sentences": [
@@ -755,15 +693,11 @@
   },
   {
     "name": "INPUT",
-    "trans": [
-      "输入; 将引脚设置为输入"
-    ]
+    "trans": ["输入; 将引脚设置为输入"]
   },
   {
     "name": "maker",
-    "trans": [
-      "制造者; 指制造者或创建者"
-    ],
+    "trans": ["制造者; 指制造者或创建者"],
     "usphone": "'mekɚ",
     "ukphone": "'meɪkə",
     "sentences": [
@@ -782,15 +716,11 @@
   },
   {
     "name": "types",
-    "trans": [
-      "类型; 变量的不同类型"
-    ]
+    "trans": ["类型; 变量的不同类型"]
   },
   {
     "name": "break",
-    "trans": [
-      "中断; 退出循环或switch"
-    ],
+    "trans": ["中断; 退出循环或switch"],
     "usphone": "brek",
     "ukphone": "breɪk",
     "sentences": [
@@ -809,9 +739,7 @@
   },
   {
     "name": "while",
-    "trans": [
-      "当; 条件为真时循环"
-    ],
+    "trans": ["当; 条件为真时循环"],
     "usphone": "waɪl",
     "ukphone": "wʌɪl",
     "sentences": [
@@ -848,9 +776,7 @@
   },
   {
     "name": "false",
-    "trans": [
-      "假; 布尔值“假”"
-    ],
+    "trans": ["假; 布尔值“假”"],
     "usphone": "fɔls",
     "ukphone": "fɔːls; fɒls",
     "sentences": [
@@ -886,9 +812,7 @@
   },
   {
     "name": "delay",
-    "trans": [
-      "延迟; 暂停程序执行"
-    ],
+    "trans": ["延迟; 暂停程序执行"],
     "usphone": "dɪ'le",
     "ukphone": "dɪ'leɪ",
     "sentences": [
@@ -911,15 +835,11 @@
   },
   {
     "name": "sizeof",
-    "trans": [
-      "大小; 返回数据类型的大小"
-    ]
+    "trans": ["大小; 返回数据类型的大小"]
   },
   {
     "name": "static",
-    "trans": [
-      "静态; 在函数调用之间保留变量值"
-    ],
+    "trans": ["静态; 在函数调用之间保留变量值"],
     "usphone": "'stætɪk",
     "ukphone": "'stætɪk",
     "sentences": [
@@ -943,27 +863,19 @@
   },
   {
     "name": "noTone",
-    "trans": [
-      "无音调; 停止声音生成"
-    ]
+    "trans": ["无音调; 停止声音生成"]
   },
   {
     "name": "millis",
-    "trans": [
-      "毫秒; 返回经过的毫秒数"
-    ]
+    "trans": ["毫秒; 返回经过的毫秒数"]
   },
   {
     "name": "micros",
-    "trans": [
-      "微秒; 返回经过的微秒数"
-    ]
+    "trans": ["微秒; 返回经过的微秒数"]
   },
   {
     "name": "switch",
-    "trans": [
-      "开关; 选择要执行的代码块"
-    ],
+    "trans": ["开关; 选择要执行的代码块"],
     "usphone": "swɪtʃ",
     "ukphone": "swɪtʃ",
     "sentences": [
@@ -982,9 +894,7 @@
   },
   {
     "name": "define",
-    "trans": [
-      "定义; 定义宏"
-    ],
+    "trans": ["定义; 定义宏"],
     "usphone": "dɪ'faɪn",
     "ukphone": "dɪ'faɪn",
     "sentences": [
@@ -1011,15 +921,11 @@
   },
   {
     "name": "Stream",
-    "trans": [
-      "流; 处理数据输入/输出"
-    ]
+    "trans": ["流; 处理数据输入/输出"]
   },
   {
     "name": "double",
-    "trans": [
-      "双精度; 定义双精度浮点变量"
-    ],
+    "trans": ["双精度; 定义双精度浮点变量"],
     "usphone": "'dʌbl",
     "ukphone": "'dʌb(ə)l",
     "sentences": [
@@ -1054,21 +960,15 @@
   },
   {
     "name": "bitSet",
-    "trans": [
-      "设置位; 在特定位置设置位"
-    ]
+    "trans": ["设置位; 在特定位置设置位"]
   },
   {
     "name": "OUTPUT",
-    "trans": [
-      "输出; 将引脚设置为输出"
-    ]
+    "trans": ["输出; 将引脚设置为输出"]
   },
   {
     "name": "random",
-    "trans": [
-      "随机; 生成随机数"
-    ],
+    "trans": ["随机; 生成随机数"],
     "usphone": "'rændəm",
     "ukphone": "'rændəm",
     "sentences": [
@@ -1096,15 +996,11 @@
   },
   {
     "name": "Serial",
-    "trans": [
-      "串行; 处理串行通信"
-    ]
+    "trans": ["串行; 处理串行通信"]
   },
   {
     "name": "string",
-    "trans": [
-      "字符串; 字符序列"
-    ],
+    "trans": ["字符串; 字符序列"],
     "usphone": "strɪŋ",
     "ukphone": "strɪŋ",
     "sentences": [
@@ -1135,9 +1031,7 @@
   },
   {
     "name": "return",
-    "trans": [
-      "返回; 退出函数并可选地返回值"
-    ],
+    "trans": ["返回; 退出函数并可选地返回值"],
     "usphone": "rɪ'tɝn",
     "ukphone": "rɪ'tɜːn",
     "sentences": [
@@ -1174,45 +1068,31 @@
   },
   {
     "name": "boolean",
-    "trans": [
-      "布尔值; 定义布尔变量"
-    ]
+    "trans": ["布尔值; 定义布尔变量"]
   },
   {
     "name": "pulseIn",
-    "trans": [
-      "脉冲输入; 读取引脚上的脉冲宽度"
-    ]
+    "trans": ["脉冲输入; 读取引脚上的脉冲宽度"]
   },
   {
     "name": "lowByte",
-    "trans": [
-      "低字节; 返回值的低字节"
-    ]
+    "trans": ["低字节; 返回值的低字节"]
   },
   {
     "name": "bitRead",
-    "trans": [
-      "读取位; 读取特定位上的值"
-    ]
+    "trans": ["读取位; 读取特定位上的值"]
   },
   {
     "name": "shiftIn",
-    "trans": [
-      "移入; 逐位移入数据"
-    ]
+    "trans": ["移入; 逐位移入数据"]
   },
   {
     "name": "arduino",
-    "trans": [
-      "arduino; 微控制器平台"
-    ]
+    "trans": ["arduino; 微控制器平台"]
   },
   {
     "name": "include",
-    "trans": [
-      "包含; 在程序中包含文件"
-    ],
+    "trans": ["包含; 在程序中包含文件"],
     "usphone": "ɪn'klud",
     "ukphone": "ɪn'kluːd",
     "sentences": [
@@ -1239,21 +1119,15 @@
   },
   {
     "name": "pinMode",
-    "trans": [
-      "引脚模式; 将引脚配置为输入或输出"
-    ]
+    "trans": ["引脚模式; 将引脚配置为输入或输出"]
   },
   {
     "name": "shiftOut",
-    "trans": [
-      "移出; 逐位移出数据"
-    ]
+    "trans": ["移出; 逐位移出数据"]
   },
   {
     "name": "volatile",
-    "trans": [
-      "易变的; 表示变量可能会意外更改"
-    ],
+    "trans": ["易变的; 表示变量可能会意外更改"],
     "usphone": "'vɑlətl",
     "ukphone": "'vɒlətaɪl",
     "sentences": [
@@ -1281,21 +1155,15 @@
   },
   {
     "name": "bitClear",
-    "trans": [
-      "清除位; 清除特定位上的值"
-    ]
+    "trans": ["清除位; 清除特定位上的值"]
   },
   {
     "name": "unsigned",
-    "trans": [
-      "无符号; 表示变量不能为负值"
-    ]
+    "trans": ["无符号; 表示变量不能为负值"]
   },
   {
     "name": "continue",
-    "trans": [
-      "继续; 跳过当前循环的剩余部分"
-    ],
+    "trans": ["继续; 跳过当前循环的剩余部分"],
     "usphone": "kən'tɪnju",
     "ukphone": "kən'tɪnjuː",
     "sentences": [
@@ -1322,21 +1190,15 @@
   },
   {
     "name": "bitWrite",
-    "trans": [
-      "写入位; 在特定位上写入值"
-    ]
+    "trans": ["写入位; 在特定位上写入值"]
   },
   {
     "name": "highByte",
-    "trans": [
-      "高字节; 返回值的高字节"
-    ]
+    "trans": ["高字节; 返回值的高字节"]
   },
   {
     "name": "constrain",
-    "trans": [
-      "限制; 将值限制在范围内"
-    ],
+    "trans": ["限制; 将值限制在范围内"],
     "usphone": "kən'stren",
     "ukphone": "kən'streɪn",
     "sentences": [
@@ -1359,9 +1221,7 @@
   },
   {
     "name": "reference",
-    "trans": [
-      "参考; 指向变量或函数"
-    ],
+    "trans": ["参考; 指向变量或函数"],
     "usphone": "'rɛfrəns",
     "ukphone": "'ref(ə)r(ə)ns",
     "sentences": [
@@ -1384,50 +1244,34 @@
   },
   {
     "name": "analogRead",
-    "trans": [
-      "模拟读取; 从模拟引脚读取值"
-    ]
+    "trans": ["模拟读取; 从模拟引脚读取值"]
   },
   {
     "name": "randomSeed",
-    "trans": [
-      "随机种子; 设置生成随机数的起始点"
-    ]
+    "trans": ["随机种子; 设置生成随机数的起始点"]
   },
   {
     "name": "digitalRead",
-    "trans": [
-      "数字读取; 从数字引脚读取值"
-    ]
+    "trans": ["数字读取; 从数字引脚读取值"]
   },
   {
     "name": "analogWrite",
-    "trans": [
-      "模拟写入; 向引脚写入模拟值"
-    ]
+    "trans": ["模拟写入; 向引脚写入模拟值"]
   },
   {
     "name": "digitalWrite",
-    "trans": [
-      "数字写入; 向引脚写入数字值"
-    ]
+    "trans": ["数字写入; 向引脚写入数字值"]
   },
   {
     "name": "detachInterrupt",
-    "trans": [
-      "分离中断; 禁用引脚上的中断"
-    ]
+    "trans": ["分离中断; 禁用引脚上的中断"]
   },
   {
     "name": "attachInterrupt",
-    "trans": [
-      "连接中断; 启用引脚上的中断"
-    ]
+    "trans": ["连接中断; 启用引脚上的中断"]
   },
   {
     "name": "delayMicroseconds",
-    "trans": [
-      "微秒延迟; 暂停程序执行几微秒"
-    ]
+    "trans": ["微秒延迟; 暂停程序执行几微秒"]
   }
 ]

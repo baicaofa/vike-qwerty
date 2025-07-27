@@ -1,9 +1,7 @@
 [
   {
     "name": "if",
-    "trans": [
-      "如果"
-    ],
+    "trans": ["如果"],
     "usphone": "ɪf",
     "ukphone": "ɪf",
     "sentences": [
@@ -70,9 +68,7 @@
   },
   {
     "name": "else",
-    "trans": [
-      "否则"
-    ],
+    "trans": ["否则"],
     "usphone": "ɛls",
     "ukphone": "els",
     "sentences": [
@@ -124,9 +120,7 @@
   },
   {
     "name": "while",
-    "trans": [
-      "while 型循环"
-    ],
+    "trans": ["while 型循环"],
     "usphone": "waɪl",
     "ukphone": "wʌɪl",
     "sentences": [
@@ -163,9 +157,7 @@
   },
   {
     "name": "for",
-    "trans": [
-      "for 型循环"
-    ],
+    "trans": ["for 型循环"],
     "usphone": "fɚ; strong form fɔr",
     "ukphone": "fə(r); strong form fɔ:(r)",
     "sentences": [
@@ -200,9 +192,7 @@
   },
   {
     "name": "and",
-    "trans": [
-      "逻辑与运算符"
-    ],
+    "trans": ["逻辑与运算符"],
     "usphone": "ənd, ən,ænd",
     "ukphone": "ənd; (ə)n; ænd",
     "sentences": [
@@ -241,9 +231,7 @@
   },
   {
     "name": "or",
-    "trans": [
-      "逻辑或运算符"
-    ],
+    "trans": ["逻辑或运算符"],
     "usphone": "ɔr",
     "ukphone": "ɔː",
     "sentences": [
@@ -282,9 +270,7 @@
   },
   {
     "name": "not",
-    "trans": [
-      "逻辑非运算符"
-    ],
+    "trans": ["逻辑非运算符"],
     "usphone": "nɑt",
     "ukphone": "nɒt",
     "sentences": [
@@ -315,9 +301,7 @@
   },
   {
     "name": "TRUE",
-    "trans": [
-      "真"
-    ],
+    "trans": ["真"],
     "usphone": "tru",
     "ukphone": "truː",
     "sentences": [
@@ -355,9 +339,7 @@
   },
   {
     "name": "FALSE",
-    "trans": [
-      "假"
-    ],
+    "trans": ["假"],
     "usphone": "fɔls",
     "ukphone": "fɔːls; fɒls",
     "sentences": [
@@ -385,15 +367,11 @@
   },
   {
     "name": "None",
-    "trans": [
-      "空值"
-    ]
+    "trans": ["空值"]
   },
   {
     "name": "continue",
-    "trans": [
-      "跳出本次循环，继续下一轮循环"
-    ],
+    "trans": ["跳出本次循环，继续下一轮循环"],
     "usphone": "kən'tɪnju",
     "ukphone": "kən'tɪnjuː",
     "sentences": [
@@ -420,9 +398,7 @@
   },
   {
     "name": "break",
-    "trans": [
-      "跳出整个循环"
-    ],
+    "trans": ["跳出整个循环"],
     "usphone": "brek",
     "ukphone": "breɪk",
     "sentences": [
@@ -441,9 +417,7 @@
   },
   {
     "name": "pass",
-    "trans": [
-      "空语句，不做任何事情"
-    ],
+    "trans": ["空语句，不做任何事情"],
     "usphone": "pæs",
     "ukphone": "pɑːs",
     "sentences": [
@@ -482,15 +456,11 @@
   },
   {
     "name": "def",
-    "trans": [
-      "define的缩写，定义一个函数"
-    ]
+    "trans": ["define的缩写，定义一个函数"]
   },
   {
     "name": "return",
-    "trans": [
-      "返回语句，退出def语句块"
-    ],
+    "trans": ["返回语句，退出def语句块"],
     "usphone": "rɪ'tɝn",
     "ukphone": "rɪ'tɜːn",
     "sentences": [
@@ -527,9 +497,7 @@
   },
   {
     "name": "global",
-    "trans": [
-      "声明全局变量"
-    ],
+    "trans": ["声明全局变量"],
     "usphone": "'ɡlobl",
     "ukphone": "'gləʊb(ə)l",
     "sentences": [
@@ -552,9 +520,7 @@
   },
   {
     "name": "class",
-    "trans": [
-      "定义一个类"
-    ],
+    "trans": ["定义一个类"],
     "usphone": "klæs",
     "ukphone": "klɑːs",
     "sentences": [
@@ -581,9 +547,7 @@
   },
   {
     "name": "import",
-    "trans": [
-      "导入模块"
-    ],
+    "trans": ["导入模块"],
     "usphone": "'ɪmpɔt",
     "ukphone": "ɪm'pɔːt",
     "sentences": [
@@ -611,9 +575,7 @@
   },
   {
     "name": "from",
-    "trans": [
-      "与import配合导入模块"
-    ],
+    "trans": ["与import配合导入模块"],
     "usphone": "",
     "ukphone": "",
     "sentences": [

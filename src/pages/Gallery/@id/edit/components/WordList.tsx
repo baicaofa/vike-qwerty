@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useCustomWordAPI } from "@/hooks/useCustomDictionary";
 import type { ICustomWord } from "@/utils/db/customDictionary";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import IconEdit from "~icons/tabler/edit";
 import IconPlus from "~icons/tabler/plus";
 import IconTrash from "~icons/tabler/trash";

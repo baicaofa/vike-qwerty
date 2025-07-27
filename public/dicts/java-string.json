@@ -1,21 +1,15 @@
 [
   {
     "name": "charAt()",
-    "trans": [
-      "char charAt(int index):返回指定索引处的 char 值。"
-    ]
+    "trans": ["char charAt(int index):返回指定索引处的 char 值。"]
   },
   {
     "name": "compareTo()",
-    "trans": [
-      "int compareTo(Object o):把这个字符串和另一个对象比较。"
-    ]
+    "trans": ["int compareTo(Object o):把这个字符串和另一个对象比较。"]
   },
   {
     "name": "compareTo()",
-    "trans": [
-      "int compareTo(String anotherString):按字典顺序比较两个字符串。"
-    ]
+    "trans": ["int compareTo(String anotherString):按字典顺序比较两个字符串。"]
   },
   {
     "name": "compareToIgnoreCase()",
@@ -25,9 +19,7 @@
   },
   {
     "name": "concat()",
-    "trans": [
-      "String concat(String str):将指定字符串连接到此字符串的结尾。"
-    ]
+    "trans": ["String concat(String str):将指定字符串连接到此字符串的结尾。"]
   },
   {
     "name": "contentEquals()",
@@ -55,9 +47,7 @@
   },
   {
     "name": "equals()",
-    "trans": [
-      "boolean equals(Object anObject):将此字符串与指定的对象比较。"
-    ]
+    "trans": ["boolean equals(Object anObject):将此字符串与指定的对象比较。"]
   },
   {
     "name": "equalsIgnoreCase()",
@@ -85,9 +75,7 @@
   },
   {
     "name": "hashCode()",
-    "trans": [
-      "int hashCode():返回此字符串的哈希码。"
-    ]
+    "trans": ["int hashCode():返回此字符串的哈希码。"]
   },
   {
     "name": "indexOf()",
@@ -115,9 +103,7 @@
   },
   {
     "name": "intern()",
-    "trans": [
-      "String intern():返回字符串对象的规范化表示形式。"
-    ]
+    "trans": ["String intern():返回字符串对象的规范化表示形式。"]
   },
   {
     "name": "lastIndexOf()",
@@ -145,9 +131,7 @@
   },
   {
     "name": "length()",
-    "trans": [
-      "int length():返回此字符串的长度。"
-    ]
+    "trans": ["int length():返回此字符串的长度。"]
   },
   {
     "name": "matches()",
@@ -229,9 +213,7 @@
   },
   {
     "name": "toCharArray()",
-    "trans": [
-      "char[] toCharArray():将此字符串转换为一个新的字符数组。"
-    ]
+    "trans": ["char[] toCharArray():将此字符串转换为一个新的字符数组。"]
   },
   {
     "name": "toLowerCase()",
@@ -247,9 +229,7 @@
   },
   {
     "name": "toString()",
-    "trans": [
-      "String toString():返回此对象本身（它已经是一个字符串！）。"
-    ]
+    "trans": ["String toString():返回此对象本身（它已经是一个字符串！）。"]
   },
   {
     "name": "toUpperCase()",
@@ -265,9 +245,7 @@
   },
   {
     "name": "trim()",
-    "trans": [
-      "String trim():返回字符串的副本，忽略前导空白和尾部空白。"
-    ]
+    "trans": ["String trim():返回字符串的副本，忽略前导空白和尾部空白。"]
   },
   {
     "name": "valueOf()",
@@ -277,14 +255,10 @@
   },
   {
     "name": "contains()",
-    "trans": [
-      "contains(CharSequence chars):判断是否包含指定的字符系列。"
-    ]
+    "trans": ["contains(CharSequence chars):判断是否包含指定的字符系列。"]
   },
   {
     "name": "isEmpty()",
-    "trans": [
-      "isEmpty():判断字符串是否为空。"
-    ]
+    "trans": ["isEmpty():判断字符串是否为空。"]
   }
 ]

@@ -10,8 +10,8 @@ import Layout from "@/components/Layout";
 import { dictionaries } from "@/resources/dictionary";
 import { currentDictInfoAtom } from "@/store";
 import {
-  customDictionariesAtom,
   adaptCustomDictionariesToDictionaries,
+  customDictionariesAtom,
 } from "@/store/customDictionary";
 import type { Dictionary, LanguageCategoryType } from "@/typings";
 import groupBy, { groupByDictTags } from "@/utils/groupBy";
@@ -93,6 +93,12 @@ export default function Page({ initialLanguage }: PageProps) {
       draft.isUploadModalOpen = false;
     });
   }, [setGalleryState]);
+  // 为上传成功添加实际处理逻辑
+  const handleUploadSuccess = useCallback(() => {
+    handleCloseUploadModal();
+    // 可以添加上传成功后的操作，如显示提示、刷新列表等
+    // 例如: toast.success('词典上传成功');
+  }, [handleCloseUploadModal]);
 
   useHotkeys("enter,esc", onBack, { preventDefault: true });
 
@@ -162,7 +168,7 @@ export default function Page({ initialLanguage }: PageProps) {
           <UploadDictionaryModal
             isOpen={galleryState.isUploadModalOpen}
             onClose={handleCloseUploadModal}
-            onSuccess={() => {}}
+            onSuccess={handleUploadSuccess}
           />
         </div>
       </GalleryContext.Provider>

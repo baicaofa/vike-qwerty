@@ -60,9 +60,7 @@
   },
   {
     "name": "base",
-    "trans": [
-      "base:表示基类的关键字，用于访问基类的成员或调用基类的构造函数"
-    ],
+    "trans": ["base:表示基类的关键字，用于访问基类的成员或调用基类的构造函数"],
     "usphone": "bes",
     "ukphone": "beɪs",
     "sentences": [
@@ -91,15 +89,11 @@
   },
   {
     "name": "bool",
-    "trans": [
-      "bool:表示布尔型数据类型，只能存储 true 或 false"
-    ]
+    "trans": ["bool:表示布尔型数据类型，只能存储 true 或 false"]
   },
   {
     "name": "break",
-    "trans": [
-      "break:用于跳出循环或 switch 语句"
-    ],
+    "trans": ["break:用于跳出循环或 switch 语句"],
     "usphone": "brek",
     "ukphone": "breɪk",
     "sentences": [
@@ -118,9 +112,7 @@
   },
   {
     "name": "byte",
-    "trans": [
-      "byte:表示 8 位无符号整数类型，范围为 0 到 255"
-    ],
+    "trans": ["byte:表示 8 位无符号整数类型，范围为 0 到 255"],
     "usphone": "baɪt",
     "ukphone": "baɪt",
     "sentences": [
@@ -139,9 +131,7 @@
   },
   {
     "name": "case",
-    "trans": [
-      "case:switch 语句中的分支标签"
-    ],
+    "trans": ["case:switch 语句中的分支标签"],
     "usphone": "kes",
     "ukphone": "keɪs",
     "sentences": [
@@ -168,9 +158,7 @@
   },
   {
     "name": "catch",
-    "trans": [
-      "catch:用于捕获异常的关键字，在 try-catch 块中使用"
-    ],
+    "trans": ["catch:用于捕获异常的关键字，在 try-catch 块中使用"],
     "usphone": "kætʃ",
     "ukphone": "kætʃ",
     "sentences": [
@@ -201,9 +189,7 @@
   },
   {
     "name": "char",
-    "trans": [
-      "char:表示 16 位 Unicode 字符"
-    ],
+    "trans": ["char:表示 16 位 Unicode 字符"],
     "usphone": "tʃɑr",
     "ukphone": "tʃɑː",
     "sentences": [
@@ -227,9 +213,7 @@
   },
   {
     "name": "checked",
-    "trans": [
-      "checked:用于启用整数算术的溢出检查"
-    ],
+    "trans": ["checked:用于启用整数算术的溢出检查"],
     "usphone": "tʃɛkt",
     "ukphone": "tʃekt",
     "sentences": [
@@ -248,9 +232,7 @@
   },
   {
     "name": "class",
-    "trans": [
-      "class:声明类的关键字，用于定义对象的蓝图"
-    ],
+    "trans": ["class:声明类的关键字，用于定义对象的蓝图"],
     "usphone": "klæs",
     "ukphone": "klɑːs",
     "sentences": [
@@ -277,15 +259,11 @@
   },
   {
     "name": "const",
-    "trans": [
-      "const:声明常量的关键字，表示其值在编译时是固定的"
-    ]
+    "trans": ["const:声明常量的关键字，表示其值在编译时是固定的"]
   },
   {
     "name": "continue",
-    "trans": [
-      "continue:用于终止当前循环迭代并继续下一次迭代"
-    ],
+    "trans": ["continue:用于终止当前循环迭代并继续下一次迭代"],
     "usphone": "kən'tɪnju",
     "ukphone": "kən'tɪnjuː",
     "sentences": [
@@ -312,9 +290,7 @@
   },
   {
     "name": "decimal",
-    "trans": [
-      "decimal:表示高精度的十进制数"
-    ],
+    "trans": ["decimal:表示高精度的十进制数"],
     "usphone": "'dɛsɪml",
     "ukphone": "'desɪm(ə)l",
     "sentences": [
@@ -342,9 +318,7 @@
   },
   {
     "name": "default",
-    "trans": [
-      "default:switch 语句中的默认标签"
-    ],
+    "trans": ["default:switch 语句中的默认标签"],
     "usphone": "dɪ'fɔlt",
     "ukphone": "dɪ'fɔːlt; 'diːfɔːlt",
     "sentences": [
@@ -372,9 +346,7 @@
   },
   {
     "name": "delegate",
-    "trans": [
-      "delegate:用于声明委托类型"
-    ],
+    "trans": ["delegate:用于声明委托类型"],
     "usphone": "ˈdɛləgɪt; (for v.,) ˈdɛləˌgeɪt",
     "ukphone": "ˈdɛlɪˌɡeɪt; -ɡɪt; (for v.,) ˈdɛlɪˌɡeɪt",
     "sentences": [
@@ -398,9 +370,7 @@
   },
   {
     "name": "do",
-    "trans": [
-      "do:表示 do-while 循环的关键字"
-    ],
+    "trans": ["do:表示 do-while 循环的关键字"],
     "usphone": "du",
     "ukphone": "duː",
     "sentences": [
@@ -440,9 +410,7 @@
   },
   {
     "name": "double",
-    "trans": [
-      "double:表示双精度浮点数类型"
-    ],
+    "trans": ["double:表示双精度浮点数类型"],
     "usphone": "'dʌbl",
     "ukphone": "'dʌb(ə)l",
     "sentences": [
@@ -477,9 +445,7 @@
   },
   {
     "name": "else",
-    "trans": [
-      "else:表示 if-else 语句中的否定条件"
-    ],
+    "trans": ["else:表示 if-else 语句中的否定条件"],
     "usphone": "ɛls",
     "ukphone": "els",
     "sentences": [
@@ -531,15 +497,11 @@
   },
   {
     "name": "enum",
-    "trans": [
-      "enum:用于声明枚举类型"
-    ]
+    "trans": ["enum:用于声明枚举类型"]
   },
   {
     "name": "event",
-    "trans": [
-      "event:声明事件的关键字，用于在类或结构中定义事件成员"
-    ],
+    "trans": ["event:声明事件的关键字，用于在类或结构中定义事件成员"],
     "usphone": "ɪ'vɛnt",
     "ukphone": "ɪ'vent",
     "sentences": [
@@ -558,9 +520,7 @@
   },
   {
     "name": "explicit",
-    "trans": [
-      "explicit:声明显式转换运算符的关键字"
-    ],
+    "trans": ["explicit:声明显式转换运算符的关键字"],
     "usphone": "ɪk'splɪsɪt",
     "ukphone": "ɪk'splɪsɪt; ek-",
     "sentences": [
@@ -597,9 +557,7 @@
   },
   {
     "name": "false",
-    "trans": [
-      "false:表示布尔型的 false 值"
-    ],
+    "trans": ["false:表示布尔型的 false 值"],
     "usphone": "fɔls",
     "ukphone": "fɔːls; fɒls",
     "sentences": [
@@ -660,9 +618,7 @@
   },
   {
     "name": "fixed",
-    "trans": [
-      "fixed:用于固定托管对象的关键字，通常与指针相关"
-    ],
+    "trans": ["fixed:用于固定托管对象的关键字，通常与指针相关"],
     "usphone": "fɪkst",
     "ukphone": "fɪkst",
     "sentences": [
@@ -686,9 +642,7 @@
   },
   {
     "name": "float",
-    "trans": [
-      "float:表示单精度浮点数类型"
-    ],
+    "trans": ["float:表示单精度浮点数类型"],
     "usphone": "flot",
     "ukphone": "fləʊt",
     "sentences": [
@@ -716,9 +670,7 @@
   },
   {
     "name": "for",
-    "trans": [
-      "for:表示 for 循环的关键字"
-    ],
+    "trans": ["for:表示 for 循环的关键字"],
     "usphone": "fɚ; strong form fɔr",
     "ukphone": "fə(r); strong form fɔ:(r)",
     "sentences": [
@@ -753,21 +705,15 @@
   },
   {
     "name": "foreach",
-    "trans": [
-      "foreach:用于循环访问集合或数组中的元素"
-    ]
+    "trans": ["foreach:用于循环访问集合或数组中的元素"]
   },
   {
     "name": "goto",
-    "trans": [
-      "goto:用于无条件转移到代码中的另一个标签"
-    ]
+    "trans": ["goto:用于无条件转移到代码中的另一个标签"]
   },
   {
     "name": "if",
-    "trans": [
-      "if:表示条件语句中的条件分支"
-    ],
+    "trans": ["if:表示条件语句中的条件分支"],
     "usphone": "ɪf",
     "ukphone": "ɪf",
     "sentences": [
@@ -834,9 +780,7 @@
   },
   {
     "name": "implicit",
-    "trans": [
-      "implicit:声明隐式转换运算符的关键字"
-    ],
+    "trans": ["implicit:声明隐式转换运算符的关键字"],
     "usphone": "ɪm'plɪsɪt",
     "ukphone": "ɪm'plɪsɪt",
     "sentences": [
@@ -855,9 +799,7 @@
   },
   {
     "name": "in",
-    "trans": [
-      "in:在 foreach 循环中指定集合的关键字"
-    ],
+    "trans": ["in:在 foreach 循环中指定集合的关键字"],
     "usphone": "ɪn",
     "ukphone": "ɪn",
     "sentences": [
@@ -908,15 +850,11 @@
   },
   {
     "name": "int",
-    "trans": [
-      "int:表示整数类型"
-    ]
+    "trans": ["int:表示整数类型"]
   },
   {
     "name": "interface",
-    "trans": [
-      "interface:声明接口的关键字，用于定义类似于抽象类的契约"
-    ],
+    "trans": ["interface:声明接口的关键字，用于定义类似于抽象类的契约"],
     "usphone": "'ɪntɚ'fes",
     "ukphone": "'ɪntəfeɪs",
     "sentences": [
@@ -940,9 +878,7 @@
   },
   {
     "name": "internal",
-    "trans": [
-      "internal:表示访问级别为程序集的关键字，只能在当前程序集中访问"
-    ],
+    "trans": ["internal:表示访问级别为程序集的关键字，只能在当前程序集中访问"],
     "usphone": "ɪn'tɝnl",
     "ukphone": "ɪn'tɜːn(ə)l",
     "sentences": [
@@ -973,9 +909,7 @@
   },
   {
     "name": "is",
-    "trans": [
-      "is:用于检查对象是否为特定类型的关键字"
-    ],
+    "trans": ["is:用于检查对象是否为特定类型的关键字"],
     "usphone": "ɪz",
     "ukphone": "ɪz",
     "sentences": [
@@ -1007,9 +941,7 @@
   },
   {
     "name": "lock",
-    "trans": [
-      "lock:用于同步访问共享资源的关键字"
-    ],
+    "trans": ["lock:用于同步访问共享资源的关键字"],
     "usphone": "lɑk",
     "ukphone": "lɒk",
     "sentences": [
@@ -1045,9 +977,7 @@
   },
   {
     "name": "long",
-    "trans": [
-      "long:表示长整数类型"
-    ],
+    "trans": ["long:表示长整数类型"],
     "usphone": "lɔŋ",
     "ukphone": "lɒŋ",
     "sentences": [
@@ -1070,15 +1000,11 @@
   },
   {
     "name": "namespace",
-    "trans": [
-      "namespace:声明命名空间的关键字，用于组织和管理代码"
-    ]
+    "trans": ["namespace:声明命名空间的关键字，用于组织和管理代码"]
   },
   {
     "name": "new",
-    "trans": [
-      "new:用于创建新对象的关键字，也可用于隐藏基类中的成员"
-    ],
+    "trans": ["new:用于创建新对象的关键字，也可用于隐藏基类中的成员"],
     "usphone": "nu",
     "ukphone": "njuː",
     "sentences": [
@@ -1113,9 +1039,7 @@
   },
   {
     "name": "null",
-    "trans": [
-      "null:表示空引用的关键字"
-    ],
+    "trans": ["null:表示空引用的关键字"],
     "usphone": "nʌl",
     "ukphone": "nʌl",
     "sentences": [
@@ -1134,9 +1058,7 @@
   },
   {
     "name": "object",
-    "trans": [
-      "object:表示对象类型，是所有其他类型的基类"
-    ],
+    "trans": ["object:表示对象类型，是所有其他类型的基类"],
     "usphone": "'ɑbdʒɛkt",
     "ukphone": "'ɒbdʒɪkt; -dʒekt",
     "sentences": [
@@ -1160,9 +1082,7 @@
   },
   {
     "name": "operator",
-    "trans": [
-      "operator:声明运算符重载的关键字"
-    ],
+    "trans": ["operator:声明运算符重载的关键字"],
     "usphone": "'ɑpəretɚ",
     "ukphone": "'ɒpəreɪtə",
     "sentences": [
@@ -1185,9 +1105,7 @@
   },
   {
     "name": "out",
-    "trans": [
-      "out:用于参数声明中，表示参数是输出参数"
-    ],
+    "trans": ["out:用于参数声明中，表示参数是输出参数"],
     "usphone": "aʊt",
     "ukphone": "aʊt",
     "sentences": [
@@ -1222,9 +1140,7 @@
   },
   {
     "name": "override",
-    "trans": [
-      "override:用于重写基类中的虚成员"
-    ],
+    "trans": ["override:用于重写基类中的虚成员"],
     "usphone": ",ovɚ'raɪd",
     "ukphone": "əʊvə'raɪd",
     "sentences": [
@@ -1248,9 +1164,7 @@
   },
   {
     "name": "params",
-    "trans": [
-      "params:用于指定函数参数的可变数量"
-    ]
+    "trans": ["params:用于指定函数参数的可变数量"]
   },
   {
     "name": "private",
@@ -1289,9 +1203,7 @@
   },
   {
     "name": "public",
-    "trans": [
-      "public:表示访问级别为公共的关键字，可以在任何地方访问"
-    ],
+    "trans": ["public:表示访问级别为公共的关键字，可以在任何地方访问"],
     "usphone": "'pʌblɪk",
     "ukphone": "'pʌblɪk",
     "sentences": [
@@ -1335,21 +1247,15 @@
   },
   {
     "name": "readonly",
-    "trans": [
-      "readonly:声明只读字段的关键字，只能在声明时或构造函数中初始化"
-    ]
+    "trans": ["readonly:声明只读字段的关键字，只能在声明时或构造函数中初始化"]
   },
   {
     "name": "ref",
-    "trans": [
-      "ref:用于传递参数的引用的关键字"
-    ]
+    "trans": ["ref:用于传递参数的引用的关键字"]
   },
   {
     "name": "return",
-    "trans": [
-      "return:用于从方法中返回值的关键字"
-    ],
+    "trans": ["return:用于从方法中返回值的关键字"],
     "usphone": "rɪ'tɝn",
     "ukphone": "rɪ'tɜːn",
     "sentences": [
@@ -1386,21 +1292,15 @@
   },
   {
     "name": "sbyte",
-    "trans": [
-      "sbyte:表示 8 位有符号整数类型"
-    ]
+    "trans": ["sbyte:表示 8 位有符号整数类型"]
   },
   {
     "name": "sealed",
-    "trans": [
-      "sealed:声明密封类的关键字，防止其他类继承该类"
-    ]
+    "trans": ["sealed:声明密封类的关键字，防止其他类继承该类"]
   },
   {
     "name": "short",
-    "trans": [
-      "short:表示短整数类型"
-    ],
+    "trans": ["short:表示短整数类型"],
     "usphone": "ʃɔrt",
     "ukphone": "ʃɔːt",
     "sentences": [
@@ -1469,21 +1369,15 @@
   },
   {
     "name": "sizeof",
-    "trans": [
-      "sizeof:用于获取未托管类型的大小"
-    ]
+    "trans": ["sizeof:用于获取未托管类型的大小"]
   },
   {
     "name": "stackalloc",
-    "trans": [
-      "stackalloc:在堆栈上分配内存的关键字"
-    ]
+    "trans": ["stackalloc:在堆栈上分配内存的关键字"]
   },
   {
     "name": "static",
-    "trans": [
-      "static:表示静态成员的关键字，静态成员属于类而不是实例"
-    ],
+    "trans": ["static:表示静态成员的关键字，静态成员属于类而不是实例"],
     "usphone": "'stætɪk",
     "ukphone": "'stætɪk",
     "sentences": [
@@ -1507,9 +1401,7 @@
   },
   {
     "name": "string",
-    "trans": [
-      "string:表示字符串类型"
-    ],
+    "trans": ["string:表示字符串类型"],
     "usphone": "strɪŋ",
     "ukphone": "strɪŋ",
     "sentences": [
@@ -1540,15 +1432,11 @@
   },
   {
     "name": "struct",
-    "trans": [
-      "struct:声明结构的关键字，结构是值类型"
-    ]
+    "trans": ["struct:声明结构的关键字，结构是值类型"]
   },
   {
     "name": "switch",
-    "trans": [
-      "switch:表示 switch 语句的关键字，用于多路分支选择"
-    ],
+    "trans": ["switch:表示 switch 语句的关键字，用于多路分支选择"],
     "usphone": "swɪtʃ",
     "ukphone": "swɪtʃ",
     "sentences": [
@@ -1567,9 +1455,7 @@
   },
   {
     "name": "this",
-    "trans": [
-      "this:表示当前实例的关键字"
-    ],
+    "trans": ["this:表示当前实例的关键字"],
     "usphone": "ðɪs",
     "ukphone": "ðɪs",
     "sentences": [
@@ -1607,9 +1493,7 @@
   },
   {
     "name": "throw",
-    "trans": [
-      "throw:用于抛出异常的关键字"
-    ],
+    "trans": ["throw:用于抛出异常的关键字"],
     "usphone": "θro",
     "ukphone": "θrəu",
     "sentences": [
@@ -1628,9 +1512,7 @@
   },
   {
     "name": "true",
-    "trans": [
-      "true:表示布尔型的 true 值"
-    ],
+    "trans": ["true:表示布尔型的 true 值"],
     "usphone": "tru",
     "ukphone": "truː",
     "sentences": [
@@ -1676,9 +1558,7 @@
   },
   {
     "name": "try",
-    "trans": [
-      "try:用于定义可能会引发异常的代码块的关键字"
-    ],
+    "trans": ["try:用于定义可能会引发异常的代码块的关键字"],
     "usphone": "traɪ",
     "ukphone": "traɪ",
     "sentences": [
@@ -1714,33 +1594,23 @@
   },
   {
     "name": "typeof",
-    "trans": [
-      "typeof:用于获取类型对象的关键字"
-    ]
+    "trans": ["typeof:用于获取类型对象的关键字"]
   },
   {
     "name": "uint",
-    "trans": [
-      "uint:表示 32 位无符号整数类型"
-    ]
+    "trans": ["uint:表示 32 位无符号整数类型"]
   },
   {
     "name": "ulong",
-    "trans": [
-      "ulong:表示 64 位无符号整数类型"
-    ]
+    "trans": ["ulong:表示 64 位无符号整数类型"]
   },
   {
     "name": "unchecked",
-    "trans": [
-      "unchecked:用于禁用整数算术的溢出检查"
-    ]
+    "trans": ["unchecked:用于禁用整数算术的溢出检查"]
   },
   {
     "name": "unsafe",
-    "trans": [
-      "unsafe:声明不安全代码块的关键字，用于使用指针和执行不安全操作"
-    ],
+    "trans": ["unsafe:声明不安全代码块的关键字，用于使用指针和执行不安全操作"],
     "usphone": "ʌn'sef",
     "ukphone": "ʌn'seɪf",
     "sentences": [
@@ -1763,9 +1633,7 @@
   },
   {
     "name": "ushort",
-    "trans": [
-      "ushort:表示 16 位无符号整数类型"
-    ]
+    "trans": ["ushort:表示 16 位无符号整数类型"]
   },
   {
     "name": "using",
@@ -1775,15 +1643,11 @@
   },
   {
     "name": "var",
-    "trans": [
-      "var:用于声明隐式类型的关键字，由编译器推断类型"
-    ]
+    "trans": ["var:用于声明隐式类型的关键字，由编译器推断类型"]
   },
   {
     "name": "virtual",
-    "trans": [
-      "virtual:声明虚成员的关键字，允许在派生类中重写"
-    ],
+    "trans": ["virtual:声明虚成员的关键字，允许在派生类中重写"],
     "usphone": "[ˈvɜ:rtʃuəl]",
     "ukphone": "ˈvɜ:tʃuəl",
     "sentences": [
@@ -1806,9 +1670,7 @@
   },
   {
     "name": "void",
-    "trans": [
-      "void:表示方法不返回任何值的关键字"
-    ],
+    "trans": ["void:表示方法不返回任何值的关键字"],
     "usphone": "vɔɪd",
     "ukphone": "vɔɪd",
     "sentences": [
@@ -1867,9 +1729,7 @@
   },
   {
     "name": "while",
-    "trans": [
-      "while:表示 while 循环的关键字"
-    ],
+    "trans": ["while:表示 while 循环的关键字"],
     "usphone": "waɪl",
     "ukphone": "wʌɪl",
     "sentences": [

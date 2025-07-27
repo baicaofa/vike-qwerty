@@ -1,4 +1,4 @@
-import type { ISentence, IDetailedTranslation } from "./OfficialWordLibrary";
+import type { IDetailedTranslation, ISentence } from "./OfficialWordLibrary";
 import mongoose from "mongoose";
 
 export interface ICustomWord extends mongoose.Document {

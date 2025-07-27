@@ -7,9 +7,7 @@
   },
   {
     "name": "reverse()",
-    "trans": [
-      "public StringBuffer reverse():将此字符序列用其反转形式取代。"
-    ]
+    "trans": ["public StringBuffer reverse():将此字符序列用其反转形式取代。"]
   },
   {
     "name": "delete()",
@@ -31,15 +29,11 @@
   },
   {
     "name": "capacity()",
-    "trans": [
-      "int capacity():返回当前容量。"
-    ]
+    "trans": ["int capacity():返回当前容量。"]
   },
   {
     "name": "charAt()",
-    "trans": [
-      "char charAt(int index):返回此序列中指定索引处的 char 值。"
-    ]
+    "trans": ["char charAt(int index):返回此序列中指定索引处的 char 值。"]
   },
   {
     "name": "ensureCapacity()",
@@ -79,9 +73,7 @@
   },
   {
     "name": "length()",
-    "trans": [
-      "int length():返回长度（字符数）。"
-    ]
+    "trans": ["int length():返回长度（字符数）。"]
   },
   {
     "name": "setCharAt()",
@@ -91,9 +83,7 @@
   },
   {
     "name": "setLength()",
-    "trans": [
-      "void setLength(int newLength):设置字符序列的长度。"
-    ]
+    "trans": ["void setLength(int newLength):设置字符序列的长度。"]
   },
   {
     "name": "subSequence()",
@@ -115,8 +105,6 @@
   },
   {
     "name": "toString()",
-    "trans": [
-      "String toString():返回此序列中数据的字符串表示形式。"
-    ]
+    "trans": ["String toString():返回此序列中数据的字符串表示形式。"]
   }
 ]

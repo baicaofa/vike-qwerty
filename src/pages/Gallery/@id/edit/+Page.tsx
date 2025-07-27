@@ -17,7 +17,7 @@ import type {
   ICustomDictionary,
   ICustomWord,
 } from "@/utils/db/customDictionary";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { navigate } from "vike/client/router";
 import type { PageContext } from "vike/types";
 

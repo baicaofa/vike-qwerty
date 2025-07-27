@@ -1,15 +1,15 @@
 import type { ICustomWord } from "./db/customDictionary";
 import {
+  type ExcelParseProgress,
   getExcelWorkerManager,
   isWebWorkerSupported,
-  type ExcelParseProgress,
 } from "./excel-worker-manager";
 import {
+  type ExcelParsingMetrics,
   performanceMonitor,
   withExcelParsingMonitoring,
-  type ExcelParsingMetrics,
 } from "./performanceMonitor";
-import { utils, read } from "xlsx";
+import { read, utils } from "xlsx";
 
 /**
  * Excel文件解析结果接口

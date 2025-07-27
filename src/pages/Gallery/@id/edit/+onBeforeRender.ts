@@ -1,6 +1,6 @@
 import {
-  isCustomDictionary,
   extractCustomDictionaryId,
+  isCustomDictionary,
 } from "@/store/customDictionary";
 import type { PageContextServer } from "vike/types";
 

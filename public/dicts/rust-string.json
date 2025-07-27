@@ -1,9 +1,7 @@
 [
   {
     "name": "String::new()",
-    "trans": [
-      "String::new() 方法创建并返回一个新的空字符串。"
-    ]
+    "trans": ["String::new() 方法创建并返回一个新的空字符串。"]
   },
   {
     "name": "String::from()",
@@ -19,15 +17,11 @@
   },
   {
     "name": "String::push()",
-    "trans": [
-      "String::push() 方法将一个单个字符追加到字符串的末尾。"
-    ]
+    "trans": ["String::push() 方法将一个单个字符追加到字符串的末尾。"]
   },
   {
     "name": "String::push_str()",
-    "trans": [
-      "String::push_str() 方法将一个字符串切片追加到当前字符串的末尾。"
-    ]
+    "trans": ["String::push_str() 方法将一个字符串切片追加到当前字符串的末尾。"]
   },
   {
     "name": "String::pop()",
@@ -55,15 +49,11 @@
   },
   {
     "name": "String::insert_str()",
-    "trans": [
-      "String::insert_str() 方法在指定位置插入一个子字符串。"
-    ]
+    "trans": ["String::insert_str() 方法在指定位置插入一个子字符串。"]
   },
   {
     "name": "String::truncate()",
-    "trans": [
-      "String::truncate() 方法将字符串截断到指定的长度，丢弃超出部分。"
-    ]
+    "trans": ["String::truncate() 方法将字符串截断到指定的长度，丢弃超出部分。"]
   },
   {
     "name": "String::len()",
@@ -109,9 +99,7 @@
   },
   {
     "name": "String::trim()",
-    "trans": [
-      "String::trim() 方法返回一个新字符串，去除两端的空白字符。"
-    ]
+    "trans": ["String::trim() 方法返回一个新字符串，去除两端的空白字符。"]
   },
   {
     "name": "String::split()",

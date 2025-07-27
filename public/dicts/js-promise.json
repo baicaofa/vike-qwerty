@@ -25,9 +25,7 @@
   },
   {
     "name": "Promise.prototype.finally()",
-    "trans": [
-      "返回一个设置了 finally 回调函数的Promise对象。"
-    ]
+    "trans": ["返回一个设置了 finally 回调函数的Promise对象。"]
   },
   {
     "name": "Promise.prototype.then()",
@@ -43,14 +41,10 @@
   },
   {
     "name": "Promise.reject()",
-    "trans": [
-      "Promise.reject()方法返回一个带有拒绝原因的Promise对象。"
-    ]
+    "trans": ["Promise.reject()方法返回一个带有拒绝原因的Promise对象。"]
   },
   {
     "name": "Promise.resolve()",
-    "trans": [
-      "Promise.resolve()方法返回一个以给定值解析后的Promise 对象。"
-    ]
+    "trans": ["Promise.resolve()方法返回一个以给定值解析后的Promise 对象。"]
   }
 ]

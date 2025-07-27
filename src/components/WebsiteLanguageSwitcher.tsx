@@ -10,6 +10,7 @@ import { usePageContext } from "vike-react/usePageContext";
 interface WebsiteLanguageSwitcherProps {
   className?: string;
   showLabel?: boolean;
+  pageContext?: any; // 添加pageContext prop作为回退
 }
 
 /**
@@ -19,14 +20,14 @@ interface WebsiteLanguageSwitcherProps {
 export function WebsiteLanguageSwitcher({
   className = "",
   showLabel = true,
+  pageContext: pageContextProp,
 }: WebsiteLanguageSwitcherProps) {
-  const pageContext = usePageContext();
+  const pageContextFromHook = usePageContext();
+  const pageContext = pageContextFromHook || pageContextProp;
   const [isOpen, setIsOpen] = useState(false);
 
-  // 从 pageContext 获取当前语言和路径信息，添加安全检查
+  // 从 pageContext 获取当前语言信息，添加安全检查
   const currentLocale = (pageContext as any)?.locale || "zh";
-  const currentPath = (pageContext as any)?.urlParsed?.pathname || "/";
-
   // 服务端渲染时的安全检查
   if (typeof window === "undefined" && !(pageContext as any)?.locale) {
     // 服务端渲染时如果没有 locale 信息，返回简化版本
@@ -50,12 +51,8 @@ export function WebsiteLanguageSwitcher({
       return;
     }
 
-    // 构建新的路径
-    let newPath = currentPath;
-    if (newLanguage !== "zh") {
-      // 非默认语言，添加语言前缀
-      newPath = `/${newLanguage}${currentPath}`;
-    }
+    // 简单直接的语言切换：直接跳转到对应语言的首页
+    const newPath = newLanguage === "zh" ? "/" : `/${newLanguage}`;
 
     // 使用原生导航进行页面跳转，触发完整的页面重新加载
     // 这样可以确保 onBeforeRoute 钩子正确处理新的语言路径
@@ -144,16 +141,19 @@ export function WebsiteLanguageSwitcher({
 }
 
 /**
- * 简化版网站语言切换组件（只显示图标和当前语言）
+ * 紧凑版网站语言切换组件
+ * 显示为一个带有当前语言标识的圆形按钮
  */
-export function WebsiteLanguageSwitcherCompact({
+export function CompactWebsiteLanguageSwitcher({
   className = "",
+  pageContext: pageContextProp,
 }: {
   className?: string;
+  pageContext?: any;
 }) {
-  const pageContext = usePageContext();
+  const pageContextFromHook = usePageContext();
+  const pageContext = pageContextFromHook || pageContextProp;
   const currentLocale = (pageContext as any)?.locale || "zh";
-  const currentPath = (pageContext as any)?.urlParsed?.pathname || "/";
 
   // 服务端渲染时的安全检查
   if (typeof window === "undefined" && !(pageContext as any)?.locale) {
@@ -185,11 +185,8 @@ export function WebsiteLanguageSwitcherCompact({
     const nextIndex = (currentIndex + 1) % supportedLanguages.length;
     const nextLanguage = supportedLanguages[nextIndex];
 
-    // 构建新的路径
-    let newPath = currentPath;
-    if (nextLanguage !== "zh") {
-      newPath = `/${nextLanguage}${currentPath}`;
-    }
+    // 简单直接的语言切换：直接跳转到对应语言的首页
+    const newPath = nextLanguage === "zh" ? "/" : `/${nextLanguage}`;
 
     window.location.href = newPath;
   };

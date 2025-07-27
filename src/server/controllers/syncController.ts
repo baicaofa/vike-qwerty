@@ -154,7 +154,7 @@ export const syncData = async (req: Request, res: Response) => {
           clientPerformanceHistoryData || []
         ).map((entry) => ({
           ...entry,
-          mistakes: entry.mistakes ?? [], // 如果客户端没有传，设为空数组，避免 validation 错误
+          mistakes: entry.mistakes || {}, // 如果客户端没有传，设为空对象，避免 validation 错误
           timeStamp: safeParseDate(entry.timeStamp) || new Date(), // 转换时间戳
         }));
 
@@ -382,6 +382,7 @@ export const syncData = async (req: Request, res: Response) => {
               clientRecordData.last_modified || Date.now();
             serverRecord.clientModifiedAt =
               safeParseDate(clientRecordData.last_modified) || new Date();
+            serverRecord.serverModifiedAt = new Date(); // 服务器修改时间
             await serverRecord.save();
           } else {
             // 创建新记录，使用客户端的 uuid
@@ -392,6 +393,7 @@ export const syncData = async (req: Request, res: Response) => {
               last_modified: clientRecordData.last_modified || Date.now(),
               clientModifiedAt:
                 safeParseDate(clientRecordData.last_modified) || new Date(),
+              serverModifiedAt: new Date(), // 服务器修改时间
             });
             await serverRecord.save();
           }
@@ -404,6 +406,7 @@ export const syncData = async (req: Request, res: Response) => {
                 clientRecordData.last_modified || Date.now();
               serverRecord.clientModifiedAt =
                 safeParseDate(clientRecordData.last_modified) || new Date();
+              serverRecord.serverModifiedAt = new Date(); // 服务器修改时间
               await serverRecord.save();
             } else {
               await FamiliarWord.findOneAndDelete(query);

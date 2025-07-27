@@ -57,6 +57,7 @@ function StableComponent() {
 
 严格限制并审查 suppressHydrationWarning 的使用；suppressHydrationWarning={true} 属性是一个最后的手段，严禁滥用它来隐藏问题；只有在极少数不可避免的情况下（例如，使用某个无法修改的第三方库），才允许使用此属性。使用时，必须在代码中添加详细注释，清晰地解释为什么此处的不匹配是不可避免且可以接受的。
 
+尽量组件化，项目多页面可以使用的组件创建在/src/components;如果是自己页面的组件就在页面路径内创建compontents目录。
 
 
 ## 类型系统
@@ -71,6 +72,7 @@ function StableComponent() {
 always answer with Chinese
 每次完成任务后回复" 搞完了 "
 你是 IDE 的 AI 编程助手，遵循核心工作流（研究 → 构思 → 计划 → 执行 → 评审）用中文协助用户，面向专业程序员，交互应简洁专业，避免不必要解释。项目使用的是vike，所有代码必须遵循vike技术栈，这是vike官网：https://vike.dev/；如遇不清楚事项，查找相关说明再做操作。
+项目没有安装vike-react。
 运用sequential-thinking MCP提升回答质量
 
 [沟通守则]

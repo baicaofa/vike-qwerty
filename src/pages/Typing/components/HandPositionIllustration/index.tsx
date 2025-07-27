@@ -1,10 +1,12 @@
 import standTypingHandPosition from "@/assets/standard_typing_hand_position.png";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import { useTranslation } from "react-i18next";
 import IconKeyboard from "~icons/ic/round-keyboard";
 import IconX from "~icons/tabler/x";
 
 export default function HandPositionIllustration() {
+  const { t } = useTranslation("typing");
   const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -20,6 +22,7 @@ export default function HandPositionIllustration() {
       <button
         type="button"
         onClick={openModal}
+        title={t("tooltips.showHandPosition")}
         className={`flex items-center justify-center rounded p-[2px] text-lg text-blue-500 outline-none transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white  ${
           isOpen && " bg-blue-500 text-white"
         }`}
@@ -56,7 +59,7 @@ export default function HandPositionIllustration() {
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    title="关闭对话框"
+                    title={t("tooltips.closeDialog")}
                   >
                     <IconX className="absolute right-7 top-5 cursor-pointer text-gray-400" />
                   </button>
@@ -64,7 +67,7 @@ export default function HandPositionIllustration() {
                     as="h3"
                     className="text-center text-xl font-medium leading-6 text-gray-800 dark:text-gray-200"
                   >
-                    推荐打字指法图示
+                    {t("handPosition.title")}
                   </Dialog.Title>
                   <div className="mt-8">
                     <img

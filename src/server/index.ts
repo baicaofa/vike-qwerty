@@ -1,5 +1,6 @@
 import connectDB from "./config/db";
 import authRoutes from "./routes/auth";
+import customDictionaryRoutes from "./routes/customDictionary";
 import dbStatsRoutes from "./routes/db-stats";
 import feedbackRoutes from "./routes/feedback";
 import syncRoutes from "./routes/sync";
@@ -25,6 +26,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/sync", syncRoutes);
 app.use("/api/db-stats", dbStatsRoutes);
 app.use("/api/feedback", feedbackRoutes);
+app.use("/api/custom-dictionaries", customDictionaryRoutes);
+app.use("/api/custom-dictionaries", customDictionaryRoutes);
 
 const PORT = process.env.PORT || 5000;
 

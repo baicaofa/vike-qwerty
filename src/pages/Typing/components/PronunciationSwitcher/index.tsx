@@ -11,10 +11,12 @@ import { CTRL } from "@/utils";
 import { Listbox, Popover, Switch, Transition } from "@headlessui/react";
 import { useAtom, useAtomValue } from "jotai";
 import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import IconCheck from "~icons/tabler/check";
 import IconChevronDown from "~icons/tabler/chevron-down";
 
 const PronunciationSwitcher = () => {
+  const { t } = useTranslation("typing");
   const currentDictInfo = useAtomValue(currentDictInfoAtom);
   const [pronunciationConfig, setPronunciationConfig] = useAtom(
     pronunciationConfigAtom
@@ -64,7 +66,7 @@ const PronunciationSwitcher = () => {
 
   useEffect(() => {
     setHasSpeechSynthesis(
-      typeof window !== "undefined" && window.speechSynthesis
+      !!(typeof window !== "undefined" && window.speechSynthesis)
     );
   }, []);
 
@@ -126,9 +128,9 @@ const PronunciationSwitcher = () => {
     if (pronunciationConfig.isOpen) {
       return pronunciationConfig.name;
     } else {
-      return "关闭";
+      return t("pronunciationSwitcher.closed");
     }
-  }, [pronunciationConfig.isOpen, pronunciationConfig.name]);
+  }, [pronunciationConfig.isOpen, pronunciationConfig.name, t]);
 
   return (
     <Popover className="relative">
@@ -142,7 +144,9 @@ const PronunciationSwitcher = () => {
               e.target.blur();
             }}
           >
-            <Tooltip content="发音及音标切换">{currentLabel}</Tooltip>
+            <Tooltip content={t("pronunciationSwitcher.switchTip")}>
+              {currentLabel}
+            </Tooltip>
           </Popover.Button>
 
           <Transition
@@ -158,7 +162,7 @@ const PronunciationSwitcher = () => {
               <div className="shadow-upper box-border flex w-60 select-none flex-col items-center justify-center gap-4 rounded-xl bg-white p-4 drop-shadow transition duration-1000 ease-in-out dark:bg-gray-800">
                 <div className="flex w-full  flex-col  items-start gap-2 py-0">
                   <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                    开关音标显示
+                    {t("pronunciationSwitcher.phoneticSwitch")}
                   </span>
                   <div className="flex w-full flex-row items-center justify-between">
                     <Switch
@@ -168,14 +172,16 @@ const PronunciationSwitcher = () => {
                     >
                       <span aria-hidden="true" className="switch-thumb" />
                     </Switch>
-                    <span className="text-right text-xs font-normal leading-tight text-gray-600">{`音标已${
-                      phoneticConfig.isOpen ? "开启" : "关闭"
-                    }`}</span>
+                    <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                      {phoneticConfig.isOpen
+                        ? t("pronunciationSwitcher.phoneticOn")
+                        : t("pronunciationSwitcher.phoneticOff")}
+                    </span>
                   </div>
                 </div>
                 <div className="flex w-full  flex-col  items-start gap-2 py-0">
                   <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                    开关单词发音
+                    {t("pronunciationSwitcher.wordPronSwitch")}
                   </span>
                   <div className="flex w-full flex-row items-center justify-between">
                     <Switch
@@ -185,15 +191,17 @@ const PronunciationSwitcher = () => {
                     >
                       <span aria-hidden="true" className="switch-thumb" />
                     </Switch>
-                    <span className="text-right text-xs font-normal leading-tight text-gray-600">{`发音已${
-                      pronunciationConfig.isOpen ? "开启" : "关闭"
-                    }`}</span>
+                    <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                      {pronunciationConfig.isOpen
+                        ? t("pronunciationSwitcher.wordPronOn")
+                        : t("pronunciationSwitcher.wordPronOff")}
+                    </span>
                   </div>
                 </div>
                 {hasSpeechSynthesis && (
                   <div className="flex w-full  flex-col  items-start gap-2 py-0">
                     <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                      开关释义发音
+                      {t("pronunciationSwitcher.transPronSwitch")}
                     </span>
                     <div className="flex w-full flex-row items-center justify-between">
                       <Switch
@@ -203,9 +211,11 @@ const PronunciationSwitcher = () => {
                       >
                         <span aria-hidden="true" className="switch-thumb" />
                       </Switch>
-                      <span className="text-right text-xs font-normal leading-tight text-gray-600">{`发音已${
-                        pronunciationConfig.isTransRead ? "开启" : "关闭"
-                      }`}</span>
+                      <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                        {pronunciationConfig.isTransRead
+                          ? t("pronunciationSwitcher.transPronOn")
+                          : t("pronunciationSwitcher.transPronOff")}
+                      </span>
                     </div>
                   </div>
                 )}
@@ -221,7 +231,7 @@ const PronunciationSwitcher = () => {
                 >
                   <div className="flex w-full  flex-col  items-start gap-2 py-0">
                     <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                      开关循环发音
+                      {t("pronunciationSwitcher.loopPronSwitch")}
                     </span>
                     <div className="flex w-full flex-row items-center justify-between">
                       <Switch
@@ -231,14 +241,16 @@ const PronunciationSwitcher = () => {
                       >
                         <span aria-hidden="true" className="switch-thumb" />
                       </Switch>
-                      <span className="text-right text-xs font-normal leading-tight text-gray-600">{`循环已${
-                        pronunciationConfig.isLoop ? "开启" : "关闭"
-                      }`}</span>
+                      <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                        {pronunciationConfig.isLoop
+                          ? t("pronunciationSwitcher.loopPronOn")
+                          : t("pronunciationSwitcher.loopPronOff")}
+                      </span>
                     </div>
                   </div>
                   <div className="flex w-full  flex-col  items-start gap-2 py-0">
                     <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                      单词发音口音
+                      {t("pronunciationSwitcher.pronType")}
                     </span>
                     <div className="flex w-full flex-row items-center justify-between">
                       <Listbox
@@ -284,7 +296,7 @@ const PronunciationSwitcher = () => {
                   </div>
                   {pronunciationConfig.isOpen && (
                     <span className="text-colo text-xs font-medium text-gray-500 dark:text-white dark:text-opacity-60">
-                      Tips: 朗读发音快捷键（{CTRL} + J）
+                      {t("pronunciationSwitcher.tips", { key: CTRL })}
                     </span>
                   )}
                 </Transition>

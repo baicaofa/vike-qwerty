@@ -22,6 +22,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { useTranslation } from "react-i18next";
 import IconXMark from "~icons/heroicons/x-mark-solid";
 
 const PIC_RATIO = 3;
@@ -37,34 +38,7 @@ const PIC_LIST = [
   shareImage9,
 ];
 // 我知道有些有点怪，但怪的有趣(狗头)，powered by chatGPT
-const PROMOTE_LIST = [
-  { word: "快人一手", sentence: "速度快得就像比别人多长了一只手" },
-  { word: "手落听雨", sentence: "雷霆手法，震撼观众" },
-  { word: "疾如闪电", sentence: "打字速度极快，就像一道闪电在键盘上迅速穿梭" },
-  { word: "手如疾风", sentence: "手速快得惊人，就像疾风一般" },
-  { word: "精准如箭", sentence: "打字精度极高，就像一箭命中靶心一般准确" },
-  { word: "狂飙突进", sentence: "打字速度快得让人感到狂飙突进的冲劲" },
-  { word: "神速如风", sentence: "神速打字，如同风一样快" },
-  { word: "招招到位", sentence: "打字精度和速度都十分到位，毫不出错。" },
-  { word: "如履平地", sentence: "打字手法熟练，如履平地，行云流水" },
-  { word: "声东击西", sentence: "打字技巧高超，声东击西，出奇制胜" },
-  {
-    word: "魔法使者",
-    sentence: "打字速度快得让人难以置信，就像一名魔法使者。",
-  },
-  { word: "灵活多变", sentence: "打字姿势灵活多变，就像一只蛇一样柔韧。" },
-  { word: "犹如飞鸟", sentence: "打字速度极快，就像一只飞鸟在键盘上翱翔。" },
-  { word: "连珠妙语", sentence: "打字技巧娴熟，如同一连串妙语连珠。" },
-  {
-    word: "百毒不侵",
-    sentence: "打字速度和准确度都非常高，就像身具百毒不侵的能力。",
-  },
-  {
-    word: "攻守兼备",
-    sentence: "打字速度和精度都非常出色，攻守兼备，所向披靡。",
-  },
-  { word: "跃然纸上", sentence: "打字手法灵活多变，跃然纸上，生动有趣。" },
-];
+// PROMOTE_LIST迁移到i18n json
 
 export type SharePicDialogProps = {
   showState: boolean;
@@ -80,6 +54,7 @@ export default function SharePicDialog({
   setShowState,
   randomChoose,
 }: SharePicDialogProps) {
+  const { t } = useTranslation("typing");
   // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
   const { state } = useContext(TypingContext)!;
   const imageRef = useRef<HTMLDivElement>(null);
@@ -93,12 +68,17 @@ export default function SharePicDialog({
     () => PIC_LIST[Math.floor(randomChoose.picRandom * PIC_LIST.length)],
     [randomChoose.picRandom]
   );
+  // promoteList从i18n获取
+  const promoteList = t("share.promoteList", { returnObjects: true }) as Array<{
+    word: string;
+    sentence: string;
+  }>;
   const promote = useMemo(
     () =>
-      PROMOTE_LIST[
-        Math.floor(randomChoose.promoteRandom * PROMOTE_LIST.length)
-      ],
-    [randomChoose.promoteRandom]
+      promoteList[
+        Math.floor(randomChoose.promoteRandom * promoteList.length)
+      ] || { word: "", sentence: "" },
+    [randomChoose.promoteRandom, promoteList]
   );
 
   useEffect(() => {
@@ -171,13 +151,17 @@ export default function SharePicDialog({
                       className="absolute right-7 top-5"
                       type="button"
                       onClick={handleClose}
-                      title="关闭对话框"
+                      title={t("tooltips.closeDialog")}
                     >
                       <IconXMark className="h-6 w-6 text-gray-400" />
                     </button>
                     <div className="h-152 w-116">
                       {imageURL ? (
-                        <img src={imageURL} className="h-auto w-full" />
+                        <img
+                          src={imageURL}
+                          className="h-auto w-full"
+                          alt="Generated share preview"
+                        />
                       ) : (
                         <div className="flex h-full w-full items-center justify-center rounded-lg border-2 border-solid border-white">
                           <svg
@@ -208,9 +192,9 @@ export default function SharePicDialog({
                       className="my-btn-primary mr-9 mt-10 h-10"
                       type="button"
                       onClick={handleDownload}
-                      title="保存"
+                      title={t("buttons.save", "保存")}
                     >
-                      保存
+                      {t("buttons.save", "保存")}
                     </button>
                   </div>
                 </Dialog.Panel>
@@ -232,28 +216,40 @@ export default function SharePicDialog({
                 {promote.sentence}
               </div>
               <div className="mx-4 mt-6 flex rounded-xl bg-white px-4 py-3 opacity-50 shadow-xl">
-                <DataBox data={state.timerData.time + ""} description="用时" />
+                <DataBox
+                  data={state.timerData.time + ""}
+                  description={t("results.time", "用时")}
+                />
                 <DataBox
                   data={state.timerData.accuracy + "%"}
-                  description="正确率"
+                  description={t("results.accuracy", "正确率")}
                 />
-                <DataBox data={state.timerData.wpm + ""} description="WPM" />
+                <DataBox
+                  data={state.timerData.wpm + ""}
+                  description={t("results.wpm", "WPM")}
+                />
               </div>
               <div className="ml-5 mt-4 self-start text-base text-gray-800">
                 {currentDictInfo.name}
               </div>
-              <div className="ml-5 mt-2 self-start text-xs text-gray-600">{`第 ${
-                currentChapter + 1
-              } 章`}</div>
+              <div className="ml-5 mt-2 self-start text-xs text-gray-600">
+                {t("chapter.number", { number: currentChapter + 1 })}
+              </div>
             </div>
             <div className="mb-3 ml-5 mt-auto">
               <div className="text-xs">www.keybr.com.cn</div>
               <div className="mt-1 text-xs font-normal text-gray-400">
-                为键盘工作者设计的单词与肌肉记忆锻炼软件
+                {t("share.slogan", "为键盘工作者设计的单词与肌肉记忆锻炼软件")}
               </div>
             </div>
             <div className="absolute -right-9 bottom-10 ">
-              <img src={shareImage} className="w-48" width={186} height={122} />
+              <img
+                src={shareImage}
+                className="w-48"
+                width={186}
+                height={122}
+                alt="Decorative share image"
+              />
             </div>
           </div>
         </div>
@@ -287,7 +283,11 @@ function KeyboardKey({ char }: { char: string }) {
   return (
     <div className="relative -mx-1 h-18 w-18">
       <div className="absolute bottom-0 left-0 right-0 top-0">
-        <img src={keyboardSvg} className="h-full w-full" />
+        <img
+          src={keyboardSvg}
+          className="h-full w-full"
+          alt="Keyboard background"
+        />
       </div>
       <div className="absolute left-0 right-0 top-2.5 flex items-center justify-center">
         <span

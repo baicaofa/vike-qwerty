@@ -1,4 +1,5 @@
 import styles from "./index.module.css";
+import { Link } from "@/components/Link";
 import {
   isIgnoreCaseAtom,
   isShowAnswerOnHoverAtom,
@@ -11,8 +12,10 @@ import { Switch } from "@headlessui/react";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import { useAtom } from "jotai";
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function AdvancedSetting() {
+  const { t } = useTranslation("typing");
   const [randomConfig, setRandomConfig] = useAtom(randomConfigAtom);
   const [isShowPrevAndNextWord, setIsShowPrevAndNextWord] = useAtom(
     isShowPrevAndNextWordAtom
@@ -75,9 +78,11 @@ export default function AdvancedSetting() {
       <ScrollArea.Viewport className="h-full w-full px-3">
         <div className={styles.tabContent}>
           <div className={styles.section}>
-            <span className={styles.sectionLabel}>是否跳过熟词</span>
+            <span className={styles.sectionLabel}>
+              {t("advancedSettings.skipFamiliarWord.label")}
+            </span>
             <span className={styles.sectionDescription}>
-              开启后，练习时会自动跳过已被标记为熟词的单词
+              {t("advancedSettings.skipFamiliarWord.description")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -87,24 +92,30 @@ export default function AdvancedSetting() {
               >
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
-              <span className="text-right text-xs font-normal leading-tight text-gray-600">{`跳过熟词已${
-                isSkipFamiliarWord ? "开启" : "关闭"
-              }`}</span>
+              <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                {t("advancedSettings.skipFamiliarWord.status", {
+                  status: isSkipFamiliarWord
+                    ? t("advancedSettings.skipFamiliarWord.enabled")
+                    : t("advancedSettings.skipFamiliarWord.disabled"),
+                })}
+              </span>
             </div>
-            <a
+            <Link
               className="my-btn-primary ml-4 disabled:bg-gray-300"
               href="/familiar"
               target="_blank"
-              title="查看熟词"
+              title={t("advancedSettings.viewFamiliarWords")}
             >
-              查看熟词
-            </a>
+              {t("advancedSettings.viewFamiliarWords")}
+            </Link>
           </div>
 
           <div className={styles.section}>
-            <span className={styles.sectionLabel}>章节乱序</span>
+            <span className={styles.sectionLabel}>
+              {t("advancedSettings.randomOrder.label")}
+            </span>
             <span className={styles.sectionDescription}>
-              开启后，每次练习章节中单词会随机排序。下一章节生效
+              {t("advancedSettings.randomOrder.description")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -114,17 +125,21 @@ export default function AdvancedSetting() {
               >
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
-              <span className="text-right text-xs font-normal leading-tight text-gray-600">{`随机已${
-                randomConfig.isOpen ? "开启" : "关闭"
-              }`}</span>
+              <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                {t("advancedSettings.randomOrder.status", {
+                  status: randomConfig.isOpen
+                    ? t("advancedSettings.randomOrder.enabled")
+                    : t("advancedSettings.randomOrder.disabled"),
+                })}
+              </span>
             </div>
           </div>
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              练习时展示上一个/下一个单词
+              {t("advancedSettings.showPrevNext.label")}
             </span>
             <span className={styles.sectionDescription}>
-              开启后，练习中会在上方展示上一个/下一个单词
+              {t("advancedSettings.showPrevNext.description")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -134,15 +149,21 @@ export default function AdvancedSetting() {
               >
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
-              <span className="text-right text-xs font-normal leading-tight text-gray-600">{`展示单词已${
-                isShowPrevAndNextWord ? "开启" : "关闭"
-              }`}</span>
+              <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                {t("advancedSettings.showPrevNext.status", {
+                  status: isShowPrevAndNextWord
+                    ? t("advancedSettings.showPrevNext.enabled")
+                    : t("advancedSettings.showPrevNext.disabled"),
+                })}
+              </span>
             </div>
           </div>
           <div className={styles.section}>
-            <span className={styles.sectionLabel}>是否忽略大小写</span>
+            <span className={styles.sectionLabel}>
+              {t("advancedSettings.ignoreCase.label")}
+            </span>
             <span className={styles.sectionDescription}>
-              开启后，输入时不区分大小写，如输入&quot;hello&quot;和&quot;Hello&quot;都会被认为是正确的
+              {t("advancedSettings.ignoreCase.description")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -152,15 +173,21 @@ export default function AdvancedSetting() {
               >
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
-              <span className="text-right text-xs font-normal leading-tight text-gray-600">{`忽略大小写已${
-                isIgnoreCase ? "开启" : "关闭"
-              }`}</span>
+              <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                {t("advancedSettings.ignoreCase.status", {
+                  status: isIgnoreCase
+                    ? t("advancedSettings.ignoreCase.enabled")
+                    : t("advancedSettings.ignoreCase.disabled"),
+                })}
+              </span>
             </div>
           </div>
           <div className={styles.section}>
-            <span className={styles.sectionLabel}>是否允许选择文本</span>
+            <span className={styles.sectionLabel}>
+              {t("advancedSettings.textSelectable.label")}
+            </span>
             <span className={styles.sectionDescription}>
-              开启后，可以通过鼠标选择文本{" "}
+              {t("advancedSettings.textSelectable.description")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -170,17 +197,21 @@ export default function AdvancedSetting() {
               >
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
-              <span className="text-right text-xs font-normal leading-tight text-gray-600">{`选择文本已${
-                isTextSelectable ? "开启" : "关闭"
-              }`}</span>
+              <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                {t("advancedSettings.textSelectable.status", {
+                  status: isTextSelectable
+                    ? t("advancedSettings.textSelectable.enabled")
+                    : t("advancedSettings.textSelectable.disabled"),
+                })}
+              </span>
             </div>
           </div>
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              是否允许默写模式下显示提示
+              {t("advancedSettings.showHint.label")}
             </span>
             <span className={styles.sectionDescription}>
-              开启后，可以通过鼠标 hover 单词显示正确答案{" "}
+              {t("advancedSettings.showHint.description")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -190,9 +221,13 @@ export default function AdvancedSetting() {
               >
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
-              <span className="text-right text-xs font-normal leading-tight text-gray-600">{`显示提示已${
-                isShowAnswerOnHover ? "开启" : "关闭"
-              }`}</span>
+              <span className="text-right text-xs font-normal leading-tight text-gray-600">
+                {t("advancedSettings.showHint.status", {
+                  status: isShowAnswerOnHover
+                    ? t("advancedSettings.showHint.enabled")
+                    : t("advancedSettings.showHint.disabled"),
+                })}
+              </span>
             </div>
           </div>
         </div>

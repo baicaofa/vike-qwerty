@@ -9,12 +9,14 @@ import { currentDictInfoAtom, wordDictationConfigAtom } from "@/store";
 import { CTRL } from "@/utils";
 import { useAtomValue } from "jotai";
 import { useCallback, useContext, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import IconPrev from "~icons/tabler/arrow-narrow-left";
 import IconNext from "~icons/tabler/arrow-narrow-right";
 
 export default function PrevAndNextWord({ type }: LastAndNextWordProps) {
   // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
   const { state, dispatch } = useContext(TypingContext)!;
+  const { t } = useTranslation("typing");
 
   const wordDictationConfig = useAtomValue(wordDictationConfigAtom);
   const newIndex = useMemo(
@@ -83,7 +85,7 @@ export default function PrevAndNextWord({ type }: LastAndNextWordProps) {
   return (
     <>
       {word ? (
-        <Tooltip content={`快捷键: ${shortCutKey}`}>
+        <Tooltip content={`${t("prevAndNextWord.shortcut")}: ${shortCutKey}`}>
           <div
             onClick={onClickWord}
             className="flex max-w-xs cursor-pointer select-none items-center text-gray-700 opacity-60 duration-200 ease-in-out hover:opacity-100 dark:text-gray-400"

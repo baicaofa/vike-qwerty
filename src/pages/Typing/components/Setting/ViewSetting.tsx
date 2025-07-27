@@ -5,9 +5,11 @@ import * as ScrollArea from "@radix-ui/react-scroll-area";
 import * as Slider from "@radix-ui/react-slider";
 import { useAtom } from "jotai";
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function ViewSetting() {
   const [fontSizeConfig, setFontsizeConfig] = useAtom(fontSizeConfigAtom);
+  const { t } = useTranslation("typing");
 
   const onChangeForeignFontSize = useCallback(
     (value: [number]) => {
@@ -48,9 +50,13 @@ export default function ViewSetting() {
       <ScrollArea.Viewport className="h-full w-full px-3">
         <div className={styles.tabContent}>
           <div className={styles.section}>
-            <span className={styles.sectionLabel}>字体设置</span>
+            <span className={styles.sectionLabel}>
+              {t("settings.fontSize")}
+            </span>
             <div className={styles.block}>
-              <span className={styles.blockLabel}>外语字体</span>
+              <span className={styles.blockLabel}>
+                {t("settings.foreignFont", "外语字体")}
+              </span>
               <div className="flex h-5 w-full items-center justify-between">
                 <Slider.Root
                   value={[fontSizeConfig.foreignFont]}
@@ -72,7 +78,9 @@ export default function ViewSetting() {
             </div>
 
             <div className={styles.block}>
-              <span className={styles.blockLabel}>中文字体</span>
+              <span className={styles.blockLabel}>
+                {t("settings.translateFont", "中文字体")}
+              </span>
               <div className="flex h-5 w-full items-center justify-between">
                 <Slider.Root
                   value={[fontSizeConfig.translateFont]}
@@ -94,7 +102,9 @@ export default function ViewSetting() {
             </div>
 
             <div className={styles.block}>
-              <span className={styles.blockLabel}>例句英文字体</span>
+              <span className={styles.blockLabel}>
+                {t("settings.sentenceForeignFont")}
+              </span>
               <div className="flex h-5 w-full items-center justify-between">
                 <Slider.Root
                   value={[fontSizeConfig.sentenceForeignFont]}
@@ -119,9 +129,9 @@ export default function ViewSetting() {
             className="my-btn-primary ml-4 disabled:bg-gray-300"
             type="button"
             onClick={onResetFontSize}
-            title="重置字体设置"
+            title={t("settings.resetFontSize")}
           >
-            重置字体设置
+            {t("settings.resetFontSize")}
           </button>
         </div>
       </ScrollArea.Viewport>

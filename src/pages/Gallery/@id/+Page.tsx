@@ -5,7 +5,7 @@ import Layout from "@/components/Layout";
 import type { WordPronunciationIconRef } from "@/components/WordPronunciationIcon";
 import { dictionaries } from "@/resources/dictionary";
 import { currentDictInfoAtom } from "@/store";
-import type { Dictionary } from "@/typings";
+import type { Dictionary, Word } from "@/typings";
 import { wordListFetcher } from "@/utils/wordListFetcher";
 import { useEffect, useState } from "react";
 import { navigate } from "vike/client/router";
@@ -14,7 +14,7 @@ import IconBack from "~icons/ic/outline-arrow-back";
 
 interface PageProps {
   dictionary: Dictionary;
-  words: any[];
+  words: Word[];
   error?: string;
 }
 
@@ -31,7 +31,7 @@ export default function Page({ pageContext }: Props) {
   const [dictionary, setDictionary] = useState<Dictionary | null>(
     initialDictionary || null
   );
-  const [words, setWords] = useState<any[]>(initialWords || []);
+  const [words, setWords] = useState<Word[]>(initialWords || []);
   const [currentPage, setCurrentPage] = useState(1);
   const wordsPerPage = 100;
   const [isLoading, setIsLoading] = useState<boolean>(!initialWords);
@@ -135,38 +135,28 @@ export default function Page({ pageContext }: Props) {
                   <p className="text-gray-600">加载中...</p>
                 ) : currentWords.length > 0 ? (
                   <div className="grid grid-cols-4 gap-4">
-                    {currentWords.map(
-                      (
-                        word: {
-                          name: string;
-                          usphone: string;
-                          ukphone: string;
-                          trans: string[];
-                        },
-                        index: number
-                      ) => (
-                        <div
-                          key={index}
-                          className="mb-2 cursor-pointer grid-cols-2 items-center justify-center overflow-hidden rounded-lg border-b border-gray-200 bg-zinc-50 p-4 pb-2 text-left shadow-lg hover:bg-white focus:outline-none group-hover:text-indigo-400 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-                        >
-                          <p className="font-bold">{word.name}</p>
-                          <p className="text-gray-600">
-                            美式发音：/{word.usphone}/
-                          </p>
-                          <p className="text-gray-600">
-                            英式发音：/{word.ukphone}/
-                          </p>
-                          <p className="text-gray-600">释义：</p>
-                          <ul className="list-inside list-disc text-gray-600">
-                            {word.trans.map(
-                              (translation: string, idx: number) => (
-                                <li key={idx}>{translation}</li>
-                              )
-                            )}
-                          </ul>
-                        </div>
-                      )
-                    )}
+                    {currentWords.map((word: Word, index: number) => (
+                      <div
+                        key={index}
+                        className="mb-2 cursor-pointer grid-cols-2 items-center justify-center overflow-hidden rounded-lg border-b border-gray-200 bg-zinc-50 p-4 pb-2 text-left shadow-lg hover:bg-white focus:outline-none group-hover:text-indigo-400 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+                      >
+                        <p className="font-bold">{word.name}</p>
+                        <p className="text-gray-600">
+                          美式发音：/{word.usphone}/
+                        </p>
+                        <p className="text-gray-600">
+                          英式发音：/{word.ukphone}/
+                        </p>
+                        <p className="text-gray-600">释义：</p>
+                        <ul className="list-inside list-disc text-gray-600">
+                          {word.trans.map(
+                            (translation: string, idx: number) => (
+                              <li key={idx}>{translation}</li>
+                            )
+                          )}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
                 ) : (
                   <p className="text-gray-600">暂无数据</p>

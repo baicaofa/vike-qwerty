@@ -590,7 +590,7 @@ export function useSaveWordRecord() {
         chapter: isRevision ? null : currentChapter, // 根据是否复习模式设置章节
         timing: timing,
         wrongCount: wrongCount,
-        mistakes: letterMistake,
+        mistakes: letterMistake || {}, // 确保 mistakes 不为 undefined 或 null
       };
 
       let dbID = -1;

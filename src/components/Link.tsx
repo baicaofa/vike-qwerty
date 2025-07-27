@@ -16,7 +16,9 @@ interface LinkProps {
  */
 export function Link({ href, locale, children, ...props }: LinkProps) {
   const pageContext = usePageContext();
-  const currentLocale = locale ?? (pageContext as any).locale ?? "zh";
+  console.log("pageContext:", pageContext); // 调试输出
+  // 安全地获取 locale，防止 pageContext 为 undefined 或 locale 属性不存在
+  const currentLocale = locale ?? (pageContext as any)?.locale ?? "zh";
 
   // 构建最终的链接地址
   let finalHref = href;

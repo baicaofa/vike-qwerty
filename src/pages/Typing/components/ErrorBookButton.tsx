@@ -1,9 +1,12 @@
 import { recordErrorBookAction } from "@/utils";
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { navigate } from "vike/client/router";
 import IconBook from "~icons/bxs/book";
 
 const ErrorBookButton = () => {
+  const { t } = useTranslation("typing");
+
   const toErrorBook = useCallback(() => {
     navigate("/error-book");
     recordErrorBookAction("open");
@@ -14,7 +17,7 @@ const ErrorBookButton = () => {
       type="button"
       onClick={toErrorBook}
       className={`flex items-center justify-center rounded p-[2px] text-lg text-blue-500 outline-none transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white`}
-      title="查看错题本"
+      title={t("buttons.errorBook")}
     >
       <IconBook className="icon" />
     </button>

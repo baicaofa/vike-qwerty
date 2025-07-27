@@ -12,11 +12,11 @@
     "logout": "退出"
   },
   "buttons": {
-    "start": "开始",
+    "start": "Start",
     "stop": "停止",
     "pause": "暂停",
     "resume": "继续",
-    "restart": "重新开始",
+    "restart": "Restart",
     "next": "下一个",
     "previous": "上一个",
     "save": "保存",
@@ -73,5 +73,7 @@
     "label": "排序",
     "lastPracticed": "最近练习",
     "created": "创建时间"
-  }
+  },
+  "customArticle": "自定义文章练习",
+  "article": "文章"
 }

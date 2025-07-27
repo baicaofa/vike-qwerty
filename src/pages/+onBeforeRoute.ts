@@ -6,7 +6,9 @@ import type { Url } from "vike/types";
  * 用于提取 URL 中的语言信息并处理多语言路由
  */
 export function onBeforeRoute(pageContext: any) {
-  const { urlWithoutLocale, locale } = extractLocale(pageContext.urlParsed);
+  const { urlWithoutLocale, locale, pathnameWithoutLocale } = extractLocale(
+    pageContext.urlParsed
+  );
 
   return {
     pageContext: {
@@ -14,7 +16,7 @@ export function onBeforeRoute(pageContext: any) {
       locale,
       // Vike 路由器将使用 urlLogical 而不是 urlOriginal
       // 这样可以移除语言前缀，让路由系统处理干净的路径
-      urlLogical: urlWithoutLocale,
+      urlLogical: pathnameWithoutLocale,
     },
   };
 }
@@ -58,5 +60,6 @@ function extractLocale(url: Url) {
   return {
     locale,
     urlWithoutLocale,
+    pathnameWithoutLocale,
   };
 }

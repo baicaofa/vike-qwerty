@@ -8,6 +8,7 @@ import {
 } from "@/store";
 import { useAtomValue } from "jotai";
 import { useCallback, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 export type TranslationProps = {
   trans: string;
@@ -22,6 +23,7 @@ export default function Translation({
   onMouseEnter,
   onMouseLeave,
 }: TranslationProps) {
+  const { t } = useTranslation("typing");
   const pronunciationConfig = useAtomValue(pronunciationConfigAtom);
   const fontSizeConfig = useAtomValue(fontSizeConfigAtom);
   const isShowTransRead =
@@ -53,7 +55,7 @@ export default function Translation({
       </span>
       {isShowTransRead && showTrans && (
         <Tooltip
-          content="朗读释义"
+          content={t("tooltips.readTranslation")}
           className="ml-3 h-5 w-5 cursor-pointer leading-7"
         >
           <SoundIcon

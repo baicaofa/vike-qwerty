@@ -82,7 +82,9 @@
     "lint": "eslint .",
     "prettier": "prettier --write .",
     "prepare": "husky install",
-    "server": "ts-node src/server/index.ts"
+    "server": "ts-node src/server/index.ts",
+    "clean-custom-words": "ts-node src/server/scripts/clean-custom-words.ts",
+    "test-new-structure": "ts-node src/server/scripts/test-new-structure.ts"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
@@ -126,6 +128,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.13",
     "cross-env": "^7.0.3",
+    "depcheck": "^1.4.7",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-config-react-app": "^7.0.1",

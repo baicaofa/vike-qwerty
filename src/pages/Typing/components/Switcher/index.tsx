@@ -12,12 +12,14 @@ import { CTRL } from "@/utils";
 import { useAtom } from "jotai";
 import { useContext } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
+import { useTranslation } from "react-i18next";
 import IconMoon from "~icons/heroicons/moon-solid";
 import IconSun from "~icons/heroicons/sun-solid";
 import IconLanguage from "~icons/tabler/language";
 import IconLanguageOff from "~icons/tabler/language-off";
 
 export default function Switcher() {
+  const { t } = useTranslation("typing");
   const [isOpenDarkMode, setIsOpenDarkMode] = useAtom(isOpenDarkModeAtom);
   const { state, dispatch } = useContext(TypingContext) ?? {};
 
@@ -42,20 +44,27 @@ export default function Switcher() {
 
   return (
     <div className="flex items-center justify-center gap-2">
-      <Tooltip content="音效设置">
+      <Tooltip content={t("switcher.tooltips.soundSettings")}>
         <SoundSwitcher />
       </Tooltip>
 
-      <Tooltip className="h-7 w-7" content="设置单个单词循环">
+      <Tooltip className="h-7 w-7" content={t("switcher.tooltips.loopWord")}>
         <LoopWordSwitcher />
       </Tooltip>
 
-      <Tooltip className="h-7 w-7" content={`开关默写模式（${CTRL} + V）`}>
+      <Tooltip
+        className="h-7 w-7"
+        content={t("switcher.tooltips.dictationMode", {
+          shortcut: `${CTRL} + V`,
+        })}
+      >
         <WordDictationSwitcher />
       </Tooltip>
       <Tooltip
         className="h-7 w-7"
-        content={`开关释义和例句显示（${CTRL} + Shift + V）`}
+        content={t("switcher.tooltips.toggleTranslation", {
+          shortcut: `${CTRL} + Shift + V`,
+        })}
       >
         <button
           className={`p-[2px] ${
@@ -66,21 +75,26 @@ export default function Switcher() {
             changeTransVisibleState();
             e.currentTarget.blur();
           }}
-          aria-label={`开关释义和例句显示（${CTRL} + Shift + V）`}
+          aria-label={t("switcher.ariaLabels.toggleTranslation", {
+            shortcut: `${CTRL} + Shift + V`,
+          })}
         >
           {state?.isTransVisible ? <IconLanguage /> : <IconLanguageOff />}
         </button>
       </Tooltip>
 
-      <Tooltip content="错题本">
+      <Tooltip content={t("switcher.tooltips.errorBook")}>
         <ErrorBookButton />
       </Tooltip>
 
-      <Tooltip className="h-7 w-7" content="查看数据统计">
+      <Tooltip
+        className="h-7 w-7"
+        content={t("switcher.tooltips.dataAnalysis")}
+      >
         <AnalysisButton />
       </Tooltip>
 
-      <Tooltip className="h-7 w-7" content="开关深色模式">
+      <Tooltip className="h-7 w-7" content={t("switcher.tooltips.darkMode")}>
         <button
           className={`p-[2px] text-lg text-blue-500 focus:outline-none`}
           type="button"
@@ -88,7 +102,7 @@ export default function Switcher() {
             changeDarkModeState();
             e.currentTarget.blur();
           }}
-          aria-label="开关深色模式"
+          aria-label={t("switcher.ariaLabels.darkMode")}
         >
           {isOpenDarkMode ? (
             <IconMoon className="icon" />
@@ -97,10 +111,13 @@ export default function Switcher() {
           )}
         </button>
       </Tooltip>
-      <Tooltip className="h-7 w-7" content="指法图示">
+      <Tooltip
+        className="h-7 w-7"
+        content={t("switcher.tooltips.handPosition")}
+      >
         <HandPositionIllustration></HandPositionIllustration>
       </Tooltip>
-      <Tooltip content="设置">
+      <Tooltip content={t("switcher.tooltips.settings")}>
         <Setting />
       </Tooltip>
     </div>

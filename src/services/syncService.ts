@@ -99,17 +99,85 @@ const getLocalChanges = async () => {
       .anyOf(["local_new", "local_modified", "local_deleted"])
       .toArray();
 
-    for (const record of records) {
-      changes.push({
-        table: tableName,
-        action:
-          record.sync_status === "local_deleted"
-            ? "delete"
-            : record.sync_status === "local_new"
-            ? "create"
-            : "update",
-        data: record,
-      });
+    // 对于 familiarWords 表，需要特殊处理，确保每个 [dict+word] 组合只有一条记录
+    if (tableName === "familiarWords") {
+      // 使用 Map 来存储每个 [dict+word] 组合的最新记录
+      const dictWordMap = new Map();
+
+      for (const record of records) {
+        const key = `${record.dict}-${record.word}`;
+
+        // 如果 Map 中已存在该 key，则比较 last_modified，保留最新的
+        if (dictWordMap.has(key)) {
+          const existingRecord = dictWordMap.get(key);
+          if (record.last_modified > existingRecord.last_modified) {
+            dictWordMap.set(key, record);
+          }
+        } else {
+          dictWordMap.set(key, record);
+        }
+      }
+
+      // 使用 Map 中的记录替换原始记录数组
+      const uniqueRecords = Array.from(dictWordMap.values());
+
+      for (const record of uniqueRecords) {
+        changes.push({
+          table: tableName,
+          action:
+            record.sync_status === "local_deleted"
+              ? "delete"
+              : record.sync_status === "local_new"
+              ? "create"
+              : "update",
+          data: record,
+        });
+      }
+    } else if (tableName === "wordRecords") {
+      // 特殊处理 wordRecords 表，确保 performanceHistory 中的每个条目都有 mistakes 字段
+      for (const record of records) {
+        // 深拷贝记录以避免修改原始数据
+        const recordCopy = JSON.parse(JSON.stringify(record));
+
+        // 确保 performanceHistory 存在且是数组
+        if (
+          recordCopy.performanceHistory &&
+          Array.isArray(recordCopy.performanceHistory)
+        ) {
+          // 遍历每个 performanceEntry，确保 mistakes 字段存在
+          recordCopy.performanceHistory = recordCopy.performanceHistory.map(
+            (entry) => ({
+              ...entry,
+              mistakes: entry.mistakes || {}, // 如果 mistakes 不存在，设置为空对象
+            })
+          );
+        }
+
+        changes.push({
+          table: tableName,
+          action:
+            recordCopy.sync_status === "local_deleted"
+              ? "delete"
+              : recordCopy.sync_status === "local_new"
+              ? "create"
+              : "update",
+          data: recordCopy,
+        });
+      }
+    } else {
+      // 其他表正常处理
+      for (const record of records) {
+        changes.push({
+          table: tableName,
+          action:
+            record.sync_status === "local_deleted"
+              ? "delete"
+              : record.sync_status === "local_new"
+              ? "create"
+              : "update",
+          data: record,
+        });
+      }
     }
   }
 
@@ -233,18 +301,43 @@ const applyServerChanges = async (serverChanges: any[]) => {
           );
         }
       } else {
-        // 其他表保持原有逻辑（基于 uuid 查询）
-        const createStartTime = Date.now();
-        await dbTable.add({
-          ...data,
-          sync_status: "synced" as SyncStatus,
-          last_modified: Date.now(),
-        });
-        const createTime = Date.now() - createStartTime;
-        stats.created++;
-        console.log(
-          `[UPSERT] ✅ 标准插入成功 (${createTime}ms): ${table} - ${dataIdentifier}`
-        );
+        // 其他表基于 uuid 查询现有记录
+        const queryStartTime = Date.now();
+        const existingRecord = await dbTable
+          .where("uuid")
+          .equals(data.uuid)
+          .first();
+
+        const queryTime = Date.now() - queryStartTime;
+        console.log(`[UPSERT] 查询耗时: ${queryTime}ms - ${table}`);
+
+        if (existingRecord) {
+          // 更新现有记录
+          const updateStartTime = Date.now();
+          await dbTable.update(existingRecord.id!, {
+            ...data,
+            sync_status: "synced" as SyncStatus,
+            last_modified: Date.now(),
+          });
+          const updateTime = Date.now() - updateStartTime;
+          stats.updated++;
+          console.log(
+            `[UPSERT] ✅ 更新成功 (${updateTime}ms): ${table} - ${dataIdentifier}`
+          );
+        } else {
+          // 创建新记录
+          const createStartTime = Date.now();
+          await dbTable.add({
+            ...data,
+            sync_status: "synced" as SyncStatus,
+            last_modified: Date.now(),
+          });
+          const createTime = Date.now() - createStartTime;
+          stats.created++;
+          console.log(
+            `[UPSERT] ✅ 创建成功 (${createTime}ms): ${table} - ${dataIdentifier}`
+          );
+        }
       }
 
       const totalTime = Date.now() - startTime;
@@ -265,10 +358,22 @@ const applyServerChanges = async (serverChanges: any[]) => {
         try {
           // 回退策略：强制查询并更新
           const fallbackStartTime = Date.now();
-          const existingRecord = await dbTable
-            .where("[dict+word]")
-            .equals([data.dict, data.word])
-            .first();
+          let existingRecord;
+
+          // 根据表类型使用不同的查询策略
+          if (table === "wordRecords" || table === "familiarWords") {
+            // 使用 [dict+word] 复合索引
+            existingRecord = await dbTable
+              .where("[dict+word]")
+              .equals([data.dict, data.word])
+              .first();
+          } else {
+            // 其他表使用 uuid 查询
+            existingRecord = await dbTable
+              .where("uuid")
+              .equals(data.uuid)
+              .first();
+          }
 
           if (existingRecord) {
             await dbTable.update(existingRecord.id!, {
@@ -283,14 +388,59 @@ const applyServerChanges = async (serverChanges: any[]) => {
               `[UPSERT] ✅ 回退策略成功 (${fallbackTime}ms): ${table} - ${dataIdentifier}`
             );
           } else {
-            console.error(
-              `[UPSERT] ❌ 回退策略失败，无法找到冲突记录 (${totalTime}ms): ${table} - ${dataIdentifier}`,
-              {
-                error: error.message,
-                data: { dict: data.dict, word: data.word, uuid: data.uuid },
-              }
+            // 如果通过索引找不到记录，尝试通过uuid直接查找
+            console.warn(
+              `[UPSERT] 🔍 通过索引未找到记录，尝试uuid查找: ${table} - ${dataIdentifier}`
             );
-            throw error;
+            const recordByUuid = await dbTable
+              .where("uuid")
+              .equals(data.uuid)
+              .first();
+
+            if (recordByUuid) {
+              console.log(
+                `[UPSERT] 🔍 通过uuid找到记录，执行更新: ${table} - ${dataIdentifier}`
+              );
+              await dbTable.update(recordByUuid.id!, {
+                ...data,
+                sync_status: "synced" as SyncStatus,
+                last_modified: Date.now(),
+              });
+              const fallbackTime = Date.now() - fallbackStartTime;
+              stats.fallbackSuccess++;
+              stats.errors--; // 回退成功，减少错误计数
+              console.log(
+                `[UPSERT] ✅ UUID回退策略成功 (${fallbackTime}ms): ${table} - ${dataIdentifier}`
+              );
+            } else {
+              // 最后的回退：强制使用put操作
+              console.warn(
+                `[UPSERT] 🔄 最后回退：使用put操作强制更新: ${table} - ${dataIdentifier}`
+              );
+              try {
+                await dbTable.put({
+                  ...data,
+                  sync_status: "synced" as SyncStatus,
+                  last_modified: Date.now(),
+                });
+                const fallbackTime = Date.now() - fallbackStartTime;
+                stats.fallbackSuccess++;
+                stats.errors--; // 回退成功，减少错误计数
+                console.log(
+                  `[UPSERT] ✅ PUT回退策略成功 (${fallbackTime}ms): ${table} - ${dataIdentifier}`
+                );
+              } catch (putError) {
+                console.error(
+                  `[UPSERT] ❌ 所有回退策略失败 (${totalTime}ms): ${table} - ${dataIdentifier}`,
+                  {
+                    originalError: error.message,
+                    putError: putError.message,
+                    data: { dict: data.dict, word: data.word, uuid: data.uuid },
+                  }
+                );
+                throw error;
+              }
+            }
           }
         } catch (fallbackError) {
           console.error(
@@ -365,7 +515,6 @@ const applyServerChanges = async (serverChanges: any[]) => {
 
   for (const change of validChanges) {
     const { table, action, data } = change;
-    console.log(`处理服务器变更: ${table} - ${action}`, data);
 
     // 根据表名选择对应的数据库表
     let dbTable;
@@ -535,6 +684,24 @@ const updateLocalRecordStatus = async (changes: any[]) => {
       } else {
         // 如果是创建或更新操作，更新同步状态
         await dbTable.update(localRecord.id!, {
+          sync_status: "synced" as SyncStatus,
+        });
+      }
+    } else if (
+      action !== "delete" &&
+      table === "familiarWords" &&
+      data.dict &&
+      data.word
+    ) {
+      // 对于 familiarWords 表，如果通过 uuid 找不到记录，尝试通过 [dict+word] 复合索引查找
+      const existingByDictWord = await dbTable
+        .where("[dict+word]")
+        .equals([data.dict, data.word])
+        .first();
+
+      if (existingByDictWord) {
+        console.log(`通过 [dict+word] 找到记录，更新同步状态`);
+        await dbTable.update(existingByDictWord.id!, {
           sync_status: "synced" as SyncStatus,
         });
       }

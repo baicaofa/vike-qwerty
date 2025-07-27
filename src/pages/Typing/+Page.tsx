@@ -3,14 +3,12 @@ import CustomArticleButton from "../../components/CustomArticleButton";
 import Layout from "../../components/Layout";
 import { WebsiteLanguageSwitcher } from "../../components/WebsiteLanguageSwitcher";
 import { DictChapterButton } from "./components/DictChapterButton";
-import MarkWordButton from "./components/MarkWordButton";
 import ResultScreen from "./components/ResultScreen";
 import Speed from "./components/Speed";
 import StartButton from "./components/StartButton";
 import WordList from "./components/WordList";
 import WordPanel from "./components/WordPanel";
 import { useConfetti } from "./hooks/useConfetti";
-import useMarkedWords from "./hooks/useMarkedWords";
 import { useWordList } from "./hooks/useWordList";
 import {
   TypingContext,
@@ -18,13 +16,13 @@ import {
   initialState,
   typingReducer,
 } from "./store";
-import { markedWordsAtom } from "./store/markedWordsAtom";
 import { DonateCard } from "@/components/DonateCard";
 import Header from "@/components/Header";
 import { ReviewStatusIndicator } from "@/components/ReviewStatusIndicator";
 import StarCard from "@/components/StarCard";
 import Tooltip from "@/components/Tooltip";
 import TypingPracticeButton from "@/components/TypingPracticeButton";
+import { useCustomDictionaryAPI } from "@/hooks/useCustomDictionary";
 import { idDictionaryMap } from "@/resources/dictionary";
 import {
   currentChapterAtom,
@@ -33,6 +31,8 @@ import {
   randomConfigAtom,
   reviewModeInfoAtom,
 } from "@/store";
+import { isCustomDictionary } from "@/store/customDictionary";
+import { customDictionariesAtom } from "@/store/customDictionary";
 import { IsDesktop, isLegal } from "@/utils";
 import { useSaveChapterRecord } from "@/utils/db";
 import { useMixPanelChapterLogUploader } from "@/utils/mixpanel";
@@ -41,13 +41,18 @@ import type React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useImmerReducer } from "use-immer";
+import { usePageContext } from "vike-react/usePageContext";
 
-export function Page() {
+export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
   const [state, dispatch] = useImmerReducer(
     typingReducer,
     structuredClone(initialState)
   );
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const pageContextFromHook = usePageContext();
+  const pageContext = pageContextFromHook || pageContextProp;
+
+  // pageContext回退机制：优先使用hook，如果不可用则使用props
   const { words } = useWordList();
   const { t } = useTranslation("typing");
 
@@ -56,15 +61,40 @@ export function Page() {
   const randomConfig = useAtomValue(randomConfigAtom);
   const chapterLogUploader = useMixPanelChapterLogUploader(state);
   const saveChapterRecord = useSaveChapterRecord();
+  const [customDictionaries, setCustomDictionaries] = useAtom(
+    customDictionariesAtom
+  );
+  const { getDictionaries } = useCustomDictionaryAPI();
 
   const reviewModeInfo = useAtomValue(reviewModeInfoAtom);
   const isReviewMode = useAtomValue(isReviewModeAtom);
 
-  const [markedWords] = useAtom(markedWordsAtom);
-  const { isWordMarked, filterUnmarkedWords } = useMarkedWords();
-
   // 存储事件处理函数的引用
   const keydownHandlerRef = useRef<((e: KeyboardEvent) => void) | null>(null);
+
+  // 加载用户的自定义词典列表
+  useEffect(() => {
+    // 如果当前选择的是自定义词典，但自定义词典列表为空，则加载自定义词典列表
+    if (isCustomDictionary(currentDictId) && customDictionaries.length === 0) {
+      const fetchCustomDictionaries = async () => {
+        try {
+          const result = await getDictionaries();
+          if (result.success && result.dictionaries) {
+            setCustomDictionaries(result.dictionaries);
+          }
+        } catch (error) {
+          console.error("获取自定义词典列表失败:", error);
+        }
+      };
+
+      fetchCustomDictionaries();
+    }
+  }, [
+    currentDictId,
+    customDictionaries.length,
+    getDictionaries,
+    setCustomDictionaries,
+  ]);
 
   useEffect(() => {
     // 检测用户设备
@@ -78,6 +108,12 @@ export function Page() {
   // 在组件挂载和currentDictId改变时，检查当前字典是否存在，如果不存在，则将其重置为默认值
   useEffect(() => {
     const id = currentDictId;
+    // 检查是否为自定义词典ID，如果是则不需要检查idDictionaryMap
+    if (isCustomDictionary(id)) {
+      return; // 自定义词典ID，直接返回，不重置
+    }
+
+    // 对于非自定义词典，检查是否存在于idDictionaryMap
     if (!(id in idDictionaryMap)) {
       setCurrentDictId("cet4");
       setCurrentChapter(0);
@@ -110,8 +146,20 @@ export function Page() {
     if (!state.isTyping) {
       const onKeyDown = (e: KeyboardEvent) => {
         // 检查当前是否在打字练习相关页面
+        // 创建路径标准化函数，移除语言前缀
+        const normalizePath = (path: string): string => {
+          if (path.startsWith("/en/")) return path.substring(3) || "/";
+          if (path.startsWith("/zh/")) return path.substring(3) || "/";
+          if (path === "/en" || path === "/zh") return "/";
+          return path;
+        };
+
         const currentPath = window.location.pathname;
-        if (currentPath !== "/" && !currentPath.startsWith("/typing")) {
+        const logicalPath = pageContext
+          ? (pageContext as any).urlLogical
+          : normalizePath(currentPath);
+
+        if (logicalPath !== "/" && !logicalPath.startsWith("/typing")) {
           return;
         }
 
@@ -147,7 +195,7 @@ export function Page() {
         }
       };
     }
-  }, [state.isTyping, isLoading, dispatch]);
+  }, [state.isTyping, isLoading, dispatch, pageContext]);
 
   useEffect(() => {
     if (words !== undefined) {
@@ -156,18 +204,17 @@ export function Page() {
           ? reviewModeInfo.reviewRecord.index
           : 0;
 
-      const filteredWords = filterUnmarkedWords(words);
       dispatch({
         type: TypingStateActionType.SETUP_CHAPTER,
         payload: {
-          words: filteredWords,
+          words: words,
           shouldShuffle: randomConfig.isOpen,
           initialIndex,
         },
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [words, markedWords]);
+  }, [words]);
 
   useEffect(() => {
     // 当用户完成章节后且完成 word Record 数据保存，记录 chapter Record 数据,
@@ -225,14 +272,17 @@ export function Page() {
               } my-btn-primary transition-all duration-300 `}
               onClick={skipWord}
             >
-              Skip
+              {t("buttons.skip")}
             </button>
           </Tooltip>
           <ReviewStatusIndicator />
 
           {/* 网站语言切换组件 - 只在 Typing 页面显示 */}
           <div className="ml-auto">
-            <WebsiteLanguageSwitcher showLabel={false} />
+            <WebsiteLanguageSwitcher
+              showLabel={false}
+              pageContext={pageContext}
+            />
           </div>
         </Header>
         <div className="container mx-auto flex h-full flex-1 flex-col items-center justify-center pb-5">
@@ -247,12 +297,9 @@ export function Page() {
                 </div>
               ) : (
                 !state.isFinished && (
-                  <WordPanel>
-                    <MarkWordButton
-                      word={state.currentWord}
-                      isMarked={isWordMarked(state.currentWord)}
-                    />
-                  </WordPanel>
+                  <>
+                    <WordPanel />
+                  </>
                 )
               )}
             </div>

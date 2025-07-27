@@ -1,13 +1,17 @@
 import { GalleryContext } from "./context";
 import codeFlag from "@/assets/flags/code.png";
+import myDictFlag from "@/assets/flags/code.png";
 import deFlag from "@/assets/flags/de.png";
 import enFlag from "@/assets/flags/en.png";
 import idFlag from "@/assets/flags/id.png";
 import jpFlag from "@/assets/flags/ja.png";
 import kkFlag from "@/assets/flags/kk.png";
+import LoginPromptModal from "@/components/LoginPromptModal";
+import useAuthStore from "@/store/auth";
 import type { LanguageCategoryType } from "@/typings";
 import { RadioGroup } from "@headlessui/react";
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useState } from "react";
+import { navigate } from "vike/client/router";
 
 export type LanguageTabOption = {
   id: LanguageCategoryType;
@@ -16,6 +20,7 @@ export type LanguageTabOption = {
 };
 
 const options: LanguageTabOption[] = [
+  { id: "my-dict", name: "我的词典", flag: myDictFlag },
   { id: "en", name: "英语", flag: enFlag },
   { id: "ja", name: "日语", flag: jpFlag },
   { id: "de", name: "德语", flag: deFlag },
@@ -26,53 +31,45 @@ const options: LanguageTabOption[] = [
 
 export function LanguageTabSwitcher() {
   const context = useContext(GalleryContext);
-  console.log("LanguageTabSwitcher context:", context);
+  const { isAuthenticated } = useAuthStore();
+  const [showLoginPrompt, setShowLoginPrompt] = useState(false);
 
   const onChangeTab = useCallback(
     (tab: string) => {
-      console.log("onChangeTab called with:", tab);
       if (!context) {
-        console.log("Context is null, returning early");
         return;
       }
+
+      // 如果选择"我的词典"标签且用户未登录，则显示登录提示
+      if (tab === "my-dict" && !isAuthenticated) {
+        setShowLoginPrompt(true);
+        return;
+      }
+
       context.setState((draft) => {
-        console.log(
-          "Updating state from:",
-          draft.currentLanguageTab,
-          "to:",
-          tab
-        );
         draft.currentLanguageTab = tab as LanguageCategoryType;
       });
     },
-    [context]
+    [context, isAuthenticated]
   );
 
-  // 使用默认值而不是返回 null
   const currentTab = context?.state?.currentLanguageTab || "en";
-  console.log("Current tab:", currentTab);
 
   return (
-    <RadioGroup value={currentTab} onChange={onChangeTab}>
-      <div className="flex items-center space-x-4">
-        {options.map((option) => (
-          <RadioGroup.Option
-            key={option.id}
-            value={option.id}
-            className="cursor-pointer"
-          >
-            {({ checked, active }) => {
-              console.log(
-                `Option ${option.id} checked:`,
-                checked,
-                "active:",
-                active
-              );
-              return (
+    <>
+      <RadioGroup value={currentTab} onChange={onChangeTab}>
+        <div className="flex items-center space-x-4">
+          {options.map((option) => (
+            <RadioGroup.Option
+              key={option.id}
+              value={option.id}
+              className="cursor-pointer"
+            >
+              {({ checked, active }) => (
                 <div
                   className={`flex items-center border-b-2 px-2 pb-1 ${
                     checked ? "border-indigo-500" : "border-transparent"
-                  } ${active ? "bg-gray-100" : ""}`}
+                  } ${active ? "bg-gray-100 dark:bg-gray-800" : ""}`}
                 >
                   <img
                     src={option.flag}
@@ -85,11 +82,20 @@ export function LanguageTabSwitcher() {
                     {option.name}
                   </p>
                 </div>
-              );
-            }}
-          </RadioGroup.Option>
-        ))}
-      </div>
-    </RadioGroup>
+              )}
+            </RadioGroup.Option>
+          ))}
+        </div>
+      </RadioGroup>
+
+      <LoginPromptModal
+        isOpen={showLoginPrompt}
+        onClose={() => setShowLoginPrompt(false)}
+        feature="自定义词典"
+        description="自定义词典功能允许您上传和管理自己的词汇表，创建个性化的学习内容。登录后您可以上传Excel文件创建词典，并享受云端同步服务。"
+        onLogin={() => navigate("/login")}
+        showLearnMore={false}
+      />
+    </>
   );
 }

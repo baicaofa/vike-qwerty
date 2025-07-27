@@ -78,7 +78,7 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
           aria-label={state.isTyping ? t("buttons.pause") : t("buttons.start")}
         >
           <span className="font-medium">
-            {state.isTyping ? "Pause" : "Start"}
+            {state.isTyping ? t("buttons.pause") : t("buttons.start")}
           </span>
         </button>
         {isShowReStartButton && (
@@ -97,7 +97,7 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
               onClick={onClickRestart}
               aria-label={t("buttons.restart")}
             >
-              Restart
+              {t("buttons.restart")}
             </button>
           </div>
         )}

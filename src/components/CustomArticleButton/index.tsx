@@ -1,15 +1,17 @@
 import Tooltip from "@/components/Tooltip";
 import type React from "react";
+import { useTranslation } from "react-i18next";
 
 const CustomArticleButton: React.FC = () => {
+  const { t } = useTranslation("common");
   return (
-    <Tooltip content="自定义文章练习">
+    <Tooltip content={t("customArticle")}>
       <a
         href="/custom-article"
         className="flex h-8 min-w-max cursor-pointer items-center justify-center rounded-md px-1 transition-colors text-blue-500 duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
-        title="自定义文章练习"
+        title={t("customArticle")}
         target="_blank"
-        aria-label="自定义文章练习"
+        aria-label={t("customArticle")}
       >
         <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -18,7 +20,7 @@ const CustomArticleButton: React.FC = () => {
             clipRule="evenodd"
           />
         </svg>
-        文章
+        {t("article")}
       </a>
     </Tooltip>
   );

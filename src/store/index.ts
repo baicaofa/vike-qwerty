@@ -1,4 +1,10 @@
 import atomForConfig from "./atomForConfig";
+import {
+  isCustomDictionary,
+  extractCustomDictionaryId,
+} from "./customDictionary";
+import { adaptCustomDictionaryToDictionary } from "./customDictionary";
+import { customDictionariesAtom } from "./customDictionary";
 import { reviewInfoAtom } from "./reviewInfoAtom";
 import {
   DISMISS_START_CARD_DATE_KEY,
@@ -26,6 +32,22 @@ import { atomWithStorage } from "jotai/utils";
 export const currentDictIdAtom = atomWithStorage("currentDict", "cet4");
 export const currentDictInfoAtom = atom<Dictionary>((get) => {
   const id = get(currentDictIdAtom);
+
+  // 处理自定义词典ID
+  if (isCustomDictionary(id)) {
+    const customDictId = extractCustomDictionaryId(id);
+    const customDicts = get(customDictionariesAtom);
+    const customDict = customDicts.find((dict) => dict.id === customDictId);
+
+    if (customDict) {
+      // 如果找到了自定义词典，则转换为Dictionary格式
+      return adaptCustomDictionaryToDictionary(customDict);
+    }
+    // 如果没有找到自定义词典，则返回默认词典
+    return idDictionaryMap.cet4;
+  }
+
+  // 处理常规词典ID
   let dict = idDictionaryMap[id];
   // 如果 dict 不存在，则返回 cet4. Typing 中会检查 DictId 是否存在，如果不存在则会重置为 cet4
   if (!dict) {

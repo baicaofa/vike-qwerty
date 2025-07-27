@@ -1,4 +1,8 @@
 {
+  "loopWordSwitcher": {
+    "selectLoopTimes": "选择单词的循环次数",
+    "infinite": "无限"
+  },
   "title": "打字练习",
   "subtitle": "提升你的英语打字速度和准确率",
   "wordPanel": {
@@ -8,7 +12,10 @@
     "phonetic": "音标",
     "sentences": "例句",
     "showTranslation": "显示翻译",
-    "hideTranslation": "隐藏翻译"
+    "hideTranslation": "隐藏翻译",
+    "pressAnyKey": "按任意键{{action}}",
+    "start": "开始",
+    "continue": "继续"
   },
   "progress": {
     "chapter": "章节",
@@ -19,6 +26,11 @@
     "speed": "速度",
     "wpm": "词/分钟"
   },
+    "result": {
+    "good": "{{isAllCorrect ? '全对了！' : `表现不错！只错了 ${mistakeCount} 个单词`}}",
+    "normal": "有些小问题哦，下一次可以做得更好！",
+    "bad": "错误太多，再来一次如何？"
+  },
   "settings": {
     "title": "设置",
     "pronunciation": "发音设置",
@@ -26,8 +38,37 @@
     "volume": "音量",
     "loopWord": "单词循环",
     "times": "次数",
-    "fontSize": "字体大小",
-    "theme": "主题设置"
+    "fontSize": "字体设置",
+    "theme": "主题设置",
+    "advanced": "高级设置",
+    "view": "查看设置",
+    "data": "数据设置",
+    "rate": "倍速",
+    "keySoundEffect": "按键音效",
+    "transPronunciation": "释义发音",
+    "hintSound": "效果音",
+    "resetFontSize": "重置字体大小",
+    "sentenceForeignFont": "例句字体",
+    "translateFont":"中文字体",
+    "foreignFont":"外语字体"
+
+  },
+  "dataExport": {
+    "label": "数据导出",
+    "description1": "目前，用户的练习数据",
+    "localOnly": "仅保存在本地",
+    "description2": "。如果您需要在不同的设备、浏览器或者其他非官方部署上使用 Keybr，您需要手动进行数据同步和保存。为了保留您的练习进度，以及使用近期即将上线的数据分析和智能训练功能，我们建议您及时备份您的数据。",
+    "safetyTip": "为了您的数据安全，请不要修改导出的数据文件。",
+    "button": "导出数据",
+    "buttonTitle": "导出数据"
+  },
+  "dataImport": {
+    "label": "数据导入",
+    "description1": "请注意，导入数据将",
+    "coverTip": "完全覆盖",
+    "description2": "当前数据。请谨慎操作。",
+    "button": "导入数据",
+    "buttonTitle": "导入数据"
   },
   "results": {
     "title": "练习结果",
@@ -60,7 +101,9 @@
     "dictation": "默写本章节",
     "repeat": "重复本章节",
     "nextChapter": "下一章节",
-    "practiceOther": "练习其他章节"
+    "practiceOther": "练习其他章节",
+    "analysis": "查看数据统计",
+    "errorBook": "查看错题本"
   },
   "tooltips": {
     "skipWord": "跳过该词",
@@ -70,10 +113,42 @@
     "closeResult": "关闭结果页面",
     "dictationShortcut": "快捷键：shift + enter",
     "repeatShortcut": "快捷键：space",
-    "nextShortcut": "快捷键：enter"
+    "nextShortcut": "快捷键：enter",
+    "readTranslation": "朗读释义",
+    "showHandPosition": "显示打字指法图示",
+    "closeDialog": "关闭对话框"
   },
   "messages": {
     "mobileNotSupported": "Keybr 目的为提高键盘工作者的英语输入效率，目前暂未适配移动端，希望您使用桌面端浏览器访问。如您使用的是 Ipad 等平板电脑设备，可以使用外接键盘使用本软件。"
+  },
+  "handPosition": {
+    "title": "推荐打字指法图示"
+  },
+  "prevAndNextWord": {
+    "shortcut": "快捷键: {{key}}",
+    "transSeparator": "；"
+  },
+  "pronunciationSwitcher": {
+    "closed": "关闭",
+    "switchTip": "发音及音标切换",
+    "phoneticSwitch": "开关音标显示",
+    "phoneticOn": "音标已开启",
+    "phoneticOff": "音标已关闭",
+    "wordPronSwitch": "开关单词发音",
+    "wordPronOn": "发音已开启",
+    "wordPronOff": "发音已关闭",
+    "transPronSwitch": "开关释义发音",
+    "transPronOn": "发音已开启",
+    "transPronOff": "发音已关闭",
+    "loopPronSwitch": "开关循环发音",
+    "loopPronOn": "循环已开启",
+    "loopPronOff": "循环已关闭",
+    "pronType": "单词发音口音",
+    "tips": "Tips: 朗读发音快捷键（{{key}} + J）",
+    "status": "发音{{status}}",
+    "loopPronStatus": "循环发音{{status}}",
+    "enabled": "已开启",
+    "disabled": "已关闭"
   },
   "stats": {
     "time": "时间",
@@ -84,5 +159,144 @@
   "chapter": {
     "number": "第 {{number}} 章",
     "reviewMode": "错题复习"
+  },
+  "advancedSettings": {
+    "skipFamiliarWord": {
+      "label": "是否跳过熟词",
+      "description": "开启后，练习时会自动跳过已被标记为熟词的单词",
+      "enabled": "开启",
+      "disabled": "关闭",
+      "status": "跳过熟词已{{status}}"
+    },
+    "randomOrder": {
+      "label": "章节乱序",
+      "description": "开启后，每次练习章节中单词会随机排序。下一章节生效",
+      "enabled": "开启",
+      "disabled": "关闭",
+      "status": "随机已{{status}}"
+    },
+    "showPrevNext": {
+      "label": "练习时展示上一个/下一个单词",
+      "description": "开启后，练习中会在上方展示上一个/下一个单词",
+      "enabled": "开启",
+      "disabled": "关闭",
+      "status": "展示单词已{{status}}"
+    },
+    "ignoreCase": {
+      "label": "是否忽略大小写",
+      "description": "开启后，输入时不区分大小写，如输入\"hello\"和\"Hello\"都会被认为是正确的",
+      "enabled": "开启",
+      "disabled": "关闭",
+      "status": "忽略大小写已{{status}}"
+    },
+    "textSelectable": {
+      "label": "是否允许选择文本",
+      "description": "开启后，可以通过鼠标选择文本",
+      "enabled": "开启",
+      "disabled": "关闭",
+      "status": "选择文本已{{status}}"
+    },
+    "showHint": {
+      "label": "是否允许默写模式下显示提示",
+      "description": "开启后，可以通过鼠标 hover 单词显示正确答案",
+      "enabled": "开启",
+      "disabled": "关闭",
+      "status": "显示提示已{{status}}"
+    },
+    "viewFamiliarWords": "查看熟词"
+  },
+  "soundSwitcher": {
+    "title": "音效设置",
+    "keySound": {
+      "label": "开关按键音",
+      "status": "发音已{{status}}"
+    },
+    "effectSound": {
+      "label": "开关效果音",
+      "status": "发音已{{status}}"
+    },
+    "enabled": "开启",
+    "disabled": "关闭"
+  },
+  "switcher": {
+    "tooltips": {
+      "soundSettings": "音效设置",
+      "loopWord": "设置单个单词循环",
+      "dictationMode": "开关默写模式（{{shortcut}}）",
+      "toggleTranslation": "开关释义和例句显示（{{shortcut}}）",
+      "errorBook": "错题本",
+      "dataAnalysis": "查看数据统计",
+      "darkMode": "开关深色模式",
+      "handPosition": "指法图示",
+      "settings": "设置"
+    },
+    "ariaLabels": {
+      "dictationMode": "开关默写模式（{{shortcut}}）",
+      "toggleTranslation": "开关释义和例句显示（{{shortcut}}）",
+      "darkMode": "开关深色模式"
+    }
+  },
+  "userAuthMenu": {
+    "feedback": "问题反馈",
+    "profile": "个人资料",
+    "syncData": "同步数据",
+    "logout": "退出登录",
+    "login": "登录",
+    "sync": {
+      "inProgress": "正在同步...，正在将您的数据同步到云端，请稍候。",
+      "success": "同步成功 您的数据已成功同步。",
+      "failed": "同步失败 同步遇到问题: {{error}}",
+      "emailNotVerified": "请先验证您的邮箱",
+      "unknownError": "未知错误"
+    }
+  },
+  "wordDictationSwitcher": {
+    "title": "开关默写模式",
+    "modeLabel": "默写模式",
+    "showAfterCompletion": "完成后展示",
+    "status": {
+      "dictation": "默写已{{status}}",
+      "showAfter": "完成后展示已{{status}}"
+    },
+    "types": {
+      "hideAll": "全部隐藏",
+      "hideVowel": "隐藏元音",
+      "hideConsonant": "隐藏辅音",
+      "randomHide": "随机隐藏"
+    },
+    "enabled": "开启",
+    "disabled": "关闭"
+  },
+  "wordList": {
+    "tooltip": "单词列表",
+    "title": "单词列表"
+  },
+  "markFamiliarButton": {
+    "markAsFamiliar": "标记为熟词",
+    "unmarkFamiliar": "取消熟词标记",
+    "markFailed": "标记熟词失败"
+  },
+
+  "share": {
+    "promoteList": [
+      { "word": "快人一手", "sentence": "速度快得就像比别人多长了一只手" },
+      { "word": "手落听雨", "sentence": "雷霆手法，震撼观众" },
+      { "word": "疾如闪电", "sentence": "打字速度极快，就像一道闪电在键盘上迅速穿梭" },
+      { "word": "手如疾风", "sentence": "手速快得惊人，就像疾风一般" },
+      { "word": "精准如箭", "sentence": "打字精度极高，就像一箭命中靶心一般准确" },
+      { "word": "狂飙突进", "sentence": "打字速度快得让人感到狂飙突进的冲劲" },
+      { "word": "神速如风", "sentence": "神速打字，如同风一样快" },
+      { "word": "招招到位", "sentence": "打字精度和速度都十分到位，毫不出错。" },
+      { "word": "如履平地", "sentence": "打字手法熟练，如履平地，行云流水" },
+      { "word": "声东击西", "sentence": "打字技巧高超，声东击西，出奇制胜" },
+      { "word": "魔法使者", "sentence": "打字速度快得让人难以置信，就像一名魔法使者。" },
+      { "word": "灵活多变", "sentence": "打字姿势灵活多变，就像一只蛇一样柔韧。" },
+      { "word": "犹如飞鸟", "sentence": "打字速度极快，就像一只飞鸟在键盘上翱翔。" },
+      { "word": "连珠妙语", "sentence": "打字技巧娴熟，如同一连串妙语连珠。" },
+      { "word": "百毒不侵", "sentence": "打字速度和准确度都非常高，就像身具百毒不侵的能力。" },
+      { "word": "攻守兼备", "sentence": "打字速度和精度都非常出色，攻守兼备，所向披靡。" },
+      { "word": "跃然纸上", "sentence": "打字手法灵活多变，跃然纸上，生动有趣。" }
+    ],
+    "slogan": "为键盘工作者设计的单词与肌肉记忆锻炼软件"
   }
 }

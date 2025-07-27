@@ -1,2 +1,2 @@
 // /@id/+route.ts
-export default "/gallery/@id";
+export default "/gallery/:id";

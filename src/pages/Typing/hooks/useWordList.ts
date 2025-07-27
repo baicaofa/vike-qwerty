@@ -103,27 +103,7 @@ const firstChapter = [
         chinese: "你只能打电话给约翰取消了。",
       },
     ],
-    phrases: [
-      {
-        phrase: "cancel button",
-        translation: "取消按钮",
-      },
-      {
-        phrase: "cancel out",
-        translation: "取消；抵销",
-      },
-      {
-        phrase: "cancel after verification",
-        translation: "核销",
-      },
-    ],
-    synonyms: [
-      "call it off",
-      "recall",
-      "revocation",
-      "declare off",
-      "withdrawal",
-    ],
+
     detailed_translations: [
       {
         pos: "vt",
@@ -150,57 +130,7 @@ const firstChapter = [
         chinese: "今天有一枚小型炸弹在联合国总部外爆炸。",
       },
     ],
-    phrases: [
-      {
-        phrase: "explosive welding",
-        translation: "爆炸焊接；爆炸成形",
-      },
-      {
-        phrase: "emulsion explosive",
-        translation: "乳胶炸药",
-      },
-      {
-        phrase: "explosive gas",
-        translation: "易爆气，爆炸气；爆炸性气体",
-      },
-      {
-        phrase: "high explosive",
-        translation: "烈性炸药；高爆炸药；猛炸药",
-      },
-      {
-        phrase: "explosive force",
-        translation: "爆炸力，爆破力",
-      },
-      {
-        phrase: "explosive power",
-        translation: "爆炸力",
-      },
-      {
-        phrase: "explosive mixture",
-        translation: "爆炸混合物",
-      },
-      {
-        phrase: "explosive atmosphere",
-        translation: "易爆气体环境；爆燃性空气",
-      },
-      {
-        phrase: "explosive material",
-        translation: "炸药；爆炸材料",
-      },
-      {
-        phrase: "nitrate explosive",
-        translation: "硝酸盐炸药",
-      },
-      {
-        phrase: "explosive powder",
-        translation: "爆炸火药",
-      },
-      {
-        phrase: "explosive ordnance disposal",
-        translation: "爆炸性军械处理",
-      },
-    ],
-    synonyms: ["volatile", "blasting agent", "detonator", "fulminic"],
+
     detailed_translations: [
       {
         pos: "adj",
@@ -229,8 +159,7 @@ const firstChapter = [
         chinese: "那两位领导人已经多次合作。",
       },
     ],
-    phrases: [],
-    synonyms: ["multiple", "hundred", "plenty", "many"],
+
     detailed_translations: [
       {
         pos: "adj",
@@ -254,8 +183,7 @@ const firstChapter = [
         chinese: "该党执政已经有七个月了。",
       },
     ],
-    phrases: [],
-    synonyms: ["run", "conduct", "manage", "regulate", "possess"],
+
     detailed_translations: [
       {
         pos: "vi",
@@ -289,8 +217,7 @@ const firstChapter = [
         chinese: "乔从未试图去理清他们的关系。",
       },
     ],
-    phrases: [],
-    synonyms: ["break down", "study"],
+
     detailed_translations: [
       {
         pos: "vt",
@@ -311,8 +238,7 @@ const firstChapter = [
         chinese: "你不该失败一次就灰心丧气。",
       },
     ],
-    phrases: [],
-    synonyms: ["stem", "block", "prohibit", "dispute"],
+
     detailed_translations: [
       {
         pos: "vt",
@@ -338,8 +264,7 @@ const firstChapter = [
         chinese: "他长大了，很像他父亲。",
       },
     ],
-    phrases: [],
-    synonyms: ["favor"],
+
     detailed_translations: [
       {
         pos: "vt",
@@ -365,89 +290,7 @@ const firstChapter = [
         chinese: "偏远山区的火灾",
       },
     ],
-    phrases: [
-      {
-        phrase: "remote sensing",
-        translation: "遥感；远距离读出",
-      },
-      {
-        phrase: "remote control",
-        translation: "n. 遥控；遥控装置",
-      },
-      {
-        phrase: "remote monitoring",
-        translation: "远距离遥控",
-      },
-      {
-        phrase: "remote sensing data",
-        translation: "遥感资料，遥感数据",
-      },
-      {
-        phrase: "remote access",
-        translation: "[计]远程访问；远程存取",
-      },
-      {
-        phrase: "remote control system",
-        translation: "遥控系统",
-      },
-      {
-        phrase: "satellite remote sensing",
-        translation: "卫星遥感；卫星遥感测量",
-      },
-      {
-        phrase: "remote education",
-        translation: "远程教育",
-      },
-      {
-        phrase: "remote monitor",
-        translation: "遥控监视器；远距离监控装置",
-      },
-      {
-        phrase: "remote sensing technique",
-        translation: "遥测技术",
-      },
-      {
-        phrase: "remote controller",
-        translation: "远程控制器",
-      },
-      {
-        phrase: "remote from",
-        translation: "远离",
-      },
-      {
-        phrase: "remote sensor",
-        translation: "遥感器",
-      },
-      {
-        phrase: "remote transmission",
-        translation: "远距离传送，远距离传输",
-      },
-      {
-        phrase: "remote host",
-        translation: "[计]远程主机",
-      },
-      {
-        phrase: "remote location",
-        translation: "外部场所；边远区；远端地点",
-      },
-      {
-        phrase: "remote terminal",
-        translation: "远程终端",
-      },
-      {
-        phrase: "remote sensing application",
-        translation: "遥感应用",
-      },
-      {
-        phrase: "remote sense",
-        translation: "遥测，遥感",
-      },
-      {
-        phrase: "remote operation",
-        translation: "远距离操纵，遥控；远程操作",
-      },
-    ],
-    synonyms: ["lonely", "distant"],
+
     detailed_translations: [
       {
         pos: "adj",
@@ -468,73 +311,7 @@ const firstChapter = [
         chinese: "教师的平均工资是39,000美元一年。",
       },
     ],
-    phrases: [
-      {
-        phrase: "monthly salary",
-        translation: "月薪",
-      },
-      {
-        phrase: "expected salary",
-        translation: "期望得到的薪水",
-      },
-      {
-        phrase: "basic salary",
-        translation: "基本薪金",
-      },
-      {
-        phrase: "annual salary",
-        translation: "年薪",
-      },
-      {
-        phrase: "starting salary",
-        translation: "起薪；入职薪酬",
-      },
-      {
-        phrase: "salary increase",
-        translation: "加薪",
-      },
-      {
-        phrase: "salary structure",
-        translation: "[经]薪金结构",
-      },
-      {
-        phrase: "salary cap",
-        translation: "工资上限",
-      },
-      {
-        phrase: "salary range",
-        translation: "工资幅度；薪金范围",
-      },
-      {
-        phrase: "base salary",
-        translation: "基本薪资（等于base pay）",
-      },
-      {
-        phrase: "salary administration",
-        translation: "薪金政策的执行；薪酬管理",
-      },
-      {
-        phrase: "gross salary",
-        translation: "工资总额",
-      },
-      {
-        phrase: "salary raise",
-        translation: "加薪",
-      },
-      {
-        phrase: "handsome salary",
-        translation: "可观的薪水",
-      },
-      {
-        phrase: "fixed salary",
-        translation: "固定工资；固定薪额",
-      },
-      {
-        phrase: "salary earner",
-        translation: "雇佣工人；受薪人士",
-      },
-    ],
-    synonyms: ["paycheck", "emolument"],
+
     detailed_translations: [
       {
         pos: "n",
@@ -555,89 +332,7 @@ const firstChapter = [
         chinese: "加利福尼亚州严厉的反污染法",
       },
     ],
-    phrases: [
-      {
-        phrase: "environmental pollution",
-        translation: "n. 环境污染",
-      },
-      {
-        phrase: "air pollution",
-        translation: "大气污染，空气污染",
-      },
-      {
-        phrase: "water pollution",
-        translation: "水污染",
-      },
-      {
-        phrase: "pollution control",
-        translation: "污染控制",
-      },
-      {
-        phrase: "environment pollution",
-        translation: "[法]环境污染",
-      },
-      {
-        phrase: "pollution source",
-        translation: "污染源",
-      },
-      {
-        phrase: "noise pollution",
-        translation: "n. 噪音污染",
-      },
-      {
-        phrase: "pollution prevention",
-        translation: "污染预防；防止污染",
-      },
-      {
-        phrase: "secondary pollution",
-        translation: "二次污染",
-      },
-      {
-        phrase: "reduce pollution",
-        translation: "降低污染",
-      },
-      {
-        phrase: "industrial pollution",
-        translation: "工业污染",
-      },
-      {
-        phrase: "water pollution control",
-        translation: "水污染控制；水污染防治",
-      },
-      {
-        phrase: "atmospheric pollution",
-        translation: "大气污染",
-      },
-      {
-        phrase: "soil pollution",
-        translation: "土壤污染",
-      },
-      {
-        phrase: "indoor air pollution",
-        translation: "空内空气污染",
-      },
-      {
-        phrase: "white pollution",
-        translation: "白色污染",
-      },
-      {
-        phrase: "air pollution control",
-        translation: "空气污染控制；大气污染控制",
-      },
-      {
-        phrase: "pollution of the environment",
-        translation: "环境污染",
-      },
-      {
-        phrase: "pollution index",
-        translation: "污染指数",
-      },
-      {
-        phrase: "pollution load",
-        translation: "污染负荷；污染度；污染量",
-      },
-    ],
-    synonyms: ["contamination", "impureness"],
+
     detailed_translations: [
       {
         pos: "n",
@@ -671,8 +366,6 @@ const firstChapter = [
         chinese: "我不可以娶她，装作娶她无妨是不对的。",
       },
     ],
-    phrases: [],
-    synonyms: ["fox", "act", "come", "affected", "assumed", "simulate"],
     detailed_translations: [
       {
         pos: "vt",
@@ -701,21 +394,7 @@ const firstChapter = [
         chinese: "烧壶水，好吗？",
       },
     ],
-    phrases: [
-      {
-        phrase: "electric kettle",
-        translation: "电热水壶",
-      },
-      {
-        phrase: "kettle of fish",
-        translation: "混乱；困境",
-      },
-      {
-        phrase: "reaction kettle",
-        translation: "反应釜",
-      },
-    ],
-    synonyms: ["pot", "drum"],
+
     detailed_translations: [
       {
         pos: "n",
@@ -736,22 +415,7 @@ const firstChapter = [
         chinese: "他们把他从失事的车辆中拖出来时，他还活着。",
       },
     ],
-    phrases: [
-      {
-        phrase: "train wreck",
-        translation: "失事列车；训练残骸",
-      },
-    ],
-    synonyms: [
-      "blasting",
-      "founder",
-      "remain",
-      "breaking",
-      "destruction",
-      "destroy",
-      "disruption",
-      "undermine",
-    ],
+
     detailed_translations: [
       {
         pos: "n",
@@ -782,17 +446,7 @@ const firstChapter = [
         chinese: "戴维常会喝醉，我就得把他弄回家放到床上。",
       },
     ],
-    phrases: [
-      {
-        phrase: "get drunk",
-        translation: "喝醉",
-      },
-      {
-        phrase: "drunk driving",
-        translation: "酒后开车",
-      },
-    ],
-    synonyms: ["loaded", "buffy"],
+
     detailed_translations: [
       {
         pos: "adj",
@@ -813,17 +467,7 @@ const firstChapter = [
         chinese: "这些仪器计算距离非常精确。",
       },
     ],
-    phrases: [
-      {
-        phrase: "calculate on",
-        translation: "指望；期待",
-      },
-      {
-        phrase: "be calculated for",
-        translation: "适合于……；为适合…而设计的",
-      },
-    ],
-    synonyms: ["expect", "figure", "forecast", "propose", "cast", "find"],
+
     detailed_translations: [
       {
         pos: "vt",
@@ -856,29 +500,7 @@ const firstChapter = [
         chinese: "连绵的雨",
       },
     ],
-    phrases: [
-      {
-        phrase: "persistent organic pollutants",
-        translation: "持久性有机污染物",
-      },
-      {
-        phrase: "persistent data",
-        translation: "不变数据；持久性数据",
-      },
-      {
-        phrase: "persistent infection",
-        translation: "持续感染；持续性感染",
-      },
-      {
-        phrase: "persistent vegetative state",
-        translation: "持续性植物状态；植物状态",
-      },
-      {
-        phrase: "persistent pollutant",
-        translation: "持久性污染物",
-      },
-    ],
-    synonyms: ["fixed", "set", "consistent"],
+
     detailed_translations: [
       {
         pos: "adj",
@@ -908,37 +530,7 @@ const firstChapter = [
         chinese: "为了他自己好，我希望他已经说出了真相。",
       },
     ],
-    phrases: [
-      {
-        phrase: "for the sake",
-        translation: "为了…；为了...的利益",
-      },
-      {
-        phrase: "for the sake of",
-        translation: "为了；为了…的利益",
-      },
-      {
-        phrase: "for god's sake",
-        translation: "看在上帝面上",
-      },
-      {
-        phrase: "for sake",
-        translation: "为了…的缘故",
-      },
-      {
-        phrase: "for sake of",
-        translation: "为了…",
-      },
-      {
-        phrase: "for heaven's sake",
-        translation: "看在上帝的份上",
-      },
-      {
-        phrase: "without sake",
-        translation: "adv. 无缘无故",
-      },
-    ],
-    synonyms: ["objective", "behalf", "goals", "purpose", "intention"],
+
     detailed_translations: [
       {
         pos: "n",
@@ -966,8 +558,7 @@ const firstChapter = [
         chinese: "藏匿的武器",
       },
     ],
-    phrases: [],
-    synonyms: ["lock", "pocket", "to hide"],
+
     detailed_translations: [
       {
         pos: "vt",
@@ -991,29 +582,6 @@ const firstChapter = [
         chinese: "有一名观众说这出歌剧“乏味”。",
       },
     ],
-    phrases: [
-      {
-        phrase: "target audience",
-        translation: "目标受众；目标观众；目标客户",
-      },
-      {
-        phrase: "audience rating",
-        translation: "n. 收视率；视听率",
-      },
-      {
-        phrase: "mass audience",
-        translation: "大众受众",
-      },
-      {
-        phrase: "captive audience",
-        translation: "受制而走不开的听众或观众",
-      },
-      {
-        phrase: "audience share",
-        translation: "收视率；受众份额",
-      },
-    ],
-    synonyms: ["interview", "reader"],
     detailed_translations: [
       {
         pos: "n",
@@ -1035,13 +603,6 @@ const firstChapter = [
         chinese: "用中火把调味汁煮到变稠，同时烧水准备煮意大利面。",
       },
     ],
-    phrases: [
-      {
-        phrase: "in the meanwhile",
-        translation: "同时；在此期间",
-      },
-    ],
-    synonyms: ["together", "simul"],
     detailed_translations: [
       {
         pos: "adv",

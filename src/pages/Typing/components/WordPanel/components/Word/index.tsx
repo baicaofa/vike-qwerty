@@ -32,6 +32,7 @@ import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { useTranslation } from "react-i18next";
 import { useImmer } from "use-immer";
+import { usePageContext } from "vike-react/usePageContext";
 
 const vowelLetters = ["A", "E", "I", "O", "U"];
 
@@ -48,6 +49,7 @@ export default function WordComponent({
     structuredClone(initialWordState)
   );
   const { t } = useTranslation("typing");
+  const pageContext = usePageContext();
 
   const wordDictationConfig = useAtomValue(wordDictationConfigAtom);
   const isTextSelectable = useAtomValue(isTextSelectableAtom);
@@ -153,18 +155,30 @@ export default function WordComponent({
   useEffect(() => {
     if (wordState.inputWord.length === 0 && state.isTyping) {
       // 检查当前是否在打字练习页面或复习练习页面
+      // 创建路径标准化函数，移除语言前缀
+      const normalizePath = (path: string): string => {
+        if (path.startsWith("/en/")) return path.substring(3) || "/";
+        if (path.startsWith("/zh/")) return path.substring(3) || "/";
+        if (path === "/en" || path === "/zh") return "/";
+        return path;
+      };
+
       const currentPath = window.location.pathname;
+      const logicalPath = pageContext
+        ? (pageContext as any).urlLogical
+        : normalizePath(currentPath);
+
       if (
-        currentPath === "/" ||
-        currentPath.startsWith("/typing") ||
-        currentPath.startsWith("/review/practice")
+        logicalPath === "/" ||
+        logicalPath.startsWith("/typing") ||
+        logicalPath.startsWith("/review/practice")
       ) {
         setTimeout(() => {
           wordPronunciationIconRef.current?.play();
         }, 0);
       }
     }
-  }, [state.isTyping, wordState.inputWord.length]);
+  }, [state.isTyping, wordState.inputWord.length, pageContext]);
 
   const getLetterVisible = useCallback(
     (index: number) => {

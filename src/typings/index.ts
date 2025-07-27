@@ -30,7 +30,14 @@ export type LanguageType =
   | "kk"
   | "hapin"
   | "id";
-export type LanguageCategoryType = "en" | "ja" | "de" | "code" | "kk" | "id";
+export type LanguageCategoryType =
+  | "en"
+  | "ja"
+  | "de"
+  | "code"
+  | "kk"
+  | "id"
+  | "my-dict";
 
 type Pronunciation2PhoneticMap = Record<PronunciationType, PhoneticType>;
 
@@ -47,8 +54,9 @@ export const PRONUNCIATION_PHONETIC_MAP: Pronunciation2PhoneticMap = {
 };
 
 export type Word = {
+  id?: string; // 添加可选的 id 字段，用于自定义词库
   name: string;
-  trans: (string | { chinese?: string; english?: string })[];
+  trans: string[];
   usphone: string;
   ukphone: string;
   notation?: string;

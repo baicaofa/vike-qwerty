@@ -24,7 +24,14 @@ export default {
 
   hydrationCanBeAborted: true,
   // 添加必要的配置
-  passToClient: ["pageProps", "routeParams", "title", "data"],
+  passToClient: [
+    "pageProps",
+    "routeParams",
+    "title",
+    "data",
+    "locale",
+    "urlLogical",
+  ],
   // 预渲染设置
   prerender: true,
 

@@ -2,14 +2,21 @@
 import DictionaryGroup from "./CategoryDicts";
 import DictRequest from "./DictRequest";
 import { LanguageTabSwitcher } from "./LanguageTabSwitcher";
+import { CustomDictionaryList } from "./components/CustomDictionaryList";
+import { UploadDictionaryModal } from "./components/UploadDictionaryModal";
 import { GalleryContext, initialGalleryState } from "./context";
+import AuthRequiredWrapper from "@/components/AuthRequiredWrapper";
 import Layout from "@/components/Layout";
 import { dictionaries } from "@/resources/dictionary";
 import { currentDictInfoAtom } from "@/store";
+import {
+  customDictionariesAtom,
+  adaptCustomDictionariesToDictionaries,
+} from "@/store/customDictionary";
 import type { Dictionary, LanguageCategoryType } from "@/typings";
 import groupBy, { groupByDictTags } from "@/utils/groupBy";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
-import { useAtomValue } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import { useCallback, useEffect, useMemo } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { useImmer } from "use-immer";
@@ -29,11 +36,28 @@ export default function Page({ initialLanguage }: PageProps) {
       initialLanguage || initialGalleryState.currentLanguageTab,
   });
   const currentDictInfo = useAtomValue(currentDictInfoAtom);
-
-  console.log("Page galleryState:", galleryState);
-  console.log("Page currentDictInfo:", currentDictInfo);
+  const customDicts = useAtomValue(customDictionariesAtom);
 
   const { groupedByCategoryAndTag } = useMemo(() => {
+    // 特殊处理"my-dict"标签
+    if (galleryState.currentLanguageTab === "my-dict") {
+      // 将自定义词典转换为应用内Dictionary格式
+      const adaptedDicts = adaptCustomDictionariesToDictionaries(customDicts);
+      // 按照category和tag分组
+      const groupedByCategory = Object.entries(
+        groupBy(adaptedDicts, (dict) => dict.category)
+      );
+      const groupedByCategoryAndTag = groupedByCategory.map(
+        ([category, dicts]) =>
+          [category, groupByDictTags(dicts)] as [
+            string,
+            Record<string, Dictionary[]>
+          ]
+      );
+      return { groupedByCategoryAndTag };
+    }
+
+    // 原有的语言标签逻辑
     const currentLanguageCategoryDicts = dictionaries.filter(
       (dict) => dict.languageCategory === galleryState.currentLanguageTab
     );
@@ -52,21 +76,27 @@ export default function Page({ initialLanguage }: PageProps) {
     return {
       groupedByCategoryAndTag,
     };
-  }, [galleryState.currentLanguageTab]);
+  }, [galleryState.currentLanguageTab, customDicts]);
 
   const onBack = useCallback(() => {
     navigate("/");
   }, []);
 
+  const handleOpenUploadModal = useCallback(() => {
+    setGalleryState((draft) => {
+      draft.isUploadModalOpen = true;
+    });
+  }, [setGalleryState]);
+
+  const handleCloseUploadModal = useCallback(() => {
+    setGalleryState((draft) => {
+      draft.isUploadModalOpen = false;
+    });
+  }, [setGalleryState]);
+
   useHotkeys("enter,esc", onBack, { preventDefault: true });
 
-  useEffect(() => {
-    if (currentDictInfo) {
-      setGalleryState((state) => {
-        state.currentLanguageTab = currentDictInfo.languageCategory;
-      });
-    }
-  }, [currentDictInfo, setGalleryState]);
+  // 移除自动更新currentLanguageTab的useEffect，让用户可以自由切换语言标签
 
   return (
     <Layout>
@@ -82,18 +112,31 @@ export default function Page({ initialLanguage }: PageProps) {
             <div className="flex h-full flex-col overflow-y-auto">
               <div className="flex h-20 w-full items-center justify-between pb-6">
                 <LanguageTabSwitcher />
-                <DictRequest />
+                {galleryState.currentLanguageTab !== "my-dict" && (
+                  <DictRequest />
+                )}
               </div>
               <ScrollArea.Root className="flex-1 overflow-y-auto">
                 <ScrollArea.Viewport className="h-full w-full ">
-                  <div className="mr-4 flex flex-1 flex-col items-start justify-start gap-14 overflow-y-auto">
-                    {groupedByCategoryAndTag.map(([category, groupeByTag]) => (
-                      <DictionaryGroup
-                        key={category}
-                        groupedDictsByTag={groupeByTag}
+                  {galleryState.currentLanguageTab === "my-dict" ? (
+                    <AuthRequiredWrapper feature="自定义词典" showModal={true}>
+                      <CustomDictionaryList
+                        onOpenUploadModal={handleOpenUploadModal}
                       />
-                    ))}
-                  </div>
+                    </AuthRequiredWrapper>
+                  ) : (
+                    <div className="mr-4 flex flex-1 flex-col items-start justify-start gap-14 overflow-y-auto">
+                      {groupedByCategoryAndTag.map(
+                        ([category, groupeByTag]) => (
+                          <DictionaryGroup
+                            key={category}
+                            groupedDictsByTag={groupeByTag}
+                          />
+                        )
+                      )}
+                    </div>
+                  )}
+
                   <div className="flex items-center justify-center pb-10 pt-[20rem] text-gray-500">
                     <IconInfo className="mr-1 h-5 w-5" />
                     <p className="mr-5 w-10/12 text-xs">
@@ -115,6 +158,12 @@ export default function Page({ initialLanguage }: PageProps) {
               </div> */}
             </div>
           </div>
+
+          <UploadDictionaryModal
+            isOpen={galleryState.isUploadModalOpen}
+            onClose={handleCloseUploadModal}
+            onSuccess={() => {}}
+          />
         </div>
       </GalleryContext.Provider>
     </Layout>

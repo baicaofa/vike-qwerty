@@ -9,29 +9,30 @@ import {
 } from "@/store";
 import { Dialog } from "@headlessui/react";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
-import { atom, useAtomValue } from "jotai";
+import { useAtomValue } from "jotai";
 import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import ListIcon from "~icons/tabler/list";
 import IconX from "~icons/tabler/x";
 
-const currentDictTitle = atom((get) => {
-  const isReviewMode = get(isReviewModeAtom);
-
-  if (isReviewMode) {
-    return `${get(currentDictInfoAtom).name} 错题复习`;
-  } else {
-    return `${get(currentDictInfoAtom).name} 第 ${
-      get(currentChapterAtom) + 1
-    } 章`;
-  }
-});
+// 移除atom，在组件内部处理标题
 
 export default function WordList() {
+  const { t } = useTranslation("typing");
   // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
   const { state, dispatch } = useContext(TypingContext)!;
 
   const [isOpen, setIsOpen] = useState(false);
-  const currentDictTitleValue = useAtomValue(currentDictTitle);
+  const currentDictInfo = useAtomValue(currentDictInfoAtom);
+  const currentChapter = useAtomValue(currentChapterAtom);
+  const isReviewMode = useAtomValue(isReviewModeAtom);
+
+  // 生成标题
+  const currentDictTitleValue = isReviewMode
+    ? `${currentDictInfo.name} ${t("chapter.reviewMode")}`
+    : `${currentDictInfo.name} ${t("chapter.number", {
+        number: currentChapter + 1,
+      })}`;
 
   function closeModal() {
     setIsOpen(false);
@@ -45,12 +46,13 @@ export default function WordList() {
   return (
     <>
       <Tooltip
-        content="List"
+        content={t("wordList.tooltip")}
         placement="top"
         className="!absolute left-5 top-[50%] z-20"
       >
         <button
           type="button"
+          title={t("wordList.title")}
           onClick={openModal}
           className="fixed left-0 top-[50%] z-20 rounded-lg rounded-l-none bg-indigo-50 px-2 py-3 text-lg hover:bg-indigo-200 focus:outline-none dark:bg-indigo-900 dark:hover:bg-indigo-800"
         >

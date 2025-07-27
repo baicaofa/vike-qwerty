@@ -1,4 +1,8 @@
 {
+  "loopWordSwitcher": {
+    "selectLoopTimes": "Select loop times for words",
+    "infinite": "Infinite"
+  },
   "title": "Typing Practice",
   "subtitle": "Improve your English typing speed and accuracy",
   "wordPanel": {
@@ -8,7 +12,10 @@
     "phonetic": "Phonetic",
     "sentences": "Example Sentences",
     "showTranslation": "Show Translation",
-    "hideTranslation": "Hide Translation"
+    "hideTranslation": "Hide Translation",
+    "pressAnyKey": "Press any key to {{action}}",
+    "start": "start",
+    "continue": "continue"
   },
   "progress": {
     "chapter": "Chapter",
@@ -19,6 +26,11 @@
     "speed": "Speed",
     "wpm": "WPM"
   },
+   "result": {
+    "good": "{{isAllCorrect ? 'Perfect! All correct!' : `Good job! Only ${mistakeCount} mistakes`}}",
+    "normal": "A few small issues, you can do better next time!",
+    "bad": "Too many mistakes, try again?"
+  },
   "settings": {
     "title": "Settings",
     "pronunciation": "Pronunciation Settings",
@@ -26,14 +38,43 @@
     "volume": "Volume",
     "loopWord": "Word Loop",
     "times": "Times",
-    "fontSize": "Font Size",
-    "theme": "Theme Settings"
+    "fontSize": "Font Size Settings",
+    "theme": "Theme Settings",
+    "advanced": "Advanced Settings",
+    "view": "View Settings",
+    "data": "Data Settings",
+    "rate": "Rate",
+    "keySoundEffect": "Key Sound Effect",
+    "transPronunciation": "Translation Pronunciation",
+    "hintSound": "Hint Sound",
+    "resetFontSize": "Reset Font Size",
+    "sentenceForeignFont": "Sentence Foreign Font",
+    "translateFont": "Translate Font",
+    "foreignFont": "Foreign Font"
+  },
+  "dataExport": {
+    "label": "Export Data",
+    "description1": "Currently, your practice data is ",
+    "localOnly": "only saved locally",
+    "description2": ". If you want to use Keybr on different devices, browsers, or unofficial deployments, you need to manually sync and save your data. To keep your progress and use upcoming data analysis and smart training features, we recommend backing up your data regularly.",
+    "safetyTip": "For your data safety, please do not modify the exported data file.",
+    "button": "Export Data",
+    "buttonTitle": "Export Data"
+  },
+  "dataImport": {
+    "label": "Import Data",
+    "description1": "Note: Importing data will ",
+    "coverTip": "completely overwrite",
+    "description2": " your current data. Please proceed with caution.",
+    "button": "Import Data",
+    "buttonTitle": "Import Data"
   },
   "results": {
     "title": "Practice Results",
     "congratulations": "Congratulations on completing the practice!",
     "statistics": "Statistics",
     "totalTime": "Total Time",
+
     "averageSpeed": "Average Speed",
     "totalAccuracy": "Total Accuracy",
     "errorCount": "Error Count",
@@ -60,7 +101,9 @@
     "dictation": "Dictate This Chapter",
     "repeat": "Repeat This Chapter",
     "nextChapter": "Next Chapter",
-    "practiceOther": "Practice Other Chapters"
+    "practiceOther": "Practice Other Chapters",
+    "analysis": "View Data Statistics",
+    "errorBook": "View Error Book"
   },
   "tooltips": {
     "skipWord": "Skip this word",
@@ -70,10 +113,42 @@
     "closeResult": "Close result page",
     "dictationShortcut": "Shortcut: shift + enter",
     "repeatShortcut": "Shortcut: space",
-    "nextShortcut": "Shortcut: enter"
+    "nextShortcut": "Shortcut: enter",
+    "readTranslation": "Read Translation",
+    "showHandPosition": "Show Typing Hand Position",
+    "closeDialog": "Close Dialog"
   },
   "messages": {
     "mobileNotSupported": "Keybr aims to improve English typing efficiency for keyboard workers. Currently, it is not optimized for mobile devices. Please use a desktop browser to access. If you are using an iPad or other tablet device, you can use an external keyboard with this software."
+  },
+  "handPosition": {
+    "title": "Recommended Typing Hand Position"
+  },
+  "prevAndNextWord": {
+    "shortcut": "Shortcut: {{key}}",
+    "transSeparator": ";"
+  },
+  "pronunciationSwitcher": {
+    "closed": "Off",
+    "switchTip": "Pronunciation & Phonetic Switch",
+    "phoneticSwitch": "Phonetic Display Switch",
+    "phoneticOn": "Phonetic On",
+    "phoneticOff": "Phonetic Off",
+    "wordPronSwitch": "Word Pronunciation Switch",
+    "wordPronOn": "Pronunciation On",
+    "wordPronOff": "Pronunciation Off",
+    "transPronSwitch": "Translation Pronunciation Switch",
+    "transPronOn": "Pronunciation On",
+    "transPronOff": "Pronunciation Off",
+    "loopPronSwitch": "Loop Pronunciation Switch",
+    "loopPronOn": "Loop On",
+    "loopPronOff": "Loop Off",
+    "pronType": "Word Accent",
+    "tips": "Tips: Pronunciation shortcut ({{key}} + J)",
+    "status": "Pronunciation {{status}}",
+    "loopPronStatus": "Loop Pronunciation {{status}}",
+    "enabled": "On",
+    "disabled": "Off"
   },
   "stats": {
     "time": "Time",
@@ -84,5 +159,143 @@
   "chapter": {
     "number": "Chapter {{number}}",
     "reviewMode": "Error Review"
+  },
+  "advancedSettings": {
+    "skipFamiliarWord": {
+      "label": "Skip Familiar Words",
+      "description": "When enabled, familiar words marked by you will be automatically skipped during practice",
+      "enabled": "On",
+      "disabled": "Off",
+      "status": "Skip familiar words {{status}}"
+    },
+    "randomOrder": {
+      "label": "Random Chapter Order",
+      "description": "When enabled, words in each chapter will be randomly ordered. Takes effect in the next chapter",
+      "enabled": "On",
+      "disabled": "Off",
+      "status": "Random order {{status}}"
+    },
+    "showPrevNext": {
+      "label": "Show Previous/Next Word During Practice",
+      "description": "When enabled, previous and next words will be displayed above during practice",
+      "enabled": "On",
+      "disabled": "Off",
+      "status": "Show words {{status}}"
+    },
+    "ignoreCase": {
+      "label": "Ignore Case Sensitivity",
+      "description": "When enabled, input is case-insensitive, so \"hello\" and \"Hello\" are both considered correct",
+      "enabled": "On",
+      "disabled": "Off",
+      "status": "Ignore case {{status}}"
+    },
+    "textSelectable": {
+      "label": "Allow Text Selection",
+      "description": "When enabled, text can be selected with the mouse",
+      "enabled": "On",
+      "disabled": "Off",
+      "status": "Text selection {{status}}"
+    },
+    "showHint": {
+      "label": "Show Hints in Dictation Mode",
+      "description": "When enabled, correct answers can be displayed by hovering over words with the mouse",
+      "enabled": "On",
+      "disabled": "Off",
+      "status": "Show hints {{status}}"
+    },
+    "viewFamiliarWords": "View Familiar Words"
+  },
+  "soundSwitcher": {
+    "title": "Sound Settings",
+    "keySound": {
+      "label": "Toggle Key Sound",
+      "status": "Sound {{status}}"
+    },
+    "effectSound": {
+      "label": "Toggle Effect Sound",
+      "status": "Sound {{status}}"
+    },
+    "enabled": "On",
+    "disabled": "Off"
+  },
+  "switcher": {
+    "tooltips": {
+      "soundSettings": "Sound Settings",
+      "loopWord": "Set Single Word Loop",
+      "dictationMode": "Toggle Dictation Mode ({{shortcut}})",
+      "toggleTranslation": "Toggle Translation and Examples ({{shortcut}})",
+      "errorBook": "Error Book",
+      "dataAnalysis": "View Data Statistics",
+      "darkMode": "Toggle Dark Mode",
+      "handPosition": "Hand Position Guide",
+      "settings": "Settings"
+    },
+    "ariaLabels": {
+      "dictationMode": "Toggle Dictation Mode ({{shortcut}})",
+      "toggleTranslation": "Toggle Translation and Examples ({{shortcut}})",
+      "darkMode": "Toggle Dark Mode"
+    }
+  },
+  "userAuthMenu": {
+    "feedback": "Feedback",
+    "profile": "Profile",
+    "syncData": "Sync Data",
+    "logout": "Logout",
+    "login": "Login",
+    "sync": {
+      "inProgress": "Syncing... Your data is being synchronized to the cloud, please wait.",
+      "success": "Sync successful. Your data has been successfully synchronized.",
+      "failed": "Sync failed. Sync encountered a problem: {{error}}",
+      "emailNotVerified": "Please verify your email first",
+      "unknownError": "Unknown error"
+    }
+  },
+  "wordDictationSwitcher": {
+    "title": "Toggle Dictation Mode",
+    "modeLabel": "Dictation Mode",
+    "showAfterCompletion": "Show After Completion",
+    "status": {
+      "dictation": "Dictation {{status}}",
+      "showAfter": "Show after completion {{status}}"
+    },
+    "types": {
+      "hideAll": "Hide All",
+      "hideVowel": "Hide Vowels",
+      "hideConsonant": "Hide Consonants",
+      "randomHide": "Random Hide"
+    },
+    "enabled": "On",
+    "disabled": "Off"
+  },
+  "wordList": {
+    "tooltip": "Word List",
+    "title": "Word List"
+  },
+  "markFamiliarButton": {
+    "markAsFamiliar": "Mark as Familiar",
+    "unmarkFamiliar": "Unmark Familiar",
+    "markFailed": "Failed to mark familiar word"
+  },
+  "share": {
+    "promoteList": [
+      { "word": "One Step Ahead", "sentence": "So fast, it's like you have an extra hand." },
+      { "word": "Thunder Hands", "sentence": "Thunderous technique, stunning the audience." },
+      { "word": "Lightning Speed", "sentence": "Typing as fast as lightning across the keyboard." },
+      { "word": "Swift as the Wind", "sentence": "Your hands move with astonishing speed, like the wind." },
+      { "word": "Precision Arrow", "sentence": "Typing accuracy is as precise as an arrow hitting the target." },
+      { "word": "Full Throttle", "sentence": "Typing so fast, it feels like a full-throttle sprint." },
+      { "word": "Wind Speed", "sentence": "Typing at wind speed, as fast as the breeze." },
+      { "word": "Every Move Counts", "sentence": "Both speed and accuracy are on point, no mistakes." },
+      { "word": "Smooth Sailing", "sentence": "Typing is so skilled, it's like smooth sailing." },
+      { "word": "Surprise Attack", "sentence": "Typing skills are so advanced, you surprise and win." },
+      { "word": "Wizard", "sentence": "Typing so fast, it's like magic." },
+      { "word": "Flexible Moves", "sentence": "Typing posture is flexible, like a snake." },
+      { "word": "Flying Bird", "sentence": "Typing as fast as a bird soaring over the keyboard." },
+      { "word": "Pearls of Wisdom", "sentence": "Typing skills are as fluent as pearls of wisdom." },
+      { "word": "Invincible", "sentence": "Typing speed and accuracy are so high, you're invincible." },
+      { "word": "Attack & Defense", "sentence": "Speed and accuracy are both excellent, unbeatable." },
+      { "word": "Vivid on Paper", "sentence": "Typing is flexible and vivid, lively and interesting." }
+    ],
+    "slogan": "A vocabulary and muscle memory training app designed for keyboard workers."
   }
 }

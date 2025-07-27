@@ -5,6 +5,7 @@ import type { Word } from "@/typings";
 import { useMarkFamiliarWord } from "@/utils/db";
 import { useAtomValue } from "jotai";
 import { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
 import IconStar from "~icons/ic/outline-star";
 import IconStarOutline from "~icons/ic/outline-star-border";
 
@@ -17,6 +18,7 @@ export default function MarkFamiliarButton({
   word,
   isFamiliar,
 }: MarkFamiliarButtonProps) {
+  const { t } = useTranslation("typing");
   const dictId = useAtomValue(currentDictIdAtom);
   const { markFamiliarWord } = useMarkFamiliarWord();
   const { addFamiliarWord, removeFamiliarWord } = useFamiliarWords();
@@ -33,7 +35,7 @@ export default function MarkFamiliarButton({
         removeFamiliarWord(word.name);
       }
     } catch (error) {
-      console.error("标记熟词失败:", error);
+      console.error(t("markFamiliarButton.markFailed"), error);
     } finally {
       setIsMarking(false);
     }
@@ -48,8 +50,15 @@ export default function MarkFamiliarButton({
   ]);
 
   return (
-    <Tooltip content={isFamiliar ? "取消熟词标记" : "标记为熟词"}>
+    <Tooltip
+      content={
+        isFamiliar
+          ? t("markFamiliarButton.unmarkFamiliar")
+          : t("markFamiliarButton.markAsFamiliar")
+      }
+    >
       <button
+        type="button"
         onClick={handleMarkFamiliar}
         className={`h-full w-full transform ${
           isFamiliar ? "text-yellow-400" : "text-gray-400"

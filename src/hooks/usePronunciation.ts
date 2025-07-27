@@ -16,33 +16,39 @@ export function generateWordSoundSrc(
   pronunciation: Exclude<PronunciationType, false>
 ): string {
   const params = new URLSearchParams();
-  params.append("audio", word);
 
   switch (pronunciation) {
     case "uk":
+      params.append("audio", word);
       params.append("type", "1");
       break;
     case "us":
+      params.append("audio", word);
       params.append("type", "2");
       break;
     case "romaji":
-      params.append("audio", romajiToHiragana(word));
+      params.append("audio", romajiToHiragana(word)); // 只添加转换后的平假名
       params.append("le", "jap");
       break;
     case "zh":
+      params.append("audio", word);
       params.append("le", "zh");
       break;
     case "ja":
+      params.append("audio", word);
       params.append("le", "jap");
       break;
     case "de":
+      params.append("audio", word);
       params.append("le", "de");
       break;
     case "hapin":
     case "kk":
+      params.append("audio", word);
       params.append("le", "ru"); // 有道不支持哈萨克语, 暂时用俄语发音兜底
       break;
     case "id":
+      params.append("audio", word);
       params.append("le", "id");
       break;
     default:
@@ -72,8 +78,8 @@ export default function usePronunciationSound(word: string, isLoop?: boolean) {
     loop,
     volume: pronunciationConfig.volume,
     rate: pronunciationConfig.rate,
-    onplayerror: (id, error) => {
-      setError(error);
+    onplayerror: (_id: any, error: any) => {
+      setError(error as Error);
       setIsPlaying(false);
     },
   } as HookOptions);
@@ -105,8 +111,12 @@ export default function usePronunciationSound(word: string, isLoop?: boolean) {
       })
     );
     unListens.push(
-      addHowlListener(sound, "playerror", (id, error) => {
-        setError(error);
+      addHowlListener(sound, "playerror", (_id: any, error: any) => {
+        console.error(
+          `发音播放失败(Howl) - 单词: ${word}, 类型: ${pronunciationConfig.type}, URL: ${soundUrl}`,
+          error
+        );
+        setError(error as Error);
         setIsPlaying(false);
       })
     );

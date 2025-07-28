@@ -14,37 +14,76 @@ import IconDatabaseCog from "~icons/tabler/database-cog";
 import IconEar from "~icons/tabler/ear";
 import IconX from "~icons/tabler/x";
 
-export default function Setting() {
-  const [isOpen, setIsOpen] = useState(false);
-  const { dispatch } = useContext(TypingContext) ?? {};
+interface SettingProps {
+  pageContext?: any;
+}
+
+export default function Setting({ pageContext }: SettingProps = {}) {
   const { t } = useTranslation("typing");
+  const { state, dispatch } = useContext(TypingContext);
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const [isOpenSetting, setIsOpenSetting] = useState(false);
 
-  function openModal() {
-    setIsOpen(true);
-    if (dispatch) {
-      dispatch({ type: TypingStateActionType.SET_IS_TYPING, payload: false });
+  const onCloseSetting = () => {
+    setIsOpenSetting(false);
+  };
+
+  const onToggleSetting = () => {
+    setIsOpenSetting(!isOpenSetting);
+  };
+
+  const onKeyPress = (e: KeyboardEvent) => {
+    e.preventDefault();
+    if (e.code === "Escape" || e.key === "Escape") {
+      onCloseSetting();
     }
-  }
+  };
+
+  const onRestart = () => {
+    dispatch({
+      type: TypingStateActionType.RESTART,
+    });
+    onCloseSetting();
+  };
+
+  const tabs = [
+    {
+      name: t("settings.tabs.sound"),
+      icon: IconEar,
+      content: <SoundSetting />,
+    },
+    {
+      name: t("settings.tabs.advanced"),
+      icon: IconAdjustmentsHorizontal,
+      content: <AdvancedSetting pageContext={pageContext} />,
+    },
+    {
+      name: t("settings.tabs.view"),
+      icon: IconEye,
+      content: <ViewSetting />,
+    },
+    {
+      name: t("settings.tabs.data"),
+      icon: IconDatabaseCog,
+      content: <DataSetting />,
+    },
+  ];
 
   return (
     <>
       <button
         type="button"
-        onClick={openModal}
+        onClick={onToggleSetting}
         className={`flex items-center justify-center rounded p-[2px] text-lg text-blue-500 outline-none transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white  ${
-          isOpen && " bg-blue-500 text-white"
+          isOpenSetting && " bg-blue-500 text-white"
         }`}
         title={t("tooltips.closeDialog")}
       >
         <IconCog6Tooth className="icon" />
       </button>
 
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={closeModal}>
+      <Transition appear show={isOpenSetting} as={Fragment}>
+        <Dialog as="div" className="relative z-50" onClose={onCloseSetting}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -75,7 +114,7 @@ export default function Setting() {
                     </span>
                     <button
                       type="button"
-                      onClick={() => setIsOpen(false)}
+                      onClick={onCloseSetting}
                       title={t("tooltips.closeDialog")}
                     >
                       <IconX className="absolute right-7 top-5 cursor-pointer text-gray-400" />
@@ -85,77 +124,34 @@ export default function Setting() {
                   <Tab.Group vertical>
                     <div className="flex h-120 w-full ">
                       <Tab.List className="flex h-full  flex-col items-start space-y-3  border-r border-neutral-100 bg-stone-50 px-6 py-3 dark:border-transparent dark:bg-gray-900">
-                        <Tab
-                          className={({ selected }) =>
-                            classNames(
-                              "flex h-14 w-full cursor-pointer items-center gap-2 rounded-lg px-4 py-2 ring-0 focus:outline-none",
-                              selected &&
-                                "bg-gray-200 bg-opacity-50 dark:bg-gray-800"
-                            )
-                          }
-                        >
-                          <IconEar className="mr-2 text-neutral-500  dark:text-neutral-300" />
-                          <span className="text-neutral-500 dark:text-neutral-300 ">
-                            {t("settings.keySound")}
-                          </span>
-                        </Tab>
-                        <Tab
-                          className={({ selected }) =>
-                            classNames(
-                              "flex h-14 w-full cursor-pointer items-center gap-2 rounded-lg px-4 py-2 ring-0 focus:outline-none",
-                              selected &&
-                                "bg-gray-200 bg-opacity-50 dark:bg-gray-800"
-                            )
-                          }
-                        >
-                          <IconAdjustmentsHorizontal className="mr-2 text-neutral-500  dark:text-neutral-300" />
-                          <span className="text-neutral-500 dark:text-neutral-300">
-                            {t("settings.advanced")}
-                          </span>
-                        </Tab>
-                        <Tab
-                          className={({ selected }) =>
-                            classNames(
-                              "flex h-14 w-full cursor-pointer items-center gap-2 rounded-lg px-4 py-2 ring-0 focus:outline-none",
-                              selected &&
-                                "bg-gray-200 bg-opacity-50 dark:bg-gray-800"
-                            )
-                          }
-                        >
-                          <IconEye className="mr-2 text-neutral-500  dark:text-neutral-300" />
-                          <span className="text-neutral-500 dark:text-neutral-300">
-                            {t("settings.view")}
-                          </span>
-                        </Tab>
-                        <Tab
-                          className={({ selected }) =>
-                            classNames(
-                              "flex h-14 w-full cursor-pointer items-center gap-2 rounded-lg px-4 py-2 ring-0 focus:outline-none",
-                              selected &&
-                                "bg-gray-200 bg-opacity-50 dark:bg-gray-800"
-                            )
-                          }
-                        >
-                          <IconDatabaseCog className="mr-2 text-neutral-500  dark:text-neutral-300" />
-                          <span className="text-neutral-500 dark:text-neutral-300">
-                            {t("settings.data")}
-                          </span>
-                        </Tab>
+                        {tabs.map((tab, index) => (
+                          <Tab
+                            key={index}
+                            className={({ selected }) =>
+                              classNames(
+                                "flex h-14 w-full cursor-pointer items-center gap-2 rounded-lg px-4 py-2 ring-0 focus:outline-none",
+                                selected &&
+                                  "bg-gray-200 bg-opacity-50 dark:bg-gray-800"
+                              )
+                            }
+                          >
+                            <tab.icon className="mr-2 text-neutral-500  dark:text-neutral-300" />
+                            <span className="text-neutral-500 dark:text-neutral-300">
+                              {tab.name}
+                            </span>
+                          </Tab>
+                        ))}
                       </Tab.List>
 
                       <Tab.Panels className="h-full w-full flex-1">
-                        <Tab.Panel className="flex h-full w-full  focus:outline-none">
-                          <SoundSetting />
-                        </Tab.Panel>
-                        <Tab.Panel className="flex h-full focus:outline-none">
-                          <AdvancedSetting />
-                        </Tab.Panel>
-                        <Tab.Panel className="flex h-full focus:outline-none">
-                          <ViewSetting />
-                        </Tab.Panel>
-                        <Tab.Panel className="flex h-full focus:outline-none">
-                          <DataSetting />
-                        </Tab.Panel>
+                        {tabs.map((tab, index) => (
+                          <Tab.Panel
+                            key={index}
+                            className="flex h-full w-full  focus:outline-none"
+                          >
+                            {tab.content}
+                          </Tab.Panel>
+                        ))}
                       </Tab.Panels>
                     </div>
                   </Tab.Group>

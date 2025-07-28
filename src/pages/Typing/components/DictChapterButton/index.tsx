@@ -1,23 +1,38 @@
+import { getLocalizedHref } from "@/components/Link";
 import Tooltip from "@/components/Tooltip";
 import {
   currentChapterAtom,
   currentDictInfoAtom,
   isReviewModeAtom,
 } from "@/store";
+import type { SupportedLanguage } from "@/store/languageAtom";
 import range from "@/utils/range";
 import { Listbox, Transition } from "@headlessui/react";
 import { useAtom, useAtomValue } from "jotai";
 import { Fragment } from "react";
 import { useTranslation } from "react-i18next";
+import { usePageContext } from "vike-react/usePageContext";
 import { navigate } from "vike/client/router";
 import IconCheck from "~icons/tabler/check";
 
-export const DictChapterButton = () => {
+interface DictChapterButtonProps {
+  pageContext?: any;
+}
+
+export const DictChapterButton = ({
+  pageContext: pageContextProp,
+}: DictChapterButtonProps = {}) => {
   const currentDictInfo = useAtomValue(currentDictInfoAtom);
   const [currentChapter, setCurrentChapter] = useAtom(currentChapterAtom);
   const chapterCount = currentDictInfo.chapterCount;
   const isReviewMode = useAtomValue(isReviewModeAtom);
   const { t } = useTranslation("typing");
+
+  // 获取页面上下文，用于国际化
+  const pageContextFromHook = usePageContext();
+  const pageContext = pageContextFromHook || pageContextProp;
+  const currentLocale: SupportedLanguage =
+    pageContext?.locale === "en" ? "en" : "zh";
 
   const handleKeyDown: React.KeyboardEventHandler<HTMLButtonElement> = (
     event
@@ -28,7 +43,9 @@ export const DictChapterButton = () => {
   };
 
   const toGallery = () => {
-    navigate("/gallery");
+    // 使用本地化的路径进行导航
+    const localizedHref = getLocalizedHref("/gallery", currentLocale);
+    navigate(localizedHref);
   };
 
   return (

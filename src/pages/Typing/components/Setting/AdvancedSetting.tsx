@@ -14,7 +14,13 @@ import { useAtom } from "jotai";
 import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function AdvancedSetting() {
+interface AdvancedSettingProps {
+  pageContext?: any;
+}
+
+export default function AdvancedSetting({
+  pageContext,
+}: AdvancedSettingProps = {}) {
   const { t } = useTranslation("typing");
   const [randomConfig, setRandomConfig] = useAtom(randomConfigAtom);
   const [isShowPrevAndNextWord, setIsShowPrevAndNextWord] = useAtom(
@@ -105,6 +111,7 @@ export default function AdvancedSetting() {
               href="/familiar"
               target="_blank"
               title={t("advancedSettings.viewFamiliarWords")}
+              pageContext={pageContext}
             >
               {t("advancedSettings.viewFamiliarWords")}
             </Link>

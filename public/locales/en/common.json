@@ -75,5 +75,25 @@
     "created": "Created Time"
   },
   "customArticle": "Custom Article Practice",
-  "article": "Article"
+  "article": "Article",
+  "typing":"Typing Practice",
+  "feedback":"feedback",
+  "notification": {
+    "dynamicUpdates": "Dynamic Updates",
+    "viewUpdates": "View Update Notifications",
+    "productUpdates": "Product Updates",
+    "closeDialog": "Close Dialog",
+    "noContent": "No notifications",
+    "previousImage": "Previous",
+    "nextImage": "Next",
+    "settings": "Notification Settings",
+    "settingsTitle": "Notification Settings",
+    "newFeatures": "New Features",
+    "maintenance": "System Maintenance",
+    "announcements": "Announcements",
+    "resetSettings": "Reset Settings",
+    "lastViewedTime": "Last viewed:",
+    "neverViewed": "Never viewed",
+    "dismissedCount": "Dismissed notifications: {{count}}"
+  }
 }

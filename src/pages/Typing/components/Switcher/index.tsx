@@ -18,7 +18,11 @@ import IconSun from "~icons/heroicons/sun-solid";
 import IconLanguage from "~icons/tabler/language";
 import IconLanguageOff from "~icons/tabler/language-off";
 
-export default function Switcher() {
+interface SwitcherProps {
+  pageContext?: any;
+}
+
+export default function Switcher({ pageContext }: SwitcherProps = {}) {
   const { t } = useTranslation("typing");
   const [isOpenDarkMode, setIsOpenDarkMode] = useAtom(isOpenDarkModeAtom);
   const { state, dispatch } = useContext(TypingContext) ?? {};
@@ -118,7 +122,7 @@ export default function Switcher() {
         <HandPositionIllustration></HandPositionIllustration>
       </Tooltip>
       <Tooltip content={t("switcher.tooltips.settings")}>
-        <Setting />
+        <Setting pageContext={pageContext} />
       </Tooltip>
     </div>
   );

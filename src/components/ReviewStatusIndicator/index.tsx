@@ -1,11 +1,20 @@
 import { useTodayReviews } from "../../hooks/useSpacedRepetition";
+import { Link } from "@/components/Link";
 import type React from "react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { usePageContext } from "vike-react/usePageContext";
 
-export const ReviewStatusIndicator: React.FC = () => {
+interface ReviewStatusIndicatorProps {
+  pageContext?: any;
+}
+
+export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
+  pageContext,
+}) => {
   const { reviews, completedCount, totalCount, progress } = useTodayReviews();
   const [isExpanded, setIsExpanded] = useState(false);
-
+  const { t } = useTranslation();
   // 计算需要复习的单词数量
   const dueCount = reviews.filter((word) => {
     // 简化的复习判断：只基于时间
@@ -117,34 +126,38 @@ export const ReviewStatusIndicator: React.FC = () => {
             {/* 快速操作 */}
             <div className="space-y-2">
               {dueCount > 0 ? (
-                <a
+                <Link
                   href="/review/today"
+                  pageContext={pageContext}
                   className="block w-full bg-green-600 text-white text-center py-2 rounded-lg hover:bg-green-700 transition-colors text-sm"
                 >
                   开始复习 ({dueCount}个单词)
-                </a>
+                </Link>
               ) : (
-                <a
+                <Link
                   href="/review/"
+                  pageContext={pageContext}
                   className="block w-full bg-gray-600 text-white text-center py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm"
                 >
                   查看仪表板
-                </a>
+                </Link>
               )}
 
               <div className="flex space-x-2">
-                <a
+                <Link
                   href="/review/"
+                  pageContext={pageContext}
                   className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-center py-1 rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                 >
                   统计
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/review/history"
+                  pageContext={pageContext}
                   className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-center py-1 rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                 >
                   复习历史
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -10,6 +10,7 @@ import {
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { Bell, X } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function ProductNewsItem({
   title,
@@ -18,6 +19,7 @@ function ProductNewsItem({
   images = [],
   btn,
 }: Omit<NotificationItem, "date" | "id" | "type" | "priority">) {
+  const { t } = useTranslation("common");
   const [current, setCurrent] = useState(0);
   const hasMultiple = images && images.length > 1;
 
@@ -50,7 +52,7 @@ function ProductNewsItem({
               type="button"
               className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-blue-500 hover:bg-blue-600 rounded-full p-1 shadow"
               onClick={prev}
-              aria-label="上一张"
+              aria-label={t("notification.previousImage")}
             >
               &lt;
             </button>
@@ -66,7 +68,7 @@ function ProductNewsItem({
               type="button"
               className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-blue-500 hover:bg-blue-600 rounded-full p-1 shadow"
               onClick={next}
-              aria-label="下一张"
+              aria-label={t("notification.nextImage")}
             >
               &gt;
             </button>
@@ -78,6 +80,7 @@ function ProductNewsItem({
 }
 
 export default function UpdateNotification() {
+  const { t } = useTranslation("common");
   const [isOpen, setIsOpen] = useAtom(isUpdateNotificationOpenAtom);
   const hasNewUpdates = useAtomValue(hasNewUpdatesAtom);
   const markAsViewed = useSetAtom(markUpdatesAsViewedAtom);
@@ -96,13 +99,13 @@ export default function UpdateNotification() {
 
   return (
     <>
-      <Tooltip content="动态更新">
+      <Tooltip content={t("notification.dynamicUpdates")}>
         <div className="">
           <button
             type="button"
             onClick={handleOpen}
             className="relative  hover:bg-blue-500 hover:text-white text-black p-3 rounded-full  transition-all duration-200 hover:scale-105"
-            aria-label="查看更新通知"
+            aria-label={t("notification.viewUpdates")}
           >
             <Bell size={18} />
             {/* 小红点 */}
@@ -133,7 +136,7 @@ export default function UpdateNotification() {
           >
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                产品更新
+                {t("notification.productUpdates")}
               </h3>
               <div className="flex items-center gap-2">
                 <NotificationSettings />
@@ -141,7 +144,7 @@ export default function UpdateNotification() {
                   type="button"
                   className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
                   onClick={handleClose}
-                  aria-label="关闭弹窗"
+                  aria-label={t("notification.closeDialog")}
                 >
                   <X size={24} />
                 </button>
@@ -157,7 +160,7 @@ export default function UpdateNotification() {
             >
               {notifications.length === 0 ? (
                 <div className="text-center py-8 text-gray-500 dark:text-gray-400">
-                  暂无通知内容
+                  {t("notification.noContent")}
                 </div>
               ) : (
                 notifications.map((item, idx) => (

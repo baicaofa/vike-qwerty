@@ -75,5 +75,25 @@
     "created": "创建时间"
   },
   "customArticle": "自定义文章练习",
-  "article": "文章"
+  "article": "文章",
+  "typing":"打字练习",
+  "feedback":"反馈",
+  "notification": {
+    "dynamicUpdates": "动态更新",
+    "viewUpdates": "查看更新通知",
+    "productUpdates": "产品更新",
+    "closeDialog": "关闭弹窗",
+    "noContent": "暂无通知内容",
+    "previousImage": "上一张",
+    "nextImage": "下一张",
+    "settings": "通知设置",
+    "settingsTitle": "通知设置",
+    "newFeatures": "新功能发布",
+    "maintenance": "系统维护",
+    "announcements": "公告通知",
+    "resetSettings": "重置设置",
+    "lastViewedTime": "最后查看时间:",
+    "neverViewed": "从未查看",
+    "dismissedCount": "已忽略通知: {{count}} 条"
+  }
 }

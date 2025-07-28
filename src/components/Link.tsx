@@ -7,6 +7,7 @@ interface LinkProps {
   locale?: SupportedLanguage;
   children: React.ReactNode;
   className?: string;
+  pageContext?: any; // 备用的 pageContext
   [key: string]: any;
 }
 
@@ -14,11 +15,23 @@ interface LinkProps {
  * 多语言支持的链接组件
  * 自动根据当前语言或指定语言添加语言前缀
  */
-export function Link({ href, locale, children, ...props }: LinkProps) {
-  const pageContext = usePageContext();
+export function Link({
+  href,
+  locale,
+  children,
+  pageContext: fallbackPageContext,
+  ...props
+}: LinkProps) {
+  // 总是调用 usePageContext hook，但安全地处理可能返回 undefined 的情况
+  const pageContextFromHook = usePageContext();
+
+  // 使用 hook 的结果，如果不可用则使用 fallback
+  const pageContext = pageContextFromHook || fallbackPageContext;
+
   console.log("pageContext:", pageContext); // 调试输出
+
   // 安全地获取 locale，防止 pageContext 为 undefined 或 locale 属性不存在
-  const currentLocale = locale ?? (pageContext as any)?.locale ?? "zh";
+  const currentLocale = locale ?? pageContext?.locale ?? "zh";
 
   // 构建最终的链接地址
   let finalHref = href;

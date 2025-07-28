@@ -56,12 +56,70 @@ interface SystemHealth {
 
 class PerformanceMonitor {
   private metrics: PerformanceMetric[] = [];
-  private maxMetrics = 1000; // 最多保存1000个指标
+  private maxMetrics = 500; // 减少到500个指标以降低内存使用
   private isEnabled = true;
   private observers: PerformanceObserver[] = [];
+  private memoryInterval: NodeJS.Timeout | null = null;
+  private lastCleanup = Date.now();
 
   constructor() {
     this.initializeObservers();
+
+    // 绑定内存压力事件（如果浏览器支持）
+    if (typeof window !== "undefined" && "memory" in window.performance) {
+      this.bindMemoryPressureEvents();
+    }
+  }
+
+  /**
+   * 绑定内存压力事件
+   */
+  private bindMemoryPressureEvents() {
+    // 监听内存压力，自动清理数据
+    if ("addEventListener" in window && "memory" in window.performance) {
+      // 定期检查内存使用情况
+      setInterval(() => {
+        const perf = window.performance as any;
+        if (perf.memory) {
+          const usage =
+            perf.memory.usedJSHeapSize / perf.memory.totalJSHeapSize;
+
+          // 如果内存使用超过80%，立即清理
+          if (usage > 0.8) {
+            console.warn("内存使用过高，执行紧急清理");
+            this.emergencyCleanup();
+          }
+        }
+      }, 60000); // 每分钟检查一次
+    }
+  }
+
+  /**
+   * 紧急清理内存
+   */
+  private emergencyCleanup() {
+    // 清理所有过期数据
+    this.cleanup(5 * 60 * 1000); // 只保留5分钟内的数据
+
+    // 强制限制指标数量
+    if (this.metrics.length > 100) {
+      this.metrics = this.metrics.slice(-100);
+    }
+
+    // 清理localStorage中的关键指标
+    try {
+      const criticalMetrics = JSON.parse(
+        localStorage.getItem("critical_metrics") || "[]"
+      );
+      if (criticalMetrics.length > 10) {
+        const recent = criticalMetrics.slice(-10);
+        localStorage.setItem("critical_metrics", JSON.stringify(recent));
+      }
+    } catch (error) {
+      localStorage.removeItem("critical_metrics");
+    }
+
+    console.log("紧急清理完成，当前指标数量:", this.metrics.length);
   }
 
   /**
@@ -136,9 +194,18 @@ class PerformanceMonitor {
 
     this.metrics.push(metric);
 
-    // 保持指标数量在限制内
+    // 优化数组管理 - 使用更高效的方式清理旧数据
     if (this.metrics.length > this.maxMetrics) {
-      this.metrics.splice(0, this.metrics.length - this.maxMetrics);
+      // 保留后一半的数据，避免频繁的splice操作
+      const keepCount = Math.floor(this.maxMetrics / 2);
+      this.metrics = this.metrics.slice(-keepCount);
+    }
+
+    // 定期清理过期数据（每5分钟检查一次）
+    const now = Date.now();
+    if (now - this.lastCleanup > 5 * 60 * 1000) {
+      this.cleanup(10 * 60 * 1000); // 清理10分钟前的数据
+      this.lastCleanup = now;
     }
 
     // 如果是关键性能问题，立即报告
@@ -157,7 +224,7 @@ class PerformanceMonitor {
       case "database-query":
         return metric.value > 1000; // 超过1秒的数据库查询
       case "memory-usage":
-        return metric.value > 0.9; // 内存使用超过90%
+        return metric.value > 0.85; // 降低到85%以更早警告
       default:
         return false;
     }
@@ -169,19 +236,30 @@ class PerformanceMonitor {
   private reportCriticalMetric(metric: PerformanceMetric) {
     console.warn("Critical performance metric detected:", metric);
 
-    // 这里可以发送到监控服务
-    // 暂时存储到localStorage
-    const criticalMetrics = JSON.parse(
-      localStorage.getItem("critical_metrics") || "[]"
-    );
-    criticalMetrics.push(metric);
+    // 优化localStorage使用，避免内存泄漏
+    try {
+      const criticalMetrics = JSON.parse(
+        localStorage.getItem("critical_metrics") || "[]"
+      );
 
-    // 只保留最近的50个关键指标
-    if (criticalMetrics.length > 50) {
-      criticalMetrics.splice(0, criticalMetrics.length - 50);
+      // 只保留最近的20个关键指标（进一步减少）
+      if (criticalMetrics.length >= 20) {
+        criticalMetrics.splice(0, criticalMetrics.length - 19);
+      }
+
+      // 添加时间戳过滤，只保留24小时内的数据
+      const oneDayAgo = Date.now() - 24 * 60 * 60 * 1000;
+      const recentMetrics = criticalMetrics.filter(
+        (m: PerformanceMetric) => m.timestamp > oneDayAgo
+      );
+
+      recentMetrics.push(metric);
+      localStorage.setItem("critical_metrics", JSON.stringify(recentMetrics));
+    } catch (error) {
+      // 如果localStorage出错，清空数据避免持续错误
+      console.warn("Failed to save critical metrics:", error);
+      localStorage.removeItem("critical_metrics");
     }
-
-    localStorage.setItem("critical_metrics", JSON.stringify(criticalMetrics));
   }
 
   /**
@@ -396,10 +474,19 @@ class PerformanceMonitor {
   /**
    * 清理旧指标
    */
-  cleanup(olderThan = 24 * 60 * 60 * 1000) {
-    // 默认24小时
+  cleanup(olderThan = 20 * 60 * 1000) {
+    // 默认20分钟，更频繁地清理以节省内存
     const cutoff = Date.now() - olderThan;
+    const beforeLength = this.metrics.length;
     this.metrics = this.metrics.filter((m) => m.timestamp > cutoff);
+
+    // 如果清理了很多数据，记录日志
+    const cleaned = beforeLength - this.metrics.length;
+    if (cleaned > 0) {
+      console.log(
+        `PerformanceMonitor: 清理了 ${cleaned} 个过期指标，当前保留 ${this.metrics.length} 个`
+      );
+    }
   }
 
   /**
@@ -605,12 +692,35 @@ class PerformanceMonitor {
   }
 
   /**
+   * 启动内存监控
+   */
+  startMemoryMonitoring() {
+    if (typeof window === "undefined" || this.memoryInterval) return;
+
+    // 减少监控频率到2分钟一次，降低性能开销
+    this.memoryInterval = setInterval(() => {
+      this.recordMemoryUsage();
+    }, 2 * 60 * 1000);
+  }
+
+  /**
+   * 停止内存监控
+   */
+  stopMemoryMonitoring() {
+    if (this.memoryInterval) {
+      clearInterval(this.memoryInterval);
+      this.memoryInterval = null;
+    }
+  }
+
+  /**
    * 销毁监控器
    */
   destroy() {
     this.observers.forEach((observer) => observer.disconnect());
     this.observers = [];
     this.metrics = [];
+    this.stopMemoryMonitoring();
   }
 }
 
@@ -683,11 +793,17 @@ export function withExcelParsingMonitoring<T extends any[], R>(
  */
 export type { ExcelParsingMetrics };
 
-// 定期记录内存使用情况
+// 启动内存监控（延迟启动以避免初始化时的性能影响）
 if (typeof window !== "undefined") {
-  setInterval(() => {
-    performanceMonitor.recordMemoryUsage();
-  }, 30000); // 每30秒记录一次
+  // 延迟5秒启动，给页面初始化足够时间
+  setTimeout(() => {
+    performanceMonitor.startMemoryMonitoring();
+  }, 5000);
+
+  // 页面卸载时清理资源
+  window.addEventListener("beforeunload", () => {
+    performanceMonitor.destroy();
+  });
 }
 
 export default performanceMonitor;

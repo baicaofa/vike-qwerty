@@ -2,6 +2,7 @@ import { FeedbackForm } from "../FeedbackForm";
 import * as Dialog from "@radix-ui/react-dialog";
 import type React from "react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import IconMessageCircle from "~icons/tabler/message-circle";
 
 interface FeedbackDialogProps {
@@ -12,11 +13,10 @@ interface FeedbackDialogProps {
 
 export const FeedbackDialog: React.FC<FeedbackDialogProps> = ({
   buttonClassName = "",
-  buttonText = "反馈",
   showIcon = true,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { t } = useTranslation("common");
   return (
     <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
       <Dialog.Trigger asChild>
@@ -24,7 +24,7 @@ export const FeedbackDialog: React.FC<FeedbackDialogProps> = ({
           className={`flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:hover:bg-gray-700 ${buttonClassName}`}
         >
           {showIcon && <IconMessageCircle className="mr-1.5 h-4 w-4" />}
-          {buttonText}
+          {t("feedback")}
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>

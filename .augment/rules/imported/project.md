@@ -28,29 +28,6 @@ onRenderClient: 用于执行 必须在 页面渲染前完成的核心逻辑。�
 onHydrationEnd: 用于执行 仅需在首次 加载时运行一次的 非核心 逻辑。它在页面可交互后异步执行，不阻塞渲染。
 useEffect (在持久化布局中) 或 onPageTransitionStart: 用于处理 每次页面切换 都需要执行的逻辑，例如上报页面浏览事件、更新页面标题、重置某些状态等。
 
-在编写 onHydrationEnd.ts 文件时，必须从 vike/types 导入 OnHydrationEndAsync 类型，并为函数添加明确的返回类型 ReturnType<OnHydrationEndAsync>。
-
-严禁在组件渲染逻辑中直接使用非确定性 API；对于需要在服务端和客户端保持一致的动态数据，必须在 Vike 的 onBeforeRender 钩子中生成，并通过 pageContext 传递给页面。
-// /pages/some-page/+onBeforeRender.ts (在服务端执行)
-export async function onBeforeRender() {
-const initialTime = new Date().toLocaleTimeString();
-return {
-pageContext: {
-pageProps: {
-initialTime
-}
-}
-}
-}
-// /pages/some-page/+Page.tsx (在组件中使用)
-import { usePageContext } from "vike-react/usePageContext";
-
-function StableComponent() {
-const pageContext = usePageContext();
-const { initialTime } = pageContext.pageProps;
-// initialTime 的值在服务端和客户端首次渲染时是完全相同的
-return <p>页面加载时间: {initialTime}</p>;
-}
 
 对于那些依赖浏览器 API（如 window、localStorage）而无法在服务端渲染的组件，必须采用特定策略避免在水合阶段产生不匹配。使用 useEffect 配合状态来延迟组件的渲染，确保它只在客户端“水合”完成之后才被挂载。
 
@@ -115,3 +92,5 @@ shrimp-task-manager：智能任务管理器
 sequential-thinking:推理问题
 
 优先使用 MCP 服务。
+
+遵循这些原则：KISS，YAGNI，SOLID Principles，DRY，

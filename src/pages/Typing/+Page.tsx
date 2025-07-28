@@ -258,8 +258,8 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
       <Layout>
         <Header>
           <TypingPracticeButton />
-          <DictChapterButton />
-          <CustomArticleButton />
+          <DictChapterButton pageContext={pageContext} />
+          <CustomArticleButton pageContext={pageContext} />
           <StartButton isLoading={isLoading} />
 
           <Tooltip content={t("tooltips.skipWord")}>
@@ -275,7 +275,7 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
               {t("buttons.skip")}
             </button>
           </Tooltip>
-          <ReviewStatusIndicator />
+          <ReviewStatusIndicator pageContext={pageContext} />
 
           {/* 网站语言切换组件 - 只在 Typing 页面显示 */}
           <div className="ml-auto">
@@ -304,7 +304,7 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
               )}
             </div>
             <Speed />
-            <BottomControlPanel />
+            <BottomControlPanel pageContext={pageContext} />
           </div>
         </div>
       </Layout>

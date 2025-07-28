@@ -2,11 +2,17 @@ import PronunciationSwitcher from "@/pages/Typing/components/PronunciationSwitch
 import Switcher from "@/pages/Typing/components/Switcher";
 import type React from "react";
 
-const BottomControlPanel: React.FC = () => {
+interface BottomControlPanelProps {
+  pageContext?: any;
+}
+
+const BottomControlPanel: React.FC<BottomControlPanelProps> = ({
+  pageContext,
+}) => {
   return (
     <div className="my-card flex w-auto content-center items-center justify-center space-x-3 rounded-xl bg-white p-4 transition-colors duration-300 dark:bg-gray-800 mt-4">
       <PronunciationSwitcher />
-      <Switcher />
+      <Switcher pageContext={pageContext} />
     </div>
   );
 };

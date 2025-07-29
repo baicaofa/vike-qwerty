@@ -66,14 +66,11 @@ function Page({ pageContext }: Props) {
 
     async function fetchDictionary() {
       try {
-        console.log(`客户端获取词典数据，ID: ${dictionaryId}`);
         const result = await getDictionary(dictionaryId);
 
         if (result.success && result.dictionary) {
-          console.log("获取词典成功:", result.dictionary);
           setDictionary(result.dictionary);
         } else {
-          console.error("获取词典失败:", result.error);
           setError(result.error || "获取词典数据失败");
         }
       } catch (err) {

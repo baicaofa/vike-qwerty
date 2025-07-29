@@ -1,6 +1,7 @@
 import type { View } from "../type";
 import useAuthStore from "@/store/auth";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const ResetPasswordForm = ({
   token,
@@ -17,19 +18,20 @@ export const ResetPasswordForm = ({
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
   const { resetPassword } = useAuthStore();
+  const { t } = useTranslation("login");
 
   const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!password || !confirmPassword) {
-      setError("请输入新密码和确认密码");
+      setError(t("errorInputNewPassword"));
       return;
     }
     if (password !== confirmPassword) {
-      setError("两次输入的密码不一致");
+      setError(t("errorPasswordNotMatch"));
       return;
     }
     if (password.length < 6) {
-      setError("密码长度至少为6位");
+      setError(t("errorPasswordLength"));
       return;
     }
 
@@ -37,7 +39,7 @@ export const ResetPasswordForm = ({
       setLoading(true);
       setError("");
       await resetPassword(token, email, password);
-      setSuccess("密码重置成功，即将跳转到登录页面...");
+      setSuccess(t("successReset"));
       setTimeout(() => {
         setView("login");
         // 清理URL参数
@@ -48,7 +50,7 @@ export const ResetPasswordForm = ({
         );
       }, 3000);
     } catch (error: any) {
-      setError(error.response?.data?.message || "密码重置失败，请重新申请");
+      setError(error.response?.data?.message || t("errorReset"));
     } finally {
       setLoading(false);
     }
@@ -58,10 +60,10 @@ export const ResetPasswordForm = ({
     <>
       <div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          重置密码
+          {t("resetPassword")}
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          请输入您的新密码
+          {t("resetPasswordTip")}
         </p>
       </div>
 
@@ -115,7 +117,7 @@ export const ResetPasswordForm = ({
         <div className="rounded-md shadow-sm -space-y-px">
           <div>
             <label htmlFor="password-reset" className="sr-only">
-              新密码
+              {t("newPassword")}
             </label>
             <input
               id="password-reset"
@@ -123,14 +125,14 @@ export const ResetPasswordForm = ({
               type="password"
               required
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="新密码"
+              placeholder={t("newPasswordPlaceholder")}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div>
             <label htmlFor="confirm-password-reset" className="sr-only">
-              确认密码
+              {t("confirmPassword")}
             </label>
             <input
               id="confirm-password-reset"
@@ -138,7 +140,7 @@ export const ResetPasswordForm = ({
               type="password"
               required
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="确认密码"
+              placeholder={t("confirmPasswordPlaceholder")}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
@@ -151,7 +153,7 @@ export const ResetPasswordForm = ({
             disabled={loading}
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-300"
           >
-            {loading ? "处理中..." : "重置密码"}
+            {loading ? t("processing") : t("resetPassword")}
           </button>
         </div>
       </form>

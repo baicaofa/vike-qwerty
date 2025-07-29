@@ -3,7 +3,14 @@ import { UserAuthMenu } from "@/pages/Typing/components/UserAuthMenu";
 import type { PropsWithChildren } from "react";
 import type React from "react";
 
-const Header: React.FC<PropsWithChildren> = ({ children }) => {
+interface HeaderProps {
+  pageContext?: any;
+}
+
+const Header: React.FC<PropsWithChildren<HeaderProps>> = ({
+  children,
+  pageContext,
+}) => {
   return (
     <header className="container z-20 mx-auto w-full px-10 py-6">
       <div className="flex w-full flex-col items-center justify-between space-y-3 lg:flex-row lg:space-y-0">
@@ -21,7 +28,7 @@ const Header: React.FC<PropsWithChildren> = ({ children }) => {
         </nav>
 
         <div className="flex items-center space-x-3">
-          <UserAuthMenu />
+          <UserAuthMenu pageContext={pageContext} />
         </div>
       </div>
     </header>

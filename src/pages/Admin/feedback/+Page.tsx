@@ -114,15 +114,10 @@ export default function FeedbackAdminPage() {
       return;
     }
 
-    console.log("认证状态:", isAuthenticated);
-    console.log("用户数据:", userData);
-    console.log("是否管理员:", userData?.isAdmin);
-
     const checkAdminAccess = async () => {
       // 先在控制台显示本地存储的用户信息
       const storedUser = localStorage.getItem("user");
       const storedUserData = storedUser ? JSON.parse(storedUser) : null;
-      console.log("localStorage中的用户信息:", storedUserData);
 
       // 如果认证状态为true但userData为null，使用本地存储的用户数据
       let effectiveUserData = userData || storedUserData;
@@ -130,11 +125,10 @@ export default function FeedbackAdminPage() {
       if (isAuthenticated) {
         if (!userData) {
           // 如果已认证但userData为null，尝试调用checkAuth获取用户数据
-          console.log("正在尝试获取用户数据...");
+
           try {
             await checkAuth();
             effectiveUserData = auth.userData || storedUserData;
-            console.log("重新获取用户数据后:", effectiveUserData);
           } catch (error) {
             console.error("获取用户数据失败:", error);
           }

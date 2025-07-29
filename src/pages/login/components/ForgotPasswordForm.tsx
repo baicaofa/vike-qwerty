@@ -1,6 +1,7 @@
 import type { View } from "../type";
 import useAuthStore from "@/store/auth";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const ForgotPasswordForm = ({
   setView,
@@ -12,12 +13,13 @@ export const ForgotPasswordForm = ({
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
   const { forgotPassword } = useAuthStore();
+  const { t } = useTranslation("login");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!email) {
-      setError("请输入邮箱地址");
+      setError(t("errorInputEmail"));
       return;
     }
 
@@ -25,9 +27,9 @@ export const ForgotPasswordForm = ({
       setLoading(true);
       setError("");
       await forgotPassword(email);
-      setSuccess("密码重置链接已发送到您的邮箱，请查收");
+      setSuccess(t("successSendReset"));
     } catch (error: any) {
-      setError(error.response?.data?.message || "发送密码重置链接失败");
+      setError(error.response?.data?.message || t("errorSendReset"));
     } finally {
       setLoading(false);
     }
@@ -37,10 +39,10 @@ export const ForgotPasswordForm = ({
     <>
       <div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          忘记密码
+          {t("forgotPassword")}
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          请输入您的邮箱地址，我们将向您发送密码重置链接
+          {t("email")} {t("emailPlaceholder")}
         </p>
       </div>
 
@@ -97,7 +99,7 @@ export const ForgotPasswordForm = ({
       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email-forgot" className="sr-only">
-            邮箱地址
+            {t("email")}
           </label>
           <input
             id="email-forgot"
@@ -106,7 +108,7 @@ export const ForgotPasswordForm = ({
             autoComplete="email"
             required
             className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-            placeholder="邮箱地址"
+            placeholder={t("emailPlaceholder")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -118,7 +120,7 @@ export const ForgotPasswordForm = ({
             disabled={loading}
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-300"
           >
-            {loading ? "处理中..." : "发送重置链接"}
+            {loading ? t("processing") : t("sendResetLink")}
           </button>
         </div>
 
@@ -128,7 +130,7 @@ export const ForgotPasswordForm = ({
             onClick={() => setView("login")}
             className="text-sm text-indigo-600 hover:text-indigo-500"
           >
-            返回登录
+            {t("backToLogin")}
           </button>
         </div>
       </form>

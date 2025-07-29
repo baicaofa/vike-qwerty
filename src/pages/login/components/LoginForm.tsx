@@ -2,6 +2,7 @@ import type { View } from "../type";
 import useAuthStore from "@/store/auth";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
   const [email, setEmail] = useState("");
@@ -11,6 +12,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const { login } = useAuthStore();
+  const { t } = useTranslation("login");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
       await login(email, password);
       window.location.href = "/";
     } catch (error: any) {
-      setError(error.response?.data?.message || "登录失败");
+      setError(error.response?.data?.message || t("errorLogin"));
     } finally {
       setLoading(false);
     }
@@ -31,10 +33,10 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
     <>
       <div>
         <h2 className="mt-2 text-center text-3xl font-extrabold text-gray-900">
-          欢迎回来
+          {t("welcomeBack")}
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          登录您的账户以继续使用
+          {t("loginToContinue")}
         </p>
       </div>
 
@@ -70,7 +72,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
               htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
-              邮箱地址
+              {t("email")}
             </label>
             <div className="mt-1">
               <input
@@ -80,7 +82,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
                 autoComplete="email"
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                placeholder="请输入您的邮箱"
+                placeholder={t("emailPlaceholder")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -92,7 +94,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
               htmlFor="password"
               className="block text-sm font-medium text-gray-700"
             >
-              密码
+              {t("password")}
             </label>
             <div className="mt-1 relative">
               <input
@@ -102,7 +104,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
                 autoComplete="current-password"
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm pr-10"
-                placeholder="请输入您的密码"
+                placeholder={t("passwordPlaceholder")}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -141,7 +143,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
               htmlFor="remember-me"
               className="ml-2 block text-sm text-gray-900"
             >
-              记住我
+              {t("rememberMe")}
             </label>
           </div>
 
@@ -151,7 +153,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
               onClick={() => setView("forgotPassword")}
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
-              忘记密码？
+              {t("forgotPassword")}
             </button>
           </div>
         </div>
@@ -184,7 +186,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
                 ></path>
               </svg>
             ) : null}
-            {loading ? "登录中..." : "登录"}
+            {loading ? t("loggingIn") : t("login")}
           </button>
         </div>
 
@@ -194,7 +196,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
             onClick={() => setView("register")}
             className="text-sm text-indigo-600 hover:text-indigo-500"
           >
-            没有账户？立即注册
+            {t("noAccount")}
           </button>
         </div>
       </form>

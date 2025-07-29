@@ -1,25 +1,40 @@
+import { Link } from "@/components/Link";
+import { getLocalizedHref } from "@/components/Link";
 import { SyncStatusIndicator } from "@/components/SyncStatusIndicator";
 import Tooltip from "@/components/Tooltip";
 import UpdateNotification from "@/components/UpdateNotification";
 import { useSync } from "@/hooks/useSync";
 import { useToast } from "@/hooks/useToast";
 import useAuthStore from "@/store/auth";
+import type { SupportedLanguage } from "@/store/languageAtom";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { usePageContext } from "vike-react/usePageContext";
 import { navigate } from "vike/client/router";
 import IconCloudUpload from "~icons/tabler/cloud-upload";
 import IconLogin from "~icons/tabler/login";
 import IconLogout from "~icons/tabler/logout";
 import IconMessageCircle from "~icons/tabler/message-circle";
-import IconUser from "~icons/tabler/user";
 import IconUserCircle from "~icons/tabler/user-circle";
 
-export const UserAuthMenu = () => {
+interface UserAuthMenuProps {
+  pageContext?: any;
+}
+
+export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
+  pageContext: pageContextProp,
+}: UserAuthMenuProps = {}) => {
   const { t } = useTranslation("typing");
   const { user, isAuthenticated, logout } = useAuthStore();
   const { triggerSync } = useSync();
   const { success, error } = useToast();
+
+  // 获取页面上下文，用于国际化
+  const pageContextFromHook = usePageContext();
+  const pageContext = pageContextFromHook || pageContextProp;
+  const currentLocale: SupportedLanguage =
+    pageContext?.locale === "en" ? "en" : "zh";
   // 添加客户端渲染状态控制
   const [isClient, setIsClient] = useState(false);
 
@@ -29,16 +44,20 @@ export const UserAuthMenu = () => {
   }, []);
 
   const handleLogin = () => {
-    navigate("/login/");
+    // 使用本地化的路径进行导航
+    const localizedHref = getLocalizedHref("/login", currentLocale);
+    navigate(localizedHref);
   };
 
   const handleProfile = () => {
-    navigate("/profile/");
+    const localizedHref = getLocalizedHref("/profile", currentLocale);
+    navigate(localizedHref);
   };
 
   const handleLogout = () => {
     logout();
-    navigate("/");
+    const localizedHref = getLocalizedHref("/", currentLocale);
+    navigate(localizedHref);
   };
 
   const handleSync = async () => {
@@ -56,11 +75,11 @@ export const UserAuthMenu = () => {
   };
 
   // 提取用户名的第一个字符
-  const firstChar = user?.username ? user.username.charAt(0) : "";
+  const firstChar = user?.username ? user.username.charAt(0).toUpperCase() : "";
 
   // 未经客户端水合前，渲染一个空的占位符
   if (!isClient) {
-    return <div className="flex items-center space-x-2"></div>;
+    return <div className="flex items-center space-x-2" />;
   }
 
   // 已登录状态 - 显示用户名首字符和下拉菜单
@@ -76,17 +95,18 @@ export const UserAuthMenu = () => {
           </div>
         </Menu.Button>
         <Tooltip content={t("userAuthMenu.feedback")}>
-          <a
+          <Link
             href="/feedback/"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg px-1 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100 flex items-center"
             aria-label={t("userAuthMenu.feedback")}
             title={t("userAuthMenu.feedback")}
+            pageContext={pageContext}
           >
             <IconMessageCircle className="mr-1 h-5 w-5" />
             <span className="sr-only">{t("userAuthMenu.feedback")}</span>
-          </a>
+          </Link>
         </Tooltip>
         <UpdateNotification />
         <Transition
@@ -165,17 +185,18 @@ export const UserAuthMenu = () => {
         <span>{t("userAuthMenu.login")}</span>
       </button>
       <Tooltip content={t("userAuthMenu.feedback")}>
-        <a
+        <Link
           href="/feedback/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label={t("userAuthMenu.feedback")}
           title={t("userAuthMenu.feedback")}
           className="rounded-lg px-1 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100 flex items-center"
+          pageContext={pageContext}
         >
           <IconMessageCircle className="mr-1 h-5 w-5" />
           <span className="sr-only">{t("userAuthMenu.feedback")}</span>
-        </a>
+        </Link>
       </Tooltip>
       <UpdateNotification />
       <SyncStatusIndicator />

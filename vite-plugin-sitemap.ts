@@ -175,10 +175,7 @@ ${uniqueRoutes
       const sitemapPath = resolve(buildClientDir, "sitemap.xml");
       writeFileSync(sitemapPath, sitemap);
 
-
-      uniqueRoutes.forEach((route) => {
-
-      });
+      uniqueRoutes.forEach((route) => {});
     },
   };
 }

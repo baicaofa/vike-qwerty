@@ -435,8 +435,6 @@ export default function ReviewPracticePage() {
         // 注释掉刷新统计数据的调用，避免每次完成单词后页面重新渲染
         // 只在整个练习完成后（handleTypingComplete）再刷新数据
         // await refreshTodayReviews();
-
-        console.log(`单词 "${word}" 练习完成，已更新状态和统计数据`);
       } catch (error) {
         console.error("更新单词练习状态失败:", error);
       }
@@ -456,8 +454,6 @@ export default function ReviewPracticePage() {
         setShowCompleted(true);
         // 刷新今日复习数据
         await refreshTodayReviews();
-
-        console.log("练习完成，统计信息:", stats);
       } catch (error) {
         console.error("处理打字完成事件失败:", error);
       }

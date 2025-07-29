@@ -76,17 +76,6 @@ export class DictionaryUploadService {
 
         if (result.found && result.officialData) {
           // 匹配到官方数据
-          console.log(
-            `[DictionaryUpload] 为单词 "${result.cleanWord}" 找到官方数据:`
-          );
-          console.log(`  - ID: ${result.officialData.id}`);
-          console.log(`  - 美音: ${result.officialData.usphone}`);
-          console.log(`  - 英音: ${result.officialData.ukphone}`);
-          console.log(
-            `  - 翻译数量: ${
-              result.officialData.detailed_translations?.length || 0
-            }`
-          );
 
           const wordData = {
             ...baseWord,
@@ -97,9 +86,6 @@ export class DictionaryUploadService {
             isEmpty: false,
           };
 
-          console.log(
-            `  - 生成的单词数据: sourceType=${wordData.sourceType}, officialWordId=${wordData.officialWordId}`
-          );
           return wordData;
         } else {
           // 未匹配到，创建空记录

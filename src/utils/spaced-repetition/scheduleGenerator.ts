@@ -524,10 +524,6 @@ export async function completeWordReview(
       // 保存复习历史记录到数据库
       await db.reviewHistories.add(reviewHistory);
     }
-
-    console.log(
-      `Completed review for word: ${word}, new interval index: ${wordRecord.currentIntervalIndex}`
-    );
   } catch (error) {
     console.error("Failed to complete word review:", error);
     throw error;
@@ -555,8 +551,6 @@ export async function resetDailyReviewCounts(): Promise<void> {
         last_modified: Date.now(),
       });
     }
-
-    console.log(`Reset daily review counts for ${recordsToReset.length} words`);
   } catch (error) {
     console.error("Failed to reset daily review counts:", error);
     throw error;

@@ -175,16 +175,7 @@ ${uniqueRoutes
       const sitemapPath = resolve(buildClientDir, "sitemap.xml");
       writeFileSync(sitemapPath, sitemap);
 
-      console.log(
-        `✅ Sitemap generated at ${sitemapPath} with ${uniqueRoutes.length} routes:`
-      );
-      uniqueRoutes.forEach((route) => {
-        console.log(
-          `   ${route.path} (priority: ${route.priority}${
-            route.lastmod ? `, lastmod: ${route.lastmod}` : ""
-          })`
-        );
-      });
+      uniqueRoutes.forEach((route) => {});
     },
   };
 }

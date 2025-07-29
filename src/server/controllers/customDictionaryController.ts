@@ -265,11 +265,9 @@ export const deleteDictionary = async (
 
     // 级联删除：先查询关联的单词数量
     const wordCount = await CustomWord.countDocuments({ dictId: id });
-    console.log(`词典 ${id} 关联的单词数量: ${wordCount}`);
 
     // 删除所有关联的单词记录
     const deleteWordsResult = await CustomWord.deleteMany({ dictId: id });
-    console.log(`删除了 ${deleteWordsResult.deletedCount} 个关联单词`);
 
     // 然后删除词库记录
     const deleteDictResult = await CustomDictionary.findOneAndDelete({

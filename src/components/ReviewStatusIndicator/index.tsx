@@ -14,7 +14,7 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
 }) => {
   const { reviews, completedCount, totalCount, progress } = useTodayReviews();
   const [isExpanded, setIsExpanded] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
   // 计算需要复习的单词数量
   const dueCount = reviews.filter((word) => {
     // 简化的复习判断：只基于时间
@@ -38,10 +38,10 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
   };
 
   const getStatusText = () => {
-    if (urgentCount > 0) return `${urgentCount}个紧急`;
-    if (dueCount > 0) return `${dueCount}个到期`;
-    if (progress >= 100) return "已完成";
-    return "无复习";
+    if (urgentCount > 0) return `${urgentCount}${t("reviewstatus.urgent")}`;
+    if (dueCount > 0) return `${dueCount}${t("reviewstatus.due")}`;
+    if (progress >= 100) return t("reviewstatus.completed");
+    return t("reviewstatus.noReview");
   };
 
   const getStatusIcon = () => {
@@ -57,7 +57,7 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-white text-sm font-medium transition-all hover:opacity-80 ${getStatusColor()}`}
-        title="点击查看复习状态详情"
+        title={t("reviewstatus.clickForDetails")}
       >
         <span>{getStatusIcon()}</span>
         <span className="hidden md:inline">{getStatusText()}</span>
@@ -74,7 +74,7 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
           <div className="p-4">
             <div className="flex items-center justify-between mb-3">
               <h3 className="font-semibold text-gray-900 dark:text-white">
-                复习状态
+                {t("reviewstatus.reviewStatus")}
               </h3>
               <button
                 onClick={() => setIsExpanded(false)}
@@ -87,7 +87,7 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
             {/* 今日进度 */}
             <div className="mb-4">
               <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-1">
-                <span>今日进度</span>
+                <span>{t("reviewstatus.todayProgress")}</span>
                 <span>
                   {completedCount} / {totalCount}
                 </span>
@@ -99,7 +99,7 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
                 ></div>
               </div>
               <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                {progress.toFixed(1)}% 完成
+                {progress.toFixed(1)}% {t("reviewstatus.completedText")}
               </div>
             </div>
 
@@ -110,7 +110,7 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
                   {totalCount}
                 </div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">
-                  计划复习
+                  {t("reviewstatus.plannedReview")}
                 </div>
               </div>
               <div className="text-center p-2 bg-gray-50 dark:bg-gray-700 rounded">
@@ -118,7 +118,7 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
                   {urgentCount}
                 </div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">
-                  紧急复习
+                  {t("reviewstatus.urgentReview")}
                 </div>
               </div>
             </div>
@@ -131,7 +131,7 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
                   pageContext={pageContext}
                   className="block w-full bg-green-600 text-white text-center py-2 rounded-lg hover:bg-green-700 transition-colors text-sm"
                 >
-                  开始复习 ({dueCount}个单词)
+                  {t("reviewstatus.startReview", { count: dueCount })}
                 </Link>
               ) : (
                 <Link
@@ -139,7 +139,7 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
                   pageContext={pageContext}
                   className="block w-full bg-gray-600 text-white text-center py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm"
                 >
-                  查看仪表板
+                  {t("reviewstatus.viewDashboard")}
                 </Link>
               )}
 
@@ -149,14 +149,14 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
                   pageContext={pageContext}
                   className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-center py-1 rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                 >
-                  统计
+                  {t("reviewstatus.statistics")}
                 </Link>
                 <Link
                   href="/review/history"
                   pageContext={pageContext}
                   className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-center py-1 rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                 >
-                  复习历史
+                  {t("reviewstatus.reviewHistory")}
                 </Link>
               </div>
             </div>

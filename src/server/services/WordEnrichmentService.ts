@@ -33,15 +33,6 @@ export class WordEnrichmentService {
         name: { $in: cleanWords },
       }).lean(); // 使用lean()提高查询性能
 
-      console.log(
-        `[WordEnrichment] 查询词汇: ${cleanWords.length}个, 找到官方数据: ${officialWords.length}个`
-      );
-      console.log(`[WordEnrichment] 查询的词汇:`, cleanWords.slice(0, 5));
-      console.log(
-        `[WordEnrichment] 找到的官方词汇:`,
-        officialWords.slice(0, 2).map((w) => ({ name: w.name, id: w.id }))
-      );
-
       // 3. 创建映射表
       const wordMap = new Map(officialWords.map((w) => [w.name, w]));
 
@@ -60,9 +51,6 @@ export class WordEnrichmentService {
           officialWord.name === cleanWord
         );
 
-        console.log(
-          `[WordEnrichment] 处理单词 "${cleanWord}": 找到=${!!officialWord}, 有效=${isValidOfficialData}`
-        );
         if (officialWord) {
           console.log(
             `  - 官方数据: id=${officialWordId}, name=${officialWord.name}`

@@ -281,7 +281,6 @@ export class AlgorithmDebugger {
    */
   static enable(): void {
     this.isEnabled = true;
-    console.log("🧠 Spaced Repetition Algorithm Debug Mode Enabled");
   }
 
   /**
@@ -289,7 +288,6 @@ export class AlgorithmDebugger {
    */
   static disable(): void {
     this.isEnabled = false;
-    console.log("🧠 Spaced Repetition Algorithm Debug Mode Disabled");
   }
 
   /**
@@ -305,7 +303,6 @@ export class AlgorithmDebugger {
     };
 
     this.logs.push(logEntry);
-    console.log(`🧠 [${operation}]`, data);
 
     // 保持最近1000条日志
     if (this.logs.length > 1000) {

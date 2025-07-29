@@ -39,14 +39,6 @@ export const VoteButtons: React.FC<VoteButtonsProps> = ({
       // 准备投票数据
       const voteAction = currentUserVote === vote ? "remove" : vote;
       const deviceId = getDeviceFingerprint(); // 统一使用设备指纹
-
-      // 添加调试信息
-      console.log("投票请求数据:", {
-        feedbackId,
-        voteAction,
-        deviceId,
-      });
-
       const voteData = {
         vote: voteAction,
         deviceId,

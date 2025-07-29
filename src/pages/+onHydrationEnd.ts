@@ -31,11 +31,6 @@ export const onHydrationEnd: OnHydrationEndAsync = async (): Promise<
 
     // 4. 其他非核心初始化逻辑可以在这里添加
     // 例如：分析工具初始化、第三方服务初始化等
-
-    console.log(
-      "i18n hydration completed successfully with language:",
-      finalLanguage
-    );
   } catch (error) {
     console.error("Failed to initialize i18n during hydration:", error);
     // 不抛出错误，避免影响页面正常功能

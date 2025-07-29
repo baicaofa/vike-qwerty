@@ -110,34 +110,8 @@ export const addWords = async (req: Request, res: Response): Promise<void> => {
       index: startIndex + i,
     }));
 
-    console.log(
-      `[CustomWordController] 准备插入 ${wordsToInsert.length} 个单词`
-    );
-    console.log(
-      `[CustomWordController] 前3个单词的数据:`,
-      wordsToInsert.slice(0, 3).map((w) => ({
-        name: w.name,
-        sourceType: w.sourceType,
-        officialWordId: w.officialWordId,
-        isEmpty: w.isEmpty,
-      }))
-    );
-
     // 批量插入单词
     const insertedWords = await CustomWord.insertMany(wordsToInsert);
-
-    console.log(
-      `[CustomWordController] 成功插入 ${insertedWords.length} 个单词`
-    );
-    console.log(
-      `[CustomWordController] 插入后前3个单词的数据:`,
-      insertedWords.slice(0, 3).map((w) => ({
-        name: w.name,
-        sourceType: w.sourceType,
-        officialWordId: w.officialWordId,
-        isEmpty: w.isEmpty,
-      }))
-    );
 
     // 更新词库单词数量
     await CustomDictionary.findOneAndUpdate(
@@ -354,11 +328,6 @@ export const debugEnrichment = async (
       });
       return;
     }
-
-    console.log(
-      `[DebugEnrichment] 开始调试词汇补充，单词数量: ${words.length}`
-    );
-    console.log(`[DebugEnrichment] 单词列表:`, words);
 
     // 使用词汇补充服务获取详细结果
     const enrichmentResults = await wordEnrichmentService.batchEnrichWords(

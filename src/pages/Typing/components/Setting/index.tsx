@@ -48,22 +48,22 @@ export default function Setting({ pageContext }: SettingProps = {}) {
 
   const tabs = [
     {
-      name: t("settings.tabs.sound"),
+      name: t("settings.sound"),
       icon: IconEar,
       content: <SoundSetting />,
     },
     {
-      name: t("settings.tabs.advanced"),
+      name: t("settings.advanced"),
       icon: IconAdjustmentsHorizontal,
       content: <AdvancedSetting pageContext={pageContext} />,
     },
     {
-      name: t("settings.tabs.view"),
+      name: t("settings.view"),
       icon: IconEye,
       content: <ViewSetting />,
     },
     {
-      name: t("settings.tabs.data"),
+      name: t("settings.data"),
       icon: IconDatabaseCog,
       content: <DataSetting />,
     },

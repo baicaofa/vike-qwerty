@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { timeStamp2String } from "@/utils";
 import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
+import EditArticleDialog from "./EditArticleDialog";
 
 export default function ArticleHistory() {
   const { dispatch } = useContext(ArticleContext);
@@ -14,6 +15,8 @@ export default function ArticleHistory() {
   const [sortBy, setSortBy] = useState<"createdAt" | "lastPracticedAt">(
     "lastPracticedAt"
   );
+  const [editDialogOpen, setEditDialogOpen] = useState(false);
+  const [editingArticle, setEditingArticle] = useState<CustomArticle | null>(null);
 
   // 使用i18n翻译
   const { t } = useTranslation("article");
@@ -82,6 +85,12 @@ export default function ArticleHistory() {
     dispatch({ type: ArticleActionType.SET_STEP, payload: 3 });
   };
 
+  // 编辑文章
+  const handleEditArticle = (article: CustomArticle) => {
+    setEditingArticle(article);
+    setEditDialogOpen(true);
+  };
+
   // 删除文章
   const handleDeleteArticle = async (id: number) => {
     if (window.confirm(t("history.deleteConfirm"))) {
@@ -137,6 +146,16 @@ export default function ArticleHistory() {
             >
               {tCommon("buttons.practice")}
             </button>
+            {!article.isOfficial && (
+              <button
+                type="button"
+                className="my-btn-secondary text-sm"
+                onClick={() => handleEditArticle(article)}
+                title={t("history.editTooltip")}
+              >
+                {tCommon("buttons.edit")}
+              </button>
+            )}
             <button
               type="button"
               className="my-btn-secondary text-sm"
@@ -310,6 +329,14 @@ export default function ArticleHistory() {
           </TabsContent>
         </Tabs>
       )}
+
+      {/* 编辑文章弹窗 */}
+      <EditArticleDialog
+        open={editDialogOpen}
+        onOpenChange={setEditDialogOpen}
+        article={editingArticle || undefined}
+        mode="edit"
+      />
     </div>
   );
 }

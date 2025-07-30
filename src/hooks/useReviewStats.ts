@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import { useDebouncedCallback } from "use-debounce";
+import { useDebouncedCallback } from "@/utils/debounce";
 
 /**
  * 复习统计数据接口

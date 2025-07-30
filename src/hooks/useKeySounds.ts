@@ -1,13 +1,11 @@
-import {
-  KEY_SOUND_URL_PREFIX,
-  SOUND_URL_PREFIX,
-  keySoundResources,
-} from "@/resources/soundResource";
+import { keySoundsConfigAtom } from "@/store";
+import { addHowlListener } from "@/utils";
+import { keySoundResources } from "@/resources/soundResource";
 import { hintSoundsConfigAtom, keySoundsConfigAtom } from "@/store";
 import noop from "@/utils/noop";
 import { useAtomValue, useSetAtom } from "jotai";
 import { useEffect, useState } from "react";
-import useSound from "use-sound";
+import { useSound } from "@/utils/audio";
 
 export type PlayFunction = ReturnType<typeof useSound>[0];
 
@@ -32,7 +30,7 @@ export default function useKeySound(): [
     correctResource,
   } = useAtomValue(hintSoundsConfigAtom);
   const [keySoundUrl, setKeySoundUrl] = useState(
-    `${KEY_SOUND_URL_PREFIX}${keyResource.filename}`
+    `${keySoundResources.find((item) => item.key === "Default")?.filename}`
   );
 
   useEffect(() => {

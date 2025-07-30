@@ -6,8 +6,7 @@ import noop from "@/utils/noop";
 import type { Howl } from "howler";
 import { useAtomValue } from "jotai";
 import { useEffect, useMemo, useState } from "react";
-import useSound from "use-sound";
-import type { HookOptions } from "use-sound/dist/types";
+import { useSound } from "@/utils/audio";
 
 const PROXY_URL = "/api/pronunciation";
 
@@ -82,7 +81,7 @@ export default function usePronunciationSound(word: string, isLoop?: boolean) {
       setError(error as Error);
       setIsPlaying(false);
     },
-  } as HookOptions);
+  });
 
   useEffect(() => {
     if (!sound) return;

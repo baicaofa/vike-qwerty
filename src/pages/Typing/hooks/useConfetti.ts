@@ -1,6 +1,5 @@
-import { CONFETTI_DEFAULTS } from "@/constants";
-import confetti from "canvas-confetti";
 import { useEffect } from "react";
+import { confetti } from "@/utils/confetti";
 
 export function useConfetti(state: boolean) {
   useEffect(() => {

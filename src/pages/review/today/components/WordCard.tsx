@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 import type { IWordReviewRecord } from "@/utils/db/wordReviewRecord";
 import type React from "react";
 
@@ -12,6 +13,7 @@ export interface WordCardProps {
  * 显示单词复习信息
  */
 const WordCard: React.FC<WordCardProps> = ({ word, practiceCount }) => {
+  const { t } = useTranslation();
   const actualPracticeCount = practiceCount ?? word.todayPracticeCount ?? 0;
 
   // 简化的进度计算（使用固定的间隔序列长度）
@@ -59,40 +61,40 @@ const WordCard: React.FC<WordCardProps> = ({ word, practiceCount }) => {
       <div className="flex items-center justify-between mb-2">
         <h3 className="text-lg font-semibold">{word.word}</h3>
         <div className="flex items-center space-x-2">
-          {isReviewDue && <Badge variant="destructive">到期</Badge>}
-          {word.isGraduated && <Badge variant="success">已毕业</Badge>}
+          {isReviewDue && <Badge variant="destructive">{t("review:wordCard.due")}</Badge>}
+          {word.isGraduated && <Badge variant="success">{t("review:wordCard.graduated")}</Badge>}
           {actualPracticeCount > 0 && (
-            <Badge variant="secondary">练习次数: {actualPracticeCount}</Badge>
+            <Badge variant="secondary">{t("review:wordCard.practiceCount")}: {actualPracticeCount}</Badge>
           )}
         </div>
       </div>
 
       <div className="space-y-1 text-sm">
         <div className="flex justify-between">
-          <span className="text-gray-600">复习进度:</span>
+          <span className="text-gray-600">{t("review:wordCard.reviewProgress")}:</span>
           <span className={`font-medium ${getProgressColor(progress)}`}>
             {isNaN(progress) ? "0" : (progress * 100).toFixed(0)}%
           </span>
         </div>
         <div className="flex justify-between">
-          <span className="text-gray-600">优先级:</span>
+          <span className="text-gray-600">{t("review:wordCard.priority")}:</span>
           <span className="font-medium">
             {isNaN(priority) ? "0" : priority.toFixed(0)}
           </span>
         </div>
 
         <div className="flex justify-between">
-          <span className="text-gray-600">下次复习:</span>
+          <span className="text-gray-600">{t("review:wordCard.nextReview")}:</span>
           <span className="font-medium text-xs">
             {word.isGraduated
-              ? "已完成"
+              ? t("review:wordCard.completed")
               : new Date(nextReviewAt).toLocaleDateString()}
           </span>
         </div>
       </div>
 
       <div className="mt-2 text-xs text-gray-500">
-        总复习次数: {word.totalReviews || 0} | 间隔等级: {currentInterval}/
+        {t("review:wordCard.totalReviews")}: {word.totalReviews || 0} | {t("review:wordCard.intervalLevel")}: {currentInterval}/
         {maxIntervalIndex}
       </div>
     </div>

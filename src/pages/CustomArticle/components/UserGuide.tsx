@@ -65,53 +65,62 @@ export default function UserGuide() {
               </p>
             </section>
 
-            {/* 主要特点 */}
+            {/* 主要功能 */}
             <section>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                {t("guide.features")}
+                {t("guide.mainFeatures")}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div className="flex items-center space-x-2">
-                  <span className="text-green-500">✨</span>
-                  <span className="text-gray-700">
-                    <strong>{t("guide.feature1")}</strong> -
-                    {t("guide.feature1Desc")}
-                  </span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Word文档上传 */}
+                <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="text-blue-600 text-xl">📄</span>
+                    <h4 className="font-semibold text-blue-800">
+                      {t("guide.wordUpload")}
+                    </h4>
+                  </div>
+                  <p className="text-blue-700 text-sm">
+                    {t("guide.wordUploadDesc")}
+                  </p>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-blue-500">📝</span>
-                  <span className="text-gray-700">
-                    <strong>{t("guide.feature2")}</strong> -{" "}
-                    {t("guide.feature2Desc")}
-                  </span>
+
+                {/* 文章编辑 */}
+                <div className="bg-gradient-to-r from-green-50 to-green-100 p-4 rounded-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="text-green-600 text-xl">✏️</span>
+                    <h4 className="font-semibold text-green-800">
+                      {t("guide.articleEdit")}
+                    </h4>
+                  </div>
+                  <p className="text-green-700 text-sm">
+                    {t("guide.articleEditDesc")}
+                  </p>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-purple-500">🎯</span>
-                  <span className="text-gray-700">
-                    <strong>{t("guide.feature3")}</strong> -{" "}
-                    {t("guide.feature3Desc")}
-                  </span>
+
+                {/* 标点符号控制 */}
+                <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-4 rounded-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="text-purple-600 text-xl">🎯</span>
+                    <h4 className="font-semibold text-purple-800">
+                      {t("guide.punctuationControl")}
+                    </h4>
+                  </div>
+                  <p className="text-purple-700 text-sm">
+                    {t("guide.punctuationControlDesc")}
+                  </p>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-orange-500">🔊</span>
-                  <span className="text-gray-700">
-                    <strong>{t("guide.feature4")}</strong> -{" "}
-                    {t("guide.feature4Desc")}
-                  </span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-indigo-500">💾</span>
-                  <span className="text-gray-700">
-                    <strong>{t("guide.feature5")}</strong> -{" "}
-                    {t("guide.feature5Desc")}
-                  </span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-red-500">📊</span>
-                  <span className="text-gray-700">
-                    <strong>{t("guide.feature6")}</strong> -{" "}
-                    {t("guide.feature6Desc")}
-                  </span>
+
+                {/* 实时练习 */}
+                <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-4 rounded-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="text-orange-600 text-xl">⚡</span>
+                    <h4 className="font-semibold text-orange-800">
+                      {t("guide.realTimePractice")}
+                    </h4>
+                  </div>
+                  <p className="text-orange-700 text-sm">
+                    {t("guide.realTimePracticeDesc")}
+                  </p>
                 </div>
               </div>
             </section>
@@ -119,32 +128,112 @@ export default function UserGuide() {
             {/* 使用步骤 */}
             <section>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                {t("guide.steps")}
+                {t("guide.howToUse")}
               </h3>
               <div className="space-y-4">
+                {/* 步骤1：上传文章 */}
                 <div className="border-l-4 border-blue-500 pl-4">
-                  <h4 className="font-medium text-gray-800">
-                    {t("guide.step1")}
-                  </h4>
-                  <p className="text-gray-600 text-sm mt-1">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                    <h4 className="font-medium text-gray-800">
+                      {t("guide.step1Title")}
+                    </h4>
+                  </div>
+                  <p className="text-gray-600 text-sm">
                     {t("guide.step1Desc")}
                   </p>
+                  <div className="mt-2 text-xs text-gray-500">
+                    <strong>{t("guide.tip")}:</strong> {t("guide.step1Tip")}
+                  </div>
                 </div>
+
+                {/* 步骤2：开始练习 */}
                 <div className="border-l-4 border-green-500 pl-4">
-                  <h4 className="font-medium text-gray-800">
-                    {t("guide.step2")}
-                  </h4>
-                  <p className="text-gray-600 text-sm mt-1">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                    <h4 className="font-medium text-gray-800">
+                      {t("guide.step2Title")}
+                    </h4>
+                  </div>
+                  <p className="text-gray-600 text-sm">
                     {t("guide.step2Desc")}
                   </p>
+                  <div className="mt-2 text-xs text-gray-500">
+                    <strong>{t("guide.tip")}:</strong> {t("guide.step2Tip")}
+                  </div>
                 </div>
+
+                {/* 步骤3：调整设置 */}
                 <div className="border-l-4 border-purple-500 pl-4">
-                  <h4 className="font-medium text-gray-800">
-                    {t("guide.step3")}
-                  </h4>
-                  <p className="text-gray-600 text-sm mt-1">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                    <h4 className="font-medium text-gray-800">
+                      {t("guide.step3Title")}
+                    </h4>
+                  </div>
+                  <p className="text-gray-600 text-sm">
                     {t("guide.step3Desc")}
                   </p>
+                  <div className="mt-2 text-xs text-gray-500">
+                    <strong>{t("guide.tip")}:</strong> {t("guide.step3Tip")}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* 高级功能 */}
+            <section>
+              <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                {t("guide.advancedFeatures")}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-2">
+                    <span className="text-indigo-500 mt-1">🔧</span>
+                    <div>
+                      <h4 className="font-medium text-gray-800">
+                        {t("guide.advanced1")}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t("guide.advanced1Desc")}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <span className="text-indigo-500 mt-1">📊</span>
+                    <div>
+                      <h4 className="font-medium text-gray-800">
+                        {t("guide.advanced2")}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t("guide.advanced2Desc")}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-2">
+                    <span className="text-indigo-500 mt-1">🎵</span>
+                    <div>
+                      <h4 className="font-medium text-gray-800">
+                        {t("guide.advanced3")}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t("guide.advanced3Desc")}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <span className="text-indigo-500 mt-1">💾</span>
+                    <div>
+                      <h4 className="font-medium text-gray-800">
+                        {t("guide.advanced4")}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t("guide.advanced4Desc")}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -155,46 +244,101 @@ export default function UserGuide() {
                 {t("guide.faq")}
               </h3>
               <div className="space-y-3">
-                <details className="group">
-                  <summary className="cursor-pointer text-gray-700 hover:text-blue-600 font-medium">
+                <details className="group border border-gray-200 rounded-lg">
+                  <summary className="cursor-pointer p-3 text-gray-700 hover:text-blue-600 font-medium bg-gray-50 rounded-t-lg group-open:bg-blue-50">
                     {t("guide.faq1")}
                   </summary>
-                  <p className="text-gray-600 text-sm mt-2 pl-4">
-                    {t("guide.faq1Answer")}
-                  </p>
+                  <div className="p-3 bg-white rounded-b-lg">
+                    <p className="text-gray-600 text-sm">
+                      {t("guide.faq1Answer")}
+                    </p>
+                  </div>
                 </details>
-                <details className="group">
-                  <summary className="cursor-pointer text-gray-700 hover:text-blue-600 font-medium">
+                <details className="group border border-gray-200 rounded-lg">
+                  <summary className="cursor-pointer p-3 text-gray-700 hover:text-blue-600 font-medium bg-gray-50 rounded-t-lg group-open:bg-blue-50">
                     {t("guide.faq2")}
                   </summary>
-                  <p className="text-gray-600 text-sm mt-2 pl-4">
-                    {t("guide.faq2Answer")}
-                  </p>
+                  <div className="p-3 bg-white rounded-b-lg">
+                    <p className="text-gray-600 text-sm">
+                      {t("guide.faq2Answer")}
+                    </p>
+                  </div>
                 </details>
-                <details className="group">
-                  <summary className="cursor-pointer text-gray-700 hover:text-blue-600 font-medium">
+                <details className="group border border-gray-200 rounded-lg">
+                  <summary className="cursor-pointer p-3 text-gray-700 hover:text-blue-600 font-medium bg-gray-50 rounded-t-lg group-open:bg-blue-50">
                     {t("guide.faq3")}
                   </summary>
-                  <p className="text-gray-600 text-sm mt-2 pl-4">
-                    {t("guide.faq3Answer")}
-                  </p>
+                  <div className="p-3 bg-white rounded-b-lg">
+                    <p className="text-gray-600 text-sm">
+                      {t("guide.faq3Answer")}
+                    </p>
+                  </div>
+                </details>
+                <details className="group border border-gray-200 rounded-lg">
+                  <summary className="cursor-pointer p-3 text-gray-700 hover:text-blue-600 font-medium bg-gray-50 rounded-t-lg group-open:bg-blue-50">
+                    {t("guide.faq4")}
+                  </summary>
+                  <div className="p-3 bg-white rounded-b-lg">
+                    <p className="text-gray-600 text-sm">
+                      {t("guide.faq4Answer")}
+                    </p>
+                  </div>
                 </details>
               </div>
             </section>
 
-            {/* 小贴士 */}
-            <section className="bg-blue-50 rounded-lg p-4">
-              <div className="flex items-start space-x-2">
-                <span className="text-blue-500 text-lg">💡</span>
+            {/* 使用技巧 */}
+            <section className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-4">
+              <div className="flex items-start space-x-3">
+                <span className="text-yellow-600 text-2xl">💡</span>
                 <div>
-                  <h4 className="font-medium text-blue-800">
-                    {t("guide.tips")}
+                  <h4 className="font-semibold text-yellow-800 mb-2">
+                    {t("guide.proTips")}
                   </h4>
-                  <p className="text-blue-700 text-sm mt-1">
-                    {t("guide.tipsText")}
-                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-start space-x-2">
+                      <span className="text-yellow-600">•</span>
+                      <p className="text-yellow-700">{t("guide.proTip1")}</p>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-yellow-600">•</span>
+                      <p className="text-yellow-700">{t("guide.proTip2")}</p>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-yellow-600">•</span>
+                      <p className="text-yellow-700">{t("guide.proTip3")}</p>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-yellow-600">•</span>
+                      <p className="text-yellow-700">{t("guide.proTip4")}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </section>
+
+            {/* 支持格式 */}
+            <section className="bg-gray-50 rounded-lg p-4">
+              <h4 className="font-medium text-gray-800 mb-2">
+                {t("guide.supportedFormats")}
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                <div className="flex items-center space-x-2">
+                  <span className="text-green-500">✓</span>
+                  <span className="text-gray-700">.docx (推荐)</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-yellow-500">⚠</span>
+                  <span className="text-gray-700">.doc (部分支持)</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-blue-500">📝</span>
+                  <span className="text-gray-700">{t("guide.manualInput")}</span>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 mt-2">
+                {t("guide.formatNote")}
+              </p>
             </section>
           </div>
         )}

@@ -70,6 +70,53 @@
     "dailyReviewStats": "Daily review count and accuracy",
     "reviewCount": "Review Count"
   },
+  "buttons": {
+    "close": "Close",
+    "refresh": "Refresh",
+    "back": "Back"
+  },
+  "tooltips": {
+    "reviewStatus": "Review Status",
+    "practiceProgress": "Practice Progress"
+  },
+  "messages": {
+    "loadingData": "Loading data...",
+    "noWordsToReview": "No words to review",
+    "practiceComplete": "Practice Complete!",
+    "continuePractice": "Continue Practice",
+    "startNewPractice": "Start New Practice"
+  },
+  "filters": {
+    "allWords": "All Words",
+    "unpracticedWords": "Unpracticed Words",
+    "practicedWords": "Practiced Words",
+    "urgentWords": "Urgent Words",
+    "dueWords": "Due Words"
+  },
+  "progress": {
+    "completed": "Completed",
+    "remaining": "Remaining",
+    "total": "Total",
+    "percentage": "Percentage"
+  },
+  "time": {
+    "minutes": "minutes",
+    "seconds": "seconds",
+    "hours": "hours",
+    "days": "days"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "normal": "Normal",
+    "hard": "Hard",
+    "expert": "Expert"
+  },
+  "achievements": {
+    "streak": "Streak",
+    "accuracy": "Accuracy",
+    "speed": "Speed",
+    "mastery": "Mastery"
+  },
   "practice": {
     "title": "Review Practice",
     "subtitle": "Start your review practice",

@@ -98,6 +98,30 @@ export default function ArticlePractice() {
     setShowRecommendedDialog(true);
   };
 
+  // 切换标点符号显示
+  const handleTogglePunctuation = () => {
+    // 如果正在练习，先暂停
+    if (state.isTyping && !state.isPaused) {
+      safeDispatch({ type: ArticleActionType.PAUSE_TYPING });
+    }
+    
+    // 更新预处理设置
+    dispatch({
+      type: ArticleActionType.UPDATE_PREPROCESS_SETTINGS,
+      payload: { 
+        removePunctuation: !state.preprocessSettings.removePunctuation 
+      },
+    });
+    
+    // 重新处理文本
+    dispatch({ type: ArticleActionType.PROCESS_TEXT });
+    
+    // 如果之前正在练习，恢复练习
+    if (state.isTyping && !state.isPaused) {
+      safeDispatch({ type: ArticleActionType.RESUME_TYPING });
+    }
+  };
+
   // 打开上传文章弹窗
   const handleOpenUploadDialog = () => {
     // 暂停当前练习
@@ -535,6 +559,38 @@ export default function ArticlePractice() {
         >
           {t("practice.uploadArticle")}
         </button>
+        
+        {/* 标点符号控制按钮 */}
+        <button
+          type="button"
+          onClick={handleTogglePunctuation}
+          className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center space-x-1 ${
+            state.preprocessSettings.removePunctuation
+              ? "bg-orange-600 hover:bg-orange-700 text-white"
+              : "bg-gray-600 hover:bg-gray-700 text-white"
+          }`}
+          title={
+            state.preprocessSettings.removePunctuation
+              ? t("practice.showPunctuation")
+              : t("practice.hidePunctuation")
+          }
+        >
+          {state.preprocessSettings.removePunctuation ? (
+            <>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+              <span>{t("practice.showPunctuation")}</span>
+            </>
+          ) : (
+            <>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              <span>{t("practice.hidePunctuation")}</span>
+            </>
+          )}
+        </button>
       </div>
 
       {/* 文章标题 */}
@@ -631,6 +687,38 @@ export default function ArticlePractice() {
                 {t("practice.backToCurrentPosition")}
               </button>
             )}
+
+            {/* 标点符号切换按钮 */}
+            <button
+              type="button"
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                state.preprocessSettings.removePunctuation
+                  ? "bg-orange-600 hover:bg-orange-700 text-white"
+                  : "bg-gray-600 hover:bg-gray-700 text-white"
+              }`}
+              onClick={handleTogglePunctuation}
+              title={
+                state.preprocessSettings.removePunctuation
+                  ? t("practice.showPunctuation")
+                  : t("practice.hidePunctuation")
+              }
+            >
+              {state.preprocessSettings.removePunctuation ? (
+                <>
+                  <svg className="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                  </svg>
+                  {t("practice.showPunctuation")}
+                </>
+              ) : (
+                <>
+                  <svg className="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  {t("practice.hidePunctuation")}
+                </>
+              )}
+            </button>
           </div>
         </>
       ) : (

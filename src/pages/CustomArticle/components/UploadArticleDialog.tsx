@@ -10,7 +10,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useSaveArticle } from "@/utils/db/article";
-import { useContext, useEffect, useState } from "react";
+import { parseWordDocument, validateWordFile, getFileSizeDescription } from "@/utils/wordDocumentParser";
+import { useContext, useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 interface UploadArticleDialogProps {
@@ -38,6 +39,9 @@ export default function UploadArticleDialog({
       removePunctuation: false,
     });
   const [enableSound, setEnableSound] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const saveArticle = useSaveArticle();
   // i18n
@@ -78,6 +82,45 @@ export default function UploadArticleDialog({
   // 启用声音开关
   const handleEnableSoundToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEnableSound(e.target.checked);
+  };
+
+  // 处理文件上传
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // 验证文件类型
+    if (!validateWordFile(file)) {
+      setUploadError(t("upload.invalidFileType"));
+      return;
+    }
+
+    setIsUploading(true);
+    setUploadError("");
+
+    try {
+      const result = await parseWordDocument(file);
+      
+      if (result.success) {
+        setTitle(result.title || "");
+        setContent(result.content);
+        setCharCount(result.content.length);
+        setIsError(false);
+        setErrorMessage("");
+      } else {
+        setUploadError(result.error || t("upload.parseError"));
+      }
+    } catch (error) {
+      console.error("文件上传失败:", error);
+      setUploadError(t("upload.uploadError"));
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  // 触发文件选择
+  const handleFileSelect = () => {
+    fileInputRef.current?.click();
   };
 
   // 更新预览文本和单词数量
@@ -212,6 +255,12 @@ export default function UploadArticleDialog({
       removePunctuation: false,
     });
     setEnableSound(false);
+    setIsUploading(false);
+    setUploadError("");
+    // 重置文件输入
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   };
 
   // 关闭弹窗时重置表单
@@ -226,6 +275,58 @@ export default function UploadArticleDialog({
   const renderStep1 = () => (
     <>
       <div className="grid gap-4 py-4">
+        {/* 文件上传区域 */}
+        <div className="grid grid-cols-4 items-start gap-4">
+          <label className="text-right text-sm font-medium pt-2">
+            {t("upload.uploadFile")}
+          </label>
+          <div className="col-span-3 space-y-2">
+            <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center hover:border-gray-400 transition-colors">
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".docx,.doc"
+                onChange={handleFileUpload}
+                className="hidden"
+              />
+              <button
+                type="button"
+                onClick={handleFileSelect}
+                disabled={isUploading}
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+              >
+                {isUploading ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    {t("upload.uploading")}
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    {t("upload.selectWordFile")}
+                  </>
+                )}
+              </button>
+              <p className="text-xs text-gray-500 mt-2">
+                {t("upload.supportedFormats")}: .docx, .doc (最大 10MB)
+              </p>
+            </div>
+            {uploadError && (
+              <div className="text-red-500 text-sm">
+                {uploadError}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* 分隔线 */}
+        <div className="col-span-4 border-t border-gray-200 my-4"></div>
+
         {/* 标题输入 */}
         <div className="grid grid-cols-4 items-center gap-4">
           <label htmlFor="title" className="text-right text-sm font-medium">

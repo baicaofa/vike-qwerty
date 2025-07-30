@@ -38,7 +38,7 @@ import { useSaveChapterRecord } from "@/utils/db";
 import { useMixPanelChapterLogUploader } from "@/utils/mixpanel";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import type React from "react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useImmerReducer } from "use-immer";
 import { usePageContext } from "vike-react/usePageContext";
@@ -72,6 +72,31 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
   // 存储事件处理函数的引用
   const keydownHandlerRef = useRef<((e: KeyboardEvent) => void) | null>(null);
 
+  // 优化：缓存路径标准化函数
+  const normalizePath = useCallback((path: string): string => {
+    if (path.startsWith("/en/")) return path.substring(3) || "/";
+    if (path.startsWith("/zh/")) return path.substring(3) || "/";
+    if (path === "/en" || path === "/zh") return "/";
+    return path;
+  }, []);
+
+  // 优化：缓存当前路径
+  const currentPath = useMemo(() => {
+    if (typeof window === "undefined") return "/";
+    return window.location.pathname;
+  }, []);
+
+  const logicalPath = useMemo(() => {
+    return pageContext
+      ? (pageContext as any).urlLogical
+      : normalizePath(currentPath);
+  }, [pageContext, normalizePath, currentPath]);
+
+  // 优化：缓存是否在打字页面的判断
+  const isOnTypingPage = useMemo(() => {
+    return logicalPath === "/" || logicalPath.startsWith("/typing");
+  }, [logicalPath]);
+
   // 加载用户的自定义词典列表
   useEffect(() => {
     // 如果当前选择的是自定义词典，但自定义词典列表为空，则加载自定义词典列表
@@ -96,35 +121,29 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
     setCustomDictionaries,
   ]);
 
+  // 优化：合并设备检测和字典检查
   useEffect(() => {
     // 检测用户设备
     if (!IsDesktop()) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         alert(t("messages.mobileNotSupported"));
       }, 500);
+      return () => clearTimeout(timer);
     }
-  }, []);
 
-  // 在组件挂载和currentDictId改变时，检查当前字典是否存在，如果不存在，则将其重置为默认值
-  useEffect(() => {
+    // 检查当前字典是否存在
     const id = currentDictId;
-    // 检查是否为自定义词典ID，如果是则不需要检查idDictionaryMap
-    if (isCustomDictionary(id)) {
-      return; // 自定义词典ID，直接返回，不重置
-    }
-
-    // 对于非自定义词典，检查是否存在于idDictionaryMap
-    if (!(id in idDictionaryMap)) {
+    if (!isCustomDictionary(id) && !(id in idDictionaryMap)) {
       setCurrentDictId("cet4");
       setCurrentChapter(0);
-      return;
     }
-  }, [currentDictId, setCurrentChapter, setCurrentDictId]);
+  }, [currentDictId, setCurrentChapter, setCurrentDictId, t]);
 
   const skipWord = useCallback(() => {
     dispatch({ type: TypingStateActionType.SKIP_WORD });
   }, [dispatch]);
 
+  // 优化：合并窗口事件监听器
   useEffect(() => {
     const onBlur = () => {
       dispatch({ type: TypingStateActionType.SET_IS_TYPING, payload: false });
@@ -136,35 +155,21 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
     };
   }, [dispatch]);
 
+  // 优化：简化加载状态检查
   useEffect(() => {
-    state.chapterData.words?.length > 0
-      ? setIsLoading(false)
-      : setIsLoading(true);
-  }, [state.chapterData.words]);
+    setIsLoading(!state.chapterData.words?.length);
+  }, [state.chapterData.words?.length]);
 
+  // 优化：合并键盘事件处理
   useEffect(() => {
-    if (!state.isTyping) {
+    if (!state.isTyping && !isLoading) {
       const onKeyDown = (e: KeyboardEvent) => {
         // 检查当前是否在打字练习相关页面
-        // 创建路径标准化函数，移除语言前缀
-        const normalizePath = (path: string): string => {
-          if (path.startsWith("/en/")) return path.substring(3) || "/";
-          if (path.startsWith("/zh/")) return path.substring(3) || "/";
-          if (path === "/en" || path === "/zh") return "/";
-          return path;
-        };
-
-        const currentPath = window.location.pathname;
-        const logicalPath = pageContext
-          ? (pageContext as any).urlLogical
-          : normalizePath(currentPath);
-
-        if (logicalPath !== "/" && !logicalPath.startsWith("/typing")) {
+        if (!isOnTypingPage) {
           return;
         }
 
         if (
-          !isLoading &&
           e.key !== "Enter" &&
           (isLegal(e.key) || e.key === " ") &&
           !e.altKey &&
@@ -195,8 +200,9 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
         }
       };
     }
-  }, [state.isTyping, isLoading, dispatch, pageContext]);
+  }, [state.isTyping, isLoading, dispatch, isOnTypingPage]);
 
+  // 优化：简化章节设置
   useEffect(() => {
     if (words !== undefined) {
       const initialIndex =
@@ -213,21 +219,18 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
         },
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [words]);
+  }, [words, isReviewMode, reviewModeInfo.reviewRecord?.index, randomConfig.isOpen, dispatch]);
 
+  // 优化：简化完成状态处理
   useEffect(() => {
-    // 当用户完成章节后且完成 word Record 数据保存，记录 chapter Record 数据,
     if (state.isFinished && !state.isSavingRecord) {
       chapterLogUploader();
       saveChapterRecord(state);
     }
+  }, [state.isFinished, state.isSavingRecord, chapterLogUploader, saveChapterRecord, state]);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.isFinished, state.isSavingRecord]);
-
+  // 优化：简化计时器
   useEffect(() => {
-    // 启动计时器
     let intervalId: number;
     if (state.isTyping) {
       intervalId = window.setInterval(() => {
@@ -249,8 +252,14 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
     };
   }, []);
 
+  // 优化：缓存上下文值
+  const typingContextValue = useMemo(() => ({
+    state: state,
+    dispatch
+  }), [state, dispatch]);
+
   return (
-    <TypingContext.Provider value={{ state: state, dispatch }}>
+    <TypingContext.Provider value={typingContextValue}>
       <StarCard />
       {state.isFinished && <DonateCard />}
       {state.isFinished && <ResultScreen />}

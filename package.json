@@ -77,6 +77,8 @@
     "dev": "vike dev",
     "start": "vike dev",
     "build": "vike build",
+    "build:analyze": "vike build && node scripts/analyze-bundle.js",
+    "build:prod": "vike build --mode production",
     "test": "echo \"No tests\"",
     "test:e2e": "playwright test",
     "lint": "eslint .",
@@ -84,7 +86,11 @@
     "prepare": "husky install",
     "server": "ts-node src/server/index.ts",
     "clean-custom-words": "ts-node src/server/scripts/clean-custom-words.ts",
-    "test-new-structure": "ts-node src/server/scripts/test-new-structure.ts"
+    "test-new-structure": "ts-node src/server/scripts/test-new-structure.ts",
+    "analyze": "node scripts/analyze-bundle.js",
+    "analyze:deps": "npx depcheck",
+    "bundle:report": "yarn build && npx vite-bundle-analyzer dist",
+    "performance:check": "node scripts/performance-check.js"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
@@ -146,6 +152,15 @@
     "ts-node": "^10.9.2",
     "typescript-plugin-css-modules": "^5.0.1",
     "unplugin-icons": "^0.16.1",
-    "vite": "^6.2.3"
+    "vite": "^6.2.3",
+    "vite-bundle-analyzer": "^0.7.0"
+  },
+  "resolutions": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=1.22.0"
   }
 }

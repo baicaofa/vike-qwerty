@@ -1,7 +1,7 @@
 // src/index.tsx
 import { isOpenDarkModeAtom } from "@/store";
-// 引入应急内存清理工具
-import "@/utils/memoryEmergencyCleanup";
+// 引入优化的内存管理器
+import "@/utils/optimizedMemoryManager";
 import "animate.css";
 import { useAtomValue } from "jotai";
 import mixpanel from "mixpanel-browser";

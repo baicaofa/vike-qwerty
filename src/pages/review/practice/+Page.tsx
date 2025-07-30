@@ -43,6 +43,7 @@ import {
 import { completeWordReview } from "@/utils/spaced-repetition";
 import { Loader2 } from "lucide-react";
 import { useCallback, useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 /**
  * 打字练习组件
@@ -297,6 +298,7 @@ function TypingContent({
  * 按照练习次数优先展示单词，未练习的单词优先
  */
 export default function ReviewPracticePage() {
+  const { t } = useTranslation();
   // =========== 状态管理 ===========
 
   // 从useTodayReviews hook获取复习数据
@@ -395,7 +397,7 @@ export default function ReviewPracticePage() {
       setTypingWords(adaptedWords);
     } catch (error) {
       console.error("加载练习单词失败:", error);
-      setError("加载练习单词失败，请刷新页面重试");
+      setError(t("review:status.error"));
     } finally {
       // 添加短暂延迟，使过渡更平滑
       setTimeout(() => {
@@ -544,8 +546,12 @@ export default function ReviewPracticePage() {
         <div className="flex items-center justify-center flex-1">
           <div className="text-center">
             <Loader2 className="h-12 w-12 animate-spin text-blue-500 mx-auto mb-4" />
-            <p className="text-gray-600 font-medium">加载练习数据中...</p>
-            <p className="text-gray-500 text-sm mt-2">正在准备您的复习单词</p>
+            <p className="text-gray-600 font-medium">
+              {t("review:status.loading")}
+            </p>
+            <p className="text-gray-500 text-sm mt-2">
+              {t("review:practice.preparingWords")}
+            </p>
           </div>
         </div>
       </div>
@@ -581,10 +587,10 @@ export default function ReviewPracticePage() {
               {refreshing ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  刷新中...
+                  {t("review:status.loading")}
                 </>
               ) : (
-                "重试"
+                t("review:status.retry")
               )}
             </Button>
             <Button
@@ -592,7 +598,7 @@ export default function ReviewPracticePage() {
               onClick={handleReturnToReviewPage}
               className="w-full mt-2"
             >
-              返回复习页面
+              {t("review:practice.backToReviewPage")}
             </Button>
           </div>
         </div>
@@ -620,12 +626,14 @@ export default function ReviewPracticePage() {
 
         <div className="flex items-center justify-center flex-1">
           <div className="text-center max-w-md p-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-            <p className="text-lg font-medium mb-6">今日没有需要复习的单词</p>
+            <p className="text-lg font-medium mb-6">
+              {t("review:today.noReviewToday")}
+            </p>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              恭喜！您已经完成了所有今天需要复习的单词。您可以返回复习页面查看您的复习进度。
+              {t("review:today.allCompleted")}
             </p>
             <Button size="lg" onClick={handleReturnToReviewPage}>
-              返回复习页面
+              {t("review:practice.backToReviewPage")}
             </Button>
           </div>
         </div>
@@ -660,11 +668,11 @@ export default function ReviewPracticePage() {
           <div className="text-sm">
             {selectedTab === "unpracticed" ? (
               <Badge variant="outline" className="bg-blue-50">
-                未练习单词
+                {t("review:today.unpracticed")} {t("review:history.word")}
               </Badge>
             ) : (
               <Badge variant="outline" className="bg-green-50">
-                已练习单词
+                {t("review:today.practiced")} {t("review:history.word")}
               </Badge>
             )}
           </div>
@@ -677,8 +685,8 @@ export default function ReviewPracticePage() {
             className="text-sm"
           >
             {selectedTab === "unpracticed"
-              ? "切换到已练习模式"
-              : "切换到未练习模式"}
+              ? t("review:practice.switchToPracticed")
+              : t("review:practice.switchToUnpracticed")}
           </Button>
 
           <Button
@@ -691,10 +699,10 @@ export default function ReviewPracticePage() {
             {refreshing ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                刷新中...
+                {t("review:status.loading")}
               </>
             ) : (
-              "刷新数据"
+              t("common:buttons.refresh")
             )}
           </Button>
         </div>
@@ -727,24 +735,34 @@ export default function ReviewPracticePage() {
                 />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold mb-4 text-center">练习完成！</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              {t("review:practice.practiceComplete")}！
+            </h2>
             <div className="mb-6 bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
               <div className="flex justify-between mb-2 py-2 border-b dark:border-gray-700">
-                <span>总单词数:</span>
+                <span>{t("review:stats.totalWords")}:</span>
                 <span className="font-semibold">{typingWords.length}</span>
               </div>
               <div className="flex justify-between py-2">
-                <span>练习模式:</span>
+                <span>{t("review:practice.practiceMode")}:</span>
                 <span className="font-semibold">
-                  {selectedTab === "unpracticed" ? "未练习单词" : "已练习单词"}
+                  {selectedTab === "unpracticed"
+                    ? t("review:today.unpracticed") +
+                      " " +
+                      t("review:history.word")
+                    : t("review:today.practiced") +
+                      " " +
+                      t("review:history.word")}
                 </span>
               </div>
             </div>
             <div className="flex justify-end gap-4">
               <Button variant="outline" onClick={handleCloseCompletionModal}>
-                关闭
+                {t("common:buttons.close")}
               </Button>
-              <Button onClick={handleRestart}>再练习一次</Button>
+              <Button onClick={handleRestart}>
+                {t("review:practice.practiceAgain")}
+              </Button>
             </div>
           </div>
         </div>

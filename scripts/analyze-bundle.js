@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+// @ts-check
 /**
  * Bundle 分析脚本
  * 用于分析打包后的文件大小和依赖关系

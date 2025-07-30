@@ -17,7 +17,10 @@ class OptimizedMemoryManager {
   private checkInterval = 30000; // 30秒检查一次
   private intervalId: NodeJS.Timeout | null = null;
 
-  private constructor() {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private constructor() {
+    // 私有构造函数，防止外部实例化
+  }
 
   static getInstance(): OptimizedMemoryManager {
     if (!OptimizedMemoryManager.instance) {
@@ -60,34 +63,37 @@ class OptimizedMemoryManager {
 
       // 清理大型 localStorage 项
       const largeKeys = [
-        'critical_metrics',
-        'word_stats_cache',
-        'typing_history',
-        'review_cache',
+        "critical_metrics",
+        "word_stats_cache",
+        "typing_history",
+        "review_cache",
       ];
 
       let cleanedSize = 0;
-      largeKeys.forEach(key => {
+      largeKeys.forEach((key) => {
         const data = localStorage.getItem(key);
-        if (data && data.length > 10000) { // 只清理大于10KB的数据
+        if (data && data.length > 10000) {
+          // 只清理大于10KB的数据
           cleanedSize += data.length;
           localStorage.removeItem(key);
         }
       });
 
       // 清理全局缓存
-      const cacheKeys = ['__WORD_CACHE__', '__DICT_CACHE__'];
-      cacheKeys.forEach(key => {
+      const cacheKeys = ["__WORD_CACHE__", "__DICT_CACHE__"];
+      cacheKeys.forEach((key) => {
         if ((window as any)[key]) {
           delete (window as any)[key];
         }
       });
 
       if (cleanedSize > 0) {
-        console.log(`🧹 内存清理完成，释放 ${(cleanedSize / 1024).toFixed(1)}KB`);
+        console.log(
+          `🧹 内存清理完成，释放 ${(cleanedSize / 1024).toFixed(1)}KB`
+        );
       }
     } catch (error) {
-      console.warn('内存清理失败:', error);
+      console.warn("内存清理失败:", error);
     }
   }
 
@@ -120,7 +126,7 @@ class OptimizedMemoryManager {
       this.intervalId = null;
     }
     this.isMonitoring = false;
-    console.log('🛑 内存监控已停止');
+    console.log("🛑 内存监控已停止");
   }
 
   /**
@@ -158,16 +164,16 @@ if (typeof window !== "undefined") {
   setTimeout(() => {
     const stats = memoryManager.getMemoryStats();
     if (stats && stats.usage > 0.7) {
-      console.warn('检测到高内存使用，执行清理...');
+      console.warn("检测到高内存使用，执行清理...");
       memoryManager.performCleanup();
     }
-    
+
     // 启动内存监控
     memoryManager.startMonitoring(0.85);
   }, 2000);
 
   // 页面卸载时清理
-  window.addEventListener('beforeunload', () => {
+  window.addEventListener("beforeunload", () => {
     memoryManager.stopMonitoring();
   });
 }

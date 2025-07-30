@@ -49,7 +49,7 @@ import { LineChart } from "echarts/charts";
 Created a comprehensive lazy loading system for heavy components:
 
 ```typescript
-// src/utils/lazyLoad.ts
+// src/utils/lazyLoad.tsx
 export const LazyComponents = {
   Analysis: createLazyComponent(() => import('../pages/Analysis/+Page')),
   ErrorBook: createLazyComponent(() => import('../pages/ErrorBook/+Page')),

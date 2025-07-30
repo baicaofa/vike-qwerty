@@ -2,7 +2,7 @@ import { useToast } from "../../hooks/useToast";
 import { voteFeedback } from "../../services/feedbackService";
 import { getDeviceFingerprint } from "../../utils/deviceFingerprint";
 // 优化导入：只导入需要的图标
-import { ThumbsUp, ThumbsDown } from "lucide-react";
+import { ThumbsDown, ThumbsUp } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
 

@@ -38,7 +38,7 @@ import { useSaveChapterRecord } from "@/utils/db";
 import { useMixPanelChapterLogUploader } from "@/utils/mixpanel";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import type React from "react";
-import { useCallback, useEffect, useRef, useState, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useImmerReducer } from "use-immer";
 import { usePageContext } from "vike-react/usePageContext";

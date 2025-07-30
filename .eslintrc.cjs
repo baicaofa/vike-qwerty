@@ -9,6 +9,12 @@ module.exports = {
   ignorePatterns: ["build"],
   overrides: [
     {
+      files: ["scripts/**/*.js"],  // 匹配你的脚本文件
+      parserOptions: {
+        sourceType: "module"
+      }
+    },
+    {
       files: ["scripts/*.cjs", ".eslintrc.cjs"],
       env: { node: true },
       extends: ["eslint:recommended"],

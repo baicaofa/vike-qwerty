@@ -6,7 +6,14 @@ import { useToast } from "../../hooks/useToast";
 import type { FeedbackReply } from "../../services/feedbackService";
 import { getPublicFeedback } from "../../services/feedbackService";
 // 优化导入：只导入需要的图标
-import { MessageSquare, Star, Heart, AlertTriangle, Bug, Lightbulb } from "lucide-react";
+import {
+  AlertTriangle,
+  Bug,
+  Heart,
+  Lightbulb,
+  MessageSquare,
+  Star,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 
 // 反馈类型和状态标签映射

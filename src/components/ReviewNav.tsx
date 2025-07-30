@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { SettingsModal } from "@/components/settings/SettingsModal";
 import type React from "react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { navigate } from "vike/client/router";
 
 /**
@@ -10,6 +11,7 @@ import { navigate } from "vike/client/router";
  * 用于 review 目录下页面之间的导航
  */
 const ReviewNav: React.FC = () => {
+  const { t } = useTranslation();
   const [currentPath, setCurrentPath] = useState("/");
   const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
 
@@ -22,13 +24,13 @@ const ReviewNav: React.FC = () => {
 
   // 定义导航项
   const navItems = [
-    { path: "/review/today", label: "今日复习" },
-    { path: "/review/practice", label: "开始练习" },
-    { path: "/review/history", label: "复习历史" },
-    { path: "/review", label: "数据统计" },
+    { path: "/review/today", label: t("review:today.title") },
+    { path: "/review/practice", label: t("review:practice.startPractice") },
+    { path: "/review/history", label: t("review:history.title") },
+    { path: "/review", label: t("review:dashboard.statistics") },
     // settings is now a modal
     // { path: "/review/settings", label: "复习设置" },
-    { path: "/", label: "返回首页" },
+    { path: "/", label: t("common:navigation.home") },
   ];
 
   return (
@@ -58,7 +60,7 @@ const ReviewNav: React.FC = () => {
                   onClick={() => setSettingsModalOpen(true)}
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                 >
-                  复习设置
+                  {t("review:nav.reviewSettings")}
                 </Button>
               </div>
             </div>
@@ -83,7 +85,9 @@ const ReviewNav: React.FC = () => {
                     {item.label}
                   </option>
                 ))}
-                <option value="settings">复习设置</option>
+                <option value="settings">
+                  {t("review:nav.reviewSettings")}
+                </option>
               </select>
             </div>
           </div>

@@ -19,12 +19,14 @@ import {
 } from "@/utils/reviewRounds";
 import type React from "react";
 import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 /**
  * 今日复习页面
  * 显示今天需要复习的单词，并按练习次数分组
  */
 export default function ReviewTodayPage() {
+  const { t } = useTranslation();
   const {
     reviews,
     completedCount,
@@ -66,13 +68,15 @@ export default function ReviewTodayPage() {
   // 渲染单词列表
   const renderWordList = () => {
     if (loading) {
-      return <div className="text-center py-8">加载中...</div>;
+      return (
+        <div className="text-center py-8">{t("review:status.loading")}</div>
+      );
     }
 
     if (reviews.length === 0) {
       return (
         <div className="text-center py-8">
-          <p className="text-gray-500">今天没有需要复习的单词</p>
+          <p className="text-gray-500">{t("review:today.noReviewToday")}</p>
         </div>
       );
     }
@@ -98,8 +102,8 @@ export default function ReviewTodayPage() {
         <div className="text-center py-4">
           <p className="text-gray-500">
             {activeTab === "unpracticed"
-              ? "没有未练习的单词"
-              : "没有已练习的单词"}
+              ? t("review:today.noUnpracticedWords")
+              : t("review:today.noPracticedWords")}
           </p>
         </div>
       );
@@ -116,9 +120,13 @@ export default function ReviewTodayPage() {
               <div key={countStr} className="border rounded-lg p-4">
                 <div className="flex justify-between items-center mb-2">
                   <h3 className="text-lg font-semibold">
-                    {count === 0 ? "未练习" : `已练习 ${count} 次`}
+                    {count === 0
+                      ? t("review:today.unpracticed")
+                      : t("review:today.practicedCount", { count })}
                   </h3>
-                  <Badge variant="outline">{words.length} 个单词</Badge>
+                  <Badge variant="outline">
+                    {words.length} {t("review:history.word")}
+                  </Badge>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -154,7 +162,7 @@ export default function ReviewTodayPage() {
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">今日复习</h1>
+        <h1 className="text-2xl font-bold">{t("review:today.title")}</h1>
         <div>
           <Button
             onClick={() => refreshTodayReviews()}
@@ -162,10 +170,10 @@ export default function ReviewTodayPage() {
             variant="outline"
             className="mr-2"
           >
-            刷新
+            {t("common:buttons.refresh")}
           </Button>
           <Link href="/review/practice">
-            <Button size="sm">开始练习</Button>
+            <Button size="sm">{t("review:today.startTodayReview")}</Button>
           </Link>
         </div>
       </div>
@@ -173,7 +181,9 @@ export default function ReviewTodayPage() {
       {/* 进度总览 */}
       <div className="bg-white rounded-lg shadow-md p-4 mb-6">
         <div className="flex justify-between items-center">
-          <h2 className="text-lg font-semibold">今日进度</h2>
+          <h2 className="text-lg font-semibold">
+            {t("review:today.reviewProgress")}
+          </h2>
           <Badge variant={progress >= 100 ? "default" : "outline"}>
             {completedCount}/{totalCount}
           </Badge>
@@ -186,11 +196,15 @@ export default function ReviewTodayPage() {
         {/* 练习统计信息 */}
         <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2">
           <div className="text-center p-2 bg-gray-50 rounded">
-            <p className="text-sm text-gray-600">总单词数</p>
+            <p className="text-sm text-gray-600">
+              {t("review:stats.totalWords")}
+            </p>
             <p className="text-xl font-bold">{stats.totalWords}</p>
           </div>
           <div className="text-center p-2 bg-gray-50 rounded">
-            <p className="text-sm text-gray-600">未练习</p>
+            <p className="text-sm text-gray-600">
+              {t("review:today.unpracticed")}
+            </p>
             <p className="text-xl font-bold text-red-600">
               {stats.unpracticedWords}
             </p>

@@ -1,5 +1,6 @@
 import type { ReviewStatsData } from "@/hooks/useReviewStats";
-import React, { memo } from "react";
+import { memo } from "react";
+import { useTranslation } from "react-i18next";
 
 /**
  * 复习统计组件Props
@@ -42,23 +43,46 @@ function getStreakDisplay(streak: number): { color: string; icon: string } {
 /**
  * 获取表现等级显示
  */
-function getPerformanceLevelDisplay(level: string): {
+function getPerformanceLevelDisplay(
+  level: string,
+  t: (key: string) => string
+): {
   text: string;
   color: string;
   icon: string;
 } {
   switch (level) {
     case "excellent":
-      return { text: "优秀", color: "text-green-600", icon: "🏆" };
+      return {
+        text: t("review:stats.excellent"),
+        color: "text-green-600",
+        icon: "🏆",
+      };
     case "good":
-      return { text: "良好", color: "text-blue-600", icon: "👍" };
+      return {
+        text: t("review:stats.good"),
+        color: "text-blue-600",
+        icon: "👍",
+      };
     case "fair":
-      return { text: "一般", color: "text-yellow-600", icon: "📈" };
+      return {
+        text: t("review:stats.fair"),
+        color: "text-yellow-600",
+        icon: "📈",
+      };
     case "needs-improvement":
-      return { text: "需改进", color: "text-red-600", icon: "💪" };
+      return {
+        text: t("review:stats.needsImprovement"),
+        color: "text-red-600",
+        icon: "💪",
+      };
     case "warming-up":
     default:
-      return { text: "热身中", color: "text-gray-600", icon: "🔄" };
+      return {
+        text: t("review:stats.warmingUp"),
+        color: "text-gray-600",
+        icon: "🔄",
+      };
   }
 }
 
@@ -149,9 +173,11 @@ export const ReviewStats = memo(
     performanceLevel = "warming-up",
     className = "",
   }: ReviewStatsProps) => {
+    const { t } = useTranslation();
+
     const accuracyColor = getAccuracyColor(stats.accuracy);
     const streakDisplay = getStreakDisplay(stats.currentStreak);
-    const performanceDisplay = getPerformanceLevelDisplay(performanceLevel);
+    const performanceDisplay = getPerformanceLevelDisplay(performanceLevel, t);
 
     return (
       <div

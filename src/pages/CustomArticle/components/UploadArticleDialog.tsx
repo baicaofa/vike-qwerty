@@ -31,7 +31,6 @@ export default function UploadArticleDialog({
   const [charCount, setCharCount] = useState(0);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [currentStep, setCurrentStep] = useState<1 | 2>(1);
   const [previewText, setPreviewText] = useState("");
   const [wordCount, setWordCount] = useState(0);
   const [enableSound, setEnableSound] = useState(false);
@@ -113,8 +112,6 @@ export default function UploadArticleDialog({
 
   // 更新预览文本和单词数量
   useEffect(() => {
-    if (currentStep !== 2) return;
-
     setPreviewText(content);
 
     // 计算单词数量
@@ -122,7 +119,7 @@ export default function UploadArticleDialog({
       .split(/\s+/)
       .filter((word) => word.length > 0).length;
     setWordCount(wordCount);
-  }, [content, currentStep]);
+  }, [content]);
 
   // 下一步
   const handleNextStep = () => {
@@ -222,7 +219,6 @@ export default function UploadArticleDialog({
     setCharCount(0);
     setIsError(false);
     setErrorMessage("");
-    setCurrentStep(1);
     setEnableSound(false);
     setIsUploading(false);
     setUploadError("");
@@ -240,8 +236,8 @@ export default function UploadArticleDialog({
     onOpenChange(open);
   };
 
-  // 渲染步骤1：输入文章
-  const renderStep1 = () => (
+  // 渲染主界面：输入文章和设置
+  const renderMainContent = () => (
     <>
       <div className="grid gap-4 py-4">
         {/* 文件上传区域 */}
@@ -338,6 +334,70 @@ export default function UploadArticleDialog({
             {errorMessage}
           </div>
         )}
+
+        {/* 分隔线 */}
+        <div className="col-span-4 border-t border-gray-200 my-4"></div>
+
+        {/* 设置选项 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+          {/* 左侧：设置选项 */}
+          <div className="space-y-4">
+            <div className="flex items-start">
+              <div className="flex items-center h-5">
+                <input
+                  id="enable-sound"
+                  type="checkbox"
+                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  checked={enableSound}
+                  onChange={handleEnableSoundToggle}
+                  aria-label={t("preprocess.enableSound")}
+                  title={t("preprocess.enableSoundDesc")}
+                />
+              </div>
+              <div className="ml-3 text-sm">
+                <label
+                  htmlFor="enable-sound"
+                  className="font-medium text-gray-700"
+                >
+                  {t("preprocess.enableSound")}
+                </label>
+                <p className="text-gray-500">{t("preprocess.enableSoundDesc")}</p>
+              </div>
+            </div>
+
+            {/* 标点符号设置提示 */}
+            <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
+              <div className="flex items-start">
+                <svg className="w-5 h-5 text-blue-600 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div className="text-sm">
+                  <p className="font-medium text-blue-800">
+                    {t("upload.punctuationNote")}
+                  </p>
+                  <p className="text-blue-700 mt-1">
+                    {t("upload.punctuationNoteDesc")}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 右侧：预览 */}
+          <div>
+            <div className="mb-2 flex justify-between items-center">
+              <h3 className="text-sm font-medium text-gray-700">
+                {t("preprocess.preview")}
+              </h3>
+              <span className="text-xs text-gray-500">
+                {t("preprocess.wordCount", { count: wordCount })}
+              </span>
+            </div>
+            <div className="border rounded-md p-4 h-64 overflow-auto bg-gray-50">
+              <pre className="text-sm whitespace-pre-wrap">{previewText}</pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <DialogFooter>
@@ -350,11 +410,11 @@ export default function UploadArticleDialog({
         </button>
         <button
           type="button"
-          onClick={handleNextStep}
+          onClick={handleStartPractice}
           disabled={isError || !title.trim() || !content.trim()}
           className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 px-4 py-2"
         >
-          {t("common:buttons.next")}
+          {t("upload.startPractice")}
         </button>
       </DialogFooter>
     </>
@@ -366,31 +426,6 @@ export default function UploadArticleDialog({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {/* 左侧：设置选项 */}
         <div className="space-y-4">
-          <div className="flex items-start">
-            <div className="flex items-center h-5">
-              <input
-                id="remove-punctuation"
-                type="checkbox"
-                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                checked={preprocessSettings.removePunctuation}
-                onChange={handleRemovePunctuationToggle}
-                aria-label={t("preprocess.removePunctuation")}
-                title={t("preprocess.removePunctuationDesc")}
-              />
-            </div>
-            <div className="ml-3 text-sm">
-              <label
-                htmlFor="remove-punctuation"
-                className="font-medium text-gray-700"
-              >
-                {t("preprocess.removePunctuation")}
-              </label>
-              <p className="text-gray-500">
-                {t("preprocess.removePunctuationDesc")}
-              </p>
-            </div>
-          </div>
-
           <div className="flex items-start">
             <div className="flex items-center h-5">
               <input
@@ -411,6 +446,23 @@ export default function UploadArticleDialog({
                 {t("preprocess.enableSound")}
               </label>
               <p className="text-gray-500">{t("preprocess.enableSoundDesc")}</p>
+            </div>
+          </div>
+
+          {/* 标点符号设置提示 */}
+          <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
+            <div className="flex items-start">
+              <svg className="w-5 h-5 text-blue-600 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div className="text-sm">
+                <p className="font-medium text-blue-800">
+                  {t("upload.punctuationNote")}
+                </p>
+                <p className="text-blue-700 mt-1">
+                  {t("upload.punctuationNoteDesc")}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -487,19 +539,15 @@ export default function UploadArticleDialog({
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-[600px]">
+      <DialogContent className="sm:max-w-[800px]">
         <DialogHeader>
           <DialogTitle>{t("upload.title")}</DialogTitle>
           <DialogDescription>
-            {currentStep === 1
-              ? t("upload.descStep1", { maxChars: MAX_CHARS })
-              : t("upload.descStep2")}
+            {t("upload.description")}
           </DialogDescription>
         </DialogHeader>
 
-        {renderStepIndicator()}
-
-        {currentStep === 1 ? renderStep1() : renderStep2()}
+        {renderMainContent()}
       </DialogContent>
     </Dialog>
   );

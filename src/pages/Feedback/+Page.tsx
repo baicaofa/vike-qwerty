@@ -5,7 +5,8 @@ import { VoteButtons } from "../../components/VoteButtons";
 import { useToast } from "../../hooks/useToast";
 import type { FeedbackReply } from "../../services/feedbackService";
 import { getPublicFeedback } from "../../services/feedbackService";
-import * as LucideIcons from "lucide-react";
+// 优化导入：只导入需要的图标
+import { MessageSquare, Star, Heart, AlertTriangle, Bug, Lightbulb } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // 反馈类型和状态标签映射
@@ -295,7 +296,7 @@ export default function FeedbackPage() {
                       {feedback.replies && feedback.replies.length > 0 && (
                         <>
                           <div className="mb-2 flex items-center text-xs text-blue-600 dark:text-blue-400">
-                            <LucideIcons.MessageCircle className="mr-1 h-4 w-4" />
+                            <MessageSquare className="mr-1 h-4 w-4" />
                             <span>{feedback.replies.length} 条管理员回复</span>
                           </div>
 
@@ -360,7 +361,7 @@ export default function FeedbackPage() {
                   className="rounded-full p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                   aria-label="关闭"
                 >
-                  <LucideIcons.X className="h-6 w-6" />
+                  <AlertTriangle className="h-6 w-6" />
                 </button>
               </div>
 

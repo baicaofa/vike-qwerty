@@ -1,7 +1,8 @@
 import { useToast } from "../../hooks/useToast";
 import { voteFeedback } from "../../services/feedbackService";
 import { getDeviceFingerprint } from "../../utils/deviceFingerprint";
-import * as LucideIcons from "lucide-react";
+// 优化导入：只导入需要的图标
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
 
@@ -90,7 +91,7 @@ export const VoteButtons: React.FC<VoteButtonsProps> = ({
         }`}
         aria-label="点赞"
       >
-        <LucideIcons.ThumbsUp className="h-4 w-4" />
+        <ThumbsUp className="h-4 w-4" />
         <span>{currentUpvotes}</span>
       </button>
 
@@ -105,7 +106,7 @@ export const VoteButtons: React.FC<VoteButtonsProps> = ({
         }`}
         aria-label="踩"
       >
-        <LucideIcons.ThumbsDown className="h-4 w-4" />
+        <ThumbsDown className="h-4 w-4" />
         <span>{currentDownvotes}</span>
       </button>
     </div>

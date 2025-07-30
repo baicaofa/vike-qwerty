@@ -48,24 +48,8 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [
-      react({
-        babel: {
-          plugins: [jotaiDebugLabel, jotaiReactRefresh],
-          // 优化 babel 配置
-          presets: [
-            [
-              "@babel/preset-env",
-              {
-                targets: {
-                  browsers: [">0.2%", "not dead", "not op_mini all"],
-                },
-                useBuiltIns: "usage",
-                corejs: 3,
-              },
-            ],
-          ],
-        },
-      }),
+      react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),
+
       vike(),
       // 只在生产环境启用 bundle 分析
       isProduction &&

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import type { ReviewStatsData } from "@/hooks/useReviewStats";
 import React, { memo } from "react";
 
@@ -47,18 +48,19 @@ function getPerformanceLevelDisplay(level: string): {
   color: string;
   icon: string;
 } {
+  const { t } = useTranslation();
   switch (level) {
     case "excellent":
-      return { text: "优秀", color: "text-green-600", icon: "🏆" };
+      return { text: t("review:stats.excellent"), color: "text-green-600", icon: "🏆" };
     case "good":
-      return { text: "良好", color: "text-blue-600", icon: "👍" };
+      return { text: t("review:stats.good"), color: "text-blue-600", icon: "👍" };
     case "fair":
-      return { text: "一般", color: "text-yellow-600", icon: "📈" };
+      return { text: t("review:stats.fair"), color: "text-yellow-600", icon: "📈" };
     case "needs-improvement":
-      return { text: "需改进", color: "text-red-600", icon: "💪" };
+      return { text: t("review:stats.needsImprovement"), color: "text-red-600", icon: "💪" };
     case "warming-up":
     default:
-      return { text: "热身中", color: "text-gray-600", icon: "🔄" };
+      return { text: t("review:stats.warmingUp"), color: "text-gray-600", icon: "🔄" };
   }
 }
 

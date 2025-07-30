@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useReviewHistory } from "@/hooks/useSpacedRepetition";
 import type { IWordReviewRecord } from "@/utils/db/wordReviewRecord";
 import { WordReviewRecord } from "@/utils/db/wordReviewRecord";
+import { useTranslation } from "react-i18next";
 import type React from "react";
 import { useMemo, useState } from "react";
 
@@ -25,16 +26,17 @@ const TimeRangeSelector: React.FC<{
   value: string;
   onChange: (value: string) => void;
 }> = ({ value, onChange }) => {
+  const { t } = useTranslation();
   const options = [
-    { value: "7d", label: "最近7天" },
-    { value: "30d", label: "最近30天" },
-    { value: "90d", label: "最近3个月" },
-    { value: "all", label: "全部时间" },
+    { value: "7d", label: t("review:timeRange.last7Days") },
+    { value: "30d", label: t("review:timeRange.last30Days") },
+    { value: "90d", label: t("review:timeRange.last3Months") },
+    { value: "all", label: t("review:timeRange.allTime") },
   ];
 
   return (
     <select
-      aria-label="选择时间范围"
+      aria-label={t("review:timeRange.label")}
       value={value}
       onChange={(e) => onChange(e.target.value)}
       className="border border-gray-300 rounded-md  py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -169,6 +171,7 @@ const StatCard: React.FC<{
 };
 
 export default function ReviewHistory() {
+  const { t } = useTranslation();
   const [timeRange, setTimeRange] = useState("30d");
   const [sortBy, setSortBy] = useState<
     "recent" | "frequency" | "strength" | "level"
@@ -300,7 +303,7 @@ export default function ReviewHistory() {
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">加载历史记录中...</p>
+            <p className="text-gray-600">{t("review:status.loading")}</p>
           </div>
         </div>
       </div>
@@ -311,15 +314,15 @@ export default function ReviewHistory() {
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-3xl font-bold text-gray-900">复习历史</h1>
+          <h1 className="text-3xl font-bold text-gray-900">{t("review:history.title")}</h1>
           <Link
             href="/review/dashboard"
             className="text-blue-600 hover:text-blue-700 text-sm"
           >
-            ← 返回仪表板
+            ← {t("common:buttons.back")}
           </Link>
         </div>
-        <p className="text-gray-600">查看您的复习记录和学习进展</p>
+        <p className="text-gray-600">{t("review:history.subtitle")}</p>
       </div>
 
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
@@ -328,7 +331,7 @@ export default function ReviewHistory() {
             <TimeRangeSelector value={timeRange} onChange={setTimeRange} />
 
             <select
-              aria-label="选择排序方式"
+              aria-label={t("review:history.sortBy")}
               value={sortBy}
               onChange={(e) =>
                 setSortBy(
@@ -341,15 +344,15 @@ export default function ReviewHistory() {
               }
               className="border border-gray-300 rounded-md  py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
-              <option value="recent">按最近复习排序</option>
-              <option value="frequency">按复习频次排序</option>
-              <option value="strength">按记忆强度排序</option>
-              <option value="level">按复习等级排序</option>
+              <option value="recent">{t("review:history.sortByLastReview")}</option>
+              <option value="frequency">{t("review:history.sortByReviewCount")}</option>
+              <option value="strength">{t("review:history.sortByLevel")}</option>
+              <option value="level">{t("review:history.sortByLevel")}</option>
             </select>
           </div>
 
           <div className="text-sm text-gray-600">
-            共 {history?.length || 0} 个单词记录
+            {t("review:history.word")}: {history?.length || 0}
           </div>
         </div>
       </div>
@@ -357,42 +360,42 @@ export default function ReviewHistory() {
       {stats && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <StatCard
-            title="总复习次数"
+            title={t("review:stats.totalReviews")}
             value={stats.totalReviews}
             color="blue"
           />
           <StatCard
-            title="平均准确率"
+            title={t("review:stats.averageAccuracy")}
             value={`${stats.averageAccuracy}%`}
             color="green"
           />
           <StatCard
-            title="学习天数"
+            title={t("review:history.studyDays")}
             value={stats.studyDays}
-            subtitle="有复习记录的天数"
+            subtitle={t("review:history.studyDaysSubtitle")}
             color="yellow"
           />
           <StatCard
-            title="掌握单词"
+            title={t("review:history.masteredWords")}
             value={stats.masteredWords}
-            subtitle="记忆强度 > 80%"
+            subtitle={t("review:history.masteredWordsSubtitle")}
             color="green"
           />
         </div>
       )}
 
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">复习趋势</h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">{t("review:history.reviewTrend")}</h2>
         <HistoryChart data={chartData} />
         <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
-          <span>每日复习数量和准确率</span>
+          <span>{t("review:history.dailyReviewStats")}</span>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 bg-blue-500 rounded"></div>
-              <span>复习数量</span>
+              <span>{t("review:history.reviewCount")}</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span>准确率</span>
+              <span>{t("review:history.accuracy")}</span>
             </div>
           </div>
         </div>

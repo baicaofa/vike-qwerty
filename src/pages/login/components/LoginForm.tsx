@@ -21,7 +21,16 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
 
     try {
       await login(email, password);
-      window.location.href = "/";
+      // 获取当前语言并构建正确的跳转路径
+      const supportedLocales = ["en", "zh"]; // 可扩展
+      const pathParts = window.location.pathname.split("/").filter(Boolean);
+      const currentLocale = supportedLocales.includes(pathParts[0])
+        ? pathParts[0]
+        : "zh";
+
+      const redirectPath = currentLocale === "zh" ? "/" : `/${currentLocale}/`;
+
+      window.location.href = redirectPath;
     } catch (error: any) {
       setError(error.response?.data?.message || t("errorLogin"));
     } finally {

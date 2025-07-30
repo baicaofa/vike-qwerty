@@ -219,7 +219,13 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
         },
       });
     }
-  }, [words, isReviewMode, reviewModeInfo.reviewRecord?.index, randomConfig.isOpen, dispatch]);
+  }, [
+    words,
+    isReviewMode,
+    reviewModeInfo.reviewRecord?.index,
+    randomConfig.isOpen,
+    dispatch,
+  ]);
 
   // 优化：简化完成状态处理
   useEffect(() => {
@@ -227,7 +233,13 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
       chapterLogUploader();
       saveChapterRecord(state);
     }
-  }, [state.isFinished, state.isSavingRecord, chapterLogUploader, saveChapterRecord, state]);
+  }, [
+    state.isFinished,
+    state.isSavingRecord,
+    chapterLogUploader,
+    saveChapterRecord,
+    state,
+  ]);
 
   // 优化：简化计时器
   useEffect(() => {
@@ -253,10 +265,13 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
   }, []);
 
   // 优化：缓存上下文值
-  const typingContextValue = useMemo(() => ({
-    state: state,
-    dispatch
-  }), [state, dispatch]);
+  const typingContextValue = useMemo(
+    () => ({
+      state: state,
+      dispatch,
+    }),
+    [state, dispatch]
+  );
 
   return (
     <TypingContext.Provider value={typingContextValue}>
@@ -265,7 +280,7 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
       {state.isFinished && <ResultScreen />}
 
       <Layout>
-        <Header>
+        <Header pageContext={pageContext}>
           <TypingPracticeButton />
           <DictChapterButton pageContext={pageContext} />
           <CustomArticleButton pageContext={pageContext} />

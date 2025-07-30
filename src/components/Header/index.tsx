@@ -2,6 +2,7 @@ import logo from "@/assets/logo.svg";
 import { UserAuthMenu } from "@/pages/Typing/components/UserAuthMenu";
 import type { PropsWithChildren } from "react";
 import type React from "react";
+import { usePageContext } from "vike-react/usePageContext";
 
 interface HeaderProps {
   pageContext?: any;

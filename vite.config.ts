@@ -20,10 +20,8 @@ const baseSitemapRoutes = [
   { path: "/gallery", priority: 0.9, changefreq: "daily" },
   { path: "/analysis", priority: 0.8, changefreq: "weekly" },
   { path: "/error-book", priority: 0.8, changefreq: "weekly" },
-  { path: "/mobile", priority: 0.7, changefreq: "monthly" },
-  { path: "/friend-links", priority: 0.5, changefreq: "monthly" },
   { path: "/familiar", priority: 0.6, changefreq: "monthly" },
-  { path: "/updates", priority: 0.4, changefreq: "monthly" },
+
   // 用户相关页面不需要添加到sitemap中
 ];
 

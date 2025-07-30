@@ -40,7 +40,6 @@
 
 - `pages/Analysis/`
 - `pages/familiar/`
-- `pages/FriendLinks/`
 - `pages/Gallery/`
-- `pages/Mobile/`
-- `pages/updates/`
+
+

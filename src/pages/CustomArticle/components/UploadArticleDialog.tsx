@@ -34,10 +34,6 @@ export default function UploadArticleDialog({
   const [currentStep, setCurrentStep] = useState<1 | 2>(1);
   const [previewText, setPreviewText] = useState("");
   const [wordCount, setWordCount] = useState(0);
-  const [preprocessSettings, setPreprocessSettings] =
-    useState<PreprocessSettings>({
-      removePunctuation: false,
-    });
   const [enableSound, setEnableSound] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadError, setUploadError] = useState("");
@@ -69,15 +65,7 @@ export default function UploadArticleDialog({
     setTitle(e.target.value);
   };
 
-  // 处理预处理设置变更
-  const handleRemovePunctuationToggle = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setPreprocessSettings({
-      ...preprocessSettings,
-      removePunctuation: e.target.checked,
-    });
-  };
+
 
   // 启用声音开关
   const handleEnableSoundToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -127,24 +115,14 @@ export default function UploadArticleDialog({
   useEffect(() => {
     if (currentStep !== 2) return;
 
-    let processed = content;
-
-    // 如果需要移除标点符号
-    if (preprocessSettings.removePunctuation) {
-      processed = processed
-        .replace(/[^\w\s]/g, "")
-        .replace(/\s+/g, " ")
-        .trim();
-    }
-
-    setPreviewText(processed);
+    setPreviewText(content);
 
     // 计算单词数量
-    const wordCount = processed
+    const wordCount = content
       .split(/\s+/)
       .filter((word) => word.length > 0).length;
     setWordCount(wordCount);
-  }, [content, preprocessSettings, currentStep]);
+  }, [content, currentStep]);
 
   // 下一步
   const handleNextStep = () => {
@@ -211,12 +189,6 @@ export default function UploadArticleDialog({
         payload: title.trim(),
       });
 
-      // 设置预处理设置
-      dispatch({
-        type: ArticleActionType.UPDATE_PREPROCESS_SETTINGS,
-        payload: preprocessSettings,
-      });
-
       // 设置声音设置
       dispatch({
         type: ArticleActionType.SET_ENABLE_SOUND,
@@ -251,9 +223,6 @@ export default function UploadArticleDialog({
     setIsError(false);
     setErrorMessage("");
     setCurrentStep(1);
-    setPreprocessSettings({
-      removePunctuation: false,
-    });
     setEnableSound(false);
     setIsUploading(false);
     setUploadError("");

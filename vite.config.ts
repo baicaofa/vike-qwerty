@@ -45,11 +45,11 @@ const sitemapRoutes = baseSitemapRoutes.flatMap((route) => {
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const isProduction = mode === "production";
-  
+
   return {
     plugins: [
-      react({ 
-        babel: { 
+      react({
+        babel: {
           plugins: [jotaiDebugLabel, jotaiReactRefresh],
           // 优化 babel 配置
           presets: [
@@ -57,23 +57,24 @@ export default defineConfig(({ mode }) => {
               "@babel/preset-env",
               {
                 targets: {
-                  browsers: [">0.2%", "not dead", "not op_mini all"]
+                  browsers: [">0.2%", "not dead", "not op_mini all"],
                 },
                 useBuiltIns: "usage",
-                corejs: 3
-              }
-            ]
-          ]
-        } 
+                corejs: 3,
+              },
+            ],
+          ],
+        },
       }),
       vike(),
       // 只在生产环境启用 bundle 分析
-      isProduction && visualizer({
-        filename: "dist/bundle-analysis.html",
-        open: false,
-        gzipSize: true,
-        brotliSize: true,
-      }) as PluginOption,
+      isProduction &&
+        (visualizer({
+          filename: "dist/bundle-analysis.html",
+          open: false,
+          gzipSize: true,
+          brotliSize: true,
+        }) as PluginOption),
       Icons({
         compiler: "jsx",
         jsx: "react",
@@ -185,43 +186,45 @@ export default defineConfig(({ mode }) => {
           // 代码分割优化
           manualChunks: {
             // 将 React 相关库分离
-            'react-vendor': ['react', 'react-dom'],
+            "react-vendor": ["react", "react-dom"],
             // 将 UI 库分离
-            'ui-vendor': [
-              '@radix-ui/react-dialog',
-              '@radix-ui/react-progress',
-              '@radix-ui/react-scroll-area',
-              '@radix-ui/react-slider',
-              '@radix-ui/react-tabs',
-              '@radix-ui/react-toggle',
-              '@radix-ui/react-tooltip',
-              '@headlessui/react',
+            "ui-vendor": [
+              "@radix-ui/react-dialog",
+              "@radix-ui/react-progress",
+              "@radix-ui/react-scroll-area",
+              "@radix-ui/react-slider",
+              "@radix-ui/react-tabs",
+              "@radix-ui/react-toggle",
+              "@radix-ui/react-tooltip",
+              "@headlessui/react",
             ],
             // 将图表库分离
-            'charts-vendor': ['echarts'],
+            "charts-vendor": ["echarts"],
             // 将工具库分离
-            'utils-vendor': [
-              'dayjs',
-              'clsx',
-              'class-variance-authority',
-              'tailwind-merge',
+            "utils-vendor": [
+              "dayjs",
+              "clsx",
+              "class-variance-authority",
+              "tailwind-merge",
             ],
             // 将状态管理库分离
-            'state-vendor': ['jotai', 'zustand', 'swr'],
+            "state-vendor": ["jotai", "zustand", "swr"],
           },
         },
       },
       // 优化 terser 配置
-      terserOptions: isProduction ? {
-        compress: {
-          drop_console: true,
-          drop_debugger: true,
-          pure_funcs: ['console.log', 'console.info', 'console.debug'],
-        },
-        mangle: {
-          safari10: true,
-        },
-      } : undefined,
+      terserOptions: isProduction
+        ? {
+            compress: {
+              drop_console: true,
+              drop_debugger: true,
+              pure_funcs: ["console.log", "console.info", "console.debug"],
+            },
+            mangle: {
+              safari10: true,
+            },
+          }
+        : undefined,
     },
     esbuild: {
       drop: mode === "development" ? [] : ["debugger", "console"],
@@ -248,18 +251,18 @@ export default defineConfig(({ mode }) => {
     // 优化依赖预构建
     optimizeDeps: {
       include: [
-        'react',
-        'react-dom',
-        'jotai',
-        'zustand',
-        'swr',
-        'dayjs',
-        'clsx',
-        'class-variance-authority',
-        'tailwind-merge',
+        "react",
+        "react-dom",
+        "jotai",
+        "zustand",
+        "swr",
+        "dayjs",
+        "clsx",
+        "class-variance-authority",
+        "tailwind-merge",
       ],
       exclude: [
-        'echarts', // 排除 echarts，因为它很大且不常用
+        "echarts", // 排除 echarts，因为它很大且不常用
       ],
     },
   };

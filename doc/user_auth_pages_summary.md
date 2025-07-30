@@ -41,5 +41,3 @@
 - `pages/Analysis/`
 - `pages/familiar/`
 - `pages/Gallery/`
-
-

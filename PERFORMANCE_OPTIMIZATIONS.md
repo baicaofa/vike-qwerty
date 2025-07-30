@@ -33,15 +33,17 @@ build: {
 ### 2. Import Optimizations
 
 **Before:**
+
 ```typescript
-import * as LucideIcons from "lucide-react";
 import * as echarts from "echarts/core";
+import * as LucideIcons from "lucide-react";
 ```
 
 **After:**
+
 ```typescript
-import { ThumbsUp, ThumbsDown } from "lucide-react";
 import { LineChart } from "echarts/charts";
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 ```
 
 ### 3. Lazy Loading Implementation
@@ -51,10 +53,12 @@ Created a comprehensive lazy loading system for heavy components:
 ```typescript
 // src/utils/lazyLoad.tsx
 export const LazyComponents = {
-  Analysis: createLazyComponent(() => import('../pages/Analysis/+Page')),
-  ErrorBook: createLazyComponent(() => import('../pages/ErrorBook/+Page')),
-  Gallery: createLazyComponent(() => import('../pages/Gallery/+Page')),
-  CustomArticle: createLazyComponent(() => import('../pages/CustomArticle/+Page')),
+  Analysis: createLazyComponent(() => import("../pages/Analysis/+Page")),
+  ErrorBook: createLazyComponent(() => import("../pages/ErrorBook/+Page")),
+  Gallery: createLazyComponent(() => import("../pages/Gallery/+Page")),
+  CustomArticle: createLazyComponent(
+    () => import("../pages/CustomArticle/+Page")
+  ),
 };
 ```
 
@@ -63,6 +67,7 @@ export const LazyComponents = {
 ### 1. React Component Optimizations
 
 #### Typing Page Optimizations
+
 - **Memoized Computations**: Cached expensive path calculations
 - **Optimized useEffect**: Merged related effects and improved dependencies
 - **Reduced Re-renders**: Used useMemo for context values
@@ -108,6 +113,7 @@ memoryManager.startMonitoring(0.85); // 85% threshold
 ```
 
 **Features:**
+
 - Lightweight memory monitoring
 - Automatic cleanup of large localStorage items
 - Performance mark cleanup
@@ -130,6 +136,7 @@ yarn bundle:report
 ```
 
 **Features:**
+
 - Bundle size analysis
 - File size breakdown
 - Dependency duplication detection
@@ -142,6 +149,7 @@ yarn performance:check
 ```
 
 **Features:**
+
 - Large file detection
 - Import pattern analysis
 - useEffect usage analysis
@@ -186,7 +194,7 @@ import { ThumbsUp, ThumbsDown } from "lucide-react";
 ```typescript
 // Lazy load ECharts components
 export const LazyECharts = createLazyComponent(
-  () => import('../pages/Analysis/components/LineCharts'),
+  () => import("../pages/Analysis/components/LineCharts"),
   <LoadingSpinner />
 );
 ```
@@ -199,10 +207,10 @@ export const LazyECharts = createLazyComponent(
 ```typescript
 // Optimized cleanup targets only large items
 const largeKeys = [
-  'critical_metrics',
-  'word_stats_cache',
-  'typing_history',
-  'review_cache',
+  "critical_metrics",
+  "word_stats_cache",
+  "typing_history",
+  "review_cache",
 ];
 
 // Only clean items larger than 10KB

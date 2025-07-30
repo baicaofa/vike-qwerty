@@ -2,7 +2,8 @@
  * 懒加载工具
  * 用于延迟加载重型组件和库，提升初始加载性能
  */
-import React, { lazy, Suspense, ComponentType } from "react";
+import type { ComponentType } from "react";
+import React, { Suspense, lazy } from "react";
 
 /**
  * 创建懒加载组件包装器
@@ -15,11 +16,16 @@ export function createLazyComponent<T extends ComponentType<any>>(
 ) {
   const LazyComponent = lazy(importFn);
 
-  return (props: React.ComponentProps<T>) => (
+  const LazyWrapper = (props: React.ComponentProps<T>) => (
     <Suspense fallback={fallback}>
       <LazyComponent {...props} />
     </Suspense>
   );
+
+  // 添加 display name
+  LazyWrapper.displayName = "LazyWrapper";
+
+  return LazyWrapper;
 }
 
 /**
@@ -33,21 +39,6 @@ export const LazyECharts = createLazyComponent(
     React.createElement("div", {
       className:
         "animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600",
-    })
-  )
-);
-
-/**
- * 懒加载 Excel 解析组件
- */
-export const LazyExcelParser = createLazyComponent(
-  () => import("./excelParser"),
-  React.createElement(
-    "div",
-    { className: "flex items-center justify-center h-32" },
-    React.createElement("div", {
-      className:
-        "animate-spin rounded-full h-6 w-6 border-b-2 border-indigo-600",
     })
   )
 );
@@ -135,7 +126,10 @@ export function conditionalImport<T>(
 export const LazyComponents = {
   // 分析页面组件
   Analysis: createLazyComponent(
-    () => import("../pages/Analysis/+Page"),
+    () =>
+      import("../pages/Analysis/+Page").then((module) => ({
+        default: module.Page,
+      })),
     React.createElement(
       "div",
       { className: "flex items-center justify-center h-64" },
@@ -148,7 +142,10 @@ export const LazyComponents = {
 
   // 错误本页面组件
   ErrorBook: createLazyComponent(
-    () => import("../pages/ErrorBook/+Page"),
+    () =>
+      import("../pages/ErrorBook/+Page").then((module) => ({
+        default: module.Page,
+      })),
     React.createElement(
       "div",
       { className: "flex items-center justify-center h-64" },
@@ -161,7 +158,10 @@ export const LazyComponents = {
 
   // 画廊页面组件
   Gallery: createLazyComponent(
-    () => import("../pages/Gallery/+Page"),
+    () =>
+      import("../pages/Gallery/+Page").then((module) => ({
+        default: module.default,
+      })),
     React.createElement(
       "div",
       { className: "flex items-center justify-center h-64" },
@@ -174,7 +174,10 @@ export const LazyComponents = {
 
   // 自定义文章组件
   CustomArticle: createLazyComponent(
-    () => import("../pages/CustomArticle/+Page"),
+    () =>
+      import("../pages/CustomArticle/+Page").then((module) => ({
+        default: module.Page,
+      })),
     React.createElement(
       "div",
       { className: "flex items-center justify-center h-64" },

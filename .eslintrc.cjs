@@ -9,10 +9,10 @@ module.exports = {
   ignorePatterns: ["build"],
   overrides: [
     {
-      files: ["scripts/**/*.js"],  // 匹配你的脚本文件
+      files: ["scripts/**/*.js"], // 匹配你的脚本文件
       parserOptions: {
-        sourceType: "module"
-      }
+        sourceType: "module",
+      },
     },
     {
       files: ["scripts/*.cjs", ".eslintrc.cjs"],

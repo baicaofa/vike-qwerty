@@ -67,8 +67,7 @@
     "masteredWords": "掌握单词",
     "masteredWordsSubtitle": "记忆强度 > 80%",
     "reviewTrend": "复习趋势",
-    "dailyReviewStats": "每日复习数量和准确率",
-    "reviewCount": "复习数量"
+    "dailyReviewStats": "每日复习数量和准确率"
   },
   "practice": {
     "title": "复习练习",
@@ -105,7 +104,9 @@
     "backToReviewPage": "返回复习页面",
     "switchToPracticed": "切换到已练习模式",
     "switchToUnpracticed": "切换到未练习模式",
-    "practiceMode": "练习模式"
+    "practiceMode": "练习模式",
+    "showPunctuation": "显示标点",
+    "hidePunctuation": "隐藏标点"
   },
   "today": {
     "title": "今日复习",
@@ -176,5 +177,13 @@
     "normal": "适中",
     "hard": "困难",
     "difficultyLevel": "难度等级"
+  },
+    "upload": {
+    "title": "上传自定义文章",
+    "description": "上传Word文档或手动输入文章内容",
+    "startPractice": "开始练习",
+    "punctuationNote": "标点符号设置",
+    "punctuationNoteDesc": "您可以在练习页面随时调整是否显示标点符号"
   }
+
 }

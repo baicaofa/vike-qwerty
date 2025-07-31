@@ -97,6 +97,9 @@ const handleTogglePunctuation = () => {
 {
   /* 标点符号控制按钮 */
 }
+{
+  /* 标点符号控制按钮 */
+}
 <button
   type="button"
   onClick={handleTogglePunctuation}
@@ -108,11 +111,15 @@ const handleTogglePunctuation = () => {
 >
   {/* 动态图标和文本 */}
 </button>;
+</button>;
 ```
 
 **底部控制栏**
 
 ```tsx
+{
+  /* 标点符号切换按钮 */
+}
 {
   /* 标点符号切换按钮 */
 }
@@ -126,6 +133,7 @@ const handleTogglePunctuation = () => {
   onClick={handleTogglePunctuation}
 >
   {/* 动态图标和文本 */}
+</button>;
 </button>;
 ```
 

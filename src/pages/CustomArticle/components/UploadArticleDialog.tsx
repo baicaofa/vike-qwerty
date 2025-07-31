@@ -38,7 +38,7 @@ export default function UploadArticleDialog({
   const [wordCount, setWordCount] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadError, setUploadError] = useState("");
-  const [enableSound, setEnableSound] = useState(false);
+
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const saveArticle = useSaveArticle();
@@ -65,11 +65,6 @@ export default function UploadArticleDialog({
   // 处理标题变化
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
-  };
-
-  // 启用声音开关
-  const handleEnableSoundToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEnableSound(e.target.checked);
   };
 
   // 处理文件上传
@@ -122,45 +117,6 @@ export default function UploadArticleDialog({
     setWordCount(wordCount);
   }, [content]);
 
-  // 下一步
-  const handleNextStep = () => {
-    if (currentStep === 1) {
-      if (!title.trim()) {
-        setIsError(true);
-        setErrorMessage(t("upload.errorTitleEmpty"));
-        return;
-      }
-
-      if (!content.trim()) {
-        setIsError(true);
-        setErrorMessage(t("upload.errorContentEmpty"));
-        return;
-      }
-
-      if (content.length > MAX_CHARS) {
-        setIsError(true);
-        setErrorMessage(
-          t("input.errorTooLong", {
-            count: content.length,
-            maxChars: MAX_CHARS,
-          })
-        );
-        return;
-      }
-
-      setCurrentStep(2);
-      setIsError(false);
-      setErrorMessage("");
-    }
-  };
-
-  // 上一步
-  const handlePrevStep = () => {
-    if (currentStep === 2) {
-      setCurrentStep(1);
-    }
-  };
-
   // 开始练习并自动保存文章
   const handleStartPractice = async () => {
     try {
@@ -185,12 +141,6 @@ export default function UploadArticleDialog({
       dispatch({
         type: ArticleActionType.SET_ARTICLE_TITLE,
         payload: title.trim(),
-      });
-
-      // 设置声音设置
-      dispatch({
-        type: ArticleActionType.SET_ENABLE_SOUND,
-        payload: enableSound,
       });
 
       // 处理文本
@@ -220,7 +170,7 @@ export default function UploadArticleDialog({
     setCharCount(0);
     setIsError(false);
     setErrorMessage("");
-    setEnableSound(false);
+
     setIsUploading(false);
     setUploadError("");
     // 重置文件输入
@@ -363,76 +313,18 @@ export default function UploadArticleDialog({
         {/* 分隔线 */}
         <div className="col-span-4 border-t border-gray-200 my-4"></div>
 
-        {/* 设置选项 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-          {/* 左侧：设置选项 */}
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <div className="flex items-center h-5">
-                <input
-                  id="enable-sound"
-                  type="checkbox"
-                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                  checked={enableSound}
-                  onChange={handleEnableSoundToggle}
-                  aria-label={t("preprocess.enableSound")}
-                  title={t("preprocess.enableSoundDesc")}
-                />
-              </div>
-              <div className="ml-3 text-sm">
-                <label
-                  htmlFor="enable-sound"
-                  className="font-medium text-gray-700"
-                >
-                  {t("preprocess.enableSound")}
-                </label>
-                <p className="text-gray-500">
-                  {t("preprocess.enableSoundDesc")}
-                </p>
-              </div>
-            </div>
-
-            {/* 标点符号设置提示 */}
-            <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
-              <div className="flex items-start">
-                <svg
-                  className="w-5 h-5 text-blue-600 mt-0.5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <div className="text-sm">
-                  <p className="font-medium text-blue-800">
-                    {t("upload.punctuationNote")}
-                  </p>
-                  <p className="text-blue-700 mt-1">
-                    {t("upload.punctuationNoteDesc")}
-                  </p>
-                </div>
-              </div>
-            </div>
+        {/* 预览 */}
+        <div>
+          <div className="mb-2 flex justify-between items-center">
+            <h3 className="text-sm font-medium text-gray-700">
+              {t("preprocess.preview")}
+            </h3>
+            <span className="text-xs text-gray-500">
+              {t("preprocess.wordCount", { count: wordCount })}
+            </span>
           </div>
-
-          {/* 右侧：预览 */}
-          <div>
-            <div className="mb-2 flex justify-between items-center">
-              <h3 className="text-sm font-medium text-gray-700">
-                {t("preprocess.preview")}
-              </h3>
-              <span className="text-xs text-gray-500">
-                {t("preprocess.wordCount", { count: wordCount })}
-              </span>
-            </div>
-            <div className="border rounded-md p-4 h-64 overflow-auto bg-gray-50">
-              <pre className="text-sm whitespace-pre-wrap">{previewText}</pre>
-            </div>
+          <div className="border rounded-md p-4 h-64 overflow-auto bg-gray-50">
+            <pre className="text-sm whitespace-pre-wrap">{previewText}</pre>
           </div>
         </div>
       </div>
@@ -455,133 +347,6 @@ export default function UploadArticleDialog({
         </button>
       </DialogFooter>
     </>
-  );
-
-  // 渲染步骤2：预处理设置
-  const renderStep2 = () => (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-        {/* 左侧：设置选项 */}
-        <div className="space-y-4">
-          <div className="flex items-start">
-            <div className="flex items-center h-5">
-              <input
-                id="enable-sound"
-                type="checkbox"
-                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                checked={enableSound}
-                onChange={handleEnableSoundToggle}
-                aria-label={t("preprocess.enableSound")}
-                title={t("preprocess.enableSoundDesc")}
-              />
-            </div>
-            <div className="ml-3 text-sm">
-              <label
-                htmlFor="enable-sound"
-                className="font-medium text-gray-700"
-              >
-                {t("preprocess.enableSound")}
-              </label>
-              <p className="text-gray-500">{t("preprocess.enableSoundDesc")}</p>
-            </div>
-          </div>
-
-          {/* 标点符号设置提示 */}
-          <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
-            <div className="flex items-start">
-              <svg
-                className="w-5 h-5 text-blue-600 mt-0.5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <div className="text-sm">
-                <p className="font-medium text-blue-800">
-                  {t("upload.punctuationNote")}
-                </p>
-                <p className="text-blue-700 mt-1">
-                  {t("upload.punctuationNoteDesc")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 右侧：预览 */}
-        <div>
-          <div className="mb-2 flex justify-between items-center">
-            <h3 className="text-sm font-medium text-gray-700">
-              {t("preprocess.preview")}
-            </h3>
-            <span className="text-xs text-gray-500">
-              {t("preprocess.wordCount", { count: wordCount })}
-            </span>
-          </div>
-          <div className="border rounded-md p-4 h-64 overflow-auto bg-gray-50">
-            <pre className="text-sm whitespace-pre-wrap">{previewText}</pre>
-          </div>
-        </div>
-      </div>
-
-      <DialogFooter className="mt-6">
-        <div className="flex justify-between w-full">
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 h-10 px-4 py-2"
-            onClick={handlePrevStep}
-          >
-            上一步
-          </button>
-
-          <div className="flex space-x-3">
-            <button
-              type="button"
-              onClick={handleStartPractice}
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 px-4 py-2"
-            >
-              {t("preprocess.startPractice")}
-            </button>
-          </div>
-        </div>
-      </DialogFooter>
-    </>
-  );
-
-  // 渲染步骤指示器
-  const renderStepIndicator = () => (
-    <div className="flex justify-center mb-4">
-      <div className="flex items-center">
-        {/* 第一步 */}
-        <div
-          className={`flex items-center justify-center w-6 h-6 rounded-full ${
-            currentStep === 1 ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
-        >
-          1
-        </div>
-        <div
-          className={`w-12 h-1 ${
-            currentStep > 1 ? "bg-blue-600" : "bg-gray-200"
-          }`}
-        ></div>
-
-        {/* 第二步 */}
-        <div
-          className={`flex items-center justify-center w-6 h-6 rounded-full ${
-            currentStep === 2 ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
-        >
-          2
-        </div>
-      </div>
-    </div>
   );
 
   return (

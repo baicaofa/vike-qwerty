@@ -141,13 +141,16 @@ export function useTodayReviews() {
         .count();
 
       setCompletedCount(completed);
-      setProgress(totalCount > 0 ? (completed / totalCount) * 100 : 0);
+      // 直接使用 todayWords.length 而不是状态中的 totalCount，避免循环依赖
+      setProgress(
+        todayWords.length > 0 ? (completed / todayWords.length) * 100 : 0
+      );
     } catch (err) {
       console.error("Failed to refresh today reviews:", err);
     } finally {
       setLoading(false);
     }
-  }, [totalCount]);
+  }, []); // 移除 totalCount 依赖，避免无限循环
 
   useEffect(() => {
     refreshTodayReviews();

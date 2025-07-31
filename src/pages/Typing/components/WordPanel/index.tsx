@@ -360,7 +360,7 @@ export default function WordPanel({
                 currentWord.sentences &&
                 Array.isArray(currentWord.sentences) &&
                 currentWord.sentences.length > 0 &&
-                shouldShowTranslation && (
+                state.isSentencesVisible && (
                   <div className="mt-4 md:mt-0 md:w-2/5 lg:w-1/2">
                     <Sentences word={currentWord} showSentences={true} />
                   </div>

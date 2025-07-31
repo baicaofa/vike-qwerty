@@ -25,6 +25,7 @@ export const initialState: TypingState = {
   isFinished: false,
   isShowSkip: false,
   isTransVisible: true,
+  isSentencesVisible: true,
   isLoopSingleWord: false,
   isSavingRecord: false,
 };
@@ -54,6 +55,8 @@ export enum TypingStateActionType {
   TOGGLE_WORD_VISIBLE = "TOGGLE_WORD_VISIBLE",
   TOGGLE_TRANS_VISIBLE = "TOGGLE_TRANS_VISIBLE",
   SET_TRANS_VISIBLE = "SET_TRANS_VISIBLE",
+  TOGGLE_SENTENCES_VISIBLE = "TOGGLE_SENTENCES_VISIBLE",
+  SET_SENTENCES_VISIBLE = "SET_SENTENCES_VISIBLE",
   TICK_TIMER = "TICK_TIMER",
   ADD_WORD_RECORD_ID = "ADD_WORD_RECORD_ID",
   SET_IS_SAVING_RECORD = "SET_IS_SAVING_RECORD",
@@ -95,6 +98,8 @@ export type TypingStateAction =
   | { type: TypingStateActionType.NEXT_CHAPTER }
   | { type: TypingStateActionType.TOGGLE_TRANS_VISIBLE }
   | { type: TypingStateActionType.SET_TRANS_VISIBLE; payload: boolean }
+  | { type: TypingStateActionType.TOGGLE_SENTENCES_VISIBLE }
+  | { type: TypingStateActionType.SET_SENTENCES_VISIBLE; payload: boolean }
   | { type: TypingStateActionType.TICK_TIMER; addTime?: number }
   | { type: TypingStateActionType.ADD_WORD_RECORD_ID; payload: number }
   | { type: TypingStateActionType.SET_IS_SAVING_RECORD; payload: boolean }
@@ -212,6 +217,7 @@ export const typingReducer = (
         ? shuffle(state.chapterData.words)
         : state.chapterData.words;
       newState.isTransVisible = state.isTransVisible;
+      newState.isSentencesVisible = state.isSentencesVisible;
       return newState;
     }
     case TypingStateActionType.NEXT_CHAPTER: {
@@ -221,6 +227,7 @@ export const typingReducer = (
       );
       newState.isTyping = true;
       newState.isTransVisible = state.isTransVisible;
+      newState.isSentencesVisible = state.isSentencesVisible;
       return newState;
     }
     case TypingStateActionType.TOGGLE_TRANS_VISIBLE:
@@ -228,6 +235,12 @@ export const typingReducer = (
       break;
     case TypingStateActionType.SET_TRANS_VISIBLE:
       state.isTransVisible = action.payload;
+      break;
+    case TypingStateActionType.TOGGLE_SENTENCES_VISIBLE:
+      state.isSentencesVisible = !state.isSentencesVisible;
+      break;
+    case TypingStateActionType.SET_SENTENCES_VISIBLE:
+      state.isSentencesVisible = action.payload;
       break;
     case TypingStateActionType.TICK_TIMER: {
       const increment = action.addTime === undefined ? 1 : action.addTime;

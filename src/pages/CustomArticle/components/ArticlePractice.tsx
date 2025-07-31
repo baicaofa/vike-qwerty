@@ -89,6 +89,9 @@ export default function ArticlePractice() {
   const [showRecommendedDialog, setShowRecommendedDialog] = useState(false);
   const [showUploadDialog, setShowUploadDialog] = useState(false);
 
+  // 声音控制状态
+  const [enableSound, setEnableSound] = useState(false);
+
   // 打开推荐文章弹窗
   const handleOpenRecommendedDialog = () => {
     // 暂停当前练习
@@ -104,18 +107,18 @@ export default function ArticlePractice() {
     if (state.isTyping && !state.isPaused) {
       safeDispatch({ type: ArticleActionType.PAUSE_TYPING });
     }
-    
+
     // 更新预处理设置
     dispatch({
       type: ArticleActionType.UPDATE_PREPROCESS_SETTINGS,
-      payload: { 
-        removePunctuation: !state.preprocessSettings.removePunctuation 
+      payload: {
+        removePunctuation: !state.preprocessSettings.removePunctuation,
       },
     });
-    
+
     // 重新处理文本
     dispatch({ type: ArticleActionType.PROCESS_TEXT });
-    
+
     // 如果之前正在练习，恢复练习
     if (state.isTyping && !state.isPaused) {
       safeDispatch({ type: ArticleActionType.RESUME_TYPING });
@@ -315,13 +318,13 @@ export default function ArticlePractice() {
 
   // 播放当前单词发音
   const playCurrentWordSound = useCallback(() => {
-    if (currentWord && state.isTyping && !state.isPaused && state.enableSound) {
+    if (currentWord && state.isTyping && !state.isPaused && enableSound) {
       // 使用浏览器的语音合成API
       const utterance = new SpeechSynthesisUtterance(currentWord.name);
       utterance.lang = "en-US";
       window.speechSynthesis.speak(utterance);
     }
-  }, [currentWord, state.isTyping, state.isPaused, state.enableSound]);
+  }, [currentWord, state.isTyping, state.isPaused, enableSound]);
 
   // 自动播放当前单词发音
   useEffect(() => {
@@ -329,7 +332,7 @@ export default function ArticlePractice() {
       state.isTyping &&
       !state.isPaused &&
       state.userInput.length === 0 &&
-      state.enableSound
+      enableSound
     ) {
       playCurrentWordSound();
     }
@@ -338,7 +341,7 @@ export default function ArticlePractice() {
     state.isTyping,
     state.isPaused,
     state.userInput.length,
-    state.enableSound,
+    enableSound,
     playCurrentWordSound,
   ]);
 
@@ -559,7 +562,7 @@ export default function ArticlePractice() {
         >
           {t("practice.uploadArticle")}
         </button>
-        
+
         {/* 标点符号控制按钮 */}
         <button
           type="button"
@@ -577,17 +580,87 @@ export default function ArticlePractice() {
         >
           {state.preprocessSettings.removePunctuation ? (
             <>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                />
               </svg>
               <span>{t("practice.showPunctuation")}</span>
             </>
           ) : (
             <>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
               <span>{t("practice.hidePunctuation")}</span>
+            </>
+          )}
+        </button>
+
+        {/* 声音控制按钮 */}
+        <button
+          type="button"
+          onClick={() => setEnableSound(!enableSound)}
+          className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center space-x-1 ${
+            enableSound
+              ? "bg-green-600 hover:bg-green-700 text-white"
+              : "bg-gray-600 hover:bg-gray-700 text-white"
+          }`}
+          title={
+            enableSound ? t("practice.disableSound") : t("practice.enableSound")
+          }
+        >
+          {enableSound ? (
+            <>
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                />
+              </svg>
+              <span>{t("practice.disableSound")}</span>
+            </>
+          ) : (
+            <>
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                />
+              </svg>
+              <span>{t("practice.enableSound")}</span>
             </>
           )}
         </button>
@@ -705,15 +778,35 @@ export default function ArticlePractice() {
             >
               {state.preprocessSettings.removePunctuation ? (
                 <>
-                  <svg className="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                  <svg
+                    className="w-4 h-4 inline mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                    />
                   </svg>
                   {t("practice.showPunctuation")}
                 </>
               ) : (
                 <>
-                  <svg className="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="w-4 h-4 inline mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                   {t("practice.hidePunctuation")}
                 </>

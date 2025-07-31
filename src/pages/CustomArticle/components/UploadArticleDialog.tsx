@@ -10,8 +10,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useSaveArticle } from "@/utils/db/article";
-import { parseWordDocument, validateWordFile, getFileSizeDescription } from "@/utils/wordDocumentParser";
-import { useContext, useEffect, useState, useRef } from "react";
+import {
+  parseWordDocument,
+  validateWordFile,
+} from "@/utils/wordDocumentParser";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 interface UploadArticleDialogProps {
@@ -33,9 +36,9 @@ export default function UploadArticleDialog({
   const [errorMessage, setErrorMessage] = useState("");
   const [previewText, setPreviewText] = useState("");
   const [wordCount, setWordCount] = useState(0);
-  const [enableSound, setEnableSound] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadError, setUploadError] = useState("");
+  const [enableSound, setEnableSound] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const saveArticle = useSaveArticle();
@@ -64,8 +67,6 @@ export default function UploadArticleDialog({
     setTitle(e.target.value);
   };
 
-
-
   // 启用声音开关
   const handleEnableSoundToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEnableSound(e.target.checked);
@@ -87,7 +88,7 @@ export default function UploadArticleDialog({
 
     try {
       const result = await parseWordDocument(file);
-      
+
       if (result.success) {
         setTitle(result.title || "");
         setContent(result.content);
@@ -262,16 +263,42 @@ export default function UploadArticleDialog({
               >
                 {isUploading ? (
                   <>
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    <svg
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
                     </svg>
                     {t("upload.uploading")}
                   </>
                 ) : (
                   <>
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    <svg
+                      className="w-5 h-5 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
                     </svg>
                     {t("upload.selectWordFile")}
                   </>
@@ -282,9 +309,7 @@ export default function UploadArticleDialog({
               </p>
             </div>
             {uploadError && (
-              <div className="text-red-500 text-sm">
-                {uploadError}
-              </div>
+              <div className="text-red-500 text-sm">{uploadError}</div>
             )}
           </div>
         </div>
@@ -361,15 +386,27 @@ export default function UploadArticleDialog({
                 >
                   {t("preprocess.enableSound")}
                 </label>
-                <p className="text-gray-500">{t("preprocess.enableSoundDesc")}</p>
+                <p className="text-gray-500">
+                  {t("preprocess.enableSoundDesc")}
+                </p>
               </div>
             </div>
 
             {/* 标点符号设置提示 */}
             <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
               <div className="flex items-start">
-                <svg className="w-5 h-5 text-blue-600 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-5 h-5 text-blue-600 mt-0.5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
                 <div className="text-sm">
                   <p className="font-medium text-blue-800">
@@ -452,8 +489,18 @@ export default function UploadArticleDialog({
           {/* 标点符号设置提示 */}
           <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
             <div className="flex items-start">
-              <svg className="w-5 h-5 text-blue-600 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <svg
+                className="w-5 h-5 text-blue-600 mt-0.5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
               </svg>
               <div className="text-sm">
                 <p className="font-medium text-blue-800">
@@ -542,9 +589,7 @@ export default function UploadArticleDialog({
       <DialogContent className="sm:max-w-[800px]">
         <DialogHeader>
           <DialogTitle>{t("upload.title")}</DialogTitle>
-          <DialogDescription>
-            {t("upload.description")}
-          </DialogDescription>
+          <DialogDescription>{t("upload.description")}</DialogDescription>
         </DialogHeader>
 
         {renderMainContent()}

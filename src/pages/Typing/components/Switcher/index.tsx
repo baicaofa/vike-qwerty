@@ -5,6 +5,7 @@ import HandPositionIllustration from "../HandPositionIllustration";
 import LoopWordSwitcher from "../LoopWordSwitcher";
 import Setting from "../Setting";
 import SoundSwitcher from "../SoundSwitcher";
+import TranslationSwitcher from "../TranslationSwitcher";
 import WordDictationSwitcher from "../WordDictationSwitcher";
 import Tooltip from "@/components/Tooltip";
 import { isOpenDarkModeAtom } from "@/store";
@@ -15,8 +16,6 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { useTranslation } from "react-i18next";
 import IconMoon from "~icons/heroicons/moon-solid";
 import IconSun from "~icons/heroicons/sun-solid";
-import IconLanguage from "~icons/tabler/language";
-import IconLanguageOff from "~icons/tabler/language-off";
 
 interface SwitcherProps {
   pageContext?: any;
@@ -30,21 +29,6 @@ export default function Switcher({ pageContext }: SwitcherProps = {}) {
   const changeDarkModeState = () => {
     setIsOpenDarkMode((old) => !old);
   };
-
-  const changeTransVisibleState = () => {
-    if (dispatch) {
-      dispatch({ type: TypingStateActionType.TOGGLE_TRANS_VISIBLE });
-    }
-  };
-
-  useHotkeys(
-    "ctrl+shift+v",
-    () => {
-      changeTransVisibleState();
-    },
-    { enableOnFormTags: true, preventDefault: true },
-    []
-  );
 
   return (
     <div className="flex items-center justify-center gap-2">
@@ -70,21 +54,7 @@ export default function Switcher({ pageContext }: SwitcherProps = {}) {
           shortcut: `${CTRL} + Shift + V`,
         })}
       >
-        <button
-          className={`p-[2px] ${
-            state?.isTransVisible ? "text-blue-500" : "text-gray-500"
-          } text-lg focus:outline-none`}
-          type="button"
-          onClick={(e) => {
-            changeTransVisibleState();
-            e.currentTarget.blur();
-          }}
-          aria-label={t("switcher.ariaLabels.toggleTranslation", {
-            shortcut: `${CTRL} + Shift + V`,
-          })}
-        >
-          {state?.isTransVisible ? <IconLanguage /> : <IconLanguageOff />}
-        </button>
+        <TranslationSwitcher />
       </Tooltip>
 
       <Tooltip content={t("switcher.tooltips.errorBook")}>

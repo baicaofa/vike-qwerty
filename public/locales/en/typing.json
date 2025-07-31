@@ -237,6 +237,18 @@
       "darkMode": "Toggle Dark Mode"
     }
   },
+  "translationSwitcher": {
+    "translation": {
+      "label": "Translation Display",
+      "status": "{{status}}"
+    },
+    "sentences": {
+      "label": "Example Sentences Display",
+      "status": "{{status}}"
+    },
+    "enabled": "Enabled",
+    "disabled": "Disabled"
+  },
   "userAuthMenu": {
     "feedback": "Feedback",
     "profile": "Profile",

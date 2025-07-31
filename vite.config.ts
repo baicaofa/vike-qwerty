@@ -69,7 +69,9 @@ export default defineConfig(({ mode }) => {
           },
         },
       }),
+      // 根据环境变量控制sitemap生成
       sitemapPlugin({
+        enabled: process.env.GENERATE_SITEMAP !== "true", // 可以通过环境变量控制
         baseUrl: "https://www.keybr.com.cn",
         routes: sitemapRoutes,
         autoDetect: true,

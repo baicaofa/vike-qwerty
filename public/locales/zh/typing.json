@@ -236,6 +236,18 @@
       "darkMode": "开关深色模式"
     }
   },
+  "translationSwitcher": {
+    "translation": {
+      "label": "翻译显示",
+      "status": "{{status}}"
+    },
+    "sentences": {
+      "label": "例句显示",
+      "status": "{{status}}"
+    },
+    "enabled": "已启用",
+    "disabled": "已禁用"
+  },
   "userAuthMenu": {
     "feedback": "问题反馈",
     "profile": "个人资料",

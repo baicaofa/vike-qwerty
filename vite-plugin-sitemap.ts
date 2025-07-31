@@ -10,6 +10,7 @@ interface RouteConfig {
 }
 
 interface SitemapOptions {
+  enabled?: boolean; // 添加控制开关
   baseUrl: string;
   routes?: (string | RouteConfig)[];
   changefreq?: string;
@@ -21,6 +22,7 @@ interface SitemapOptions {
 
 export default function sitemapPlugin(options: SitemapOptions): Plugin {
   const {
+    enabled = true, // 默认启用
     baseUrl = "https://www.keybr.com.cn",
     routes = [],
     changefreq = "daily",
@@ -114,6 +116,12 @@ export default function sitemapPlugin(options: SitemapOptions): Plugin {
     name: "vite-plugin-sitemap",
     apply: "build",
     closeBundle: () => {
+      // 检查是否启用sitemap生成
+      if (!enabled) {
+        console.log("Sitemap generation is disabled");
+        return;
+      }
+
       // 使用 build/client 目录来扫描生成的静态文件
       const buildClientDir = resolve(process.cwd(), "build/client");
 

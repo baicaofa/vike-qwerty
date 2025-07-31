@@ -134,7 +134,9 @@ export default function UserGuide() {
                 {/* 步骤1：上传文章 */}
                 <div className="border-l-4 border-blue-500 pl-4">
                   <div className="flex items-center space-x-2 mb-2">
-                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
+                      1
+                    </span>
                     <h4 className="font-medium text-gray-800">
                       {t("guide.step1Title")}
                     </h4>
@@ -150,7 +152,9 @@ export default function UserGuide() {
                 {/* 步骤2：开始练习 */}
                 <div className="border-l-4 border-green-500 pl-4">
                   <div className="flex items-center space-x-2 mb-2">
-                    <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                    <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
+                      2
+                    </span>
                     <h4 className="font-medium text-gray-800">
                       {t("guide.step2Title")}
                     </h4>
@@ -166,7 +170,9 @@ export default function UserGuide() {
                 {/* 步骤3：调整设置 */}
                 <div className="border-l-4 border-purple-500 pl-4">
                   <div className="flex items-center space-x-2 mb-2">
-                    <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                    <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
+                      3
+                    </span>
                     <h4 className="font-medium text-gray-800">
                       {t("guide.step3Title")}
                     </h4>
@@ -333,7 +339,9 @@ export default function UserGuide() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-blue-500">📝</span>
-                  <span className="text-gray-700">{t("guide.manualInput")}</span>
+                  <span className="text-gray-700">
+                    {t("guide.manualInput")}
+                  </span>
                 </div>
               </div>
               <p className="text-xs text-gray-500 mt-2">

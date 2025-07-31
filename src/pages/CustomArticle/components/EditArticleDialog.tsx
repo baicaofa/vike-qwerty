@@ -1,6 +1,7 @@
 import { ArticleContext } from "../store";
-import type { PreprocessSettings, CustomArticle } from "../store/type";
+import type { CustomArticle, PreprocessSettings } from "../store/type";
 import { ArticleActionType } from "../store/type";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -9,7 +10,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import { useSaveArticle, useUpdateArticle } from "@/utils/db/article";
 import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -47,7 +47,7 @@ export default function EditArticleDialog({
 
   const saveArticle = useSaveArticle();
   const updateArticle = useUpdateArticle();
-  
+
   // i18n
   const { t } = useTranslation("article");
 
@@ -159,7 +159,7 @@ export default function EditArticleDialog({
   const handleSaveArticle = async () => {
     try {
       let finalTitle = title.trim();
-      
+
       if (saveMode === "new") {
         // 新建模式：生成唯一标题
         finalTitle = generateUniqueTitle(finalTitle);
@@ -258,7 +258,10 @@ export default function EditArticleDialog({
 
         {/* 内容输入 */}
         <div className="grid grid-cols-4 items-start gap-4">
-          <label htmlFor="content" className="text-right text-sm font-medium pt-2">
+          <label
+            htmlFor="content"
+            className="text-right text-sm font-medium pt-2"
+          >
             {t("editor.articleContent")}
           </label>
           <div className="col-span-3 space-y-2">
@@ -290,7 +293,9 @@ export default function EditArticleDialog({
                   type="radio"
                   value="overwrite"
                   checked={saveMode === "overwrite"}
-                  onChange={(e) => setSaveMode(e.target.value as "overwrite" | "new")}
+                  onChange={(e) =>
+                    setSaveMode(e.target.value as "overwrite" | "new")
+                  }
                   className="text-blue-600"
                 />
                 <span className="text-sm">{t("editor.overwriteMode")}</span>
@@ -300,7 +305,9 @@ export default function EditArticleDialog({
                   type="radio"
                   value="new"
                   checked={saveMode === "new"}
-                  onChange={(e) => setSaveMode(e.target.value as "overwrite" | "new")}
+                  onChange={(e) =>
+                    setSaveMode(e.target.value as "overwrite" | "new")
+                  }
                   className="text-blue-600"
                 />
                 <span className="text-sm">{t("editor.newMode")}</span>
@@ -338,7 +345,9 @@ export default function EditArticleDialog({
 
         {/* 预处理设置 */}
         <div className="space-y-2">
-          <label className="text-sm font-medium">{t("editor.preprocessSettings")}</label>
+          <label className="text-sm font-medium">
+            {t("editor.preprocessSettings")}
+          </label>
           <div className="space-y-2">
             <label className="flex items-center space-x-2">
               <input
@@ -354,7 +363,9 @@ export default function EditArticleDialog({
 
         {/* 声音设置 */}
         <div className="space-y-2">
-          <label className="text-sm font-medium">{t("editor.soundSettings")}</label>
+          <label className="text-sm font-medium">
+            {t("editor.soundSettings")}
+          </label>
           <div className="space-y-2">
             <label className="flex items-center space-x-2">
               <input
@@ -374,7 +385,9 @@ export default function EditArticleDialog({
           {t("common.previous")}
         </Button>
         <Button onClick={handleSaveArticle}>
-          {mode === "edit" ? t("editor.saveChanges") : t("editor.createArticle")}
+          {mode === "edit"
+            ? t("editor.saveChanges")
+            : t("editor.createArticle")}
         </Button>
       </DialogFooter>
     </>
@@ -385,13 +398,14 @@ export default function EditArticleDialog({
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>
-            {mode === "edit" ? t("editor.editArticle") : t("editor.createArticle")}
+            {mode === "edit"
+              ? t("editor.editArticle")
+              : t("editor.createArticle")}
           </DialogTitle>
           <DialogDescription>
-            {mode === "edit" 
-              ? t("editor.editArticleDesc") 
-              : t("editor.createArticleDesc")
-            }
+            {mode === "edit"
+              ? t("editor.editArticleDesc")
+              : t("editor.createArticleDesc")}
           </DialogDescription>
         </DialogHeader>
 

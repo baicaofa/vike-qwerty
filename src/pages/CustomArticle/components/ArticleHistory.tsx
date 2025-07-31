@@ -2,11 +2,11 @@ import { useArticleList } from "../hooks/useArticleList";
 import { ArticleContext } from "../store";
 import { ArticleActionType } from "../store/type";
 import type { CustomArticle } from "../store/type";
+import EditArticleDialog from "./EditArticleDialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { timeStamp2String } from "@/utils";
 import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
-import EditArticleDialog from "./EditArticleDialog";
 
 export default function ArticleHistory() {
   const { dispatch } = useContext(ArticleContext);
@@ -16,7 +16,9 @@ export default function ArticleHistory() {
     "lastPracticedAt"
   );
   const [editDialogOpen, setEditDialogOpen] = useState(false);
-  const [editingArticle, setEditingArticle] = useState<CustomArticle | null>(null);
+  const [editingArticle, setEditingArticle] = useState<CustomArticle | null>(
+    null
+  );
 
   // 使用i18n翻译
   const { t } = useTranslation("article");

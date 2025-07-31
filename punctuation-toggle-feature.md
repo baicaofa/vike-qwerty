@@ -27,17 +27,20 @@
 #### ✨ 功能特点
 
 1. **双重按钮位置**
+
    - **顶部操作栏**: 在页面顶部的操作按钮区域添加了标点符号控制按钮
    - **底部控制栏**: 在练习控制按钮区域也添加了相同的功能按钮
 
 2. **实时切换**
+
    - 用户可以在练习过程中随时切换标点符号显示状态
    - 切换时会自动暂停练习，处理文本后恢复练习状态
    - 无需重新开始练习
 
 3. **视觉反馈**
+
    - **隐藏标点模式**: 按钮显示橙色，图标为编辑笔，文本为"显示标点"
-   - **显示标点模式**: 按钮显示灰色，图标为X，文本为"隐藏标点"
+   - **显示标点模式**: 按钮显示灰色，图标为 X，文本为"隐藏标点"
    - 按钮状态实时反映当前的标点符号设置
 
 4. **智能处理**
@@ -48,24 +51,25 @@
 ### 1.2 技术实现
 
 #### 核心函数
+
 ```typescript
 const handleTogglePunctuation = () => {
   // 如果正在练习，先暂停
   if (state.isTyping && !state.isPaused) {
     safeDispatch({ type: ArticleActionType.PAUSE_TYPING });
   }
-  
+
   // 更新预处理设置
   dispatch({
     type: ArticleActionType.UPDATE_PREPROCESS_SETTINGS,
-    payload: { 
-      removePunctuation: !state.preprocessSettings.removePunctuation 
+    payload: {
+      removePunctuation: !state.preprocessSettings.removePunctuation,
     },
   });
-  
+
   // 重新处理文本
   dispatch({ type: ArticleActionType.PROCESS_TEXT });
-  
+
   // 如果之前正在练习，恢复练习
   if (state.isTyping && !state.isPaused) {
     safeDispatch({ type: ArticleActionType.RESUME_TYPING });
@@ -74,11 +78,13 @@ const handleTogglePunctuation = () => {
 ```
 
 #### 状态管理
+
 - 使用现有的 `preprocessSettings.removePunctuation` 状态
 - 通过 `UPDATE_PREPROCESS_SETTINGS` action 更新设置
 - 通过 `PROCESS_TEXT` action 重新处理文本
 
 #### UI 组件
+
 - 按钮使用条件样式，根据当前状态显示不同颜色
 - 图标和文本根据状态动态变化
 - 提供 tooltip 提示功能
@@ -86,8 +92,11 @@ const handleTogglePunctuation = () => {
 #### 按钮位置
 
 **顶部操作栏**
+
 ```tsx
-{/* 标点符号控制按钮 */}
+{
+  /* 标点符号控制按钮 */
+}
 <button
   type="button"
   onClick={handleTogglePunctuation}
@@ -98,12 +107,15 @@ const handleTogglePunctuation = () => {
   }`}
 >
   {/* 动态图标和文本 */}
-</button>
+</button>;
 ```
 
 **底部控制栏**
+
 ```tsx
-{/* 标点符号切换按钮 */}
+{
+  /* 标点符号切换按钮 */
+}
 <button
   type="button"
   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -114,17 +126,19 @@ const handleTogglePunctuation = () => {
   onClick={handleTogglePunctuation}
 >
   {/* 动态图标和文本 */}
-</button>
+</button>;
 ```
 
 ### 1.3 用户体验
 
 #### 使用场景
+
 1. **练习前设置**: 用户可以在开始练习前选择是否显示标点符号
 2. **练习中调整**: 用户可以在练习过程中根据需要进行调整
 3. **不同难度**: 隐藏标点符号可以增加练习难度，显示标点符号更适合初学者
 
 #### 交互流程
+
 1. 用户点击标点符号控制按钮
 2. 系统自动暂停当前练习（如果正在练习）
 3. 更新预处理设置并重新处理文本
@@ -132,6 +146,7 @@ const handleTogglePunctuation = () => {
 5. 用户看到更新后的文本内容
 
 #### 与其他功能的集成
+
 - ✅ 完全兼容现有的状态管理系统
 - ✅ 与文章上传、编辑功能无缝集成
 - ✅ 保持练习统计数据的准确性
@@ -140,6 +155,7 @@ const handleTogglePunctuation = () => {
 ### 1.4 翻译键
 
 #### 中文翻译 (zh-CN)
+
 ```json
 {
   "practice": {
@@ -150,6 +166,7 @@ const handleTogglePunctuation = () => {
 ```
 
 #### 英文翻译 (en-US)
+
 ```json
 {
   "practice": {
@@ -160,14 +177,17 @@ const handleTogglePunctuation = () => {
 ```
 
 #### 功能说明
+
 - **showPunctuation**: 当标点符号被隐藏时，按钮显示此文本
 - **hidePunctuation**: 当标点符号显示时，按钮显示此文本
 
 #### 按钮状态
+
 - **隐藏标点模式** (removePunctuation: true): 按钮显示橙色，文本为"显示标点"
 - **显示标点模式** (removePunctuation: false): 按钮显示灰色，文本为"隐藏标点"
 
 #### 图标说明
+
 - **显示标点**: 使用编辑/修复图标 (pencil)
 - **隐藏标点**: 使用关闭/删除图标 (X)
 
@@ -182,10 +202,12 @@ const handleTogglePunctuation = () => {
 #### ✨ 主要变化
 
 1. **流程简化**
+
    - **之前**: 两步流程（输入文章 → 设置选项）
    - **现在**: 单步流程（输入文章 + 设置选项）
 
 2. **功能重新分配**
+
    - **上传页面**: 专注于文章内容输入和基本设置
    - **练习页面**: 负责标点符号控制和实时调整
 
@@ -197,40 +219,50 @@ const handleTogglePunctuation = () => {
 ### 2.2 技术实现
 
 #### 移除的功能
+
 1. **步骤管理**: 删除 `currentStep` 状态和相关逻辑
-2. **标点符号设置**: 移除 `preprocessSettings` 状态和UI
+2. **标点符号设置**: 移除 `preprocessSettings` 状态和 UI
 3. **步骤指示器**: 删除步骤指示器组件
 4. **步骤切换**: 删除 `handleNextStep` 和 `handlePrevStep` 函数
 
 #### 保留的功能
-1. **文件上传**: Word文档上传和解析
+
+1. **文件上传**: Word 文档上传和解析
 2. **文章输入**: 标题和内容输入
 3. **声音设置**: 练习时的声音开关
 4. **预览功能**: 实时预览文章内容
 
 #### 新增的提示
+
 ```tsx
-{/* 标点符号设置提示 */}
+{
+  /* 标点符号设置提示 */
+}
 <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
   <div className="flex items-start">
-    <svg className="w-5 h-5 text-blue-600 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    <svg
+      className="w-5 h-5 text-blue-600 mt-0.5 mr-2"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
     </svg>
     <div className="text-sm">
-      <p className="font-medium text-blue-800">
-        {t("upload.punctuationNote")}
-      </p>
-      <p className="text-blue-700 mt-1">
-        {t("upload.punctuationNoteDesc")}
-      </p>
+      <p className="font-medium text-blue-800">{t("upload.punctuationNote")}</p>
+      <p className="text-blue-700 mt-1">{t("upload.punctuationNoteDesc")}</p>
     </div>
   </div>
-</div>
+</div>;
 ```
 
-
-
 #### 与现有系统的集成
+
 - 保持与现有 `ArticleContext` 的兼容性
 - 使用现有的 `useSaveArticle` 钩子
 - 保持练习状态的完整性
@@ -238,6 +270,7 @@ const handleTogglePunctuation = () => {
 ### 2.4 翻译键
 
 #### 中文翻译 (zh-CN)
+
 ```json
 {
   "upload": {
@@ -260,6 +293,7 @@ const handleTogglePunctuation = () => {
 ```
 
 #### 英文翻译 (en-US)
+
 ```json
 {
   "upload": {

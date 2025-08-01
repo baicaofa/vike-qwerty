@@ -1,7 +1,7 @@
 import { FeedbackDialog } from "../FeedbackDialog";
 import type React from "react";
-import { usePageContext } from "vike-react/usePageContext";
 import { useTranslation } from "react-i18next";
+import { usePageContext } from "vike-react/usePageContext";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation("common");

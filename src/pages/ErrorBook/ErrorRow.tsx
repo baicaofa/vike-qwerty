@@ -13,8 +13,8 @@ import { recordErrorBookAction } from "@/utils";
 import { useSetAtom } from "jotai";
 import type { FC } from "react";
 import { useCallback } from "react";
-import DeleteIcon from "~icons/weui/delete-filled";
 import { useTranslation } from "react-i18next";
+import DeleteIcon from "~icons/weui/delete-filled";
 
 type IErrorRowProps = {
   record: groupedWordRecords;

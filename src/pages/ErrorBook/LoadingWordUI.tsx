@@ -1,7 +1,7 @@
 import { LoadingUI } from "@/components/Loading";
 import type { FC } from "react";
-import ErrorIcon from "~icons/ic/outline-error";
 import { useTranslation } from "react-i18next";
+import ErrorIcon from "~icons/ic/outline-error";
 
 type LoadingWordUIProps = {
   className?: string;
@@ -18,7 +18,10 @@ export const LoadingWordUI: FC<LoadingWordUIProps> = ({
   return (
     <div className={`${className}`}>
       {hasError ? (
-        <div className="tooltip !bg-transparent" data-tip={t("errorBook.loadFailed")}>
+        <div
+          className="tooltip !bg-transparent"
+          data-tip={t("errorBook.loadFailed")}
+        >
           <ErrorIcon className="text-red-500" />
         </div>
       ) : (

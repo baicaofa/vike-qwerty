@@ -4,9 +4,9 @@ import type { FC } from "react";
 import React from "react";
 import type { Activity } from "react-activity-calendar";
 import { ActivityCalendar } from "react-activity-calendar";
+import { useTranslation } from "react-i18next";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import { useTranslation } from "react-i18next";
 
 interface HeatmapChartsProps {
   title: string;
@@ -49,7 +49,9 @@ const HeatmapCharts: FC<HeatmapChartsProps> = ({ data, title }) => {
         renderBlock={(block, activity) =>
           React.cloneElement(block, {
             "data-tooltip-id": "react-tooltip",
-            "data-tooltip-html": `${activity.date} ${t("tooltip.practice")} ${activity.count} ${t("tooltip.times")}`,
+            "data-tooltip-html": `${activity.date} ${t("tooltip.practice")} ${
+              activity.count
+            } ${t("tooltip.times")}`,
           })
         }
         showWeekdayLabels={true}

@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import type { FC } from "react";
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import DownIcon from "~icons/fa/sort-down";
 import UPIcon from "~icons/fa/sort-up";
-import { useTranslation } from "react-i18next";
 
 type IHeadWrongNumberProps = {
   className?: string;

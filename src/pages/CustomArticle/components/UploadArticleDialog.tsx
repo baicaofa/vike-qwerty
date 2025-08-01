@@ -12,9 +12,9 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useSaveArticle } from "@/utils/db/article";
 import {
+  getFileSizeDescription,
   parseWordDocument,
   validateWordFile,
-  getFileSizeDescription,
 } from "@/utils/wordDocumentParser";
 import { useContext, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -28,14 +28,28 @@ const MAX_CHARS = 3000;
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 
 // 字符统计组件
-const CharCounter = ({ current: count, max: maxChars }: { current: number; max: number }) => {
+const CharCounter = ({
+  current: count,
+  max: maxChars,
+}: {
+  current: number;
+  max: number;
+}) => {
   const { t } = useTranslation("article");
   const isNearLimit = count > maxChars * 0.8;
   const isOverLimit = count > maxChars;
-  
+
   return (
     <div className="flex items-center gap-2 text-xs">
-      <span className={`${isOverLimit ? 'text-red-500' : isNearLimit ? 'text-orange-500' : 'text-gray-500'}`}>
+      <span
+        className={`${
+          isOverLimit
+            ? "text-red-500"
+            : isNearLimit
+            ? "text-orange-500"
+            : "text-gray-500"
+        }`}
+      >
         {count}/{maxChars}
       </span>
       {isOverLimit && (
@@ -44,24 +58,22 @@ const CharCounter = ({ current: count, max: maxChars }: { current: number; max: 
         </span>
       )}
       {isNearLimit && !isOverLimit && (
-        <span className="text-orange-500">
-          {t("upload.nearLimit")}
-        </span>
+        <span className="text-orange-500">{t("upload.nearLimit")}</span>
       )}
     </div>
   );
 };
 
 // 文件上传组件
-const FileUploadSection = ({ 
-  onFileUpload, 
-  onTitleChange, 
+const FileUploadSection = ({
+  onFileUpload,
+  onTitleChange,
   onContentChange,
   onError,
   title,
   content,
   isUploading,
-  uploadError 
+  uploadError,
 }: {
   onFileUpload: (title: string, content: string) => void;
   onTitleChange: (title: string) => void;
@@ -84,7 +96,9 @@ const FileUploadSection = ({
     }
 
     if (file.size > MAX_FILE_SIZE) {
-      onError(`文件大小超过限制，最大支持 ${getFileSizeDescription(MAX_FILE_SIZE)}`);
+      onError(
+        `文件大小超过限制，最大支持 ${getFileSizeDescription(MAX_FILE_SIZE)}`
+      );
       return;
     }
 
@@ -107,7 +121,9 @@ const FileUploadSection = ({
     fileInputRef.current?.click();
   };
 
-  const handleFileInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileInputChange = async (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -144,12 +160,12 @@ const FileUploadSection = ({
         <div className="text-sm font-medium text-gray-700">
           {t("upload.selectWordFile")}
         </div>
-        
+
         <div
           className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
-            dragActive 
-              ? 'border-blue-400 bg-blue-50' 
-              : 'border-gray-300 hover:border-gray-400'
+            dragActive
+              ? "border-blue-400 bg-blue-50"
+              : "border-gray-300 hover:border-gray-400"
           }`}
           onDragEnter={handleDrag}
           onDragLeave={handleDrag}
@@ -163,7 +179,7 @@ const FileUploadSection = ({
             onChange={handleFileInputChange}
             className="hidden"
           />
-          
+
           <div className="space-y-3">
             <div className="flex justify-center">
               <svg
@@ -180,7 +196,7 @@ const FileUploadSection = ({
                 />
               </svg>
             </div>
-            
+
             <div className="space-y-2">
               <button
                 type="button"
@@ -216,23 +232,35 @@ const FileUploadSection = ({
                   t("upload.selectFile")
                 )}
               </button>
-              
+
               <p className="text-sm text-gray-500">
                 {t("upload.dragDropText")}
               </p>
             </div>
-            
+
             <div className="text-xs text-gray-400 space-y-1">
               <p>{t("upload.supportedFormatsText")}</p>
-              <p>{t("upload.fileSizeLimit", { size: getFileSizeDescription(MAX_FILE_SIZE) })}</p>
+              <p>
+                {t("upload.fileSizeLimit", {
+                  size: getFileSizeDescription(MAX_FILE_SIZE),
+                })}
+              </p>
             </div>
           </div>
         </div>
 
         {selectedFile && (
           <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-md">
-            <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            <svg
+              className="w-5 h-5 text-green-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
+              />
             </svg>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900 truncate">
@@ -247,8 +275,16 @@ const FileUploadSection = ({
 
         {uploadError && (
           <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-md">
-            <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+            <svg
+              className="w-5 h-5 text-red-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                clipRule="evenodd"
+              />
             </svg>
             <span className="text-sm text-red-700">{uploadError}</span>
           </div>
@@ -273,14 +309,16 @@ const FileUploadSection = ({
       {/* 内容预览 */}
       {content && (
         <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-          <label className="text-sm font-medium text-gray-700">
-            {t("upload.contentPreview")}
-          </label>
-          <CharCounter current={content.length} max={MAX_CHARS} />
-        </div>
+          <div className="flex justify-between items-center">
+            <label className="text-sm font-medium text-gray-700">
+              {t("upload.contentPreview")}
+            </label>
+            <CharCounter current={content.length} max={MAX_CHARS} />
+          </div>
           <div className="border border-gray-300 rounded-md p-4 h-48 overflow-auto bg-gray-50">
-            <pre className="text-sm whitespace-pre-wrap text-gray-700">{content}</pre>
+            <pre className="text-sm whitespace-pre-wrap text-gray-700">
+              {content}
+            </pre>
           </div>
         </div>
       )}
@@ -293,7 +331,7 @@ const TextInputSection = ({
   onTitleChange,
   onContentChange,
   title,
-  content
+  content,
 }: {
   onTitleChange: (title: string) => void;
   onContentChange: (content: string) => void;
@@ -345,25 +383,32 @@ const TextInputSection = ({
             )}
           </div>
         </div>
-        
+
         <textarea
           value={content}
           onChange={handleContentChange}
           className={`w-full min-h-[200px] px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical ${
-            content.length > MAX_CHARS ? 'border-red-300' : 'border-gray-300'
+            content.length > MAX_CHARS ? "border-red-300" : "border-gray-300"
           }`}
           placeholder={t("upload.articleContentPlaceholder")}
           maxLength={MAX_CHARS + 100} // 允许稍微超出以便显示错误信息
         />
-        
-                 {content.length > MAX_CHARS && (
-           <div className="flex items-center gap-2 text-sm text-red-600">
-             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-               <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-             </svg>
-             {t("upload.charLimitExceeded", { count: content.length, maxChars: MAX_CHARS })}
-           </div>
-         )}
+
+        {content.length > MAX_CHARS && (
+          <div className="flex items-center gap-2 text-sm text-red-600">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fillRule="evenodd"
+                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                clipRule="evenodd"
+              />
+            </svg>
+            {t("upload.charLimitExceeded", {
+              count: content.length,
+              maxChars: MAX_CHARS,
+            })}
+          </div>
+        )}
       </div>
 
       {/* 实时预览 */}
@@ -373,7 +418,9 @@ const TextInputSection = ({
             {t("upload.contentPreviewLabel")}
           </label>
           <div className="border border-gray-300 rounded-md p-4 h-48 overflow-auto bg-gray-50">
-            <pre className="text-sm whitespace-pre-wrap text-gray-700">{content}</pre>
+            <pre className="text-sm whitespace-pre-wrap text-gray-700">
+              {content}
+            </pre>
           </div>
         </div>
       )}
@@ -399,10 +446,10 @@ export default function UploadArticleDialog({
   const handleFileUpload = async (title: string, content: string) => {
     setIsUploading(true);
     setUploadError("");
-    
+
     // 模拟上传延迟
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     setTitle(title);
     setContent(content);
     setIsUploading(false);
@@ -487,7 +534,8 @@ export default function UploadArticleDialog({
   };
 
   // 验证表单
-  const isFormValid = title.trim() && content.trim() && content.length <= MAX_CHARS;
+  const isFormValid =
+    title.trim() && content.trim() && content.length <= MAX_CHARS;
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -498,35 +546,59 @@ export default function UploadArticleDialog({
         </DialogHeader>
 
         <div className="flex-1 overflow-hidden">
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="h-full flex flex-col">
-                         <TabsList className="grid w-full grid-cols-2">
-               <TabsTrigger value="file" className="flex items-center gap-2">
-                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                 </svg>
-                 {t("upload.fileUploadTab")}
-               </TabsTrigger>
-               <TabsTrigger value="text" className="flex items-center gap-2">
-                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                 </svg>
-                 {t("upload.textInputTab")}
-               </TabsTrigger>
-             </TabsList>
+          <Tabs
+            value={activeTab}
+            onValueChange={setActiveTab}
+            className="h-full flex flex-col"
+          >
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="file" className="flex items-center gap-2">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                  />
+                </svg>
+                {t("upload.fileUploadTab")}
+              </TabsTrigger>
+              <TabsTrigger value="text" className="flex items-center gap-2">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                  />
+                </svg>
+                {t("upload.textInputTab")}
+              </TabsTrigger>
+            </TabsList>
 
             <div className="flex-1 overflow-y-auto mt-4">
-                             <TabsContent value="file" className="h-full">
-                 <FileUploadSection
-                   onFileUpload={handleFileUpload}
-                   onTitleChange={handleTitleChange}
-                   onContentChange={handleContentChange}
-                   onError={handleError}
-                   title={title}
-                   content={content}
-                   isUploading={isUploading}
-                   uploadError={uploadError}
-                 />
-               </TabsContent>
+              <TabsContent value="file" className="h-full">
+                <FileUploadSection
+                  onFileUpload={handleFileUpload}
+                  onTitleChange={handleTitleChange}
+                  onContentChange={handleContentChange}
+                  onError={handleError}
+                  title={title}
+                  content={content}
+                  isUploading={isUploading}
+                  uploadError={uploadError}
+                />
+              </TabsContent>
 
               <TabsContent value="text" className="h-full">
                 <TextInputSection

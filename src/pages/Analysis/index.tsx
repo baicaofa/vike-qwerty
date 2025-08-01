@@ -9,9 +9,9 @@ import dayjs from "dayjs";
 import { useAtom } from "jotai";
 import { useCallback } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
+import { useTranslation } from "react-i18next";
 import { navigate } from "vike/client/router";
 import IconX from "~icons/tabler/x";
-import { useTranslation } from "react-i18next";
 
 const Analysis = () => {
   const { t } = useTranslation("analysis");

@@ -11,9 +11,9 @@ import type { IWordRecord, WordRecord } from "@/utils/db/record";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import { useAtomValue } from "jotai";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { navigate } from "vike/client/router";
 import IconX from "~icons/tabler/x";
-import { useTranslation } from "react-i18next";
 
 export function Page() {
   const { t } = useTranslation("errors");

@@ -3,8 +3,8 @@ import { useGetFamiliarWords } from "@/utils/db";
 import { useMarkFamiliarWord } from "@/utils/db";
 import { useAtomValue } from "jotai";
 import { useEffect, useState } from "react";
-import IconStar from "~icons/ic/outline-star";
 import { useTranslation } from "react-i18next";
+import IconStar from "~icons/ic/outline-star";
 
 interface FamiliarWord {
   word: string;
@@ -29,7 +29,11 @@ export default function FamiliarWordsPage() {
         const familiarWordRecords = await getFamiliarWords(dictId);
         setFamiliarWords(familiarWordRecords);
       } catch (err) {
-        setError(err instanceof Error ? err : new Error(t("loadFailed", { message: "Unknown error" })));
+        setError(
+          err instanceof Error
+            ? err
+            : new Error(t("loadFailed", { message: "Unknown error" }))
+        );
       } finally {
         setIsLoading(false);
       }
@@ -81,7 +85,9 @@ export default function FamiliarWordsPage() {
   if (error) {
     return (
       <div className="flex h-full items-center justify-center">
-        <p className="text-2xl text-red-500">{t("loadFailed", { message: error.message })}</p>
+        <p className="text-2xl text-red-500">
+          {t("loadFailed", { message: error.message })}
+        </p>
       </div>
     );
   }

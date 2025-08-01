@@ -280,16 +280,6 @@ export default function UserGuide() {
                     </p>
                   </div>
                 </details>
-                <details className="group border border-gray-200 rounded-lg">
-                  <summary className="cursor-pointer p-3 text-gray-700 hover:text-blue-600 font-medium bg-gray-50 rounded-t-lg group-open:bg-blue-50">
-                    {t("guide.faq4")}
-                  </summary>
-                  <div className="p-3 bg-white rounded-b-lg">
-                    <p className="text-gray-600 text-sm">
-                      {t("guide.faq4Answer")}
-                    </p>
-                  </div>
-                </details>
               </div>
             </section>
 

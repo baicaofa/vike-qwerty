@@ -1,7 +1,7 @@
 import { GalleryContext } from "./context";
 import codeFlag from "@/assets/flags/code.png";
-import myDictFlag from "@/assets/flags/code.png";
 import deFlag from "@/assets/flags/de.png";
+import myDictFlag from "@/assets/flags/dict.png";
 import enFlag from "@/assets/flags/en.png";
 import idFlag from "@/assets/flags/id.png";
 import jpFlag from "@/assets/flags/ja.png";

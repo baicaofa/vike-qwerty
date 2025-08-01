@@ -6,6 +6,7 @@ import type { Activity } from "react-activity-calendar";
 import { ActivityCalendar } from "react-activity-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import { useTranslation } from "react-i18next";
 
 interface HeatmapChartsProps {
   title: string;
@@ -23,6 +24,7 @@ const defaultData: Activity[] = Array.from({ length: 365 }, (_, i) => {
 });
 
 const HeatmapCharts: FC<HeatmapChartsProps> = ({ data, title }) => {
+  const { t } = useTranslation("analysis");
   const [isOpenDarkMode] = useAtom(isOpenDarkModeAtom);
 
   return (
@@ -47,30 +49,38 @@ const HeatmapCharts: FC<HeatmapChartsProps> = ({ data, title }) => {
         renderBlock={(block, activity) =>
           React.cloneElement(block, {
             "data-tooltip-id": "react-tooltip",
-            "data-tooltip-html": `${activity.date} 练习 ${activity.count} 次`,
+            "data-tooltip-html": `${activity.date} ${t("tooltip.practice")} ${activity.count} ${t("tooltip.times")}`,
           })
         }
         showWeekdayLabels={true}
         labels={{
           months: [
-            "一月",
-            "二月",
-            "三月",
-            "四月",
-            "五月",
-            "六月",
-            "七月",
-            "八月",
-            "九月",
-            "十月",
-            "十一月",
-            "十二月",
+            t("months.january"),
+            t("months.february"),
+            t("months.march"),
+            t("months.april"),
+            t("months.may"),
+            t("months.june"),
+            t("months.july"),
+            t("months.august"),
+            t("months.september"),
+            t("months.october"),
+            t("months.november"),
+            t("months.december"),
           ],
-          weekdays: ["日", "一", "二", "三", "四", "五", "六"],
-          totalCount: "过去一年总计 {{count}} 次",
+          weekdays: [
+            t("weekdays.sunday"),
+            t("weekdays.monday"),
+            t("weekdays.tuesday"),
+            t("weekdays.wednesday"),
+            t("weekdays.thursday"),
+            t("weekdays.friday"),
+            t("weekdays.saturday"),
+          ],
+          totalCount: t("tooltip.totalCount", { count: "{{count}}" }),
           legend: {
-            less: "少",
-            more: "多",
+            less: t("legend.less"),
+            more: t("legend.more"),
           },
         }}
       />

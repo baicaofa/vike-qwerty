@@ -4,6 +4,7 @@
     "typing": "打字练习",
     "article": "文章练习",
     "gallery": "词典展示",
+    "familiar": "熟词管理",
     "updates": "更新日志",
     "friendLinks": "友情链接",
     "profile": "个人资料",
@@ -34,7 +35,8 @@
     "upload": "上传",
     "retry": "重试",
     "practice": "练习",
-    "create": "创建新文章"
+    "create": "创建新文章",
+    "analysis": "数据分析"
   },
   "status": {
     "loading": "加载中...",
@@ -111,5 +113,9 @@
     "viewDashboard": "查看仪表板",
     "statistics": "统计",
     "reviewHistory": "复习历史"
+  },
+  "footer": {
+    "keybrBlog": "Keybr Blog",
+    "beian": "赣ICP备2020012444号"
   }
 }

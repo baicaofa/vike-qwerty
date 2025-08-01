@@ -4,6 +4,7 @@ import { useMarkFamiliarWord } from "@/utils/db";
 import { useAtomValue } from "jotai";
 import { useEffect, useState } from "react";
 import IconStar from "~icons/ic/outline-star";
+import { useTranslation } from "react-i18next";
 
 interface FamiliarWord {
   word: string;
@@ -11,6 +12,7 @@ interface FamiliarWord {
 }
 
 export default function FamiliarWordsPage() {
+  const { t } = useTranslation("familiar");
   const dictId = useAtomValue(currentDictIdAtom);
   const { getFamiliarWords } = useGetFamiliarWords();
   const { markFamiliarWord } = useMarkFamiliarWord();
@@ -27,7 +29,7 @@ export default function FamiliarWordsPage() {
         const familiarWordRecords = await getFamiliarWords(dictId);
         setFamiliarWords(familiarWordRecords);
       } catch (err) {
-        setError(err instanceof Error ? err : new Error("加载熟词列表失败"));
+        setError(err instanceof Error ? err : new Error(t("loadFailed", { message: "Unknown error" })));
       } finally {
         setIsLoading(false);
       }
@@ -41,7 +43,7 @@ export default function FamiliarWordsPage() {
       await markFamiliarWord(word, dictId, false);
       setFamiliarWords((prev) => prev.filter((w) => w.word !== word));
     } catch (err) {
-      console.error("取消熟词标记失败:", err);
+      console.error(t("actions.removeFamiliar") + " failed:", err);
     }
   };
 
@@ -71,7 +73,7 @@ export default function FamiliarWordsPage() {
   if (isLoading) {
     return (
       <div className="flex h-full items-center justify-center">
-        <p className="text-2xl text-gray-500">加载中...</p>
+        <p className="text-2xl text-gray-500">{t("loading")}</p>
       </div>
     );
   }
@@ -79,7 +81,7 @@ export default function FamiliarWordsPage() {
   if (error) {
     return (
       <div className="flex h-full items-center justify-center">
-        <p className="text-2xl text-red-500">加载失败: {error.message}</p>
+        <p className="text-2xl text-red-500">{t("loadFailed", { message: error.message })}</p>
       </div>
     );
   }
@@ -87,30 +89,30 @@ export default function FamiliarWordsPage() {
   return (
     <div className="flex h-full justify-center items-start">
       <div className="w-full max-w-2xl flex flex-col items-center justify-center p-4 gap-2">
-        <h1 className="text-2xl font-bold dark:text-gray-50">单词熟词管理</h1>
+        <h1 className="text-2xl font-bold dark:text-gray-50">{t("title")}</h1>
         <div className="text-sm text-gray-500 dark:text-gray-400">
-          当前熟词总数：
+          {t("stats.totalCount")}
           <span className="font-bold">{familiarWords.length}</span>
         </div>
         <div className="flex items-center gap-4 mt-2">
           <label className="flex items-center gap-1 cursor-pointer select-none">
             <input
               type="checkbox"
-              aria-label="全选熟词"
+              aria-label={t("ariaLabels.selectAll")}
               checked={
                 selectedWords.length === familiarWords.length &&
                 familiarWords.length > 0
               }
               onChange={(e) => handleSelectAll(e.target.checked)}
             />
-            <span>全选</span>
+            <span>{t("actions.selectAll")}</span>
           </label>
           <button
             className="bg-red-500 text-white px-4 py-1 rounded disabled:opacity-50"
             disabled={selectedWords.length === 0}
             onClick={handleBatchDelete}
           >
-            批量移除
+            {t("actions.batchRemove")}
           </button>
         </div>
         <div className="flex-1 w-full overflow-y-auto px-4 mt-4">
@@ -142,12 +144,13 @@ function FamiliarWordCard({
   onCheck: (checked: boolean) => void;
   onUnmark: () => void;
 }) {
+  const { t } = useTranslation("familiar");
   return (
     <div className="flex items-center justify-between rounded-xl bg-white p-4 shadow dark:bg-gray-700">
       <div className="flex items-center gap-2 flex-1">
         <input
           type="checkbox"
-          aria-label={`选择熟词 ${word}`}
+          aria-label={t("ariaLabels.selectWord", { word })}
           checked={checked}
           onChange={(e) => onCheck(e.target.checked)}
         />
@@ -159,7 +162,7 @@ function FamiliarWordCard({
         <button
           onClick={onUnmark}
           className="rounded-full p-2 text-yellow-400 hover:bg-gray-100 dark:hover:bg-gray-600"
-          title="移除熟词"
+          title={t("actions.removeFamiliar")}
         >
           <IconStar className="h-6 w-6" />
         </button>

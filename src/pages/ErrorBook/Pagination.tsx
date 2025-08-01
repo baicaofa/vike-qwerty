@@ -2,6 +2,7 @@ import type { FC } from "react";
 import { useCallback } from "react";
 import NextIcon from "~icons/ooui/next-ltr";
 import PrevIcon from "~icons/ooui/next-rtl";
+import { useTranslation } from "react-i18next";
 
 type IPaginationProps = {
   className?: string;
@@ -18,6 +19,7 @@ const Pagination: FC<IPaginationProps> = ({
   setPage,
   totalPages,
 }) => {
+  const { t } = useTranslation("errors");
   const nextPage = useCallback(() => {
     setPage(page + 1);
   }, [page, setPage]);
@@ -34,7 +36,7 @@ const Pagination: FC<IPaginationProps> = ({
       >
         <PrevIcon />
       </button>
-      <span className="text-black dark:text-white">{`${page} / ${totalPages}`}</span>
+      <span className="text-black dark:text-white">{t("errorBook.pageInfo", { page, totalPages })}</span>
       <button
         className="cursor-pointer rounded-full bg-white p-2 text-blue-500 shadow-md dark:bg-gray-800 dark:text-indigo-300"
         onClick={nextPage}

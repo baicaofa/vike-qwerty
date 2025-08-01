@@ -13,8 +13,10 @@ import { useAtomValue } from "jotai";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { navigate } from "vike/client/router";
 import IconX from "~icons/tabler/x";
+import { useTranslation } from "react-i18next";
 
 export function Page() {
+  const { t } = useTranslation("errors");
   const [groupedRecords, setGroupedRecords] = useState<groupedWordRecords[]>(
     []
   );
@@ -132,7 +134,7 @@ export function Page() {
       >
         <div className="mr-8 mt-4 flex w-auto items-center justify-center self-end">
           <h1 className="font-lighter mr-4 w-auto self-end text-gray-500 opacity-70">
-            Tip: 点击错误单词查看详细信息{" "}
+            {t("errorBook.tip")}
           </h1>
           <IconX
             className="h-7 w-7 cursor-pointer text-gray-400"
@@ -143,14 +145,14 @@ export function Page() {
         <div className="flex w-full flex-1 select-text items-start justify-center overflow-hidden">
           <div className="flex h-full w-5/6 flex-col pt-10">
             <div className="flex w-full justify-between rounded-lg bg-white px-6 py-5 text-lg text-black shadow-lg dark:bg-gray-800 dark:text-white">
-              <span className="basis-2/12">单词</span>
-              <span className="basis-6/12">释义</span>
+              <span className="basis-2/12">{t("errorBook.word")}</span>
+              <span className="basis-6/12">{t("errorBook.translation")}</span>
               <HeadWrongNumber
                 className="basis-1/12"
                 sortType={sortType}
                 setSortType={setSort}
               />
-              <span className="basis-1/12">词典</span>
+              <span className="basis-1/12">{t("errorBook.dict")}</span>
               <span className="basis-1/12"> </span>
             </div>
             <ScrollArea.Root className="flex-1 overflow-y-auto pt-5">

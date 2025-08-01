@@ -43,5 +43,15 @@
     "permissionDenied": "权限不足",
     "dataCorrupted": "数据损坏",
     "storageQuotaExceeded": "存储空间不足"
+  },
+  "errorBook": {
+    "tip": "Tip: 点击错误单词查看详细信息",
+    "word": "单词",
+    "translation": "释义",
+    "dict": "词典",
+    "wrongCount": "错误次数",
+    "deleteRecords": "删除记录",
+    "loadFailed": "数据加载失败",
+    "pageInfo": "{{page}} / {{totalPages}}"
   }
 }

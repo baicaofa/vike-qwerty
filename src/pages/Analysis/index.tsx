@@ -11,8 +11,10 @@ import { useCallback } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { navigate } from "vike/client/router";
 import IconX from "~icons/tabler/x";
+import { useTranslation } from "react-i18next";
 
 const Analysis = () => {
+  const { t } = useTranslation("analysis");
   const [, setIsOpenDarkMode] = useAtom(isOpenDarkModeAtom);
 
   const onBack = useCallback(() => {
@@ -54,41 +56,41 @@ const Analysis = () => {
           <ScrollArea.Viewport className="h-full w-auto pb-[20rem] [&>div]:!block">
             {isEmpty ? (
               <div className="align-items-center m-4 grid h-80 w-auto place-content-center overflow-hidden rounded-lg shadow-lg dark:bg-gray-600">
-                <div className="text-2xl text-gray-400">暂无练习数据</div>
+                <div className="text-2xl text-gray-400">{t("noData")}</div>
               </div>
             ) : (
               <>
                 <div className="mx-4 my-8 h-auto w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <HeatmapCharts
-                    title="过去一年练习次数热力图"
+                    title={t("charts.exerciseHeatmap")}
                     data={exerciseRecord}
                   />
                 </div>
                 <div className="mx-4 my-8 h-auto w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <HeatmapCharts
-                    title="过去一年练习词数热力图"
+                    title={t("charts.wordHeatmap")}
                     data={wordRecord}
                   />
                 </div>
                 <div className="mx-4 my-8 h-80 w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <LineCharts
-                    title="过去一年WPM趋势图"
-                    name="WPM"
+                    title={t("charts.wpmTrend")}
+                    name={t("metrics.wpm")}
                     data={wpmRecord}
                   />
                 </div>
                 <div className="mx-4 my-8 h-80 w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <LineCharts
-                    title="过去一年正确率趋势图"
-                    name="正确率(%)"
+                    title={t("charts.accuracyTrend")}
+                    name={t("metrics.accuracy")}
                     data={accuracyRecord}
-                    suffix="%"
+                    suffix={t("metrics.percentage")}
                   />
                 </div>
                 <div className="mx-4 my-8 h-80 w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <KeyboardWithBarCharts
-                    title="按键错误次数排行"
-                    name="错误次数"
+                    title={t("charts.keyboardErrors")}
+                    name={t("metrics.errorCount")}
                     data={wrongTimeRecord}
                   />
                 </div>

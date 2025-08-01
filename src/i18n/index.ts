@@ -26,7 +26,7 @@ export const initI18n = async (initialLanguage: SupportedLanguage = "zh") => {
     debug: process.env.NODE_ENV === "development", // 开发环境开启调试
 
     // 命名空间配置
-    ns: ["common", "typing", "article", "gallery", "errors", "review"],
+    ns: ["common", "typing", "article", "gallery", "errors", "review", "analysis"],
     defaultNS: "common",
 
     // 插值配置

@@ -1,8 +1,10 @@
 import { FeedbackDialog } from "../FeedbackDialog";
 import type React from "react";
 import { usePageContext } from "vike-react/usePageContext";
+import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation("common");
   const pageContext = usePageContext();
   const isHomePage =
     pageContext?.urlPathname === "/" ||
@@ -18,10 +20,10 @@ const Footer: React.FC = () => {
         <a
           href="https://www.keybr.com.cn/keybr/"
           target="_blank"
-          aria-label=""
+          aria-label={t("footer.keybrBlog")}
           rel="noreferrer noopener"
         >
-          Keybr Blog
+          {t("footer.keybrBlog")}
         </a>
         {isHomePage && (
           <a
@@ -30,7 +32,7 @@ const Footer: React.FC = () => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            赣ICP备2020012444号
+            {t("footer.beian")}
           </a>
         )}
 

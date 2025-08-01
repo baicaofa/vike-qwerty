@@ -14,6 +14,7 @@ import { useSetAtom } from "jotai";
 import type { FC } from "react";
 import { useCallback } from "react";
 import DeleteIcon from "~icons/weui/delete-filled";
+import { useTranslation } from "react-i18next";
 
 type IErrorRowProps = {
   record: groupedWordRecords;
@@ -24,6 +25,7 @@ const ErrorRow: FC<IErrorRowProps> = ({ record, onDelete }) => {
   const setCurrentRowDetail = useSetAtom(currentRowDetailAtom);
   const dictInfo = idDictionaryMap[record.dict];
   const { word, isLoading, hasError } = useGetWord(record.word, dictInfo);
+  const { t } = useTranslation("errors");
 
   const onClick = useCallback(() => {
     setCurrentRowDetail(record);
@@ -58,7 +60,7 @@ const ErrorRow: FC<IErrorRowProps> = ({ record, onDelete }) => {
               <DeleteIcon />
             </TooltipTrigger>
             <TooltipContent>
-              <p>Delete Records</p>
+              <p>{t("errorBook.deleteRecords")}</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

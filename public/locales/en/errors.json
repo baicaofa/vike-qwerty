@@ -43,5 +43,15 @@
     "permissionDenied": "Permission denied",
     "dataCorrupted": "Data corrupted",
     "storageQuotaExceeded": "Storage quota exceeded"
+  },
+  "errorBook": {
+    "tip": "Tip: Click the wrong word to view details",
+    "word": "Word",
+    "translation": "Translation",
+    "dict": "Dictionary",
+    "wrongCount": "Wrong Count",
+    "deleteRecords": "Delete Records",
+    "loadFailed": "Failed to load data",
+    "pageInfo": "{{page}} / {{totalPages}}"
   }
 }

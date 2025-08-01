@@ -1,0 +1,61 @@
+{
+  "title": "Data Analysis",
+  "noData": "No practice data available",
+  "charts": {
+    "exerciseHeatmap": "Exercise Frequency Heatmap (Past Year)",
+    "wordHeatmap": "Word Count Heatmap (Past Year)",
+    "wpmTrend": "WPM Trend Chart (Past Year)",
+    "accuracyTrend": "Accuracy Trend Chart (Past Year)",
+    "keyboardErrors": "Keyboard Error Count Ranking"
+  },
+  "metrics": {
+    "wpm": "WPM",
+    "accuracy": "Accuracy",
+    "errorCount": "Error Count",
+    "percentage": "%"
+  },
+  "timeRange": {
+    "pastYear": "Past Year",
+    "pastMonth": "Past Month",
+    "pastWeek": "Past Week",
+    "custom": "Custom Time Range"
+  },
+  "navigation": {
+    "back": "Back",
+    "close": "Close"
+  },
+  "loading": "Loading...",
+  "error": "Failed to load, please try again",
+  "tooltip": {
+    "practice": "practice",
+    "times": "times",
+    "totalCount": "Total {{count}} times in the past year"
+  },
+  "months": {
+    "january": "Jan",
+    "february": "Feb",
+    "march": "Mar",
+    "april": "Apr",
+    "may": "May",
+    "june": "Jun",
+    "july": "Jul",
+    "august": "Aug",
+    "september": "Sep",
+    "october": "Oct",
+    "november": "Nov",
+    "december": "Dec"
+  },
+  "weekdays": {
+    "sunday": "Sun",
+    "monday": "Mon",
+    "tuesday": "Tue",
+    "wednesday": "Wed",
+    "thursday": "Thu",
+    "friday": "Fri",
+    "saturday": "Sat"
+  },
+  "legend": {
+    "less": "Less",
+    "more": "More"
+  }
+}

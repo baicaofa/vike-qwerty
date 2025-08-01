@@ -1,0 +1,21 @@
+{
+  "title": "Familiar Words Management",
+  "loading": "Loading...",
+  "loadFailed": "Failed to load: {{message}}",
+  "stats": {
+    "totalCount": "Total familiar words:"
+  },
+  "actions": {
+    "selectAll": "Select All",
+    "batchRemove": "Batch Remove",
+    "removeFamiliar": "Remove from familiar"
+  },
+  "ariaLabels": {
+    "selectAll": "Select all familiar words",
+    "selectWord": "Select familiar word {{word}}"
+  },
+  "empty": {
+    "noFamiliarWords": "No familiar words",
+    "addFamiliarWords": "Mark words as familiar during practice to see them here"
+  }
+}

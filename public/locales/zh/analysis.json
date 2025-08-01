@@ -1,0 +1,61 @@
+{
+  "title": "数据分析",
+  "noData": "暂无练习数据",
+  "charts": {
+    "exerciseHeatmap": "过去一年练习次数热力图",
+    "wordHeatmap": "过去一年练习词数热力图",
+    "wpmTrend": "过去一年WPM趋势图",
+    "accuracyTrend": "过去一年正确率趋势图",
+    "keyboardErrors": "按键错误次数排行"
+  },
+  "metrics": {
+    "wpm": "WPM",
+    "accuracy": "正确率",
+    "errorCount": "错误次数",
+    "percentage": "%"
+  },
+  "timeRange": {
+    "pastYear": "过去一年",
+    "pastMonth": "过去一个月",
+    "pastWeek": "过去一周",
+    "custom": "自定义时间范围"
+  },
+  "navigation": {
+    "back": "返回",
+    "close": "关闭"
+  },
+  "loading": "加载中...",
+  "error": "加载失败，请重试",
+  "tooltip": {
+    "practice": "练习",
+    "times": "次",
+    "totalCount": "过去一年总计 {{count}} 次"
+  },
+  "months": {
+    "january": "一月",
+    "february": "二月",
+    "march": "三月",
+    "april": "四月",
+    "may": "五月",
+    "june": "六月",
+    "july": "七月",
+    "august": "八月",
+    "september": "九月",
+    "october": "十月",
+    "november": "十一月",
+    "december": "十二月"
+  },
+  "weekdays": {
+    "sunday": "日",
+    "monday": "一",
+    "tuesday": "二",
+    "wednesday": "三",
+    "thursday": "四",
+    "friday": "五",
+    "saturday": "六"
+  },
+  "legend": {
+    "less": "少",
+    "more": "多"
+  }
+}

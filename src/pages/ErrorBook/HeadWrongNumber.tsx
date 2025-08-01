@@ -3,6 +3,7 @@ import type { FC } from "react";
 import { useCallback } from "react";
 import DownIcon from "~icons/fa/sort-down";
 import UPIcon from "~icons/fa/sort-up";
+import { useTranslation } from "react-i18next";
 
 type IHeadWrongNumberProps = {
   className?: string;
@@ -17,6 +18,7 @@ const HeadWrongNumber: FC<IHeadWrongNumberProps> = ({
   sortType,
   setSortType,
 }) => {
+  const { t } = useTranslation("errors");
   const onClick = useCallback(() => {
     const sortTypes: Record<ISortType, ISortType> = {
       asc: "desc",
@@ -28,7 +30,7 @@ const HeadWrongNumber: FC<IHeadWrongNumberProps> = ({
 
   return (
     <span className={`relative cursor-pointer ${className}`} onClick={onClick}>
-      错误次数
+      {t("errorBook.wrongCount")}
       <div className="absolute -right-2 bottom-0 top-0 flex flex-col items-center justify-center text-[12px]">
         <UPIcon
           className={classNames("-mb-2 ", {

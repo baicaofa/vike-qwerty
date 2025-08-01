@@ -1,0 +1,21 @@
+{
+  "title": "单词熟词管理",
+  "loading": "加载中...",
+  "loadFailed": "加载失败: {{message}}",
+  "stats": {
+    "totalCount": "当前熟词总数："
+  },
+  "actions": {
+    "selectAll": "全选",
+    "batchRemove": "批量移除",
+    "removeFamiliar": "移除熟词"
+  },
+  "ariaLabels": {
+    "selectAll": "全选熟词",
+    "selectWord": "选择熟词 {{word}}"
+  },
+  "empty": {
+    "noFamiliarWords": "暂无熟词",
+    "addFamiliarWords": "在练习过程中标记单词为熟词后，将在此处显示"
+  }
+}

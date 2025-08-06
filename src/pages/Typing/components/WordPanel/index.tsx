@@ -20,6 +20,7 @@ import {
   loopWordConfigAtom,
   phoneticConfigAtom,
   reviewModeInfoAtom,
+  wordDictationConfigAtom,
 } from "@/store";
 import type { Word, WordWithIndex } from "@/typings";
 import { useAtomValue, useSetAtom } from "jotai";
@@ -45,6 +46,7 @@ export default function WordPanel({
   const { state, dispatch } = useContext(TypingContext)!;
   const phoneticConfig = useAtomValue(phoneticConfigAtom);
   const isShowPrevAndNextWord = useAtomValue(isShowPrevAndNextWordAtom);
+  const wordDictationConfig = useAtomValue(wordDictationConfigAtom);
   const [wordComponentKey, setWordComponentKey] = useState(0);
   const [currentWordExerciseCount, setCurrentWordExerciseCount] = useState(0);
   const { times: loopWordTimes } = useAtomValue(loopWordConfigAtom);
@@ -360,7 +362,8 @@ export default function WordPanel({
                 currentWord.sentences &&
                 Array.isArray(currentWord.sentences) &&
                 currentWord.sentences.length > 0 &&
-                state.isSentencesVisible && (
+                state.isSentencesVisible &&
+                !wordDictationConfig.isOpen && (
                   <div className="mt-4 md:mt-0 md:w-2/5 lg:w-1/2">
                     <Sentences word={currentWord} showSentences={true} />
                   </div>

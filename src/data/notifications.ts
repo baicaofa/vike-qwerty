@@ -3,6 +3,21 @@ import type { NotificationItem } from "@/store/updateNotification";
 // 通知数据源
 export const notificationsList: NotificationItem[] = [
   {
+    id: "update-2025-08-06",
+    type: "feature",
+    date: "2025年8月6日",
+    title:
+      "增加自定义词典上传功能<br/>增加英语端<br/>增加例句开关控制<br/>默写模式关闭例句",
+    tag: "新功能",
+    desc: "增加自定义词典上传功能，用户可以上传自己的词典，方便学习。<br/>增加英语端界面，用户可以在全英文下访问。<br/>增加例句开关控制，用户可以根据自己的需要开启或关闭例句。<br/>默写模式关闭例句，用户在默写模式下，不会显示例句。<br/><span style='color:red'>注：词典上传功能困难有未测试到的bug，如遇到可以反馈</span>",
+    images: [
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/08/dict.jpg",
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/08/QQ20250806-173030.jpg",
+      "https://www.keybr.com.cn/keybr/wp-content/uploads/2025/08/例句.jpg",
+    ],
+    priority: "high",
+  },
+  {
     id: "update-2025-07-07",
     type: "feature",
     date: "2025年7月7日",

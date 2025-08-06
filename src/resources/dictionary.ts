@@ -587,6 +587,65 @@ const chinaExam: DictionaryResource[] = [
   },
 ];
 
+//医学英语词典
+const medicalEnglish: DictionaryResource[] = [
+  {
+    id: "medical-english",
+    name: "高等数学",
+    description: "高等数学",
+    category: "医学英语词典",
+    tags: ["普通基础课程"],
+    url: "/dicts/medical-english.json",
+    length: 1000,
+    language: "en",
+    languageCategory: "en",
+  },
+  {
+    id: "medical-english-2",
+    name: "医用物理学",
+    description: "医用物理学",
+    category: "医学英语词典",
+    tags: ["普通基础课程"],
+    url: "/dicts/medical-english-2.json",
+    length: 1000,
+    language: "en",
+    languageCategory: "en",
+  },
+  {
+    id: "medical-english-3",
+    name: "人体解剖学",
+    description: "人体解剖学",
+    category: "医学英语词典",
+    tags: ["医学基础课程"],
+    url: "/dicts/medical-english-3.json",
+    length: 1000,
+    language: "en",
+    languageCategory: "en",
+  },
+  {
+    id: "medical-english-4",
+    name: "临床诊断学",
+    description: "临床诊断学",
+    category: "医学英语词典",
+    tags: ["临床专业课程"],
+    url: "/dicts/medical-english-4.json",
+    length: 1000,
+    language: "en",
+    languageCategory: "en",
+  },
+  {
+    id: "medical-english-5",
+    name: "实验诊断学",
+    description: "实验诊断学",
+    category: "医学英语词典",
+    tags: ["临床专业课程"],
+    url: "/dicts/medical-english-5.json",
+    length: 1000,
+    language: "en",
+    languageCategory: "en",
+  },
+];
+
 // 国际考试
 const internationalExam: DictionaryResource[] = [
   {
@@ -4119,6 +4178,7 @@ export const dictionaryResources: DictionaryResource[] = [
   ...germanExam,
   ...kazakhHapinDicts,
   ...indonesianDicts,
+  ...medicalEnglish,
 
   // {
   //   id: 'zhtest',

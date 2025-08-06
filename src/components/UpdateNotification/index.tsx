@@ -29,7 +29,10 @@ function ProductNewsItem({
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-4">
       <div className="flex items-center gap-2 mb-2">
-        <span className="font-bold text-lg">{title}</span>
+        <span
+          className="font-bold text-lg"
+          dangerouslySetInnerHTML={{ __html: title.replace(/\n/g, "<br />") }}
+        />
         {tag && (
           <span className="bg-blue-100 text-blue-600 px-2 py-0.5 rounded text-xs">
             {tag}
@@ -44,7 +47,10 @@ function ProductNewsItem({
           </button>
         )}
       </div>
-      <div className="text-gray-600 dark:text-gray-300 mb-4">{desc}</div>
+      <div
+        className="text-gray-600 dark:text-gray-300 mb-4"
+        dangerouslySetInnerHTML={{ __html: desc.replace(/\n/g, "<br />") }}
+      />
       {images && images.length > 0 && (
         <div className="relative w-full mx-auto">
           {hasMultiple && (

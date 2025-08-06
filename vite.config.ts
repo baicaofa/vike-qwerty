@@ -44,7 +44,6 @@ const sitemapRoutes = baseSitemapRoutes.flatMap((route) => {
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-
   return {
     plugins: [
       react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),

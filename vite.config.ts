@@ -44,7 +44,6 @@ const sitemapRoutes = baseSitemapRoutes.flatMap((route) => {
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const isProduction = mode === "production";
 
   return {
     plugins: [
@@ -52,13 +51,6 @@ export default defineConfig(({ mode }) => {
 
       vike(),
       // 只在生产环境启用 bundle 分析
-      isProduction &&
-        (visualizer({
-          filename: "dist/bundle-analysis.html",
-          open: false,
-          gzipSize: true,
-          brotliSize: true,
-        }) as PluginOption),
       Icons({
         compiler: "jsx",
         jsx: "react",
@@ -165,52 +157,8 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       outDir: "build",
-      sourcemap: isProduction ? false : true, // 生产环境禁用 sourcemap
-      minify: isProduction ? "terser" : false, // 生产环境启用压缩
-      rollupOptions: {
-        output: {
-          // 代码分割优化
-          manualChunks: {
-            // 将 React 相关库分离
-            "react-vendor": ["react", "react-dom"],
-            // 将 UI 库分离
-            "ui-vendor": [
-              "@radix-ui/react-dialog",
-              "@radix-ui/react-progress",
-              "@radix-ui/react-scroll-area",
-              "@radix-ui/react-slider",
-              "@radix-ui/react-tabs",
-              "@radix-ui/react-toggle",
-              "@radix-ui/react-tooltip",
-              "@headlessui/react",
-            ],
-            // 将图表库分离
-            "charts-vendor": ["echarts"],
-            // 将工具库分离
-            "utils-vendor": [
-              "dayjs",
-              "clsx",
-              "class-variance-authority",
-              "tailwind-merge",
-            ],
-            // 将状态管理库分离
-            "state-vendor": ["jotai", "zustand", "swr"],
-          },
-        },
-      },
-      // 优化 terser 配置
-      terserOptions: isProduction
-        ? {
-            compress: {
-              drop_console: true,
-              drop_debugger: true,
-              pure_funcs: ["console.log", "console.info", "console.debug"],
-            },
-            mangle: {
-              safari10: true,
-            },
-          }
-        : undefined,
+      sourcemap: false, // 生产环境禁用 sourcemap
+      minify: true, // 生产环境启用压缩
     },
     esbuild: {
       drop: mode === "development" ? [] : ["debugger", "console"],

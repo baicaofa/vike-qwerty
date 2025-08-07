@@ -47,7 +47,7 @@ export default function FamiliarWordsPage() {
       await markFamiliarWord(word, dictId, false);
       setFamiliarWords((prev) => prev.filter((w) => w.word !== word));
     } catch (err) {
-      console.error(t("actions.removeFamiliar") + " failed:", err);
+      console.error(t("actions.removeFamiliar", "移除熟词") + " failed:", err);
     }
   };
 
@@ -77,7 +77,7 @@ export default function FamiliarWordsPage() {
   if (isLoading) {
     return (
       <div className="flex h-full items-center justify-center">
-        <p className="text-2xl text-gray-500">{t("loading")}</p>
+        <p className="text-2xl text-gray-500">{t("loading", "加载中")}</p>
       </div>
     );
   }
@@ -95,30 +95,32 @@ export default function FamiliarWordsPage() {
   return (
     <div className="flex h-full justify-center items-start">
       <div className="w-full max-w-2xl flex flex-col items-center justify-center p-4 gap-2">
-        <h1 className="text-2xl font-bold dark:text-gray-50">{t("title")}</h1>
+        <h1 className="text-2xl font-bold dark:text-gray-50">
+          {t("title", "熟词")}
+        </h1>
         <div className="text-sm text-gray-500 dark:text-gray-400">
-          {t("stats.totalCount")}
+          {t("stats.totalCount", "总数")}
           <span className="font-bold">{familiarWords.length}</span>
         </div>
         <div className="flex items-center gap-4 mt-2">
           <label className="flex items-center gap-1 cursor-pointer select-none">
             <input
               type="checkbox"
-              aria-label={t("ariaLabels.selectAll")}
+              aria-label={t("ariaLabels.selectAll", "全选")}
               checked={
                 selectedWords.length === familiarWords.length &&
                 familiarWords.length > 0
               }
               onChange={(e) => handleSelectAll(e.target.checked)}
             />
-            <span>{t("actions.selectAll")}</span>
+            <span>{t("actions.selectAll", "全选")}</span>
           </label>
           <button
             className="bg-red-500 text-white px-4 py-1 rounded disabled:opacity-50"
             disabled={selectedWords.length === 0}
             onClick={handleBatchDelete}
           >
-            {t("actions.batchRemove")}
+            {t("actions.batchRemove", "批量删除")}
           </button>
         </div>
         <div className="flex-1 w-full overflow-y-auto px-4 mt-4">
@@ -156,7 +158,7 @@ function FamiliarWordCard({
       <div className="flex items-center gap-2 flex-1">
         <input
           type="checkbox"
-          aria-label={t("ariaLabels.selectWord", { word })}
+          aria-label={t("ariaLabels.selectWord", { word })} //
           checked={checked}
           onChange={(e) => onCheck(e.target.checked)}
         />
@@ -168,7 +170,7 @@ function FamiliarWordCard({
         <button
           onClick={onUnmark}
           className="rounded-full p-2 text-yellow-400 hover:bg-gray-100 dark:hover:bg-gray-600"
-          title={t("actions.removeFamiliar")}
+          title={t("actions.removeFamiliar", "移除熟词")}
         >
           <IconStar className="h-6 w-6" />
         </button>

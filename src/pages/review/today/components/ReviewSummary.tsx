@@ -11,11 +11,11 @@ interface ReviewSummaryProps {
  * 显示今日复习计划的概览信息
  */
 const ReviewSummary: React.FC<ReviewSummaryProps> = ({ plan }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("review");
   if (!plan) {
     return (
       <div className="text-center py-4 text-gray-500">
-        {t("review:summary.noData")}
+        {t("summary.noData", "没有数据")}
       </div>
     );
   }
@@ -23,7 +23,7 @@ const ReviewSummary: React.FC<ReviewSummaryProps> = ({ plan }) => {
   return (
     <div>
       <h2 className="text-xl font-semibold mb-4">
-        {t("review:summary.todayOverview")}
+        {t("summary.todayOverview", "今日复习概览")}
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="text-center">
@@ -31,7 +31,7 @@ const ReviewSummary: React.FC<ReviewSummaryProps> = ({ plan }) => {
             {plan.reviewWords.length}
           </p>
           <p className="text-sm text-gray-600">
-            {t("review:summary.plannedReview")}
+            {t("summary.plannedReview", "计划复习")}
           </p>
         </div>
         <div className="text-center">
@@ -39,7 +39,7 @@ const ReviewSummary: React.FC<ReviewSummaryProps> = ({ plan }) => {
             {plan.urgentWords.length}
           </p>
           <p className="text-sm text-gray-600">
-            {t("review:summary.urgentReview")}
+            {t("summary.urgentReview", "紧急复习")}
           </p>
         </div>
         <div className="text-center">
@@ -47,7 +47,7 @@ const ReviewSummary: React.FC<ReviewSummaryProps> = ({ plan }) => {
             {plan.estimatedTime}
           </p>
           <p className="text-sm text-gray-600">
-            {t("review:summary.estimatedTime")}
+            {t("summary.estimatedTime", "预计时间")}
           </p>
         </div>
         <div className="text-center">
@@ -61,13 +61,13 @@ const ReviewSummary: React.FC<ReviewSummaryProps> = ({ plan }) => {
             }`}
           >
             {plan.difficulty === "easy"
-              ? t("review:summary.easy")
+              ? t("summary.easy", "简单")
               : plan.difficulty === "normal"
-              ? t("review:summary.normal")
-              : t("review:summary.hard")}
+              ? t("summary.normal", "正常")
+              : t("summary.hard", "困难")}
           </p>
           <p className="text-sm text-gray-600">
-            {t("review:summary.difficultyLevel")}
+            {t("summary.difficultyLevel", "难度等级")}
           </p>
         </div>
       </div>

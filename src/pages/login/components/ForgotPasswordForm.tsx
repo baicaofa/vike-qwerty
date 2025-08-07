@@ -19,7 +19,7 @@ export const ForgotPasswordForm = ({
     e.preventDefault();
 
     if (!email) {
-      setError(t("errorInputEmail"));
+      setError(t("errorInputEmail", "请输入邮箱"));
       return;
     }
 
@@ -27,9 +27,11 @@ export const ForgotPasswordForm = ({
       setLoading(true);
       setError("");
       await forgotPassword(email);
-      setSuccess(t("successSendReset"));
+      setSuccess(t("successSendReset", "发送重置链接成功"));
     } catch (error: any) {
-      setError(error.response?.data?.message || t("errorSendReset"));
+      setError(
+        error.response?.data?.message || t("errorSendReset", "发送重置链接失败")
+      );
     } finally {
       setLoading(false);
     }
@@ -39,10 +41,10 @@ export const ForgotPasswordForm = ({
     <>
       <div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          {t("forgotPassword")}
+          {t("forgotPassword", "忘记密码")}
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          {t("email")} {t("emailPlaceholder")}
+          {t("email", "邮箱")} {t("emailPlaceholder", "请输入邮箱")}
         </p>
       </div>
 
@@ -99,7 +101,7 @@ export const ForgotPasswordForm = ({
       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email-forgot" className="sr-only">
-            {t("email")}
+            {t("email", "邮箱")}
           </label>
           <input
             id="email-forgot"
@@ -108,7 +110,7 @@ export const ForgotPasswordForm = ({
             autoComplete="email"
             required
             className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-            placeholder={t("emailPlaceholder")}
+            placeholder={t("emailPlaceholder", "请输入邮箱")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -120,7 +122,9 @@ export const ForgotPasswordForm = ({
             disabled={loading}
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-300"
           >
-            {loading ? t("processing") : t("sendResetLink")}
+            {loading
+              ? t("processing", "处理中")
+              : t("sendResetLink", "发送重置链接")}
           </button>
         </div>
 
@@ -130,7 +134,7 @@ export const ForgotPasswordForm = ({
             onClick={() => setView("login")}
             className="text-sm text-indigo-600 hover:text-indigo-500"
           >
-            {t("backToLogin")}
+            {t("backToLogin", "返回登录")}
           </button>
         </div>
       </form>

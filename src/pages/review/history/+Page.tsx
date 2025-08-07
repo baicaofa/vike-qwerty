@@ -1,6 +1,4 @@
 import { Link } from "@/components/ui/Link";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { useReviewHistory } from "@/hooks/useSpacedRepetition";
 import type { IWordReviewRecord } from "@/utils/db/wordReviewRecord";
 import { WordReviewRecord } from "@/utils/db/wordReviewRecord";
@@ -26,17 +24,17 @@ const TimeRangeSelector: React.FC<{
   value: string;
   onChange: (value: string) => void;
 }> = ({ value, onChange }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("review");
   const options = [
-    { value: "7d", label: t("review:timeRange.last7Days") },
-    { value: "30d", label: t("review:timeRange.last30Days") },
-    { value: "90d", label: t("review:timeRange.last3Months") },
-    { value: "all", label: t("review:timeRange.allTime") },
+    { value: "7d", label: t("timeRange.last7Days", "最近7天") },
+    { value: "30d", label: t("timeRange.last30Days", "最近30天") },
+    { value: "90d", label: t("timeRange.last3Months", "最近3个月") },
+    { value: "all", label: t("timeRange.allTime", "全部时间") },
   ];
 
   return (
     <select
-      aria-label={t("review:timeRange.label")}
+      aria-label={t("timeRange.label", "选择时间范围")}
       value={value}
       onChange={(e) => onChange(e.target.value)}
       className="border border-gray-300 rounded-md  py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -171,7 +169,7 @@ const StatCard: React.FC<{
 };
 
 export default function ReviewHistory() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("review");
   const [timeRange, setTimeRange] = useState("30d");
   const [sortBy, setSortBy] = useState<
     "recent" | "frequency" | "strength" | "level"
@@ -303,7 +301,7 @@ export default function ReviewHistory() {
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">{t("review:status.loading")}</p>
+            <p className="text-gray-600">{t("status.loading", "加载中")}</p>
           </div>
         </div>
       </div>
@@ -315,16 +313,18 @@ export default function ReviewHistory() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-3xl font-bold text-gray-900">
-            {t("review:history.title")}
+            {t("history.title", "复习历史")}
           </h1>
           <Link
             href="/review/dashboard"
             className="text-blue-600 hover:text-blue-700 text-sm"
           >
-            ← {t("common:buttons.back")}
+            ← {t("common:buttons.back", "返回")}
           </Link>
         </div>
-        <p className="text-gray-600">{t("review:history.subtitle")}</p>
+        <p className="text-gray-600">
+          {t("history.subtitle", "查看您的复习历史")}
+        </p>
       </div>
 
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
@@ -333,7 +333,7 @@ export default function ReviewHistory() {
             <TimeRangeSelector value={timeRange} onChange={setTimeRange} />
 
             <select
-              aria-label={t("review:history.sortBy")}
+              aria-label={t("history.sortBy", "排序方式")}
               value={sortBy}
               onChange={(e) =>
                 setSortBy(
@@ -347,20 +347,22 @@ export default function ReviewHistory() {
               className="border border-gray-300 rounded-md  py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="recent">
-                {t("review:history.sortByLastReview")}
+                {t("history.sortByLastReview", "按最近复习")}
               </option>
               <option value="frequency">
-                {t("review:history.sortByReviewCount")}
+                {t("history.sortByReviewCount", "按复习次数")}
               </option>
               <option value="strength">
-                {t("review:history.sortByLevel")}
+                {t("history.sortByLevel", "按记忆强度")}
               </option>
-              <option value="level">{t("review:history.sortByLevel")}</option>
+              <option value="level">
+                {t("history.sortByLevel", "按等级")}
+              </option>
             </select>
           </div>
 
           <div className="text-sm text-gray-600">
-            {t("review:history.word")}: {history?.length || 0}
+            {t("history.word", "单词")}: {history?.length || 0}
           </div>
         </div>
       </div>
@@ -368,25 +370,25 @@ export default function ReviewHistory() {
       {stats && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <StatCard
-            title={t("review:stats.totalReviews")}
+            title={t("stats.totalReviews", "总复习次数")}
             value={stats.totalReviews}
             color="blue"
           />
           <StatCard
-            title={t("review:stats.averageAccuracy")}
+            title={t("stats.averageAccuracy", "平均准确率")}
             value={`${stats.averageAccuracy}%`}
             color="green"
           />
           <StatCard
-            title={t("review:history.studyDays")}
+            title={t("history.studyDays", "学习天数")}
             value={stats.studyDays}
-            subtitle={t("review:history.studyDaysSubtitle")}
+            subtitle={t("history.studyDaysSubtitle", "学习天数")}
             color="yellow"
           />
           <StatCard
-            title={t("review:history.masteredWords")}
+            title={t("history.masteredWords", "掌握单词")}
             value={stats.masteredWords}
-            subtitle={t("review:history.masteredWordsSubtitle")}
+            subtitle={t("history.masteredWordsSubtitle", "掌握单词")}
             color="green"
           />
         </div>
@@ -394,18 +396,18 @@ export default function ReviewHistory() {
 
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <h2 className="text-xl font-semibold text-gray-900 mb-4">
-          {t("review:history.reviewTrend")}
+          {t("history.reviewTrend", "复习趋势")}
         </h2>
         <HistoryChart data={chartData} />
         <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
-          <span>{t("review:history.dailyReviewStats")}</span>
+          <span>{t("history.dailyReviewStats", "每日复习统计")}</span>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 bg-blue-500 rounded"></div>
-              <span>{t("review:history.reviewCount")}</span>
+              <span>{t("history.reviewCount", "复习次数")}</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span>{t("review:history.accuracy")}</span>
+              <span>{t("history.accuracy", "准确率")}</span>
             </div>
           </div>
         </div>
@@ -413,7 +415,7 @@ export default function ReviewHistory() {
 
       <div className="bg-white rounded-lg shadow-md p-6">
         <h2 className="text-xl font-semibold text-gray-900 mb-4">
-          单词复习记录
+          {t("history.wordReviewRecord", "单词复习记录")}
         </h2>
 
         {history && history.length > 0 ? (
@@ -426,16 +428,19 @@ export default function ReviewHistory() {
           <div className="text-center py-8">
             <div className="text-6xl mb-4">📚</div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              暂无复习记录
+              {t("history.noReviewRecord", "暂无复习记录")}
             </h3>
             <p className="text-gray-600 mb-4">
-              开始复习单词后，这里将显示您的学习历史
+              {t(
+                "history.noReviewRecordTip",
+                "开始复习单词后，这里将显示您的学习历史"
+              )}
             </p>
             <Link
               href="/review/today"
               className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
             >
-              开始复习
+              {t("history.startReview", "开始复习")}
             </Link>
           </div>
         )}

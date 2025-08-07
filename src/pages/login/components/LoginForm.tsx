@@ -32,7 +32,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
 
       window.location.href = redirectPath;
     } catch (error: any) {
-      setError(error.response?.data?.message || t("errorLogin"));
+      setError(error.response?.data?.message || t("errorLogin", "登录失败"));
     } finally {
       setLoading(false);
     }
@@ -42,10 +42,10 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
     <>
       <div>
         <h2 className="mt-2 text-center text-3xl font-extrabold text-gray-900">
-          {t("welcomeBack")}
+          {t("welcomeBack", "欢迎回来")}
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          {t("loginToContinue")}
+          {t("loginToContinue", "请登录继续")}
         </p>
       </div>
 
@@ -81,7 +81,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
               htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
-              {t("email")}
+              {t("email", "邮箱")}
             </label>
             <div className="mt-1">
               <input
@@ -91,7 +91,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
                 autoComplete="email"
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                placeholder={t("emailPlaceholder")}
+                placeholder={t("emailPlaceholder", "请输入邮箱")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -103,7 +103,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
               htmlFor="password"
               className="block text-sm font-medium text-gray-700"
             >
-              {t("password")}
+              {t("password", "密码")}
             </label>
             <div className="mt-1 relative">
               <input
@@ -113,7 +113,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
                 autoComplete="current-password"
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm pr-10"
-                placeholder={t("passwordPlaceholder")}
+                placeholder={t("passwordPlaceholder", "请输入密码")}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -152,7 +152,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
               htmlFor="remember-me"
               className="ml-2 block text-sm text-gray-900"
             >
-              {t("rememberMe")}
+              {t("rememberMe", "记住我")}
             </label>
           </div>
 
@@ -162,7 +162,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
               onClick={() => setView("forgotPassword")}
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
-              {t("forgotPassword")}
+              {t("forgotPassword", "忘记密码")}
             </button>
           </div>
         </div>
@@ -195,7 +195,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
                 ></path>
               </svg>
             ) : null}
-            {loading ? t("loggingIn") : t("login")}
+            {loading ? t("loggingIn", "登录中") : t("login", "登录")}
           </button>
         </div>
 
@@ -205,7 +205,7 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
             onClick={() => setView("register")}
             className="text-sm text-indigo-600 hover:text-indigo-500"
           >
-            {t("noAccount")}
+            {t("noAccount", "没有账号？")}
           </button>
         </div>
       </form>

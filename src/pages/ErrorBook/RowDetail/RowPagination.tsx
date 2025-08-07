@@ -5,6 +5,7 @@ import type { FC } from "react";
 import { useMemo } from "react";
 import { useCallback } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
+import { useTranslation } from "react-i18next";
 import NextIcon from "~icons/ooui/next-ltr";
 import PrevIcon from "~icons/ooui/next-rtl";
 
@@ -16,6 +17,7 @@ type IRowPaginationProps = {
 export const ITEM_PER_PAGE = 20;
 
 const RowPagination: FC<IRowPaginationProps> = ({ className, allRecords }) => {
+  const { t } = useTranslation("errors");
   const [currentRowDetail, setCurrentRowDetail] = useAtom(currentRowDetailAtom);
   const currentIndex = useMemo(() => {
     if (!currentRowDetail) return -1;
@@ -73,6 +75,7 @@ const RowPagination: FC<IRowPaginationProps> = ({ className, allRecords }) => {
       <button
         className="d cursor-pointer rounded-full  p-1  text-blue-500 focus:outline-none dark:text-indigo-300"
         onClick={prevRowDetail}
+        title={t("errorBook.prevPage", "上一页")}
       >
         <PrevIcon />
       </button>
@@ -82,6 +85,7 @@ const RowPagination: FC<IRowPaginationProps> = ({ className, allRecords }) => {
       <button
         className="cursor-pointer rounded-full p-1 text-blue-500  focus:outline-none dark:text-indigo-300"
         onClick={nextRowDetail}
+        title={t("errorBook.nextPage", "下一页")}
       >
         <NextIcon />
       </button>

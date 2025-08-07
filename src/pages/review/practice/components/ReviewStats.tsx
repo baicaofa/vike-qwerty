@@ -1,10 +1,11 @@
 import type { ReviewStatsData } from "@/hooks/useReviewStats";
 import { memo } from "react";
-import { useTranslation } from "react-i18next";
 
 /**
  * 复习统计组件Props
  */
+import { useTranslation } from "react-i18next";
+
 interface ReviewStatsProps {
   stats: ReviewStatsData;
   performanceLevel?: string;
@@ -54,32 +55,32 @@ function getPerformanceLevelDisplay(
   switch (level) {
     case "excellent":
       return {
-        text: t("review:stats.excellent"),
+        text: t("stats.excellent"),
         color: "text-green-600",
         icon: "🏆",
       };
     case "good":
       return {
-        text: t("review:stats.good"),
+        text: t("stats.good"),
         color: "text-blue-600",
         icon: "👍",
       };
     case "fair":
       return {
-        text: t("review:stats.fair"),
+        text: t("stats.fair"),
         color: "text-yellow-600",
         icon: "📈",
       };
     case "needs-improvement":
       return {
-        text: t("review:stats.needsImprovement"),
+        text: t("stats.needsImprovement"),
         color: "text-red-600",
         icon: "💪",
       };
     case "warming-up":
     default:
       return {
-        text: t("review:stats.warmingUp"),
+        text: t("stats.warmingUp"),
         color: "text-gray-600",
         icon: "🔄",
       };
@@ -173,7 +174,7 @@ export const ReviewStats = memo(
     performanceLevel = "warming-up",
     className = "",
   }: ReviewStatsProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("review");
 
     const accuracyColor = getAccuracyColor(stats.accuracy);
     const streakDisplay = getStreakDisplay(stats.currentStreak);

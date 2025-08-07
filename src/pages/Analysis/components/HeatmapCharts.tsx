@@ -49,40 +49,41 @@ const HeatmapCharts: FC<HeatmapChartsProps> = ({ data, title }) => {
         renderBlock={(block, activity) =>
           React.cloneElement(block, {
             "data-tooltip-id": "react-tooltip",
-            "data-tooltip-html": `${activity.date} ${t("tooltip.practice")} ${
-              activity.count
-            } ${t("tooltip.times")}`,
+            "data-tooltip-html": `${activity.date} ${t(
+              "tooltip.practice",
+              "练习"
+            )} ${activity.count} ${t("tooltip.times", "次")}`,
           })
         }
         showWeekdayLabels={true}
         labels={{
           months: [
-            t("months.january"),
-            t("months.february"),
-            t("months.march"),
-            t("months.april"),
-            t("months.may"),
-            t("months.june"),
-            t("months.july"),
-            t("months.august"),
-            t("months.september"),
+            t("months.january", "一月"),
+            t("months.february", "二月"),
+            t("months.march", "三月"),
+            t("months.april", "四月"),
+            t("months.may", "五月"),
+            t("months.june", "六月"),
+            t("months.july", "七月"),
+            t("months.august", "八月"),
+            t("months.september", "九月"),
             t("months.october"),
-            t("months.november"),
-            t("months.december"),
+            t("months.november", "十一月"),
+            t("months.december", "十二月"),
           ],
           weekdays: [
-            t("weekdays.sunday"),
+            t("weekdays.sunday", "周日"),
             t("weekdays.monday"),
             t("weekdays.tuesday"),
             t("weekdays.wednesday"),
-            t("weekdays.thursday"),
-            t("weekdays.friday"),
-            t("weekdays.saturday"),
+            t("weekdays.thursday", "周四"),
+            t("weekdays.friday", "周五"),
+            t("weekdays.saturday", "周六"),
           ],
-          totalCount: t("tooltip.totalCount", { count: "{{count}}" }),
+          totalCount: t("tooltip.totalCount", "总共练习") + "{{count}}",
           legend: {
-            less: t("legend.less"),
-            more: t("legend.more"),
+            less: t("legend.less", "少"),
+            more: t("legend.more", "多"),
           },
         }}
       />

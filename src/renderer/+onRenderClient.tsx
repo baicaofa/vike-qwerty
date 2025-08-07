@@ -5,6 +5,7 @@ import {
   detectBrowserLanguage,
   detectLanguageFromUrl,
 } from "../store/languageAtom";
+import { getLanguagePreference } from "../utils/localStorage";
 import { ClientWrapper } from "./ClientWrapper";
 import "./PageLayout.css";
 import { Provider as JotaiProvider, createStore } from "jotai";
@@ -35,12 +36,14 @@ export async function onRenderClient(pageContext: PageContext) {
   }
 
   // 初始化i18n（客户端）
-  // 优先使用 pageContext 中的 locale，如果没有则从 URL 或浏览器检测
+  // 优先检查localStorage中的语言偏好，然后使用 pageContext 中的 locale，最后从 URL 或浏览器检测
+  const preferredLanguage = getLanguagePreference();
   const pageLocale = (pageContext as any).locale as SupportedLanguage;
   const urlLanguage = detectLanguageFromUrl();
   const browserLanguage = detectBrowserLanguage();
 
-  const finalLanguage = pageLocale || urlLanguage || browserLanguage;
+  const finalLanguage =
+    preferredLanguage || pageLocale || urlLanguage || browserLanguage;
   await initI18n(finalLanguage);
 
   const typingContextValue = {

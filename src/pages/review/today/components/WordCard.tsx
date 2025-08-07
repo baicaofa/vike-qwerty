@@ -13,7 +13,7 @@ export interface WordCardProps {
  * 显示单词复习信息
  */
 const WordCard: React.FC<WordCardProps> = ({ word, practiceCount }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("review");
   const actualPracticeCount = practiceCount ?? word.todayPracticeCount ?? 0;
 
   // 简化的进度计算（使用固定的间隔序列长度）
@@ -62,14 +62,14 @@ const WordCard: React.FC<WordCardProps> = ({ word, practiceCount }) => {
         <h3 className="text-lg font-semibold">{word.word}</h3>
         <div className="flex items-center space-x-2">
           {isReviewDue && (
-            <Badge variant="destructive">{t("review:wordCard.due")}</Badge>
+            <Badge variant="destructive">{t("wordCard.due", "逾期")}</Badge>
           )}
           {word.isGraduated && (
-            <Badge variant="success">{t("review:wordCard.graduated")}</Badge>
+            <Badge variant="success">{t("wordCard.graduated", "已毕业")}</Badge>
           )}
           {actualPracticeCount > 0 && (
             <Badge variant="secondary">
-              {t("review:wordCard.practiceCount")}: {actualPracticeCount}
+              {t("wordCard.practiceCount", "练习次数")}: {actualPracticeCount}
             </Badge>
           )}
         </div>
@@ -78,7 +78,7 @@ const WordCard: React.FC<WordCardProps> = ({ word, practiceCount }) => {
       <div className="space-y-1 text-sm">
         <div className="flex justify-between">
           <span className="text-gray-600">
-            {t("review:wordCard.reviewProgress")}:
+            {t("wordCard.reviewProgress", "复习进度")}:
           </span>
           <span className={`font-medium ${getProgressColor(progress)}`}>
             {isNaN(progress) ? "0" : (progress * 100).toFixed(0)}%
@@ -86,7 +86,7 @@ const WordCard: React.FC<WordCardProps> = ({ word, practiceCount }) => {
         </div>
         <div className="flex justify-between">
           <span className="text-gray-600">
-            {t("review:wordCard.priority")}:
+            {t("wordCard.priority", "优先级")}:
           </span>
           <span className="font-medium">
             {isNaN(priority) ? "0" : priority.toFixed(0)}
@@ -95,19 +95,19 @@ const WordCard: React.FC<WordCardProps> = ({ word, practiceCount }) => {
 
         <div className="flex justify-between">
           <span className="text-gray-600">
-            {t("review:wordCard.nextReview")}:
+            {t("wordCard.nextReview", "下次复习")}:
           </span>
           <span className="font-medium text-xs">
             {word.isGraduated
-              ? t("review:wordCard.completed")
+              ? t("wordCard.completed", "已完成")
               : new Date(nextReviewAt).toLocaleDateString()}
           </span>
         </div>
       </div>
 
       <div className="mt-2 text-xs text-gray-500">
-        {t("review:wordCard.totalReviews")}: {word.totalReviews || 0} |{" "}
-        {t("review:wordCard.intervalLevel")}: {currentInterval}/
+        {t("wordCard.totalReviews", "总复习次数")}: {word.totalReviews || 0} |{" "}
+        {t("wordCard.intervalLevel", "间隔等级")}: {currentInterval}/
         {maxIntervalIndex}
       </div>
     </div>

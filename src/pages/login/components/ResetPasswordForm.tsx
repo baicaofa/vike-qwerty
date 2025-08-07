@@ -23,15 +23,15 @@ export const ResetPasswordForm = ({
   const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!password || !confirmPassword) {
-      setError(t("errorInputNewPassword"));
+      setError(t("errorInputNewPassword", "请输入新密码"));
       return;
     }
     if (password !== confirmPassword) {
-      setError(t("errorPasswordNotMatch"));
+      setError(t("errorPasswordNotMatch", "密码不匹配"));
       return;
     }
     if (password.length < 6) {
-      setError(t("errorPasswordLength"));
+      setError(t("errorPasswordLength", "密码长度不能小于6位"));
       return;
     }
 
@@ -39,7 +39,7 @@ export const ResetPasswordForm = ({
       setLoading(true);
       setError("");
       await resetPassword(token, email, password);
-      setSuccess(t("successReset"));
+      setSuccess(t("successReset", "重置密码成功"));
       setTimeout(() => {
         setView("login");
         // 清理URL参数
@@ -50,7 +50,9 @@ export const ResetPasswordForm = ({
         );
       }, 3000);
     } catch (error: any) {
-      setError(error.response?.data?.message || t("errorReset"));
+      setError(
+        error.response?.data?.message || t("errorReset", "重置密码失败")
+      );
     } finally {
       setLoading(false);
     }
@@ -60,10 +62,10 @@ export const ResetPasswordForm = ({
     <>
       <div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          {t("resetPassword")}
+          {t("resetPassword", "重置密码")}
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          {t("resetPasswordTip")}
+          {t("resetPasswordTip", "请输入新密码")}
         </p>
       </div>
 
@@ -117,7 +119,7 @@ export const ResetPasswordForm = ({
         <div className="rounded-md shadow-sm -space-y-px">
           <div>
             <label htmlFor="password-reset" className="sr-only">
-              {t("newPassword")}
+              {t("newPassword", "新密码")}
             </label>
             <input
               id="password-reset"
@@ -125,14 +127,14 @@ export const ResetPasswordForm = ({
               type="password"
               required
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder={t("newPasswordPlaceholder")}
+              placeholder={t("newPasswordPlaceholder", "请输入新密码")}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div>
             <label htmlFor="confirm-password-reset" className="sr-only">
-              {t("confirmPassword")}
+              {t("confirmPassword", "确认密码")}
             </label>
             <input
               id="confirm-password-reset"
@@ -140,7 +142,7 @@ export const ResetPasswordForm = ({
               type="password"
               required
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder={t("confirmPasswordPlaceholder")}
+              placeholder={t("confirmPasswordPlaceholder", "请确认密码")}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
@@ -153,7 +155,9 @@ export const ResetPasswordForm = ({
             disabled={loading}
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-300"
           >
-            {loading ? t("processing") : t("resetPassword")}
+            {loading
+              ? t("processing", "处理中")
+              : t("resetPassword", "重置密码")}
           </button>
         </div>
       </form>

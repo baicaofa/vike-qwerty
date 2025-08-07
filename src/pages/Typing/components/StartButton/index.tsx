@@ -52,7 +52,9 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
   return (
     <Tooltip
       content={`${
-        state.isTyping ? t("buttons.pause", "暂停") : t("buttons.start", "开始")
+        state.isTyping
+          ? t("buttons.pause", "Pause")
+          : t("buttons.start", "Start")
       } （Enter）`}
       className="box-content h-7 w-8 px-6 py-1"
     >
@@ -77,14 +79,14 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
           onClick={onToggleIsTyping}
           aria-label={
             state.isTyping
-              ? t("buttons.pause", "暂停")
-              : t("buttons.start", "开始")
+              ? t("buttons.pause", "Pause")
+              : t("buttons.start", "Start")
           }
         >
           <span className="font-medium">
             {state.isTyping
-              ? t("buttons.pause", "暂停")
-              : t("buttons.start", "开始")}
+              ? t("buttons.pause", "Pause")
+              : t("buttons.start", "Start")}
           </span>
         </button>
         {isShowReStartButton && (
@@ -101,9 +103,9 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
               } my-btn-primary mb-1 mt-1 w-18  transition-colors duration-200`}
               type="button"
               onClick={onClickRestart}
-              aria-label={t("buttons.restart", "重新开始")}
+              aria-label={t("buttons.restart", "Restart")}
             >
-              {t("buttons.restart", "重新开始")}
+              {t("buttons.restart", "Restart")}
             </button>
           </div>
         )}

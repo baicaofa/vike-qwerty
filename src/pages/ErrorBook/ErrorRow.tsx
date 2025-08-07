@@ -60,7 +60,7 @@ const ErrorRow: FC<IErrorRowProps> = ({ record, onDelete }) => {
               <DeleteIcon />
             </TooltipTrigger>
             <TooltipContent>
-              <p>{t("errorBook.deleteRecords")}</p>
+              <p>{t("errorBook.deleteRecords", "删除记录")}</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

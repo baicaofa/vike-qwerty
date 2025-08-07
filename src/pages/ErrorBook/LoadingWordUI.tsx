@@ -20,7 +20,7 @@ export const LoadingWordUI: FC<LoadingWordUIProps> = ({
       {hasError ? (
         <div
           className="tooltip !bg-transparent"
-          data-tip={t("errorBook.loadFailed")}
+          data-tip={t("errorBook.loadFailed", "数据加载失败")}
         >
           <ErrorIcon className="text-red-500" />
         </div>

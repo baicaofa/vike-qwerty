@@ -31,6 +31,7 @@ const Pagination: FC<IPaginationProps> = ({
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       <button
+        title={t("errorBook.prevPage", "上一页")}
         className="cursor-pointer rounded-full bg-white p-2 text-blue-500 shadow-md dark:bg-gray-800 dark:text-indigo-300"
         onClick={prevPage}
       >
@@ -40,6 +41,7 @@ const Pagination: FC<IPaginationProps> = ({
         {t("errorBook.pageInfo", { page, totalPages })}
       </span>
       <button
+        title={t("errorBook.nextPage", "下一页")}
         className="cursor-pointer rounded-full bg-white p-2 text-blue-500 shadow-md dark:bg-gray-800 dark:text-indigo-300"
         onClick={nextPage}
       >

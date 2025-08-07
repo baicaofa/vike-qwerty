@@ -64,7 +64,7 @@ export const RegisterForm = ({
 
   const handleSendCode = async () => {
     if (!email) {
-      setError(t("errorInputEmail"));
+      setError(t("errorInputEmail", "请输入邮箱"));
       return;
     }
 
@@ -72,10 +72,12 @@ export const RegisterForm = ({
       setSendingCode(true);
       setError("");
       await sendVerificationCode(email);
-      setSuccess(t("successSendCode"));
+      setSuccess(t("successSendCode", "发送验证码成功"));
       setCountdown(60);
     } catch (error: any) {
-      setError(error.response?.data?.message || t("errorSendCode"));
+      setError(
+        error.response?.data?.message || t("errorSendCode", "发送验证码失败")
+      );
     } finally {
       setSendingCode(false);
     }
@@ -93,27 +95,27 @@ export const RegisterForm = ({
       !confirmPassword ||
       !verificationCode
     ) {
-      setError(t("errorRequired"));
+      setError(t("errorRequired", "请输入所有字段"));
       return;
     }
     if (password !== confirmPassword) {
-      setError(t("errorPasswordNotMatch"));
+      setError(t("errorPasswordNotMatch", "密码不匹配"));
       return;
     }
     if (password.length < 6) {
-      setError(t("errorPasswordLength"));
+      setError(t("errorPasswordLength", "密码长度不能小于6位"));
       return;
     }
 
     setLoading(true);
     try {
       await register(username, email, password, verificationCode);
-      setSuccess(t("successRegister"));
+      setSuccess(t("successRegister", "注册成功"));
       setTimeout(() => {
         setView("login");
       }, 2000);
     } catch (error: any) {
-      setError(error.response?.data?.message || t("errorRegister"));
+      setError(error.response?.data?.message || t("errorRegister", "注册失败"));
     } finally {
       setLoading(false);
     }
@@ -123,9 +125,11 @@ export const RegisterForm = ({
     <>
       <div>
         <h2 className="mt-2 text-center text-3xl font-extrabold text-gray-900">
-          {t("createAccount")}
+          {t("createAccount", "创建账号")}
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">{t("joinUs")}</p>
+        <p className="mt-2 text-center text-sm text-gray-600">
+          {t("joinUs", "加入我们")}
+        </p>
       </div>
 
       {success && (
@@ -181,7 +185,7 @@ export const RegisterForm = ({
               htmlFor="username"
               className="block text-sm font-medium text-gray-700"
             >
-              {t("username")}
+              {t("username", "用户名")}
             </label>
             <div className="mt-1">
               <input
@@ -191,7 +195,7 @@ export const RegisterForm = ({
                 autoComplete="username"
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                placeholder={t("usernamePlaceholder")}
+                placeholder={t("usernamePlaceholder", "请输入用户名")}
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
@@ -203,7 +207,7 @@ export const RegisterForm = ({
               htmlFor="email-register"
               className="block text-sm font-medium text-gray-700"
             >
-              {t("email")}
+              {t("email", "邮箱")}
             </label>
             <div className="mt-1">
               <input
@@ -213,7 +217,7 @@ export const RegisterForm = ({
                 autoComplete="email"
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                placeholder={t("emailPlaceholder")}
+                placeholder={t("emailPlaceholder", "请输入邮箱")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -225,7 +229,7 @@ export const RegisterForm = ({
               htmlFor="password-register"
               className="block text-sm font-medium text-gray-700"
             >
-              {t("password")}
+              {t("password", "密码")}
             </label>
             <div className="mt-1 relative">
               <input
@@ -234,7 +238,7 @@ export const RegisterForm = ({
                 type={showPassword ? "text" : "password"}
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm pr-10"
-                placeholder={t("passwordPlaceholder")}
+                placeholder={t("passwordPlaceholder", "请输入密码")}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -260,7 +264,7 @@ export const RegisterForm = ({
               <div className="mt-2">
                 <div className="flex justify-between">
                   <span className="text-xs text-gray-500">
-                    {t("passwordStrength")}
+                    {t("passwordStrength", "密码强度")}
                   </span>
                   <span className="text-xs font-medium text-gray-600">
                     {getPasswordStrengthText()}
@@ -281,7 +285,7 @@ export const RegisterForm = ({
               htmlFor="confirm-password"
               className="block text-sm font-medium text-gray-700"
             >
-              {t("confirmPassword")}
+              {t("confirmPassword", "确认密码")}
             </label>
             <div className="mt-1 relative">
               <input
@@ -290,7 +294,7 @@ export const RegisterForm = ({
                 type={showConfirmPassword ? "text" : "password"}
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm pr-10"
-                placeholder={t("confirmPasswordPlaceholder")}
+                placeholder={t("confirmPasswordPlaceholder", "请确认密码")}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
@@ -319,7 +323,7 @@ export const RegisterForm = ({
               htmlFor="verification-code"
               className="block text-sm font-medium text-gray-700"
             >
-              {t("emailVerificationCode")}
+              {t("emailVerificationCode", "邮箱验证码")}
             </label>
             <div className="mt-1 flex space-x-2">
               <input
@@ -328,7 +332,7 @@ export const RegisterForm = ({
                 type="text"
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                placeholder={t("verificationCodePlaceholder")}
+                placeholder={t("verificationCodePlaceholder", "请输入验证码")}
                 value={verificationCode}
                 onChange={(e) => setVerificationCode(e.target.value)}
               />
@@ -339,10 +343,10 @@ export const RegisterForm = ({
                 className="w-48 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-400"
               >
                 {sendingCode
-                  ? t("sendingCode")
+                  ? t("sendingCode", "发送验证码中")
                   : countdown > 0
                   ? `${countdown}s`
-                  : t("getVerificationCode")}
+                  : t("getVerificationCode", "获取验证码")}
               </button>
             </div>
           </div>
@@ -354,7 +358,7 @@ export const RegisterForm = ({
             disabled={loading}
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-300"
           >
-            {loading ? t("registering") : t("register")}
+            {loading ? t("registering", "注册中") : t("register", "注册")}
           </button>
         </div>
         <div className="text-center">
@@ -363,7 +367,7 @@ export const RegisterForm = ({
             onClick={() => setView("login")}
             className="text-sm text-indigo-600 hover:text-indigo-500"
           >
-            {t("alreadyHaveAccount")}
+            {t("alreadyHaveAccount", "已有账号？")}
           </button>
         </div>
       </form>

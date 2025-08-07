@@ -3,6 +3,7 @@ import { initI18n } from "../i18n";
 import { TypingContext, initialState } from "../pages/Typing/store";
 import { getPageTDK } from "../resources/tdk";
 import type { SupportedLanguage } from "../store/languageAtom";
+import { getLanguagePreference } from "../utils/localStorage";
 import "animate.css";
 import { Provider as JotaiProvider, createStore } from "jotai";
 import type React from "react";
@@ -17,24 +18,32 @@ export { onRenderHtml };
 function detectLanguageFromContext(
   pageContext: PageContext
 ): SupportedLanguage {
-  // 1. 优先使用 onBeforeRoute 钩子提供的 locale 信息
+  // 1. 优先检查localStorage中的语言偏好（仅在客户端）
+  if (typeof window !== "undefined") {
+    const preferredLanguage = getLanguagePreference();
+    if (preferredLanguage && ["zh", "en"].includes(preferredLanguage)) {
+      return preferredLanguage as SupportedLanguage;
+    }
+  }
+
+  // 2. 优先使用 onBeforeRoute 钩子提供的 locale 信息
   if ((pageContext as any).locale) {
     return (pageContext as any).locale as SupportedLanguage;
   }
 
-  // 2. 从URL路径检测（如果有语言前缀）
+  // 3. 从URL路径检测（如果有语言前缀）
   const urlPath = pageContext.urlPathname;
   if (urlPath.startsWith("/en/")) return "en";
   if (urlPath.startsWith("/zh/")) return "zh";
 
-  // 3. 从Accept-Language头检测
+  // 4. 从Accept-Language头检测
   const acceptLanguage = pageContext.headers?.["accept-language"];
   if (acceptLanguage) {
     if (acceptLanguage.includes("en")) return "en";
     if (acceptLanguage.includes("zh")) return "zh";
   }
 
-  // 4. 默认返回中文
+  // 5. 默认返回中文
   return "zh";
 }
 

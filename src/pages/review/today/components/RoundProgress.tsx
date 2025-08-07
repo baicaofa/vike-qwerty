@@ -18,7 +18,7 @@ const RoundProgress: React.FC<RoundProgressProps> = ({
   totalWords,
   completionRate,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("review");
   // 根据完成率获取进度条颜色
   const getProgressBarColor = () => {
     if (completionRate >= 75) return "bg-green-500";
@@ -31,13 +31,11 @@ const RoundProgress: React.FC<RoundProgressProps> = ({
     <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
       <div className="mb-4">
         <p className="text-xl font-medium">
-          {t("review:roundProgress.round", { round: currentRound })}
+          {t("roundProgress.round", "轮次")} {currentRound}
         </p>
         <p className="text-sm text-gray-500">
-          {t("review:roundProgress.completedWords", {
-            completed: completedWords,
-            total: totalWords,
-          })}
+          {t("roundProgress.completedWords", "已完成单词")} {completedWords} /{" "}
+          {totalWords}
         </p>
       </div>
 
@@ -57,13 +55,12 @@ const RoundProgress: React.FC<RoundProgressProps> = ({
       <div className="mt-4 text-sm">
         {completionRate < 100 ? (
           <p className="text-blue-600">
-            {t("review:roundProgress.remainingWords", {
-              remaining: totalWords - completedWords,
-            })}
+            {t("roundProgress.remainingWords", "剩余单词")}{" "}
+            {totalWords - completedWords}
           </p>
         ) : (
           <p className="text-green-600">
-            {t("review:roundProgress.roundCompleted")}
+            {t("roundProgress.roundCompleted", "轮次完成")}
           </p>
         )}
       </div>

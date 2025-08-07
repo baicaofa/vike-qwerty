@@ -16,6 +16,7 @@ const ProgressChart: React.FC<{
     accuracy: number;
   }>;
 }> = ({ data }) => {
+  const { t } = useTranslation("review");
   const maxValue = Math.max(...data.map((d) => Math.max(d.reviewed, d.target)));
 
   return (
@@ -25,7 +26,7 @@ const ProgressChart: React.FC<{
           <div className="flex items-center justify-between">
             <div className="text-sm text-gray-600">{item.date}</div>
             <div className="text-xs text-gray-500">
-              {t("review:chart.accuracy")}: {item.accuracy}%
+              {t("chart.accuracy", "准确率")}: {item.accuracy}%
             </div>
           </div>
           <div className="flex items-center space-x-3">
@@ -153,17 +154,19 @@ export function Page() {
       {/* 页面标题 */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          {t("review:dashboard.title")}
+          {t("dashboard.title", "复习仪表板")}
         </h1>
-        <p className="text-gray-600">{t("review:dashboard.subtitle")}</p>
+        <p className="text-gray-600">
+          {t("dashboard.subtitle", "查看您的复习进度和统计数据")}
+        </p>
       </div>
 
       {/* 关键指标卡片 */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <StatCard
-          title={t("review:stats.todayReview")}
+          title={t("stats.todayReview", "今日复习")}
           value={stats?.reviewedToday || 0}
-          subtitle={`${t("review:stats.target")}: ${
+          subtitle={`${t("stats.target", "目标")}: ${
             config?.dailyReviewTarget || 50
           }`}
           color="blue"
@@ -175,9 +178,9 @@ export function Page() {
         />
 
         <StatCard
-          title={t("review:stats.dueWords")}
+          title={t("stats.dueWords", "待复习单词")}
           value={stats?.dueWords || 0}
-          subtitle={t("review:stats.needReview")}
+          subtitle={t("stats.needReview", "需要复习")}
           color={
             (stats?.dueWords || 0) > 20
               ? "red"
@@ -188,16 +191,16 @@ export function Page() {
         />
 
         <StatCard
-          title={t("review:stats.totalReviews")}
+          title={t("stats.totalReviews", "总复习次数")}
           value={stats?.monthlyStats?.totalReviews || 0}
-          subtitle={t("review:stats.cumulativeReview")}
+          subtitle={t("stats.cumulativeReview", "累计复习")}
           color="green"
         />
 
         <StatCard
-          title={t("review:stats.streakDays")}
+          title={t("stats.streakDays", "连续复习天数")}
           value={stats?.streakDays || 0}
-          subtitle={t("review:stats.keepRecord")}
+          subtitle={t("stats.keepRecord", "保持记录")}
           color="yellow"
           trend="up"
         />
@@ -208,17 +211,17 @@ export function Page() {
         {/* 复习进度图表 */}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            {t("review:dashboard.recentProgress")}
+            {t("dashboard.recentProgress", "最近7天复习进度")}
           </h2>
           <ProgressChart data={recentProgress} />
           <div className="mt-4 flex items-center space-x-4 text-sm text-gray-600">
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 bg-blue-500 rounded"></div>
-              <span>{t("review:chart.actualReview")}</span>
+              <span>{t("chart.actualReview", "实际复习")}</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 border-2 border-blue-300 rounded"></div>
-              <span>{t("review:chart.targetAmount")}</span>
+              <span>{t("chart.targetAmount", "目标数量")}</span>
             </div>
           </div>
         </div>
@@ -226,18 +229,18 @@ export function Page() {
         {/* 复习统计 */}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            {t("review:dashboard.statistics")}
+            {t("dashboard.statistics", "复习统计")}
           </h2>
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <span className="text-gray-600">
-                {t("review:stats.totalWords")}
+                {t("stats.totalWords", "总单词数")}
               </span>
               <span className="font-semibold">{stats?.totalWords || 0}</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-600">
-                {t("review:stats.reviewedWords")}
+                {t("stats.reviewedWords", "已复习单词")}
               </span>
               <span className="font-semibold">
                 {stats?.totalWords && stats?.dueWords
@@ -247,7 +250,7 @@ export function Page() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-600">
-                {t("review:stats.weeklyReviews")}
+                {t("stats.weeklyReviews", "本周复习次数")}
               </span>
               <span className="font-semibold">
                 {stats?.weeklyProgress
@@ -260,7 +263,7 @@ export function Page() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-600">
-                {t("review:stats.averageAccuracy")}
+                {t("stats.averageAccuracy", "平均准确率")}
               </span>
               <span className="font-semibold">
                 {stats?.monthlyStats?.averageAccuracy
@@ -274,7 +277,7 @@ export function Page() {
                 href="/review/history"
                 className="text-blue-600 hover:underline"
               >
-                {t("review:dashboard.viewHistory")} &rarr;
+                {t("dashboard.viewHistory", "查看历史")} &rarr;
               </Link>
             </div>
           </div>

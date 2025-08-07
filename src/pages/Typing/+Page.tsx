@@ -286,7 +286,7 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
           <CustomArticleButton pageContext={pageContext} />
           <StartButton isLoading={isLoading} />
 
-          <Tooltip content={t("tooltips.skipWord")}>
+          <Tooltip content={t("tooltips.skipWord", "跳过单词")}>
             <button
               type="button"
               className={`${
@@ -296,7 +296,7 @@ export function Page({ pageContext: pageContextProp }: { pageContext?: any }) {
               } my-btn-primary transition-all duration-300 `}
               onClick={skipWord}
             >
-              {t("buttons.skip")}
+              {t("buttons.skip", "跳过")}
             </button>
           </Tooltip>
           <ReviewStatusIndicator pageContext={pageContext} />

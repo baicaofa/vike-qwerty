@@ -30,7 +30,7 @@ const HeadWrongNumber: FC<IHeadWrongNumberProps> = ({
 
   return (
     <span className={`relative cursor-pointer ${className}`} onClick={onClick}>
-      {t("errorBook.wrongCount")}
+      {t("errorBook.wrongCount", "错误次数")}
       <div className="absolute -right-2 bottom-0 top-0 flex flex-col items-center justify-center text-[12px]">
         <UPIcon
           className={classNames("-mb-2 ", {

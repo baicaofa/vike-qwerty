@@ -94,6 +94,16 @@ export default function Page({ pageContext }: Props) {
     setCurrentPage(pageNumber);
   };
 
+  // 获取翻译内容的辅助函数
+  const getTranslations = (word: Word): string[] => {
+    if (word.detailed_translations && word.detailed_translations.length > 0) {
+      return word.detailed_translations
+        .map((item) => item.chinese)
+        .filter((item): item is string => Boolean(item));
+    }
+    return word.trans || [];
+  };
+
   return (
     <Layout>
       <Header></Header>
@@ -147,7 +157,7 @@ export default function Page({ pageContext }: Props) {
                         </p>
                         <p className="text-gray-600">释义：</p>
                         <ul className="list-inside list-disc text-gray-600">
-                          {word.trans.map(
+                          {getTranslations(word).map(
                             (translation: string, idx: number) => (
                               <li key={idx}>{translation}</li>
                             )

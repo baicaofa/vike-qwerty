@@ -56,41 +56,43 @@ const Analysis = () => {
           <ScrollArea.Viewport className="h-full w-auto pb-[20rem] [&>div]:!block">
             {isEmpty ? (
               <div className="align-items-center m-4 grid h-80 w-auto place-content-center overflow-hidden rounded-lg shadow-lg dark:bg-gray-600">
-                <div className="text-2xl text-gray-400">{t("noData")}</div>
+                <div className="text-2xl text-gray-400">
+                  {t("noData", "没有数据")}
+                </div>
               </div>
             ) : (
               <>
                 <div className="mx-4 my-8 h-auto w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <HeatmapCharts
-                    title={t("charts.exerciseHeatmap")}
+                    title={t("charts.exerciseHeatmap", "练习热图")}
                     data={exerciseRecord}
                   />
                 </div>
                 <div className="mx-4 my-8 h-auto w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <HeatmapCharts
-                    title={t("charts.wordHeatmap")}
+                    title={t("charts.wordHeatmap", "单词热图")}
                     data={wordRecord}
                   />
                 </div>
                 <div className="mx-4 my-8 h-80 w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <LineCharts
-                    title={t("charts.wpmTrend")}
-                    name={t("metrics.wpm")}
+                    title={t("charts.wpmTrend", "WPM趋势")}
+                    name={t("metrics.wpm", "WPM")}
                     data={wpmRecord}
                   />
                 </div>
                 <div className="mx-4 my-8 h-80 w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <LineCharts
-                    title={t("charts.accuracyTrend")}
-                    name={t("metrics.accuracy")}
+                    title={t("charts.accuracyTrend", "准确率趋势")}
+                    name={t("metrics.accuracy", "准确率")}
                     data={accuracyRecord}
-                    suffix={t("metrics.percentage")}
+                    suffix={t("metrics.percentage", "%")}
                   />
                 </div>
                 <div className="mx-4 my-8 h-80 w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <KeyboardWithBarCharts
-                    title={t("charts.keyboardErrors")}
-                    name={t("metrics.errorCount")}
+                    title={t("charts.keyboardErrors", "键盘错误")}
+                    name={t("metrics.errorCount", "错误次数")}
                     data={wrongTimeRecord}
                   />
                 </div>

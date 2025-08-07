@@ -26,7 +26,7 @@ import { useTranslation } from "react-i18next";
  * 显示今天需要复习的单词，并按练习次数分组
  */
 export default function ReviewTodayPage() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("review");
   const {
     reviews,
     completedCount,

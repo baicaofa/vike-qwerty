@@ -3,6 +3,7 @@ import {
   languageNames,
   supportedLanguages,
 } from "@/store/languageAtom";
+import { setLanguagePreference } from "@/utils/localStorage";
 import { Globe } from "lucide-react";
 import { useState } from "react";
 import { usePageContext } from "vike-react/usePageContext";
@@ -50,6 +51,9 @@ export function WebsiteLanguageSwitcher({
       setIsOpen(false);
       return;
     }
+
+    // 保存语言偏好到localStorage
+    setLanguagePreference(newLanguage);
 
     // 简单直接的语言切换：直接跳转到对应语言的首页
     const newPath = newLanguage === "zh" ? "/" : `/${newLanguage}`;
@@ -184,6 +188,9 @@ export function CompactWebsiteLanguageSwitcher({
     );
     const nextIndex = (currentIndex + 1) % supportedLanguages.length;
     const nextLanguage = supportedLanguages[nextIndex];
+
+    // 保存语言偏好到localStorage
+    setLanguagePreference(nextLanguage);
 
     // 简单直接的语言切换：直接跳转到对应语言的首页
     const newPath = nextLanguage === "zh" ? "/" : `/${nextLanguage}`;

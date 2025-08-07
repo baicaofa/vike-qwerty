@@ -62,16 +62,17 @@ export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
   };
 
   const handleSync = async () => {
-    success(t("userAuthMenu.sync.inProgress"));
+    success(t("userAuthMenu.sync.inProgress", "同步中"));
     const result = await triggerSync("both");
     if (result?.success) {
-      success(t("userAuthMenu.sync.success"));
+      success(t("userAuthMenu.sync.success", "同步成功"));
     } else {
       const errorMessage =
         result?.error?.code === "EMAIL_NOT_VERIFIED"
-          ? t("userAuthMenu.sync.emailNotVerified")
-          : result?.error?.message || t("userAuthMenu.sync.unknownError");
-      error(t("userAuthMenu.sync.failed", { error: errorMessage }));
+          ? t("userAuthMenu.sync.emailNotVerified", "邮箱未验证")
+          : result?.error?.message ||
+            t("userAuthMenu.sync.unknownError", "未知错误");
+      error(t("userAuthMenu.sync.failed", "同步失败", { error: errorMessage }));
     }
   };
 
@@ -95,18 +96,20 @@ export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
             <span>{firstChar}</span>
           </div>
         </Menu.Button>
-        <Tooltip content={t("userAuthMenu.feedback")}>
+        <Tooltip content={t("userAuthMenu.feedback", "反馈")}>
           <Link
             href="/feedback/"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg px-1 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100 flex items-center"
-            aria-label={t("userAuthMenu.feedback")}
-            title={t("userAuthMenu.feedback")}
+            aria-label={t("userAuthMenu.feedback", "反馈")}
+            title={t("userAuthMenu.feedback", "反馈")}
             pageContext={pageContext}
           >
             <IconMessageCircle className="mr-1 h-5 w-5" />
-            <span className="sr-only">{t("userAuthMenu.feedback")}</span>
+            <span className="sr-only">
+              {t("userAuthMenu.feedback", "反馈")}
+            </span>
           </Link>
         </Tooltip>
         <UpdateNotification />
@@ -132,7 +135,7 @@ export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
                   } flex w-full items-center px-4 py-2 text-sm`}
                 >
                   <IconUserCircle className="mr-2 h-5 w-5" />
-                  {t("userAuthMenu.profile")}
+                  {t("userAuthMenu.profile", "个人资料")}
                 </button>
               )}
             </Menu.Item>
@@ -148,7 +151,7 @@ export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
                   } flex w-full items-center px-4 py-2 text-sm`}
                 >
                   <IconCloudUpload className="mr-2 h-5 w-5" />
-                  {t("userAuthMenu.syncData")}
+                  {t("userAuthMenu.syncData", "同步数据")}
                 </button>
               )}
             </Menu.Item>
@@ -164,7 +167,7 @@ export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
                   } flex w-full items-center px-4 py-2 text-sm`}
                 >
                   <IconLogout className="mr-2 h-5 w-5" />
-                  {t("userAuthMenu.logout")}
+                  {t("userAuthMenu.logout", "退出登录")}
                 </button>
               )}
             </Menu.Item>
@@ -183,20 +186,20 @@ export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
         className="rounded-lg px-3 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100 flex items-center"
       >
         <IconLogin className="mr-1 h-5 w-5" />
-        <span>{t("userAuthMenu.login")}</span>
+        <span>{t("userAuthMenu.login", "登录")}</span>
       </button>
-      <Tooltip content={t("userAuthMenu.feedback")}>
+      <Tooltip content={t("userAuthMenu.feedback", "反馈")}>
         <Link
           href="/feedback/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={t("userAuthMenu.feedback")}
-          title={t("userAuthMenu.feedback")}
+          aria-label={t("userAuthMenu.feedback", "反馈")}
+          title={t("userAuthMenu.feedback", "反馈")}
           className="rounded-lg px-1 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100 flex items-center"
           pageContext={pageContext}
         >
           <IconMessageCircle className="mr-1 h-5 w-5" />
-          <span className="sr-only">{t("userAuthMenu.feedback")}</span>
+          <span className="sr-only">{t("userAuthMenu.feedback", "反馈")}</span>
         </Link>
       </Tooltip>
       <UpdateNotification />

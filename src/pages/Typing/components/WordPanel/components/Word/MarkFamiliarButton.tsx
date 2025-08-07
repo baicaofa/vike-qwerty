@@ -35,7 +35,7 @@ export default function MarkFamiliarButton({
         removeFamiliarWord(word.name);
       }
     } catch (error) {
-      console.error(t("markFamiliarButton.markFailed"), error);
+      console.error(t("markFamiliarButton.markFailed", "标记失败"), error);
     } finally {
       setIsMarking(false);
     }
@@ -53,8 +53,8 @@ export default function MarkFamiliarButton({
     <Tooltip
       content={
         isFamiliar
-          ? t("markFamiliarButton.unmarkFamiliar")
-          : t("markFamiliarButton.markAsFamiliar")
+          ? t("markFamiliarButton.unmarkFamiliar", "取消熟悉")
+          : t("markFamiliarButton.markAsFamiliar", "标记为熟悉")
       }
     >
       <button

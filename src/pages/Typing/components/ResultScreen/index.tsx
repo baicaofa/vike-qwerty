@@ -230,15 +230,15 @@ const ResultScreen = () => {
             <div className="text-center font-sans text-xl font-normal text-gray-900 dark:text-gray-400 md:text-2xl">
               {`${currentDictInfo.name} ${
                 isReviewMode
-                  ? t("chapter.reviewMode")
+                  ? t("chapter.reviewMode", "复习模式")
                   : t("chapter.number", { number: currentChapter + 1 })
               }`}
             </div>
             <button
               className="absolute right-7 top-5"
               onClick={exitButtonHandler}
-              title={t("tooltips.closeResult")}
-              aria-label={t("tooltips.closeResult")}
+              title={t("tooltips.closeResult", "关闭结果")}
+              aria-label={t("tooltips.closeResult", "关闭结果")}
             >
               <IconX className="text-gray-400" />
             </button>
@@ -246,16 +246,16 @@ const ResultScreen = () => {
               <div className="flex flex-shrink-0 flex-grow-0 flex-col gap-3 px-4 sm:px-1 md:px-2 lg:px-4">
                 <RemarkRing
                   remark={`${state.timerData.accuracy}%`}
-                  caption={t("progress.accuracy")}
+                  caption={t("progress.accuracy", "准确率")}
                   percentage={state.timerData.accuracy}
                 />
                 <RemarkRing
                   remark={timeString}
-                  caption={t("stats.chapterTime")}
+                  caption={t("stats.chapterTime", "章节时间")}
                 />
                 <RemarkRing
                   remark={state.timerData.wpm + ""}
-                  caption={t("progress.wpm")}
+                  caption={t("progress.wpm", "每分钟字数")}
                 />
               </div>
               <div className="z-10 ml-6 flex-1 overflow-visible rounded-xl bg-indigo-50 dark:bg-gray-700">
@@ -288,37 +288,37 @@ const ResultScreen = () => {
             <div className="mt-10 flex w-full justify-center gap-5 px-5 text-xl">
               {!isReviewMode && (
                 <>
-                  <Tooltip content={t("tooltips.dictationShortcut")}>
+                  <Tooltip content={t("tooltips.dictationShortcut", "听写")}>
                     <button
                       className="my-btn-primary h-12 border-2 border-solid border-gray-300 bg-white text-base text-gray-700 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
                       type="button"
                       onClick={dictationButtonHandler}
-                      title={t("buttons.dictation")}
+                      title={t("buttons.dictation", "听写")}
                     >
-                      {t("buttons.dictation")}
+                      {t("buttons.dictation", "听写")}
                     </button>
                   </Tooltip>
-                  <Tooltip content={t("tooltips.repeatShortcut")}>
+                  <Tooltip content={t("tooltips.repeatShortcut", "重复")}>
                     <button
                       className="my-btn-primary h-12 border-2 border-solid border-gray-300 bg-white text-base text-gray-700 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
                       type="button"
                       onClick={repeatButtonHandler}
-                      title={t("buttons.repeat")}
+                      title={t("buttons.repeat", "重复")}
                     >
-                      {t("buttons.repeat")}
+                      {t("buttons.repeat", "重复")}
                     </button>
                   </Tooltip>
                 </>
               )}
               {!isLastChapter && !isReviewMode && (
-                <Tooltip content={t("tooltips.nextShortcut")}>
+                <Tooltip content={t("tooltips.nextShortcut", "下一章")}>
                   <button
                     className={`{ isLastChapter ? 'cursor-not-allowed opacity-50' : ''} my-btn-primary h-12 text-base font-bold `}
                     type="button"
                     onClick={nextButtonHandler}
-                    title={t("buttons.nextChapter")}
+                    title={t("buttons.nextChapter", "下一章")}
                   >
-                    {t("buttons.nextChapter")}
+                    {t("buttons.nextChapter", "下一章")}
                   </button>
                 </Tooltip>
               )}
@@ -328,9 +328,9 @@ const ResultScreen = () => {
                   className="my-btn-primary h-12 text-base font-bold"
                   type="button"
                   onClick={onNavigateToGallery}
-                  title={t("buttons.practiceOther")}
+                  title={t("buttons.practiceOther", "其他练习")}
                 >
-                  {t("buttons.practiceOther")}
+                  {t("buttons.practiceOther", "其他练习")}
                 </button>
               )}
             </div>

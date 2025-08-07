@@ -18,20 +18,23 @@ export default function Speed() {
     <div className="my-card flex w-3/5 rounded-xl bg-white p-4 py-10 opacity-50 transition-colors duration-300 dark:bg-gray-800">
       <InfoBox
         info={`${minutesString}:${secondsString}`}
-        description={t("stats.time")}
+        description={t("stats.time", "时间")}
       />
-      <InfoBox info={inputNumber + ""} description={t("stats.inputCount")} />
+      <InfoBox
+        info={inputNumber + ""}
+        description={t("stats.inputCount", "输入次数")}
+      />
       <InfoBox
         info={state.timerData.wpm + ""}
-        description={t("progress.wpm")}
+        description={t("progress.wpm", "每分钟字数")}
       />
       <InfoBox
         info={state.chapterData.correctCount + ""}
-        description={t("stats.correctCount")}
+        description={t("stats.correctCount", "正确次数")}
       />
       <InfoBox
         info={state.timerData.accuracy + ""}
-        description={t("progress.accuracy")}
+        description={t("progress.accuracy", "准确率")}
       />
     </div>
   );

@@ -440,7 +440,7 @@ export default function ArticlePractice() {
         {/* 提示信息 */}
         {!state.isTyping && (
           <div className="text-center text-gray-600 mb-4 animate-pulse">
-            {t("practice.pressAnyKey")}
+            {t("practice.pressAnyKey", "按任意键开始练习")}
           </div>
         )}
       </div>
@@ -458,33 +458,33 @@ export default function ArticlePractice() {
     return (
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-2xl">
         <h2 className="text-2xl font-bold mb-2 text-center">
-          {t("practice.completed")}
+          {t("practice.completed", "练习完成")}
         </h2>
         <h3 className="text-lg font-medium mb-4 text-center text-gray-600">
-          {state.articleTitle || t("practice.customArticle")}
+          {state.articleTitle || t("practice.customArticle", "自定义文章")}
         </h3>
 
         <div className="grid grid-cols-2 gap-4 mb-6">
           <div className="bg-gray-50 p-3 rounded">
             <div className="text-sm text-gray-500">
-              {t("practice.timeLabel")}
+              {t("practice.timeLabel", "耗时")}
             </div>
             <div className="text-xl font-semibold">
               {Math.round(state.elapsedTime)}
-              {t("practice.seconds")}
+              {t("practice.seconds", "秒")}
             </div>
           </div>
 
           <div className="bg-gray-50 p-3 rounded">
             <div className="text-sm text-gray-500">
-              {t("practice.speedLabel")}
+              {t("practice.speedLabel", "速度")}
             </div>
             <div className="text-xl font-semibold">{state.speed} WPM</div>
           </div>
 
           <div className="bg-gray-50 p-3 rounded">
             <div className="text-sm text-gray-500">
-              {t("practice.accuracyLabel")}
+              {t("practice.accuracyLabel", "准确率")}
             </div>
             <div className="text-xl font-semibold">
               {state.accuracy.toFixed(2)}%
@@ -493,7 +493,7 @@ export default function ArticlePractice() {
 
           <div className="bg-gray-50 p-3 rounded">
             <div className="text-sm text-gray-500">
-              {t("practice.errorsLabel")}
+              {t("practice.errorsLabel", "错误次数")}
             </div>
             <div className="text-xl font-semibold">{state.errors}</div>
           </div>
@@ -505,11 +505,11 @@ export default function ArticlePractice() {
             className="my-btn-secondary"
             onClick={handleRestart}
           >
-            {t("practice.practiceAgain")}
+            {t("practice.practiceAgain", "重新练习")}
           </button>
 
           <button type="button" className="my-btn-primary" onClick={handleBack}>
-            {t("practice.backToList")}
+            {t("practice.backToList", "返回文章列表")}
           </button>
         </div>
       </div>
@@ -533,7 +533,7 @@ export default function ArticlePractice() {
           onClick={handleOpenRecommendedDialog}
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
         >
-          {t("practice.articleLibrary")}
+          {t("practice.articleLibrary", "文章库")}
         </button>
         <button
           type="button"
@@ -553,14 +553,14 @@ export default function ArticlePractice() {
               d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
             />
           </svg>
-          <span>{t("practice.personalArticles")}</span>
+          <span>{t("practice.personalArticles", "个人文章")}</span>
         </button>
         <button
           type="button"
           onClick={handleOpenUploadDialog}
           className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
         >
-          {t("practice.uploadArticle")}
+          {t("practice.uploadArticle", "上传文章")}
         </button>
 
         {/* 标点符号控制按钮 */}
@@ -574,8 +574,8 @@ export default function ArticlePractice() {
           }`}
           title={
             state.preprocessSettings.removePunctuation
-              ? t("practice.showPunctuation")
-              : t("practice.hidePunctuation")
+              ? t("practice.showPunctuation", "显示标点符号")
+              : t("practice.hidePunctuation", "隐藏标点符号")
           }
         >
           {state.preprocessSettings.removePunctuation ? (
@@ -593,7 +593,7 @@ export default function ArticlePractice() {
                   d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
                 />
               </svg>
-              <span>{t("practice.showPunctuation")}</span>
+              <span>{t("practice.showPunctuation", "显示标点符号")}</span>
             </>
           ) : (
             <>
@@ -610,7 +610,7 @@ export default function ArticlePractice() {
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
-              <span>{t("practice.hidePunctuation")}</span>
+              <span>{t("practice.hidePunctuation", "隐藏标点符号")}</span>
             </>
           )}
         </button>
@@ -625,7 +625,9 @@ export default function ArticlePractice() {
               : "bg-gray-600 hover:bg-gray-700 text-white"
           }`}
           title={
-            enableSound ? t("practice.disableSound") : t("practice.enableSound")
+            enableSound
+              ? t("practice.disableSound", "禁用声音")
+              : t("practice.enableSound", "启用声音")
           }
         >
           {enableSound ? (
@@ -643,7 +645,7 @@ export default function ArticlePractice() {
                   d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
                 />
               </svg>
-              <span>{t("practice.disableSound")}</span>
+              <span>{t("practice.disableSound", "禁用声音")}</span>
             </>
           ) : (
             <>
@@ -660,7 +662,7 @@ export default function ArticlePractice() {
                   d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
                 />
               </svg>
-              <span>{t("practice.enableSound")}</span>
+              <span>{t("practice.enableSound", "启用声音")}</span>
             </>
           )}
         </button>
@@ -670,7 +672,8 @@ export default function ArticlePractice() {
       <div className="w-full mb-4 text-center">
         <h3 className="text-l  text-gray-800">
           {t("practice.source", {
-            title: state.articleTitle || t("practice.customArticle"),
+            title:
+              state.articleTitle || t("practice.customArticle", "自定义文章"),
           })}
         </h3>
       </div>
@@ -720,7 +723,7 @@ export default function ArticlePractice() {
                 className="my-btn-secondary"
                 onClick={handlePause}
               >
-                {t("practice.pause")}
+                {t("practice.pause", "暂停")}
               </button>
             )}
 
@@ -730,7 +733,7 @@ export default function ArticlePractice() {
                 className="my-btn-primary"
                 onClick={handleResume}
               >
-                {t("practice.resume")}
+                {t("practice.resume", "继续")}
               </button>
             )}
 
@@ -740,7 +743,7 @@ export default function ArticlePractice() {
               onClick={handleRestart}
               disabled={!state.isTyping && !state.isFinished}
             >
-              {t("practice.restart")}
+              {t("practice.restart", "重新开始")}
             </button>
 
             <button
@@ -748,7 +751,7 @@ export default function ArticlePractice() {
               className="my-btn-secondary"
               onClick={handleBack}
             >
-              {t("practice.backToList")}
+              {t("practice.backToList", "返回文章列表")}
             </button>
 
             {state.isTyping && (
@@ -757,7 +760,7 @@ export default function ArticlePractice() {
                 className="my-btn-secondary"
                 onClick={scrollToCurrentWord}
               >
-                {t("practice.backToCurrentPosition")}
+                {t("practice.backToCurrentPosition", "返回当前位置")}
               </button>
             )}
 
@@ -772,8 +775,8 @@ export default function ArticlePractice() {
               onClick={handleTogglePunctuation}
               title={
                 state.preprocessSettings.removePunctuation
-                  ? t("practice.showPunctuation")
-                  : t("practice.hidePunctuation")
+                  ? t("practice.showPunctuation", "显示标点符号")
+                  : t("practice.hidePunctuation", "隐藏标点符号")
               }
             >
               {state.preprocessSettings.removePunctuation ? (
@@ -791,7 +794,7 @@ export default function ArticlePractice() {
                       d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
                     />
                   </svg>
-                  {t("practice.showPunctuation")}
+                  {t("practice.showPunctuation", "显示标点符号")}
                 </>
               ) : (
                 <>
@@ -808,7 +811,7 @@ export default function ArticlePractice() {
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
-                  {t("practice.hidePunctuation")}
+                  {t("practice.hidePunctuation", "隐藏标点符号")}
                 </>
               )}
             </button>
@@ -824,14 +827,14 @@ export default function ArticlePractice() {
                 className="my-btn-primary"
                 onClick={handleRestart}
               >
-                {t("practice.practiceAgain")}
+                {t("practice.practiceAgain", "重新练习")}
               </button>
               <button
                 type="button"
                 className="my-btn-secondary"
                 onClick={handleBack}
               >
-                {t("practice.backToList")}
+                {t("practice.backToList", "返回文章列表")}
               </button>
             </div>
           )}

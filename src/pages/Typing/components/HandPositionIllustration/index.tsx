@@ -22,7 +22,7 @@ export default function HandPositionIllustration() {
       <button
         type="button"
         onClick={openModal}
-        title={t("tooltips.showHandPosition")}
+        title={t("tooltips.showHandPosition", "显示手位置")}
         className={`flex items-center justify-center rounded p-[2px] text-lg text-blue-500 outline-none transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white  ${
           isOpen && " bg-blue-500 text-white"
         }`}
@@ -59,7 +59,7 @@ export default function HandPositionIllustration() {
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    title={t("tooltips.closeDialog")}
+                    title={t("tooltips.closeDialog", "关闭弹窗")}
                   >
                     <IconX className="absolute right-7 top-5 cursor-pointer text-gray-400" />
                   </button>
@@ -67,7 +67,7 @@ export default function HandPositionIllustration() {
                     as="h3"
                     className="text-center text-xl font-medium leading-6 text-gray-800 dark:text-gray-200"
                   >
-                    {t("handPosition.title")}
+                    {t("handPosition.title", "手位置")}
                   </Dialog.Title>
                   <div className="mt-8">
                     <img

@@ -50,16 +50,17 @@ export const DictChapterButton = ({
 
   return (
     <>
-      <Tooltip content={t("tooltips.dictSwitch")}>
+      <Tooltip content={t("tooltips.dictSwitch", "切换字典")}>
         <button
           onClick={toGallery}
           className="block rounded-lg px-3 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
         >
-          {currentDictInfo.name} {isReviewMode && t("chapter.reviewMode")}
+          {currentDictInfo.name}{" "}
+          {isReviewMode && t("chapter.reviewMode", "复习模式")}
         </button>
       </Tooltip>
       {!isReviewMode && (
-        <Tooltip content={t("tooltips.chapterSwitch")}>
+        <Tooltip content={t("tooltips.chapterSwitch", "切换章节")}>
           <Listbox value={currentChapter} onChange={setCurrentChapter}>
             <Listbox.Button
               onKeyDown={handleKeyDown}

@@ -32,7 +32,7 @@ export default function UserGuide() {
                   d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                 />
               </svg>
-              {t("guide.customArticleTitle")}
+              {t("guide.customArticleTitle", "自定义文章")}
             </h2>
             <svg
               className={`w-5 h-5 text-gray-600 transition-transform duration-200 ${
@@ -58,17 +58,20 @@ export default function UserGuide() {
             {/* 功能简介 */}
             <section>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                {t("guide.introduction")}
+                {t("guide.introduction", "功能简介")}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                {t("guide.introText")}
+                {t(
+                  "guide.introText",
+                  "自定义文章功能允许用户上传Word文档并进行编辑，支持自定义标点符号。"
+                )}
               </p>
             </section>
 
             {/* 主要功能 */}
             <section>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                {t("guide.mainFeatures")}
+                {t("guide.mainFeatures", "主要功能")}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Word文档上传 */}
@@ -76,11 +79,14 @@ export default function UserGuide() {
                   <div className="flex items-center space-x-2 mb-2">
                     <span className="text-blue-600 text-xl">📄</span>
                     <h4 className="font-semibold text-blue-800">
-                      {t("guide.wordUpload")}
+                      {t("guide.wordUpload", "Word文档上传")}
                     </h4>
                   </div>
                   <p className="text-blue-700 text-sm">
-                    {t("guide.wordUploadDesc")}
+                    {t(
+                      "guide.wordUploadDesc",
+                      "用户可以上传Word文档，系统会自动提取文档内容。"
+                    )}
                   </p>
                 </div>
 
@@ -89,11 +95,14 @@ export default function UserGuide() {
                   <div className="flex items-center space-x-2 mb-2">
                     <span className="text-green-600 text-xl">✏️</span>
                     <h4 className="font-semibold text-green-800">
-                      {t("guide.articleEdit")}
+                      {t("guide.articleEdit", "文章编辑")}
                     </h4>
                   </div>
                   <p className="text-green-700 text-sm">
-                    {t("guide.articleEditDesc")}
+                    {t(
+                      "guide.articleEditDesc",
+                      "用户可以编辑上传的文章，支持添加、删除、修改段落和文本。"
+                    )}
                   </p>
                 </div>
 
@@ -102,11 +111,14 @@ export default function UserGuide() {
                   <div className="flex items-center space-x-2 mb-2">
                     <span className="text-purple-600 text-xl">🎯</span>
                     <h4 className="font-semibold text-purple-800">
-                      {t("guide.punctuationControl")}
+                      {t("guide.punctuationControl", "标点符号控制")}
                     </h4>
                   </div>
                   <p className="text-purple-700 text-sm">
-                    {t("guide.punctuationControlDesc")}
+                    {t(
+                      "guide.punctuationControlDesc",
+                      "用户可以自定义文章中的标点符号，包括全角和半角。"
+                    )}
                   </p>
                 </div>
 
@@ -115,11 +127,14 @@ export default function UserGuide() {
                   <div className="flex items-center space-x-2 mb-2">
                     <span className="text-orange-600 text-xl">⚡</span>
                     <h4 className="font-semibold text-orange-800">
-                      {t("guide.realTimePractice")}
+                      {t("guide.realTimePractice", "实时练习")}
                     </h4>
                   </div>
                   <p className="text-orange-700 text-sm">
-                    {t("guide.realTimePracticeDesc")}
+                    {t(
+                      "guide.realTimePracticeDesc",
+                      "用户可以在实时练习中测试文章的语法和拼写。"
+                    )}
                   </p>
                 </div>
               </div>
@@ -128,7 +143,7 @@ export default function UserGuide() {
             {/* 使用步骤 */}
             <section>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                {t("guide.howToUse")}
+                {t("guide.howToUse", "使用步骤")}
               </h3>
               <div className="space-y-4">
                 {/* 步骤1：上传文章 */}
@@ -138,14 +153,18 @@ export default function UserGuide() {
                       1
                     </span>
                     <h4 className="font-medium text-gray-800">
-                      {t("guide.step1Title")}
+                      {t("guide.step1Title", "步骤1：上传文章")}
                     </h4>
                   </div>
                   <p className="text-gray-600 text-sm">
-                    {t("guide.step1Desc")}
+                    {t(
+                      "guide.step1Desc",
+                      "用户可以上传Word文档，系统会自动提取文档内容。"
+                    )}
                   </p>
                   <div className="mt-2 text-xs text-gray-500">
-                    <strong>{t("guide.tip")}:</strong> {t("guide.step1Tip")}
+                    <strong>{t("guide.tip", "提示")}:</strong>{" "}
+                    {t("guide.step1Tip")}
                   </div>
                 </div>
 
@@ -156,14 +175,18 @@ export default function UserGuide() {
                       2
                     </span>
                     <h4 className="font-medium text-gray-800">
-                      {t("guide.step2Title")}
+                      {t("guide.step2Title", "步骤2：开始练习")}
                     </h4>
                   </div>
                   <p className="text-gray-600 text-sm">
-                    {t("guide.step2Desc")}
+                    {t(
+                      "guide.step2Desc",
+                      "用户可以在实时练习中测试文章的语法和拼写。"
+                    )}
                   </p>
                   <div className="mt-2 text-xs text-gray-500">
-                    <strong>{t("guide.tip")}:</strong> {t("guide.step2Tip")}
+                    <strong>{t("guide.tip", "提示")}:</strong>{" "}
+                    {t("guide.step2Tip")}
                   </div>
                 </div>
 

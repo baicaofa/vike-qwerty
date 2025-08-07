@@ -85,7 +85,12 @@ export default function PrevAndNextWord({ type }: LastAndNextWordProps) {
   return (
     <>
       {word ? (
-        <Tooltip content={`${t("prevAndNextWord.shortcut")}: ${shortCutKey}`}>
+        <Tooltip
+          content={`${t(
+            "prevAndNextWord.shortcut",
+            "切换单词"
+          )}: ${shortCutKey}`}
+        >
           <div
             onClick={onClickWord}
             className="flex max-w-xs cursor-pointer select-none items-center text-gray-700 opacity-60 duration-200 ease-in-out hover:opacity-100 dark:text-gray-400"

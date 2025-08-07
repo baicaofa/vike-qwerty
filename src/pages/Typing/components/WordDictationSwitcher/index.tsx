@@ -24,19 +24,19 @@ export default function WordDictationSwitcher() {
   // 使用翻译函数的类型列表
   const wordDictationTypeList: { name: string; type: WordDictationType }[] = [
     {
-      name: t("wordDictationSwitcher.types.hideAll"),
+      name: t("wordDictationSwitcher.types.hideAll", "隐藏所有"),
       type: "hideAll",
     },
     {
-      name: t("wordDictationSwitcher.types.hideVowel"),
+      name: t("wordDictationSwitcher.types.hideVowel", "隐藏元音"),
       type: "hideVowel",
     },
     {
-      name: t("wordDictationSwitcher.types.hideConsonant"),
+      name: t("wordDictationSwitcher.types.hideConsonant", "隐藏辅音"),
       type: "hideConsonant",
     },
     {
-      name: t("wordDictationSwitcher.types.randomHide"),
+      name: t("wordDictationSwitcher.types.randomHide", "随机隐藏"),
       type: "randomHide",
     },
   ];
@@ -91,7 +91,7 @@ export default function WordDictationSwitcher() {
               open ? " bg-blue-500 text-white" : ""
             }`}
             type="button"
-            aria-label={t("wordDictationSwitcher.title")}
+            aria-label={t("wordDictationSwitcher.title", "听写模式")}
           >
             {wordDictationConfig.isOpen ? (
               <IconEye className="icon" />
@@ -112,7 +112,7 @@ export default function WordDictationSwitcher() {
               <div className="shadow-upper box-border flex w-60 select-none flex-col items-center justify-center gap-4 rounded-xl bg-white p-4 drop-shadow dark:bg-gray-800">
                 <div className="flex w-full  flex-col  items-start gap-2 py-0">
                   <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                    {t("wordDictationSwitcher.title")}
+                    {t("wordDictationSwitcher.title", "听写模式")}
                   </span>
                   <div className="flex w-full flex-row items-center justify-between">
                     <Switch
@@ -123,11 +123,15 @@ export default function WordDictationSwitcher() {
                       <span aria-hidden="true" className="switch-thumb" />
                     </Switch>
                     <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                      {t("wordDictationSwitcher.status.dictation", {
-                        status: wordDictationConfig.isOpen
-                          ? t("wordDictationSwitcher.enabled")
-                          : t("wordDictationSwitcher.disabled"),
-                      })}
+                      {t(
+                        "wordDictationSwitcher.status.dictation",
+                        "听写模式状态",
+                        {
+                          status: wordDictationConfig.isOpen
+                            ? t("wordDictationSwitcher.enabled", "开启")
+                            : t("wordDictationSwitcher.disabled", "关闭"),
+                        }
+                      )}
                     </span>
                   </div>
                 </div>
@@ -144,7 +148,7 @@ export default function WordDictationSwitcher() {
                 >
                   <div className="flex w-full  flex-col  items-start gap-2 py-0">
                     <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                      {t("wordDictationSwitcher.modeLabel")}
+                      {t("wordDictationSwitcher.modeLabel", "听写模式")}
                     </span>
                     <div className="flex w-full flex-row items-center justify-between">
                       <Listbox
@@ -192,7 +196,10 @@ export default function WordDictationSwitcher() {
                   {/* 添加新的设置选项 */}
                   <div className="flex w-full flex-col items-start gap-2 py-0">
                     <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                      {t("wordDictationSwitcher.showAfterCompletion")}
+                      {t(
+                        "wordDictationSwitcher.showAfterCompletion",
+                        "完成显示"
+                      )}
                     </span>
                     <div className="flex w-full flex-row items-center justify-between">
                       <Switch
@@ -203,11 +210,15 @@ export default function WordDictationSwitcher() {
                         <span aria-hidden="true" className="switch-thumb" />
                       </Switch>
                       <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                        {t("wordDictationSwitcher.status.showAfter", {
-                          status: showWordAfterCompletion
-                            ? t("wordDictationSwitcher.enabled")
-                            : t("wordDictationSwitcher.disabled"),
-                        })}
+                        {t(
+                          "wordDictationSwitcher.status.showAfter",
+                          "完成显示状态",
+                          {
+                            status: showWordAfterCompletion
+                              ? t("wordDictationSwitcher.enabled", "开启")
+                              : t("wordDictationSwitcher.disabled", "关闭"),
+                          }
+                        )}
                       </span>
                     </div>
                   </div>

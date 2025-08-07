@@ -56,7 +56,7 @@ export default function ArticleInput() {
   const handleNext = () => {
     if (state.articleText.trim().length === 0) {
       setIsError(true);
-      setErrorMessage(t("input.errorEmpty"));
+      setErrorMessage(t("input.errorEmpty", "请输入文章内容"));
       return;
     }
 
@@ -65,7 +65,7 @@ export default function ArticleInput() {
 
   return (
     <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
-      <h2 className="text-xl font-bold mb-4">{t("input.title")}</h2>
+      <h2 className="text-xl font-bold mb-4">{t("input.title", "文章输入")}</h2>
       <p className="text-gray-600 mb-4">
         {t("input.description", { maxChars: MAX_CHARS })}
       </p>
@@ -76,7 +76,7 @@ export default function ArticleInput() {
             htmlFor="article-text"
             className="text-sm font-medium text-gray-700"
           >
-            {t("input.label")}
+            {t("input.label", "文章内容")}
           </label>
           <span
             className={`text-sm ${isError ? "text-red-500" : "text-gray-500"}`}
@@ -90,7 +90,7 @@ export default function ArticleInput() {
           className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm h-64 ${
             isError ? "border-red-500" : ""
           }`}
-          placeholder={t("input.placeholder")}
+          placeholder={t("input.placeholder", "请输入文章内容")}
           value={state.articleText}
           onChange={handleTextChange}
           maxLength={MAX_CHARS}
@@ -105,7 +105,7 @@ export default function ArticleInput() {
           className="my-btn-secondary"
           onClick={handleClear}
         >
-          {t("input.clear")}
+          {t("input.clear", "清空")}
         </button>
         <button
           type="button"
@@ -113,7 +113,7 @@ export default function ArticleInput() {
           onClick={handleNext}
           disabled={isError || state.articleText.trim().length === 0}
         >
-          {t("input.next")}
+          {t("input.next", "下一步")}
         </button>
       </div>
     </div>

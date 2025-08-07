@@ -55,7 +55,7 @@ export default function Translation({
       </span>
       {isShowTransRead && showTrans && (
         <Tooltip
-          content={t("tooltips.readTranslation")}
+          content={t("tooltips.readTranslation", "朗读翻译")}
           className="ml-3 h-5 w-5 cursor-pointer leading-7"
         >
           <SoundIcon

@@ -35,8 +35,8 @@ export default function SoundSwitcher() {
             onFocus={(e) => {
               e.target.blur();
             }}
-            aria-label={t("soundSwitcher.title")}
-            title={t("soundSwitcher.title")}
+            aria-label={t("soundSwitcher.title", "声音")}
+            title={t("soundSwitcher.title", "声音")}
           >
             <IconSpeakerWave className="icon" />
           </Popover.Button>
@@ -54,7 +54,7 @@ export default function SoundSwitcher() {
               <div className="shadow-upper box-border flex w-60 select-none flex-col items-center justify-center gap-4 rounded-xl bg-white p-4 drop-shadow dark:bg-gray-800">
                 <div className="flex w-full  flex-col  items-start gap-2 py-0">
                   <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                    {t("soundSwitcher.keySound.label")}
+                    {t("soundSwitcher.keySound.label", "按键音")}
                   </span>
                   <div className="flex w-full flex-row items-center justify-between">
                     <Switch
@@ -65,17 +65,17 @@ export default function SoundSwitcher() {
                       <span aria-hidden="true" className="switch-thumb" />
                     </Switch>
                     <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                      {t("soundSwitcher.keySound.status", {
+                      {t("soundSwitcher.keySound.status", "按键音状态", {
                         status: keySoundsConfig.isOpen
-                          ? t("soundSwitcher.enabled")
-                          : t("soundSwitcher.disabled"),
+                          ? t("soundSwitcher.enabled", "开启")
+                          : t("soundSwitcher.disabled", "关闭"),
                       })}
                     </span>
                   </div>
                 </div>
                 <div className="flex w-full flex-col items-start  gap-2 py-0">
                   <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                    {t("soundSwitcher.effectSound.label")}
+                    {t("soundSwitcher.effectSound.label", "提示音")}
                   </span>
                   <div className="flex w-full flex-row items-center justify-between">
                     <Switch
@@ -86,10 +86,10 @@ export default function SoundSwitcher() {
                       <span aria-hidden="true" className="switch-thumb" />
                     </Switch>
                     <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                      {t("soundSwitcher.effectSound.status", {
+                      {t("soundSwitcher.effectSound.status", "提示音状态", {
                         status: hintSoundsConfig.isOpen
-                          ? t("soundSwitcher.enabled")
-                          : t("soundSwitcher.disabled"),
+                          ? t("soundSwitcher.enabled", "开启")
+                          : t("soundSwitcher.disabled", "关闭"),
                       })}
                     </span>
                   </div>

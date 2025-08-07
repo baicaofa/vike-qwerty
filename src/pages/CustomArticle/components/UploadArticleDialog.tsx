@@ -54,11 +54,13 @@ const CharCounter = ({
       </span>
       {isOverLimit && (
         <span className="text-red-500 font-medium">
-          {t("upload.overLimit")}
+          {t("upload.overLimit", "字符超过限制")}
         </span>
       )}
       {isNearLimit && !isOverLimit && (
-        <span className="text-orange-500">{t("upload.nearLimit")}</span>
+        <span className="text-orange-500">
+          {t("upload.nearLimit", "字符接近限制")}
+        </span>
       )}
     </div>
   );
@@ -91,7 +93,7 @@ const FileUploadSection = ({
 
   const handleFileUpload = async (file: File) => {
     if (!validateWordFile(file)) {
-      onError(t("upload.invalidFileType"));
+      onError(t("upload.invalidFileType", "仅支持上传 Word 文档"));
       return;
     }
 
@@ -109,11 +111,11 @@ const FileUploadSection = ({
         onContentChange(result.content);
         onError(""); // 清除错误
       } else {
-        onError(result.error || t("upload.parseError"));
+        onError(result.error || t("upload.parseError", "解析文档失败"));
       }
     } catch (error) {
       console.error("文件上传失败:", error);
-      onError(t("upload.uploadError"));
+      onError(t("upload.uploadError", "上传文档失败"));
     }
   };
 
@@ -158,7 +160,7 @@ const FileUploadSection = ({
       {/* 文件上传区域 */}
       <div className="space-y-4">
         <div className="text-sm font-medium text-gray-700">
-          {t("upload.selectWordFile")}
+          {t("upload.selectWordFile", "选择 Word 文档")}
         </div>
 
         <div
@@ -226,20 +228,25 @@ const FileUploadSection = ({
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
                     </svg>
-                    {t("upload.uploading")}
+                    {t("upload.uploading", "上传中")}
                   </>
                 ) : (
-                  t("upload.selectFile")
+                  t("upload.selectFile", "选择文件")
                 )}
               </button>
 
               <p className="text-sm text-gray-500">
-                {t("upload.dragDropText")}
+                {t("upload.dragDropText", "或拖拽文件到此处")}
               </p>
             </div>
 
             <div className="text-xs text-gray-400 space-y-1">
-              <p>{t("upload.supportedFormatsText")}</p>
+              <p>
+                {t(
+                  "upload.supportedFormatsText",
+                  "支持的文件格式：.docx, .doc"
+                )}
+              </p>
               <p>
                 {t("upload.fileSizeLimit", {
                   size: getFileSizeDescription(MAX_FILE_SIZE),
@@ -295,13 +302,13 @@ const FileUploadSection = ({
       {content && (
         <div className="space-y-2">
           <label className="text-sm font-medium text-gray-700">
-            {t("upload.articleTitle")}
+            {t("upload.articleTitle", "文章标题")}
           </label>
           <input
             value={title}
             onChange={(e) => onTitleChange(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder={t("upload.articleTitlePlaceholder")}
+            placeholder={t("upload.articleTitlePlaceholder", "请输入文章标题")}
           />
         </div>
       )}
@@ -311,7 +318,7 @@ const FileUploadSection = ({
         <div className="space-y-2">
           <div className="flex justify-between items-center">
             <label className="text-sm font-medium text-gray-700">
-              {t("upload.contentPreview")}
+              {t("upload.contentPreview", "内容预览")}
             </label>
             <CharCounter current={content.length} max={MAX_CHARS} />
           </div>
@@ -354,13 +361,13 @@ const TextInputSection = ({
       {/* 文章标题 */}
       <div className="space-y-2">
         <label className="text-sm font-medium text-gray-700">
-          {t("upload.articleTitle")}
+          {t("upload.articleTitle", "文章标题")}
         </label>
         <input
           value={title}
           onChange={(e) => onTitleChange(e.target.value)}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          placeholder={t("upload.articleTitlePlaceholder")}
+          placeholder={t("upload.articleTitlePlaceholder", "请输入文章标题")}
         />
       </div>
 
@@ -368,7 +375,7 @@ const TextInputSection = ({
       <div className="space-y-2">
         <div className="flex justify-between items-center">
           <label className="text-sm font-medium text-gray-700">
-            {t("upload.articleContent")}
+            {t("upload.articleContent", "文章内容")}
           </label>
           <div className="flex items-center gap-3">
             <CharCounter current={content.length} max={MAX_CHARS} />
@@ -378,7 +385,7 @@ const TextInputSection = ({
                 onClick={handleClearText}
                 className="text-xs text-gray-500 hover:text-gray-700 underline"
               >
-                {t("upload.clearText")}
+                {t("upload.clearText", "清除内容")}
               </button>
             )}
           </div>
@@ -390,7 +397,7 @@ const TextInputSection = ({
           className={`w-full min-h-[200px] px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical ${
             content.length > MAX_CHARS ? "border-red-300" : "border-gray-300"
           }`}
-          placeholder={t("upload.articleContentPlaceholder")}
+          placeholder={t("upload.articleContentPlaceholder", "请输入文章内容")}
           maxLength={MAX_CHARS + 100} // 允许稍微超出以便显示错误信息
         />
 
@@ -415,7 +422,7 @@ const TextInputSection = ({
       {content && (
         <div className="space-y-2">
           <label className="text-sm font-medium text-gray-700">
-            {t("upload.contentPreviewLabel")}
+            {t("upload.contentPreviewLabel", "内容预览")}
           </label>
           <div className="border border-gray-300 rounded-md p-4 h-48 overflow-auto bg-gray-50">
             <pre className="text-sm whitespace-pre-wrap text-gray-700">
@@ -511,8 +518,8 @@ export default function UploadArticleDialog({
       // 直接进入练习步骤
       dispatch({ type: ArticleActionType.SET_STEP, payload: 3 });
     } catch (error) {
-      console.error(t("upload.saveErrorLog"), error);
-      alert(t("upload.saveError"));
+      console.error(t("upload.saveErrorLog", "保存文章失败"), error);
+      alert(t("upload.saveError", "保存文章失败"));
     }
   };
 
@@ -541,8 +548,10 @@ export default function UploadArticleDialog({
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-hidden flex flex-col">
         <DialogHeader>
-          <DialogTitle>{t("upload.title")}</DialogTitle>
-          <DialogDescription>{t("upload.description")}</DialogDescription>
+          <DialogTitle>{t("upload.title", "上传文章")}</DialogTitle>
+          <DialogDescription>
+            {t("upload.description", "上传自定义文章")}
+          </DialogDescription>
         </DialogHeader>
 
         <div className="flex-1 overflow-hidden">
@@ -566,7 +575,7 @@ export default function UploadArticleDialog({
                     d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                   />
                 </svg>
-                {t("upload.fileUploadTab")}
+                {t("upload.fileUploadTab", "文件上传")}
               </TabsTrigger>
               <TabsTrigger value="text" className="flex items-center gap-2">
                 <svg
@@ -582,7 +591,7 @@ export default function UploadArticleDialog({
                     d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                   />
                 </svg>
-                {t("upload.textInputTab")}
+                {t("upload.textInputTab", "文本输入")}
               </TabsTrigger>
             </TabsList>
 
@@ -618,7 +627,7 @@ export default function UploadArticleDialog({
             onClick={resetForm}
             className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 h-10 px-4 py-2"
           >
-            {t("common:buttons.reset")}
+            {t("common:buttons.reset", "重置")}
           </button>
           <button
             type="button"
@@ -626,7 +635,7 @@ export default function UploadArticleDialog({
             disabled={!isFormValid}
             className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 px-4 py-2"
           >
-            {t("upload.startPractice")}
+            {t("upload.startPractice", "开始练习")}
           </button>
         </DialogFooter>
       </DialogContent>

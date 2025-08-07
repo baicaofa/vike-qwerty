@@ -108,7 +108,9 @@ export function Page() {
     if (state.viewHistory) {
       return (
         <div className="flex justify-center mb-6">
-          <h1 className="text-2xl font-bold">{t("history.title")}</h1>
+          <h1 className="text-2xl font-bold">
+            {t("history.title", "文章历史")}
+          </h1>
         </div>
       );
     }

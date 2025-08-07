@@ -96,9 +96,7 @@ export default function Page({ pageContext }: Props) {
 
   return (
     <Layout>
-      <Header>
-        <DictChapterButton />
-      </Header>
+      <Header></Header>
       <div className="relative mb-auto mt-auto flex w-full flex-1 flex-col overflow-y-auto pl-20">
         <IconBack
           className="absolute left-20 top-10 mr-2 h-7 w-7 cursor-pointer text-gray-400"

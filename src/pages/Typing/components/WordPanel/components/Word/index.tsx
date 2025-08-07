@@ -443,7 +443,7 @@ export default function WordComponent({
           className={`tooltip-info relative w-fit bg-transparent p-0 leading-normal shadow-none dark:bg-transparent ${
             wordDictationConfig.isOpen && !showCompletedWord ? "tooltip" : ""
           }`}
-          data-tip={t("tooltips.showFullWord")}
+          data-tip={t("tooltips.showFullWord", "显示完整单词")}
         >
           <div
             onMouseEnter={() => handleHoverWord(true)}

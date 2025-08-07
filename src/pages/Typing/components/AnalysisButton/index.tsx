@@ -17,7 +17,7 @@ const AnalysisButton = () => {
       type="button"
       onClick={toAnalysis}
       className={`flex items-center justify-center rounded p-[2px] text-lg text-blue-500 outline-none transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white`}
-      title={t("buttons.analysis")}
+      title={t("buttons.analysis", "分析")}
     >
       <ChartPie className="icon" />
     </button>

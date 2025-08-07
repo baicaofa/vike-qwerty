@@ -85,10 +85,13 @@ export default function AdvancedSetting({
         <div className={styles.tabContent}>
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              {t("advancedSettings.skipFamiliarWord.label")}
+              {t("advancedSettings.skipFamiliarWord.label", "跳过熟悉单词")}
             </span>
             <span className={styles.sectionDescription}>
-              {t("advancedSettings.skipFamiliarWord.description")}
+              {t(
+                "advancedSettings.skipFamiliarWord.description",
+                "跳过熟悉单词"
+              )}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -99,10 +102,10 @@ export default function AdvancedSetting({
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
               <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                {t("advancedSettings.skipFamiliarWord.status", {
+                {t("advancedSettings.skipFamiliarWord.status", "跳过熟悉单词", {
                   status: isSkipFamiliarWord
-                    ? t("advancedSettings.skipFamiliarWord.enabled")
-                    : t("advancedSettings.skipFamiliarWord.disabled"),
+                    ? t("advancedSettings.skipFamiliarWord.enabled", "已启用")
+                    : t("advancedSettings.skipFamiliarWord.disabled", "已禁用"),
                 })}
               </span>
             </div>
@@ -110,19 +113,19 @@ export default function AdvancedSetting({
               className="my-btn-primary ml-4 disabled:bg-gray-300"
               href="/familiar"
               target="_blank"
-              title={t("advancedSettings.viewFamiliarWords")}
+              title={t("advancedSettings.viewFamiliarWords", "查看熟悉单词")}
               pageContext={pageContext}
             >
-              {t("advancedSettings.viewFamiliarWords")}
+              {t("advancedSettings.viewFamiliarWords", "查看熟悉单词")}
             </Link>
           </div>
 
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              {t("advancedSettings.randomOrder.label")}
+              {t("advancedSettings.randomOrder.label", "随机顺序")}
             </span>
             <span className={styles.sectionDescription}>
-              {t("advancedSettings.randomOrder.description")}
+              {t("advancedSettings.randomOrder.description", "随机顺序")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -133,20 +136,26 @@ export default function AdvancedSetting({
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
               <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                {t("advancedSettings.randomOrder.status", {
+                {t("advancedSettings.randomOrder.status", "随机顺序", {
                   status: randomConfig.isOpen
-                    ? t("advancedSettings.randomOrder.enabled")
-                    : t("advancedSettings.randomOrder.disabled"),
+                    ? t("advancedSettings.randomOrder.enabled", "已启用")
+                    : t("advancedSettings.randomOrder.disabled", "已禁用"),
                 })}
               </span>
             </div>
           </div>
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              {t("advancedSettings.showPrevNext.label")}
+              {t(
+                "advancedSettings.showPrevNext.label",
+                "显示前一个和后一个单词"
+              )}
             </span>
             <span className={styles.sectionDescription}>
-              {t("advancedSettings.showPrevNext.description")}
+              {t(
+                "advancedSettings.showPrevNext.description",
+                "显示前一个和后一个单词"
+              )}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -157,20 +166,24 @@ export default function AdvancedSetting({
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
               <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                {t("advancedSettings.showPrevNext.status", {
-                  status: isShowPrevAndNextWord
-                    ? t("advancedSettings.showPrevNext.enabled")
-                    : t("advancedSettings.showPrevNext.disabled"),
-                })}
+                {t(
+                  "advancedSettings.showPrevNext.status",
+                  "显示前一个和后一个单词",
+                  {
+                    status: isShowPrevAndNextWord
+                      ? t("advancedSettings.showPrevNext.enabled", "已启用")
+                      : t("advancedSettings.showPrevNext.disabled", "已禁用"),
+                  }
+                )}
               </span>
             </div>
           </div>
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              {t("advancedSettings.ignoreCase.label")}
+              {t("advancedSettings.ignoreCase.label", "忽略大小写")}
             </span>
             <span className={styles.sectionDescription}>
-              {t("advancedSettings.ignoreCase.description")}
+              {t("advancedSettings.ignoreCase.description", "忽略大小写")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -181,20 +194,20 @@ export default function AdvancedSetting({
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
               <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                {t("advancedSettings.ignoreCase.status", {
+                {t("advancedSettings.ignoreCase.status", "忽略大小写", {
                   status: isIgnoreCase
-                    ? t("advancedSettings.ignoreCase.enabled")
-                    : t("advancedSettings.ignoreCase.disabled"),
+                    ? t("advancedSettings.ignoreCase.enabled", "已启用")
+                    : t("advancedSettings.ignoreCase.disabled", "已禁用"),
                 })}
               </span>
             </div>
           </div>
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              {t("advancedSettings.textSelectable.label")}
+              {t("advancedSettings.textSelectable.label", "文本可选择")}
             </span>
             <span className={styles.sectionDescription}>
-              {t("advancedSettings.textSelectable.description")}
+              {t("advancedSettings.textSelectable.description", "文本可选择")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -205,20 +218,20 @@ export default function AdvancedSetting({
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
               <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                {t("advancedSettings.textSelectable.status", {
+                {t("advancedSettings.textSelectable.status", "文本可选择", {
                   status: isTextSelectable
-                    ? t("advancedSettings.textSelectable.enabled")
-                    : t("advancedSettings.textSelectable.disabled"),
+                    ? t("advancedSettings.textSelectable.enabled", "已启用")
+                    : t("advancedSettings.textSelectable.disabled", "已禁用"),
                 })}
               </span>
             </div>
           </div>
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              {t("advancedSettings.showHint.label")}
+              {t("advancedSettings.showHint.label", "显示提示")}
             </span>
             <span className={styles.sectionDescription}>
-              {t("advancedSettings.showHint.description")}
+              {t("advancedSettings.showHint.description", "显示提示")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -229,10 +242,10 @@ export default function AdvancedSetting({
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
               <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                {t("advancedSettings.showHint.status", {
+                {t("advancedSettings.showHint.status", "显示提示", {
                   status: isShowAnswerOnHover
-                    ? t("advancedSettings.showHint.enabled")
-                    : t("advancedSettings.showHint.disabled"),
+                    ? t("advancedSettings.showHint.enabled", "已启用")
+                    : t("advancedSettings.showHint.disabled", "已禁用"),
                 })}
               </span>
             </div>

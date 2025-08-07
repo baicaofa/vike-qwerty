@@ -125,13 +125,13 @@ export default function EditArticleDialog({
   const handleNextStep = () => {
     if (title.trim().length === 0) {
       setIsError(true);
-      setErrorMessage(t("input.errorNoTitle"));
+      setErrorMessage(t("input.errorNoTitle", "请输入文章标题"));
       return;
     }
 
     if (content.trim().length === 0) {
       setIsError(true);
-      setErrorMessage(t("input.errorNoContent"));
+      setErrorMessage(t("input.errorNoContent", "请输入文章内容"));
       return;
     }
 
@@ -210,8 +210,8 @@ export default function EditArticleDialog({
       // 直接进入练习步骤
       dispatch({ type: ArticleActionType.SET_STEP, payload: 3 });
     } catch (error) {
-      console.error(t("upload.saveErrorLog"), error);
-      alert(t("upload.saveError"));
+      console.error(t("upload.saveErrorLog", "保存文章失败"), error);
+      alert(t("upload.saveError", "保存文章失败"));
     }
   };
 
@@ -245,14 +245,14 @@ export default function EditArticleDialog({
         {/* 标题输入 */}
         <div className="grid grid-cols-4 items-center gap-4">
           <label htmlFor="title" className="text-right text-sm font-medium">
-            {t("editor.articleTitle")}
+            {t("editor.articleTitle", "文章标题")}
           </label>
           <input
             id="title"
             value={title}
             onChange={handleTitleChange}
             className="col-span-3 flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300"
-            placeholder={t("editor.articleTitlePlaceholder")}
+            placeholder={t("editor.articleTitlePlaceholder", "请输入文章标题")}
           />
         </div>
 
@@ -262,7 +262,7 @@ export default function EditArticleDialog({
             htmlFor="content"
             className="text-right text-sm font-medium pt-2"
           >
-            {t("editor.articleContent")}
+            {t("editor.articleContent", "文章内容")}
           </label>
           <div className="col-span-3 space-y-2">
             <textarea
@@ -270,11 +270,14 @@ export default function EditArticleDialog({
               value={content}
               onChange={handleContentChange}
               className="flex min-h-[200px] w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300"
-              placeholder={t("editor.articleContentPlaceholder")}
+              placeholder={t(
+                "editor.articleContentPlaceholder",
+                "请输入文章内容"
+              )}
             />
             <div className="flex justify-between text-xs text-gray-500">
               <span>
-                {t("editor.charCount")}: {charCount}/{MAX_CHARS}
+                {t("editor.charCount", "字符数")}: {charCount}/{MAX_CHARS}
               </span>
               {isError && <span className="text-red-500">{errorMessage}</span>}
             </div>
@@ -285,7 +288,7 @@ export default function EditArticleDialog({
         {mode === "edit" && (
           <div className="grid grid-cols-4 items-center gap-4">
             <label className="text-right text-sm font-medium">
-              {t("editor.saveMode")}
+              {t("editor.saveMode", "保存模式")}
             </label>
             <div className="col-span-3 space-y-2">
               <label className="flex items-center space-x-2">
@@ -298,7 +301,9 @@ export default function EditArticleDialog({
                   }
                   className="text-blue-600"
                 />
-                <span className="text-sm">{t("editor.overwriteMode")}</span>
+                <span className="text-sm">
+                  {t("editor.overwriteMode", "覆盖模式")}
+                </span>
               </label>
               <label className="flex items-center space-x-2">
                 <input
@@ -310,7 +315,9 @@ export default function EditArticleDialog({
                   }
                   className="text-blue-600"
                 />
-                <span className="text-sm">{t("editor.newMode")}</span>
+                <span className="text-sm">
+                  {t("editor.newMode", "新建模式")}
+                </span>
               </label>
             </div>
           </div>
@@ -319,10 +326,10 @@ export default function EditArticleDialog({
 
       <DialogFooter>
         <Button variant="outline" onClick={() => handleOpenChange(false)}>
-          {t("common.cancel")}
+          {t("common.cancel", "取消")}
         </Button>
         <Button onClick={handleNextStep} disabled={isError}>
-          {t("common.next")}
+          {t("common.next", "下一步")}
         </Button>
       </DialogFooter>
     </>
@@ -334,19 +341,21 @@ export default function EditArticleDialog({
       <div className="grid gap-4 py-4">
         {/* 预览区域 */}
         <div className="space-y-2">
-          <label className="text-sm font-medium">{t("editor.preview")}</label>
+          <label className="text-sm font-medium">
+            {t("editor.preview", "预览")}
+          </label>
           <div className="max-h-40 overflow-y-auto border rounded-md p-3 bg-gray-50 text-sm">
             <div className="whitespace-pre-wrap">{previewText}</div>
           </div>
           <div className="text-xs text-gray-500">
-            {t("editor.wordCount")}: {wordCount}
+            {t("editor.wordCount", "单词数")}: {wordCount}
           </div>
         </div>
 
         {/* 预处理设置 */}
         <div className="space-y-2">
           <label className="text-sm font-medium">
-            {t("editor.preprocessSettings")}
+            {t("editor.preprocessSettings", "预处理设置")}
           </label>
           <div className="space-y-2">
             <label className="flex items-center space-x-2">
@@ -356,7 +365,9 @@ export default function EditArticleDialog({
                 onChange={handleRemovePunctuationToggle}
                 className="text-blue-600"
               />
-              <span className="text-sm">{t("editor.removePunctuation")}</span>
+              <span className="text-sm">
+                {t("editor.removePunctuation", "移除标点符号")}
+              </span>
             </label>
           </div>
         </div>
@@ -364,7 +375,7 @@ export default function EditArticleDialog({
         {/* 声音设置 */}
         <div className="space-y-2">
           <label className="text-sm font-medium">
-            {t("editor.soundSettings")}
+            {t("editor.soundSettings", "声音设置")}
           </label>
           <div className="space-y-2">
             <label className="flex items-center space-x-2">
@@ -374,7 +385,9 @@ export default function EditArticleDialog({
                 onChange={handleEnableSoundToggle}
                 className="text-blue-600"
               />
-              <span className="text-sm">{t("editor.enableSound")}</span>
+              <span className="text-sm">
+                {t("editor.enableSound", "启用声音")}
+              </span>
             </label>
           </div>
         </div>
@@ -382,12 +395,12 @@ export default function EditArticleDialog({
 
       <DialogFooter>
         <Button variant="outline" onClick={handlePrevStep}>
-          {t("common.previous")}
+          {t("common.previous", "上一步")}
         </Button>
         <Button onClick={handleSaveArticle}>
           {mode === "edit"
-            ? t("editor.saveChanges")
-            : t("editor.createArticle")}
+            ? t("editor.saveChanges", "保存更改")
+            : t("editor.createArticle", "创建文章")}
         </Button>
       </DialogFooter>
     </>
@@ -399,13 +412,13 @@ export default function EditArticleDialog({
         <DialogHeader>
           <DialogTitle>
             {mode === "edit"
-              ? t("editor.editArticle")
-              : t("editor.createArticle")}
+              ? t("editor.editArticle", "编辑文章")
+              : t("editor.createArticle", "创建文章")}
           </DialogTitle>
           <DialogDescription>
             {mode === "edit"
-              ? t("editor.editArticleDesc")
-              : t("editor.createArticleDesc")}
+              ? t("editor.editArticleDesc", "编辑已存在的文章")
+              : t("editor.createArticleDesc", "创建新的文章")}
           </DialogDescription>
         </DialogHeader>
 

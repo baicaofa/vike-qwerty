@@ -151,7 +151,7 @@ export default function SharePicDialog({
                       className="absolute right-7 top-5"
                       type="button"
                       onClick={handleClose}
-                      title={t("tooltips.closeDialog")}
+                      title={t("tooltips.closeDialog", "关闭")}
                     >
                       <IconXMark className="h-6 w-6 text-gray-400" />
                     </button>
@@ -192,9 +192,9 @@ export default function SharePicDialog({
                       className="my-btn-primary mr-9 mt-10 h-10"
                       type="button"
                       onClick={handleDownload}
-                      title={t("buttons.save", "保存")}
+                      title={t("buttons.save", "下载")}
                     >
-                      {t("buttons.save", "保存")}
+                      {t("buttons.save", "下载")}
                     </button>
                   </div>
                 </Dialog.Panel>

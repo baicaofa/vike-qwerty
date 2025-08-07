@@ -304,10 +304,10 @@ export default function WordPanel({
               <div className="absolute flex h-full w-full justify-center">
                 <div className="z-10 flex w-full items-center backdrop-blur-sm">
                   <p className="w-full select-none text-center text-xl text-gray-600 dark:text-gray-50">
-                    {t("wordPanel.pressAnyKey", {
+                    {t("wordPanel.pressAnyKey", "按任意键", {
                       action: state.timerData.time
-                        ? t("wordPanel.continue")
-                        : t("wordPanel.start"),
+                        ? t("wordPanel.continue", "继续")
+                        : t("wordPanel.start", "开始"),
                     })}
                   </p>
                 </div>

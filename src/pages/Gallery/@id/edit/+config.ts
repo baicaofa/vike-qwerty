@@ -4,6 +4,7 @@ import type { Config } from "vike/types";
 export default {
   // 词典编辑路由，支持自定义词典ID格式（custom_前缀）
   route: "/gallery/@id/edit",
+  prerender: false,
   // 页面组件
   Page,
   // 启用客户端路由

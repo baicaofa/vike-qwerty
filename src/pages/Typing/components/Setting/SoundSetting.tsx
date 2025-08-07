@@ -146,17 +146,20 @@ export default function SoundSetting() {
                 <span aria-hidden="true" className="switch-thumb" />
               </Switch>
               <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                {t(`pronunciationSwitcher.status`, {
+                {t(`pronunciationSwitcher.status`, "发音状态", {
                   status: t(
                     pronunciationConfig.isOpen
                       ? "pronunciationSwitcher.enabled"
-                      : "pronunciationSwitcher.disabled"
+                      : "pronunciationSwitcher.disabled",
+                    "发音状态"
                   ),
                 })}
               </span>
             </div>
             <div className={styles.block}>
-              <span className={styles.blockLabel}>{t("settings.volume")}</span>
+              <span className={styles.blockLabel}>
+                {t("settings.volume", "音量")}
+              </span>
               <div className="flex h-5 w-full items-center justify-between">
                 <Slider.Root
                   defaultValue={[pronunciationConfig.volume * 100]}
@@ -178,7 +181,9 @@ export default function SoundSetting() {
             </div>
 
             <div className={styles.block}>
-              <span className={styles.blockLabel}>{t("settings.rate")}</span>
+              <span className={styles.blockLabel}>
+                {t("settings.rate", "语速")}
+              </span>
               <div className="flex h-5 w-full items-center justify-between">
                 <Slider.Root
                   defaultValue={[pronunciationConfig.rate ?? 1]}
@@ -204,7 +209,7 @@ export default function SoundSetting() {
           {window.speechSynthesis && (
             <div className={styles.section}>
               <span className={styles.sectionLabel}>
-                {t("settings.transPronunciation")}
+                {t("settings.transPronunciation", "翻译发音")}
               </span>
               <div className={styles.switchBlock}>
                 <Switch
@@ -226,7 +231,7 @@ export default function SoundSetting() {
               </div>
               <div className={styles.block}>
                 <span className={styles.blockLabel}>
-                  {t("settings.volume")}
+                  {t("settings.volume", "音量")}
                 </span>
                 <div className="flex h-5 w-full items-center justify-between">
                   <Slider.Root
@@ -251,7 +256,7 @@ export default function SoundSetting() {
 
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              {t("settings.keySound")}
+              {t("settings.keySound", "按键音")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -272,7 +277,9 @@ export default function SoundSetting() {
               </span>
             </div>
             <div className={styles.block}>
-              <span className={styles.blockLabel}>{t("settings.volume")}</span>
+              <span className={styles.blockLabel}>
+                {t("settings.volume", "音量")}
+              </span>
               <div className="flex h-5 w-full items-center justify-between">
                 <Slider.Root
                   defaultValue={[keySoundsConfig.volume * 100]}
@@ -295,7 +302,7 @@ export default function SoundSetting() {
             </div>
             <div className={`${styles.block}`}>
               <span className={styles.blockLabel}>
-                {t("settings.keySoundEffect")}
+                {t("settings.keySoundEffect", "按键音效果")}
               </span>
               <Listbox
                 value={keySoundsConfig.resource.key}
@@ -350,7 +357,7 @@ export default function SoundSetting() {
 
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              {t("settings.hintSound")}
+              {t("settings.hintSound", "提示音")}
             </span>
             <div className={styles.switchBlock}>
               <Switch
@@ -371,7 +378,9 @@ export default function SoundSetting() {
               </span>
             </div>
             <div className={styles.block}>
-              <span className={styles.blockLabel}>{t("settings.volume")}</span>
+              <span className={styles.blockLabel}>
+                {t("settings.volume", "音量")}
+              </span>
               <div className="flex h-5 w-full items-center justify-between">
                 <Slider.Root
                   defaultValue={[hintSoundsConfig.volume * 100]}

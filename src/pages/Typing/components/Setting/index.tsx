@@ -48,22 +48,22 @@ export default function Setting({ pageContext }: SettingProps = {}) {
 
   const tabs = [
     {
-      name: t("settings.sound"),
+      name: t("settings.sound", "声音"),
       icon: IconEar,
       content: <SoundSetting />,
     },
     {
-      name: t("settings.advanced"),
+      name: t("settings.advanced", "高级"),
       icon: IconAdjustmentsHorizontal,
       content: <AdvancedSetting pageContext={pageContext} />,
     },
     {
-      name: t("settings.view"),
+      name: t("settings.view", "视图"),
       icon: IconEye,
       content: <ViewSetting />,
     },
     {
-      name: t("settings.data"),
+      name: t("settings.data", "数据"),
       icon: IconDatabaseCog,
       content: <DataSetting />,
     },
@@ -77,7 +77,7 @@ export default function Setting({ pageContext }: SettingProps = {}) {
         className={`flex items-center justify-center rounded p-[2px] text-lg text-blue-500 outline-none transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white  ${
           isOpenSetting && " bg-blue-500 text-white"
         }`}
-        title={t("tooltips.closeDialog")}
+        title={t("tooltips.closeDialog", "关闭设置")}
       >
         <IconCog6Tooth className="icon" />
       </button>
@@ -115,7 +115,7 @@ export default function Setting({ pageContext }: SettingProps = {}) {
                     <button
                       type="button"
                       onClick={onCloseSetting}
-                      title={t("tooltips.closeDialog")}
+                      title={t("tooltips.closeDialog", "关闭设置")}
                     >
                       <IconX className="absolute right-7 top-5 cursor-pointer text-gray-400" />
                     </button>

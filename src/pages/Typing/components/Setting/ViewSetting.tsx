@@ -51,11 +51,11 @@ export default function ViewSetting() {
         <div className={styles.tabContent}>
           <div className={styles.section}>
             <span className={styles.sectionLabel}>
-              {t("settings.fontSize")}
+              {t("settings.fontSize", "字体大小")}
             </span>
             <div className={styles.block}>
               <span className={styles.blockLabel}>
-                {t("settings.foreignFont", "外语字体")}
+                {t("settings.foreignFont", "外文字体")}
               </span>
               <div className="flex h-5 w-full items-center justify-between">
                 <Slider.Root
@@ -103,7 +103,7 @@ export default function ViewSetting() {
 
             <div className={styles.block}>
               <span className={styles.blockLabel}>
-                {t("settings.sentenceForeignFont")}
+                {t("settings.sentenceForeignFont", "句子外文字体")}
               </span>
               <div className="flex h-5 w-full items-center justify-between">
                 <Slider.Root
@@ -129,9 +129,9 @@ export default function ViewSetting() {
             className="my-btn-primary ml-4 disabled:bg-gray-300"
             type="button"
             onClick={onResetFontSize}
-            title={t("settings.resetFontSize")}
+            title={t("settings.resetFontSize", "重置字体大小")}
           >
-            {t("settings.resetFontSize")}
+            {t("settings.resetFontSize", "重置字体大小")}
           </button>
         </div>
       </ScrollArea.Viewport>

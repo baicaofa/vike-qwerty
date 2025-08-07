@@ -66,14 +66,19 @@ export default function DataSetting() {
       <ScrollArea.Viewport className="h-full w-full px-3">
         <div className={styles.tabContent}>
           <div className={styles.section}>
-            <span className={styles.sectionLabel}>{t("dataExport.label")}</span>
+            <span className={styles.sectionLabel}>
+              {t("dataExport.label", "数据导出")}
+            </span>
             <span className={styles.sectionDescription}>
-              {t("dataExport.description1")}
-              <strong>{t("dataExport.localOnly")}</strong>
-              {t("dataExport.description2")}
+              {t("dataExport.description1", "导出本地数据")}
+              <strong>{t("dataExport.localOnly", "仅导出本地数据")}</strong>
+              {t("dataExport.description2", "导出数据后，可以导入到其他设备上")}
             </span>
             <span className="pl-4 text-left text-sm font-bold leading-tight text-red-500">
-              {t("dataExport.safetyTip")}
+              {t(
+                "dataExport.safetyTip",
+                "导出数据后，请勿删除本地数据，否则无法导入到其他设备上"
+              )}
             </span>
             <div className="flex h-3 w-full items-center justify-start px-5">
               <Progress.Root
@@ -93,19 +98,21 @@ export default function DataSetting() {
               type="button"
               onClick={onClickExport}
               disabled={isExporting}
-              title={t("dataExport.buttonTitle")}
+              title={t("dataExport.buttonTitle", "导出数据")}
             >
-              {t("dataExport.button")}
+              {t("dataExport.button", "导出数据")}
             </button>
           </div>
           <div className={styles.section}>
-            <span className={styles.sectionLabel}>{t("dataImport.label")}</span>
+            <span className={styles.sectionLabel}>
+              {t("dataImport.label", "数据导入")}
+            </span>
             <span className={styles.sectionDescription}>
-              {t("dataImport.description1")}
+              {t("dataImport.description1", "导入数据")}
               <strong className="text-sm font-bold text-red-500">
-                {t("dataImport.coverTip")}
+                {t("dataImport.coverTip", "导入数据后，会覆盖本地数据")}
               </strong>
-              {t("dataImport.description2")}
+              {t("dataImport.description2", "导入数据后，可以导入到其他设备上")}
             </span>
 
             <div className="flex h-3 w-full items-center justify-start px-5">
@@ -126,9 +133,9 @@ export default function DataSetting() {
               type="button"
               onClick={onClickImport}
               disabled={isImporting}
-              title={t("dataImport.buttonTitle")}
+              title={t("dataImport.buttonTitle", "导入数据")}
             >
-              {t("dataImport.button")}
+              {t("dataImport.button", "导入数据")}
             </button>
           </div>
         </div>

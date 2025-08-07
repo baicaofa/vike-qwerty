@@ -30,7 +30,7 @@ export default function TranslationSwitcher() {
             className={`p-[2px] ${
               state?.isTransVisible ? "text-blue-500" : "text-gray-500"
             } text-lg focus:outline-none`}
-            aria-label={t("switcher.ariaLabels.toggleTranslation", {
+            aria-label={t("switcher.ariaLabels.toggleTranslation", "切换翻译", {
               shortcut: `${CTRL} + Shift + V`,
             })}
           >
@@ -50,7 +50,7 @@ export default function TranslationSwitcher() {
               <div className="shadow-upper box-border flex w-60 select-none flex-col items-center justify-center gap-4 rounded-xl bg-white p-4 drop-shadow dark:bg-gray-800">
                 <div className="flex w-full flex-col items-start gap-2 py-0">
                   <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                    {t("translationSwitcher.translation.label")}
+                    {t("translationSwitcher.translation.label", "翻译")}
                   </span>
                   <div className="flex w-full flex-row items-center justify-between">
                     <Switch
@@ -61,17 +61,17 @@ export default function TranslationSwitcher() {
                       <span aria-hidden="true" className="switch-thumb" />
                     </Switch>
                     <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                      {t("translationSwitcher.translation.status", {
+                      {t("translationSwitcher.translation.status", "翻译状态", {
                         status: state?.isTransVisible
-                          ? t("translationSwitcher.enabled")
-                          : t("translationSwitcher.disabled"),
+                          ? t("translationSwitcher.enabled", "开启")
+                          : t("translationSwitcher.disabled", "关闭"),
                       })}
                     </span>
                   </div>
                 </div>
                 <div className="flex w-full flex-col items-start gap-2 py-0">
                   <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                    {t("translationSwitcher.sentences.label")}
+                    {t("translationSwitcher.sentences.label", "句子")}
                   </span>
                   <div className="flex w-full flex-row items-center justify-between">
                     <Switch
@@ -82,10 +82,10 @@ export default function TranslationSwitcher() {
                       <span aria-hidden="true" className="switch-thumb" />
                     </Switch>
                     <span className="text-right text-xs font-normal leading-tight text-gray-600">
-                      {t("translationSwitcher.sentences.status", {
+                      {t("translationSwitcher.sentences.status", "句子状态", {
                         status: state?.isSentencesVisible
-                          ? t("translationSwitcher.enabled")
-                          : t("translationSwitcher.disabled"),
+                          ? t("translationSwitcher.enabled", "开启")
+                          : t("translationSwitcher.disabled", "关闭"),
                       })}
                     </span>
                   </div>

@@ -156,7 +156,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       outDir: "build",
-      sourcemap: false, // 生产环境禁用 sourcemap
+      sourcemap: true, // 生产环境禁用 sourcemap
       minify: true, // 生产环境启用压缩
     },
     esbuild: {

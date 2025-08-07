@@ -4,26 +4,16 @@ import { promises as fs } from "fs";
 import jotaiDebugLabel from "jotai/babel/plugin-debug-label";
 import jotaiReactRefresh from "jotai/babel/plugin-react-refresh";
 import { dirname, resolve } from "path";
-import { visualizer } from "rollup-plugin-visualizer";
 import Icons from "unplugin-icons/vite";
 import { fileURLToPath } from "url";
 import vike from "vike/plugin";
 import { defineConfig } from "vite";
-import type { PluginOption } from "vite";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // 定义需要包含在sitemap中的重要路由及其优先级
-const baseSitemapRoutes = [
-  { path: "/", priority: 1.0, changefreq: "daily" },
-  { path: "/gallery", priority: 0.9, changefreq: "daily" },
-  { path: "/analysis", priority: 0.8, changefreq: "weekly" },
-  { path: "/error-book", priority: 0.8, changefreq: "weekly" },
-  { path: "/familiar", priority: 0.6, changefreq: "monthly" },
-
-  // 用户相关页面不需要添加到sitemap中
-];
+const baseSitemapRoutes = [];
 
 // 生成多语言sitemap路由
 const supportedLanguages = ["zh", "en"];

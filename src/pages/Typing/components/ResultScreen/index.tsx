@@ -46,9 +46,21 @@ const ResultScreen = () => {
     const exportData = userInputLogs.map((log) => {
       const word = words[log.index];
       const wordName = word.name;
+
+      // 处理翻译数据：优先使用 detailed_translations，如果没有则使用 trans
+      let translationText = "";
+      if (word.detailed_translations && word.detailed_translations.length > 0) {
+        translationText = word.detailed_translations
+          .map((trans) => trans.chinese)
+          .filter(Boolean)
+          .join(";");
+      } else if (word.trans && Array.isArray(word.trans)) {
+        translationText = word.trans.join(";");
+      }
+
       return {
         ...word,
-        trans: word.trans.join(";"),
+        trans: translationText,
         correctCount: log.correctCount,
         wrongCount: log.wrongCount,
         wrongLetters: Object.entries(log.LetterMistakes)

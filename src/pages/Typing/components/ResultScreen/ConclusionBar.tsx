@@ -15,31 +15,36 @@ const ICON_MAPPER: IconMapper[] = [
   {
     icon: IconHeart,
     className: "text-indigo-600",
-    textKey: "result.good", // 动态文本
+    textKey: "result.good", // 保留用于其他级别
   },
   {
     icon: IconHandThumbUp,
     className: "text-indigo-600",
-    textKey: "result.normal", // 静态文本
+    textKey: "result.normal",
   },
   {
     icon: IconExclamationTriangle,
     className: "text-indigo-600",
-    textKey: "result.bad", // 静态文本
+    textKey: "result.bad",
   },
 ];
 
 const ConclusionBar = ({ mistakeLevel, mistakeCount }: ConclusionBarProps) => {
   const { t } = useTranslation("typing");
-  const { icon: Icon, className, textKey } = ICON_MAPPER[mistakeLevel];
+  const { icon: Icon, className } = ICON_MAPPER[mistakeLevel];
 
   let textContent: string;
-  if (textKey === "result.good") {
-    textContent = t(textKey, {
-      mistakeCount,
-      isAllCorrect: mistakeCount === 0,
-    });
+  if (mistakeLevel === 0) {
+    // 对于 good 级别，根据是否全对选择不同的翻译键
+    const isAllCorrect = mistakeCount === 0;
+    if (isAllCorrect) {
+      textContent = t("result.allCorrect");
+    } else {
+      textContent = t("result.goodWithMistakes", { mistakeCount });
+    }
   } else {
+    // 对于其他级别，使用对应的翻译键
+    const textKey = ICON_MAPPER[mistakeLevel].textKey;
     textContent = t(textKey);
   }
 

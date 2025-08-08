@@ -40,7 +40,21 @@ const ErrorRow: FC<IErrorRowProps> = ({ record, onDelete }) => {
       <span className="basis-2/12 break-normal">{record.word}</span>
       <span className="basis-6/12 break-normal">
         {word ? (
-          word.trans.join("；")
+          (() => {
+            // 处理翻译数据：优先使用 detailed_translations，如果没有则使用 trans
+            if (
+              word.detailed_translations &&
+              word.detailed_translations.length > 0
+            ) {
+              return word.detailed_translations
+                .map((trans) => trans.chinese)
+                .filter(Boolean)
+                .join("；");
+            } else if (word.trans && Array.isArray(word.trans)) {
+              return word.trans.join("；");
+            }
+            return "";
+          })()
         ) : (
           <LoadingWordUI isLoading={isLoading} hasError={hasError} />
         )}

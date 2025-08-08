@@ -27,7 +27,8 @@
     "wpm": "词/分钟"
   },
   "result": {
-    "good": "{{isAllCorrect ? '全对了！' : `表现不错！只错了 ${mistakeCount} 个单词`}}",
+    "allCorrect": "全对了！",
+    "goodWithMistakes": "表现不错！只错了 {{mistakeCount}} 个单词",
     "normal": "有些小问题哦，下一次可以做得更好！",
     "bad": "错误太多，再来一次如何？"
   },

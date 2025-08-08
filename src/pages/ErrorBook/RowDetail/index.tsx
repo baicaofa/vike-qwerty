@@ -130,7 +130,21 @@ const RowDetail: React.FC<RowDetailProps> = ({
               className={`max-w-4xl text-center font-sans transition-colors duration-300 dark:text-white dark:text-opacity-80`}
             >
               {word ? (
-                word.trans.join("；")
+                (() => {
+                  // 处理翻译数据：优先使用 detailed_translations，如果没有则使用 trans
+                  if (
+                    word.detailed_translations &&
+                    word.detailed_translations.length > 0
+                  ) {
+                    return word.detailed_translations
+                      .map((trans) => trans.chinese)
+                      .filter(Boolean)
+                      .join("；");
+                  } else if (word.trans && Array.isArray(word.trans)) {
+                    return word.trans.join("；");
+                  }
+                  return "";
+                })()
               ) : (
                 <LoadingWordUI isLoading={isLoading} hasError={hasError} />
               )}

@@ -132,7 +132,7 @@ export const ReviewStatusIndicator: React.FC<ReviewStatusIndicatorProps> = ({
                   pageContext={pageContext}
                   className="block w-full bg-green-600 text-white text-center py-2 rounded-lg hover:bg-green-700 transition-colors text-sm"
                 >
-                  {t("reviewstatus.startReview", "开始复习")} {dueCount}
+                  {t("reviewstatus.startReview", { count: dueCount })}
                 </Link>
               ) : (
                 <Link

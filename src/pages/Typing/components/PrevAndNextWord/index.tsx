@@ -115,7 +115,21 @@ export default function PrevAndNextWord({ type }: LastAndNextWordProps) {
               </p>
               {state.isTransVisible && (
                 <p className="line-clamp-1 max-w-full text-sm font-normal text-gray-600 dark:text-gray-500">
-                  {word.trans.join("；")}
+                  {(() => {
+                    // 处理翻译数据：优先使用 detailed_translations，如果没有则使用 trans
+                    if (
+                      word.detailed_translations &&
+                      word.detailed_translations.length > 0
+                    ) {
+                      return word.detailed_translations
+                        .map((trans) => trans.chinese)
+                        .filter(Boolean)
+                        .join("；");
+                    } else if (word.trans && Array.isArray(word.trans)) {
+                      return word.trans.join("；");
+                    }
+                    return "";
+                  })()}
                 </p>
               )}
             </div>

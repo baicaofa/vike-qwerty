@@ -55,7 +55,21 @@ export default function WordChip({ word }: { word: WordWithIndex }) {
           }}
           {...getFloatingProps()}
         >
-          {word.trans}
+          {(() => {
+            // 处理翻译数据：优先使用 detailed_translations，如果没有则使用 trans
+            if (
+              word.detailed_translations &&
+              word.detailed_translations.length > 0
+            ) {
+              return word.detailed_translations
+                .map((trans) => trans.chinese)
+                .filter(Boolean)
+                .join("；");
+            } else if (word.trans && Array.isArray(word.trans)) {
+              return word.trans.join("；");
+            }
+            return "";
+          })()}
         </div>
       )}
     </>

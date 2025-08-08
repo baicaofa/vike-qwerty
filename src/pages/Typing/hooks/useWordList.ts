@@ -55,7 +55,13 @@ export function useWordList(): UseWordListResult {
     // 记录原始 index, 并对 word.trans 做兜底处理
     return newWords.map((word, index) => {
       let trans: string[];
-      if (Array.isArray(word.trans)) {
+
+      // 处理翻译数据：优先使用 detailed_translations，如果没有则使用 trans
+      if (word.detailed_translations && word.detailed_translations.length > 0) {
+        trans = word.detailed_translations
+          .map((trans) => trans.chinese)
+          .filter(Boolean) as string[];
+      } else if (Array.isArray(word.trans)) {
         trans = word.trans.filter((item) => typeof item === "string");
       } else if (
         word.trans === null ||
@@ -66,6 +72,7 @@ export function useWordList(): UseWordListResult {
       } else {
         trans = [String(word.trans)];
       }
+
       return {
         ...word,
         index,

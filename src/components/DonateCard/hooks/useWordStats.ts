@@ -23,8 +23,10 @@ export function useDayFromFirstWordRecord() {
 
   useEffect(() => {
     const fetchDayFromFirstWordRecord = async () => {
-      const firstWordRecord = await db.wordRecords.orderBy("timeStamp").first();
-      const firstWordRecordTimeStamp = firstWordRecord?.timeStamp || 0;
+      const firstWordRecord = await db.wordRecords
+        .orderBy("firstSeenAt")
+        .first();
+      const firstWordRecordTimeStamp = firstWordRecord?.firstSeenAt || 0;
       const now = dayjs();
       const timestamp = dayjs.unix(firstWordRecordTimeStamp);
       const daysPassed = now.diff(timestamp, "day");

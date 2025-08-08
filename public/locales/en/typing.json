@@ -27,7 +27,8 @@
     "wpm": "WPM"
   },
   "result": {
-    "good": "{{isAllCorrect ? 'Perfect! All correct!' : `Good job! Only ${mistakeCount} mistakes`}}",
+    "allCorrect": "Perfect! All correct!",
+    "goodWithMistakes": "Good job! Only {{mistakeCount}} mistakes",
     "normal": "A few small issues, you can do better next time!",
     "bad": "Too many mistakes, try again?"
   },

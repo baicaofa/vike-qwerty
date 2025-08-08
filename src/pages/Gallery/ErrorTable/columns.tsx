@@ -106,9 +106,26 @@ export function getRowsFromErrorWordData(
   data: TErrorWordData[]
 ): ErrorColumn[] {
   return data.map((item) => {
+    // 处理翻译数据：优先使用 detailed_translations，如果没有则使用 trans
+    let translationText = "";
+
+    if (
+      item.originData.detailed_translations &&
+      item.originData.detailed_translations.length > 0
+    ) {
+      // 使用新的 detailed_translations 格式
+      translationText = item.originData.detailed_translations
+        .map((trans) => trans.chinese)
+        .filter(Boolean)
+        .join("，");
+    } else if (item.originData.trans && Array.isArray(item.originData.trans)) {
+      // 兼容旧的 trans 格式
+      translationText = item.originData.trans.join("，");
+    }
+
     return {
       word: item.word,
-      trans: item.originData.trans.join("，") ?? "",
+      trans: translationText,
       errorCount: item.errorCount,
       errorChar: item.errorChar,
     };

@@ -1,0 +1,680 @@
+[
+  {
+    "name": "aberrant sebaceous gland",
+    "trans": "皮脂腺迷路",
+    "usphone": "əˈberənt sɪˈbeɪʃəs ɡlænd",
+    "ukphone": "əˈberənt ˈsiːbeɪʃəs ɡlænd"
+  },
+  {
+    "name": "actinomyces",
+    "trans": "放线菌",
+    "usphone": "ˌæktɪˈnoʊmɪsiz",
+    "ukphone": "ˌæktɪˈnəʊmɪsiːz"
+  },
+  {
+    "name": "acute alveolar abscess",
+    "trans": "急性牙髓脓肿",
+    "usphone": "əˈkjut ælˈviələr ˈæbsɪs",
+    "ukphone": "əˈkjuːt ˌælvɪˈəʊlə ˈæbsɪs"
+  },
+  {
+    "name": "acute periapical periodontitis",
+    "trans": "急性根尖周炎",
+    "usphone": "əˈkjut ˌpɛriˈæpɪkəl ˌpɛrɪoʊdɒnˈtaɪtɪs",
+    "ukphone": "əˈkjuːt ˌpɛrɪˈæpɪkəl ˌpɛrɪəʊdɒnˈtaɪtɪs"
+  },
+  {
+    "name": "acute pulpitis",
+    "trans": "急性牙髓炎",
+    "usphone": "əˈkjut pʌlˈpaɪtɪs",
+    "ukphone": "əˈkjuːt pʌlˈpaɪtɪs"
+  },
+  {
+    "name": "alveolar bone",
+    "trans": "牙槽骨",
+    "usphone": "ælˈviələr boʊn",
+    "ukphone": "ælˈvɪələ bəʊn"
+  },
+  {
+    "name": "ameloblastoma",
+    "trans": "造釉细胞瘤",
+    "usphone": "əˌmɛləblæsˈtoʊmə",
+    "ukphone": "əˌmeləʊblæsˈtəʊmə"
+  },
+  {
+    "name": "ankylosis of temporomandibular joint",
+    "trans": "颞下颌关节强直",
+    "usphone": "ˌæŋkɪˈloʊsɪs əv ˌtɛmpəroʊmænˈdɪbjələr ʤɔɪnt",
+    "ukphone": "ˌæŋkɪˈləʊsɪs əv ˌtɛmpərəʊmænˈdɪbjʊlə ʤɔɪnt"
+  },
+  {
+    "name": "borderline tumor",
+    "trans": "临界肿瘤",
+    "usphone": "ˈbɔrdərˌlaɪn ˈtumər",
+    "ukphone": "ˈbɔːdəlaɪn ˈtjuːmə"
+  },
+  {
+    "name": "branchial cleft cyst",
+    "trans": "鳃裂囊肿",
+    "usphone": "ˈbræŋkiəl klɛft sɪst",
+    "ukphone": "ˈbræŋkiəl klɛft sɪst"
+  },
+  {
+    "name": "buccal part of masticatory fat pad",
+    "trans": "颊脂体",
+    "usphone": "ˈbʌkəl pɑrt əv ˈmæstɪkəˌtɔri fæt pæd",
+    "ukphone": "ˈbʌkəl pɑːt əv ˈmæstɪkətri fæt pæd"
+  },
+  {
+    "name": "carcinoma maxillary sinus",
+    "trans": "上颌窦癌",
+    "usphone": "ˌkɑrsɪˈnoʊmə mækˈsɪlɛri ˈsaɪnəs",
+    "ukphone": "ˌkɑːsɪˈnəʊmə mækˈsɪləri ˈsaɪnəs"
+  },
+  {
+    "name": "carcinoma of buccal mucosa",
+    "trans": "颊黏膜癌",
+    "usphone": "ˌkɑrsɪˈnoʊmə əv ˈbʌkəl mjuˈkoʊsə",
+    "ukphone": "ˌkɑːsɪˈnəʊmə əv ˈbʌkəl mjuˈkəʊsə"
+  },
+  {
+    "name": "carcinoma of gingiva",
+    "trans": "牙龈癌",
+    "usphone": "ˌkɑrsɪˈnoʊmə əv ˈʤɪnʤəvə",
+    "ukphone": "ˌkɑːsɪˈnəʊmə əv ˈʤɪnʤɪvə"
+  },
+  {
+    "name": "carcinoma of lip",
+    "trans": "唇癌",
+    "usphone": "ˌkɑrsɪˈnoʊmə əv lɪp",
+    "ukphone": "ˌkɑːsɪˈnəʊmə əv lɪp"
+  },
+  {
+    "name": "carcinoma of tongue",
+    "trans": "舌癌",
+    "usphone": "ˌkɑrsɪˈnoʊmə əv tʌŋ",
+    "ukphone": "ˌkɑːsɪˈnəʊmə əv tʌŋ"
+  },
+  {
+    "name": "cementum",
+    "trans": "牙骨质",
+    "usphone": "sɪˈmɛntəm",
+    "ukphone": "sɪˈmɛntəm"
+  },
+  {
+    "name": "chronic gingivitis simplex",
+    "trans": "慢性单纯龈炎",
+    "usphone": "ˈkrɒnɪk ʤɪnˈʤaɪtɪs ˈsɪmplɛks",
+    "ukphone": "ˈkrɒnɪk ˌʤɪndʒɪˈvaɪtɪs ˈsɪmplɛks"
+  },
+  {
+    "name": "chronic periapical periodontitis",
+    "trans": "慢性根尖周炎",
+    "usphone": "ˈkrɒnɪk ˌpɛriˈæpɪkəl ˌpɛrɪoʊdɒnˈtaɪtɪs",
+    "ukphone": "ˈkrɒnɪk ˌpɛrɪˈæpɪkəl ˌpɛrɪəʊdɒnˈtaɪtɪs"
+  },
+  {
+    "name": "chronic pulpitis",
+    "trans": "慢性牙髓炎",
+    "usphone": "ˈkrɒnɪk pʌlˈpaɪtɪs",
+    "ukphone": "ˈkrɒnɪk pʌlˈpaɪtɪs"
+  },
+  {
+    "name": "circumvallate papillae",
+    "trans": "轮廓乳头",
+    "usphone": "ˌsɜrkəmˈvæleɪt pəˈpɪli",
+    "ukphone": "ˌsɜːkəmˈvæleɪt pəˈpɪliː"
+  },
+  {
+    "name": "compound periodontitis",
+    "trans": "复合性牙周炎",
+    "usphone": "ˈkɒmpaʊnd ˌpɛrɪoʊdɒnˈtaɪtɪs",
+    "ukphone": "ˈkɒmpaʊnd ˌpɛrɪəʊdɒnˈtaɪtɪs"
+  },
+  {
+    "name": "cryobiopsy",
+    "trans": "活组织检查",
+    "usphone": "ˌkraɪoʊˈbaɪɒpsi",
+    "ukphone": "ˌkraɪəʊˈbaɪɒpsi"
+  },
+  {
+    "name": "cryosurgery",
+    "trans": "冷冻手术，冷冻治疗",
+    "usphone": "ˌkraɪoʊˈsɜrdʒəri",
+    "ukphone": "ˌkraɪəʊˈsɜːdʒəri"
+  },
+  {
+    "name": "deciduous teeth",
+    "trans": "乳牙",
+    "usphone": "dɪˈsɪdʒuəs tiθ",
+    "ukphone": "dɪˈsɪdjʊəs tiːθ"
+  },
+  {
+    "name": "dental arch and occlusion",
+    "trans": "牙弓及咬合",
+    "usphone": "ˈdɛntəl ɑrtʃ ənd əˈkluʒən",
+    "ukphone": "ˈdɛntəl ɑːtʃ ənd əˈkluːʒən"
+  },
+  {
+    "name": "dental caries",
+    "trans": "龋齿",
+    "usphone": "ˈdɛntəl ˈkɛriːz",
+    "ukphone": "ˈdɛntəl ˈkɛəriːz"
+  },
+  {
+    "name": "dentigerous cyst",
+    "trans": "含牙囊肿",
+    "usphone": "dɛnˈtɪdʒərəs sɪst",
+    "ukphone": "dɛnˈtɪdʒərəs sɪst"
+  },
+  {
+    "name": "dicaine",
+    "trans": "地卡因",
+    "usphone": "ˈdaɪkeɪn",
+    "ukphone": "ˈdaɪkeɪn"
+  },
+  {
+    "name": "disease of periapical tissue",
+    "trans": "根尖周病",
+    "usphone": "dɪˈziz əv ˌpɛriˈæpɪkəl ˈtɪʃu",
+    "ukphone": "dɪˈziːz əv ˌpɛrɪˈæpɪkəl ˈtɪʃuː"
+  },
+  {
+    "name": "dislocation of condyle",
+    "trans": "颞下颌关节脱位",
+    "usphone": "ˌdɪsləˈkeɪʃən əv ˈkɒndəl",
+    "ukphone": "ˌdɪsləˈkeɪʃən əv ˈkɒndaɪl"
+  },
+  {
+    "name": "enamel",
+    "trans": "牙釉质",
+    "usphone": "ɪˈnæməl",
+    "ukphone": "ɪˈnæməl"
+  },
+  {
+    "name": "epidermoid cyst",
+    "trans": "表皮样囊肿",
+    "usphone": "ˌɛpɪˈdɜrmɔɪd sɪst",
+    "ukphone": "ˌɛpɪˈdɜːmɔɪd sɪst"
+  },
+  {
+    "name": "epulis",
+    "trans": "牙龈瘤",
+    "usphone": "ɪˈpjuːlɪs",
+    "ukphone": "ɪˈpjuːlɪs"
+  },
+  {
+    "name": "erythroplasia",
+    "trans": "增殖性红斑",
+    "usphone": "ɪˌrɪθroʊˈpleɪʒə",
+    "ukphone": "ɪˌrɪθrəʊˈpleɪzɪə"
+  },
+  {
+    "name": "facial nerve",
+    "trans": "面神经",
+    "usphone": "ˈfeɪʃəl nɜrv",
+    "ukphone": "ˈfeɪʃəl nɜːv"
+  },
+  {
+    "name": "fascial space infection of maxillofacial region",
+    "trans": "颌面部间隙感染",
+    "usphone": "ˈfæʃəl speɪs ɪnˈfɛkʃən əv mækˈsɪləˌfeɪʃəl ˈridʒən",
+    "ukphone": "ˈfeɪʃəl speɪs ɪnˈfɛkʃən əv mækˌsɪləʊˈfeɪʃəl ˈriːdʒən"
+  },
+  {
+    "name": "fibro-osteoma",
+    "trans": "纤维骨瘤",
+    "usphone": "ˌfaɪbroʊˌɒstiˈoʊmə",
+    "ukphone": "ˌfaɪbrəʊˌɒstiˈəʊmə"
+  },
+  {
+    "name": "fibrous dysplasia",
+    "trans": "骨纤维异常增生症",
+    "usphone": "ˈfaɪbrəs dɪsˈpleɪʒə",
+    "ukphone": "ˈfaɪbrəs dɪsˈpleɪzɪə"
+  },
+  {
+    "name": "filiform papillae",
+    "trans": "丝状乳头",
+    "usphone": "ˈfɪlɪfɔrm pəˈpɪli",
+    "ukphone": "ˈfɪlɪfɔːm pəˈpɪliː"
+  },
+  {
+    "name": "floor of the mouth",
+    "trans": "口底",
+    "usphone": "flɔr əv ðə maʊθ",
+    "ukphone": "flɔːr əv ðə maʊθ"
+  },
+  {
+    "name": "foliate papillae",
+    "trans": "叶状乳头",
+    "usphone": "ˈfoʊliɪt pəˈpɪli",
+    "ukphone": "ˈfəʊlɪɪt pəˈpɪliː"
+  },
+  {
+    "name": "follicular cyst",
+    "trans": "滤泡囊肿",
+    "usphone": "fəˈlɪkjələr sɪst",
+    "ukphone": "fəˈlɪkjʊlə sɪst"
+  },
+  {
+    "name": "fungiform papillae",
+    "trans": "菌状乳头",
+    "usphone": "ˈfʌndʒɪfɔrm pəˈpɪli",
+    "ukphone": "ˈfʌndʒɪfɔːm pəˈpɪliː"
+  },
+  {
+    "name": "gingival hyperplasia",
+    "trans": "牙龈增生",
+    "usphone": "ˈʤɪnʤəvəl ˌhaɪpərˈpleɪʒə",
+    "ukphone": "ˈʤɪnʤɪvəl ˌhaɪpəˈpleɪzɪə"
+  },
+  {
+    "name": "gingivitis in pregnancy",
+    "trans": "妊娠期龈炎",
+    "usphone": "ˌʤɪnʤəˈvaɪtɪs ɪn ˈprɛgnənsi",
+    "ukphone": "ˌʤɪndʒɪˈvaɪtɪs ɪn ˈprɛgnənsi"
+  },
+  {
+    "name": "greater palatine foramen",
+    "trans": "颚大孔",
+    "usphone": "ˈɡreɪtər ˈpæləˌtaɪn fəˈreɪmən",
+    "ukphone": "ˈɡreɪtə ˈpælətaɪn fəˈreɪmən"
+  },
+  {
+    "name": "gum or gingival",
+    "trans": "牙龈",
+    "usphone": "ɡʌm ɔr ˈʤɪnʤəvəl",
+    "ukphone": "ɡʌm ɔː ˈʤɪnʤɪvəl"
+  },
+  {
+    "name": "hard palate",
+    "trans": "硬腭",
+    "usphone": "hɑrd ˈpælɪt",
+    "ukphone": "hɑːd ˈpælɪt"
+  },
+  {
+    "name": "heavy metal line",
+    "trans": "重金属线",
+    "usphone": "ˈhɛvi ˈmɛtəl laɪn",
+    "ukphone": "ˈhɛvi ˈmɛtəl laɪn"
+  },
+  {
+    "name": "herpes simplex",
+    "trans": "单纯性疱疹",
+    "usphone": "ˈhɜrpiz ˈsɪmplɛks",
+    "ukphone": "ˈhɜːpiːz ˈsɪmplɛks"
+  },
+  {
+    "name": "herpetic stomatitis",
+    "trans": "疱疹性口炎",
+    "usphone": "hɜrˈpɛtɪk ˌstoʊməˈtaɪtɪs",
+    "ukphone": "hɜːˈpɛtɪk ˌstəʊməˈtaɪtɪs"
+  },
+  {
+    "name": "incisive foramen",
+    "trans": "切牙孔",
+    "usphone": "ɪnˈsaɪsɪv fəˈreɪmən",
+    "ukphone": "ɪnˈsaɪsɪv fəˈreɪmən"
+  },
+  {
+    "name": "incisive papilla",
+    "trans": "切牙乳头",
+    "usphone": "ɪnˈsaɪsɪv pəˈpɪlə",
+    "ukphone": "ɪnˈsaɪsɪv pəˈpɪlə"
+  },
+  {
+    "name": "intervention radiology",
+    "trans": "介入放疗",
+    "usphone": "ˌɪntərˈvɛnʃən ˌreɪdiˈɑlədʒi",
+    "ukphone": "ˌɪntəˈvɛnʃən ˌreɪdiˈɒlədʒi"
+  },
+  {
+    "name": "juvenile periodontitis",
+    "trans": "青少年牙周炎",
+    "usphone": "ˈʤuvəˌnaɪl ˌpɛrɪoʊdɒnˈtaɪtɪs",
+    "ukphone": "ˈʤuːvənaɪl ˌpɛrɪəʊdɒnˈtaɪtɪs"
+  },
+  {
+    "name": "lactobacillus",
+    "trans": "乳酸杆菌",
+    "usphone": "ˌlæktoʊbəˈsɪləs",
+    "ukphone": "ˌlæktəʊbəˈsɪləs"
+  },
+  {
+    "name": "lichen planus",
+    "trans": "扁平苔癣",
+    "usphone": "ˈlaɪkən ˈpleɪnəs",
+    "ukphone": "ˈlaɪkən ˈplɑːnəs"
+  },
+  {
+    "name": "lidocaine",
+    "trans": "利多卡因",
+    "usphone": "ˈlaɪdəkeɪn",
+    "ukphone": "ˈlaɪdəkeɪn"
+  },
+  {
+    "name": "longitudinal plica",
+    "trans": "纵行皱",
+    "usphone": "lɒnʤɪˈtjudɪnəl ˈplaɪkə",
+    "ukphone": "lɒnʤɪˈtjuːdɪnəl ˈplaɪkə"
+  },
+  {
+    "name": "lymphoepithelial lesion",
+    "trans": "淋巴上皮病",
+    "usphone": "ˌlɪmfoʊˌɛpɪˈθilɪəl ˈliʒən",
+    "ukphone": "ˌlɪmfəʊˌɛpɪˈθiːlɪəl ˈliːʒən"
+  },
+  {
+    "name": "mandible",
+    "trans": "下颌骨",
+    "usphone": "ˈmændəbəl",
+    "ukphone": "ˈmændɪbəl"
+  },
+  {
+    "name": "marginal periodontitis",
+    "trans": "边缘性牙周炎",
+    "usphone": "ˈmɑrdʒɪnəl ˌpɛrɪoʊdɒnˈtaɪtɪs",
+    "ukphone": "ˈmɑːdʒɪnəl ˌpɛrɪəʊdɒnˈtaɪtɪs"
+  },
+  {
+    "name": "maxilla",
+    "trans": "上颌骨",
+    "usphone": "mækˈsɪlə",
+    "ukphone": "mækˈsɪlə"
+  },
+  {
+    "name": "maxillofacial region",
+    "trans": "颌面区",
+    "usphone": "mækˈsɪləˌfeɪʃəl ˈridʒən",
+    "ukphone": "mækˌsɪləʊˈfeɪʃəl ˈriːdʒən"
+  },
+  {
+    "name": "median rhomboid glossitis",
+    "trans": "正中菱形舌炎",
+    "usphone": "ˈmidiən ˈrɒmbɔɪd ɡlɒˈsaɪtɪs",
+    "ukphone": "ˈmiːdiən ˈrɒmbɔɪd ɡlɒˈsaɪtɪs"
+  },
+  {
+    "name": "melanosis",
+    "trans": "黑变病，黑色素沉着病",
+    "usphone": "ˌmɛləˈnoʊsɪs",
+    "ukphone": "ˌmɛləˈnəʊsɪs"
+  },
+  {
+    "name": "mixed tumor of salivary gland",
+    "trans": "涎腺混合瘤，多形性腺瘤",
+    "usphone": "mɪkst ˈtumər əv ˈsæləˌvɛri ɡlænd",
+    "ukphone": "mɪkst ˈtjuːmə əv ˈsælɪvəri ɡlænd"
+  },
+  {
+    "name": "mucocele",
+    "trans": "黏液囊肿",
+    "usphone": "ˈmjukoʊˌsil",
+    "ukphone": "ˈmjuːkəʊsiːl"
+  },
+  {
+    "name": "mucocutaneous lymphnode syndrome",
+    "trans": "黏膜皮肤淋巴综合征，川崎病",
+    "usphone": "ˌmjukoʊkjuˈteɪniəs ˈlɪmfˌnod ˈsɪndroʊm",
+    "ukphone": "ˌmjuːkəʊkjuːˈteɪniəs ˈlɪmfˌnəʊd ˈsɪndrəʊm"
+  },
+  {
+    "name": "novocaine",
+    "trans": "奴佛卡因，普鲁卡因",
+    "usphone": "ˈnoʊvəkeɪn",
+    "ukphone": "ˈnəʊvəkeɪn"
+  },
+  {
+    "name": "occlusal traumatism",
+    "trans": "牙合创伤",
+    "usphone": "əˈklusəl ˈtraʊməˌtɪzəm",
+    "ukphone": "əˈkluːsəl ˈtrɔːmətɪzəm"
+  },
+  {
+    "name": "oral candidiasis",
+    "trans": "口腔念珠菌病",
+    "usphone": "ˈɔrəl ˌkændɪˈdaɪəsɪs",
+    "ukphone": "ˈɔːrəl ˌkændɪˈdaɪəsɪs"
+  },
+  {
+    "name": "oral cavity",
+    "trans": "口腔",
+    "usphone": "ˈɔrəl ˈkævɪti",
+    "ukphone": "ˈɔːrəl ˈkævɪti"
+  },
+  {
+    "name": "ossifying fibroma",
+    "trans": "骨化性纤维瘤",
+    "usphone": "ˈɑsɪfaɪɪŋ faɪˈbroʊmə",
+    "ukphone": "ˈɒsɪfaɪɪŋ faɪˈbrəʊmə"
+  },
+  {
+    "name": "osteofibroma",
+    "trans": "骨纤维瘤",
+    "usphone": "ˌɒstioʊfaɪˈbroʊmə",
+    "ukphone": "ˌɒstiəʊfaɪˈbrəʊmə"
+  },
+  {
+    "name": "osteomyelitis of the jaws",
+    "trans": "颌骨骨髓炎",
+    "usphone": "ˌɒstioʊˌmaɪəˈlaɪtɪs əv ðə ʤɔz",
+    "ukphone": "ˌɒstiəʊˌmaɪəˈlaɪtɪs əv ðə ʤɔːz"
+  },
+  {
+    "name": "pericoronitis of the third molar of the mandible",
+    "trans": "下颌第三磨牙冠周炎，智齿冠周炎",
+    "usphone": "ˌpɛrɪkɔrəˈnaɪtɪs əv ðə θɜrd ˈmoʊlər əv ðə ˈmændɪbəl",
+    "ukphone": "ˌpɛrɪkɒrəˈnaɪtɪs əv ðə θɜːd ˈməʊlə əv ðə ˈmændɪbəl"
+  },
+  {
+    "name": "pericoronitis of the wisdom tooth",
+    "trans": "智齿冠周炎，下颌第三磨牙冠周炎",
+    "usphone": "ˌpɛrɪkɔrəˈnaɪtɪs əv ðə ˈwɪzdəm tuθ",
+    "ukphone": "ˌpɛrɪkɒrəˈnaɪtɪs əv ðə ˈwɪzdəm tuːθ"
+  },
+  {
+    "name": "periodontal disease",
+    "trans": "牙周组织疾病",
+    "usphone": "ˌpɛrɪoʊˈdɒntl dɪˈziz",
+    "ukphone": "ˌpɛrɪəʊˈdɒntl dɪˈziːz"
+  },
+  {
+    "name": "periodontal membrane",
+    "trans": "牙周膜",
+    "usphone": "ˌpɛrɪoʊˈdɒntl ˈmɛmbreɪn",
+    "ukphone": "ˌpɛrɪəʊˈdɒntl ˈmɛmbreɪn"
+  },
+  {
+    "name": "periodontal traumatism",
+    "trans": "牙周创伤",
+    "usphone": "ˌpɛrɪoʊˈdɒntl ˈtraʊməˌtɪzəm",
+    "ukphone": "ˌpɛrɪəʊˈdɒntl ˈtrɔːmətɪzəm"
+  },
+  {
+    "name": "periodontitis simplex",
+    "trans": "单纯性牙周炎",
+    "usphone": "ˌpɛrɪoʊdɒnˈtaɪtɪs ˈsɪmplɛks",
+    "ukphone": "ˌpɛrɪəʊdɒnˈtaɪtɪs ˈsɪmplɛks"
+  },
+  {
+    "name": "permanent teeth",
+    "trans": "恒牙",
+    "usphone": "ˈpɜrmənənt tiθ",
+    "ukphone": "ˈpɜːmənənt tiːθ"
+  },
+  {
+    "name": "pleomorphic adenoma",
+    "trans": "多形性腺瘤，涎腺混合瘤",
+    "usphone": "ˌpliːəˈmɔrfɪk ˌædɪˈnoʊmə",
+    "ukphone": "ˌpliːəˈmɔːfɪk ˌædɪˈnəʊmə"
+  },
+  {
+    "name": "primordial cyst",
+    "trans": "始基囊肿",
+    "usphone": "praɪˈmɔrdiəl sɪst",
+    "ukphone": "praɪˈmɔːdiəl sɪst"
+  },
+  {
+    "name": "procaine",
+    "trans": "普鲁卡因",
+    "usphone": "ˈproʊkeɪn",
+    "ukphone": "ˈprəʊkeɪn"
+  },
+  {
+    "name": "proper cavity of mouth",
+    "trans": "固有口腔",
+    "usphone": "ˈprɑpər ˈkævɪti əv maʊθ",
+    "ukphone": "ˈprɒpə ˈkævɪti əv maʊθ"
+  },
+  {
+    "name": "pulp degeneration",
+    "trans": "牙髓变性",
+    "usphone": "pʌlp ˌdɪˌʤɛnəˈreɪʃən",
+    "ukphone": "pʌlp dɪˌdʒɛnəˈreɪʃən"
+  },
+  {
+    "name": "pulp gangrene",
+    "trans": "牙髓坏疽",
+    "usphone": "pʌlp ˈɡæŋɡrin",
+    "ukphone": "pʌlp ˈɡæŋɡriːn"
+  },
+  {
+    "name": "pulp necrosis",
+    "trans": "牙髓坏死",
+    "usphone": "pʌlp nəˈkroʊsɪs",
+    "ukphone": "pʌlp nɛˈkrəʊsɪs"
+  },
+  {
+    "name": "radicular cyst",
+    "trans": "根端囊肿",
+    "usphone": "rəˈdɪkjələr sɪst",
+    "ukphone": "rəˈdɪkjʊlə sɪst"
+  },
+  {
+    "name": "radionecrosis of the jaws",
+    "trans": "放射性颌骨坏死",
+    "usphone": "ˌreɪdioʊnɛˈkroʊsɪs əv ðə ʤɔz",
+    "ukphone": "ˌreɪdiəʊnɛˈkrəʊsɪs əv ðə ʤɔːz"
+  },
+  {
+    "name": "recurrent aphthae",
+    "trans": "复发性阿弗他溃疡，复发性口疮",
+    "usphone": "rɪˈkɜrənt ˈæfθi",
+    "ukphone": "rɪˈkʌrənt ˈæfθiː"
+  },
+  {
+    "name": "recurrent aphthae ulceration",
+    "trans": "复发性阿弗他溃疡，复发性口疮",
+    "usphone": "rɪˈkɜrənt ˈæfθi ˌʌlsəˈreɪʃən",
+    "ukphone": "rɪˈkʌrənt ˈæfθi ˌʌlsəˈreɪʃən"
+  },
+  {
+    "name": "salivary gland",
+    "trans": "涎腺",
+    "usphone": "ˈsæləˌvɛri ɡlænd",
+    "ukphone": "ˈsælɪvəri ɡlænd"
+  },
+  {
+    "name": "sebaceous cyst",
+    "trans": "皮脂腺囊肿",
+    "usphone": "sɪˈbeɪʃəs sɪst",
+    "ukphone": "sɪˈbeɪʃəs sɪst"
+  },
+  {
+    "name": "sialadenitis",
+    "trans": "涎腺炎",
+    "usphone": "ˌsaɪəlædɪˈnaɪtɪs",
+    "ukphone": "ˌsaɪəlædɪˈnaɪtɪs"
+  },
+  {
+    "name": "sialolithiasis",
+    "trans": "涎石病",
+    "usphone": "ˌsaɪələʊlɪˈθaɪəsɪs",
+    "ukphone": "ˌsaɪələʊlɪˈθaɪəsɪs"
+  },
+  {
+    "name": "soft palate",
+    "trans": "软腭",
+    "usphone": "sɔft ˈpælɪt",
+    "ukphone": "sɒft ˈpælɪt"
+  },
+  {
+    "name": "stomatology",
+    "trans": "口腔科学",
+    "usphone": "ˌstoʊməˈtɑlədʒi",
+    "ukphone": "ˌstəʊməˈtɒlədʒi"
+  },
+  {
+    "name": "streptococcus mutans",
+    "trans": "变形链球菌",
+    "usphone": "ˌstrɛptəˈkɒkəs ˈmjutænz",
+    "ukphone": "ˌstrɛptəʊˈkɒkəs ˈmjuːtænz"
+  },
+  {
+    "name": "sublingual gland cyst",
+    "trans": "舌下腺囊肿",
+    "usphone": "sʌbˈlɪŋɡwəl ɡlænd sɪst",
+    "ukphone": "sʌbˈlɪŋɡwəl ɡlænd sɪst"
+  },
+  {
+    "name": "temporomandibular joint",
+    "trans": "颞下颌关节",
+    "usphone": "ˌtɛmpəroʊmænˈdɪbjələr ʤɔɪnt",
+    "ukphone": "ˌtɛmpərəʊmænˈdɪbjʊlə ʤɔɪnt"
+  },
+  {
+    "name": "tetracycline stained teeth",
+    "trans": "四环素牙",
+    "usphone": "ˌtɛtrəˈsaɪklaɪn steɪnd tiθ",
+    "ukphone": "ˌtɛtrəˈsaɪkliːn steɪnd tiːθ"
+  },
+  {
+    "name": "therapeutic arthroscopy",
+    "trans": "治疗性关节镜外科",
+    "usphone": "ˌθɛrəˈpjutɪk ɑrˈθrɑskəpi",
+    "ukphone": "ˌθɛrəˈpjuːtɪk ɑːˈθrɒskəpi"
+  },
+  {
+    "name": "thrush",
+    "trans": "鹅口疮",
+    "usphone": "θrʌʃ",
+    "ukphone": "θrʌʃ"
+  },
+  {
+    "name": "thyroglossal tract cyst",
+    "trans": "甲状舌管囊肿",
+    "usphone": "θaɪrəˈɡlɒsəl trækt sɪst",
+    "ukphone": "θaɪrəˈɡlɒsəl trækt sɪst"
+  },
+  {
+    "name": "tooth sensitivity",
+    "trans": "牙本质过敏",
+    "usphone": "tuθ ˌsɛnsɪˈtɪvɪti",
+    "ukphone": "tuːθ ˌsɛnsɪˈtɪvɪti"
+  },
+  {
+    "name": "transverse rugae",
+    "trans": "横嵴",
+    "usphone": "ˈtrænzvɜrs ˈruːdʒi",
+    "ukphone": "ˈtrænzvɜːs ˈruːɡiː"
+  },
+  {
+    "name": "vestibule of the mouth",
+    "trans": "口腔前庭",
+    "usphone": "ˈvɛstɪˌbjul əv ðə maʊθ",
+    "ukphone": "ˈvɛstɪbjuːl əv ðə maʊθ"
+  },
+  {
+    "name": "wedge shaped defect",
+    "trans": "楔状缺损",
+    "usphone": "wɛdʃ ʃeɪpt ˈdiːfɛkt",
+    "ukphone": "wɛdʒ ʃeɪpt ˈdiːfɛkt"
+  },
+  {
+    "name": "xylocaine",
+    "trans": "赛罗卡因，利多卡因",
+    "usphone": "ˈzaɪləkeɪn",
+    "ukphone": "ˈzaɪləkeɪn"
+  }
+]

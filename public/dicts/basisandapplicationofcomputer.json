@@ -1,0 +1,896 @@
+[
+  {
+    "name": "card reader",
+    "trans": "卡片阅读机",
+    "usphone": "kɑːrd ˈriːdər",
+    "ukphone": "kɑːd ˈriːdə"
+  },
+  {
+    "name": "complex number",
+    "trans": "复数",
+    "usphone": "ˈkɒmplɛks ˈnʌmbər",
+    "ukphone": "ˈkɒmplɛks ˈnʌmbə"
+  },
+  {
+    "name": "component",
+    "trans": "成分，组成部分，部件，元件",
+    "usphone": "kəmˈpoʊnənt",
+    "ukphone": "kəmˈpəʊnənt"
+  },
+  {
+    "name": "decimal number",
+    "trans": "十进制数",
+    "usphone": "ˈdɛsɪməl ˈnʌmbər",
+    "ukphone": "ˈdɛsɪməl ˈnʌmbə"
+  },
+  {
+    "name": "derive",
+    "trans": "推导，导出",
+    "usphone": "dɪˈraɪv",
+    "ukphone": "dɪˈraɪv"
+  },
+  {
+    "name": "diagram",
+    "trans": "图解，图表，示意图",
+    "usphone": "ˈdaɪəɡræm",
+    "ukphone": "ˈdaɪəɡræm"
+  },
+  {
+    "name": "divide",
+    "trans": "划分，除去，分割",
+    "usphone": "dɪˈvaɪd",
+    "ukphone": "dɪˈvaɪd"
+  },
+  {
+    "name": "domain",
+    "trans": "领域，范围，范畴",
+    "usphone": "doʊˈmeɪn",
+    "ukphone": "dəʊˈmeɪn"
+  },
+  {
+    "name": "editor",
+    "trans": "编辑，编者，校订者，编辑程序",
+    "usphone": "ˈɛdɪtər",
+    "ukphone": "ˈɛdɪtə"
+  },
+  {
+    "name": "electronic",
+    "trans": "电子的",
+    "usphone": "ɪˌlɛkˈtrɒnɪk",
+    "ukphone": "ɪˌlɛkˈtrɒnɪk"
+  },
+  {
+    "name": "enhance",
+    "trans": "提高，增加，加强",
+    "usphone": "ɪnˈhæns",
+    "ukphone": "ɪnˈhɑːns"
+  },
+  {
+    "name": "equipment",
+    "trans": "设备，仪器，装备",
+    "usphone": "ɪˈkwɪpmənt",
+    "ukphone": "ɪˈkwɪpmənt"
+  },
+  {
+    "name": "erase",
+    "trans": "删除，删去",
+    "usphone": "ɪˈreɪs",
+    "ukphone": "ɪˈreɪz"
+  },
+  {
+    "name": "execute",
+    "trans": "执行，实行，完成",
+    "usphone": "ˈɛksɪˌkjuːt",
+    "ukphone": "ˈɛksɪˌkjuːt"
+  },
+  {
+    "name": "facility",
+    "trans": "设备，设施，装置",
+    "usphone": "fəˈsɪlɪti",
+    "ukphone": "fəˈsɪlɪti"
+  },
+  {
+    "name": "generate",
+    "trans": "产生，引起，导致",
+    "usphone": "ˈdʒɛnəˌreɪt",
+    "ukphone": "ˈdʒɛnəreɪt"
+  },
+  {
+    "name": "hardware",
+    "trans": "硬件",
+    "usphone": "ˈhɑːrdwɛr",
+    "ukphone": "ˈhɑːdwɛə"
+  },
+  {
+    "name": "identify",
+    "trans": "识别，认出，鉴定",
+    "usphone": "aɪˈdɛntɪfaɪ",
+    "ukphone": "aɪˈdɛntɪfaɪ"
+  },
+  {
+    "name": "image",
+    "trans": "像，影像，图像",
+    "usphone": "ˈɪmɪdʒ",
+    "ukphone": "ˈɪmɪdʒ"
+  },
+  {
+    "name": "implementation",
+    "trans": "贯彻，执行，履行，完成",
+    "usphone": "ˌɪmplɪmɛnˈteɪʃən",
+    "ukphone": "ˌɪmplɪmɛnˈteɪʃən"
+  },
+  {
+    "name": "imply",
+    "trans": "暗示，暗指",
+    "usphone": "ɪmˈplaɪ",
+    "ukphone": "ɪmˈplaɪ"
+  },
+  {
+    "name": "interpreter",
+    "trans": "解释程序，解释程式；口译工作者，口译译员，传译员",
+    "usphone": "ɪnˈtɜːrprɪtər",
+    "ukphone": "ɪnˈtɜːprɪtə"
+  },
+  {
+    "name": "line printer",
+    "trans": "行式打印机",
+    "usphone": "laɪn ˈprɪntər",
+    "ukphone": "laɪn ˈprɪntə"
+  },
+  {
+    "name": "location",
+    "trans": "定位，存储单元，地址，位置",
+    "usphone": "loʊˈkeɪʃən",
+    "ukphone": "ləʊˈkeɪʃən"
+  },
+  {
+    "name": "loosely",
+    "trans": "大概，大体上；宽松的",
+    "usphone": "ˈluːsli",
+    "ukphone": "ˈluːsli"
+  },
+  {
+    "name": "machine",
+    "trans": "机器，机械装置",
+    "usphone": "məˈʃiːn",
+    "ukphone": "məˈʃiːn"
+  },
+  {
+    "name": "Microsoft",
+    "trans": "美国微软公司",
+    "usphone": "ˈmaɪkroʊsɒft",
+    "ukphone": "ˈmaɪkrəʊsɒft"
+  },
+  {
+    "name": "moderate",
+    "trans": "中等的，适度的",
+    "usphone": "ˈmɒdərɪt",
+    "ukphone": "ˈmɒdərɪt"
+  },
+  {
+    "name": "multiprogramming",
+    "trans": "多道程序，程序复编",
+    "usphone": "ˌmʌltiˈproʊɡræmɪŋ",
+    "ukphone": "ˌmʌltiˈprəʊɡræmɪŋ"
+  },
+  {
+    "name": "operand",
+    "trans": "操作数，运算数",
+    "usphone": "ˈɒpərænd",
+    "ukphone": "ˈɒpərænd"
+  },
+  {
+    "name": "participate",
+    "trans": "参加，参与",
+    "usphone": "pɑːrˈtɪsɪpeɪt",
+    "ukphone": "pɑːˈtɪsɪpeɪt"
+  },
+  {
+    "name": "path name",
+    "trans": "路径名称",
+    "usphone": "pæθ neɪm",
+    "ukphone": "pɑːθ neɪm"
+  },
+  {
+    "name": "physical",
+    "trans": "物理的，具体的",
+    "usphone": "ˈfɪzɪkəl",
+    "ukphone": "ˈfɪzɪkəl"
+  },
+  {
+    "name": "power supply",
+    "trans": "电源",
+    "usphone": "ˈpaʊər səˈplaɪ",
+    "ukphone": "ˈpaʊə səˈplaɪ"
+  },
+  {
+    "name": "print",
+    "trans": "印刷，打印",
+    "usphone": "prɪnt",
+    "ukphone": "prɪnt"
+  },
+  {
+    "name": "printed circuit board",
+    "trans": "印刷电路板",
+    "usphone": "ˈprɪntɪd ˈsɜːrkɪt bɔːrd",
+    "ukphone": "ˈprɪntɪd ˈsɜːkɪt bɔːd"
+  },
+  {
+    "name": "programmer",
+    "trans": "程序员，程序的设计者",
+    "usphone": "ˈproʊɡræmər",
+    "ukphone": "ˈprəʊɡræmə"
+  },
+  {
+    "name": "pseudo-",
+    "trans": "伪的，假的",
+    "usphone": "ˈsuːdoʊ",
+    "ukphone": "ˈsjuːdəʊ"
+  },
+  {
+    "name": "recognize",
+    "trans": "识别，辨认",
+    "usphone": "ˈrɛkəɡnaɪz",
+    "ukphone": "ˈrɛkəɡnaɪz"
+  },
+  {
+    "name": "relieve",
+    "trans": "解除，减轻，缓解，消除",
+    "usphone": "rɪˈliːv",
+    "ukphone": "rɪˈliːv"
+  },
+  {
+    "name": "reside",
+    "trans": "驻留；属于，归于；居住，定居",
+    "usphone": "rɪˈzaɪd",
+    "ukphone": "rɪˈzaɪd"
+  },
+  {
+    "name": "root",
+    "trans": "根，根部",
+    "usphone": "ruːt",
+    "ukphone": "ruːt"
+  },
+  {
+    "name": "run",
+    "trans": "运行，跑；经营，运用",
+    "usphone": "rʌn",
+    "ukphone": "rʌn"
+  },
+  {
+    "name": "software",
+    "trans": "软件，软设备",
+    "usphone": "ˈsɒftwɛr",
+    "ukphone": "ˈsɒftwɛə"
+  },
+  {
+    "name": "subsequent",
+    "trans": "随后的，后来的，连续的",
+    "usphone": "ˈsʌbsɪkwənt",
+    "ukphone": "ˈsʌbsɪkwənt"
+  },
+  {
+    "name": "subtract",
+    "trans": "减，扣除，做减法",
+    "usphone": "səbˈtrækt",
+    "ukphone": "səbˈtrækt"
+  },
+  {
+    "name": "tangible",
+    "trans": "可触摸的，可触知的，有形的",
+    "usphone": "ˈtændʒəbəl",
+    "ukphone": "ˈtændʒəbəl"
+  },
+  {
+    "name": "temporary",
+    "trans": "临时的，暂时的",
+    "usphone": "ˈtɛmpərəri",
+    "ukphone": "ˈtɛmpərəri"
+  },
+  {
+    "name": "timed pulse",
+    "trans": "定时脉冲",
+    "usphone": "taɪmd pʌls",
+    "ukphone": "taɪmd pʌls"
+  },
+  {
+    "name": "translator",
+    "trans": "翻译程序，译员，翻译者，翻译家",
+    "usphone": "trænzˈleɪtər",
+    "ukphone": "trænzˈleɪtə"
+  },
+  {
+    "name": "user",
+    "trans": "用户，使用者",
+    "usphone": "ˈjuːzər",
+    "ukphone": "ˈjuːzə"
+  },
+  {
+    "name": "window",
+    "trans": "窗，窗口",
+    "usphone": "ˈwɪndoʊ",
+    "ukphone": "ˈwɪndəʊ"
+  },
+  {
+    "name": "write",
+    "trans": "写，填写；写信",
+    "usphone": "raɪt",
+    "ukphone": "raɪt"
+  },
+  {
+    "name": "zero",
+    "trans": "零，零点，零位，零度，无",
+    "usphone": "ˈzɪəroʊ",
+    "ukphone": "ˈzɪərəʊ"
+  },
+  {
+    "name": "a block of text",
+    "trans": "文本块",
+    "usphone": "ə blɒk əv tɛkst",
+    "ukphone": "ə blɒk əv tɛkst"
+  },
+  {
+    "name": "a single integrated database",
+    "trans": "一体化数据库",
+    "usphone": "ə ˈsɪŋɡəl ˈɪntɪɡreɪtɪd ˈdeɪtəbeɪs",
+    "ukphone": "ə ˈsɪŋɡəl ˈɪntɪɡreɪtɪd ˈdeɪtəbeɪs"
+  },
+  {
+    "name": "access",
+    "trans": "访问；通道，入口",
+    "usphone": "ˈæksɛs",
+    "ukphone": "ˈæksɛs"
+  },
+  {
+    "name": "accounts payable",
+    "trans": "支出账",
+    "usphone": "əˈkaʊnts ˈpeɪəbəl",
+    "ukphone": "əˈkaʊnts ˈpeɪəbəl"
+  },
+  {
+    "name": "accounts receivable",
+    "trans": "收入账",
+    "usphone": "əˈkaʊnts rɪˈsiːvəbəl",
+    "ukphone": "əˈkaʊnts rɪˈsiːvəbəl"
+  },
+  {
+    "name": "administrative function",
+    "trans": "管理功能",
+    "usphone": "ədˈmɪnɪstrətɪv ˈfʌŋkʃən",
+    "ukphone": "ədˈmɪnɪstrətɪv ˈfʌŋkʃən"
+  },
+  {
+    "name": "animation",
+    "trans": "动画制作，动画片",
+    "usphone": "ˌænɪˈmeɪʃən",
+    "ukphone": "ˌænɪˈmeɪʃən"
+  },
+  {
+    "name": "antivirus",
+    "trans": "防病毒",
+    "usphone": "ˌæntiˈvaɪrəs",
+    "ukphone": "ˌæntiˈvaɪrəs"
+  },
+  {
+    "name": "applet",
+    "trans": "小应用程序",
+    "usphone": "ˈæplɪt",
+    "ukphone": "ˈæplɪt"
+  },
+  {
+    "name": "application program",
+    "trans": "应用程序",
+    "usphone": "ˌæplɪˈkeɪʃən ˈproʊɡræm",
+    "ukphone": "ˌæplɪˈkeɪʃən ˈprəʊɡræm"
+  },
+  {
+    "name": "background",
+    "trans": "背景",
+    "usphone": "ˈbækɡraʊnd",
+    "ukphone": "ˈbækɡraʊnd"
+  },
+  {
+    "name": "backward compatible",
+    "trans": "向后兼容",
+    "usphone": "ˈbækwərd kəmˈpætəbəl",
+    "ukphone": "ˈbækwəd kəmˈpætəbəl"
+  },
+  {
+    "name": "batch processing",
+    "trans": "批处理",
+    "usphone": "bætʃ ˈprɒsɛsɪŋ",
+    "ukphone": "bætʃ ˈprɒsɛsɪŋ"
+  },
+  {
+    "name": "browser",
+    "trans": "浏览程序，浏览器",
+    "usphone": "ˈbraʊzər",
+    "ukphone": "ˈbraʊzə"
+  },
+  {
+    "name": "cable system",
+    "trans": "有线电缆",
+    "usphone": "ˈkeɪbəl ˈsɪstəm",
+    "ukphone": "ˈkeɪbəl ˈsɪstəm"
+  },
+  {
+    "name": "cathode-ray tube",
+    "trans": "阴极射线管",
+    "usphone": "ˈkæθoʊd reɪ tuːb",
+    "ukphone": "ˈkæθəʊd reɪ tjuːb"
+  },
+  {
+    "name": "cellular phones",
+    "trans": "便携式电话，移动电话",
+    "usphone": "ˈsɛljʊlər foʊnz",
+    "ukphone": "ˈsɛljʊlə fəʊnz"
+  },
+  {
+    "name": "centralize",
+    "trans": "集中；校正",
+    "usphone": "ˈsɛntrəlaɪz",
+    "ukphone": "ˈsɛntrəlaɪz"
+  },
+  {
+    "name": "centralized",
+    "trans": "中心化的",
+    "usphone": "ˈsɛntrəlaɪzd",
+    "ukphone": "ˈsɛntrəlaɪzd"
+  },
+  {
+    "name": "checksum",
+    "trans": "校验和",
+    "usphone": "ˈtʃɛksʌm",
+    "ukphone": "ˈtʃɛksʌm"
+  },
+  {
+    "name": "computer virus",
+    "trans": "计算机病毒",
+    "usphone": "kəmˈpjuːtər ˈvaɪrəs",
+    "ukphone": "kəmˈpjuːtə ˈvaɪrəs"
+  },
+  {
+    "name": "concentrate",
+    "trans": "集中",
+    "usphone": "ˈkɒnsənˌtreɪt",
+    "ukphone": "ˈkɒnsənˌtreɪt"
+  },
+  {
+    "name": "configure",
+    "trans": "配置，设定",
+    "usphone": "kənˈfɪɡjər",
+    "ukphone": "kənˈfɪɡə"
+  },
+  {
+    "name": "data management",
+    "trans": "数据管理",
+    "usphone": "ˈdeɪtə ˈmænɪdʒmənt",
+    "ukphone": "ˈdeɪtə ˈmænɪdʒmənt"
+  },
+  {
+    "name": "database",
+    "trans": "资料库；数据库",
+    "usphone": "ˈdeɪtəbeɪs",
+    "ukphone": "ˈdeɪtəbeɪs"
+  },
+  {
+    "name": "database management",
+    "trans": "数据库管理",
+    "usphone": "ˈdeɪtəbeɪs ˈmænɪdʒmənt",
+    "ukphone": "ˈdeɪtəbeɪs ˈmænɪdʒmənt"
+  },
+  {
+    "name": "database management system",
+    "trans": "数据库管理系统",
+    "usphone": "ˈdeɪtəbeɪs ˈmænɪdʒmənt ˈsɪstəm",
+    "ukphone": "ˈdeɪtəbeɪs ˈmænɪdʒmənt ˈsɪstəm"
+  },
+  {
+    "name": "downward compatible",
+    "trans": "向下兼容",
+    "usphone": "ˈdaʊnwərd kəmˈpætəbəl",
+    "ukphone": "ˈdaʊnwəd kəmˈpætəbəl"
+  },
+  {
+    "name": "drag",
+    "trans": "拖，拉",
+    "usphone": "dræɡ",
+    "ukphone": "dræɡ"
+  },
+  {
+    "name": "duplicate",
+    "trans": "复制",
+    "usphone": "ˈdjuːplɪkeɪt",
+    "ukphone": "ˈdjuːplɪkeɪt"
+  },
+  {
+    "name": "electronic whiteboard",
+    "trans": "电子白板",
+    "usphone": "ɪˌlɛkˈtrɒnɪk ˈwaɪtbɔːrd",
+    "ukphone": "ɪˌlɛkˈtrɒnɪk ˈwaɪtbɔːd"
+  },
+  {
+    "name": "embedded object",
+    "trans": "嵌入对象",
+    "usphone": "ɪmˈbɛdɪd ˈɒbdʒɪkt",
+    "ukphone": "ɪmˈbɛdɪd ˈɒbdʒɪkt"
+  },
+  {
+    "name": "E-mail",
+    "trans": "电子邮件",
+    "usphone": "ˈiːmeɪl",
+    "ukphone": "ˈiːmeɪl"
+  },
+  {
+    "name": "environment",
+    "trans": "环境",
+    "usphone": "ɪnˈvaɪrənmənt",
+    "ukphone": "ɪnˈvaɪrənmənt"
+  },
+  {
+    "name": "face-to-face meeting",
+    "trans": "面对面会议",
+    "usphone": "feɪs tuː feɪs ˈmiːtɪŋ",
+    "ukphone": "feɪs tuː feɪs ˈmiːtɪŋ"
+  },
+  {
+    "name": "fancy fonts",
+    "trans": "装饰字体",
+    "usphone": "ˈfænsi fɒnts",
+    "ukphone": "ˈfænsi fɒnts"
+  },
+  {
+    "name": "fiber optic technology",
+    "trans": "光纤技术",
+    "usphone": "ˈfaɪbər ˈɒptɪk tɛkˈnɒlədʒi",
+    "ukphone": "ˈfaɪbə ˈɒptɪk tɛkˈnɒlədʒi"
+  },
+  {
+    "name": "flat-panel display",
+    "trans": "平板显示",
+    "usphone": "flæt ˈpænəl dɪˈspleɪ",
+    "ukphone": "flæt ˈpænəl dɪˈspleɪ"
+  },
+  {
+    "name": "fraction",
+    "trans": "小部分；分数，小数",
+    "usphone": "ˈfrækʃən",
+    "ukphone": "ˈfrækʃən"
+  },
+  {
+    "name": "frame",
+    "trans": "帧，框架，骨架，构架",
+    "usphone": "freɪm",
+    "ukphone": "freɪm"
+  },
+  {
+    "name": "full-fledged",
+    "trans": "功能齐全的，经过充分训练的，成熟的",
+    "usphone": "fʊl flɛdʒd",
+    "ukphone": "fʊl flɛdʒd"
+  },
+  {
+    "name": "geographically dispersed sites",
+    "trans": "地域上分散点",
+    "usphone": "ˌdʒiːəˈɡræfɪkli dɪˈspɜːrst saɪts",
+    "ukphone": "ˌdʒiːəˈɡræfɪkli dɪˈspɜːst saɪts"
+  },
+  {
+    "name": "graphical user interface",
+    "trans": "图形用户界面",
+    "usphone": "ˈɡræfɪkəl ˈjuːzər ˈɪntərfeɪs",
+    "ukphone": "ˈɡræfɪkəl ˈjuːzə ˈɪntəfeɪs"
+  },
+  {
+    "name": "hierarchical system",
+    "trans": "分层系统",
+    "usphone": "ˌhaɪəˈrɑːrkɪkəl ˈsɪstəm",
+    "ukphone": "ˌhaɪəˈrɑːkɪkəl ˈsɪstəm"
+  },
+  {
+    "name": "highlighting",
+    "trans": "高亮显示",
+    "usphone": "ˈhaɪlaɪtɪŋ",
+    "ukphone": "ˈhaɪlaɪtɪŋ"
+  },
+  {
+    "name": "hold down",
+    "trans": "按下",
+    "usphone": "hoʊld daʊn",
+    "ukphone": "həʊld daʊn"
+  },
+  {
+    "name": "hypertext markup language",
+    "trans": "超文本标记语言",
+    "usphone": "ˈhaɪpərtɛkst ˈmɑːrkʌp ˈlæŋɡwɪdʒ",
+    "ukphone": "ˈhaɪpətɛkst ˈmɑːkʌp ˈlæŋɡwɪdʒ"
+  },
+  {
+    "name": "hypertext transport protocol",
+    "trans": "超文本传输协议",
+    "usphone": "ˈhaɪpərtɛkst ˈtrænspɔːrt ˈproʊtəkɒl",
+    "ukphone": "ˈhaɪpətɛkst ˈtrænspɔːt ˈprəʊtəkɒl"
+  },
+  {
+    "name": "independently",
+    "trans": "独立地",
+    "usphone": "ˌɪndɪˈpɛndəntli",
+    "ukphone": "ˌɪndɪˈpɛndəntli"
+  },
+  {
+    "name": "inexpensive",
+    "trans": "廉价的",
+    "usphone": "ˌɪnɪkˈspɛnsɪv",
+    "ukphone": "ˌɪnɪkˈspɛnsɪv"
+  },
+  {
+    "name": "information superhighway",
+    "trans": "信息高速公路",
+    "usphone": "ˌɪnfərˈmeɪʃən ˈsuːpərˌhaɪweɪ",
+    "ukphone": "ˌɪnfəˈmeɪʃən ˈsjuːpəˌhaɪweɪ"
+  },
+  {
+    "name": "infrastructure",
+    "trans": "基础设施，基础结构，基础建设",
+    "usphone": "ˈɪnfrəˌstrʌktʃər",
+    "ukphone": "ˈɪnfrəˌstrʌktʃə"
+  },
+  {
+    "name": "interactive program",
+    "trans": "交互式程序",
+    "usphone": "ˌɪntərˈæktɪv ˈproʊɡræm",
+    "ukphone": "ˌɪntərˈæktɪv ˈprəʊɡræm"
+  },
+  {
+    "name": "interpreter",
+    "trans": "解释程序，解释程式；口译工作者，口译",
+    "usphone": "ɪnˈtɜːrprɪtər",
+    "ukphone": "ɪnˈtɜːprɪtə"
+  },
+  {
+    "name": "inventory",
+    "trans": "清单；库存；调查表",
+    "usphone": "ˈɪnvəntɔːri",
+    "ukphone": "ˈɪnvəntri"
+  },
+  {
+    "name": "Java",
+    "trans": "在网际网络上的应用程序开发语言",
+    "usphone": "ˈdʒɑːvə",
+    "ukphone": "ˈdʒɑːvə"
+  },
+  {
+    "name": "laptop",
+    "trans": "便携式电脑，笔记本电脑",
+    "usphone": "ˈlæptɒp",
+    "ukphone": "ˈlæptɒp"
+  },
+  {
+    "name": "laptop computer",
+    "trans": "膝上型计算机",
+    "usphone": "ˈlæptɒp kəmˈpjuːtər",
+    "ukphone": "ˈlæptɒp kəmˈpjuːtə"
+  },
+  {
+    "name": "ledger",
+    "trans": "收支总账，分类账簿",
+    "usphone": "ˈlɛdʒər",
+    "ukphone": "ˈlɛdʒə"
+  },
+  {
+    "name": "logical relationship",
+    "trans": "逻辑关系",
+    "usphone": "ˈlɒdʒɪkəl rɪˈleɪʃənʃɪp",
+    "ukphone": "ˈlɒdʒɪkəl rɪˈleɪʃənʃɪp"
+  },
+  {
+    "name": "long-standing",
+    "trans": "长时间的，长期的",
+    "usphone": "ˈlɒŋ ˈstændɪŋ",
+    "ukphone": "ˈlɒŋ ˈstændɪŋ"
+  },
+  {
+    "name": "mathematical term",
+    "trans": "数学术语",
+    "usphone": "ˌmæθəˈmætɪkəl tɜːrm",
+    "ukphone": "ˌmæθəˈmætɪkəl tɜːm"
+  },
+  {
+    "name": "matrix display",
+    "trans": "陈列显示",
+    "usphone": "ˈmeɪtrɪks dɪˈspleɪ",
+    "ukphone": "ˈmeɪtrɪks dɪˈspleɪ"
+  },
+  {
+    "name": "modify",
+    "trans": "修改，更改",
+    "usphone": "ˈmɒdɪfaɪ",
+    "ukphone": "ˈmɒdɪfaɪ"
+  },
+  {
+    "name": "mouse button",
+    "trans": "鼠标按键",
+    "usphone": "maʊs ˈbʌtən",
+    "ukphone": "maʊs ˈbʌtən"
+  },
+  {
+    "name": "multimedia system",
+    "trans": "多媒体系统",
+    "usphone": "ˌmʌltiˈmiːdiə ˈsɪstəm",
+    "ukphone": "ˌmʌltiˈmiːdiə ˈsɪstəm"
+  },
+  {
+    "name": "narrowcasting",
+    "trans": "窄带广播",
+    "usphone": "ˈnæroʊˌkæstɪŋ",
+    "ukphone": "ˈnærəʊˌkɑːstɪŋ"
+  },
+  {
+    "name": "national information infrastructure",
+    "trans": "国家信息基础设施",
+    "usphone": "ˈnæʃənəl ˌɪnfərˈmeɪʃən ˈɪnfrəˌstrʌktʃər",
+    "ukphone": "ˈnæʃənəl ˌɪnfəˈmeɪʃən ˈɪnfrəˌstrʌktʃə"
+  },
+  {
+    "name": "normalization theory",
+    "trans": "规格化理论",
+    "usphone": "ˌnɔːrməlaɪˈzeɪʃən ˈθɪəri",
+    "ukphone": "ˌnɔːməlaɪˈzeɪʃən ˈθɪəri"
+  },
+  {
+    "name": "notebook computer",
+    "trans": "笔记本计算机，笔记本电脑",
+    "usphone": "ˈnoʊtbʊk kəmˈpjuːtər",
+    "ukphone": "ˈnəʊtbʊk kəmˈpjuːtə"
+  },
+  {
+    "name": "operating system",
+    "trans": "操作系统",
+    "usphone": "ˈɒpəreɪtɪŋ ˈsɪstəm",
+    "ukphone": "ˈɒpəreɪtɪŋ ˈsɪstəm"
+  },
+  {
+    "name": "page-layout",
+    "trans": "页面格式",
+    "usphone": "peɪdʒ ˈleɪaʊt",
+    "ukphone": "peɪdʒ ˈleɪaʊt"
+  },
+  {
+    "name": "Pentium microprocessor",
+    "trans": "奔腾处理器",
+    "usphone": "ˈpɛntiəm ˈmaɪkroʊˌprɒsɛsər",
+    "ukphone": "ˈpɛntiəm ˈmaɪkrəʊˌprɒsɛsə"
+  },
+  {
+    "name": "pervasive",
+    "trans": "流行的",
+    "usphone": "pərˈveɪsɪv",
+    "ukphone": "pəˈveɪsɪv"
+  },
+  {
+    "name": "picturephone",
+    "trans": "电视电话，可视电话",
+    "usphone": "ˈpɪktʃərfoʊn",
+    "ukphone": "ˈpɪktʃəfəʊn"
+  },
+  {
+    "name": "platform-independent",
+    "trans": "与平台无关的",
+    "usphone": "ˈplætfɔːrm ˌɪndɪˈpɛndənt",
+    "ukphone": "ˈplætfɔːm ˌɪndɪˈpɛndənt"
+  },
+  {
+    "name": "portable computer",
+    "trans": "便携式计算机",
+    "usphone": "ˈpɔːrtəbəl kəmˈpjuːtər",
+    "ukphone": "ˈpɔːtəbəl kəmˈpjuːtə"
+  },
+  {
+    "name": "processor",
+    "trans": "处理器",
+    "usphone": "ˈprɒsɛsər",
+    "ukphone": "ˈprɒsɛsə"
+  },
+  {
+    "name": "proprietary",
+    "trans": "专用的，私有的",
+    "usphone": "prəˈpraɪətəri",
+    "ukphone": "prəˈpraɪətəri"
+  },
+  {
+    "name": "real impact",
+    "trans": "真正冲击",
+    "usphone": "riːl ˈɪmpækt",
+    "ukphone": "rɪəl ˈɪmpækt"
+  },
+  {
+    "name": "real-time communications",
+    "trans": "实时通讯",
+    "usphone": "ˈriːl taɪm kəˌmjuːnɪˈkeɪʃənz",
+    "ukphone": "ˈrɪəl taɪm kəˌmjuːnɪˈkeɪʃənz"
+  },
+  {
+    "name": "rearrangement",
+    "trans": "重新安排",
+    "usphone": "ˌriːəˈreɪndʒmənt",
+    "ukphone": "ˌriːəˈreɪndʒmənt"
+  },
+  {
+    "name": "redundant",
+    "trans": "不需要的，多余的",
+    "usphone": "rɪˈdʌndənt",
+    "ukphone": "rɪˈdʌndənt"
+  },
+  {
+    "name": "relational databases",
+    "trans": "关系数据库",
+    "usphone": "rɪˈleɪʃənəl ˈdeɪtəbeɪsɪz",
+    "ukphone": "rɪˈleɪʃənəl ˈdeɪtəbeɪsɪz"
+  },
+  {
+    "name": "remotely",
+    "trans": "遥远地，远程地",
+    "usphone": "rɪˈmoʊtli",
+    "ukphone": "rɪˈməʊtli"
+  },
+  {
+    "name": "resource",
+    "trans": "资源",
+    "usphone": "rɪˈsɔːrs",
+    "ukphone": "rɪˈsɔːs"
+  },
+  {
+    "name": "respond",
+    "trans": "应答",
+    "usphone": "rɪˈspɒnd",
+    "ukphone": "rɪˈspɒnd"
+  },
+  {
+    "name": "robust",
+    "trans": "强大的",
+    "usphone": "roʊˈbʌst",
+    "ukphone": "rəʊˈbʌst"
+  },
+  {
+    "name": "row",
+    "trans": "行",
+    "usphone": "roʊ",
+    "ukphone": "rəʊ"
+  },
+  {
+    "name": "satellite system",
+    "trans": "卫星系统",
+    "usphone": "ˈsætəlaɪt ˈsɪstəm",
+    "ukphone": "ˈsætəlaɪt ˈsɪstəm"
+  },
+  {
+    "name": "self-contained",
+    "trans": "自带的；一切都完备的，配套齐全的",
+    "usphone": "ˌsɛlf kənˈteɪnd",
+    "ukphone": "ˌsɛlf kənˈteɪnd"
+  },
+  {
+    "name": "share",
+    "trans": "共享",
+    "usphone": "ʃɛr",
+    "ukphone": "ʃɛə"
+  },
+  {
+    "name": "software",
+    "trans": "软件",
+    "usphone": "ˈsɒftwɛr",
+    "ukphone": "ˈsɒftwɛə"
+  },
+  {
+    "name": "special terminate",
+    "trans": "特殊终止",
+    "usphone": "ˈspɛʃəl ˈtɜːrmɪneɪt",
+    "ukphone": "ˈspɛʃəl ˈtɜːmɪneɪt"
+  },
+  {
+    "name": "spell checking",
+    "trans": "拼写检查",
+    "usphone": "spɛl ˈtʃɛkɪŋ",
+    "ukphone": "spɛl ˈtʃɛkɪŋ"
+  }
+]

@@ -1,0 +1,2894 @@
+[
+  {
+    "name": "laboratory diagnostics",
+    "trans": "实验诊断学",
+    "usphone": "ˈlæbərətɔːri ˌdaɪəɡˈnɑːstɪks",
+    "ukphone": "ˈlæbərətri ˌdaɪəɡˈnɒstɪks"
+  },
+  {
+    "name": "accuracy",
+    "trans": "准确度",
+    "usphone": "ˈækjərəsi",
+    "ukphone": "ˈækjərəsi"
+  },
+  {
+    "name": "analytical range",
+    "trans": "分析范围",
+    "usphone": "ˌænəˈlɪtɪkl reɪndʒ",
+    "ukphone": "ˌænəˈlɪtɪkl reɪndʒ"
+  },
+  {
+    "name": "carryover",
+    "trans": "携带污染",
+    "usphone": "ˈkærioʊvər",
+    "ukphone": "ˈkæriəʊvə"
+  },
+  {
+    "name": "critical values",
+    "trans": "危急值",
+    "usphone": "ˈkrɪtɪkl ˈvæljuːz",
+    "ukphone": "ˈkrɪtɪkl ˈvæljuːz"
+  },
+  {
+    "name": "detection limit",
+    "trans": "检出限",
+    "usphone": "dɪˈtɛkʃn ˈlɪmɪt",
+    "ukphone": "dɪˈtɛkʃn ˈlɪmɪt"
+  },
+  {
+    "name": "medium effect",
+    "trans": "介质效应",
+    "usphone": "ˈmiːdiəm ɪˈfɛkt",
+    "ukphone": "ˈmiːdiəm ɪˈfɛkt"
+  },
+  {
+    "name": "negative likelihood ratio",
+    "trans": "阴性似然比",
+    "usphone": "ˈnɛɡətɪv ˈlaɪklihʊd ˈreɪʃioʊ",
+    "ukphone": "ˈnɛɡətɪv ˈlaɪklihʊd ˈreɪʃiəʊ"
+  },
+  {
+    "name": "negative predictive value",
+    "trans": "阴性预测值",
+    "usphone": "ˈnɛɡətɪv prɪˈdɪktɪv ˈvæljuː",
+    "ukphone": "ˈnɛɡətɪv prɪˈdɪktɪv ˈvæljuː"
+  },
+  {
+    "name": "parallel test",
+    "trans": "平行试验",
+    "usphone": "ˈpærəlel tɛst",
+    "ukphone": "ˈpærəlel tɛst"
+  },
+  {
+    "name": "positive predictive value",
+    "trans": "阳性预测值",
+    "usphone": "ˈpɑːzətɪv prɪˈdɪktɪv ˈvæljuː",
+    "ukphone": "ˈpɒzɪtɪv prɪˈdɪktɪv ˈvæljuː"
+  },
+  {
+    "name": "post-test odds",
+    "trans": "验后比",
+    "usphone": "poʊst tɛst ɑːdz",
+    "ukphone": "pəʊst tɛst ɒdz"
+  },
+  {
+    "name": "post-test probability",
+    "trans": "验后概率",
+    "usphone": "poʊst tɛst ˌprɑːbəˈbɪlɪti",
+    "ukphone": "pəʊst tɛst ˌprɒbəˈbɪlɪti"
+  },
+  {
+    "name": "precision",
+    "trans": "精密度",
+    "usphone": "prɪˈsɪʒn",
+    "ukphone": "prɪˈsɪʒn"
+  },
+  {
+    "name": "pretest odds",
+    "trans": "验前比",
+    "usphone": "priːtɛst ɑːdz",
+    "ukphone": "priːtɛst ɒdz"
+  },
+  {
+    "name": "prevalence",
+    "trans": "患病率",
+    "usphone": "ˈprɛvələns",
+    "ukphone": "ˈprɛvələns"
+  },
+  {
+    "name": "proficiency test",
+    "trans": "能力验证",
+    "usphone": "prəˈfɪʃənsi tɛst",
+    "ukphone": "prəˈfɪʃənsi tɛst"
+  },
+  {
+    "name": "serial test",
+    "trans": "序列试验",
+    "usphone": "ˈsɪriəl tɛst",
+    "ukphone": "ˈsɪəriəl tɛst"
+  },
+  {
+    "name": "total quality management",
+    "trans": "全面质量管理",
+    "usphone": "ˈtoʊtl ˈkwɑːlɪti ˈmænɪdʒmənt",
+    "ukphone": "ˈtəʊtl ˈkwɒlɪti ˈmænɪdʒmənt"
+  },
+  {
+    "name": "ulti-level likelihood ratio",
+    "trans": "区间似然比",
+    "usphone": "ˈʌlti ˈlɛvl ˈlaɪklihʊd ˈreɪʃioʊ",
+    "ukphone": "ˈʌlti ˈlɛvl ˈlaɪklihʊd ˈreɪʃiəʊ"
+  },
+  {
+    "name": "anisocytosis",
+    "trans": "红细胞大小不均",
+    "usphone": "əˌnɪsoʊsaɪˈtoʊsɪs",
+    "ukphone": "əˌnɪsəʊsaɪˈtəʊsɪs"
+  },
+  {
+    "name": "anuria",
+    "trans": "无尿",
+    "usphone": "əˈnjʊriə",
+    "ukphone": "əˈnjʊəriə"
+  },
+  {
+    "name": "atypical lymphocyte",
+    "trans": "异型淋巴细胞",
+    "usphone": "eɪˈtɪpɪkl ˈlɪmfəsaɪt",
+    "ukphone": "eɪˈtɪpɪkl ˈlɪmfəsaɪt"
+  },
+  {
+    "name": "bacterial cast",
+    "trans": "细菌管型",
+    "usphone": "bækˈtɪriəl kæst",
+    "ukphone": "bækˈtɪriəl kæst"
+  },
+  {
+    "name": "basophilic stippling cell",
+    "trans": "碱性点彩红细胞",
+    "usphone": "ˌbeɪsəˈfɪlɪk ˈstɪplɪŋ sɛl",
+    "ukphone": "ˌbeɪsəˈfɪlɪk ˈstɪplɪŋ sɛl"
+  },
+  {
+    "name": "bilirubinuria",
+    "trans": "胆红素尿",
+    "usphone": "ˌbɪlɪˌruːbɪˈnʊriə",
+    "ukphone": "ˌbɪlɪˌruːbɪˈnjʊəriə"
+  },
+  {
+    "name": "bronchial cast",
+    "trans": "支气管管型",
+    "usphone": "ˈbrɑːŋkiəl kæst",
+    "ukphone": "ˈbrɒŋkiəl kæst"
+  },
+  {
+    "name": "cast of renal failure",
+    "trans": "肾衰竭管型",
+    "usphone": "kæst əv ˈriːnl ˈfeɪljər",
+    "ukphone": "kæst əv ˈriːnl ˈfeɪljə"
+  },
+  {
+    "name": "cellular cast",
+    "trans": "细胞管型",
+    "usphone": "ˈsɛljələr kæst",
+    "ukphone": "ˈsɛljʊlə kæst"
+  },
+  {
+    "name": "chyluria",
+    "trans": "乳糜尿",
+    "usphone": "kaɪˈlʊriə",
+    "ukphone": "kaɪˈljʊəriə"
+  },
+  {
+    "name": "crystal cast",
+    "trans": "晶体管型",
+    "usphone": "ˈkrɪstl kæst",
+    "ukphone": "ˈkrɪstl kæst"
+  },
+  {
+    "name": "crystalluria",
+    "trans": "结晶尿",
+    "usphone": "ˌkrɪstəˈlʊriə",
+    "ukphone": "ˌkrɪstəˈljʊəriə"
+  },
+  {
+    "name": "Curschmann spiral",
+    "trans": "库什曼螺旋体",
+    "usphone": "ˈkɜːrʃmən ˈspaɪrəl",
+    "ukphone": "ˈkɜːʃmən ˈspaɪrəl"
+  },
+  {
+    "name": "degeneration of nucleus",
+    "trans": "核变性",
+    "usphone": "dɪˌdʒɛnəˈreɪʃn əv ˈnjuːkliəs",
+    "ukphone": "dɪˌdʒɛnəˈreɪʃn əv ˈnjuːkliəs"
+  },
+  {
+    "name": "dropsy of serous cavity",
+    "trans": "浆膜腔积液",
+    "usphone": "ˈdrɑːpsi əv ˈsɪrəs ˈkævɪti",
+    "ukphone": "ˈdrɒpsi əv ˈsɪərəs ˈkævɪti"
+  },
+  {
+    "name": "eosinopenia",
+    "trans": "嗜酸性粒细胞减少",
+    "usphone": "iːəˌsɪnəˈpiːniə",
+    "ukphone": "iːəˌsɪnəˈpiːniə"
+  },
+  {
+    "name": "eosinophilia",
+    "trans": "嗜酸性粒细胞增多",
+    "usphone": "iːəˌsɪnəˈfɪliə",
+    "ukphone": "iːəˌsɪnəˈfɪliə"
+  },
+  {
+    "name": "epithelium",
+    "trans": "上皮细胞",
+    "usphone": "ˌɛpɪˈθiːliəm",
+    "ukphone": "ˌɛpɪˈθiːliəm"
+  },
+  {
+    "name": "exudate",
+    "trans": "渗出液",
+    "usphone": "ˈɛksjudeɪt",
+    "ukphone": "ˈɛksjudeɪt"
+  },
+  {
+    "name": "fatty cast",
+    "trans": "脂肪管型",
+    "usphone": "ˈfæti kæst",
+    "ukphone": "ˈfæti kæst"
+  },
+  {
+    "name": "functional proteinuria",
+    "trans": "功能性蛋白尿",
+    "usphone": "ˈfʌŋkʃənl ˌproʊtiːnˈjʊriə",
+    "ukphone": "ˈfʌŋkʃənl ˌprəʊtiːnˈjʊəriə"
+  },
+  {
+    "name": "glitter cell",
+    "trans": "闪光细胞",
+    "usphone": "ˈɡlɪtər sɛl",
+    "ukphone": "ˈɡlɪtə sɛl"
+  },
+  {
+    "name": "glomerular proteinuria",
+    "trans": "肾小球性蛋白尿",
+    "usphone": "ɡloʊˈmɛrjələr ˌproʊtiːnˈjʊriə",
+    "ukphone": "ɡlɒˈmɛrjələ ˌprəʊtiːnˈjʊəriə"
+  },
+  {
+    "name": "glucosuria",
+    "trans": "糖尿",
+    "usphone": "ˌɡluːkoʊˈsʊriə",
+    "ukphone": "ˌɡluːkəʊˈsjʊəriə"
+  },
+  {
+    "name": "granular cast",
+    "trans": "颗粒管型",
+    "usphone": "ˈɡrænjələr kæst",
+    "ukphone": "ˈɡrænjʊlə kæst"
+  },
+  {
+    "name": "hematochyluria",
+    "trans": "乳糜血尿",
+    "usphone": "ˌhɛmətoʊkaɪˈlʊriə",
+    "ukphone": "ˌhɛmətəʊkaɪˈljʊəriə"
+  },
+  {
+    "name": "hematuria",
+    "trans": "血尿",
+    "usphone": "ˌhɛməˈtʊriə",
+    "ukphone": "ˌhɛməˈtjʊəriə"
+  },
+  {
+    "name": "hemoglobinuria",
+    "trans": "血红蛋白尿",
+    "usphone": "ˌhɛmoʊˌɡloʊbɪˈnʊriə",
+    "ukphone": "ˌhɛməʊˌɡləʊbɪˈnjʊəriə"
+  },
+  {
+    "name": "histic proteinuria",
+    "trans": "组织性蛋白尿",
+    "usphone": "ˈhɪstɪk ˌproʊtiːnˈjʊriə",
+    "ukphone": "ˈhɪstɪk ˌprəʊtiːnˈjʊəriə"
+  },
+  {
+    "name": "Howell-Jolly body",
+    "trans": "豪-乔小体",
+    "usphone": "ˌhaʊəl ˈdʒɑːli ˈbɑːdi",
+    "ukphone": "ˌhaʊəl ˈdʒɒli ˈbɒdi"
+  },
+  {
+    "name": "hyaline cast",
+    "trans": "透明管型",
+    "usphone": "ˈhaɪəlɪn kæst",
+    "ukphone": "ˈhaɪəlɪn kæst"
+  },
+  {
+    "name": "hyperchromia",
+    "trans": "高色素性",
+    "usphone": "ˌhaɪpərˈkroʊmiə",
+    "ukphone": "ˌhaɪpəˈkrəʊmiə"
+  },
+  {
+    "name": "hypersegmentation",
+    "trans": "分叶过多",
+    "usphone": "ˌhaɪpərˌsɛɡmənˈteɪʃn",
+    "ukphone": "ˌhaɪpəˌsɛɡmənˈteɪʃn"
+  },
+  {
+    "name": "hypochromia",
+    "trans": "低色素性",
+    "usphone": "ˌhaɪpoʊˈkroʊmiə",
+    "ukphone": "ˌhaɪpəʊˈkrəʊmiə"
+  },
+  {
+    "name": "ketosuria",
+    "trans": "酮尿",
+    "usphone": "ˌkɛtoʊˈsʊriə",
+    "ukphone": "ˌkɛtəʊˈsjʊəriə"
+  },
+  {
+    "name": "lipiduria",
+    "trans": "脂肪尿",
+    "usphone": "ˌlɪpɪˈdjʊriə",
+    "ukphone": "ˌlɪpɪˈdjʊəriə"
+  },
+  {
+    "name": "lung calculus",
+    "trans": "肺钙石",
+    "usphone": "lʌŋ ˈkælkjələs",
+    "ukphone": "lʌŋ ˈkælkjələs"
+  },
+  {
+    "name": "lymphocytosis",
+    "trans": "淋巴细胞增多",
+    "usphone": "ˌlɪmfəsaɪˈtoʊsɪs",
+    "ukphone": "ˌlɪmfəsaɪˈtəʊsɪs"
+  },
+  {
+    "name": "macrocyte",
+    "trans": "大红细胞",
+    "usphone": "ˈmækroʊsaɪt",
+    "ukphone": "ˈmækrəʊsaɪt"
+  },
+  {
+    "name": "megalocyte",
+    "trans": "巨红细胞",
+    "usphone": "ˈmɛɡəloʊsaɪt",
+    "ukphone": "ˈmɛɡələʊsaɪt"
+  },
+  {
+    "name": "microalbuminuria",
+    "trans": "微量白蛋白尿",
+    "usphone": "ˌmaɪkroʊælˌbjumɪˈnʊriə",
+    "ukphone": "ˌmaɪkrəʊælˌbjumɪˈnjʊəriə"
+  },
+  {
+    "name": "microcyte",
+    "trans": "小红细胞",
+    "usphone": "ˈmaɪkroʊsaɪt",
+    "ukphone": "ˈmaɪkrəʊsaɪt"
+  },
+  {
+    "name": "mixed proteinuria",
+    "trans": "混合性蛋白尿",
+    "usphone": "mɪkst ˌproʊtiːnˈjʊriə",
+    "ukphone": "mɪkst ˌprəʊtiːnˈjʊəriə"
+  },
+  {
+    "name": "monocytosis",
+    "trans": "单核细胞增多",
+    "usphone": "ˌmɑːnoʊsaɪˈtoʊsɪs",
+    "ukphone": "ˌmɒnəʊsaɪˈtəʊsɪs"
+  },
+  {
+    "name": "nitrite",
+    "trans": "亚硝酸盐",
+    "usphone": "ˈnaɪtraɪt",
+    "ukphone": "ˈnaɪtraɪt"
+  },
+  {
+    "name": "normochromia",
+    "trans": "正常色素性",
+    "usphone": "ˌnɔːrmoʊˈkroʊmiə",
+    "ukphone": "ˌnɔːməʊˈkrəʊmiə"
+  },
+  {
+    "name": "normocyte",
+    "trans": "正常红细胞",
+    "usphone": "ˈnɔːrmoʊsaɪt",
+    "ukphone": "ˈnɔːməʊsaɪt"
+  },
+  {
+    "name": "nuclear left shift",
+    "trans": "核左移",
+    "usphone": "ˈnjuːkliər lɛft ʃɪft",
+    "ukphone": "ˈnjuːkliə lɛft ʃɪft"
+  },
+  {
+    "name": "nuclear right shift",
+    "trans": "核右移",
+    "usphone": "ˈnjuːkliər raɪt ʃɪft",
+    "ukphone": "ˈnjuːkliə rɪght ʃɪft"
+  },
+  {
+    "name": "nucleated erythrocyte",
+    "trans": "有核红细胞",
+    "usphone": "ˈnjuːkliˌeɪtɪd ɪˈrɪθroʊsaɪt",
+    "ukphone": "ˈnjuːkliˌeɪtɪd ɪˈrɪθrəʊsaɪt"
+  },
+  {
+    "name": "oval fat body cast",
+    "trans": "卵圆脂肪体管型",
+    "usphone": "ˈoʊvl fæt ˈbɑːdi kæst",
+    "ukphone": "ˈəʊvl fæt ˈbɒdi kæst"
+  },
+  {
+    "name": "overflow proteinuria",
+    "trans": "溢出性蛋白尿",
+    "usphone": "ˌoʊvərˈfloʊ ˌproʊtiːnˈjʊriə",
+    "ukphone": "ˌəʊvəˈfləʊ ˌprəʊtiːnˈjʊəriə"
+  },
+  {
+    "name": "pathological proteinuria",
+    "trans": "病理性蛋白尿",
+    "usphone": "ˌpæθəˈlɑːdʒɪkl ˌproʊtiːnˈjʊriə",
+    "ukphone": "ˌpæθəˈlɒdʒɪkl ˌprəʊtiːnˈjʊəriə"
+  },
+  {
+    "name": "polychromatophilia",
+    "trans": "嗜多色性",
+    "usphone": "ˌpɑːlikroʊˌmætəˈfɪliə",
+    "ukphone": "ˌpɒlikrəʊˌmætəˈfɪliə"
+  },
+  {
+    "name": "postural proteinuria",
+    "trans": "体位性蛋白尿",
+    "usphone": "ˈpɑːstʃərəl ˌproʊtiːnˈjʊriə",
+    "ukphone": "ˈpɒstʃərəl ˌprəʊtiːnˈjʊəriə"
+  },
+  {
+    "name": "proteinuria",
+    "trans": "蛋白尿",
+    "usphone": "ˌproʊtiːnˈjʊriə",
+    "ukphone": "ˌprəʊtiːnˈjʊəriə"
+  },
+  {
+    "name": "Rivalta test",
+    "trans": "里瓦尔塔试验",
+    "usphone": "rɪˈvɑːltə tɛst",
+    "ukphone": "rɪˈvɑːltə tɛst"
+  },
+  {
+    "name": "schistocyte",
+    "trans": "裂细胞",
+    "usphone": "ˈʃɪstəsaɪt",
+    "ukphone": "ˈʃɪstəsaɪt"
+  },
+  {
+    "name": "semen",
+    "trans": "精液",
+    "usphone": "ˈsiːmən",
+    "ukphone": "ˈsiːmən"
+  },
+  {
+    "name": "specific gravity",
+    "trans": "尿比重",
+    "usphone": "spəˈsɪfɪk ˈɡrævɪti",
+    "ukphone": "spəˈsɪfɪk ˈɡrævɪti"
+  },
+  {
+    "name": "specific gravity of urine",
+    "trans": "尿比重",
+    "usphone": "spəˈsɪfɪk ˈɡrævɪti əv ˈjʊrɪn",
+    "ukphone": "spəˈsɪfɪk ˈɡrævɪti əv ˈjʊərɪn"
+  },
+  {
+    "name": "sperm activity rate",
+    "trans": "精子活动率",
+    "usphone": "spɜːrm ækˈtɪvɪti reɪt",
+    "ukphone": "spɜːm ækˈtɪvɪti reɪt"
+  },
+  {
+    "name": "sperm density",
+    "trans": "精子密度",
+    "usphone": "spɜːrm ˈdɛnsɪti",
+    "ukphone": "spɜːm ˈdɛnsɪti"
+  },
+  {
+    "name": "sperm motility",
+    "trans": "精子活动力",
+    "usphone": "spɜːrm moʊˈtɪlɪti",
+    "ukphone": "spɜːm məʊˈtɪlɪti"
+  },
+  {
+    "name": "sputum",
+    "trans": "痰液",
+    "usphone": "ˈspjuːtəm",
+    "ukphone": "ˈspjuːtəm"
+  },
+  {
+    "name": "stomatocyte",
+    "trans": "口形红细胞",
+    "usphone": "ˈstoʊmətəsaɪt",
+    "ukphone": "ˈstəʊmətəsaɪt"
+  },
+  {
+    "name": "stool ova examination",
+    "trans": "大便寄生虫卵检查",
+    "usphone": "stuːl ˈoʊvə ɪɡˌzæmɪˈneɪʃn",
+    "ukphone": "stuːl ˈəʊvə ɪɡˌzæmɪˈneɪʃn"
+  },
+  {
+    "name": "target cell",
+    "trans": "靶形红细胞",
+    "usphone": "ˈtɑːrɡɪt sɛl",
+    "ukphone": "ˈtɑːɡɪt sɛl"
+  },
+  {
+    "name": "toxic granulation",
+    "trans": "中毒颗粒",
+    "usphone": "ˈtɑːksɪk ˌɡrænjəˈleɪʃn",
+    "ukphone": "ˈtɒksɪk ˌɡrænjʊˈleɪʃn"
+  },
+  {
+    "name": "transitional epithelium",
+    "trans": "移行上皮细胞",
+    "usphone": "trænˈzɪʃənl ˌɛpɪˈθiːliəm",
+    "ukphone": "trænˈzɪʃənl ˌɛpɪˈθiːliəm"
+  },
+  {
+    "name": "transudate",
+    "trans": "漏出液",
+    "usphone": "trænsˈjudeɪt",
+    "ukphone": "trænsˈjudeɪt"
+  },
+  {
+    "name": "tubular proteinuria",
+    "trans": "肾小管性蛋白尿",
+    "usphone": "ˈtjuːbjələr ˌproʊtiːnˈjʊriə",
+    "ukphone": "ˈtjuːbjʊlə ˌprəʊtiːnˈjʊəriə"
+  },
+  {
+    "name": "urinary sediment",
+    "trans": "尿沉渣",
+    "usphone": "ˈjʊrəˌnɛri ˈsɛdɪmənt",
+    "ukphone": "ˈjʊərɪˌnɛri ˈsɛdɪmənt"
+  },
+  {
+    "name": "urine appearance",
+    "trans": "尿外观",
+    "usphone": "ˈjʊrɪn əˈpɪrəns",
+    "ukphone": "ˈjʊərɪn əˈpɪərəns"
+  },
+  {
+    "name": "urine cast",
+    "trans": "尿管型",
+    "usphone": "ˈjʊrɪn kæst",
+    "ukphone": "ˈjʊərɪn kæst"
+  },
+  {
+    "name": "urine crystal",
+    "trans": "尿结晶",
+    "usphone": "ˈjʊrɪn ˈkrɪstl",
+    "ukphone": "ˈjʊərɪn ˈkrɪstl"
+  },
+  {
+    "name": "urine odor",
+    "trans": "尿气味",
+    "usphone": "ˈjʊrɪn ˈoʊdər",
+    "ukphone": "ˈjʊərɪn ˈəʊdə"
+  },
+  {
+    "name": "urobilinogenuria",
+    "trans": "尿胆原尿",
+    "usphone": "ˌjʊroʊˌbɪlɪˈnoʊdʒəˈnʊriə",
+    "ukphone": "ˌjʊərəʊˌbɪlɪˈnɒdʒəˈnjʊəriə"
+  },
+  {
+    "name": "vacuolation",
+    "trans": "空泡形成",
+    "usphone": "ˌvækjuəˈleɪʃn",
+    "ukphone": "ˌvækjuəˈleɪʃn"
+  },
+  {
+    "name": "vaginal discharge",
+    "trans": "阴道分泌物",
+    "usphone": "ˈvædʒɪnl ˈdɪstʃɑːrdʒ",
+    "ukphone": "ˈvædʒɪnl ˈdɪstʃɑːdʒ"
+  },
+  {
+    "name": "waxy cast",
+    "trans": "蜡样管型",
+    "usphone": "ˈwæksi kæst",
+    "ukphone": "ˈwæksi kæst"
+  },
+  {
+    "name": "apoferritin",
+    "trans": "去铁蛋白",
+    "usphone": "ˌæpoʊˈfɛrɪtɪn",
+    "ukphone": "ˌæpəʊˈfɛrɪtɪn"
+  },
+  {
+    "name": "basophilic granulocyte",
+    "trans": "嗜碱性粒细胞",
+    "usphone": "ˌbeɪsəˈfɪlɪk ˈɡrænjəloʊsaɪt",
+    "ukphone": "ˌbeɪsəˈfɪlɪk ˈɡrænjʊləʊsaɪt"
+  },
+  {
+    "name": "count",
+    "trans": "计数",
+    "usphone": "kaʊnt",
+    "ukphone": "kaʊnt"
+  },
+  {
+    "name": "drepanocyte",
+    "trans": "镰状红细胞",
+    "usphone": "drəˈpænəsaɪt",
+    "ukphone": "drəˈpænəsaɪt"
+  },
+  {
+    "name": "elliptocyte",
+    "trans": "椭圆形红细胞",
+    "usphone": "ɪˈlɪptəsaɪt",
+    "ukphone": "ɪˈlɪptəsaɪt"
+  },
+  {
+    "name": "eosinophil count",
+    "trans": "嗜酸性粒细胞计数",
+    "usphone": "iːəˈsɪnəfɪl kaʊnt",
+    "ukphone": "iːəˈsɪnəfɪl kaʊnt"
+  },
+  {
+    "name": "eosinophilic granulocyte",
+    "trans": "嗜酸性粒细胞",
+    "usphone": "ˌiːəˌsɪnəˈfɪlɪk ˈɡrænjəloʊsaɪt",
+    "ukphone": "ˌiːəˌsɪnəˈfɪlɪk ˈɡrænjʊləʊsaɪt"
+  },
+  {
+    "name": "erythrocyte",
+    "trans": "红细胞",
+    "usphone": "ɪˈrɪθroʊsaɪt",
+    "ukphone": "ɪˈrɪθrəʊsaɪt"
+  },
+  {
+    "name": "erythrocyte count",
+    "trans": "红细胞计数",
+    "usphone": "ɪˈrɪθroʊsaɪt kaʊnt",
+    "ukphone": "ɪˈrɪθrəʊsaɪt kaʊnt"
+  },
+  {
+    "name": "erythrocyte enzymopathy",
+    "trans": "红细胞酶病",
+    "usphone": "ɪˈrɪθroʊsaɪt ɪnzaɪˈmɑːpəθi",
+    "ukphone": "ɪˈrɪθrəʊsaɪt ɪnzaɪˈmɒpəθi"
+  },
+  {
+    "name": "erythrocyte incubated osmotic fragility test",
+    "trans": "红细胞孵育渗透脆性试验",
+    "usphone": "ɪˈrɪθroʊsaɪt ˈɪŋkjəˌbeɪtɪd ɑːzˈmɑːtɪk frəˈdʒɪlɪti tɛst",
+    "ukphone": "ɪˈrɪθrəʊsaɪt ˈɪŋkjəˌbeɪtɪd ɒzˈmɒtɪk frəˈdʒɪlɪti tɛst"
+  },
+  {
+    "name": "erythrocyte osmotic fragility test",
+    "trans": "红细胞渗透脆性试验",
+    "usphone": "ɪˈrɪθroʊsaɪt ɑːzˈmɑːtɪk frəˈdʒɪlɪti tɛst",
+    "ukphone": "ɪˈrɪθrəʊsaɪt ɒzˈmɒtɪk frəˈdʒɪlɪti tɛst"
+  },
+  {
+    "name": "film",
+    "trans": "涂片",
+    "usphone": "fɪlm",
+    "ukphone": "fɪlm"
+  },
+  {
+    "name": "fluorescence spot test",
+    "trans": "荧光斑点试验",
+    "usphone": "ˌflʊrɛˈsɛns spɑːt tɛst",
+    "ukphone": "ˌflʊərɛˈsɛns spɒt tɛst"
+  },
+  {
+    "name": "granulocyte",
+    "trans": "粒细胞",
+    "usphone": "ˈɡrænjəloʊsaɪt",
+    "ukphone": "ˈɡrænjʊləʊsaɪt"
+  },
+  {
+    "name": "granulocytopenia",
+    "trans": "粒细胞减少症",
+    "usphone": "ˌɡrænjəloʊˌsaɪtəˈpiːniə",
+    "ukphone": "ˌɡrænjʊləʊˌsaɪtəˈpiːniə"
+  },
+  {
+    "name": "hematocrit",
+    "trans": "红细胞压积",
+    "usphone": "ˌhɛməˈtoʊkrɪt",
+    "ukphone": "ˌhɛməˈtəʊkrɪt"
+  },
+  {
+    "name": "hemogram",
+    "trans": "血象",
+    "usphone": "ˈhɛmoʊɡræm",
+    "ukphone": "ˈhɛməʊɡræm"
+  },
+  {
+    "name": "hemolytic anemia",
+    "trans": "溶血性贫血",
+    "usphone": "ˌhɛmoʊˈlɪtɪk əˈniːmiə",
+    "ukphone": "ˌhɛməʊˈlɪtɪk əˈniːmiə"
+  },
+  {
+    "name": "hemolyze",
+    "trans": "溶血",
+    "usphone": "ˈhɛmoʊlaɪz",
+    "ukphone": "ˈhɛməʊlaɪz"
+  },
+  {
+    "name": "hemosiderin",
+    "trans": "含铁血黄素",
+    "usphone": "ˌhɛmoʊˈsɪdərɪn",
+    "ukphone": "ˌhɛməʊˈsɪdərɪn"
+  },
+  {
+    "name": "hereditary hemolytic anemia",
+    "trans": "先天性溶血性贫血",
+    "usphone": "həˈrɛdɪˌtɛri ˌhɛmoʊˈlɪtɪk əˈniːmiə",
+    "ukphone": "həˈrɛdɪˌtɛri ˌhɛməʊˈlɪtɪk əˈniːmiə"
+  },
+  {
+    "name": "iron saturation",
+    "trans": "铁饱和",
+    "usphone": "ˈaɪərn ˌsætʃəˈreɪʃn",
+    "ukphone": "ˈaɪən ˌsætʃəˈreɪʃn"
+  },
+  {
+    "name": "isopropanol precipitation test",
+    "trans": "异丙醇沉淀试验",
+    "usphone": "ˌaɪsoʊˈproʊpənɔːl prɪˌsɪpɪˈteɪʃn tɛst",
+    "ukphone": "ˌaɪsəʊˈprəʊpənɒl prɪˌsɪpɪˈteɪʃn tɛst"
+  },
+  {
+    "name": "leukopenia",
+    "trans": "白细胞减少症",
+    "usphone": "ˌljuːkoʊˈpiːniə",
+    "ukphone": "ˌljuːkəʊˈpiːniə"
+  },
+  {
+    "name": "leukocyte",
+    "trans": "白细胞",
+    "usphone": "ˈljuːkəsaɪt",
+    "ukphone": "ˈljuːkəsaɪt"
+  },
+  {
+    "name": "leukocyte differential count",
+    "trans": "白细胞分类计数",
+    "usphone": "ˈljuːkəsaɪt ˌdɪfəˈrɛnʃl kaʊnt",
+    "ukphone": "ˈljuːkəsaɪt ˌdɪfəˈrɛnʃl kaʊnt"
+  },
+  {
+    "name": "lymphocyte",
+    "trans": "淋巴细胞",
+    "usphone": "ˈlɪmfəsaɪt",
+    "ukphone": "ˈlɪmfəsaɪt"
+  },
+  {
+    "name": "methemalbumin test",
+    "trans": "高铁白蛋白试验",
+    "usphone": "ˌmɛtˌhɛmoʊˈælbjəmɪn tɛst",
+    "ukphone": "ˌmɛtˌhɛməʊˈælbjəmɪn tɛst"
+  },
+  {
+    "name": "methemoglobin elution test",
+    "trans": "高铁血红蛋白洗脱试验",
+    "usphone": "ˌmɛtˌhɛmoʊˈɡloʊbɪn ɪˈluːʃn tɛst",
+    "ukphone": "ˌmɛtˌhɛməʊˈɡləʊbɪn ɪˈluːʃn tɛst"
+  },
+  {
+    "name": "methemoglobin reducing test",
+    "trans": "高铁血红蛋白还原试验",
+    "usphone": "ˌmɛtˌhɛmoʊˈɡloʊbɪn rɪˈduːsɪŋ tɛst",
+    "ukphone": "ˌmɛtˌhɛməʊˈɡləʊbɪn rɪˈdjuːsɪŋ tɛst"
+  },
+  {
+    "name": "microscopic",
+    "trans": "显微镜检查",
+    "usphone": "ˌmaɪkrəˈskɑːpɪk",
+    "ukphone": "ˌmaɪkrəˈskɒpɪk"
+  },
+  {
+    "name": "monocyte",
+    "trans": "单核细胞",
+    "usphone": "ˈmɑːnəsaɪt",
+    "ukphone": "ˈmɒnəsaɪt"
+  },
+  {
+    "name": "neutropenia",
+    "trans": "中性粒细胞减少症",
+    "usphone": "ˌnjuːtrəˈpiːniə",
+    "ukphone": "ˌnjuːtrəˈpiːniə"
+  },
+  {
+    "name": "neutrophilic segmented granulocyte",
+    "trans": "中性分叶核粒细胞",
+    "usphone": "ˌnjuːtrəˈfɪlɪk ˈsɛɡməntɪd ˈɡrænjəloʊsaɪt",
+    "ukphone": "ˌnjuːtrəˈfɪlɪk ˈsɛɡməntɪd ˈɡrænjʊləʊsaɪt"
+  },
+  {
+    "name": "neutrophilic stab granulocyte",
+    "trans": "中性杆状核粒细胞",
+    "usphone": "ˌnjuːtrəˈfɪlɪk stæb ˈɡrænjəloʊsaɪt",
+    "ukphone": "ˌnjuːtrəˈfɪlɪk stæb ˈɡrænjʊləʊsaɪt"
+  },
+  {
+    "name": "nitroblue tetrazolium test",
+    "trans": "硝基四唑蓝试验",
+    "usphone": "ˌnaɪtroʊˈbluː tɛtrəˈzoʊliəm tɛst",
+    "ukphone": "ˌnaɪtrəʊˈbluː tɛtrəˈzəʊliəm tɛst"
+  },
+  {
+    "name": "poikilocytosis",
+    "trans": "异形红细胞症",
+    "usphone": "ˌpɔɪkɪloʊsaɪˈtoʊsɪs",
+    "ukphone": "ˌpɔɪkɪləʊsaɪˈtəʊsɪs"
+  },
+  {
+    "name": "red blood cell folic acid",
+    "trans": "红细胞叶酸",
+    "usphone": "rɛd blʌd sɛl ˈfoʊlɪk ˈæsɪd",
+    "ukphone": "rɛd blʌd sɛl ˈfəʊlɪk ˈæsɪd"
+  },
+  {
+    "name": "red blood cell hyperplasia",
+    "trans": "红细胞增多症",
+    "usphone": "rɛd blʌd sɛl ˌhaɪpərˈpleɪziə",
+    "ukphone": "rɛd blʌd sɛl ˌhaɪpəˈpleɪziə"
+  },
+  {
+    "name": "reticulocyte",
+    "trans": "网织红细胞",
+    "usphone": "rɪˈtɪkjəloʊsaɪt",
+    "ukphone": "rɪˈtɪkjʊləʊsaɪt"
+  },
+  {
+    "name": "reticulocyte count",
+    "trans": "网织红细胞计数",
+    "usphone": "rɪˈtɪkjəloʊsaɪt kaʊnt",
+    "ukphone": "rɪˈtɪkjʊləʊsaɪt kaʊnt"
+  },
+  {
+    "name": "Rous test",
+    "trans": "尿含铁血黄素试验",
+    "usphone": "raʊs tɛst",
+    "ukphone": "raʊs tɛst"
+  },
+  {
+    "name": "routine examination",
+    "trans": "常规检查",
+    "usphone": "ruːˈtiːn ɪɡˌzæmɪˈneɪʃn",
+    "ukphone": "ruːˈtiːn ɪɡˌzæmɪˈneɪʃn"
+  },
+  {
+    "name": "secondary erythrocytosis",
+    "trans": "继发性红细胞增多症",
+    "usphone": "ˈsɛkəndɛri ɪˌrɪθroʊsaɪˈtoʊsɪs",
+    "ukphone": "ˈsɛkəndɛri ɪˌrɪθrəʊsaɪˈtəʊsɪs"
+  },
+  {
+    "name": "segmented",
+    "trans": "分叶的",
+    "usphone": "ˈsɛɡməntɪd",
+    "ukphone": "ˈsɛɡməntɪd"
+  },
+  {
+    "name": "sideroblastic anemia",
+    "trans": "铁粒幼细胞贫血",
+    "usphone": "ˌsɪdəroʊˈblæstɪk əˈniːmiə",
+    "ukphone": "ˌsɪdərəʊˈblæstɪk əˈniːmiə"
+  },
+  {
+    "name": "spherocyte",
+    "trans": "球形红细胞",
+    "usphone": "ˈsfɪroʊsaɪt",
+    "ukphone": "ˈsfɪrəʊsaɪt"
+  },
+  {
+    "name": "total iron binding capacity",
+    "trans": "总铁结合力",
+    "usphone": "ˈtoʊtl ˈaɪərn ˈbaɪndɪŋ kəˈpæsɪti",
+    "ukphone": "ˈtəʊtl ˈaɪən ˈbaɪndɪŋ kəˈpæsɪti"
+  },
+  {
+    "name": "transferrin",
+    "trans": "转铁蛋白",
+    "usphone": "trænsˈfɛrɪn",
+    "ukphone": "trænsˈfɛrɪn"
+  },
+  {
+    "name": "white blood cell count",
+    "trans": "白细胞计数",
+    "usphone": "waɪt blʌd sɛl kaʊnt",
+    "ukphone": "waɪt blʌd sɛl kaʊnt"
+  },
+  {
+    "name": "acid phosphatase",
+    "trans": "酸性磷酸酶",
+    "usphone": "ˈæsɪd ˈfɑːsfəteɪs",
+    "ukphone": "ˈæsɪd ˈfɒsfəteɪs"
+  },
+  {
+    "name": "acute erythroid leukemia",
+    "trans": "急性红系白血病",
+    "usphone": "əˈkjuːt ɪˈrɪθrɔɪd luːˈkiːmiə",
+    "ukphone": "əˈkjuːt ɪˈrɪθrɔɪd luːˈkiːmiə"
+  },
+  {
+    "name": "acute leukemia of ambiguous lineage",
+    "trans": "不明系列急性白血病",
+    "usphone": "əˈkjuːt luːˈkiːmiə əv æmˈbɪɡjuəs ˈlɪniɪdʒ",
+    "ukphone": "əˈkjuːt luːˈkiːmiə əv æmˈbɪɡjuəs ˈlɪniɪdʒ"
+  },
+  {
+    "name": "acute megakaryoblastic leukemia",
+    "trans": "急性巨核细胞白血病",
+    "usphone": "əˈkjuːt ˌmɛɡəˌkærioʊˈblæstɪk luːˈkiːmiə",
+    "ukphone": "əˈkjuːt ˌmɛɡəˌkæriəʊˈblæstɪk luːˈkiːmiə"
+  },
+  {
+    "name": "acute monoblastic and monocytic leukemia",
+    "trans": "急性单核细胞白血病",
+    "usphone": "əˈkjuːt ˌmɑːnəˈblæstɪk ænd ˌmɑːnəˈsaɪtɪk luːˈkiːmiə",
+    "ukphone": "əˈkjuːt ˌmɒnəˈblæstɪk ænd ˌmɒnəˈsaɪtɪk luːˈkiːmiə"
+  },
+  {
+    "name": "acute tumor lysis syndrome",
+    "trans": "急性肿瘤溶解综合征",
+    "usphone": "əˈkjuːt ˈtuːmər ˈlaɪsɪs ˈsɪndroʊm",
+    "ukphone": "əˈkjuːt ˈtjuːmə ˈlaɪsɪs ˈsɪndrəʊm"
+  },
+  {
+    "name": "AML with maturation",
+    "trans": "成熟型急性髓系白血病",
+    "usphone": "ˌeɪ ɛm ɛl wɪθ ˌmætʃəˈreɪʃn",
+    "ukphone": "ˌeɪ ɛm ɛl wɪθ ˌmætʃəˈreɪʃn"
+  },
+  {
+    "name": "AML with minimal differentiation",
+    "trans": "微分化型急性髓系白血病",
+    "usphone": "ˌeɪ ɛm ɛl wɪθ ˈmɪnɪməl ˌdɪfəˌrɛnʃiˈeɪʃn",
+    "ukphone": "ˌeɪ ɛm ɛl wɪθ ˈmɪnɪməl ˌdɪfəˌrɛnʃiˈeɪʃn"
+  },
+  {
+    "name": "aplastic anemia",
+    "trans": "再生障碍性贫血",
+    "usphone": "eɪˈplæstɪk əˈniːmiə",
+    "ukphone": "eɪˈplæstɪk əˈniːmiə"
+  },
+  {
+    "name": "apoptosis",
+    "trans": "细胞凋亡",
+    "usphone": "ˌæpəpˈtoʊsɪs",
+    "ukphone": "ˌæpəpˈtəʊsɪs"
+  },
+  {
+    "name": "bone marrow examination",
+    "trans": "骨髓检查",
+    "usphone": "boʊn ˈmæroʊ ɪɡˌzæmɪˈneɪʃn",
+    "ukphone": "bəʊn ˈmærəʊ ɪɡˌzæmɪˈneɪʃn"
+  },
+  {
+    "name": "chromosome analysis",
+    "trans": "染色体分析",
+    "usphone": "ˈkroʊməsoʊm əˈnælɪsɪs",
+    "ukphone": "ˈkrəʊməsəʊm əˈnælɪsɪs"
+  },
+  {
+    "name": "cytochemical stain",
+    "trans": "细胞化学染色",
+    "usphone": "ˌsaɪtoʊˈkɛmɪkl steɪn",
+    "ukphone": "ˌsaɪtəʊˈkɛmɪkl steɪn"
+  },
+  {
+    "name": "erythrocyte rouleau formation",
+    "trans": "红细胞钱状形成",
+    "usphone": "ɪˈrɪθroʊsaɪt ruːˈloʊ fɔːrˈmeɪʃn",
+    "ukphone": "ɪˈrɪθrəʊsaɪt ruːˈləʊ fɔːrˈmeɪʃn"
+  },
+  {
+    "name": "erythroleukemia",
+    "trans": "红白血病",
+    "usphone": "ɪˌrɪθroʊluːˈkiːmiə",
+    "ukphone": "ɪˌrɪθrəʊluːˈkiːmiə"
+  },
+  {
+    "name": "essential thrombocytosis",
+    "trans": "原发性血小板增多症",
+    "usphone": "ɪˈsɛnʃl ˌθrɑːmboʊsaɪˈtoʊsɪs",
+    "ukphone": "ɪˈsɛnʃl ˌθrɒmbəʊsaɪˈtəʊsɪs"
+  },
+  {
+    "name": "esterase",
+    "trans": "酯酶",
+    "usphone": "ˈɛstəreɪs",
+    "ukphone": "ˈɛstəreɪs"
+  },
+  {
+    "name": "flame cell",
+    "trans": "火焰细胞",
+    "usphone": "fleɪm sɛl",
+    "ukphone": "fleɪm sɛl"
+  },
+  {
+    "name": "granulocytic leukemia",
+    "trans": "粒细胞白血病",
+    "usphone": "ˌɡrænjəloʊˈsɪtɪk luːˈkiːmiə",
+    "ukphone": "ˌɡrænjʊləʊˈsɪtɪk luːˈkiːmiə"
+  },
+  {
+    "name": "hemophilia",
+    "trans": "血友病",
+    "usphone": "ˌhɛmoʊˈfɪliə",
+    "ukphone": "ˌhɛməʊˈfɪliə"
+  },
+  {
+    "name": "Hodgkin lymphoma",
+    "trans": "霍奇金淋巴瘤",
+    "usphone": "ˈhɑːdʒkɪn lɪmˈfoʊmə",
+    "ukphone": "ˈhɒdʒkɪn lɪmˈfəʊmə"
+  },
+  {
+    "name": "hyperviscosity syndrome",
+    "trans": "高黏滞综合征",
+    "usphone": "ˌhaɪpərvɪsˈkɑːsɪti ˈsɪndroʊm",
+    "ukphone": "ˌhaɪpəvɪsˈkɒsɪti ˈsɪndrəʊm"
+  },
+  {
+    "name": "immunophenotype",
+    "trans": "免疫表型",
+    "usphone": "ˌɪmjunoʊˈfiːnoʊtaɪp",
+    "ukphone": "ˌɪmjʊnəʊˈfiːnəʊtaɪp"
+  },
+  {
+    "name": "ineffective hematopoiesis",
+    "trans": "无效造血",
+    "usphone": "ˌɪnɪˈfɛktɪv ˌhɛmətoʊpɔɪˈiːsɪs",
+    "ukphone": "ˌɪnɪˈfɛktɪv ˌhɛmətəʊpɔɪˈiːsɪs"
+  },
+  {
+    "name": "iron stain",
+    "trans": "铁染色",
+    "usphone": "ˈaɪərn steɪn",
+    "ukphone": "ˈaɪən steɪn"
+  },
+  {
+    "name": "leukemia",
+    "trans": "白血病",
+    "usphone": "luːˈkiːmiə",
+    "ukphone": "luːˈkiːmiə"
+  },
+  {
+    "name": "leukemoid reaction",
+    "trans": "类白血病反应",
+    "usphone": "luːˈkiːmɔɪd riˈækʃn",
+    "ukphone": "luːˈkiːmɔɪd riˈækʃn"
+  },
+  {
+    "name": "lymphoblast",
+    "trans": "淋巴母细胞",
+    "usphone": "ˈlɪmfoʊblæst",
+    "ukphone": "ˈlɪmfəʊblæst"
+  },
+  {
+    "name": "lymphocytic leukemia",
+    "trans": "淋巴细胞白血病",
+    "usphone": "ˌlɪmfəˈsɪtɪk luːˈkiːmiə",
+    "ukphone": "ˌlɪmfəˈsɪtɪk luːˈkiːmiə"
+  },
+  {
+    "name": "lymphoma",
+    "trans": "淋巴瘤",
+    "usphone": "lɪmˈfoʊmə",
+    "ukphone": "lɪmˈfəʊmə"
+  },
+  {
+    "name": "malignant lymphoma",
+    "trans": "恶性淋巴瘤",
+    "usphone": "məˈlɪɡnənt lɪmˈfoʊmə",
+    "ukphone": "məˈlɪɡnənt lɪmˈfəʊmə"
+  },
+  {
+    "name": "mantle-cell lymphoma",
+    "trans": "套细胞淋巴瘤",
+    "usphone": "ˈmæntl sɛl lɪmˈfoʊmə",
+    "ukphone": "ˈmæntl sɛl lɪmˈfəʊmə"
+  },
+  {
+    "name": "mature lymphocyte neoplasm",
+    "trans": "成熟淋巴细胞肿瘤",
+    "usphone": "məˈtʃʊr ˈlɪmfəsaɪt ˈniːoʊˌplæzəm",
+    "ukphone": "məˈtjʊə ˈlɪmfəsaɪt ˈniːəʊˌplæzəm"
+  },
+  {
+    "name": "megakaryoblast",
+    "trans": "原始巨核细胞",
+    "usphone": "ˌmɛɡəˈkærioʊblæst",
+    "ukphone": "ˌmɛɡəˈkæriəʊblæst"
+  },
+  {
+    "name": "megakaryocyte",
+    "trans": "巨核细胞",
+    "usphone": "ˌmɛɡəˈkærioʊsaɪt",
+    "ukphone": "ˌmɛɡəˈkæriəʊsaɪt"
+  },
+  {
+    "name": "megakaryocytic leukemia",
+    "trans": "巨核细胞白血病",
+    "usphone": "ˌmɛɡəˌkærioʊˈsɪtɪk luːˈkiːmiə",
+    "ukphone": "ˌmɛɡəˌkæriəʊˈsɪtɪk luːˈkiːmiə"
+  },
+  {
+    "name": "megaloblastic anemia",
+    "trans": "巨幼细胞性贫血",
+    "usphone": "ˌmɛɡəloʊˈblæstɪk əˈniːmiə",
+    "ukphone": "ˌmɛɡələʊˈblæstɪk əˈniːmiə"
+  },
+  {
+    "name": "megaloblastoid change",
+    "trans": "类巨幼细胞改变",
+    "usphone": "ˌmɛɡəloʊˈblæstɔɪd tʃeɪndʒ",
+    "ukphone": "ˌmɛɡələʊˈblæstɔɪd tʃeɪndʒ"
+  },
+  {
+    "name": "metamyelocyte",
+    "trans": "晚幼粒细胞",
+    "usphone": "ˌmɛtəˈmaɪəloʊsaɪt",
+    "ukphone": "ˌmɛtəˈmaɪələʊsaɪt"
+  },
+  {
+    "name": "metarubricyte",
+    "trans": "晚幼红细胞",
+    "usphone": "ˌmɛtəˈruːbrɪsaɪt",
+    "ukphone": "ˌmɛtəˈruːbrɪsaɪt"
+  },
+  {
+    "name": "micromegakaryocyte",
+    "trans": "微小巨核细胞",
+    "usphone": "ˌmaɪkroʊˌmɛɡəˈkærioʊsaɪt",
+    "ukphone": "ˌmaɪkrəʊˌmɛɡəˈkæriəʊsaɪt"
+  },
+  {
+    "name": "monocyte esterase",
+    "trans": "单核细胞酯酶",
+    "usphone": "ˈmɑːnəsaɪt ˈɛstəreɪs",
+    "ukphone": "ˈmɒnəsaɪt ˈɛstəreɪs"
+  },
+  {
+    "name": "monocytic leukemia",
+    "trans": "单核细胞白血病",
+    "usphone": "ˌmɑːnəˈsɪtɪk luːˈkiːmiə",
+    "ukphone": "ˌmɒnəˈsɪtɪk luːˈkiːmiə"
+  },
+  {
+    "name": "morphologic",
+    "trans": "形态学的",
+    "usphone": "ˌmɔːrfəˈlɑːdʒɪk",
+    "ukphone": "ˌmɔːfəˈlɒdʒɪk"
+  },
+  {
+    "name": "multiple myeloma",
+    "trans": "多发性骨髓瘤",
+    "usphone": "ˈmʌltɪpl maɪəˈloʊmə",
+    "ukphone": "ˈmʌltɪpl maɪəˈləʊmə"
+  },
+  {
+    "name": "myeloblast",
+    "trans": "原始粒细胞",
+    "usphone": "ˈmaɪəloʊblæst",
+    "ukphone": "ˈmaɪələʊblæst"
+  },
+  {
+    "name": "myeloblastic leukemia",
+    "trans": "原始粒细胞白血病",
+    "usphone": "ˌmaɪəloʊˈblæstɪk luːˈkiːmiə",
+    "ukphone": "ˌmaɪələʊˈblæstɪk luːˈkiːmiə"
+  },
+  {
+    "name": "myelocyte",
+    "trans": "中幼粒细胞",
+    "usphone": "ˈmaɪəloʊsaɪt",
+    "ukphone": "ˈmaɪələʊsaɪt"
+  },
+  {
+    "name": "myelodysplastic syndrome",
+    "trans": "骨髓增生异常综合征",
+    "usphone": "ˌmaɪəloʊdɪsˈplæstɪk ˈsɪndroʊm",
+    "ukphone": "ˌmaɪələʊdɪsˈplæstɪk ˈsɪndrəʊm"
+  },
+  {
+    "name": "myelofibrosis",
+    "trans": "骨髓纤维化",
+    "usphone": "ˌmaɪəloʊfaɪˈbroʊsɪs",
+    "ukphone": "ˌmaɪələʊfaɪˈbrəʊsɪs"
+  },
+  {
+    "name": "myelopathic anemia",
+    "trans": "骨髓病性贫血",
+    "usphone": "ˌmaɪəˈlɑːpəθɪk əˈniːmiə",
+    "ukphone": "ˌmaɪəˈlɒpəθɪk əˈniːmiə"
+  },
+  {
+    "name": "myeloproliferative disease",
+    "trans": "骨髓增生性疾病",
+    "usphone": "ˌmaɪəloʊprəˈlɪfərətɪv dɪˈziːz",
+    "ukphone": "ˌmaɪələʊprəˈlɪfərətɪv dɪˈziːz"
+  },
+  {
+    "name": "myeloproliferative neoplasm",
+    "trans": "骨髓增生性肿瘤",
+    "usphone": "ˌmaɪəloʊprəˈlɪfərətɪv ˈniːoʊˌplæzəm",
+    "ukphone": "ˌmaɪələʊprəˈlɪfərətɪv ˈniːəʊˌplæzəm"
+  },
+  {
+    "name": "neutrophil alkaline phosphatase",
+    "trans": "中性粒细胞碱性磷酸酶",
+    "usphone": "ˈnjuːtrəfɪl ˈælkəlaɪn ˈfɑːsfəteɪs",
+    "ukphone": "ˈnjuːtrəfɪl ˈælkəlaɪn ˈfɒsfəteɪs"
+  },
+  {
+    "name": "non-erythroid cells",
+    "trans": "非红系细胞",
+    "usphone": "nɑːn ɪˈrɪθrɔɪd sɛlz",
+    "ukphone": "nɒn ɪˈrɪθrɔɪd sɛlz"
+  },
+  {
+    "name": "non-Hodgkin disease",
+    "trans": "非霍奇金病",
+    "usphone": "nɑːn ˈhɑːdʒkɪn dɪˈziːz",
+    "ukphone": "nɒn ˈhɒdʒkɪn dɪˈziːz"
+  },
+  {
+    "name": "peroxidase stain",
+    "trans": "过氧化物酶染色",
+    "usphone": "pəˈrɑːksɪdeɪs steɪn",
+    "ukphone": "pəˈrɒksɪdeɪs steɪn"
+  },
+  {
+    "name": "plasma cell leukemia",
+    "trans": "浆细胞白血病",
+    "usphone": "ˈplæzmə sɛl luːˈkiːmiə",
+    "ukphone": "ˈplæzmə sɛl luːˈkiːmiə"
+  },
+  {
+    "name": "precursor lymphoid neoplasm",
+    "trans": "前体淋巴细胞肿瘤",
+    "usphone": "prɪˈkɜːrsər ˈlɪmfɔɪd ˈniːoʊˌplæzəm",
+    "ukphone": "prɪˈkɜːsə ˈlɪmfɔɪd ˈniːəʊˌplæzəm"
+  },
+  {
+    "name": "proerythroblast",
+    "trans": "原始红细胞",
+    "usphone": "ˌproʊɪˈrɪθroʊblæst",
+    "ukphone": "ˌprəʊɪˈrɪθrəʊblæst"
+  },
+  {
+    "name": "prolymphocyte",
+    "trans": "幼淋巴细胞",
+    "usphone": "proʊˈlɪmfəsaɪt",
+    "ukphone": "prəʊˈlɪmfəsaɪt"
+  },
+  {
+    "name": "promegakaryocyte",
+    "trans": "幼巨核细胞",
+    "usphone": "ˌproʊˌmɛɡəˈkærioʊsaɪt",
+    "ukphone": "ˌprəʊˌmɛɡəˈkæriəʊsaɪt"
+  },
+  {
+    "name": "promonocyte",
+    "trans": "幼单核细胞",
+    "usphone": "ˌproʊˈmɑːnəsaɪt",
+    "ukphone": "ˌprəʊˈmɒnəsaɪt"
+  },
+  {
+    "name": "promyeloblastic leukemia",
+    "trans": "早幼粒细胞白血病",
+    "usphone": "ˌproʊˌmaɪəloʊˈblæstɪk luːˈkiːmiə",
+    "ukphone": "ˌprəʊˌmaɪələʊˈblæstɪk luːˈkiːmiə"
+  },
+  {
+    "name": "promyelocyte",
+    "trans": "早幼粒细胞",
+    "usphone": "ˌproʊˈmaɪəloʊsaɪt",
+    "ukphone": "ˌprəʊˈmaɪələʊsaɪt"
+  },
+  {
+    "name": "prorubricyte",
+    "trans": "早幼红细胞",
+    "usphone": "ˌproʊˈruːbrɪsaɪt",
+    "ukphone": "ˌprəʊˈruːbrɪsaɪt"
+  },
+  {
+    "name": "pseudo-Gaucher cells",
+    "trans": "类戈谢细胞",
+    "usphone": "ˌsuːdoʊˈɡoʊʃeɪ sɛlz",
+    "ukphone": "ˌsjuːdəʊˈɡəʊʃeɪ sɛlz"
+  },
+  {
+    "name": "ringed sideroblast",
+    "trans": "环形铁粒幼细胞",
+    "usphone": "rɪŋd ˈsɪdəroʊblæst",
+    "ukphone": "rɪŋd ˈsɪdərəʊblæst"
+  },
+  {
+    "name": "rubricyte",
+    "trans": "中幼红细胞",
+    "usphone": "ˈruːbrɪsaɪt",
+    "ukphone": "ˈruːbrɪsaɪt"
+  },
+  {
+    "name": "side scatter",
+    "trans": "侧向光散射",
+    "usphone": "saɪd ˈskætər",
+    "ukphone": "saɪd ˈskætə"
+  },
+  {
+    "name": "thalassemia",
+    "trans": "地中海贫血",
+    "usphone": "ˌθæləˈsiːmiə",
+    "ukphone": "ˌθæləˈsiːmiə"
+  },
+  {
+    "name": "acute glomerulonephritis",
+    "trans": "急性肾小球肾炎",
+    "usphone": "əˈkjuːt ɡloʊˌmɛrjəloʊnəˈfraɪtɪs",
+    "ukphone": "əˈkjuːt ɡləʊˌmɛrjʊləʊnəˈfraɪtɪs"
+  },
+  {
+    "name": "anticoagulant",
+    "trans": "抗凝剂",
+    "usphone": "ˌæntɪkoʊˈæɡjələnt",
+    "ukphone": "ˌæntɪkəʊˈæɡjʊlənt"
+  },
+  {
+    "name": "antithrombin activity",
+    "trans": "抗凝血酶活性",
+    "usphone": "ˌæntɪˈθrɑːmbɪn ækˈtɪvɪti",
+    "ukphone": "ˌæntɪˈθrɒmbɪn ækˈtɪvɪti"
+  },
+  {
+    "name": "antithrombin deficiency",
+    "trans": "抗凝血酶缺陷",
+    "usphone": "ˌæntɪˈθrɑːmbɪn dɪˈfɪʃənsi",
+    "ukphone": "ˌæntɪˈθrɒmbɪn dɪˈfɪʃənsi"
+  },
+  {
+    "name": "bleeding time test",
+    "trans": "出血时间试验",
+    "usphone": "ˈbliːdɪŋ taɪm tɛst",
+    "ukphone": "ˈbliːdɪŋ taɪm tɛst"
+  },
+  {
+    "name": "clopidogrel",
+    "trans": "氯吡格雷",
+    "usphone": "kloʊˈpɪdəɡrɛl",
+    "ukphone": "kləʊˈpɪdəɡrɛl"
+  },
+  {
+    "name": "clot retraction test",
+    "trans": "血块收缩试验",
+    "usphone": "klɑːt rɪˈtrækʃn tɛst",
+    "ukphone": "klɒt rɪˈtrækʃn tɛst"
+  },
+  {
+    "name": "clotting time test",
+    "trans": "凝血时间试验",
+    "usphone": "ˈklɑːtɪŋ taɪm tɛst",
+    "ukphone": "ˈklɒtɪŋ taɪm tɛst"
+  },
+  {
+    "name": "dysfibrinogenemia",
+    "trans": "异常纤维蛋白原血症",
+    "usphone": "dɪsˌfɪbrɪnoʊˌdʒɛnəˈmiːə",
+    "ukphone": "dɪsˌfɪbrɪnəʊˌdʒɛnəˈmiːə"
+  },
+  {
+    "name": "extrinsic pathway",
+    "trans": "外源性凝血途径",
+    "usphone": "ɪkˈstrɪnsɪk ˈpæθweɪ",
+    "ukphone": "ɪkˈstrɪnsɪk ˈpæθweɪ"
+  },
+  {
+    "name": "fibrinolytic system",
+    "trans": "纤维蛋白溶解系统",
+    "usphone": "ˌfɪbrɪnoʊˈlɪtɪk ˈsɪstəm",
+    "ukphone": "ˌfɪbrɪnəʊˈlɪtɪk ˈsɪstəm"
+  },
+  {
+    "name": "hemorrhage",
+    "trans": "出血",
+    "usphone": "ˈhɛmərɪdʒ",
+    "ukphone": "ˈhɛmərɪdʒ"
+  },
+  {
+    "name": "hemorheology",
+    "trans": "血液流变学",
+    "usphone": "ˌhɛmoʊriˈɑːlədʒi",
+    "ukphone": "ˌhɛməʊrɪˈɒlədʒi"
+  },
+  {
+    "name": "hemostasis",
+    "trans": "止血",
+    "usphone": "ˌhɛmoʊˈsteɪsɪs",
+    "ukphone": "ˌhɛməʊˈsteɪsɪs"
+  },
+  {
+    "name": "hyperfibrinolysis",
+    "trans": "纤溶亢进",
+    "usphone": "ˌhaɪpərˌfɪbrɪnoʊˈlaɪsɪs",
+    "ukphone": "ˌhaɪpəˌfɪbrɪnəʊˈlaɪsɪs"
+  },
+  {
+    "name": "hypocoagulable",
+    "trans": "低凝状态",
+    "usphone": "ˌhaɪpoʊkoʊˈæɡjələbəl",
+    "ukphone": "ˌhaɪpəʊkəʊˈæɡjʊləbəl"
+  },
+  {
+    "name": "hypofibrinogenemia",
+    "trans": "低纤维蛋白原血症",
+    "usphone": "ˌhaɪpoʊˌfɪbrɪnoʊˌdʒɛnəˈmiːə",
+    "ukphone": "ˌhaɪpəʊˌfɪbrɪnəʊˌdʒɛnəˈmiːə"
+  },
+  {
+    "name": "intrinsic pathway",
+    "trans": "内源性凝血途径",
+    "usphone": "ɪnˈtrɪnsɪk ˈpæθweɪ",
+    "ukphone": "ɪnˈtrɪnsɪk ˈpæθweɪ"
+  },
+  {
+    "name": "molecular marker",
+    "trans": "分子标志物",
+    "usphone": "məˈlɛkjələr ˈmɑːrkər",
+    "ukphone": "məˈlɛkjʊlə ˈmɑːkə"
+  },
+  {
+    "name": "nephrotic syndrome",
+    "trans": "肾病综合征",
+    "usphone": "nəˈfrɑːtɪk ˈsɪndroʊm",
+    "ukphone": "nəˈfrɒtɪk ˈsɪndrəʊm"
+  },
+  {
+    "name": "phospholipid binding protein",
+    "trans": "磷脂结合蛋白",
+    "usphone": "ˌfɑːsfəˈlɪpɪd ˈbaɪndɪŋ ˈproʊtiːn",
+    "ukphone": "ˌfɒsfəˈlɪpɪd ˈbaɪndɪŋ ˈprəʊtiːn"
+  },
+  {
+    "name": "plasma viscosity",
+    "trans": "血浆黏度",
+    "usphone": "ˈplæzmə vɪsˈkɑːsɪti",
+    "ukphone": "ˈplæzmə vɪsˈkɒsɪti"
+  },
+  {
+    "name": "plasminogen activator",
+    "trans": "纤溶酶原激活剂",
+    "usphone": "plæzˈmɪnədʒən ˈæktɪveɪtər",
+    "ukphone": "plæzˈmɪnədʒən ˈæktɪveɪtə"
+  },
+  {
+    "name": "platelet",
+    "trans": "血小板",
+    "usphone": "ˈpleɪtlət",
+    "ukphone": "ˈpleɪtlət"
+  },
+  {
+    "name": "platelet-associated antibody assay",
+    "trans": "血小板相关抗体检测",
+    "usphone": "ˈpleɪtlət əˈsoʊsieɪtɪd ˈæntɪˌbɑːdi əˈseɪ",
+    "ukphone": "ˈpleɪtlət əˈsəʊsieɪtɪd ˈæntɪˌbɒdi əˈseɪ"
+  },
+  {
+    "name": "platelet count",
+    "trans": "血小板计数",
+    "usphone": "ˈpleɪtlət kaʊnt",
+    "ukphone": "ˈpleɪtlət kaʊnt"
+  },
+  {
+    "name": "platelet distribution width",
+    "trans": "血小板分布宽度",
+    "usphone": "ˈpleɪtlət ˌdɪstrɪˈbjuːʃn wɪdθ",
+    "ukphone": "ˈpleɪtlət ˌdɪstrɪˈbjuːʃn wɪdθ"
+  },
+  {
+    "name": "platelet factor",
+    "trans": "血小板因子",
+    "usphone": "ˈpleɪtlət ˈfæktər",
+    "ukphone": "ˈpleɪtlət ˈfæktə"
+  },
+  {
+    "name": "platelet-crit",
+    "trans": "血小板压积",
+    "usphone": "ˈpleɪtlət krɪt",
+    "ukphone": "ˈpleɪtlət krɪt"
+  },
+  {
+    "name": "prethrombotic phase",
+    "trans": "血栓前期",
+    "usphone": "ˌpriːθrɑːmˈbɑːtɪk feɪz",
+    "ukphone": "ˌpriːθrɒmˈbɒtɪk feɪz"
+  },
+  {
+    "name": "primary fibrinolysis",
+    "trans": "原发性纤溶症",
+    "usphone": "ˈpraɪmɛri ˌfɪbrɪnoʊˈlaɪsɪs",
+    "ukphone": "ˈpraɪmɛri ˌfɪbrɪnəʊˈlaɪsɪs"
+  },
+  {
+    "name": "procoagulant activity",
+    "trans": "促凝活性",
+    "usphone": "ˌproʊkoʊˈæɡjələnt ækˈtɪvɪti",
+    "ukphone": "ˌprəʊkəʊˈæɡjʊlənt ækˈtɪvɪti"
+  },
+  {
+    "name": "ristocetin",
+    "trans": "利斯托霉素",
+    "usphone": "ˌrɪstoʊˈsiːtɪn",
+    "ukphone": "ˌrɪstəʊˈsiːtɪn"
+  },
+  {
+    "name": "screening test",
+    "trans": "筛选试验",
+    "usphone": "ˈskriːnɪŋ tɛst",
+    "ukphone": "ˈskriːnɪŋ tɛst"
+  },
+  {
+    "name": "secondary fibrinolysis",
+    "trans": "继发性纤溶症",
+    "usphone": "ˈsɛkəndɛri ˌfɪbrɪnoʊˈlaɪsɪs",
+    "ukphone": "ˈsɛkəndɛri ˌfɪbrɪnəʊˈlaɪsɪs"
+  },
+  {
+    "name": "secondary phase hemostasis",
+    "trans": "二级止血",
+    "usphone": "ˈsɛkəndɛri feɪz ˌhɛmoʊˈsteɪsɪs",
+    "ukphone": "ˈsɛkəndɛri feɪz ˌhɛməʊˈsteɪsɪs"
+  },
+  {
+    "name": "thrombomodulin antigen",
+    "trans": "凝血酶调节蛋白抗原",
+    "usphone": "θrɑːmboʊˈmɑːdjəlɪn ˈæntɪdʒən",
+    "ukphone": "θrɒmbəʊˈmɒdjʊlɪn ˈæntɪdʒən"
+  },
+  {
+    "name": "thrombophilia",
+    "trans": "易栓症",
+    "usphone": "ˌθrɑːmboʊˈfɪliə",
+    "ukphone": "ˌθrɒmbəʊˈfɪliə"
+  },
+  {
+    "name": "thrombosis",
+    "trans": "血栓形成",
+    "usphone": "θrɑːmˈboʊsɪs",
+    "ukphone": "θrɒmˈbəʊsɪs"
+  },
+  {
+    "name": "tissue thromboplastin",
+    "trans": "组织凝血活酶",
+    "usphone": "ˈtɪʃuː θrɑːmboʊˈplæstɪn",
+    "ukphone": "ˈtɪʃuː θrɒmbəʊˈplæstɪn"
+  },
+  {
+    "name": "tissue type plasminogen activator activity",
+    "trans": "组织型纤溶酶原激活剂活性",
+    "usphone": "ˈtɪʃuː taɪp plæzˈmɪnədʒən ˈæktɪveɪtər ækˈtɪvɪti",
+    "ukphone": "ˈtɪʃuː taɪp plæzˈmɪnədʒən ˈæktɪveɪtə ækˈtɪvɪti"
+  },
+  {
+    "name": "toluidine blue correction",
+    "trans": "甲苯胺蓝校正",
+    "usphone": "təˈluːɪdiːn bluː kəˈrɛkʃn",
+    "ukphone": "təˈluːɪdiːn bluː kəˈrɛkʃn"
+  },
+  {
+    "name": "von Willebrand factor antigen",
+    "trans": "血管性血友病因子抗原",
+    "usphone": "vɑːn ˈwɪlɪbrænd ˈfæktər ˈæntɪdʒən",
+    "ukphone": "vɒn ˈwɪlɪbrænd ˈfæktə ˈæntɪdʒən"
+  },
+  {
+    "name": "whole-blood viscosity",
+    "trans": "全血黏度",
+    "usphone": "hoʊl blʌd vɪsˈkɑːsɪti",
+    "ukphone": "həʊl blʌd vɪsˈkɒsɪti"
+  },
+  {
+    "name": "acute hemolytic transfusion reaction",
+    "trans": "急性溶血性输血反应",
+    "usphone": "əˈkjuːt ˌhɛmoʊˈlɪtɪk trænsˈfjuːʒn riˈækʃn",
+    "ukphone": "əˈkjuːt ˌhɛməʊˈlɪtɪk trænsˈfjuːʒn riˈækʃn"
+  },
+  {
+    "name": "adverse transfusion reaction",
+    "trans": "输血不良反应",
+    "usphone": "ˈædvərs trænsˈfjuːʒn riˈækʃn",
+    "ukphone": "ˈædvəs trænsˈfjuːʒn riˈækʃn"
+  },
+  {
+    "name": "delayed hemolytic transfusion reaction",
+    "trans": "迟发性溶血性输血反应",
+    "usphone": "dɪˈleɪd ˌhɛmoʊˈlɪtɪk trænsˈfjuːʒn riˈækʃn",
+    "ukphone": "dɪˈleɪd ˌhɛməʊˈlɪtɪk trænsˈfjuːʒn riˈækʃn"
+  },
+  {
+    "name": "forward grouping",
+    "trans": "正定型",
+    "usphone": "ˈfɔːrwərd ˈɡruːpɪŋ",
+    "ukphone": "ˈfɔːwəd ˈɡruːpɪŋ"
+  },
+  {
+    "name": "irregular antibodies",
+    "trans": "不规则抗体",
+    "usphone": "ɪˈrɛɡjələr ˈæntɪˌbɑːdiz",
+    "ukphone": "ɪˈrɛɡjʊlə ˈæntɪˌbɒdiz"
+  },
+  {
+    "name": "panel cell",
+    "trans": "谱细胞",
+    "usphone": "ˈpænl sɛl",
+    "ukphone": "ˈpænl sɛl"
+  },
+  {
+    "name": "reverse grouping",
+    "trans": "反定型",
+    "usphone": "rɪˈvɜːrs ˈɡruːpɪŋ",
+    "ukphone": "rɪˈvɜːs ˈɡruːpɪŋ"
+  },
+  {
+    "name": "unexpected antibody",
+    "trans": "意外抗体",
+    "usphone": "ˌʌnɪkˈspɛktɪd ˈæntɪˌbɑːdi",
+    "ukphone": "ˌʌnɪkˈspɛktɪd ˈæntɪˌbɒdi"
+  },
+  {
+    "name": "unexpected antibody screening",
+    "trans": "意外抗体筛查",
+    "usphone": "ˌʌnɪkˈspɛktɪd ˈæntɪˌbɑːdi ˈskriːnɪŋ",
+    "ukphone": "ˌʌnɪkˈspɛktɪd ˈæntɪˌbɒdi ˈskriːnɪŋ"
+  },
+  {
+    "name": "chylomicron retention disease",
+    "trans": "乳糜微粒潴留病",
+    "usphone": "ˌkaɪloʊˈmaɪkrən rɪˈtɛnʃn dɪˈziːz",
+    "ukphone": "ˌkaɪləʊˈmaɪkrən rɪˈtɛnʃn dɪˈziːz"
+  },
+  {
+    "name": "familial hypertriglyceridemia",
+    "trans": "家族性高甘油三酯血症",
+    "usphone": "fəˈmɪliəl ˌhaɪpərtraɪˌɡlɪsərɪˈdiːmiə",
+    "ukphone": "fəˈmɪliəl ˌhaɪpətraɪˌɡlɪsərɪˈdiːmiə"
+  },
+  {
+    "name": "lipolytic enzymes",
+    "trans": "脂解酶",
+    "usphone": "ˌlɪpəˈlɪtɪk ˈɛnzaɪmz",
+    "ukphone": "ˌlɪpəˈlɪtɪk ˈɛnzaɪmz"
+  },
+  {
+    "name": "lipoprotein remnants cholesterol",
+    "trans": "脂蛋白残粒胆固醇",
+    "usphone": "ˌlɪpəˈproʊtiːn ˈrɛmnənts kəˈlɛstərɔːl",
+    "ukphone": "ˌlɪpəˈprəʊtiːn ˈrɛmnənts kəˈlɛstərɒl"
+  },
+  {
+    "name": "monogenic hypercholesterolemia",
+    "trans": "单基因高胆固醇血症",
+    "usphone": "ˌmɑːnoʊˈdʒɛnɪk ˌhaɪpərkəˌlɛstərəˈliːmiə",
+    "ukphone": "ˌmɒnəʊˈdʒɛnɪk ˌhaɪpəkəˌlɛstərəˈliːmiə"
+  },
+  {
+    "name": "acute pancreatitis",
+    "trans": "急性胰腺炎",
+    "usphone": "əˈkjuːt ˌpæŋkriəˈtaɪtɪs",
+    "ukphone": "əˈkjuːt ˌpæŋkriəˈtaɪtɪs"
+  },
+  {
+    "name": "acute phase reactants",
+    "trans": "急性期反应蛋白",
+    "usphone": "əˈkjuːt feɪz riˈæktənts",
+    "ukphone": "əˈkjuːt feɪz riˈæktənts"
+  },
+  {
+    "name": "alcoholic liver disease",
+    "trans": "酒精性肝病",
+    "usphone": "ˌælkəˈhɑːlɪk ˈlɪvər dɪˈziːz",
+    "ukphone": "ˌælkəˈhɒlɪk ˈlɪvə dɪˈziːz"
+  },
+  {
+    "name": "cancer antigen",
+    "trans": "肿瘤抗原",
+    "usphone": "ˈkænsər ˈæntɪdʒən",
+    "ukphone": "ˈkænsə ˈæntɪdʒən"
+  },
+  {
+    "name": "carbohydrate antigen",
+    "trans": "糖类抗原",
+    "usphone": "ˌkɑːrboʊˈhaɪdreɪt ˈæntɪdʒən",
+    "ukphone": "ˌkɑːbəʊˈhaɪdreɪt ˈæntɪdʒən"
+  },
+  {
+    "name": "carcinoma of pancreas",
+    "trans": "胰腺癌",
+    "usphone": "ˌkɑːrsɪˈnoʊmə əv ˈpæŋkriəs",
+    "ukphone": "ˌkɑːsɪˈnəʊmə əv ˈpæŋkriəs"
+  },
+  {
+    "name": "cholangiocarcinoma",
+    "trans": "胆管细胞癌",
+    "usphone": "kəˌlændʒioʊˌkɑːrsɪˈnoʊmə",
+    "ukphone": "kəˌlændʒiəʊˌkɑːsɪˈnəʊmə"
+  },
+  {
+    "name": "cholecystitis",
+    "trans": "胆囊炎",
+    "usphone": "ˌkoʊləsɪˈstaɪtɪs",
+    "ukphone": "ˌkɒləsɪˈstaɪtɪs"
+  },
+  {
+    "name": "cholelithiasis",
+    "trans": "胆石病",
+    "usphone": "ˌkoʊləlɪˈθaɪəsɪs",
+    "ukphone": "ˌkɒləlɪˈθaɪəsɪs"
+  },
+  {
+    "name": "direct bilirubin",
+    "trans": "直接胆红素",
+    "usphone": "dɪˈrɛkt ˌbɪlɪˈruːbɪn",
+    "ukphone": "dɪˈrɛkt ˌbɪlɪˈruːbɪn"
+  },
+  {
+    "name": "drug-induced liver disease",
+    "trans": "药物性肝病",
+    "usphone": "drʌɡ ɪnˈduːst ˈlɪvər dɪˈziːz",
+    "ukphone": "drʌɡ ɪnˈdjuːst ˈlɪvə dɪˈziːz"
+  },
+  {
+    "name": "globulin",
+    "trans": "球蛋白",
+    "usphone": "ˈɡlɑːbjəlɪn",
+    "ukphone": "ˈɡlɒbjʊlɪn"
+  },
+  {
+    "name": "hepatocellular carcinoma",
+    "trans": "肝细胞癌",
+    "usphone": "ˌhɛpətoʊˈsɛljələr ˌkɑːrsɪˈnoʊmə",
+    "ukphone": "ˌhɛpətəʊˈsɛljʊlə ˌkɑːsɪˈnəʊmə"
+  },
+  {
+    "name": "indirect bilirubin",
+    "trans": "间接胆红素",
+    "usphone": "ˌɪndɪˈrɛkt ˌbɪlɪˈruːbɪn",
+    "ukphone": "ˌɪndɪˈrɛkt ˌbɪlɪˈruːbɪn"
+  },
+  {
+    "name": "total bilirubin",
+    "trans": "总胆红素",
+    "usphone": "ˈtoʊtl ˌbɪlɪˈruːbɪn",
+    "ukphone": "ˈtəʊtl ˌbɪlɪˈruːbɪn"
+  },
+  {
+    "name": "viral hepatitis",
+    "trans": "病毒性肝炎",
+    "usphone": "ˈvaɪrəl ˌhɛpəˈtaɪtɪs",
+    "ukphone": "ˈvaɪrəl ˌhɛpəˈtaɪtɪs"
+  },
+  {
+    "name": "endogenous creatinine clearance test",
+    "trans": "内生肌酐清除试验",
+    "usphone": "ɛnˈdɑːdʒənəs kriˈætɪnɪn ˈklɪrəns tɛst",
+    "ukphone": "ɛnˈdɒdʒənəs kriˈætɪnɪn ˈklɪərəns tɛst"
+  },
+  {
+    "name": "urea nitrogen",
+    "trans": "尿素氮",
+    "usphone": "jʊˈriːə ˈnaɪtrədʒən",
+    "ukphone": "jʊˈriːə ˈnaɪtrədʒən"
+  },
+  {
+    "name": "uremia",
+    "trans": "尿毒症",
+    "usphone": "jʊˈriːmiə",
+    "ukphone": "jʊˈriːmiə"
+  },
+  {
+    "name": "uric acid",
+    "trans": "尿酸",
+    "usphone": "ˈjʊrɪk ˈæsɪd",
+    "ukphone": "ˈjʊərɪk ˈæsɪd"
+  },
+  {
+    "name": "urobilinogen",
+    "trans": "尿胆原",
+    "usphone": "ˌjʊroʊˌbɪlɪˈnoʊdʒən",
+    "ukphone": "ˌjʊərəʊˌbɪlɪˈnəʊdʒən"
+  },
+  {
+    "name": "fructosamine",
+    "trans": "果糖胺",
+    "usphone": "frʌkˈtoʊsəmiːn",
+    "ukphone": "frʌkˈtəʊsəmiːn"
+  },
+  {
+    "name": "glucagon",
+    "trans": "胰高血糖素",
+    "usphone": "ˈɡluːkəɡɑːn",
+    "ukphone": "ˈɡluːkəɡɒn"
+  },
+  {
+    "name": "glucose",
+    "trans": "葡萄糖",
+    "usphone": "ˈɡluːkoʊs",
+    "ukphone": "ˈɡluːkəʊs"
+  },
+  {
+    "name": "glycation protein",
+    "trans": "糖化蛋白",
+    "usphone": "ɡlaɪˈkeɪʃn ˈproʊtiːn",
+    "ukphone": "ɡlaɪˈkeɪʃn ˈprəʊtiːn"
+  },
+  {
+    "name": "growth hormone-inhibiting hormone",
+    "trans": "生长激素抑制激素",
+    "usphone": "ɡroʊθ ˈhɔːrmoʊn ɪnˈhɪbɪtɪŋ ˈhɔːrmoʊn",
+    "ukphone": "ɡrəʊθ ˈhɔːməʊn ɪnˈhɪbɪtɪŋ ˈhɔːməʊn"
+  },
+  {
+    "name": "hyperglycemia",
+    "trans": "高血糖症",
+    "usphone": "ˌhaɪpərɡlaɪˈsiːmiə",
+    "ukphone": "ˌhaɪpəɡlaɪˈsiːmiə"
+  },
+  {
+    "name": "hyperinsulinemia",
+    "trans": "高胰岛素血症",
+    "usphone": "ˌhaɪpərˌɪnsəlɪˈniːmiə",
+    "ukphone": "ˌhaɪpəˌɪnsjʊlɪˈniːmiə"
+  },
+  {
+    "name": "hypoglycemia",
+    "trans": "低血糖症",
+    "usphone": "ˌhaɪpoʊɡlaɪˈsiːmiə",
+    "ukphone": "ˌhaɪpəʊɡlaɪˈsiːmiə"
+  },
+  {
+    "name": "insulin releasing test",
+    "trans": "胰岛素释放试验",
+    "usphone": "ˈɪnsəlɪn rɪˈliːsɪŋ tɛst",
+    "ukphone": "ˈɪnsjʊlɪn rɪˈliːsɪŋ tɛst"
+  },
+  {
+    "name": "ketoamine",
+    "trans": "酮胺",
+    "usphone": "ˌkɛtoʊˈæmiːn",
+    "ukphone": "ˌkɛtəʊˈæmiːn"
+  },
+  {
+    "name": "ketonemia",
+    "trans": "酮血症",
+    "usphone": "ˌkɛtoʊˈniːmiə",
+    "ukphone": "ˌkɛtəʊˈniːmiə"
+  },
+  {
+    "name": "preproinsulin",
+    "trans": "前胰岛素原",
+    "usphone": "ˌpriːproʊˈɪnsəlɪn",
+    "ukphone": "ˌpriːprəʊˈɪnsjʊlɪn"
+  },
+  {
+    "name": "protein tyrosine phosphatase-like protein",
+    "trans": "蛋白酪氨酸磷酸酶",
+    "usphone": "ˈproʊtiːn ˈtaɪrəsiːn ˈfɑːsfəteɪs laɪk ˈproʊtiːn",
+    "ukphone": "ˈprəʊtiːn ˈtaɪrəsiːn ˈfɒsfəteɪs laɪk ˈprəʊtiːn"
+  },
+  {
+    "name": "pyruvic acid",
+    "trans": "丙酮酸",
+    "usphone": "paɪˈruːvɪk ˈæsɪd",
+    "ukphone": "paɪˈruːvɪk ˈæsɪd"
+  },
+  {
+    "name": "somatostatin",
+    "trans": "生长抑素",
+    "usphone": "ˌsoʊmətoʊˈstætɪn",
+    "ukphone": "ˌsəʊmətəʊˈstætɪn"
+  },
+  {
+    "name": "acid-base disturbance",
+    "trans": "酸碱平衡紊乱",
+    "usphone": "ˈæsɪd beɪs dɪsˈtɜːrbəns",
+    "ukphone": "ˈæsɪd beɪs dɪsˈtɜːbəns"
+  },
+  {
+    "name": "hyperkalemia",
+    "trans": "高钾血症",
+    "usphone": "ˌhaɪpərkəˈliːmiə",
+    "ukphone": "ˌhaɪpəkəˈliːmiə"
+  },
+  {
+    "name": "hypernatremia",
+    "trans": "高钠血症",
+    "usphone": "ˌhaɪpərnəˈtriːmiə",
+    "ukphone": "ˌhaɪpənəˈtriːmiə"
+  },
+  {
+    "name": "hypokalemia",
+    "trans": "低钾血症",
+    "usphone": "ˌhaɪpoʊkəˈliːmiə",
+    "ukphone": "ˌhaɪpəʊkəˈliːmiə"
+  },
+  {
+    "name": "hyponatremia",
+    "trans": "低钠血症",
+    "usphone": "ˌhaɪpoʊnəˈtriːmiə",
+    "ukphone": "ˌhaɪpəʊnəˈtriːmiə"
+  },
+  {
+    "name": "hypovolemia",
+    "trans": "低血容量症",
+    "usphone": "ˌhaɪpoʊvoʊˈliːmiə",
+    "ukphone": "ˌhaɪpəʊvəʊˈliːmiə"
+  },
+  {
+    "name": "mixed types of acid-base disturbance",
+    "trans": "混合型酸碱平衡紊乱",
+    "usphone": "mɪkst taɪps əv ˈæsɪd beɪs dɪsˈtɜːrbəns",
+    "ukphone": "mɪkst taɪps əv ˈæsɪd beɪs dɪsˈtɜːbəns"
+  },
+  {
+    "name": "non-respiratory pH",
+    "trans": "非呼吸性酸碱度",
+    "usphone": "nɑːn rɛˈspɪrətɔːri piː eɪtʃ",
+    "ukphone": "nɒn rɛˈspɪrətəri piː eɪtʃ"
+  },
+  {
+    "name": "potassium depletion",
+    "trans": "钾缺乏",
+    "usphone": "pəˈtæsiəm dɪˈpliːʃn",
+    "ukphone": "pəˈtæsiəm dɪˈpliːʃn"
+  },
+  {
+    "name": "potassium excess",
+    "trans": "钾过多",
+    "usphone": "pəˈtæsiəm ɪkˈsɛs",
+    "ukphone": "pəˈtæsiəm ɪkˈsɛs"
+  },
+  {
+    "name": "respiratory acidosis",
+    "trans": "呼吸性酸中毒",
+    "usphone": "rɛˈspɪrətɔːri ˌæsɪ",
+    "ukphone": NaN
+  },
+  {
+    "name": "respiratory alkalosis",
+    "trans": "呼吸性碱中毒",
+    "usphone": "rɛˈspɪrətɔːri ˌælkəˈloʊsɪs",
+    "ukphone": "rɛˈspɪrətəri ˌælkəˈləʊsɪs"
+  },
+  {
+    "name": "saturation oxygen",
+    "trans": "氧饱和度",
+    "usphone": "ˌsætʃəˈreɪʃn ˈɑːksɪdʒən",
+    "ukphone": "ˌsætʃəˈreɪʃn ˈɒksɪdʒən"
+  },
+  {
+    "name": "total oxygen content",
+    "trans": "血氧含量",
+    "usphone": "ˈtoʊtl ˈɑːksɪdʒən ˈkɑːntɛnt",
+    "ukphone": "ˈtəʊtl ˈɒksɪdʒən ˈkɒntɛnt"
+  },
+  {
+    "name": "volume depletion",
+    "trans": "容量不足",
+    "usphone": "ˈvɑːljuːm dɪˈpliːʃn",
+    "ukphone": "ˈvɒljuːm dɪˈpliːʃn"
+  },
+  {
+    "name": "volume excess",
+    "trans": "容量过多",
+    "usphone": "ˈvɑːljuːm ɪkˈsɛs",
+    "ukphone": "ˈvɒljuːm ɪkˈsɛs"
+  },
+  {
+    "name": "bone matrix",
+    "trans": "骨基质",
+    "usphone": "boʊn ˈmeɪtrɪks",
+    "ukphone": "bəʊn ˈmeɪtrɪks"
+  },
+  {
+    "name": "calcitonin",
+    "trans": "降钙素",
+    "usphone": "ˌkælsɪˈtoʊnɪn",
+    "ukphone": "ˌkælsɪˈtəʊnɪn"
+  },
+  {
+    "name": "carboxylated osteocalcin",
+    "trans": "血清羧化骨钙素",
+    "usphone": "kɑːrˈbɑːksɪleɪtɪd ˌɑːstioʊˈkælsɪn",
+    "ukphone": "kɑːˈbɒksɪleɪtɪd ˌɒstɪəʊˈkælsɪn"
+  },
+  {
+    "name": "deferoxamine",
+    "trans": "去铁胺",
+    "usphone": "ˌdɛfəˈrɑːksəmiːn",
+    "ukphone": "ˌdɛfəˈrɒksəmiːn"
+  },
+  {
+    "name": "epithelial calcium channels",
+    "trans": "上皮钙通道",
+    "usphone": "ˌɛpɪˈθiːliəl ˈkælsiəm ˈtʃænəlz",
+    "ukphone": "ˌɛpɪˈθiːliəl ˈkælsiəm ˈtʃænəlz"
+  },
+  {
+    "name": "hydroxyapatite",
+    "trans": "羟基磷灰石",
+    "usphone": "haɪˌdrɑːksiˈæpətaɪt",
+    "ukphone": "haɪˌdrɒksiˈæpətaɪt"
+  },
+  {
+    "name": "hydroxyproline",
+    "trans": "羟脯氨酸",
+    "usphone": "haɪˌdrɑːksiˈproʊliːn",
+    "ukphone": "haɪˌdrɒksiˈprəʊliːn"
+  },
+  {
+    "name": "magnesium",
+    "trans": "镁",
+    "usphone": "mæɡˈniːziəm",
+    "ukphone": "mæɡˈniːziəm"
+  },
+  {
+    "name": "matrix metalloproteinase",
+    "trans": "基质金属蛋白酶",
+    "usphone": "ˈmeɪtrɪks məˌtæloʊˈproʊtiːneɪs",
+    "ukphone": "ˈmeɪtrɪks məˌtæləʊˈprəʊtiːneɪs"
+  },
+  {
+    "name": "metabolic acidosis",
+    "trans": "代谢性酸中毒",
+    "usphone": "ˌmɛtəˈbɑːlɪk ˌæsɪˈdoʊsɪs",
+    "ukphone": "ˌmɛtəˈbɒlɪk ˌæsɪˈdəʊsɪs"
+  },
+  {
+    "name": "metabolic alkalosis",
+    "trans": "代谢性碱中毒",
+    "usphone": "ˌmɛtəˈbɑːlɪk ˌælkəˈloʊsɪs",
+    "ukphone": "ˌmɛtəˈbɒlɪk ˌælkəˈləʊsɪs"
+  },
+  {
+    "name": "metabolic bone disease",
+    "trans": "代谢性骨病",
+    "usphone": "ˌmɛtəˈbɑːlɪk boʊn dɪˈziːz",
+    "ukphone": "ˌmɛtəˈbɒlɪk bəʊn dɪˈziːz"
+  },
+  {
+    "name": "mixed osteodystrophy",
+    "trans": "混合型骨营养不良",
+    "usphone": "mɪkst ˌɑːstioʊˈdɪstrəfi",
+    "ukphone": "mɪkst ˌɒstɪəʊˈdɪstrəfi"
+  },
+  {
+    "name": "osteitis deformans",
+    "trans": "变形性骨炎",
+    "usphone": "ˌɑːstiˈaɪtɪs dɪˈfɔːrmənz",
+    "ukphone": "ˌɒstiˈaɪtɪs dɪˈfɔːmənz"
+  },
+  {
+    "name": "osteoclast",
+    "trans": "破骨细胞",
+    "usphone": "ˈɑːstioʊklæst",
+    "ukphone": "ˈɒstɪəʊklæst"
+  },
+  {
+    "name": "osteocyte",
+    "trans": "骨细胞",
+    "usphone": "ˈɑːstioʊsaɪt",
+    "ukphone": "ˈɒstɪəʊsaɪt"
+  },
+  {
+    "name": "osteogenic cell",
+    "trans": "骨原细胞",
+    "usphone": "ˌɑːstioʊˈdʒɛnɪk sɛl",
+    "ukphone": "ˌɒstɪəʊˈdʒɛnɪk sɛl"
+  },
+  {
+    "name": "osteomalacia",
+    "trans": "骨软化症",
+    "usphone": "ˌɑːstioʊməˈleɪʃə",
+    "ukphone": "ˌɒstɪəʊməˈleɪʃə"
+  },
+  {
+    "name": "rickets",
+    "trans": "佝偻病",
+    "usphone": "ˈrɪkɪts",
+    "ukphone": "ˈrɪkɪts"
+  },
+  {
+    "name": "tartrate-resistant acid phosphatase",
+    "trans": "抗酒石酸酸性磷酸酶",
+    "usphone": "ˈtɑːrtreɪt rɪˈzɪstənt ˈæsɪd ˈfɑːsfəteɪs",
+    "ukphone": "ˈtɑːtreɪt rɪˈzɪstənt ˈæsɪd ˈfɒsfəteɪs"
+  },
+  {
+    "name": "urinary galactosyl hydroxylysine",
+    "trans": "尿羟赖氨酸糖苷",
+    "usphone": "ˈjʊrəˌnɛri ɡəˈlæktoʊsɪl haɪˌdrɑːksɪˈlaɪsɪn",
+    "ukphone": "ˈjʊərɪˌnɛri ɡəˈlæktəʊsɪl haɪˌdrɒksiˈlaɪsɪn"
+  },
+  {
+    "name": "Addison disease",
+    "trans": "艾迪生病",
+    "usphone": "ˈædɪsən dɪˈziːz",
+    "ukphone": "ˈædɪsən dɪˈziːz"
+  },
+  {
+    "name": "aldosterone",
+    "trans": "醛固酮",
+    "usphone": "ælˈdɑːstəroʊn",
+    "ukphone": "ælˈdɒstərəʊn"
+  },
+  {
+    "name": "cortisol",
+    "trans": "皮质醇",
+    "usphone": "ˈkɔːrtɪsɔːl",
+    "ukphone": "ˈkɔːtɪsɒl"
+  },
+  {
+    "name": "cretinism",
+    "trans": "呆小病",
+    "usphone": "ˈkriːtɪnɪzəm",
+    "ukphone": "ˈkriːtɪnɪzəm"
+  },
+  {
+    "name": "diabetes insipidus",
+    "trans": "尿崩症",
+    "usphone": "ˌdaɪəˈbiːtɪs ɪnˈsɪpɪdəs",
+    "ukphone": "ˌdaɪəˈbiːtɪs ɪnˈsɪpɪdəs"
+  },
+  {
+    "name": "dopamine",
+    "trans": "多巴胺",
+    "usphone": "ˈdoʊpəmiːn",
+    "ukphone": "ˈdəʊpəmiːn"
+  },
+  {
+    "name": "hyperaldosteronemia",
+    "trans": "高醛固酮血症",
+    "usphone": "ˌhaɪpərælˌdɑːstəroʊˈniːmiə",
+    "ukphone": "ˌhaɪpərælˌdɒstərəʊˈniːmiə"
+  },
+  {
+    "name": "hyperthyroidism",
+    "trans": "甲状腺功能亢进",
+    "usphone": "ˌhaɪpərˈθaɪrɔɪdɪzəm",
+    "ukphone": "ˌhaɪpəˈθaɪrɔɪdɪzəm"
+  },
+  {
+    "name": "hypothyroidism",
+    "trans": "甲状腺功能减退",
+    "usphone": "ˌhaɪpoʊˈθaɪrɔɪdɪzəm",
+    "ukphone": "ˌhaɪpəʊˈθaɪrɔɪdɪzəm"
+  },
+  {
+    "name": "normetanephrine",
+    "trans": "甲氧基去甲肾上腺素",
+    "usphone": "ˌnɔːrmɛtəˈnɛfrɪn",
+    "ukphone": "ˌnɔːmɛtəˈnɛfrɪn"
+  },
+  {
+    "name": "osteitis fibrosa",
+    "trans": "纤维性骨炎",
+    "usphone": "ˌɑːstiˈaɪtɪs faɪˈbroʊsə",
+    "ukphone": "ˌɒstiˈaɪtɪs faɪˈbrəʊsə"
+  },
+  {
+    "name": "pituitary gigantism",
+    "trans": "垂体性巨人症",
+    "usphone": "pɪˈtuːɪˌtɛri dʒaɪˈɡæntɪzəm",
+    "ukphone": "pɪˈtjuːɪˌtɛri dʒaɪˈɡæntɪzəm"
+  },
+  {
+    "name": "primary adrenal insufficiency",
+    "trans": "原发性肾上腺皮质功能减退",
+    "usphone": "ˈpraɪmɛri əˈdriːnl ˌɪnsəˈfɪʃənsi",
+    "ukphone": "ˈpraɪmɛri əˈdriːnl ˌɪnsəˈfɪʃənsi"
+  },
+  {
+    "name": "primary aldosteronism",
+    "trans": "原发性醛固酮增多症",
+    "usphone": "ˈpraɪmɛri ælˈdɑːstəroʊnɪzəm",
+    "ukphone": "ˈpraɪmɛri ælˈdɒstərəʊnɪzəm"
+  },
+  {
+    "name": "secondary aldosteronism",
+    "trans": "继发性醛固酮增多症",
+    "usphone": "ˈsɛkəndɛri ælˈdɑːstəroʊnɪzəm",
+    "ukphone": "ˈsɛkəndɛri ælˈdɒstərəʊnɪzəm"
+  },
+  {
+    "name": "subclinical hyperthyroidism",
+    "trans": "亚临床甲亢",
+    "usphone": "ˌsʌbˈklɪnɪkl ˌhaɪpərˈθaɪrɔɪdɪzəm",
+    "ukphone": "ˌsʌbˈklɪnɪkl ˌhaɪpəˈθaɪrɔɪdɪzəm"
+  },
+  {
+    "name": "thyroxine",
+    "trans": "甲状腺素",
+    "usphone": "θaɪˈrɑːksɪn",
+    "ukphone": "θaɪˈrɒksɪn"
+  },
+  {
+    "name": "anti-cardiolipin antibodies",
+    "trans": "抗心磷脂抗体",
+    "usphone": "ˌæntɪ ˌkɑːrdioʊˈlɪpɪn ˈæntɪˌbɑːdiz",
+    "ukphone": "ˌæntɪ ˌkɑːdiəʊˈlɪpɪn ˈæntɪˌbɒdiz"
+  },
+  {
+    "name": "anti-ENA antibody",
+    "trans": "抗可提取性核抗体",
+    "usphone": "ˌæntɪ iː ɛn eɪ ˈæntɪˌbɑːdi",
+    "ukphone": "ˌæntɪ iː ɛn eɪ ˈæntɪˌbɒdi"
+  },
+  {
+    "name": "anti-phosphatidyl serine antibody",
+    "trans": "抗磷脂酰丝氨酸抗体",
+    "usphone": "ˌæntɪ ˌfɑːsfəˌtɪdɪl ˈsɪriːn ˈæntɪˌbɑːdi",
+    "ukphone": "ˌæntɪ ˌfɒsfəˌtɪdɪl ˈsɪriːn ˈæntɪˌbɒdi"
+  },
+  {
+    "name": "anti-phospholipid antibody",
+    "trans": "抗磷脂抗体",
+    "usphone": "ˌæntɪ ˌfɑːsfoʊˈlɪpɪd ˈæntɪˌbɑːdi",
+    "ukphone": "ˌæntɪ ˌfɒsfəʊˈlɪpɪd ˈæntɪˌbɒdi"
+  },
+  {
+    "name": "cascade response",
+    "trans": "级联反应",
+    "usphone": "kæˈskeɪd rɪˈspɑːns",
+    "ukphone": "kæˈskeɪd rɪˈspɒns"
+  },
+  {
+    "name": "cold agglutination test",
+    "trans": "冷凝集试验",
+    "usphone": "koʊld əˌɡluːtɪˈneɪʃn tɛst",
+    "ukphone": "kəʊld əˌɡluːtɪˈneɪʃn tɛst"
+  },
+  {
+    "name": "common pathway",
+    "trans": "共同途径",
+    "usphone": "ˈkɑːmən ˈpæθweɪ",
+    "ukphone": "ˈkɒmən ˈpæθweɪ"
+  },
+  {
+    "name": "concentration",
+    "trans": "浓度",
+    "usphone": "ˌkɑːnsnˈtreɪʃn",
+    "ukphone": "ˌkɒnsnˈtreɪʃn"
+  },
+  {
+    "name": "dot-ELISA",
+    "trans": "斑点酶联免疫吸附试验",
+    "usphone": "dɑːt iː ɛl aɪ ɛs eɪ",
+    "ukphone": "dɒt iː ɛl aɪ ɛs eɪ"
+  },
+  {
+    "name": "enzyme",
+    "trans": "酶",
+    "usphone": "ˈɛnzaɪm",
+    "ukphone": "ˈɛnzaɪm"
+  },
+  {
+    "name": "filaggrin",
+    "trans": "丝集蛋白",
+    "usphone": "fɪˈlæɡrɪn",
+    "ukphone": "fɪˈlæɡrɪn"
+  },
+  {
+    "name": "heterophil agglutination test",
+    "trans": "嗜异凝集试验",
+    "usphone": "ˈhɛtərəfɪl əˌɡluːtɪˈneɪʃn tɛst",
+    "ukphone": "ˈhɛtərəfɪl əˌɡluːtɪˈneɪʃn tɛst"
+  },
+  {
+    "name": "kinetoplast",
+    "trans": "动基体",
+    "usphone": "kɪˈnɛtoʊplæst",
+    "ukphone": "kɪˈnɛtəʊplæst"
+  },
+  {
+    "name": "monoclone",
+    "trans": "单克隆",
+    "usphone": "ˈmɑːnoʊkloʊn",
+    "ukphone": "ˈmɒnəʊkləʊn"
+  },
+  {
+    "name": "rheumatic disease",
+    "trans": "风湿性疾病",
+    "usphone": "ruːˈmætɪk dɪˈziːz",
+    "ukphone": "ruːˈmætɪk dɪˈziːz"
+  },
+  {
+    "name": "allergen",
+    "trans": "变应原",
+    "usphone": "ˈælərdʒən",
+    "ukphone": "ˈælədʒən"
+  },
+  {
+    "name": "allergy",
+    "trans": "变态反应",
+    "usphone": "ˈælərdʒi",
+    "ukphone": "ˈælədʒi"
+  },
+  {
+    "name": "anaphylaxis",
+    "trans": "过敏反应",
+    "usphone": "ˌænəfɪˈlæksɪs",
+    "ukphone": "ˌænəfɪˈlæksɪs"
+  },
+  {
+    "name": "cytolytic type",
+    "trans": "细胞溶解型",
+    "usphone": "saɪtəˈlɪtɪk taɪp",
+    "ukphone": "saɪtəˈlɪtɪk taɪp"
+  },
+  {
+    "name": "hypersensitivity reaction",
+    "trans": "超敏反应",
+    "usphone": "ˌhaɪpərˌsɛnsɪˈtɪvɪti riˈækʃn",
+    "ukphone": "ˌhaɪpəˌsɛnsɪˈtɪvɪti riˈækʃn"
+  },
+  {
+    "name": "immediate hypersensitivity reaction",
+    "trans": "速发型超敏反应",
+    "usphone": "ɪˈmiːdiət ˌhaɪpərˌsɛnsɪˈtɪvɪti riˈækʃn",
+    "ukphone": "ɪˈmiːdiət ˌhaɪpəˌsɛnsɪˈtɪvɪti riˈækʃn"
+  },
+  {
+    "name": "intradermal test",
+    "trans": "皮内试验",
+    "usphone": "ˌɪntrəˈdɜːrməl tɛst",
+    "ukphone": "ˌɪntrəˈdɜːməl tɛst"
+  },
+  {
+    "name": "prick test",
+    "trans": "挑刺试验",
+    "usphone": "prɪk tɛst",
+    "ukphone": "prɪk tɛst"
+  },
+  {
+    "name": "amniocentesis",
+    "trans": "羊膜腔穿刺",
+    "usphone": "ˌæmnioʊsɛnˈtiːsɪs",
+    "ukphone": "ˌæmniəʊsɛnˈtiːsɪs"
+  },
+  {
+    "name": "aneuploidy",
+    "trans": "非整倍体",
+    "usphone": "ˌænjuˈplɔɪdi",
+    "ukphone": "ˌænjuˈplɔɪdi"
+  },
+  {
+    "name": "cordocentesis",
+    "trans": "脐血管穿刺",
+    "usphone": "ˌkɔːrdoʊsɛnˈtiːsɪs",
+    "ukphone": "ˌkɔːdəʊsɛnˈtiːsɪs"
+  },
+  {
+    "name": "Edward syndrome",
+    "trans": "爱德华综合征",
+    "usphone": "ˈɛdwərd ˈsɪndroʊm",
+    "ukphone": "ˈɛdwəd ˈsɪndrəʊm"
+  },
+  {
+    "name": "genetic disease",
+    "trans": "遗传性疾病",
+    "usphone": "dʒəˈnɛtɪk dɪˈziːz",
+    "ukphone": "dʒəˈnɛtɪk dɪˈziːz"
+  },
+  {
+    "name": "monosomy",
+    "trans": "单体性",
+    "usphone": "məˈnɑːsəmi",
+    "ukphone": "məˈnɒsəmi"
+  },
+  {
+    "name": "Patau syndrome",
+    "trans": "帕陶综合征",
+    "usphone": "ˈpætaʊ ˈsɪndroʊm",
+    "ukphone": "ˈpætəʊ ˈsɪndrəʊm"
+  },
+  {
+    "name": "prenatal diagnosis",
+    "trans": "产前诊断",
+    "usphone": "priːˈneɪtl ˌdaɪəɡˈnoʊsɪs",
+    "ukphone": "priːˈneɪtl ˌdaɪəɡˈnəʊsɪs"
+  },
+  {
+    "name": "trisomy",
+    "trans": "三体性",
+    "usphone": "ˈtraɪsəmi",
+    "ukphone": "ˈtraɪsəmi"
+  },
+  {
+    "name": "Turner syndrome",
+    "trans": "特纳综合征",
+    "usphone": "ˈtɜːrnər ˈsɪndroʊm",
+    "ukphone": "ˈtɜːnə ˈsɪndrəʊm"
+  },
+  {
+    "name": "acid-fast stain",
+    "trans": "抗酸染色",
+    "usphone": "ˈæsɪd fæst steɪn",
+    "ukphone": "ˈæsɪd fæst steɪn"
+  },
+  {
+    "name": "apparent infection",
+    "trans": "显性感染",
+    "usphone": "əˈpærənt ɪnˈfɛkʃn",
+    "ukphone": "əˈpærənt ɪnˈfɛkʃn"
+  },
+  {
+    "name": "bacteremia",
+    "trans": "菌血症",
+    "usphone": "ˌbæktəˈriːmiə",
+    "ukphone": "ˌbæktəˈriːmiə"
+  },
+  {
+    "name": "bacterium",
+    "trans": "细菌",
+    "usphone": "bækˈtɪriəm",
+    "ukphone": "bækˈtɪriəm"
+  },
+  {
+    "name": "bloodstream infection",
+    "trans": "血流感染",
+    "usphone": "ˈblʌdstriːm ɪnˈfɛkʃn",
+    "ukphone": "ˈblʌdstriːm ɪnˈfɛkʃn"
+  },
+  {
+    "name": "communicable disease",
+    "trans": "传染病",
+    "usphone": "kəˈmjuːnɪkəbəl dɪˈziːz",
+    "ukphone": "kəˈmjuːnɪkəbəl dɪˈziːz"
+  },
+  {
+    "name": "congenital and neonatal infections",
+    "trans": "先天及新生儿感染",
+    "usphone": "kənˈdʒɛnɪtl ænd ˌniːoʊˈneɪtl ɪnˈfɛkʃnz",
+    "ukphone": "kənˈdʒɛnɪtl ænd ˌniːəʊˈneɪtl ɪnˈfɛkʃnz"
+  },
+  {
+    "name": "detection for pathogen antibody",
+    "trans": "病原体抗体检测",
+    "usphone": "dɪˈtɛkʃn fər ˈpæθədʒən ˈæntɪˌbɑːdi",
+    "ukphone": "dɪˈtɛkʃn fər ˈpæθədʒən ˈæntɪˌbɒdi"
+  },
+  {
+    "name": "detection for pathogen antigen",
+    "trans": "病原体抗原检测",
+    "usphone": "dɪˈtɛkʃn fər ˈpæθədʒən ˈæntɪdʒən",
+    "ukphone": "dɪˈtɛkʃn fər ˈpæθədʒən ˈæntɪdʒən"
+  },
+  {
+    "name": "detection for pathogen nucleic acid",
+    "trans": "病原体核酸检测",
+    "usphone": "dɪˈtɛkʃn fər ˈpæθədʒən njuːˈkliːɪk ˈæsɪd",
+    "ukphone": "dɪˈtɛkʃn fər ˈpæθədʒən njuːˈkliːɪk ˈæsɪd"
+  },
+  {
+    "name": "direct microscopic examination",
+    "trans": "直接显微镜检查",
+    "usphone": "dɪˈrɛkt ˌmaɪkrəˈskɑːpɪk ɪɡˌzæmɪˈneɪʃn",
+    "ukphone": "dɪˈrɛkt ˌmaɪkrəˈskɒpɪk ɪɡˌzæmɪˈneɪʃn"
+  },
+  {
+    "name": "endogenous infection",
+    "trans": "内源性感染",
+    "usphone": "ɛnˈdɑːdʒənəs ɪnˈfɛkʃn",
+    "ukphone": "ɛnˈdɒdʒənəs ɪnˈfɛkʃn"
+  },
+  {
+    "name": "endotoxemia",
+    "trans": "内毒素血症",
+    "usphone": "ˌɛndoʊtɑːkˈsiːmiə",
+    "ukphone": "ˌɛndəʊtɒkˈsiːmiə"
+  },
+  {
+    "name": "endotoxin detection",
+    "trans": "内毒素检测",
+    "usphone": "ˌɛndoʊˈtɑːksɪn dɪˈtɛkʃn",
+    "ukphone": "ˌɛndəʊˈtɒksɪn dɪˈtɛkʃn"
+  },
+  {
+    "name": "exogenous infection",
+    "trans": "外源性感染",
+    "usphone": "ɛkˈsɑːdʒənəs ɪnˈfɛkʃn",
+    "ukphone": "ɛkˈsɒdʒənəs ɪnˈfɛkʃn"
+  },
+  {
+    "name": "exotoxin detection",
+    "trans": "外毒素检测",
+    "usphone": "ˌɛksoʊˈtɑːksɪn dɪˈtɛkʃn",
+    "ukphone": "ˌɛksəʊˈtɒksɪn dɪˈtɛkʃn"
+  },
+  {
+    "name": "generalized infection",
+    "trans": "全身感染",
+    "usphone": "ˈdʒɛnərəlaɪzd ɪnˈfɛkʃn",
+    "ukphone": "ˈdʒɛnərəlaɪzd ɪnˈfɛkʃn"
+  },
+  {
+    "name": "inapparent infection",
+    "trans": "隐性感染",
+    "usphone": "ɪnəˈpærənt ɪnˈfɛkʃn",
+    "ukphone": "ɪnəˈpærənt ɪnˈfɛkʃn"
+  },
+  {
+    "name": "infection of the gastrointestinal tract",
+    "trans": "胃肠道感染",
+    "usphone": "ɪnˈfɛkʃn əv ðə ˌɡæstroʊɪnˈtɛstɪnl trækt",
+    "ukphone": "ɪnˈfɛkʃn əv ðə ˌɡæstrəʊɪnˈtɛstɪnl trækt"
+  },
+  {
+    "name": "infection of the respiratory system",
+    "trans": "呼吸系统感染",
+    "usphone": "ɪnˈfɛkʃn əv ðə rɛˈspɪrətɔːri ˈsɪstəm",
+    "ukphone": "ɪnˈfɛkʃn əv ðə rɛˈspɪrətəri ˈsɪstəm"
+  },
+  {
+    "name": "latent infection",
+    "trans": "潜伏感染",
+    "usphone": "ˈleɪtnt ɪnˈfɛkʃn",
+    "ukphone": "ˈleɪtnt ɪnˈfɛkʃn"
+  },
+  {
+    "name": "pyemia",
+    "trans": "脓毒血症",
+    "usphone": "paɪˈiːmiə",
+    "ukphone": "paɪˈiːmiə"
+  },
+  {
+    "name": "septicemia",
+    "trans": "败血症",
+    "usphone": "ˌsɛptɪˈsiːmiə",
+    "ukphone": "ˌsɛptɪˈsiːmiə"
+  },
+  {
+    "name": "sub-clinical infection",
+    "trans": "亚临床感染",
+    "usphone": "ˌsʌbˈklɪnɪkl ɪnˈfɛkʃn",
+    "ukphone": "ˌsʌbˈklɪnɪkl ɪnˈfɛkʃn"
+  },
+  {
+    "name": "genital herpes",
+    "trans": "生殖器疱疹",
+    "usphone": "ˈdʒɛnɪtl ˈhɜːrpiːz",
+    "ukphone": "ˈdʒɛnɪtl ˈhɜːpiːz"
+  },
+  {
+    "name": "gonorrhea",
+    "trans": "淋病",
+    "usphone": "ˌɡɑːnəˈriːə",
+    "ukphone": "ˌɡɒnəˈriːə"
+  },
+  {
+    "name": "neisseria gonorrhoeae",
+    "trans": "淋病奈瑟菌",
+    "usphone": "naɪˈsɪriə ˌɡɑːnəˈriːiː",
+    "ukphone": "naɪˈsɪriə ˌɡɒnəˈriːiː"
+  },
+  {
+    "name": "Treponema pallidum subspecies pallidum",
+    "trans": "梅毒螺旋体梅毒亚种",
+    "usphone": "ˌtrɛpəˈniːmə ˈpælɪdəm ˈsʌbˌspiːʃiːz ˈpælɪdəm",
+    "ukphone": "ˌtrɛpəˈniːmə ˈpælɪdəm ˈsʌbˌspiːʃiːz ˈpælɪdəm"
+  },
+  {
+    "name": "aminoglycosides",
+    "trans": "氨基苷类",
+    "usphone": "əˌmɪnoʊˈɡlaɪkəsaɪdz",
+    "ukphone": "əˌmɪnəʊˈɡlaɪkəsaɪdz"
+  },
+  {
+    "name": "antagonistic",
+    "trans": "拮抗",
+    "usphone": "ænˌtæɡəˈnɪstɪk",
+    "ukphone": "ænˌtæɡəˈnɪstɪk"
+  },
+  {
+    "name": "efflux pumps",
+    "trans": "外排泵",
+    "usphone": "ˈɛflʌks pʌmps",
+    "ukphone": "ˈɛflʌks pʌmps"
+  },
+  {
+    "name": "glycopeptides",
+    "trans": "糖肽类",
+    "usphone": "ˌɡlaɪkoʊˈpɛptaɪdz",
+    "ukphone": "ˌɡlaɪkəʊˈpɛptaɪdz"
+  },
+  {
+    "name": "gradient diffusion method",
+    "trans": "浓度梯度扩散法",
+    "usphone": "ˈɡreɪdiənt dɪˈfjuːʒn ˈmɛθəd",
+    "ukphone": "ˈɡreɪdiənt dɪˈfjuːʒn ˈmɛθəd"
+  },
+  {
+    "name": "macrolides",
+    "trans": "大环内酯类",
+    "usphone": "ˈmækroʊlaɪdz",
+    "ukphone": "ˈmækrəʊlaɪdz"
+  },
+  {
+    "name": "porins",
+    "trans": "孔蛋白",
+    "usphone": "ˈpɔːrɪnz",
+    "ukphone": "ˈpɔːrɪnz"
+  },
+  {
+    "name": "postantibiotic sub-MIC effect",
+    "trans": "亚抑菌浓度抗生素后效应",
+    "usphone": "ˌpoʊstæntɪbaɪˈɑːtɪk sʌb ɛm aɪ siː ɪˈfɛkt",
+    "ukphone": "ˌpəʊstæntɪbaɪˈɒtɪk sʌb ɛm aɪ siː ɪˈfɛkt"
+  },
+  {
+    "name": "problem organisms",
+    "trans": "难题微生物",
+    "usphone": "ˈprɑːbləm ˈɔːrɡənɪzəmz",
+    "ukphone": "ˈprɒbləm ˈɔːɡənɪzəmz"
+  },
+  {
+    "name": "quinolones",
+    "trans": "喹诺酮类",
+    "usphone": "ˈkwɪnəloʊnz",
+    "ukphone": "ˈkwɪnələʊnz"
+  },
+  {
+    "name": "serum bactericidal test",
+    "trans": "血清杀菌试验",
+    "usphone": "ˈsɪrəm bækˌtɪriəˈsaɪdl tɛst",
+    "ukphone": "ˈsɪərəm bækˌtɪriəˈsaɪdl tɛst"
+  },
+  {
+    "name": "synergistic",
+    "trans": "协同",
+    "usphone": "ˌsɪnərˈdʒɪstɪk",
+    "ukphone": "ˌsɪnəˈdʒɪstɪk"
+  },
+  {
+    "name": "tetracyclines",
+    "trans": "四环素类",
+    "usphone": "ˌtɛtrəˈsaɪkliːnz",
+    "ukphone": "ˌtɛtrəˈsaɪkliːnz"
+  },
+  {
+    "name": "time-dependent antibiotics",
+    "trans": "时间依赖抗生素",
+    "usphone": "taɪm dɪˈpɛndənt ˌæntɪbaɪˈɑːtɪks",
+    "ukphone": "taɪm dɪˈpɛndənt ˌæntɪbaɪˈɒtɪks"
+  },
+  {
+    "name": "time-kill assay",
+    "trans": "杀菌时间试验",
+    "usphone": "taɪm kɪl əˈseɪ",
+    "ukphone": "taɪm kɪl əˈseɪ"
+  },
+  {
+    "name": "time-kill curves",
+    "trans": "时间杀菌曲线",
+    "usphone": "taɪm kɪl kɜːrvz",
+    "ukphone": "taɪm kɪl kɜːvz"
+  },
+  {
+    "name": "absorption rate constant",
+    "trans": "吸收速率常数",
+    "usphone": "əbˈsɔːrpʃn reɪt ˈkɑːnstənt",
+    "ukphone": "əbˈsɔːpʃn reɪt ˈkɒnstənt"
+  },
+  {
+    "name": "amitriptyline",
+    "trans": "阿米替林",
+    "usphone": "ˌæmɪˈtrɪptɪliːn",
+    "ukphone": "ˌæmɪˈtrɪptɪliːn"
+  },
+  {
+    "name": "bioavailability",
+    "trans": "生物利用度",
+    "usphone": "ˌbaɪoʊəˌveɪləˈbɪlɪti",
+    "ukphone": "ˌbaɪəʊəˌveɪləˈbɪlɪti"
+  },
+  {
+    "name": "compartment",
+    "trans": "间隔",
+    "usphone": "kəmˈpɑːrtmənt",
+    "ukphone": "kəmˈpɑːtmənt"
+  },
+  {
+    "name": "cyclosporine",
+    "trans": "环孢素",
+    "usphone": "ˌsaɪkloʊˈspɔːrɪn",
+    "ukphone": "ˌsaɪkləʊˈspɔːrɪn"
+  },
+  {
+    "name": "desipramine",
+    "trans": "地昔帕明",
+    "usphone": "dɛˈsɪprəmiːn",
+    "ukphone": "dɛˈsɪprəmiːn"
+  },
+  {
+    "name": "digoxin",
+    "trans": "地高辛",
+    "usphone": "dɪˈdʒɑːksɪn",
+    "ukphone": "dɪˈdʒɒksɪn"
+  },
+  {
+    "name": "doxepin",
+    "trans": "多塞平",
+    "usphone": "ˈdɑːksəpɪn",
+    "ukphone": "ˈdɒksəpɪn"
+  },
+  {
+    "name": "elimination kinetics",
+    "trans": "消除动力学",
+    "usphone": "ɪˌlɪmɪˈneɪʃn kɪˈnɛtɪks",
+    "ukphone": "ɪˌlɪmɪˈneɪʃn kɪˈnɛtɪks"
+  },
+  {
+    "name": "elimination rate constant",
+    "trans": "消除速率常数",
+    "usphone": "ɪˌlɪmɪˈneɪʃn reɪt ˈkɑːnstənt",
+    "ukphone": "ɪˌlɪmɪˈneɪʃn reɪt ˈkɒnstənt"
+  },
+  {
+    "name": "first order elimination kinetics",
+    "trans": "一级消除动力学",
+    "usphone": "fɜːrst ˈɔːrdər ɪˌlɪmɪˈneɪʃn kɪˈnɛtɪks",
+    "ukphone": "fɜːst ˈɔːdə ɪˌlɪmɪˈneɪʃn kɪˈnɛtɪks"
+  },
+  {
+    "name": "imipramine",
+    "trans": "丙咪嗪",
+    "usphone": "ɪˈmɪprəmiːn",
+    "ukphone": "ɪˈmɪprəmiːn"
+  },
+  {
+    "name": "lithium carbonate",
+    "trans": "碳酸锂",
+    "usphone": "ˈlɪθiəm ˈkɑːrbənət",
+    "ukphone": "ˈlɪθiəm ˈkɑːbənət"
+  },
+  {
+    "name": "maprotiline",
+    "trans": "马普替林",
+    "usphone": "məˈprɑːtɪliːn",
+    "ukphone": "məˈprɒtɪliːn"
+  },
+  {
+    "name": "minimum steady state concentration",
+    "trans": "最小稳态浓度",
+    "usphone": "ˈmɪnɪməm ˈstɛdi steɪt ˌkɑːnsnˈtreɪʃn",
+    "ukphone": "ˈmɪnɪməm ˈstɛdi steɪt ˌkɒnsnˈtreɪʃn"
+  },
+  {
+    "name": "multiple dose function",
+    "trans": "多剂量函数",
+    "usphone": "ˈmʌltɪpl doʊs ˈfʌŋkʃn",
+    "ukphone": "ˈmʌltɪpl dəʊs ˈfʌŋkʃn"
+  },
+  {
+    "name": "nonlinear elimination kinetics",
+    "trans": "非线性消除动力学",
+    "usphone": "nɑːnˈlɪniər ɪˌlɪmɪˈneɪʃn kɪˈnɛtɪks",
+    "ukphone": "nɒnˈlɪniə ɪˌlɪmɪˈneɪʃn kɪˈnɛtɪks"
+  },
+  {
+    "name": "paroxetine",
+    "trans": "帕罗西汀",
+    "usphone": "pəˈrɑːksətiːn",
+    "ukphone": "pəˈrɒksətiːn"
+  },
+  {
+    "name": "phenytoin sodium",
+    "trans": "苯妥英钠",
+    "usphone": "ˌfɛnɪˈtoʊɪn ˈsoʊdiəm",
+    "ukphone": "ˌfɛnɪˈtəʊɪn ˈsəʊdiəm"
+  },
+  {
+    "name": "statistical moment theory",
+    "trans": "统计矩理论",
+    "usphone": "stəˈtɪstɪkl ˈmoʊmənt ˈθɪri",
+    "ukphone": "stəˈtɪstɪkl ˈməʊmənt ˈθɪəri"
+  },
+  {
+    "name": "therapeutic window",
+    "trans": "治疗窗",
+    "usphone": "ˌθɛrəˈpjuːtɪk ˈwɪndoʊ",
+    "ukphone": "ˌθɛrəˈpjuːtɪk ˈwɪndəʊ"
+  },
+  {
+    "name": "zero order elimination kinetics",
+    "trans": "零级消除动力学",
+    "usphone": "ˈzɪroʊ ˈɔːrdər ɪˌlɪmɪˈneɪʃn kɪˈnɛtɪks",
+    "ukphone": "ˈzɪərəʊ ˈɔːdə ɪˌlɪmɪˈneɪʃn kɪˈnɛtɪks"
+  },
+  {
+    "name": "bedside testing",
+    "trans": "床边检测",
+    "usphone": "ˈbɛdsaɪd ˈtɛstɪŋ",
+    "ukphone": "ˈbɛdsaɪd ˈtɛstɪŋ"
+  },
+  {
+    "name": "differential potentiometry",
+    "trans": "差示电位法",
+    "usphone": "ˌdɪfəˈrɛnʃl pəˌtɛnʃiˈɑːmətri",
+    "ukphone": "ˌdɪfəˈrɛnʃl pəˌtɛnʃiˈɒmətri"
+  },
+  {
+    "name": "dry chemical assay",
+    "trans": "干化学分析",
+    "usphone": "draɪ ˈkɛmɪkl əˈseɪ",
+    "ukphone": "draɪ ˈkɛmɪkl əˈseɪ"
+  },
+  {
+    "name": "extra-laboratory testing",
+    "trans": "实验室外检测",
+    "usphone": "ˌɛkstrəˈlæbərətɔːri ˈtɛstɪŋ",
+    "ukphone": "ˌɛkstrəˈlæbərətri ˈtɛstɪŋ"
+  },
+  {
+    "name": "immunochromatography",
+    "trans": "免疫层析法",
+    "usphone": "ˌɪmjunoʊˌkroʊməˈtɑːɡrəfi",
+    "ukphone": "ˌɪmjʊnəʊˌkrəʊməˈtɒɡrəfi"
+  },
+  {
+    "name": "lactic acid",
+    "trans": "乳酸",
+    "usphone": "ˈlæktɪk ˈæsɪd",
+    "ukphone": "ˈlæktɪk ˈæsɪd"
+  },
+  {
+    "name": "leukocyte-esterase",
+    "trans": "白细胞酯酶",
+    "usphone": "ˈljuːkəsaɪt ˈɛstəreɪs",
+    "ukphone": "ˈljuːkəsaɪt ˈɛstəreɪs"
+  },
+  {
+    "name": "microarray",
+    "trans": "微阵列",
+    "usphone": "ˌmaɪkroʊəˈreɪ",
+    "ukphone": "ˌmaɪkrəʊəˈreɪ"
+  },
+  {
+    "name": "multiple layer film",
+    "trans": "多层膜",
+    "usphone": "ˈmʌltɪpl ˈleɪər fɪlm",
+    "ukphone": "ˈmʌltɪpl ˈleɪə fɪlm"
+  },
+  {
+    "name": "physicians office test",
+    "trans": "医生办公室检测",
+    "usphone": "fɪˈzɪʃənz ˈɔːfɪs tɛst",
+    "ukphone": "fɪˈzɪʃənz ˈɒfɪs tɛst"
+  },
+  {
+    "name": "reflectance spectroscopy",
+    "trans": "反射光谱法",
+    "usphone": "rɪˈflɛktəns spɛkˈtrɑːskəpi",
+    "ukphone": "rɪˈflɛktəns spɛkˈtrɒskəpi"
+  },
+  {
+    "name": "test turn-around time",
+    "trans": "检测周转时间",
+    "usphone": "tɛst ˈtɜːrnəˌraʊnd taɪm",
+    "ukphone": "tɛst ˈtɜːnəˌraʊnd taɪm"
+  }
+]

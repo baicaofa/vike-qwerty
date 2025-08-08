@@ -1,0 +1,1988 @@
+[
+  {
+    "name": "linearization",
+    "trans": "线性化",
+    "usphone": "ˌlɪnɪərəˈzeɪʃən",
+    "ukphone": "ˌlɪnɪəraɪˈzeɪʃən"
+  },
+  {
+    "name": "linearly dependent",
+    "trans": "线性相关",
+    "usphone": "ˈlɪnɪərli dɪˈpɛndənt",
+    "ukphone": "ˈlɪnɪəli dɪˈpɛndənt"
+  },
+  {
+    "name": "linearly independent",
+    "trans": "线性无关",
+    "usphone": "ˈlɪnɪərli ˌɪndɪˈpɛndənt",
+    "ukphone": "ˈlɪnɪəli ˌɪndɪˈpɛndənt"
+  },
+  {
+    "name": "numerical equation",
+    "trans": "数值方程",
+    "usphone": "nuːˈmɛrɪkəl ɪˈkweɪʒən",
+    "ukphone": "njuːˈmɛrɪkəl ɪˈkweɪʒən"
+  },
+  {
+    "name": "order",
+    "trans": "阶",
+    "usphone": "ˈɔːrdər",
+    "ukphone": "ˈɔːdə"
+  },
+  {
+    "name": "order of differential equation",
+    "trans": "微分方程的阶",
+    "usphone": "ˈɔːrdər əv ˌdɪfəˈrɛnʃəl ɪˈkweɪʒən",
+    "ukphone": "ˈɔːdə əv ˌdɪfəˈrɛnʃəl ɪˈkweɪʒən"
+  },
+  {
+    "name": "origin",
+    "trans": "原点",
+    "usphone": "ˈɔːrɪdʒɪn",
+    "ukphone": "ˈɒrɪdʒɪn"
+  },
+  {
+    "name": "partial differential equation",
+    "trans": "偏微分方程",
+    "usphone": "ˈpɑːrʃəl ˌdɪfəˈrɛnʃəl ɪˈkweɪʒən",
+    "ukphone": "ˈpɑːʃəl ˌdɪfəˈrɛnʃəl ɪˈkweɪʒən"
+  },
+  {
+    "name": "partial fractions",
+    "trans": "部分分式",
+    "usphone": "ˈpɑːrʃəl ˈfrækʃənz",
+    "ukphone": "ˈpɑːʃəl ˈfrækʃənz"
+  },
+  {
+    "name": "partial integration",
+    "trans": "分部积分",
+    "usphone": "ˈpɑːrʃəl ˌɪntɪˈɡreɪʃən",
+    "ukphone": "ˈpɑːʃəl ˌɪntɪˈɡreɪʃən"
+  },
+  {
+    "name": "particular solution",
+    "trans": "特解",
+    "usphone": "pərˈtɪkjələr səˈluːʃən",
+    "ukphone": "pəˈtɪkjʊlə səˈluːʃən"
+  },
+  {
+    "name": "step function",
+    "trans": "阶跃函数",
+    "usphone": "stɛp ˈfʌŋkʃən",
+    "ukphone": "stɛp ˈfʌŋkʃən"
+  },
+  {
+    "name": "zero of a polynomial",
+    "trans": "多项式的零点",
+    "usphone": "ˈzɪəroʊ əv ə ˌpɒlɪˈnoʊmiəl",
+    "ukphone": "ˈzɪərəʊ əv ə ˌpɒlɪˈnəʊmiəl"
+  },
+  {
+    "name": "apparent viscosity",
+    "trans": "表观黏度",
+    "usphone": "əˈpærənt vɪˈskɒsəti",
+    "ukphone": "əˈpærənt vɪˈskɒsɪti"
+  },
+  {
+    "name": "Bernoulli equation",
+    "trans": "伯努利方程",
+    "usphone": "bɜːrˈnuːli ɪˈkweɪʒən",
+    "ukphone": "bɜːˈnuːli ɪˈkweɪʒən"
+  },
+  {
+    "name": "coefficient of viscosity",
+    "trans": "黏滞系数",
+    "usphone": "ˌkoʊɪˈfɪʃənt əv vɪˈskɒsəti",
+    "ukphone": "ˌkəʊɪˈfɪʃənt əv vɪˈskɒsɪti"
+  },
+  {
+    "name": "diastolic pressure",
+    "trans": "舒张压",
+    "usphone": "ˌdaɪəˈstɒlɪk ˈprɛʃər",
+    "ukphone": "ˌdaɪəˈstɒlɪk ˈprɛʃə"
+  },
+  {
+    "name": "equation of continuity",
+    "trans": "连续性方程",
+    "usphone": "ɪˈkweɪʒən əv ˌkɒntɪˈnjuːəti",
+    "ukphone": "ɪˈkweɪʒən əv ˌkɒntɪˈnjuːɪti"
+  },
+  {
+    "name": "flow resistance",
+    "trans": "流阻",
+    "usphone": "floʊ rɪˈzɪstəns",
+    "ukphone": "fləʊ rɪˈzɪstəns"
+  },
+  {
+    "name": "fluid",
+    "trans": "流体",
+    "usphone": "ˈfluːɪd",
+    "ukphone": "ˈfluːɪd"
+  },
+  {
+    "name": "fluidify",
+    "trans": "流体化",
+    "usphone": "ˈfluːɪdɪfaɪ",
+    "ukphone": "ˈfluːɪdɪfaɪ"
+  },
+  {
+    "name": "hydrodynamics",
+    "trans": "流体动力学",
+    "usphone": "ˌhaɪdroʊdaɪˈnæmɪks",
+    "ukphone": "ˌhaɪdrəʊdaɪˈnæmɪks"
+  },
+  {
+    "name": "hydromechanics",
+    "trans": "流体力学",
+    "usphone": "ˌhaɪdroʊmɪˈkænɪks",
+    "ukphone": "ˌhaɪdrəʊmɪˈkænɪks"
+  },
+  {
+    "name": "hydrostatics",
+    "trans": "流体静力学",
+    "usphone": "ˌhaɪdroʊˈstætɪks",
+    "ukphone": "ˌhaɪdrəʊˈstætɪks"
+  },
+  {
+    "name": "ideal fluid",
+    "trans": "理想流体",
+    "usphone": "aɪˈdiːəl ˈfluːɪd",
+    "ukphone": "aɪˈdɪəl ˈfluːɪd"
+  },
+  {
+    "name": "internal friction",
+    "trans": "内摩擦力",
+    "usphone": "ɪnˈtɜːrnl ˈfrɪkʃən",
+    "ukphone": "ɪnˈtɜːnl ˈfrɪkʃən"
+  },
+  {
+    "name": "laminar flow",
+    "trans": "层流",
+    "usphone": "ˈlæmɪnər floʊ",
+    "ukphone": "ˈlæmɪnə fləʊ"
+  },
+  {
+    "name": "mass rate",
+    "trans": "质量流量",
+    "usphone": "mæs reɪt",
+    "ukphone": "mɑːs reɪt"
+  },
+  {
+    "name": "Newtonian fluid",
+    "trans": "牛顿流体",
+    "usphone": "njuːˈtoʊniən ˈfluːɪd",
+    "ukphone": "njuːˈtəʊniən ˈfluːɪd"
+  },
+  {
+    "name": "pulse",
+    "trans": "脉搏",
+    "usphone": "pʌls",
+    "ukphone": "pʌls"
+  },
+  {
+    "name": "pulse pressure",
+    "trans": "脉压",
+    "usphone": "pʌls ˈprɛʃər",
+    "ukphone": "pʌls ˈprɛʃə"
+  },
+  {
+    "name": "Reynolds number",
+    "trans": "雷诺数",
+    "usphone": "ˈrɛnəldz ˈnʌmbər",
+    "ukphone": "ˈrɛnəldz ˈnʌmbə"
+  },
+  {
+    "name": "sedimentation velocity",
+    "trans": "沉降速度",
+    "usphone": "ˌsɛdɪmənˈteɪʃən vəˈlɒsəti",
+    "ukphone": "ˌsɛdɪmənˈteɪʃən vəˈlɒsɪti"
+  },
+  {
+    "name": "steady flow",
+    "trans": "稳定流动",
+    "usphone": "ˈstɛdi floʊ",
+    "ukphone": "ˈstɛdi fləʊ"
+  },
+  {
+    "name": "Stokes' law",
+    "trans": "斯托克斯定律",
+    "usphone": "stoʊks lɔː",
+    "ukphone": "stəʊks lɔː"
+  },
+  {
+    "name": "streamline",
+    "trans": "流线",
+    "usphone": "ˈstriːmlaɪn",
+    "ukphone": "ˈstriːmlaɪn"
+  },
+  {
+    "name": "stroke volume",
+    "trans": "每搏输出量",
+    "usphone": "stroʊk ˈvɒljuːm",
+    "ukphone": "strəʊk ˈvɒljuːm"
+  },
+  {
+    "name": "suction",
+    "trans": "空吸作用",
+    "usphone": "ˈsʌkʃən",
+    "ukphone": "ˈsʌkʃən"
+  },
+  {
+    "name": "systolic pressure",
+    "trans": "收缩压",
+    "usphone": "sɪˈstɒlɪk ˈprɛʃər",
+    "ukphone": "sɪˈstɒlɪk ˈprɛʃə"
+  },
+  {
+    "name": "terminal velocity",
+    "trans": "收尾速度",
+    "usphone": "ˈtɜːrmɪnəl vəˈlɒsəti",
+    "ukphone": "ˈtɜːmɪnəl vəˈlɒsɪti"
+  },
+  {
+    "name": "tube of flow",
+    "trans": "流管",
+    "usphone": "tjuːb əv floʊ",
+    "ukphone": "tjuːb əv fləʊ"
+  },
+  {
+    "name": "turbulent flow",
+    "trans": "湍流",
+    "usphone": "ˈtɜːrbjələnt floʊ",
+    "ukphone": "ˈtɜːbjʊlənt fləʊ"
+  },
+  {
+    "name": "velocity gradient",
+    "trans": "速度梯度",
+    "usphone": "vəˈlɒsəti ˈɡreɪdiənt",
+    "ukphone": "vəˈlɒsɪti ˈɡreɪdiənt"
+  },
+  {
+    "name": "viscosity",
+    "trans": "黏滞系数",
+    "usphone": "vɪˈskɒsəti",
+    "ukphone": "vɪˈskɒsɪti"
+  },
+  {
+    "name": "viscous force",
+    "trans": "黏滞力",
+    "usphone": "ˈvɪskəs fɔːrs",
+    "ukphone": "ˈvɪskəs fɔːs"
+  },
+  {
+    "name": "volume rate of flow",
+    "trans": "体积流量",
+    "usphone": "ˈvɒljuːm reɪt əv floʊ",
+    "ukphone": "ˈvɒljuːm reɪt əv fləʊ"
+  },
+  {
+    "name": "absorption coefficient",
+    "trans": "吸收系数",
+    "usphone": "əbˈzɔːrpʃən ˌkoʊɪˈfɪʃənt",
+    "ukphone": "əbˈzɔːpʃən ˌkəʊɪˈfɪʃənt"
+  },
+  {
+    "name": "amplitude",
+    "trans": "振幅",
+    "usphone": "ˈæmplɪtuːd",
+    "ukphone": "ˈæmplɪtjuːd"
+  },
+  {
+    "name": "angular frequency",
+    "trans": "角频率",
+    "usphone": "ˈæŋɡjələr ˈfriːkwənsi",
+    "ukphone": "ˈæŋɡjʊlə ˈfriːkwənsi"
+  },
+  {
+    "name": "beat",
+    "trans": "拍",
+    "usphone": "biːt",
+    "ukphone": "biːt"
+  },
+  {
+    "name": "circular frequency",
+    "trans": "圆频率",
+    "usphone": "ˈsɜːrkjələr ˈfriːkwənsi",
+    "ukphone": "ˈsɜːkjʊlə ˈfriːkwənsi"
+  },
+  {
+    "name": "coherent source",
+    "trans": "相干波源",
+    "usphone": "koʊˈhɪrənt sɔːrs",
+    "ukphone": "kəʊˈhɪərənt sɔːs"
+  },
+  {
+    "name": "coherent wave",
+    "trans": "相干波",
+    "usphone": "koʊˈhɪrənt weɪv",
+    "ukphone": "kəʊˈhɪərənt weɪv"
+  },
+  {
+    "name": "compressibility",
+    "trans": "可压缩性",
+    "usphone": "kəmˌprɛsəˈbɪləti",
+    "ukphone": "kəmˌprɛsəˈbɪlɪti"
+  },
+  {
+    "name": "constructive interference",
+    "trans": "干涉相长",
+    "usphone": "kənˈstrʌktɪv ˌɪntərˈfɪərəns",
+    "ukphone": "kənˈstrʌktɪv ˌɪntəˈfɪərəns"
+  },
+  {
+    "name": "damped vibration",
+    "trans": "阻尼振动",
+    "usphone": "dæmpt vaɪˈbreɪʃən",
+    "ukphone": "dæmpt vaɪˈbreɪʃən"
+  },
+  {
+    "name": "deformation",
+    "trans": "变形",
+    "usphone": "ˌdiːfɔːrˈmeɪʃən",
+    "ukphone": "ˌdiːfɔːˈmeɪʃən"
+  },
+  {
+    "name": "destructive interference",
+    "trans": "干涉相消",
+    "usphone": "dɪˈstrʌktɪv ˌɪntərˈfɪərəns",
+    "ukphone": "dɪˈstrʌktɪv ˌɪntəˈfɪərəns"
+  },
+  {
+    "name": "elastic medium",
+    "trans": "弹性介质",
+    "usphone": "ɪˈlæstɪk ˈmiːdiəm",
+    "ukphone": "ɪˈlæstɪk ˈmiːdiəm"
+  },
+  {
+    "name": "electromagnetic wave",
+    "trans": "电磁波",
+    "usphone": "ɪˌlɛktraʊˈmæɡnɪtɪk weɪv",
+    "ukphone": "ɪˌlɛktrəʊˈmæɡnɪtɪk weɪv"
+  },
+  {
+    "name": "energy density",
+    "trans": "能量密度",
+    "usphone": "ˈɛnərdʒi ˈdɛnsəti",
+    "ukphone": "ˈɛnədʒi ˈdɛnsɪti"
+  },
+  {
+    "name": "energy flux density",
+    "trans": "能流密度",
+    "usphone": "ˈɛnərdʒi flʌks ˈdɛnsəti",
+    "ukphone": "ˈɛnədʒi flʌks ˈdɛnsɪti"
+  },
+  {
+    "name": "equation of wave motion",
+    "trans": "波动方程",
+    "usphone": "ɪˈkweɪʒən əv weɪv ˈmoʊʃən",
+    "ukphone": "ɪˈkweɪʒən əv weɪv ˈməʊʃən"
+  },
+  {
+    "name": "forced vibration",
+    "trans": "受迫振动",
+    "usphone": "fɔːrst vaɪˈbreɪʃən",
+    "ukphone": "fɔːst vaɪˈbreɪʃən"
+  },
+  {
+    "name": "frequency",
+    "trans": "频率",
+    "usphone": "ˈfriːkwənsi",
+    "ukphone": "ˈfriːkwənsi"
+  },
+  {
+    "name": "frequency spectrum",
+    "trans": "频谱",
+    "usphone": "ˈfriːkwənsi ˈspɛktrəm",
+    "ukphone": "ˈfriːkwənsi ˈspɛktrəm"
+  },
+  {
+    "name": "fundamental frequency",
+    "trans": "基频",
+    "usphone": "ˌfʌndəˈmɛntl ˈfriːkwənsi",
+    "ukphone": "ˌfʌndəˈmɛntl ˈfriːkwənsi"
+  },
+  {
+    "name": "harmonic frequency",
+    "trans": "谐频",
+    "usphone": "hɑːrˈmɒnɪk ˈfriːkwənsi",
+    "ukphone": "hɑːˈmɒnɪk ˈfriːkwənsi"
+  },
+  {
+    "name": "initial phase",
+    "trans": "初相位",
+    "usphone": "ɪˈnɪʃəl feɪz",
+    "ukphone": "ɪˈnɪʃəl feɪz"
+  },
+  {
+    "name": "intensity of wave",
+    "trans": "波的强度",
+    "usphone": "ɪnˈtɛnsəti əv weɪv",
+    "ukphone": "ɪnˈtɛnsɪti əv weɪv"
+  },
+  {
+    "name": "interference",
+    "trans": "干涉",
+    "usphone": "ˌɪntərˈfɪərəns",
+    "ukphone": "ˌɪntəˈfɪərəns"
+  },
+  {
+    "name": "longitudinal wave",
+    "trans": "纵波",
+    "usphone": "ˌlɒndʒɪˈtuːdɪnl weɪv",
+    "ukphone": "ˌlɒndʒɪˈtjuːdɪnl weɪv"
+  },
+  {
+    "name": "loss of half-wave",
+    "trans": "半波损失",
+    "usphone": "lɔːs əv hæf weɪv",
+    "ukphone": "lɒs əv hɑːf weɪv"
+  },
+  {
+    "name": "mechanical vibration",
+    "trans": "机械振动",
+    "usphone": "məˈkænɪkəl vaɪˈbreɪʃən",
+    "ukphone": "mɪˈkænɪkəl vaɪˈbreɪʃən"
+  },
+  {
+    "name": "mechanical wave",
+    "trans": "机械波",
+    "usphone": "məˈkænɪkəl weɪv",
+    "ukphone": "mɪˈkænɪkəl weɪv"
+  },
+  {
+    "name": "natural frequency",
+    "trans": "固有频率",
+    "usphone": "ˈnætʃərəl ˈfriːkwənsi",
+    "ukphone": "ˈnætʃərəl ˈfriːkwənsi"
+  },
+  {
+    "name": "period",
+    "trans": "周期",
+    "usphone": "ˈpɪəriəd",
+    "ukphone": "ˈpɪəriəd"
+  },
+  {
+    "name": "phase difference",
+    "trans": "相位差",
+    "usphone": "feɪz ˈdɪfrəns",
+    "ukphone": "feɪz ˈdɪfrəns"
+  },
+  {
+    "name": "phase velocity",
+    "trans": "相速度",
+    "usphone": "feɪz vəˈlɒsəti",
+    "ukphone": "feɪz vəˈlɒsɪti"
+  },
+  {
+    "name": "plane wave",
+    "trans": "平面波",
+    "usphone": "pleɪn weɪv",
+    "ukphone": "pleɪn weɪv"
+  },
+  {
+    "name": "resonance",
+    "trans": "共振",
+    "usphone": "ˈrɛzənəns",
+    "ukphone": "ˈrɛzənəns"
+  },
+  {
+    "name": "rotating vector",
+    "trans": "旋转矢量",
+    "usphone": "roʊˈteɪtɪŋ ˈvɛktər",
+    "ukphone": "rəʊˈteɪtɪŋ ˈvɛktə"
+  },
+  {
+    "name": "simple harmonic motion",
+    "trans": "简谐运动",
+    "usphone": "ˈsɪmpl hɑːrˈmɒnɪk ˈmoʊʃən",
+    "ukphone": "ˈsɪmpl hɑːˈmɒnɪk ˈməʊʃən"
+  },
+  {
+    "name": "simple harmonic wave",
+    "trans": "简谐波",
+    "usphone": "ˈsɪmpl hɑːrˈmɒnɪk weɪv",
+    "ukphone": "ˈsɪmpl hɑːˈmɒnɪk weɪv"
+  },
+  {
+    "name": "spectral analysis",
+    "trans": "频谱分析",
+    "usphone": "ˈspɛktrəl əˈnæləsɪs",
+    "ukphone": "ˈspɛktrəl əˈnæləsɪs"
+  },
+  {
+    "name": "spherical wave",
+    "trans": "球面波",
+    "usphone": "ˈsfɛrɪkəl weɪv",
+    "ukphone": "ˈsfɛrɪkəl weɪv"
+  },
+  {
+    "name": "standing wave",
+    "trans": "驻波",
+    "usphone": "ˈstændɪŋ weɪv",
+    "ukphone": "ˈstændɪŋ weɪv"
+  },
+  {
+    "name": "transverse wave",
+    "trans": "横波",
+    "usphone": "trænzˈvɜːrs weɪv",
+    "ukphone": "trænzˈvɜːs weɪv"
+  },
+  {
+    "name": "travelling wave",
+    "trans": "行波",
+    "usphone": "ˈtrævəlɪŋ weɪv",
+    "ukphone": "ˈtrævəlɪŋ weɪv"
+  },
+  {
+    "name": "wavefront",
+    "trans": "波前",
+    "usphone": "ˈweɪvfrʌnt",
+    "ukphone": "ˈweɪvfrʌnt"
+  },
+  {
+    "name": "wavelength",
+    "trans": "波长",
+    "usphone": "ˈweɪvˌlɛŋθ",
+    "ukphone": "ˈweɪvˌlɛŋθ"
+  },
+  {
+    "name": "wave motion",
+    "trans": "波动",
+    "usphone": "weɪv ˈmoʊʃən",
+    "ukphone": "weɪv ˈməʊʃən"
+  },
+  {
+    "name": "wave source",
+    "trans": "波源",
+    "usphone": "weɪv sɔːrs",
+    "ukphone": "weɪv sɔːs"
+  },
+  {
+    "name": "wave surface",
+    "trans": "波面",
+    "usphone": "weɪv ˈsɜːrfɪs",
+    "ukphone": "weɪv ˈsɜːfɪs"
+  },
+  {
+    "name": "wave velocity",
+    "trans": "波速",
+    "usphone": "weɪv vəˈlɒsəti",
+    "ukphone": "weɪv vəˈlɒsɪti"
+  },
+  {
+    "name": "acoustic impedance",
+    "trans": "声阻抗",
+    "usphone": "əˈkuːstɪk ɪmˈpiːdəns",
+    "ukphone": "əˈkuːstɪk ɪmˈpiːdəns"
+  },
+  {
+    "name": "attenuation",
+    "trans": "衰减",
+    "usphone": "əˌtɛnjuˈeɪʃən",
+    "ukphone": "əˌtɛnjuˈeɪʃən"
+  },
+  {
+    "name": "auditory region",
+    "trans": "听觉区域",
+    "usphone": "ˈɔːdɪtɔːri ˈriːdʒən",
+    "ukphone": "ˈɔːdɪtəri ˈriːdʒən"
+  },
+  {
+    "name": "cavitation",
+    "trans": "空化",
+    "usphone": "ˌkævɪˈteɪʃən",
+    "ukphone": "ˌkævɪˈteɪʃən"
+  },
+  {
+    "name": "decibel",
+    "trans": "分贝",
+    "usphone": "ˈdɛsɪbɛl",
+    "ukphone": "ˈdɛsɪbɛl"
+  },
+  {
+    "name": "directionality",
+    "trans": "方向性",
+    "usphone": "daɪˌrɛkʃəˈnælɪti",
+    "ukphone": "daɪˌrɛkʃəˈnælɪti"
+  },
+  {
+    "name": "gray scale display",
+    "trans": "灰阶成像",
+    "usphone": "ɡreɪ skeɪl dɪˈspleɪ",
+    "ukphone": "ɡreɪ skeɪl dɪˈspleɪ"
+  },
+  {
+    "name": "infrasonic wave",
+    "trans": "次声波",
+    "usphone": "ˌɪnfrəˈsɒnɪk weɪv",
+    "ukphone": "ˌɪnfrəˈsɒnɪk weɪv"
+  },
+  {
+    "name": "loudness level",
+    "trans": "响度级",
+    "usphone": "ˈlaʊdnɪs lɛvl",
+    "ukphone": "ˈlaʊdnɪs lɛvəl"
+  },
+  {
+    "name": "piezoelectric effect",
+    "trans": "压电效应",
+    "usphone": "paɪˌiːzoʊɪˈlɛktrɪk ɪˈfɛkt",
+    "ukphone": "ˌpaɪiːzəʊɪˈlɛktrɪk ɪˈfɛkt"
+  },
+  {
+    "name": "reflection coefficient of intensity",
+    "trans": "声强反射系数",
+    "usphone": "rɪˈflɛkʃən ˌkoʊɪˈfɪʃənt əv ɪnˈtɛnsəti",
+    "ukphone": "rɪˈflɛkʃən ˌkəʊɪˈfɪʃənt əv ɪnˈtɛnsɪti"
+  },
+  {
+    "name": "simple tone",
+    "trans": "纯音",
+    "usphone": "ˈsɪmpl toʊn",
+    "ukphone": "ˈsɪmpl təʊn"
+  },
+  {
+    "name": "sonic vibration",
+    "trans": "声振动",
+    "usphone": "ˈsɒnɪk vaɪˈbreɪʃən",
+    "ukphone": "ˈsɒnɪk vaɪˈbreɪʃən"
+  },
+  {
+    "name": "sound intensity",
+    "trans": "声强",
+    "usphone": "saʊnd ɪnˈtɛnsəti",
+    "ukphone": "saʊnd ɪnˈtɛnsɪti"
+  },
+  {
+    "name": "sound intensity level",
+    "trans": "声强级",
+    "usphone": "saʊnd ɪnˈtɛnsəti lɛvl",
+    "ukphone": "saʊnd ɪnˈtɛnsɪti lɛvəl"
+  },
+  {
+    "name": "sound pressure",
+    "trans": "声压",
+    "usphone": "saʊnd ˈprɛʃər",
+    "ukphone": "saʊnd ˈprɛʃə"
+  },
+  {
+    "name": "sound velocity",
+    "trans": "声速",
+    "usphone": "saʊnd vəˈlɒsəti",
+    "ukphone": "saʊnd vəˈlɒsɪti"
+  },
+  {
+    "name": "threshold of feeling",
+    "trans": "痛阈",
+    "usphone": "ˈθrɛʃhoʊld əv ˈfiːlɪŋ",
+    "ukphone": "ˈθrɛʃhəʊld əv ˈfiːlɪŋ"
+  },
+  {
+    "name": "threshold of hearing",
+    "trans": "听阈",
+    "usphone": "ˈθrɛʃhoʊld əv ˈhɪərɪŋ",
+    "ukphone": "ˈθrɛʃhəʊld əv ˈhɪərɪŋ"
+  },
+  {
+    "name": "transducer",
+    "trans": "换能器，传感器",
+    "usphone": "trænzˈduːsər",
+    "ukphone": "trænzˈdjuːsə"
+  },
+  {
+    "name": "transmission coefficient",
+    "trans": "透射系数",
+    "usphone": "trænzˈmɪʃən ˌkoʊɪˈfɪʃənt",
+    "ukphone": "trænzˈmɪʃən ˌkəʊɪˈfɪʃənt"
+  },
+  {
+    "name": "ultrasonic wave",
+    "trans": "超声波",
+    "usphone": "ˌʌltrəˈsɒnɪk weɪv",
+    "ukphone": "ˌʌltrəˈsɒnɪk weɪv"
+  },
+  {
+    "name": "average translational kinetic energy",
+    "trans": "平均平动动能",
+    "usphone": "ˈævərɪdʒ trænsˈleɪʃənl kɪˈnɛtɪk ˈɛnərdʒi",
+    "ukphone": "ˈævərɪdʒ trænzˈleɪʃənl kɪˈnɛtɪk ˈɛnədʒi"
+  },
+  {
+    "name": "Boltzmann constant",
+    "trans": "玻尔兹曼常数",
+    "usphone": "ˈboʊltsmən ˈkɒnstənt",
+    "ukphone": "ˈbɒltsmən ˈkɒnstənt"
+  },
+  {
+    "name": "Boltzmann distribution law",
+    "trans": "玻尔兹曼分布定律",
+    "usphone": "ˈboʊltsmən ˌdɪstrɪˈbjuːʃən lɔː",
+    "ukphone": "ˈbɒltsmən ˌdɪstrɪˈbjuːʃən lɔː"
+  },
+  {
+    "name": "collision frequency",
+    "trans": "碰撞频率",
+    "usphone": "kəˈlɪʒən ˈfriːkwənsi",
+    "ukphone": "kəˈlɪʒən ˈfriːkwənsi"
+  },
+  {
+    "name": "contact angle",
+    "trans": "接触角",
+    "usphone": "ˈkɒntækt ˈæŋɡl",
+    "ukphone": "ˈkɒntækt ˈæŋɡl"
+  },
+  {
+    "name": "degree of freedom",
+    "trans": "自由度",
+    "usphone": "dɪˈɡriː əv ˈfriːdəm",
+    "ukphone": "dɪˈɡriː əv ˈfriːdəm"
+  },
+  {
+    "name": "energy formula of ideal gas",
+    "trans": "理想气体能量公式",
+    "usphone": "ˈɛnərdʒi ˈfɔːrmjʊlə əv aɪˈdiːəl ɡæs",
+    "ukphone": "ˈɛnədʒi ˈfɔːmjʊlə əv aɪˈdɪəl ɡæs"
+  },
+  {
+    "name": "equation of state",
+    "trans": "状态方程",
+    "usphone": "ɪˈkweɪʒən əv steɪt",
+    "ukphone": "ɪˈkweɪʒən əv steɪt"
+  },
+  {
+    "name": "equilibrium state",
+    "trans": "平衡态",
+    "usphone": "ˌiːkwɪˈlɪbriəm steɪt",
+    "ukphone": "ˌiːkwɪˈlɪbriəm steɪt"
+  },
+  {
+    "name": "equipartition theorem",
+    "trans": "能量均分定理",
+    "usphone": "ˌiːkwɪpɑːrˈtɪʃən ˈθiərəm",
+    "ukphone": "ˌiːkwɪpɑːˈtɪʃən ˈθɪərəm"
+  },
+  {
+    "name": "freedom",
+    "trans": "自由度",
+    "usphone": "ˈfriːdəm",
+    "ukphone": "ˈfriːdəm"
+  },
+  {
+    "name": "gas embolism",
+    "trans": "气体栓塞",
+    "usphone": "ɡæs ˈɛmbəlɪzəm",
+    "ukphone": "ɡæs ˈɛmbəlɪzəm"
+  },
+  {
+    "name": "heat conduction",
+    "trans": "热传导",
+    "usphone": "hiːt kənˈdʌkʃən",
+    "ukphone": "hiːt kənˈdʌkʃən"
+  },
+  {
+    "name": "internal energy",
+    "trans": "内能",
+    "usphone": "ɪnˈtɜːrnl ˈɛnərdʒi",
+    "ukphone": "ɪnˈtɜːnl ˈɛnədʒi"
+  },
+  {
+    "name": "macroscopic description",
+    "trans": "宏观描述",
+    "usphone": "ˌmækrəˈskɒpɪk dɪˈskrɪpʃən",
+    "ukphone": "ˌmækrəˈskɒpɪk dɪˈskrɪpʃən"
+  },
+  {
+    "name": "macroscopic quantity",
+    "trans": "宏观量",
+    "usphone": "ˌmækrəˈskɒpɪk ˈkwɒntɪti",
+    "ukphone": "ˌmækrəˈskɒpɪk ˈkwɒntɪti"
+  },
+  {
+    "name": "mean free path",
+    "trans": "平均自由程",
+    "usphone": "miːn friː pæθ",
+    "ukphone": "miːn friː pɑːθ"
+  },
+  {
+    "name": "mean speed",
+    "trans": "平均速率",
+    "usphone": "miːn spiːd",
+    "ukphone": "miːn spiːd"
+  },
+  {
+    "name": "microscopic description",
+    "trans": "微观描述",
+    "usphone": "ˌmaɪkrəˈskɒpɪk dɪˈskrɪpʃən",
+    "ukphone": "ˌmaɪkrəˈskɒpɪk dɪˈskrɪpʃən"
+  },
+  {
+    "name": "microscopic quantity",
+    "trans": "微观量",
+    "usphone": "ˌmaɪkrəˈskɒpɪk ˈkwɒntɪti",
+    "ukphone": "ˌmaɪkrəˈskɒpɪk ˈkwɒntɪti"
+  },
+  {
+    "name": "molecular force",
+    "trans": "分子间力",
+    "usphone": "məˈlɛkjʊlər fɔːrs",
+    "ukphone": "məˈlɛkjʊlə fɔːs"
+  },
+  {
+    "name": "molecular kinetic theory",
+    "trans": "分子动理论",
+    "usphone": "məˈlɛkjʊlər kɪˈnɛtɪk ˈθiəri",
+    "ukphone": "məˈlɛkjʊlə kɪˈnɛtɪk ˈθɪəri"
+  },
+  {
+    "name": "most probable speed",
+    "trans": "最概然速率",
+    "usphone": "moʊst ˈprɒbəbl spiːd",
+    "ukphone": "məʊst ˈprɒbəbəl spiːd"
+  },
+  {
+    "name": "normalization condition",
+    "trans": "归一化条件",
+    "usphone": "ˌnɔːrməlaɪˈzeɪʃən kənˈdɪʃən",
+    "ukphone": "ˌnɔːməlaɪˈzeɪʃən kənˈdɪʃən"
+  },
+  {
+    "name": "partial pressure",
+    "trans": "分压",
+    "usphone": "ˈpɑːrʃəl ˈprɛʃər",
+    "ukphone": "ˈpɑːʃəl ˈprɛʃə"
+  },
+  {
+    "name": "pressure formula of ideal gas",
+    "trans": "理想气体压强公式",
+    "usphone": "ˈprɛʃər ˈfɔːrmjʊlə əv aɪˈdiːəl ɡæs",
+    "ukphone": "ˈprɛʃə ˈfɔːmjʊlə əv aɪˈdɪəl ɡæs"
+  },
+  {
+    "name": "state variable",
+    "trans": "状态参量",
+    "usphone": "steɪt ˈvɛəriəbl",
+    "ukphone": "steɪt ˈvɛəriəbl"
+  },
+  {
+    "name": "statistical physics",
+    "trans": "统计物理学",
+    "usphone": "stəˈtɪstɪkəl ˈfɪzɪks",
+    "ukphone": "stəˈtɪstɪkəl ˈfɪzɪks"
+  },
+  {
+    "name": "surface adsorption",
+    "trans": "表面吸附",
+    "usphone": "ˈsɜːrfɪs ədˈsɔːrpʃən",
+    "ukphone": "ˈsɜːfɪs ədˈsɔːpʃən"
+  },
+  {
+    "name": "surface tension",
+    "trans": "表面张力",
+    "usphone": "ˈsɜːrfɪs ˈtɛnʃən",
+    "ukphone": "ˈsɜːfɪs ˈtɛnʃən"
+  },
+  {
+    "name": "thermal motion",
+    "trans": "热运动",
+    "usphone": "ˈθɜːrməl ˈmoʊʃən",
+    "ukphone": "ˈθɜːməl ˈməʊʃən"
+  },
+  {
+    "name": "thermodynamics",
+    "trans": "热力学",
+    "usphone": "ˌθɜːrməʊdaɪˈnæmɪks",
+    "ukphone": "ˌθɜːməʊdaɪˈnæmɪks"
+  },
+  {
+    "name": "transport process",
+    "trans": "输运过程",
+    "usphone": "ˈtrænspɔːrt ˈproʊsɛs",
+    "ukphone": "ˈtrænspɔːt ˈprəʊsɛs"
+  },
+  {
+    "name": "universe gas constant",
+    "trans": "普适气体常数",
+    "usphone": "ˈjuːnɪvɜːrs ɡæs ˈkɒnstənt",
+    "ukphone": "ˈjuːnɪvɜːs ɡæs ˈkɒnstənt"
+  },
+  {
+    "name": "velocity distribution function",
+    "trans": "速度分布函数",
+    "usphone": "vəˈlɒsəti ˌdɪstrɪˈbjuːʃən ˈfʌŋkʃən",
+    "ukphone": "vəˈlɒsɪti ˌdɪstrɪˈbjuːʃən ˈfʌŋkʃən"
+  },
+  {
+    "name": "additional pressure",
+    "trans": "附加压强",
+    "usphone": "əˈdɪʃənl ˈprɛʃər",
+    "ukphone": "əˈdɪʃənl ˈprɛʃə"
+  },
+  {
+    "name": "adhesive force",
+    "trans": "附着力",
+    "usphone": "ədˈhiːsɪv fɔːrs",
+    "ukphone": "ədˈhiːsɪv fɔːs"
+  },
+  {
+    "name": "adhesive layer",
+    "trans": "附着层",
+    "usphone": "ədˈhiːsɪv ˈleɪər",
+    "ukphone": "ədˈhiːsɪv ˈleɪə"
+  },
+  {
+    "name": "air embolism",
+    "trans": "气体栓塞",
+    "usphone": "ɛər ˈɛmbəlɪzəm",
+    "ukphone": "eə ˈɛmbəlɪzəm"
+  },
+  {
+    "name": "capillarity",
+    "trans": "毛细现象",
+    "usphone": "ˌkæpɪˈlærəti",
+    "ukphone": "ˌkæpɪˈlærɪti"
+  },
+  {
+    "name": "coefficient of surface tension",
+    "trans": "表面张力系数",
+    "usphone": "ˌkoʊɪˈfɪʃənt əv ˈsɜːrfɪs ˈtɛnʃən",
+    "ukphone": "ˌkəʊɪˈfɪʃənt əv ˈsɜːfɪs ˈtɛnʃən"
+  },
+  {
+    "name": "cohesive force",
+    "trans": "内聚力",
+    "usphone": "koʊˈhiːsɪv fɔːrs",
+    "ukphone": "kəʊˈhiːsɪv fɔːs"
+  },
+  {
+    "name": "contact angle",
+    "trans": "接触角",
+    "usphone": "ˈkɒntækt ˈæŋɡl",
+    "ukphone": "ˈkɒntækt ˈæŋɡl"
+  },
+  {
+    "name": "Laplace equation",
+    "trans": "拉普拉斯方程",
+    "usphone": "ləˈplæs ɪˈkweɪʒən",
+    "ukphone": "ləˈplæs ɪˈkweɪʒən"
+  },
+  {
+    "name": "pulmonary surfactant",
+    "trans": "肺表面活性物质",
+    "usphone": "ˈpʌlməˌnɛri sɜːrˈfæktənt",
+    "ukphone": "ˈpʌlmənəri sɜːˈfæktənt"
+  },
+  {
+    "name": "surface absorption",
+    "trans": "表面吸附",
+    "usphone": "ˈsɜːrfɪs əbˈsɔːrpʃən",
+    "ukphone": "ˈsɜːfɪs əbˈzɔːpʃən"
+  },
+  {
+    "name": "surface energy",
+    "trans": "表面能",
+    "usphone": "ˈsɜːrfɪs ˈɛnərdʒi",
+    "ukphone": "ˈsɜːfɪs ˈɛnədʒi"
+  },
+  {
+    "name": "surface layer",
+    "trans": "表面层",
+    "usphone": "ˈsɜːrfɪs ˈleɪər",
+    "ukphone": "ˈsɜːfɪs ˈleɪə"
+  },
+  {
+    "name": "surface tension",
+    "trans": "表面张力",
+    "usphone": "ˈsɜːrfɪs ˈtɛnʃən",
+    "ukphone": "ˈsɜːfɪs ˈtɛnʃən"
+  },
+  {
+    "name": "surfactant",
+    "trans": "表面活性剂",
+    "usphone": "sɜːrˈfæktənt",
+    "ukphone": "sɜːˈfæktənt"
+  },
+  {
+    "name": "wetting",
+    "trans": "润湿",
+    "usphone": "ˈwɛtɪŋ",
+    "ukphone": "ˈwɛtɪŋ"
+  },
+  {
+    "name": "bound charge",
+    "trans": "束缚电荷",
+    "usphone": "baʊnd tʃɑːrdʒ",
+    "ukphone": "baʊnd tʃɑːdʒ"
+  },
+  {
+    "name": "capacitance",
+    "trans": "电容",
+    "usphone": "kəˈpæsɪtəns",
+    "ukphone": "kəˈpæsɪtəns"
+  },
+  {
+    "name": "cardio-electric dipole",
+    "trans": "心电偶",
+    "usphone": "ˈkɑːrdioʊ-ɪˈlɛktrɪk ˈdaɪpoʊl",
+    "ukphone": "ˈkɑːdiəʊ-ɪˈlɛktrɪk ˈdaɪpəʊl"
+  },
+  {
+    "name": "charge of field source",
+    "trans": "场源电荷",
+    "usphone": "tʃɑːrdʒ əv fiːld sɔːrs",
+    "ukphone": "tʃɑːdʒ əv fiːld sɔːs"
+  },
+  {
+    "name": "condenser",
+    "trans": "电容器",
+    "usphone": "kənˈdɛnsər",
+    "ukphone": "kənˈdɛnsə"
+  },
+  {
+    "name": "conservative force",
+    "trans": "保守力",
+    "usphone": "kənˈsɜːrvətɪv fɔːrs",
+    "ukphone": "kənˈsɜːvətɪv fɔːs"
+  },
+  {
+    "name": "dielectric",
+    "trans": "电介质",
+    "usphone": "ˌdaɪɪˈlɛktrɪk",
+    "ukphone": "ˌdaɪɪˈlɛktrɪk"
+  },
+  {
+    "name": "dielectric constant of vacuum",
+    "trans": "真空介电常数",
+    "usphone": "ˌdaɪɪˈlɛktrɪk ˈkɒnstənt əv ˈvækjuəm",
+    "ukphone": "ˌdaɪɪˈlɛktrɪk ˈkɒnstənt əv ˈvækjʊəm"
+  },
+  {
+    "name": "dielectric polarization",
+    "trans": "电介质极化",
+    "usphone": "ˌdaɪɪˈlɛktrɪk ˌpoʊlərɪˈzeɪʃən",
+    "ukphone": "ˌdaɪɪˈlɛktrɪk ˌpəʊlərɪˈzeɪʃən"
+  },
+  {
+    "name": "dipole layer",
+    "trans": "电偶层",
+    "usphone": "ˈdaɪpoʊl ˈleɪər",
+    "ukphone": "ˈdaɪpəʊl ˈleɪə"
+  },
+  {
+    "name": "displacement polarization",
+    "trans": "位移极化",
+    "usphone": "dɪsˈpleɪsmənt ˌpoʊlərɪˈzeɪʃən",
+    "ukphone": "dɪsˈpleɪsmənt ˌpəʊlərɪˈzeɪʃən"
+  },
+  {
+    "name": "electric charge",
+    "trans": "电荷",
+    "usphone": "ɪˈlɛktrɪk tʃɑːrdʒ",
+    "ukphone": "ɪˈlɛktrɪk tʃɑːdʒ"
+  },
+  {
+    "name": "electric dipole",
+    "trans": "电偶极子",
+    "usphone": "ɪˈlɛktrɪk ˈdaɪpoʊl",
+    "ukphone": "ɪˈlɛktrɪk ˈdaɪpəʊl"
+  },
+  {
+    "name": "electric dipole moment",
+    "trans": "电偶极矩",
+    "usphone": "ɪˈlɛktrɪk ˈdaɪpoʊl ˈmoʊmənt",
+    "ukphone": "ɪˈlɛktrɪk ˈdaɪpəʊl ˈməʊmənt"
+  },
+  {
+    "name": "electric field intensity",
+    "trans": "电场强度",
+    "usphone": "ɪˈlɛktrɪk fiːld ɪnˈtɛnsəti",
+    "ukphone": "ɪˈlɛktrɪk fiːld ɪnˈtɛnsɪti"
+  },
+  {
+    "name": "electric flux",
+    "trans": "电通量",
+    "usphone": "ɪˈlɛktrɪk flʌks",
+    "ukphone": "ɪˈlɛktrɪk flʌks"
+  },
+  {
+    "name": "electric line of force",
+    "trans": "电力线",
+    "usphone": "ɪˈlɛktrɪk laɪn əv fɔːrs",
+    "ukphone": "ɪˈlɛktrɪk laɪn əv fɔːs"
+  },
+  {
+    "name": "electric potential",
+    "trans": "电势",
+    "usphone": "ɪˈlɛktrɪk pəˈtɛnʃəl",
+    "ukphone": "ɪˈlɛktrɪk pəˈtɛnʃəl"
+  },
+  {
+    "name": "electric susceptibility",
+    "trans": "电极化率",
+    "usphone": "ɪˈlɛktrɪk səˌsɛptəˈbɪlɪti",
+    "ukphone": "ɪˈlɛktrɪk səˌsɛptəˈbɪlɪti"
+  },
+  {
+    "name": "electrostatic field",
+    "trans": "静电场",
+    "usphone": "ɪˌlɛktraʊˈstætɪk fiːld",
+    "ukphone": "ɪˌlɛktrəʊˈstætɪk fiːld"
+  },
+  {
+    "name": "energy density",
+    "trans": "能量密度",
+    "usphone": "ˈɛnərdʒi ˈdɛnsəti",
+    "ukphone": "ˈɛnədʒi ˈdɛnsɪti"
+  },
+  {
+    "name": "equipotential surface",
+    "trans": "等势面",
+    "usphone": "ˌiːkwɪpəˈtɛnʃəl ˈsɜːrfɪs",
+    "ukphone": "ˌiːkwɪpəˈtɛnʃəl ˈsɜːfɪs"
+  },
+  {
+    "name": "Gauss theorem",
+    "trans": "高斯定理",
+    "usphone": "ɡaʊs ˈθiərəm",
+    "ukphone": "ɡaʊs ˈθɪərəm"
+  },
+  {
+    "name": "Gaussian surface",
+    "trans": "高斯面",
+    "usphone": "ˈɡaʊsiən ˈsɜːrfɪs",
+    "ukphone": "ˈɡaʊsiən ˈsɜːfɪs"
+  },
+  {
+    "name": "law of conservation of charge",
+    "trans": "电荷守恒定律",
+    "usphone": "lɔː əv ˌkɒnsərˈveɪʃən əv tʃɑːrdʒ",
+    "ukphone": "lɔː əv ˌkɒnsəˈveɪʃən əv tʃɑːdʒ"
+  },
+  {
+    "name": "nonpolar molecule",
+    "trans": "非极性分子",
+    "usphone": "nɒnˈpoʊlər ˈmɒlɪkjuːl",
+    "ukphone": "nɒnˈpəʊlə ˈmɒlɪkjuːl"
+  },
+  {
+    "name": "orientation polarization",
+    "trans": "取向极化",
+    "usphone": "ˌɔːrɪənˈteɪʃən ˌpoʊlərɪˈzeɪʃən",
+    "ukphone": "ˌɔːrɪənˈteɪʃən ˌpəʊlərɪˈzeɪʃən"
+  },
+  {
+    "name": "polar molecule",
+    "trans": "有极分子",
+    "usphone": "ˈpoʊlər ˈmɒlɪkjuːl",
+    "ukphone": "ˈpəʊlə ˈmɒlɪkjuːl"
+  },
+  {
+    "name": "polarization electric field",
+    "trans": "极化电场",
+    "usphone": "ˌpoʊlərɪˈzeɪʃən ɪˈlɛktrɪk fiːld",
+    "ukphone": "ˌpəʊlərɪˈzeɪʃən ɪˈlɛktrɪk fiːld"
+  },
+  {
+    "name": "polarized",
+    "trans": "极化的",
+    "usphone": "ˈpoʊləraɪzd",
+    "ukphone": "ˈpəʊləraɪzd"
+  },
+  {
+    "name": "potential gradient",
+    "trans": "电势梯度",
+    "usphone": "pəˈtɛnʃəl ˈɡreɪdiənt",
+    "ukphone": "pəˈtɛnʃəl ˈɡreɪdiənt"
+  },
+  {
+    "name": "principle of superposition of electric field intensity",
+    "trans": "电场强度叠加原理",
+    "usphone": "ˈprɪnsəpl əv ˌsuːpərpəˈzɪʃən əv ɪˈlɛktrɪk fiːld ɪnˈtɛnsəti",
+    "ukphone": "ˈprɪnsɪpl əv ˌsuːpəpəˈzɪʃən əv ɪˈlɛktrɪk fiːld ɪnˈtɛnsɪti"
+  },
+  {
+    "name": "principle of superposition of electric potential",
+    "trans": "电势叠加原理",
+    "usphone": "ˈprɪnsəpl əv ˌsuːpərpəˈzɪʃən əv ɪˈlɛktrɪk pəˈtɛnʃəl",
+    "ukphone": "ˈprɪnsɪpl əv ˌsuːpəpəˈzɪʃən əv ɪˈlɛktrɪk pəˈtɛnʃəl"
+  },
+  {
+    "name": "test charge",
+    "trans": "试探电荷",
+    "usphone": "tɛst tʃɑːrdʒ",
+    "ukphone": "tɛst tʃɑːdʒ"
+  },
+  {
+    "name": "voltage",
+    "trans": "电压",
+    "usphone": "ˈvoʊltɪdʒ",
+    "ukphone": "ˈvəʊltɪdʒ"
+  },
+  {
+    "name": "analytical electrophoresis",
+    "trans": "分析电泳",
+    "usphone": "ˌænəˈlɪtɪkəl ɪˌlɛktraʊˈfɒrɪsɪs",
+    "ukphone": "ˌænəˈlɪtɪkəl ɪˌlɛktrəʊfəˈriːsɪs"
+  },
+  {
+    "name": "branch path",
+    "trans": "支路",
+    "usphone": "bræntʃ pæθ",
+    "ukphone": "brɑːntʃ pɑːθ"
+  },
+  {
+    "name": "carriers",
+    "trans": "载流子",
+    "usphone": "ˈkæriərz",
+    "ukphone": "ˈkæriəz"
+  },
+  {
+    "name": "charge process",
+    "trans": "充电过程",
+    "usphone": "tʃɑːrdʒ ˈproʊsɛs",
+    "ukphone": "tʃɑːdʒ ˈprəʊsɛs"
+  },
+  {
+    "name": "compensation method",
+    "trans": "补偿法",
+    "usphone": "ˌkɒmpənˈseɪʃən ˈmɛθəd",
+    "ukphone": "ˌkɒmpənˈseɪʃən ˈmɛθəd"
+  },
+  {
+    "name": "conductivity",
+    "trans": "电导率",
+    "usphone": "ˌkɒndʌkˈtɪvəti",
+    "ukphone": "ˌkɒndʌkˈtɪvɪti"
+  },
+  {
+    "name": "current intensity",
+    "trans": "电流强度",
+    "usphone": "ˈkʌrənt ɪnˈtɛnsəti",
+    "ukphone": "ˈkʌrənt ɪnˈtɛnsɪti"
+  },
+  {
+    "name": "electrical conductivity",
+    "trans": "电导率",
+    "usphone": "ɪˈlɛktrɪkəl ˌkɒndʌkˈtɪvəti",
+    "ukphone": "ɪˈlɛktrɪkəl ˌkɒndʌkˈtɪvɪti"
+  },
+  {
+    "name": "electrolyte",
+    "trans": "电解质",
+    "usphone": "ɪˈlɛktrəlaɪt",
+    "ukphone": "ɪˈlɛktrəlaɪt"
+  },
+  {
+    "name": "electromotive force",
+    "trans": "电动势",
+    "usphone": "ɪˌlɛktraʊˈmoʊtɪv fɔːrs",
+    "ukphone": "ɪˌlɛktrəʊˈməʊtɪv fɔːs"
+  },
+  {
+    "name": "electronic current density",
+    "trans": "电流密度",
+    "usphone": "ɪˌlɛkˈtrɒnɪk ˈkʌrənt ˈdɛnsəti",
+    "ukphone": "ɪˌlɛkˈtrɒnɪk ˈkʌrənt ˈdɛnsɪti"
+  },
+  {
+    "name": "ionic mobility",
+    "trans": "离子迁移率",
+    "usphone": "aɪˈɒnɪk moʊˈbɪləti",
+    "ukphone": "aɪˈɒnɪk məʊˈbɪlɪti"
+  },
+  {
+    "name": "isolator",
+    "trans": "隔离器",
+    "usphone": "ˈaɪsəleɪtər",
+    "ukphone": "ˈaɪsəleɪtə"
+  },
+  {
+    "name": "potentiometer",
+    "trans": "电位计",
+    "usphone": "pəˈtɛnʃiˌɒmɪtər",
+    "ukphone": "pəˈtɛnʃiˌɒmɪtə"
+  },
+  {
+    "name": "preparation electrophoresis",
+    "trans": "制备电泳",
+    "usphone": "ˌprɛpəˈreɪʃən ɪˌlɛktraʊˈfɒrɪsɪs",
+    "ukphone": "ˌprɛpəˈreɪʃən ɪˌlɛktrəʊfəˈriːsɪs"
+  },
+  {
+    "name": "steady current",
+    "trans": "稳恒电流",
+    "usphone": "ˈstɛdi ˈkʌrənt",
+    "ukphone": "ˈstɛdi ˈkʌrənt"
+  },
+  {
+    "name": "superconductor",
+    "trans": "超导体",
+    "usphone": "ˌsuːpərkənˈdʌktər",
+    "ukphone": "ˌsuːpəkənˈdʌktə"
+  },
+  {
+    "name": "time constant",
+    "trans": "时间常数",
+    "usphone": "taɪm ˈkɒnstənt",
+    "ukphone": "taɪm ˈkɒnstənt"
+  },
+  {
+    "name": "transient state process",
+    "trans": "暂态过程",
+    "usphone": "ˈtrænʃənt steɪt ˈproʊsɛs",
+    "ukphone": "ˈtrænziənt steɪt ˈprəʊsɛs"
+  },
+  {
+    "name": "volume conductor",
+    "trans": "容积导体",
+    "usphone": "ˈvɒljuːm kənˈdʌktər",
+    "ukphone": "ˈvɒljuːm kənˈdʌktə"
+  },
+  {
+    "name": "ampere circuital theorem",
+    "trans": "安培环路定理",
+    "usphone": "ˈæmpɪr ˌsɜːrkjɪˈtəl ˈθiərəm",
+    "ukphone": "ˈæmpɛə ˌsɜːkjʊˈtəl ˈθɪərəm"
+  },
+  {
+    "name": "biomagnetism",
+    "trans": "生物磁学",
+    "usphone": "ˌbaɪoʊˈmæɡnɪtɪzəm",
+    "ukphone": "ˌbaɪəʊˈmæɡnɪtɪzəm"
+  },
+  {
+    "name": "coefficient of self-induction",
+    "trans": "自感系数",
+    "usphone": "ˌkoʊɪˈfɪʃənt əv sɛlf ɪnˈdʌkʃən",
+    "ukphone": "ˌkəʊɪˈfɪʃənt əv sɛlf ɪnˈdʌkʃən"
+  },
+  {
+    "name": "curl field",
+    "trans": "旋涡场",
+    "usphone": "kɜːrl fiːld",
+    "ukphone": "kɜːl fiːld"
+  },
+  {
+    "name": "diamagnetic substance",
+    "trans": "抗磁质",
+    "usphone": "ˌdaɪəmæɡˈnɛtɪk ˈsʌbstəns",
+    "ukphone": "ˌdaɪəmæɡˈnɛtɪk ˈsʌbstəns"
+  },
+  {
+    "name": "displacement current",
+    "trans": "位移电流",
+    "usphone": "dɪsˈpleɪsmənt ˈkɜːrənt",
+    "ukphone": "dɪsˈpleɪsmənt ˈkʌrənt"
+  },
+  {
+    "name": "electromagnetic flowmeter",
+    "trans": "电磁流量计",
+    "usphone": "ɪˌlɛktraʊˈmæɡnɪtɪk ˈfloʊˌmiːtər",
+    "ukphone": "ɪˌlɛktrəʊˈmæɡnɪtɪk ˈfləʊˌmiːtə"
+  },
+  {
+    "name": "electromagnetic induction",
+    "trans": "电磁感应",
+    "usphone": "ɪˌlɛktraʊˈmæɡnɪtɪk ɪnˈdʌkʃən",
+    "ukphone": "ɪˌlɛktrəʊˈmæɡnɪtɪk ɪnˈdʌkʃən"
+  },
+  {
+    "name": "electromagnetic oscillation",
+    "trans": "电磁振荡",
+    "usphone": "ɪˌlɛktraʊˈmæɡnɪtɪk ˌɒsɪˈleɪʃən",
+    "ukphone": "ɪˌlɛktrəʊˈmæɡnɪtɪk ˌɒsɪˈleɪʃən"
+  },
+  {
+    "name": "electromagnetic pump",
+    "trans": "电磁泵",
+    "usphone": "ɪˌlɛktraʊˈmæɡnɪtɪk pʌmp",
+    "ukphone": "ɪˌlɛktrəʊˈmæɡnɪtɪk pʌmp"
+  },
+  {
+    "name": "electromagnetic wave",
+    "trans": "电磁波",
+    "usphone": "ɪˌlɛktraʊˈmæɡnɪtɪk weɪv",
+    "ukphone": "ɪˌlɛktrəʊˈmæɡnɪtɪk weɪv"
+  },
+  {
+    "name": "electron spin",
+    "trans": "电子自旋",
+    "usphone": "ɪˈlɛktrɒn spɪn",
+    "ukphone": "ɪˈlɛktrɒn spɪn"
+  },
+  {
+    "name": "ferromagnetic substance",
+    "trans": "铁磁质",
+    "usphone": "ˌfɛroʊmæɡˈnɛtɪk ˈsʌbstəns",
+    "ukphone": "ˌfɛrəʊmæɡˈnɛtɪk ˈsʌbstəns"
+  },
+  {
+    "name": "Hall effect",
+    "trans": "霍尔效应",
+    "usphone": "hɔːl ɪˈfɛkt",
+    "ukphone": "hɔːl ɪˈfɛkt"
+  },
+  {
+    "name": "Lorentz force",
+    "trans": "洛伦兹力",
+    "usphone": "ˈlɔːrənts fɔːrs",
+    "ukphone": "ˈlɒrənts fɔːs"
+  },
+  {
+    "name": "magnetic dipole",
+    "trans": "磁偶极子",
+    "usphone": "mæɡˈnɛtɪk ˈdaɪpoʊl",
+    "ukphone": "mæɡˈnɛtɪk ˈdaɪpəʊl"
+  },
+  {
+    "name": "magnetic domain",
+    "trans": "磁畴",
+    "usphone": "mæɡˈnɛtɪk doʊˈmeɪn",
+    "ukphone": "mæɡˈnɛtɪk dəʊˈmeɪn"
+  },
+  {
+    "name": "magnetic field",
+    "trans": "磁场",
+    "usphone": "mæɡˈnɛtɪk fiːld",
+    "ukphone": "mæɡˈnɛtɪk fiːld"
+  },
+  {
+    "name": "magnetic flux",
+    "trans": "磁通量",
+    "usphone": "mæɡˈnɛtɪk flʌks",
+    "ukphone": "mæɡˈnɛtɪk flʌks"
+  },
+  {
+    "name": "magnetic focusing",
+    "trans": "磁聚焦",
+    "usphone": "mæɡˈnɛtɪk ˈfoʊkəsɪŋ",
+    "ukphone": "mæɡˈnɛtɪk ˈfəʊkəsɪŋ"
+  },
+  {
+    "name": "magnetic induction",
+    "trans": "磁感应强度",
+    "usphone": "mæɡˈnɛtɪk ɪnˈdʌkʃən",
+    "ukphone": "mæɡˈnɛtɪk ɪnˈdʌkʃən"
+  },
+  {
+    "name": "magnetic induction line",
+    "trans": "磁感应线",
+    "usphone": "mæɡˈnɛtɪk ɪnˈdʌkʃən laɪn",
+    "ukphone": "mæɡˈnɛtɪk ɪnˈdʌkʃən laɪn"
+  },
+  {
+    "name": "magnetic moment",
+    "trans": "磁矩",
+    "usphone": "mæɡˈnɛtɪk ˈmoʊmənt",
+    "ukphone": "mæɡˈnɛtɪk ˈməʊmənt"
+  },
+  {
+    "name": "magnetic substance",
+    "trans": "磁介质",
+    "usphone": "mæɡˈnɛtɪk ˈsʌbstəns",
+    "ukphone": "mæɡˈnɛtɪk ˈsʌbstəns"
+  },
+  {
+    "name": "magnetocardiogram",
+    "trans": "心磁图",
+    "usphone": "mæɡˌniːtoʊˈkɑːrdiəɡræm",
+    "ukphone": "mæɡˌniːtəʊˈkɑːdiəɡræm"
+  },
+  {
+    "name": "magnetoencephalogram",
+    "trans": "脑磁图",
+    "usphone": "mæɡˌniːtoʊɛnˈsɛfələɡræm",
+    "ukphone": "mæɡˌniːtəʊɛnˈsɛfələɡræm"
+  },
+  {
+    "name": "molecular magnetic moment",
+    "trans": "分子磁矩",
+    "usphone": "məˈlɛkjʊlər mæɡˈnɛtɪk ˈmoʊmənt",
+    "ukphone": "məˈlɛkjʊlə mæɡˈnɛtɪk ˈməʊmənt"
+  },
+  {
+    "name": "paramagnetic substance",
+    "trans": "顺磁质",
+    "usphone": "ˌpærəmæɡˈnɛtɪk ˈsʌbstəns",
+    "ukphone": "ˌpærəmæɡˈnɛtɪk ˈsʌbstəns"
+  },
+  {
+    "name": "permeability of vacuum",
+    "trans": "真空磁导率",
+    "usphone": "ˌpɜːrmɪəˈbɪləti əv ˈvækjuəm",
+    "ukphone": "ˌpɜːmiəˈbɪlɪti əv ˈvækjʊəm"
+  },
+  {
+    "name": "relative permeability",
+    "trans": "相对磁导率",
+    "usphone": "ˈrɛlətɪv ˌpɜːrmɪəˈbɪləti",
+    "ukphone": "ˈrɛlətɪv ˌpɜːmiəˈbɪlɪti"
+  },
+  {
+    "name": "self-induction",
+    "trans": "自感",
+    "usphone": "sɛlf ɪnˈdʌkʃən",
+    "ukphone": "sɛlf ɪnˈdʌkʃən"
+  },
+  {
+    "name": "absorption coefficient",
+    "trans": "吸收系数",
+    "usphone": "əbˈzɔːrpʃən ˌkoʊɪˈfɪʃənt",
+    "ukphone": "əbˈzɔːpʃən ˌkəʊɪˈfɪʃənt"
+  },
+  {
+    "name": "absorption spectrum",
+    "trans": "吸收光谱",
+    "usphone": "əbˈzɔːrpʃən ˈspɛktrəm",
+    "ukphone": "əbˈzɔːpʃən ˈspɛktrəm"
+  },
+  {
+    "name": "analyzer",
+    "trans": "检偏器",
+    "usphone": "ˈænəˌlaɪzər",
+    "ukphone": "ˈænəlaɪzə"
+  },
+  {
+    "name": "angle of diffraction",
+    "trans": "衍射角",
+    "usphone": "ˈæŋɡl əv dɪˈfrækʃən",
+    "ukphone": "ˈæŋɡl əv dɪˈfrækʃən"
+  },
+  {
+    "name": "angle of polarization",
+    "trans": "偏振角",
+    "usphone": "ˈæŋɡl əv ˌpoʊlərɪˈzeɪʃən",
+    "ukphone": "ˈæŋɡl əv ˌpəʊlərɪˈzeɪʃən"
+  },
+  {
+    "name": "center fringe",
+    "trans": "中心亮纹",
+    "usphone": "ˈsɛntər frɪndʒ",
+    "ukphone": "ˈsɛntə frɪndʒ"
+  },
+  {
+    "name": "coherent light",
+    "trans": "相干光",
+    "usphone": "koʊˈhɪrənt laɪt",
+    "ukphone": "kəʊˈhɪərənt laɪt"
+  },
+  {
+    "name": "coherent source",
+    "trans": "相干光源",
+    "usphone": "koʊˈhɪrənt sɔːrs",
+    "ukphone": "kəʊˈhɪərənt sɔːs"
+  },
+  {
+    "name": "dextrorotary substance",
+    "trans": "右旋物质",
+    "usphone": "ˌdɛkstrəˈroʊtəri ˈsʌbstəns",
+    "ukphone": "ˌdɛkstrəʊˈrəʊtəri ˈsʌbstəns"
+  },
+  {
+    "name": "diffraction of light",
+    "trans": "光的衍射",
+    "usphone": "dɪˈfrækʃən əv laɪt",
+    "ukphone": "dɪˈfrækʃən əv laɪt"
+  },
+  {
+    "name": "diffraction spectrum",
+    "trans": "衍射光谱",
+    "usphone": "dɪˈfrækʃən ˈspɛktrəm",
+    "ukphone": "dɪˈfrækʃən ˈspɛktrəm"
+  },
+  {
+    "name": "equal-inclination fringe",
+    "trans": "等倾干涉条纹",
+    "usphone": "ˈiːkwəl ˌɪnklɪˈneɪʃən frɪndʒ",
+    "ukphone": "ˈiːkwəl ˌɪnklɪˈneɪʃən frɪndʒ"
+  },
+  {
+    "name": "extraordinary ray",
+    "trans": "异常光",
+    "usphone": "ɪkˈstrɔːrdəˌnɛri reɪ",
+    "ukphone": "ɪkˈstrɔːdənri reɪ"
+  },
+  {
+    "name": "Fraunhofer diffraction",
+    "trans": "夫琅禾费衍射",
+    "usphone": "ˈfraʊnˌhoʊfər dɪˈfrækʃən",
+    "ukphone": "ˈfraʊnhəʊfə dɪˈfrækʃən"
+  },
+  {
+    "name": "Fresnel diffraction",
+    "trans": "菲涅耳衍射",
+    "usphone": "freɪˈnɛl dɪˈfrækʃən",
+    "ukphone": "freɪˈnɛl dɪˈfrækʃən"
+  },
+  {
+    "name": "grating constant",
+    "trans": "光栅常数",
+    "usphone": "ˈɡreɪtɪŋ ˈkɒnstənt",
+    "ukphone": "ˈɡreɪtɪŋ ˈkɒnstənt"
+  },
+  {
+    "name": "grating spectrum",
+    "trans": "光栅光谱",
+    "usphone": "ˈɡreɪtɪŋ ˈspɛktrəm",
+    "ukphone": "ˈɡreɪtɪŋ ˈspɛktrəm"
+  },
+  {
+    "name": "half-wave loss",
+    "trans": "半波损失",
+    "usphone": "hæf-weɪv lɔːs",
+    "ukphone": "hɑːf-weɪv lɒs"
+  },
+  {
+    "name": "interference of light",
+    "trans": "光的干涉",
+    "usphone": "ˌɪntərˈfɪərəns əv laɪt",
+    "ukphone": "ˌɪntəˈfɪərəns əv laɪt"
+  },
+  {
+    "name": "levorotatory substance",
+    "trans": "左旋物质",
+    "usphone": "ˌliːvəˈroʊtəˌtɔːri ˈsʌbstəns",
+    "ukphone": "ˌliːvəʊˈrəʊtətri ˈsʌbstəns"
+  },
+  {
+    "name": "line of polarized light",
+    "trans": "偏振光线",
+    "usphone": "laɪn əv ˈpoʊləˌraɪzd laɪt",
+    "ukphone": "laɪn əv ˈpəʊləraɪzd laɪt"
+  },
+  {
+    "name": "Malus law",
+    "trans": "马吕斯定律",
+    "usphone": "mɑːˈluːs lɔː",
+    "ukphone": "mɑːˈluːs lɔː"
+  },
+  {
+    "name": "natural light",
+    "trans": "自然光",
+    "usphone": "ˈnætʃərəl laɪt",
+    "ukphone": "ˈnætʃərəl laɪt"
+  },
+  {
+    "name": "numerical aperture",
+    "trans": "数值孔径",
+    "usphone": "njuːˈmɛrɪkəl ˈæpətʃər",
+    "ukphone": "njuːˈmɛrɪkəl ˈæpətʃə"
+  },
+  {
+    "name": "optical activity",
+    "trans": "旋光性",
+    "usphone": "ˈɒptɪkəl ækˈtɪvəti",
+    "ukphone": "ˈɒptɪkəl ækˈtɪvɪti"
+  },
+  {
+    "name": "optical dispersion",
+    "trans": "旋光色散",
+    "usphone": "ˈɒptɪkəl dɪˈspɜːrʒən",
+    "ukphone": "ˈɒptɪkəl dɪˈspɜːʃən"
+  },
+  {
+    "name": "optical path",
+    "trans": "光程",
+    "usphone": "ˈɒptɪkəl pæθ",
+    "ukphone": "ˈɒptɪkəl pɑːθ"
+  },
+  {
+    "name": "ordinary ray",
+    "trans": "寻常光",
+    "usphone": "ˈɔːrdəˌnɛri reɪ",
+    "ukphone": "ˈɔːdənri reɪ"
+  },
+  {
+    "name": "plane of polarization",
+    "trans": "偏振面",
+    "usphone": "pleɪn əv ˌpoʊlərɪˈzeɪʃən",
+    "ukphone": "pleɪn əv ˌpəʊlərɪˈzeɪʃən"
+  },
+  {
+    "name": "plane of vibration",
+    "trans": "振动面",
+    "usphone": "pleɪn əv vaɪˈbreɪʃən",
+    "ukphone": "pleɪn əv vaɪˈbreɪʃən"
+  },
+  {
+    "name": "polarimeter",
+    "trans": "旋光计",
+    "usphone": "poʊˈlærɪmɪtər",
+    "ukphone": "pəʊˈlærɪmɪtə"
+  },
+  {
+    "name": "polarized light",
+    "trans": "偏振光",
+    "usphone": "ˈpoʊləˌraɪzd laɪt",
+    "ukphone": "ˈpəʊləraɪzd laɪt"
+  },
+  {
+    "name": "polarizer",
+    "trans": "偏振器",
+    "usphone": "ˈpoʊləˌraɪzər",
+    "ukphone": "ˈpəʊləraɪzə"
+  },
+  {
+    "name": "Raman scattering",
+    "trans": "拉曼散射",
+    "usphone": "ˈrɑːmən ˈskætərɪŋ",
+    "ukphone": "ˈrɑːmən ˈskætərɪŋ"
+  },
+  {
+    "name": "saccharimeter",
+    "trans": "糖量计",
+    "usphone": "ˌsækəˈrɪmɪtər",
+    "ukphone": "ˌsækəˈrɪmɪtə"
+  },
+  {
+    "name": "scattering coefficient",
+    "trans": "散射系数",
+    "usphone": "ˈskætərɪŋ ˌkoʊɪˈfɪʃənt",
+    "ukphone": "ˈskætərɪŋ ˌkəʊɪˈfɪʃənt"
+  },
+  {
+    "name": "scattering of light",
+    "trans": "光的散射",
+    "usphone": "ˈskætərɪŋ əv laɪt",
+    "ukphone": "ˈskætərɪŋ əv laɪt"
+  },
+  {
+    "name": "specific rotation",
+    "trans": "旋光率",
+    "usphone": "spəˈsɪfɪk roʊˈteɪʃən",
+    "ukphone": "spəˈsɪfɪk rəʊˈteɪʃən"
+  },
+  {
+    "name": "spectral line",
+    "trans": "谱线",
+    "usphone": "ˈspɛktrəl laɪn",
+    "ukphone": "ˈspɛktrəl laɪn"
+  },
+  {
+    "name": "absorptance",
+    "trans": "吸收率",
+    "usphone": "əbˈsɔːrptəns",
+    "ukphone": "əbˈsɔːptəns"
+  },
+  {
+    "name": "achromatopsia",
+    "trans": "全色盲",
+    "usphone": "əˌkroʊməˈtɒpsiə",
+    "ukphone": "əˌkrəʊməˈtɒpsiə"
+  },
+  {
+    "name": "candela",
+    "trans": "坎德拉",
+    "usphone": "kænˈdɛlə",
+    "ukphone": "kænˈdiːlə"
+  },
+  {
+    "name": "corpuscular property",
+    "trans": "粒子性",
+    "usphone": "kɔːrˈpʌskjʊlər ˈprɒpərti",
+    "ukphone": "kɔːˈpʌskjʊlə ˈprɒpəti"
+  },
+  {
+    "name": "fluorescence",
+    "trans": "荧光",
+    "usphone": "flʊəˈrɛsəns",
+    "ukphone": "flʊəˈrɛsəns"
+  },
+  {
+    "name": "laser",
+    "trans": "激光",
+    "usphone": "ˈleɪzər",
+    "ukphone": "ˈleɪzə"
+  },
+  {
+    "name": "luminescence",
+    "trans": "发光",
+    "usphone": "ˌluːmɪˈnɛsəns",
+    "ukphone": "ˌluːmɪˈnɛsəns"
+  },
+  {
+    "name": "luminous flux",
+    "trans": "光通量",
+    "usphone": "ˈluːmɪnəs flʌks",
+    "ukphone": "ˈluːmɪnəs flʌks"
+  },
+  {
+    "name": "matter wave",
+    "trans": "物质波",
+    "usphone": "ˈmætər weɪv",
+    "ukphone": "ˈmætə weɪv"
+  },
+  {
+    "name": "monochromatic absorptance",
+    "trans": "单色吸收率",
+    "usphone": "ˌmɒnəkroʊˈmætɪk əbˈsɔːrptəns",
+    "ukphone": "ˌmɒnəkrəʊˈmætɪk əbˈsɔːptəns"
+  },
+  {
+    "name": "monochromatic emissive power",
+    "trans": "单色发射本领",
+    "usphone": "ˌmɒnəkroʊˈmætɪk ɪˈmɪsɪv ˈpaʊər",
+    "ukphone": "ˌmɒnəkrəʊˈmætɪk ɪˈmɪsɪv ˈpaʊə"
+  },
+  {
+    "name": "phosphorescence",
+    "trans": "磷光",
+    "usphone": "ˌfɒsfəˈrɛsəns",
+    "ukphone": "ˌfɒsfəˈrɛsəns"
+  },
+  {
+    "name": "photoelectric effect",
+    "trans": "光电效应",
+    "usphone": "ˌfoʊtoʊɪˈlɛktrɪk ɪˈfɛkt",
+    "ukphone": "ˌfəʊtəʊɪˈlɛktrɪk ɪˈfɛkt"
+  },
+  {
+    "name": "photometry",
+    "trans": "光度法",
+    "usphone": "foʊˈtɒmɪtri",
+    "ukphone": "fəʊˈtɒmɪtri"
+  },
+  {
+    "name": "population inversion",
+    "trans": "粒子数反转",
+    "usphone": "ˌpɒpjəˈleɪʃən ɪnˈvɜːrʒən",
+    "ukphone": "ˌpɒpjʊˈleɪʃən ɪnˈvɜːʃən"
+  },
+  {
+    "name": "quantum",
+    "trans": "量子",
+    "usphone": "ˈkwɒntəm",
+    "ukphone": "ˈkwɒntəm"
+  },
+  {
+    "name": "radiant flux",
+    "trans": "辐射通量",
+    "usphone": "ˈreɪdiənt flʌks",
+    "ukphone": "ˈreɪdiənt flʌks"
+  },
+  {
+    "name": "resonant cavity",
+    "trans": "光学谐振腔",
+    "usphone": "ˈrɛzənənt ˈkævɪti",
+    "ukphone": "ˈrɛzənənt ˈkævɪti"
+  },
+  {
+    "name": "spontaneous emission",
+    "trans": "自发辐射",
+    "usphone": "spɒnˈteɪniəs ɪˈmɪʃən",
+    "ukphone": "spɒnˈteɪniəs ɪˈmɪʃən"
+  },
+  {
+    "name": "stimulated emission",
+    "trans": "受激辐射",
+    "usphone": "ˈstɪmjuːleɪtɪd ɪˈmɪʃən",
+    "ukphone": "ˈstɪmjʊleɪtɪd ɪˈmɪʃən"
+  },
+  {
+    "name": "thermal radiation",
+    "trans": "热辐射",
+    "usphone": "ˈθɜːrməl ˌreɪdiˈeɪʃən",
+    "ukphone": "ˈθɜːməl ˌreɪdiˈeɪʃən"
+  },
+  {
+    "name": "thermograph",
+    "trans": "热像图",
+    "usphone": "ˈθɜːrməɡræf",
+    "ukphone": "ˈθɜːməɡrɑːf"
+  },
+  {
+    "name": "undulatory property",
+    "trans": "波动性",
+    "usphone": "ˈʌndjəleɪtəri ˈprɒpərti",
+    "ukphone": "ˈʌndjʊlətəri ˈprɒpəti"
+  },
+  {
+    "name": "visibility function",
+    "trans": "视见度函数",
+    "usphone": "ˌvɪzɪˈbɪləti ˈfʌŋkʃən",
+    "ukphone": "ˌvɪzɪˈbɪləti ˈfʌŋkʃən"
+  },
+  {
+    "name": "wave-particle dualism",
+    "trans": "波粒二象性",
+    "usphone": "weɪv ˈpɑːrtɪkl ˈduːəlɪzəm",
+    "ukphone": "weɪv ˈpɑːtɪkl ˈdjuːəlɪzəm"
+  },
+  {
+    "name": "absorption value",
+    "trans": "吸收值",
+    "usphone": "əbˈzɔːrpʃən ˈvæljuː",
+    "ukphone": "əbˈzɔːpʃən ˈvæljuː"
+  },
+  {
+    "name": "anode",
+    "trans": "阳极",
+    "usphone": "ˈænoʊd",
+    "ukphone": "ˈænəʊd"
+  },
+  {
+    "name": "computerized tomography",
+    "trans": "计算机断层成像",
+    "usphone": "kəmˈpjuːtəˌraɪzd təˈmɒɡrəfi",
+    "ukphone": "kəmˈpjuːtəraɪzd təˈmɒɡrəfi"
+  },
+  {
+    "name": "contrast enhancement",
+    "trans": "造影增强",
+    "usphone": "ˈkɒntræst ɪnˈhænsmənt",
+    "ukphone": "ˈkɒntrɑːst ɪnˈhɑːnsmənt"
+  },
+  {
+    "name": "contrast medium",
+    "trans": "造影剂",
+    "usphone": "ˈkɒntræst ˈmiːdiəm",
+    "ukphone": "ˈkɒntrɑːst ˈmiːdiəm"
+  },
+  {
+    "name": "dynamic spatial reconstructor",
+    "trans": "动态空间重建器",
+    "usphone": "daɪˈnæmɪk ˈspeɪʃəl ˌriːkənˈstrʌktər",
+    "ukphone": "daɪˈnæmɪk ˈspeɪʃəl ˌriːkənˈstrʌktə"
+  },
+  {
+    "name": "half-value layer",
+    "trans": "半价层",
+    "usphone": "hæf ˈvæljuː ˈleɪər",
+    "ukphone": "hɑːf ˈvæljuː ˈleɪə"
+  },
+  {
+    "name": "hardness",
+    "trans": "硬度",
+    "usphone": "ˈhɑːrdnəs",
+    "ukphone": "ˈhɑːdnəs"
+  },
+  {
+    "name": "linear absorption coefficient",
+    "trans": "线性吸收系数",
+    "usphone": "ˈlɪniər əbˈzɔːrpʃən ˌkoʊɪˈfɪʃənt",
+    "ukphone": "ˈlɪnɪər əbˈzɔːpʃən ˌkəʊɪˈfɪʃənt"
+  },
+  {
+    "name": "mass absorption coefficient",
+    "trans": "质量吸收系数",
+    "usphone": "mæs əbˈzɔːrpʃən ˌkoʊɪˈfɪʃənt",
+    "ukphone": "mæs əbˈzɔːpʃən ˌkəʊɪˈfɪʃənt"
+  },
+  {
+    "name": "mass thickness",
+    "trans": "质量厚度",
+    "usphone": "mæs ˈθɪknəs",
+    "ukphone": "mæs ˈθɪknəs"
+  },
+  {
+    "name": "roentgen ray",
+    "trans": "伦琴射线",
+    "usphone": "ˈrɛntɡən reɪ",
+    "ukphone": "ˈrɒntɡən reɪ"
+  },
+  {
+    "name": "minimum wavelength",
+    "trans": "最短波长",
+    "usphone": "ˈmɪnɪməm ˈweɪvˌlɛŋθ",
+    "ukphone": "ˈmɪnɪməm ˈweɪvˌlɛŋθ"
+  }
+]

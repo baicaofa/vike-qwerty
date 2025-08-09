@@ -164,9 +164,8 @@ export async function updateWordReviewSchedule(
         nextReviewAt: wordReviewRecord.nextReviewAt,
         currentIntervalIndex: wordReviewRecord.currentIntervalIndex,
         totalReviews: wordReviewRecord.totalReviews,
-        todayReviewCount: wordReviewRecord.todayReviewCount,
+        todayPracticeCount: wordReviewRecord.todayPracticeCount,
         isGraduated: wordReviewRecord.isGraduated,
-        lastReviewDate: wordReviewRecord.lastReviewDate,
         lastReviewedAt: wordReviewRecord.lastReviewedAt, // 添加最后复习时间更新
         sync_status:
           wordReviewRecord.sync_status === "synced"
@@ -354,48 +353,17 @@ async function updateWordReviewRecord(
   if (record) {
     // 记录存在，更新它
     // 直接使用 record 的方法更新记录
-    const updatedRecord = { ...record };
+    const updatedRecord = {
+      ...record,
+      nextReviewAt: record.nextReviewAt,
+      currentIntervalIndex: record.currentIntervalIndex,
+      todayPracticeCount: record.todayPracticeCount,
+      lastReviewedAt: record.lastReviewedAt,
+    };
 
-    // 更新复习记录
-    if (isCorrect) {
-      // 如果回答正确，增加间隔
-      if (
-        updatedRecord.currentIntervalIndex <
-        updatedRecord.intervalSequence.length - 1
-      ) {
-        updatedRecord.currentIntervalIndex++;
-      }
-
-      // 更新下次复习时间
-      const nextInterval =
-        updatedRecord.intervalSequence[updatedRecord.currentIntervalIndex];
-      updatedRecord.nextReviewAt =
-        Date.now() + AlgorithmUtils.daysToMilliseconds(nextInterval);
-
-      // 如果已经达到最大间隔，标记为已毕业
-      if (
-        updatedRecord.currentIntervalIndex ===
-        updatedRecord.intervalSequence.length - 1
-      ) {
-        updatedRecord.isGraduated = true;
-      }
-    } else {
-      // 如果回答错误，重置间隔
-      updatedRecord.currentIntervalIndex = Math.max(
-        0,
-        updatedRecord.currentIntervalIndex - 1
-      );
-      const nextInterval =
-        updatedRecord.intervalSequence[updatedRecord.currentIntervalIndex];
-      updatedRecord.nextReviewAt =
-        Date.now() + AlgorithmUtils.daysToMilliseconds(nextInterval);
-      updatedRecord.isGraduated = false;
-    }
-
-    // 更新其他字段
-    updatedRecord.lastReviewDate = new Date().toISOString().split("T")[0];
-    updatedRecord.totalReviews++;
-    updatedRecord.todayReviewCount = (updatedRecord.todayReviewCount || 0) + 1;
+    // 更新今日练习次数和最后复习时间
+    updatedRecord.todayPracticeCount =
+      (updatedRecord.todayPracticeCount || 0) + 1;
 
     await db.wordReviewRecords.update(record.id!, {
       ...updatedRecord,
@@ -418,12 +386,10 @@ async function updateWordReviewRecord(
       nextReviewAt: now + AlgorithmUtils.daysToMilliseconds(nextInterval),
       isGraduated: false,
       totalReviews: 1,
-      todayReviewCount: 1,
-      lastReviewDate: new Date().toISOString().split("T")[0],
+      todayPracticeCount: 1,
       sync_status: "local_new",
       last_modified: now,
       // 添加IWordReviewRecord要求的其他必填字段
-      todayPracticeCount: 1,
       lastPracticedAt: now,
       lastReviewedAt: now, // 设置最后复习时间
       sourceDicts: [dictId], // 使用dictId作为源词典
@@ -538,16 +504,20 @@ export async function resetDailyReviewCounts(): Promise<void> {
   try {
     const today = new Date().toISOString().split("T")[0];
 
-    // 查找所有需要重置的记录（lastReviewDate不是今天的）
+    // 查找所有需要重置的记录（最后复习时间不是今天的）
     const allRecords = await db.wordReviewRecords.toArray();
-    const recordsToReset = allRecords.filter(
-      (record) => record.lastReviewDate !== today && record.todayReviewCount > 0
-    );
+    const recordsToReset = allRecords.filter((record) => {
+      if (!record.lastReviewedAt) return false;
+      const lastReviewDate = new Date(record.lastReviewedAt)
+        .toISOString()
+        .split("T")[0];
+      return lastReviewDate !== today && record.todayPracticeCount > 0;
+    });
 
     // 批量重置
     for (const record of recordsToReset) {
       await db.wordReviewRecords.update(record.id!, {
-        todayReviewCount: 0,
+        todayPracticeCount: 0,
         last_modified: Date.now(),
       });
     }

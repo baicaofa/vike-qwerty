@@ -10,12 +10,20 @@ export interface IWordReviewRecord extends Document {
   userId: mongoose.Types.ObjectId | IUser; // 关联到User模型
   word: string; // 单词（跨词典统一）
 
+  // 客户端算法字段
+  intervalSequence: number[]; // 间隔序列（天数）如 [1, 3, 7, 15, 30, 60]
+  currentIntervalIndex: number; // 当前间隔索引
+  isGraduated: boolean; // 是否已完成所有间隔
+
   // 复习状态
-  forgettingFactor: number; // 个人遗忘系数 (0.1-1.0)
   nextReviewAt: Date; // 下次复习时间
-  reviewLevel: number; // 复习等级 (0-6)
+  totalReviews: number; // 总复习次数
   consecutiveCorrect: number; // 连续正确次数
   lastReviewResult: "correct" | "incorrect" | null; // 最后复习结果
+
+  // 练习相关字段
+  todayPracticeCount: number; // 今日练习次数，用于轮次控制
+  lastPracticedAt: Date; // 最后练习时间
 
   // 词典关联信息
   sourceDicts: string[]; // 这个单词出现在哪些词典中
@@ -56,25 +64,35 @@ const WordReviewRecordSchema: Schema<IWordReviewRecord> = new Schema(
       // 移除 index: true，word 索引包含在复合索引中
     },
 
-    // 复习状态
-    forgettingFactor: {
+    // 客户端算法字段
+    intervalSequence: {
+      type: [Number],
+      required: true,
+      default: [1, 3, 7, 15, 30, 60],
+    },
+    currentIntervalIndex: {
       type: Number,
       required: true,
-      default: 0.5,
-      min: 0.1,
-      max: 1.0,
+      default: 0,
+      min: 0,
     },
+    isGraduated: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+
+    // 复习状态
     nextReviewAt: {
       type: Date,
       required: true,
       // 移除 index: true，使用 Schema 级别的复合索引
     },
-    reviewLevel: {
+    totalReviews: {
       type: Number,
       required: true,
       default: 0,
       min: 0,
-      max: 6,
     },
     consecutiveCorrect: {
       type: Number,
@@ -86,6 +104,19 @@ const WordReviewRecordSchema: Schema<IWordReviewRecord> = new Schema(
       type: String,
       enum: ["correct", "incorrect", null],
       default: null,
+    },
+
+    // 练习相关字段
+    todayPracticeCount: {
+      type: Number,
+      required: true,
+      default: 0,
+      min: 0,
+    },
+    lastPracticedAt: {
+      type: Date,
+      required: true,
+      default: Date.now,
     },
 
     // 词典关联信息
@@ -141,7 +172,6 @@ WordReviewRecordSchema.index({ userId: 1, word: 1 }, { unique: true });
 
 // 常用查询索引
 WordReviewRecordSchema.index({ userId: 1, nextReviewAt: 1 }); // 按复习时间查询
-WordReviewRecordSchema.index({ userId: 1, reviewLevel: 1 }); // 按复习等级查询
 WordReviewRecordSchema.index({ userId: 1, lastReviewedAt: 1 }); // 按最后复习时间查询
 WordReviewRecordSchema.index({ userId: 1, updatedAt: 1 }); // 同步查询
 

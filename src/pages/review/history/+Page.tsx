@@ -80,10 +80,8 @@ const HistoryChart: React.FC<{
 const WordHistoryCard: React.FC<{
   word: IWordReviewRecord;
 }> = ({ word }) => {
-  // 使用lastReviewDate作为最后复习时间，如果不存在则使用lastReviewedAt，都不存在则显示"未复习"
-  const lastReviewTime = word.lastReviewDate
-    ? new Date(word.lastReviewDate)
-    : word.lastReviewedAt
+  // 使用lastReviewedAt作为最后复习时间，如果不存在则显示"未复习"
+  const lastReviewTime = word.lastReviewedAt
     ? new Date(word.lastReviewedAt)
     : null;
 

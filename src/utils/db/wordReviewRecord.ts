@@ -24,7 +24,6 @@ export interface IWordReviewRecord {
   currentIntervalIndex: number; // 当前间隔索引
   nextReviewAt: number; // 下次复习时间戳
   totalReviews: number; // 总复习次数
-  todayReviewCount: number; // 今日复习次数
   isGraduated: boolean; // 是否已完成所有间隔
 
   // 复习历史
@@ -32,7 +31,7 @@ export interface IWordReviewRecord {
   consecutiveCorrect?: number; // 连续正确次数
   lastReviewedAt?: number; // 最后复习时间戳
 
-  // 新增：轮次练习相关
+  // 轮次练习相关
   todayPracticeCount: number; // 今日练习次数，用于轮次控制
   lastPracticedAt: number; // 最后练习时间戳
 
@@ -42,7 +41,6 @@ export interface IWordReviewRecord {
 
   // 时间戳
   firstSeenAt: number; // 首次遇到该单词的时间
-  lastReviewDate: string; // 最后复习日期 "2024-12-15"
 
   // 同步相关
   sync_status: SyncStatus;
@@ -61,7 +59,6 @@ export class WordReviewRecord implements IWordReviewRecord {
   currentIntervalIndex: number;
   nextReviewAt: number;
   totalReviews: number;
-  todayReviewCount: number;
   isGraduated: boolean;
   reviewHistory?: IReviewHistoryEntry[];
   consecutiveCorrect?: number;
@@ -71,7 +68,6 @@ export class WordReviewRecord implements IWordReviewRecord {
   sourceDicts: string[];
   preferredDict: string;
   firstSeenAt: number;
-  lastReviewDate: string;
   sync_status: SyncStatus;
   last_modified: number;
 
@@ -87,7 +83,6 @@ export class WordReviewRecord implements IWordReviewRecord {
     this.intervalSequence = [...intervalSequence]; // 复制数组
     this.currentIntervalIndex = 0;
     this.totalReviews = 0;
-    this.todayReviewCount = 0;
     this.isGraduated = false;
     this.sourceDicts = [...sourceDicts]; // 复制数组
     this.preferredDict = preferredDict;
@@ -101,7 +96,6 @@ export class WordReviewRecord implements IWordReviewRecord {
 
     const now = getUTCUnixTimestamp();
     this.firstSeenAt = firstSeenAt || now;
-    this.lastReviewDate = "";
 
     // 设置第一次复习时间（明天）
     const tomorrow = new Date();
@@ -131,7 +125,10 @@ export class WordReviewRecord implements IWordReviewRecord {
    */
   isReviewedToday(): boolean {
     const today = new Date().toISOString().split("T")[0];
-    return this.lastReviewDate === today;
+    return (
+      this.lastReviewedAt !== undefined &&
+      this.lastReviewedAt >= Date.parse(today)
+    );
   }
 
   /**
@@ -143,10 +140,6 @@ export class WordReviewRecord implements IWordReviewRecord {
 
     // 更新统计
     this.totalReviews++;
-    this.todayReviewCount++;
-    this.lastReviewDate = today;
-
-    // 更新最后复习时间
     this.lastReviewedAt = currentTime;
 
     // 更新轮次练习相关字段
@@ -157,7 +150,7 @@ export class WordReviewRecord implements IWordReviewRecord {
     this.lastPracticedAt = currentTime;
 
     // 只有第一次复习才推进间隔
-    if (this.todayReviewCount === 1) {
+    if (this.todayPracticeCount === 1) {
       this.currentIntervalIndex++;
 
       // 检查是否毕业
@@ -184,7 +177,7 @@ export class WordReviewRecord implements IWordReviewRecord {
    * 重置今日复习计数（每日重置）
    */
   resetDailyCount(): void {
-    this.todayReviewCount = 0;
+    this.todayPracticeCount = 0;
 
     if (this.sync_status === "synced") {
       this.sync_status = "local_modified";
@@ -301,14 +294,15 @@ export function toWordReviewRecord(obj: IWordReviewRecord): WordReviewRecord {
   record.currentIntervalIndex = obj.currentIntervalIndex;
   record.nextReviewAt = obj.nextReviewAt;
   record.totalReviews = obj.totalReviews;
-  record.todayReviewCount = obj.todayReviewCount;
   record.isGraduated = obj.isGraduated;
   record.reviewHistory = obj.reviewHistory;
   record.consecutiveCorrect = obj.consecutiveCorrect;
   record.lastReviewedAt = obj.lastReviewedAt;
   record.todayPracticeCount = obj.todayPracticeCount;
   record.lastPracticedAt = obj.lastPracticedAt;
-  record.lastReviewDate = obj.lastReviewDate;
+  record.sourceDicts = obj.sourceDicts;
+  record.preferredDict = obj.preferredDict;
+  record.firstSeenAt = obj.firstSeenAt;
   record.sync_status = obj.sync_status;
   record.last_modified = obj.last_modified;
 

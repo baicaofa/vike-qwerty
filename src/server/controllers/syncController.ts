@@ -270,20 +270,24 @@ export const syncData = async (req: Request, res: Response) => {
         const {
           uuid,
           word,
+          // 客户端算法字段
+          intervalSequence,
+          currentIntervalIndex,
+          isGraduated,
           // 时间戳字段（需要转换 number → Date）
           firstSeenAt: clientFirstSeenAt,
           lastReviewedAt: clientLastReviewedAt,
           nextReviewAt: clientNextReviewAt,
           lastPracticedAt: clientLastPracticedAt,
           // 其他字段
+          totalReviews,
           sourceDicts,
           preferredDict,
           consecutiveCorrect,
+          todayPracticeCount,
           last_modified: clientLastModified,
           sync_status: clientSyncStatus,
           isDeleted: clientIsDeleted,
-          // 客户端独有字段（忽略）
-          // intervalSequence, currentIntervalIndex, totalReviews, etc.
         } = clientRecordData;
 
         const query = { userId, word };
@@ -298,10 +302,10 @@ export const syncData = async (req: Request, res: Response) => {
             firstSeenAtDate;
           const nextReviewAtDate =
             safeParseDate(clientNextReviewAt) || new Date();
+          const lastPracticedAtDate =
+            safeParseDate(clientLastPracticedAt) || lastReviewedAtDate;
 
           // 必需字段默认值
-          const forgettingFactor = 0.5;
-          const reviewLevel = 0;
           const consecutiveCorrectValue = consecutiveCorrect || 0;
           const lastReviewResult = null;
 
@@ -310,13 +314,24 @@ export const syncData = async (req: Request, res: Response) => {
           if (serverRecord) {
             // 更新现有记录
             serverRecord.uuid = uuid || serverRecord.uuid;
+            serverRecord.intervalSequence = intervalSequence ||
+              serverRecord.intervalSequence || [1, 3, 7, 15, 30, 60];
+            serverRecord.currentIntervalIndex =
+              currentIntervalIndex || serverRecord.currentIntervalIndex || 0;
+            serverRecord.isGraduated =
+              isGraduated !== undefined
+                ? isGraduated
+                : serverRecord.isGraduated || false;
             serverRecord.firstSeenAt = firstSeenAtDate;
             serverRecord.lastReviewedAt = lastReviewedAtDate;
             serverRecord.nextReviewAt = nextReviewAtDate;
-            serverRecord.forgettingFactor = forgettingFactor;
-            serverRecord.reviewLevel = reviewLevel;
+            serverRecord.totalReviews =
+              totalReviews || serverRecord.totalReviews || 0;
             serverRecord.consecutiveCorrect = consecutiveCorrectValue;
             serverRecord.lastReviewResult = lastReviewResult;
+            serverRecord.todayPracticeCount =
+              todayPracticeCount || serverRecord.todayPracticeCount || 0;
+            serverRecord.lastPracticedAt = lastPracticedAtDate;
             serverRecord.sourceDicts =
               sourceDicts || serverRecord.sourceDicts || [];
             serverRecord.preferredDict =
@@ -333,13 +348,17 @@ export const syncData = async (req: Request, res: Response) => {
             serverRecord = new WordReviewRecordModel({
               ...query, // userId, word
               uuid: uuid,
+              intervalSequence: intervalSequence || [1, 3, 7, 15, 30, 60],
+              currentIntervalIndex: currentIntervalIndex || 0,
+              isGraduated: isGraduated || false,
               firstSeenAt: firstSeenAtDate,
               lastReviewedAt: lastReviewedAtDate,
               nextReviewAt: nextReviewAtDate,
-              forgettingFactor,
-              reviewLevel,
+              totalReviews: totalReviews || 0,
               consecutiveCorrect: consecutiveCorrectValue,
               lastReviewResult,
+              todayPracticeCount: todayPracticeCount || 0,
+              lastPracticedAt: lastPracticedAtDate,
               sourceDicts: sourceDicts || [],
               preferredDict: preferredDict || "",
               sync_status: "synced",

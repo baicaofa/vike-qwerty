@@ -300,24 +300,31 @@ const ResultScreen = () => {
             <div className="mt-10 flex w-full justify-center gap-5 px-5 text-xl">
               {!isReviewMode && (
                 <>
-                  <Tooltip content={t("tooltips.dictationShortcut", "听写")}>
+                  <Tooltip
+                    content={t(
+                      "tooltips.dictationShortcut",
+                      "快捷键：shift + enter"
+                    )}
+                  >
                     <button
                       className="my-btn-primary h-12 border-2 border-solid border-gray-300 bg-white text-base text-gray-700 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
                       type="button"
                       onClick={dictationButtonHandler}
-                      title={t("buttons.dictation", "听写")}
+                      title={t("buttons.dictation", "默写本章节")}
                     >
-                      {t("buttons.dictation", "听写")}
+                      {t("buttons.dictation", "默写本章节")}
                     </button>
                   </Tooltip>
-                  <Tooltip content={t("tooltips.repeatShortcut", "重复")}>
+                  <Tooltip
+                    content={t("tooltips.repeatShortcut", "快捷键：space")}
+                  >
                     <button
                       className="my-btn-primary h-12 border-2 border-solid border-gray-300 bg-white text-base text-gray-700 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
                       type="button"
                       onClick={repeatButtonHandler}
-                      title={t("buttons.repeat", "重复")}
+                      title={t("buttons.repeat", "重复本章节")}
                     >
-                      {t("buttons.repeat", "重复")}
+                      {t("buttons.repeat", "重复本章节")}
                     </button>
                   </Tooltip>
                 </>

@@ -359,7 +359,7 @@ export class RecordDB extends Dexie {
 
         // 新增复习相关表 -
         wordReviewRecords:
-          "++id, &uuid, &word, nextReviewAt, currentIntervalIndex, isGraduated, todayPracticeCount, lastPracticedAt, lastReviewDate, sync_status, last_modified",
+          "++id, &uuid, &word, nextReviewAt, currentIntervalIndex, isGraduated, todayPracticeCount, lastPracticedAt, lastReviewedAt, sync_status, last_modified",
         reviewHistories:
           "++id, &uuid, wordReviewRecordId, word, reviewedAt, sync_status, last_modified",
         reviewConfigs: "++id, &uuid, userId, sync_status, last_modified",

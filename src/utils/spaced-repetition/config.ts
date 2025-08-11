@@ -11,8 +11,6 @@ export const DEFAULT_REVIEW_CONFIG: Omit<
 > = {
   userId: "default",
   baseIntervals: [1, 3, 7, 15, 30, 60],
-  dailyReviewTarget: 50,
-  maxReviewsPerDay: 100,
   enableNotifications: true,
   notificationTime: "09:00",
 };
@@ -25,8 +23,6 @@ export const PRESET_CONFIGS = {
   beginner: {
     ...DEFAULT_REVIEW_CONFIG,
     baseIntervals: [2, 4, 8, 16, 32, 64],
-    dailyReviewTarget: 30,
-    maxReviewsPerDay: 60,
   },
 
   // 标准配置
@@ -36,16 +32,12 @@ export const PRESET_CONFIGS = {
   intensive: {
     ...DEFAULT_REVIEW_CONFIG,
     baseIntervals: [0.5, 2, 5, 12, 25, 50],
-    dailyReviewTarget: 80,
-    maxReviewsPerDay: 150,
   },
 
   // 轻松配置
   relaxed: {
     ...DEFAULT_REVIEW_CONFIG,
     baseIntervals: [2, 5, 10, 20, 40, 80],
-    dailyReviewTarget: 25,
-    maxReviewsPerDay: 50,
   },
 };
 
@@ -159,25 +151,6 @@ export async function updateReviewConfig(
 }
 
 /**
- * 应用预设配置
- *
- * @param presetName 预设配置名称
- * @param userId 用户ID（可选）
- * @returns 应用后的配置
- */
-export async function applyPresetConfig(
-  presetName: keyof typeof PRESET_CONFIGS,
-  userId?: string
-): Promise<IReviewConfig> {
-  const presetConfig = PRESET_CONFIGS[presetName];
-  if (!presetConfig) {
-    throw new Error(`Unknown preset config: ${presetName}`);
-  }
-
-  return updateReviewConfig(presetConfig, userId);
-}
-
-/**
  * 重置为默认配置
  *
  * @param userId 用户ID（可选）
@@ -186,52 +159,37 @@ export async function applyPresetConfig(
 export async function resetToDefaultConfig(
   userId?: string
 ): Promise<IReviewConfig> {
-  return updateReviewConfig(DEFAULT_REVIEW_CONFIG, userId);
+  try {
+    const defaultConfig = new ReviewConfig(userId);
+    return await updateReviewConfig(defaultConfig, userId);
+  } catch (error) {
+    console.error("Failed to reset to default config:", error);
+    throw error;
+  }
 }
 
 /**
- * 获取简化的配置建议
- * 基于用户的学习表现提供简单的配置建议
+ * 应用预设配置
  *
- * @param userStats 用户统计数据
- * @returns 配置建议
+ * @param presetName 预设名称
+ * @param userId 用户ID（可选）
+ * @returns 应用后的配置
  */
-export function getConfigRecommendations(userStats: {
-  totalReviews: number;
-  averageAccuracy: number;
-  dailyReviewCount: number;
-}): {
-  recommendedPreset: keyof typeof PRESET_CONFIGS;
-  suggestions: string[];
-  adjustments: Partial<IReviewConfig>;
-} {
-  const suggestions: string[] = [];
-  let recommendedPreset: keyof typeof PRESET_CONFIGS = "standard";
-  const adjustments: Partial<IReviewConfig> = {};
+export async function applyPresetConfig(
+  presetName: keyof typeof PRESET_CONFIGS,
+  userId?: string
+): Promise<IReviewConfig> {
+  try {
+    const preset = PRESET_CONFIGS[presetName];
+    if (!preset) {
+      throw new Error(`Unknown preset: ${presetName}`);
+    }
 
-  // 基于准确率推荐
-  if (userStats.averageAccuracy < 0.6) {
-    recommendedPreset = "beginner";
-    suggestions.push("建议使用初学者配置，降低复习强度");
-  } else if (userStats.averageAccuracy > 0.9) {
-    recommendedPreset = "intensive";
-    suggestions.push("您的表现很好，可以尝试高强度配置");
+    return await updateReviewConfig(preset, userId);
+  } catch (error) {
+    console.error("Failed to apply preset config:", error);
+    throw error;
   }
-
-  // 基于复习量推荐
-  if (userStats.dailyReviewCount < 20) {
-    recommendedPreset = "relaxed";
-    suggestions.push("当前复习量较少，建议使用轻松配置");
-  } else if (userStats.dailyReviewCount > 80) {
-    recommendedPreset = "intensive";
-    suggestions.push("复习量较大，可以尝试高强度配置");
-  }
-
-  return {
-    recommendedPreset,
-    suggestions,
-    adjustments,
-  };
 }
 
 /**
@@ -241,18 +199,13 @@ export function getConfigRecommendations(userStats: {
  * @returns 配置的JSON字符串
  */
 export async function exportConfig(userId?: string): Promise<string> {
-  const config = await getReviewConfig(userId);
-
-  // 移除不需要导出的字段
-  const exportData = {
-    ...config,
-    id: undefined,
-    uuid: undefined,
-    sync_status: undefined,
-    last_modified: undefined,
-  };
-
-  return JSON.stringify(exportData, null, 2);
+  try {
+    const config = await getReviewConfig(userId);
+    return JSON.stringify(config, null, 2);
+  } catch (error) {
+    console.error("Failed to export config:", error);
+    throw error;
+  }
 }
 
 /**

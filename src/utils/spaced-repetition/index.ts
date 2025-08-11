@@ -23,7 +23,6 @@ export {
   updateReviewConfig,
   applyPresetConfig,
   resetToDefaultConfig,
-  getConfigRecommendations,
   exportConfig,
   importConfig,
   clearConfigCache,

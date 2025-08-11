@@ -1,27 +1,28 @@
 /**
- * 复习练习页面 (+Page.tsx)
+ * 复习练习页面 - 章节化版本 (+Page.tsx)
  *
- * 本组件实现对当天需要复习的单词进行打字练习功能。
- * 通过复用Typing页面的打字组件，为用户提供一致的打字体验。
+ * 本组件实现章节化复习功能，将当天需要复习的单词按章节组织。
+ * 每章固定20个单词，按原始顺序排列章节内容。
  *
  * 主要功能：
- * 1. 根据用户的练习状态(已练习/未练习)显示不同的单词列表
- * 2. 支持URL参数控制显示模式(如practiced=1显示已练习单词)
- * 3. 记录单词的练习状态，完成后更新单词的复习记录
- * 4. 提供友好的用户界面和交互体验
+ * 1. 显示章节列表，每章20个单词
+ * 2. 支持章节选择和进度跟踪
+ * 3. 章节完成后显示结果弹窗
+ * 4. 复用现有TypingProvider/WordPanel组件架构
  *
  * 依赖的主要组件和hooks：
  * - WordPanel: Typing页面的单词面板组件，用于显示和处理打字练习
  * - TypingProvider/TypingContext: 提供打字状态和控制功能的上下文
  * - useTodayReviews: 获取今日需要复习的单词
+ * - ChapterResultScreen: 章节完成结果展示组件
  */
+import ChapterResultScreen from "./components/ChapterResultScreen";
+import { ChapterErrorBoundary } from "./components/ErrorBoundary";
 import { Link } from "@/components/ui/Link";
-// 导入 UI 组件
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useTodayReviews } from "@/hooks/useSpacedRepetition";
 import Setting from "@/pages/Typing/components/Setting";
-// 直接复用 Typing 页面的组件
 import WordPanel from "@/pages/Typing/components/WordPanel";
 import {
   TypingContext,
@@ -29,13 +30,15 @@ import {
   TypingStateActionType,
 } from "@/pages/Typing/store/";
 import type { WordWithIndex } from "@/typings";
+import type { Chapter, ChapterStats } from "@/typings/chapter";
 import { isChineseSymbol, isLegal } from "@/utils";
-import type { IWordReviewRecord } from "@/utils/db/wordReviewRecord";
 import {
-  getPracticedWords,
-  getUnpracticedWords,
-  updateWordPracticeCount,
-} from "@/utils/reviewRounds";
+  cleanupExpiredChapterData,
+  generateChapters,
+  shouldCleanupChapterData,
+  updateChapterPracticeCount,
+} from "@/utils/chapterManagement";
+import type { IWordReviewRecord } from "@/utils/db/wordReviewRecord";
 import {
   adaptReviewWordsToTypingWords,
   extractWordNameFromTypingWord,
@@ -44,6 +47,42 @@ import { completeWordReview } from "@/utils/spaced-repetition";
 import { Loader2 } from "lucide-react";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+
+/**
+ * localStorage工具函数 - 用于记忆用户最后练习的章节
+ */
+const LAST_CHAPTER_KEY = "review-practice-last-chapter";
+
+// 保存最后练习的章节（按日期存储）
+const saveLastChapter = (chapterNumber: number) => {
+  const today = new Date().toISOString().split("T")[0];
+  const data = {
+    date: today,
+    chapter: chapterNumber,
+  };
+  localStorage.setItem(LAST_CHAPTER_KEY, JSON.stringify(data));
+};
+
+// 获取最后练习的章节（如果不是今天的记录则返回null）
+const getLastChapter = (): number | null => {
+  try {
+    const stored = localStorage.getItem(LAST_CHAPTER_KEY);
+    if (!stored) return null;
+
+    const data = JSON.parse(stored);
+    const today = new Date().toISOString().split("T")[0];
+
+    // 只有今天的记录才有效
+    if (data.date === today && typeof data.chapter === "number") {
+      return data.chapter;
+    }
+
+    return null;
+  } catch (error) {
+    console.warn("读取最后章节失败:", error);
+    return null;
+  }
+};
 
 /**
  * 打字练习组件
@@ -60,13 +99,14 @@ function TypingPractice({
     accuracy: number;
     wpm: number;
     time: number;
+    wrongWords: IWordReviewRecord[];
+    correctWords: IWordReviewRecord[];
   }) => void;
 }) {
-  // 每次typingWords变化时，重新创建一个key，强制重新渲染TypingProvider
   const [providerKey, setProviderKey] = useState(0);
 
+  // 当章节单词改变时，重置Provider以确保状态清洁
   useEffect(() => {
-    // 当typingWords变化时，重置key以强制重新渲染
     setProviderKey((prev) => prev + 1);
   }, [typingWords]);
 
@@ -93,37 +133,54 @@ function TypingContent({
     accuracy: number;
     wpm: number;
     time: number;
+    wrongWords: IWordReviewRecord[];
+    correctWords: IWordReviewRecord[];
   }) => void;
 }) {
-  // 使用useContext获取打字上下文
   const typingContext = useContext(TypingContext);
+  const [wrongWords, setWrongWords] = useState<IWordReviewRecord[]>([]);
+  const [correctWords, setCorrectWords] = useState<IWordReviewRecord[]>([]);
+  const [hasCompletedChapter, setHasCompletedChapter] = useState(false);
 
-  // 如果上下文不存在，提供默认值
   const {
     state = { isTyping: false },
-    dispatch = () => {
-      /* 空实现用于默认值 */
-    },
+    dispatch = () => {},
     words = [],
     stats = { accuracy: 0, wpm: 0, time: 0 },
     index = 0,
     isCompleted = false,
   } = typingContext || {};
 
-  // 监听isCompleted状态，当完成所有单词时触发onTypingComplete
+  // 监听完成状态
   useEffect(() => {
-    if (isCompleted && stats) {
-      onTypingComplete(stats);
+    if (isCompleted && stats && !hasCompletedChapter) {
+      setHasCompletedChapter(true); // 标记已完成，防止重复调用
+      onTypingComplete({
+        accuracy: stats.accuracy,
+        wpm: stats.wpm,
+        time: stats.time,
+        wrongWords,
+        correctWords,
+      });
     }
-  }, [isCompleted, stats, onTypingComplete]);
+  }, [isCompleted, stats, onTypingComplete, hasCompletedChapter]);
 
-  // 添加键盘事件监听器，用于开始打字练习
+  // 计时器逻辑 - 复制自 Typing 页面
   useEffect(() => {
-    // 按任意键开始
+    let intervalId: number;
+    if (state && state.isTyping && dispatch) {
+      intervalId = window.setInterval(() => {
+        dispatch({ type: TypingStateActionType.TICK_TIMER });
+      }, 1000);
+    }
+    return () => clearInterval(intervalId);
+  }, [state?.isTyping, dispatch]);
+
+  // 键盘事件监听
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const char = e.key;
 
-      // 检查是否使用输入法
       if (isChineseSymbol(char)) {
         alert("您正在使用输入法，请关闭输入法。");
         return;
@@ -138,7 +195,6 @@ function TypingContent({
         !e.metaKey
       ) {
         e.preventDefault();
-        // 开始练习
         if (dispatch) {
           dispatch({ type: TypingStateActionType.TOGGLE_IS_TYPING });
         }
@@ -146,7 +202,6 @@ function TypingContent({
     };
 
     window.addEventListener("keydown", handleKeyDown);
-
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
@@ -157,38 +212,69 @@ function TypingContent({
     (word: WordWithIndex, isCorrect: boolean, _responseTime: number) => {
       if (!word) return;
 
-      // 提取单词名称
       const wordName = extractWordNameFromTypingWord(word.name);
 
-      // 调用外部回调，更新单词状态
+      // 追踪错误和正确的单词
+      // 这里需要找到对应的 IWordReviewRecord，暂时创建简单的记录
+      const wordRecord: IWordReviewRecord = {
+        uuid: "",
+        word: wordName,
+        intervalSequence: [1, 3, 7, 15, 30, 60],
+        currentIntervalIndex: 0,
+        nextReviewAt: Date.now(),
+        totalReviews: 0,
+        isGraduated: false,
+        todayPracticeCount: 0,
+        lastPracticedAt: Date.now(),
+        sourceDicts: [],
+        preferredDict: "",
+        firstSeenAt: Date.now(),
+        sync_status: "local_new",
+        last_modified: Date.now(),
+      };
+
+      if (isCorrect) {
+        setCorrectWords((prev) => [...prev, wordRecord]);
+      } else {
+        setWrongWords((prev) => [...prev, wordRecord]);
+      }
+
+      // 更新统计数据
+      if (isCorrect) {
+        dispatch({
+          type: TypingStateActionType.REPORT_CORRECT_WORD,
+        });
+      } else {
+        dispatch({
+          type: TypingStateActionType.REPORT_WRONG_WORD,
+          payload: { letterMistake: [] }, // 复习模式下简化错误统计
+        });
+      }
+
       onWordComplete(wordName, isCorrect);
 
       // 移动到下一个单词
       if (index < words.length - 1) {
         dispatch({
-          type: TypingStateActionType.SKIP_2_WORD_INDEX,
-          newIndex: index + 1,
+          type: TypingStateActionType.NEXT_WORD,
         });
       } else {
-        // 如果是最后一个单词，标记为完成
         dispatch({ type: TypingStateActionType.FINISH_CHAPTER });
       }
     },
     [dispatch, index, words.length, onWordComplete]
   );
 
-  // 如果上下文不存在，显示加载状态
   if (!typingContext) {
     return <div>加载中...</div>;
   }
 
-  // 计算进度百分比
   const progressPercentage =
     words.length > 0 ? (index / words.length) * 100 : 0;
 
   return (
     <>
-      {/* 进度条 - 显示整体完成进度 */}
+      {/* 进度条 */}
       <div className="h-1 bg-gray-200 dark:bg-gray-700">
         <div
           className={`h-full transition-all duration-300 ${
@@ -224,7 +310,7 @@ function TypingContent({
                   <p className="text-sm text-gray-600 dark:text-gray-300">
                     正确率:{" "}
                     <span className="font-medium">
-                      {stats?.accuracy ? (stats.accuracy * 100).toFixed(1) : 0}%
+                      {stats?.accuracy ? stats.accuracy.toFixed(1) : 0}%
                     </span>
                   </p>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -235,23 +321,18 @@ function TypingContent({
               </div>
             </div>
 
-            {/* 单词显示面板 - 核心打字组件 */}
+            {/* 单词显示面板 */}
             <div className="relative">
-              <WordPanel
-                mode="review" // 设置为复习模式
-                onWordComplete={handleWordFinish}
-              />
+              <WordPanel mode="review" onWordComplete={handleWordFinish} />
             </div>
           </div>
         </div>
 
-        {/* 侧边栏（在大屏幕显示） */}
+        {/* 侧边栏 */}
         <div className="hidden md:block w-64 border-l p-4 overflow-y-auto">
           <div className="flex flex-col space-y-6">
-            {/* 设置面板 - 复用Typing页面的设置组件 */}
             <Setting />
 
-            {/* 进度信息 - 详细显示练习统计 */}
             <div className="border rounded-lg p-4 shadow-sm">
               <h3 className="font-medium text-lg mb-3">练习进度</h3>
               <div className="space-y-2">
@@ -264,7 +345,7 @@ function TypingContent({
                 <div className="flex justify-between">
                   <span className="text-gray-600">正确率:</span>
                   <span className="font-medium">
-                    {stats?.accuracy ? (stats.accuracy * 100).toFixed(1) : 0}%
+                    {stats?.accuracy ? stats.accuracy.toFixed(1) : 0}%
                   </span>
                 </div>
                 <div className="mt-2 pt-2 border-t">
@@ -294,32 +375,98 @@ function TypingContent({
 }
 
 /**
- * 复习练习页面组件
- * 按照练习次数优先展示单词，未练习的单词优先
+ * 章节选择器组件
+ */
+function ChapterSelector({
+  chapters,
+  currentChapter,
+  onChapterChange,
+}: {
+  chapters: Chapter[];
+  currentChapter: number;
+  onChapterChange: (chapterNumber: number) => void;
+}) {
+  const { t } = useTranslation("review");
+
+  return (
+    <div className="flex items-center space-x-2">
+      <label
+        htmlFor="chapter-select"
+        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+      >
+        选择章节:
+      </label>
+      <select
+        id="chapter-select"
+        value={currentChapter}
+        onChange={(e) => onChapterChange(parseInt(e.target.value))}
+        className="pr-8 pl-2 py-2 border border-gray-300 rounded-md shadow-sm bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      >
+        {chapters.map((chapter) => (
+          <option
+            key={chapter.chapterNumber}
+            value={chapter.chapterNumber}
+            style={{
+              color: chapter.practiceCount > 0 ? "#10b981" : "#ef4444",
+              fontWeight: chapter.practiceCount > 0 ? "500" : "normal",
+            }}
+          >
+            {t("chapter.number", "第{{number}}章", {
+              number: chapter.chapterNumber,
+            })}
+            {chapter.practiceCount > 0 ? " ✅ 已练习" : " ❌ 未练习"}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
+/**
+ * 复习练习页面组件 - 章节化版本
  */
 export default function ReviewPracticePage() {
   const { t } = useTranslation("review");
-  // =========== 状态管理 ===========
 
-  // 从useTodayReviews hook获取复习数据
-  const { reviews, refreshTodayReviews, allPracticed } = useTodayReviews();
+  // 数据状态
+  const { reviews, refreshTodayReviews } = useTodayReviews();
+
+  // 章节相关状态
+  const [chapters, setChapters] = useState<Chapter[]>([]);
+  const [currentChapter, setCurrentChapter] = useState<number>(1); // 默认第一章
+  const [typingWords, setTypingWords] = useState<string[]>([]);
+  const [chapterStats, setChapterStats] = useState<ChapterStats | null>(null);
 
   // 界面状态
-  const [selectedTab, setSelectedTab] = useState("unpracticed"); // 当前选中的标签：已练习/未练习
-  const [typingWords, setTypingWords] = useState<string[]>([]); // 转换为打字组件格式的单词列表
-  const [isLoading, setIsLoading] = useState(true); // 加载状态
-  const [showCompleted, setShowCompleted] = useState(false); // 是否显示完成弹窗
-  const [practicedParam, setPracticedParam] = useState<string | null>(null); // URL参数中的practiced值
-  const [error, setError] = useState<string | null>(null); // 错误信息
-  const [refreshing, setRefreshing] = useState(false); // 刷新状态
-  const [fadeIn, setFadeIn] = useState(false); // 淡入效果控制
+  const [isLoading, setIsLoading] = useState(true);
+  const [showChapterResult, setShowChapterResult] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [fadeIn, setFadeIn] = useState(false);
 
-  // =========== 视觉效果 ===========
+  // 章节练习进度暂存（内存中暂存，章节完成时批量保存）
+  const [chapterProgress, setChapterProgress] = useState<{
+    completedWords: Set<string>;
+    wordStats: Map<
+      string,
+      {
+        practiceCount: number;
+        lastPracticedAt: number;
+        isCorrect: boolean;
+      }
+    >;
+  }>({
+    completedWords: new Set(),
+    wordStats: new Map(),
+  });
 
-  /**
-   * 添加淡入效果
-   * 当加载完成后延迟显示内容，使过渡更加平滑
-   */
+  // 数据清理（应用启动时）
+  useEffect(() => {
+    if (shouldCleanupChapterData()) {
+      cleanupExpiredChapterData();
+    }
+  }, []);
+
+  // 淡入效果
   useEffect(() => {
     if (!isLoading) {
       setTimeout(() => {
@@ -330,322 +477,329 @@ export default function ReviewPracticePage() {
     }
   }, [isLoading]);
 
-  // =========== URL参数处理 ===========
-
-  /**
-   * 从URL参数获取配置
-   * 例如：?practiced=1 表示显示已练习的单词
-   */
+  // 生成章节数据
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const practiced = urlParams.get("practiced");
-    setPracticedParam(practiced);
+    const generateChapterData = async () => {
+      setIsLoading(true);
+      setError(null);
 
-    if (practiced === "1") {
-      setSelectedTab("practiced");
+      if (reviews.length === 0) {
+        setChapters([]);
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        // 添加小延迟，让用户感受到加载过程
+        await new Promise((resolve) => setTimeout(resolve, 300));
+
+        const today = new Date().toISOString().split("T")[0];
+        const chapterList = generateChapters(reviews, today);
+
+        // 验证生成的章节数据
+        if (!Array.isArray(chapterList)) {
+          throw new Error("章节数据格式不正确");
+        }
+
+        setChapters(chapterList);
+
+        // 智能设置当前章节：优先使用上次章节，否则使用第一章
+        const lastChapter = getLastChapter();
+        const targetChapter =
+          lastChapter && lastChapter <= chapterList.length ? lastChapter : 1;
+        setCurrentChapter(targetChapter);
+
+        // 自动开始该章节的练习
+        const chapter = chapterList.find(
+          (c) => c.chapterNumber === targetChapter
+        );
+        if (chapter && chapter.words && chapter.words.length > 0) {
+          const adaptedWords = adaptReviewWordsToTypingWords(chapter.words);
+          setTypingWords(adaptedWords);
+        }
+
+        setIsLoading(false);
+      } catch (error) {
+        console.error("生成章节失败:", error);
+        setError(t("chapter.status.error", "生成章节失败"));
+        setChapters([]);
+        setIsLoading(false);
+      }
+    };
+
+    generateChapterData();
+  }, [reviews, t]);
+
+  // 开始章节练习
+  const startChapter = useCallback(
+    (chapterNumber: number) => {
+      try {
+        const chapter = chapters.find((c) => c.chapterNumber === chapterNumber);
+
+        if (!chapter) {
+          console.error(`章节 ${chapterNumber} 不存在`);
+          setError(t("chapter.status.error", "章节不存在"));
+          return;
+        }
+
+        if (!chapter.words || chapter.words.length === 0) {
+          console.error(`章节 ${chapterNumber} 没有单词`);
+          setError(t("chapter.status.error", "章节没有单词"));
+          return;
+        }
+
+        setCurrentChapter(chapterNumber);
+        setError(null); // 清除之前的错误
+
+        // 清空暂存的章节进度数据（重新开始章节）
+        setChapterProgress({
+          completedWords: new Set(),
+          wordStats: new Map(),
+        });
+
+        // 保存当前章节到localStorage
+        saveLastChapter(chapterNumber);
+
+        const adaptedWords = adaptReviewWordsToTypingWords(chapter.words);
+        setTypingWords(adaptedWords);
+      } catch (error) {
+        console.error("开始章节失败:", error);
+        setError(t("chapter.status.error", "开始章节失败"));
+      }
+    },
+    [chapters, t]
+  );
+
+  // 处理单词完成 - 使用内存暂存，章节完成时批量保存
+  const handleWordComplete = useCallback((word: string, isCorrect: boolean) => {
+    try {
+      if (!word) return;
+
+      // 只更新内存状态，不立即保存到数据库
+      setChapterProgress((prev) => {
+        const newWordStats = new Map(prev.wordStats);
+        const currentStats = newWordStats.get(word) || {
+          practiceCount: 0,
+          lastPracticedAt: 0,
+          isCorrect: false,
+        };
+
+        newWordStats.set(word, {
+          practiceCount: currentStats.practiceCount + 1,
+          lastPracticedAt: Date.now(),
+          isCorrect: isCorrect,
+        });
+
+        return {
+          completedWords: new Set([...Array.from(prev.completedWords), word]),
+          wordStats: newWordStats,
+        };
+      });
+    } catch (error) {
+      console.error("更新章节练习状态失败:", error);
     }
   }, []);
 
-  // =========== 数据加载 ===========
-
-  /**
-   * 加载单词数据
-   * 根据selectedTab和URL参数决定显示已练习或未练习的单词
-   * 如果一种类型没有单词，会自动切换到另一种类型
-   */
-  useEffect(() => {
-    setIsLoading(true);
-    setError(null);
-
-    // 如果没有复习数据，直接设置加载完成并返回
-    if (reviews.length === 0) {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 300);
-      return;
-    }
-
-    try {
-      let targetWords: IWordReviewRecord[] = [];
-
-      // 如果URL中指定了practiced=1，则加载已练习的单词
-      if (selectedTab === "practiced" || practicedParam === "1") {
-        targetWords = getPracticedWords(reviews);
-        if (targetWords.length === 0 && !allPracticed) {
-          // 如果没有已练习的单词且不是所有单词都已练习，则回退到未练习单词
-          targetWords = getUnpracticedWords(reviews);
-          // 如果是因为没有已练习的单词而回退，更新选中的标签
-          if (selectedTab === "practiced") {
-            setSelectedTab("unpracticed");
-          }
-        }
-      } else {
-        // 默认加载未练习的单词
-        targetWords = getUnpracticedWords(reviews);
-        if (targetWords.length === 0) {
-          // 如果没有未练习的单词，则加载已练习的单词
-          targetWords = getPracticedWords(reviews);
-          // 如果是因为没有未练习的单词而切换，更新选中的标签
-          if (selectedTab === "unpracticed") {
-            setSelectedTab("practiced");
-          }
-        }
-      }
-
-      // 将单词记录转换为打字组件使用的格式
-      const adaptedWords = adaptReviewWordsToTypingWords(targetWords);
-      setTypingWords(adaptedWords);
-    } catch (error) {
-      console.error("加载练习单词失败:", error);
-      setError(t("status.error", "加载练习单词失败"));
-    } finally {
-      // 添加短暂延迟，使过渡更平滑
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 300);
-    }
-  }, [reviews, selectedTab, practicedParam, allPracticed]);
-
-  // =========== 事件处理函数 ===========
-
-  /**
-   * 完成单词练习的处理函数
-   *
-   * 当用户完成一个单词的打字时:
-   * 1. 更新单词的练习次数
-   * 2. 更新复习记录
-   * 3. 刷新统计数据，确保仪表板显示最新数据
-   *
-   * @param word - 完成的单词
-   * @param isCorrect - 是否正确输入
-   */
-  const handleWordComplete = useCallback(
-    async (word: string, _isCorrect: boolean) => {
+  // 处理章节完成
+  const handleChapterComplete = useCallback(
+    async (stats: {
+      accuracy: number;
+      wpm: number;
+      time: number;
+      wrongWords: IWordReviewRecord[];
+      correctWords: IWordReviewRecord[];
+    }) => {
       try {
-        if (!word) return;
-
-        // 更新单词的练习次数
-        await updateWordPracticeCount(word, true);
-
-        // 更新复习记录
-        await completeWordReview(
-          word, // 单词名称
-          Date.now(), // 当前时间戳
-          true // 标记为当前轮次的首次复习
+        // 批量保存章节练习过程中的单词数据
+        console.log(
+          "开始批量保存章节练习数据...",
+          chapterProgress.wordStats.size,
+          "个单词"
         );
 
-        // 注释掉刷新统计数据的调用，避免每次完成单词后页面重新渲染
-        // 只在整个练习完成后（handleTypingComplete）再刷新数据
-        // await refreshTodayReviews();
+        for (const [word, wordStat] of Array.from(
+          chapterProgress.wordStats.entries()
+        )) {
+          try {
+            // 完成单词复习（更新复习进度和练习次数）
+            // 注意：completeWordReview内部已经会处理练习次数，不需要单独调用updateWordPracticeCount
+            await completeWordReview(word, wordStat.lastPracticedAt, true);
+          } catch (error) {
+            console.error(`保存单词 ${word} 的数据失败:`, error);
+          }
+        }
+
+        console.log("章节练习数据批量保存完成");
+
+        // 清空暂存的章节进度数据
+        setChapterProgress({
+          completedWords: new Set(),
+          wordStats: new Map(),
+        });
+
+        if (currentChapter) {
+          // 更新章节练习次数
+          const today = new Date().toISOString().split("T")[0];
+          updateChapterPracticeCount(today, currentChapter);
+
+          // 设置章节统计
+          setChapterStats({
+            accuracy: stats.accuracy,
+            wpm: stats.wpm,
+            time: stats.time,
+            wrongWords: stats.wrongWords,
+            correctWords: stats.correctWords,
+          });
+
+          // 显示结果弹窗
+          setShowChapterResult(true);
+        }
+
+        // 局部更新章节状态，避免全局刷新导致的加载状态
+        setChapters((prevChapters) =>
+          prevChapters.map((chapter) => {
+            if (chapter.chapterNumber === currentChapter) {
+              // 更新当前章节的练习次数和完成状态
+              const updatedWords = chapter.words.map((word) => ({
+                ...word,
+                todayPracticeCount: (word.todayPracticeCount || 0) + 1,
+                lastPracticedAt: Date.now(),
+              }));
+
+              return {
+                ...chapter,
+                practiceCount: (chapter.practiceCount || 0) + 1,
+                words: updatedWords,
+                completedWords: updatedWords.length,
+                isCompleted: true,
+              };
+            }
+            return chapter;
+          })
+        );
       } catch (error) {
-        console.error("更新单词练习状态失败:", error);
+        console.error("处理章节完成失败:", error);
+        // 即使出错也要显示结果，确保用户体验不中断
+        if (currentChapter) {
+          setChapterStats({
+            accuracy: stats.accuracy,
+            wpm: stats.wpm,
+            time: stats.time,
+            wrongWords: stats.wrongWords,
+            correctWords: stats.correctWords,
+          });
+          setShowChapterResult(true);
+        }
       }
     },
-    []
+    [currentChapter, refreshTodayReviews, chapterProgress]
   );
 
-  /**
-   * 处理打字完成事件
-   * 当用户完成整个练习时，显示完成弹窗并刷新数据
-   *
-   * @param stats - 打字统计信息
-   */
-  const handleTypingComplete = useCallback(
-    async (stats: { accuracy: number; wpm: number; time: number }) => {
-      try {
-        setShowCompleted(true);
-        // 刷新今日复习数据
-        await refreshTodayReviews();
-      } catch (error) {
-        console.error("处理打字完成事件失败:", error);
-      }
-    },
-    [refreshTodayReviews]
-  );
-
-  /**
-   * 关闭完成弹窗
-   */
-  const handleCloseCompletionModal = () => {
-    setShowCompleted(false);
-  };
-
-  /**
-   * 处理切换练习模式
-   * 在已练习和未练习单词模式之间切换
-   * 同时更新URL参数，以便分享或刷新页面时保持状态
-   */
-  const togglePracticeMode = () => {
-    const newTab = selectedTab === "unpracticed" ? "practiced" : "unpracticed";
-    setSelectedTab(newTab);
-
-    // 更新URL参数，便于分享或刷新页面时保持状态
-    const urlParams = new URLSearchParams(window.location.search);
-    if (newTab === "practiced") {
-      urlParams.set("practiced", "1");
-    } else {
-      urlParams.delete("practiced");
-    }
-
-    const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
-    window.history.replaceState({}, "", newUrl);
-  };
-
-  /**
-   * 处理刷新按钮点击
-   * 重新获取今日复习数据
-   */
+  // 处理刷新
   const handleRefresh = async () => {
     try {
-      setRefreshing(true);
       await refreshTodayReviews();
     } catch (error) {
       console.error("刷新数据失败:", error);
-      setError("刷新数据失败，请稍后再试");
-    } finally {
-      setRefreshing(false);
+      setError(t("status.error", "刷新数据失败"));
     }
   };
 
-  /**
-   * 返回今日复习页面
-   */
-  const handleReturnToReviewPage = () => {
-    window.location.href = "/review/today";
+  // 章节切换处理
+  const handleChapterChange = useCallback(
+    (chapterNumber: number) => {
+      startChapter(chapterNumber);
+    },
+    [startChapter]
+  );
+
+  // 渲染内容
+  const renderContent = () => {
+    if (isLoading) {
+      return (
+        <div className="flex items-center justify-center h-64">
+          <Loader2 className="h-8 w-8 animate-spin" />
+          <span className="ml-2">
+            {t("chapter.status.loading", "正在生成章节...")}
+          </span>
+        </div>
+      );
+    }
+
+    if (error) {
+      return (
+        <div className="text-center py-8">
+          <p className="text-red-600">{error}</p>
+          <Button onClick={handleRefresh} className="mt-4">
+            {t("status.retry", "重试")}
+          </Button>
+        </div>
+      );
+    }
+
+    if (chapters.length === 0) {
+      return (
+        <div className="text-center py-8">
+          <p className="text-gray-500">
+            {t("chapter.status.noReviewWords", "今日暂无复习单词")}
+          </p>
+          <Link href="/review/today">
+            <Button variant="outline" className="mt-4">
+              {t("today.title", "返回今日复习")}
+            </Button>
+          </Link>
+        </div>
+      );
+    }
+
+    // 直接显示练习界面
+    return (
+      <div>
+        {/* 练习界面顶部 - 章节信息和选择器 */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center space-x-4 mt-4">
+            <h2 className="text-xl font-semibold">
+              {t("chapter.number", "第{{number}}章", {
+                number: currentChapter,
+              })}
+              <span className="text-sm text-gray-600 ml-2">
+                ({chapters[currentChapter - 1]?.totalWords}个单词)
+              </span>
+            </h2>
+            <ChapterSelector
+              chapters={chapters}
+              currentChapter={currentChapter}
+              onChapterChange={handleChapterChange}
+            />
+          </div>
+          <div className="flex space-x-2">
+            <Button variant="outline" onClick={handleRefresh}>
+              {t("common:buttons.refresh", "刷新")}
+            </Button>
+            <Link href="/review/today">
+              <Button variant="outline">
+                {t("today.title", "返回今日复习")}
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        {/* 练习界面 */}
+        {typingWords.length > 0 ? (
+          <TypingPractice
+            typingWords={typingWords}
+            onWordComplete={handleWordComplete}
+            onTypingComplete={handleChapterComplete}
+          />
+        ) : (
+          <div className="text-center py-8">
+            <p className="text-gray-500">正在加载练习内容...</p>
+          </div>
+        )}
+      </div>
+    );
   };
 
-  /**
-   * 重新开始练习
-   */
-  const handleRestart = () => {
-    handleCloseCompletionModal();
-    // 重新加载数据
-    refreshTodayReviews();
-  };
-
-  // =========== 条件渲染 ===========
-
-  /**
-   * 加载中状态
-   */
-  if (isLoading) {
-    return (
-      <div className="flex flex-col h-screen">
-        <div className="flex items-center justify-between px-4 py-2 border-b">
-          <div className="flex items-center">
-            <Link
-              href="/review/today"
-              className="text-gray-600 hover:text-gray-900 mr-4"
-            >
-              ← 返回
-            </Link>
-            <h1 className="text-xl font-semibold">复习练习</h1>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center flex-1">
-          <div className="text-center">
-            <Loader2 className="h-12 w-12 animate-spin text-blue-500 mx-auto mb-4" />
-            <p className="text-gray-600 font-medium">
-              {t("status.loading", "加载中")}
-            </p>
-            <p className="text-gray-500 text-sm mt-2">
-              {t("practice.preparingWords", "准备练习单词")}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  /**
-   * 错误状态
-   */
-  if (error) {
-    return (
-      <div className="flex flex-col h-screen">
-        <div className="flex items-center justify-between px-4 py-2 border-b">
-          <div className="flex items-center">
-            <Link
-              href="/review/today"
-              className="text-gray-600 hover:text-gray-900 mr-4"
-            >
-              ← 返回
-            </Link>
-            <h1 className="text-xl font-semibold">复习练习</h1>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center flex-1">
-          <div className="text-center max-w-md p-6 bg-red-50 dark:bg-red-900/20 rounded-lg">
-            <div className="text-red-500 text-lg mb-4">{error}</div>
-            <Button
-              onClick={handleRefresh}
-              disabled={refreshing}
-              className="w-full"
-            >
-              {refreshing ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  {t("status.loading", "加载中")}
-                </>
-              ) : (
-                t("status.retry", "重试")
-              )}
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={handleReturnToReviewPage}
-              className="w-full mt-2"
-            >
-              {t("practice.backToReviewPage", "返回复习页面")}
-            </Button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  /**
-   * 没有单词可练习
-   */
-  if (typingWords.length === 0) {
-    return (
-      <div className="flex flex-col h-screen">
-        <div className="flex items-center justify-between px-4 py-2 border-b">
-          <div className="flex items-center">
-            <Link
-              href="/review/today"
-              className="text-gray-600 hover:text-gray-900 mr-4"
-            >
-              ← 返回
-            </Link>
-            <h1 className="text-xl font-semibold">复习练习</h1>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center flex-1">
-          <div className="text-center max-w-md p-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-            <p className="text-lg font-medium mb-6">
-              {t("today.noReviewToday", "没有复习单词")}
-            </p>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-              {t("today.allCompleted", "所有单词都已复习")}
-            </p>
-            <Button size="lg" onClick={handleReturnToReviewPage}>
-              {t("practice.backToReviewPage", "返回复习页面")}
-            </Button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // =========== 主体渲染 ===========
-
-  /**
-   * 主要打字练习界面
-   */
   return (
     <div
       className={`flex flex-col container mx-auto h-screen transition-opacity duration-500 ${
@@ -661,111 +815,37 @@ export default function ReviewPracticePage() {
           >
             ← 返回
           </Link>
-          <h1 className="text-xl font-semibold">复习练习</h1>
-        </div>
-
-        <div className="flex items-center space-x-4">
-          <div className="text-sm">
-            {selectedTab === "unpracticed" ? (
-              <Badge variant="outline" className="bg-blue-50">
-                {t("today.unpracticed", "未练习")} {t("history.word", "单词")}
-              </Badge>
-            ) : (
-              <Badge variant="outline" className="bg-green-50">
-                {t("today.practiced", "已练习")} {t("history.word", "单词")}
-              </Badge>
-            )}
-          </div>
-
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={togglePracticeMode}
-            disabled={isLoading || typingWords.length === 0}
-            className="text-sm"
-          >
-            {selectedTab === "unpracticed"
-              ? t("practice.switchToPracticed", "切换到已练习")
-              : t("practice.switchToUnpracticed", "切换到未练习")}
-          </Button>
-
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleRefresh}
-            disabled={refreshing}
-            className="text-sm"
-          >
-            {refreshing ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                {t("status.loading", "加载中")}
-              </>
-            ) : (
-              t("common:buttons.refresh", "刷新")
-            )}
-          </Button>
+          <h1 className="text-xl font-semibold">
+            {t("chapter.title", "章节复习")}
+          </h1>
         </div>
       </div>
 
-      {/* 打字练习组件 */}
-      <TypingPractice
-        typingWords={typingWords}
-        onWordComplete={handleWordComplete}
-        onTypingComplete={handleTypingComplete}
-      />
+      {/* 主体内容 */}
+      <ChapterErrorBoundary>{renderContent()}</ChapterErrorBoundary>
 
-      {/* 练习完成弹窗 - 显示练习结果 */}
-      {showCompleted && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20 animate-fadeIn">
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full shadow-xl transform transition-all duration-300 animate-slideIn">
-            <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10 text-green-600 dark:text-green-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
-            <h2 className="text-2xl font-bold mb-4 text-center">
-              {t("practice.practiceComplete", "练习完成")}！
-            </h2>
-            <div className="mb-6 bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg">
-              <div className="flex justify-between mb-2 py-2 border-b dark:border-gray-700">
-                <span>{t("stats.totalWords", "总单词数")}:</span>
-                <span className="font-semibold">{typingWords.length}</span>
-              </div>
-              <div className="flex justify-between py-2">
-                <span>{t("practice.practiceMode", "练习模式")}:</span>
-                <span className="font-semibold">
-                  {selectedTab === "unpracticed"
-                    ? t("today.unpracticed", "未练习") +
-                      " " +
-                      t("history.word", "单词")
-                    : t("today.practiced", "已练习") +
-                      " " +
-                      t("history.word", "单词")}
-                </span>
-              </div>
-            </div>
-            <div className="flex justify-end gap-4">
-              <Button variant="outline" onClick={handleCloseCompletionModal}>
-                {t("common:buttons.close", "关闭")}
-              </Button>
-              <Button onClick={handleRestart}>
-                {t("practice.practiceAgain", "重新练习")}
-              </Button>
-            </div>
-          </div>
-        </div>
+      {/* 章节完成结果弹窗 */}
+      {showChapterResult && chapterStats && currentChapter && (
+        <ChapterResultScreen
+          chapterNumber={currentChapter}
+          stats={chapterStats}
+          onClose={() => setShowChapterResult(false)}
+          onNextChapter={() => {
+            setShowChapterResult(false);
+            const nextChapter = currentChapter + 1;
+            if (nextChapter <= chapters.length) {
+              startChapter(nextChapter);
+            } else {
+              // 如果已经是最后一章，重置到第一章
+              startChapter(1);
+            }
+          }}
+          onRepeatChapter={() => {
+            setShowChapterResult(false);
+            startChapter(currentChapter);
+          }}
+          isLastChapter={currentChapter >= chapters.length}
+        />
       )}
     </div>
   );

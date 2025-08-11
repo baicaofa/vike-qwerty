@@ -146,10 +146,13 @@ export async function initializeTodayReviews(): Promise<IWordReviewRecord[]> {
   });
 
   const practicedWordNames = Array.from(practiceCounts.keys());
-  const practicedWordRecords = await db.wordReviewRecords
+  const rawPracticedWordRecords = await db.wordReviewRecords
     .where("word")
     .anyOf(practicedWordNames)
     .toArray();
+
+  // 直接使用原始已练习单词的数据
+  const practicedWordRecords = rawPracticedWordRecords;
 
   // 5. 合并列表，确保唯一性和数据准确性
   const todayWordsMap = new Map<string, IWordReviewRecord>();

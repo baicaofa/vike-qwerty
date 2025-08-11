@@ -1,5 +1,6 @@
 // Word文档解析工具类
 // 注意：需要在package.json中添加 mammoth 依赖
+import { isEnglishOnly } from "./index";
 
 interface ParseResult {
   success: boolean;
@@ -91,6 +92,15 @@ export const parseWordDocument = async (file: File): Promise<ParseResult> => {
       };
     }
 
+    // 检查内容是否只包含英文字符
+    if (!isEnglishOnly(content)) {
+      return {
+        success: false,
+        content: "",
+        error: "文档包含非英文字符，目前只支持英文内容",
+      };
+    }
+
     return {
       success: true,
       content: content,
@@ -110,10 +120,9 @@ export const parseWordDocument = async (file: File): Promise<ParseResult> => {
 export const validateWordFile = (file: File): boolean => {
   const allowedTypes = [
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // .docx
-    "application/msword", // .doc (旧格式，可能不支持)
   ];
 
-  const allowedExtensions = [".docx", ".doc"];
+  const allowedExtensions = [".docx"];
   const fileExtension = file.name
     .toLowerCase()
     .substring(file.name.lastIndexOf("."));

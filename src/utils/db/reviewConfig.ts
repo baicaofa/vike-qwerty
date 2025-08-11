@@ -12,10 +12,6 @@ export interface IReviewConfig {
   // 基础配置
   baseIntervals: number[]; // 基础复习间隔（天）[1, 3, 7, 15, 30, 60]
 
-  // 复习目标
-  dailyReviewTarget: number; // 每日复习目标数量
-  maxReviewsPerDay: number; // 每日最大复习数量
-
   // 提醒设置
   enableNotifications: boolean; // 是否启用提醒
   notificationTime: string; // 提醒时间 (HH:MM格式)
@@ -33,8 +29,6 @@ export class ReviewConfig implements IReviewConfig {
   uuid: string;
   userId?: string;
   baseIntervals: number[];
-  dailyReviewTarget: number;
-  maxReviewsPerDay: number;
   enableNotifications: boolean;
   notificationTime: string;
   sync_status: SyncStatus;
@@ -46,8 +40,6 @@ export class ReviewConfig implements IReviewConfig {
 
     // 简化的默认配置
     this.baseIntervals = [1, 3, 7, 15, 30, 60];
-    this.dailyReviewTarget = 50;
-    this.maxReviewsPerDay = 100;
     this.enableNotifications = true;
     this.notificationTime = "09:00";
 
@@ -56,30 +48,33 @@ export class ReviewConfig implements IReviewConfig {
   }
 
   /**
-   * 获取指定等级的复习间隔
+   * 从数据库记录创建 ReviewConfig 实例
    */
-  getInterval(level: number): number {
-    return this.baseIntervals[Math.min(level, this.baseIntervals.length - 1)];
+  static fromRecord(record: any): ReviewConfig {
+    const config = new ReviewConfig(record.userId);
+    config.id = record.id;
+    config.uuid = record.uuid;
+    config.baseIntervals = record.baseIntervals || [1, 3, 7, 15, 30, 60];
+    config.enableNotifications = record.enableNotifications ?? true;
+    config.notificationTime = record.notificationTime || "09:00";
+    config.sync_status = record.sync_status || "local_new";
+    config.last_modified = record.last_modified || Date.now();
+    return config;
   }
 
   /**
-   * 检查是否应该发送通知
+   * 转换为数据库记录格式
    */
-  shouldSendNotification(currentTime: Date = new Date()): boolean {
-    if (!this.enableNotifications) {
-      return false;
-    }
-
-    const currentTimeStr = `${currentTime
-      .getHours()
-      .toString()
-      .padStart(2, "0")}:${currentTime
-      .getMinutes()
-      .toString()
-      .padStart(2, "0")}`;
-
-    // 简化：只检查时间，不检查星期几
-    return currentTimeStr === this.notificationTime;
+  toRecord(): Omit<IReviewConfig, "id"> {
+    return {
+      uuid: this.uuid,
+      userId: this.userId,
+      baseIntervals: this.baseIntervals,
+      enableNotifications: this.enableNotifications,
+      notificationTime: this.notificationTime,
+      sync_status: this.sync_status,
+      last_modified: this.last_modified,
+    };
   }
 
   /**
@@ -90,13 +85,6 @@ export class ReviewConfig implements IReviewConfig {
 
     if (this.baseIntervals.length === 0) {
       errors.push("基础间隔不能为空");
-    }
-
-    if (
-      this.dailyReviewTarget < 1 ||
-      this.dailyReviewTarget > this.maxReviewsPerDay
-    ) {
-      errors.push("每日复习目标必须在1到最大复习数量之间");
     }
 
     // 检查间隔是否为正数且递增
@@ -113,24 +101,5 @@ export class ReviewConfig implements IReviewConfig {
       isValid: errors.length === 0,
       errors,
     };
-  }
-
-  /**
-   * 重置为默认配置
-   */
-  resetToDefaults(): void {
-    const defaultConfig = new ReviewConfig(this.userId);
-
-    // 保留ID和同步信息
-    const preservedFields = {
-      id: this.id,
-      uuid: this.uuid,
-      userId: this.userId,
-      sync_status:
-        this.sync_status === "synced" ? "local_modified" : this.sync_status,
-    };
-
-    Object.assign(this, defaultConfig, preservedFields);
-    this.last_modified = Date.now();
   }
 }

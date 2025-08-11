@@ -12,10 +12,6 @@ export interface IReviewConfig extends Document {
   // 基础配置
   baseIntervals: number[]; // 基础复习间隔（天）[1, 3, 7, 15, 30, 60]
 
-  // 复习目标
-  dailyReviewTarget: number; // 每日复习目标数量
-  maxReviewsPerDay: number; // 每日最大复习数量
-
   // 提醒设置
   enableNotifications: boolean; // 是否启用提醒
   notificationTime: string; // 提醒时间 (HH:MM格式)
@@ -57,22 +53,6 @@ const ReviewConfigSchema: Schema<IReviewConfig> = new Schema(
         },
         message: "baseIntervals must contain positive numbers",
       },
-    },
-
-    // 复习目标
-    dailyReviewTarget: {
-      type: Number,
-      required: true,
-      default: 50,
-      min: 1,
-      max: 500,
-    },
-    maxReviewsPerDay: {
-      type: Number,
-      required: true,
-      default: 100,
-      min: 1,
-      max: 1000,
     },
 
     // 提醒设置
@@ -117,9 +97,6 @@ const ReviewConfigSchema: Schema<IReviewConfig> = new Schema(
 
 // 索引：确保每个用户只有一个配置（userId为null表示全局默认配置）
 ReviewConfigSchema.index({ userId: 1 }, { unique: true, sparse: true });
-
-// 同步查询索引
-ReviewConfigSchema.index({ userId: 1, updatedAt: 1 });
 
 export default mongoose.model<IReviewConfig>(
   "reviewConfigs", // 将模型名称从"ReviewConfig"改为"reviewConfigs"

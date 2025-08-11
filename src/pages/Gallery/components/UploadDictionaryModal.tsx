@@ -280,9 +280,10 @@ export function UploadDictionaryModal({
 
         // 自动设置词库名称（基于文件名）
         const fileName = uploadFile.name.replace(/\.[^/.]+$/, ""); // 移除扩展名
+        const uniqueName = `${fileName}`;
         setDictionaryInfo((prev) => ({
           ...prev,
-          name: fileName,
+          name: uniqueName,
           // 移除 length 字段，让后端计算单词数量
         }));
 
@@ -348,6 +349,7 @@ export function UploadDictionaryModal({
 
       // 2. 添加单词（使用新的智能补充API）
       const dictId = createResult.dictionary.id;
+
       // 传递完整的单词数据，包含用户编辑的详细信息
       const addWordsResult = await addWords(dictId, parsedWords);
 
@@ -467,6 +469,12 @@ export function UploadDictionaryModal({
             className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:text-gray-400 dark:file:bg-blue-900/20 dark:file:text-blue-300"
             disabled={parsing}
           />
+          <div className="mt-2 text-sm text-gray-500 dark:text-gray-400 space-y-1">
+            <div>支持.xlsx或.xls格式的Excel文件</div>
+            <div>
+              新模板包含完整字段：单词（必填）、音标、词性、释义、例句等
+            </div>
+          </div>
         </div>
 
         {parsing && (
@@ -576,6 +584,24 @@ export function UploadDictionaryModal({
                   删除选中 ({selectedWords.size})
                 </Button>
               )}
+              <Button
+                onClick={handleBackToUpload}
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-1"
+              >
+                <IconArrowLeft className="h-4 w-4" />
+                <span>返回</span>
+              </Button>
+              <Button
+                onClick={handleSaveDictionary}
+                size="sm"
+                className="flex items-center gap-1"
+                disabled={!dictionaryInfo.name}
+              >
+                <IconCheck className="h-4 w-4" />
+                <span>保存词库</span>
+              </Button>
             </div>
           </div>
 
@@ -802,44 +828,7 @@ export function UploadDictionaryModal({
             {renderStepContent()}
           </div>
 
-          <DialogFooter className="flex justify-between">
-            {step === "preview" && (
-              <Button
-                onClick={handleBackToUpload}
-                variant="outline"
-                className="flex items-center gap-1"
-              >
-                <IconArrowLeft className="h-4 w-4" />
-                <span>返回</span>
-              </Button>
-            )}
-
-            {step === "upload" ? (
-              <div className="text-sm text-gray-500 dark:text-gray-400 space-y-1">
-                <div>支持.xlsx或.xls格式的Excel文件</div>
-                <div>
-                  新模板包含完整字段：单词（必填）、音标、词性、释义、例句等
-                </div>
-              </div>
-            ) : null}
-
-            {step === "preview" && (
-              <Button
-                onClick={handleSaveDictionary}
-                className="flex items-center gap-1"
-                disabled={!dictionaryInfo.name}
-              >
-                <IconCheck className="h-4 w-4" />
-                <span>保存词库</span>
-              </Button>
-            )}
-
-            {step === "upload" && (
-              <Button onClick={handleClose} variant="outline">
-                关闭
-              </Button>
-            )}
-          </DialogFooter>
+          {/* 移除底部的DialogFooter */}
         </DialogContent>
       </Dialog>
     </>

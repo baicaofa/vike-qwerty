@@ -163,9 +163,19 @@ export async function createDictionary(
     });
 
     if (!response.ok) {
-      throw new Error(
-        `创建词库失败: ${response.status} ${response.statusText}`
-      );
+      // 尝试解析错误响应
+      let errorMessage = `创建词库失败: ${response.status} ${response.statusText}`;
+
+      try {
+        const errorData = await response.json();
+        if (errorData.error) {
+          errorMessage = errorData.error;
+        }
+      } catch (parseError) {
+        // 如果无法解析JSON，使用默认错误信息
+      }
+
+      throw new Error(errorMessage);
     }
 
     const result = await response.json();

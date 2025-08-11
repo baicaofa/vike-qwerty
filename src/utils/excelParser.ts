@@ -259,7 +259,11 @@ function validateAndConvertData(
         "";
 
       // 获取详细翻译
-      const detailed_translations = [];
+      const detailed_translations: Array<{
+        pos: string;
+        chinese: string;
+        english: string;
+      }> = [];
 
       // 处理新格式的详细翻译 - 支持字段名和列位置
       const translationMappings = [
@@ -286,31 +290,10 @@ function validateAndConvertData(
           detailed_translations.push({
             pos: pos.trim(),
             chinese: chinese.trim(),
-            english: english.trim(),
+            english: english.trim() || "暂无英文释义", // 如果english为空，设置默认值
           });
         }
       });
-
-      // 兼容旧格式的翻译字段
-      const oldTranslation = row.translation || row.Translation || row["翻译"];
-      if (
-        oldTranslation &&
-        typeof oldTranslation === "string" &&
-        oldTranslation.trim() !== "" &&
-        detailed_translations.length === 0
-      ) {
-        const translations = oldTranslation
-          .split(/[,;，；]/)
-          .map((t) => t.trim())
-          .filter(Boolean);
-        detailed_translations.push(
-          ...translations.map((trans) => ({
-            pos: "",
-            chinese: trans,
-            english: "",
-          }))
-        );
-      }
 
       // 获取例句 - 支持字段名和列位置
       const sentences: Array<{ english: string; chinese: string }> = [];

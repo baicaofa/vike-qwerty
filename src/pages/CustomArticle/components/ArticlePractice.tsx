@@ -763,58 +763,6 @@ export default function ArticlePractice() {
                 {t("practice.backToCurrentPosition", "返回当前位置")}
               </button>
             )}
-
-            {/* 标点符号切换按钮 */}
-            <button
-              type="button"
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                state.preprocessSettings.removePunctuation
-                  ? "bg-orange-600 hover:bg-orange-700 text-white"
-                  : "bg-gray-600 hover:bg-gray-700 text-white"
-              }`}
-              onClick={handleTogglePunctuation}
-              title={
-                state.preprocessSettings.removePunctuation
-                  ? t("practice.showPunctuation", "显示标点符号")
-                  : t("practice.hidePunctuation", "隐藏标点符号")
-              }
-            >
-              {state.preprocessSettings.removePunctuation ? (
-                <>
-                  <svg
-                    className="w-4 h-4 inline mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                    />
-                  </svg>
-                  {t("practice.showPunctuation", "显示标点符号")}
-                </>
-              ) : (
-                <>
-                  <svg
-                    className="w-4 h-4 inline mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                  {t("practice.hidePunctuation", "隐藏标点符号")}
-                </>
-              )}
-            </button>
           </div>
         </>
       ) : (

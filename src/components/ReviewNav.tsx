@@ -11,7 +11,7 @@ import { navigate } from "vike/client/router";
  * 用于 review 目录下页面之间的导航
  */
 const ReviewNav: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("review");
   const [currentPath, setCurrentPath] = useState("/");
   const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
 
@@ -24,13 +24,14 @@ const ReviewNav: React.FC = () => {
 
   // 定义导航项
   const navItems = [
-    { path: "/review/today", label: t("review:today.title") },
-    { path: "/review/practice", label: t("review:practice.startPractice") },
-    { path: "/review/history", label: t("review:history.title") },
-    { path: "/review", label: t("review:dashboard.statistics") },
-    // settings is now a modal
-    // { path: "/review/settings", label: "复习设置" },
-    { path: "/", label: t("common:navigation.home") },
+    { path: "/review/today", label: t("today.title", "今日复习") },
+    {
+      path: "/review/practice",
+      label: t("practice.startPractice", "开始练习"),
+    },
+    { path: "/review/history", label: t("history.title", "复习历史") },
+    { path: "/review", label: t("dashboard.statistics", "复习统计") },
+    { path: "/", label: t("home", "首页") },
   ];
 
   return (
@@ -60,7 +61,7 @@ const ReviewNav: React.FC = () => {
                   onClick={() => setSettingsModalOpen(true)}
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                 >
-                  {t("review:nav.reviewSettings")}
+                  {t("nav.reviewSettings", "复习设置")}
                 </Button>
               </div>
             </div>
@@ -86,7 +87,7 @@ const ReviewNav: React.FC = () => {
                   </option>
                 ))}
                 <option value="settings">
-                  {t("review:nav.reviewSettings")}
+                  {t("nav.reviewSettings", "复习设置")}
                 </option>
               </select>
             </div>

@@ -48,7 +48,6 @@ export interface DailyReviewPlan {
   urgentWords: IWordReviewRecord[];
   normalWords: IWordReviewRecord[];
   reviewWords: IWordReviewRecord[];
-  targetCount: number;
   estimatedTime: number; // 预估时间（分钟）
   difficulty: "easy" | "normal" | "hard";
   loadRecommendation: string;
@@ -84,10 +83,10 @@ export async function generateDailyReviewPlan(
       reviewConfig
     );
 
-    // 简化：直接使用到期单词作为推荐单词
+    // 直接使用所有到期单词，不进行人为数量限制
     const recommendedWords = dueWords;
 
-    // 简化：按逾期时间排序
+    // 按逾期时间排序
     const sortedWords = recommendedWords.sort((a, b) => {
       // 优先级：逾期时间越长，优先级越高
       const aDaysOverdue = Math.max(
@@ -101,31 +100,34 @@ export async function generateDailyReviewPlan(
       return bDaysOverdue - aDaysOverdue;
     });
 
-    // 分离紧急和普通单词
-    const urgentReviewWords = sortedWords
-      .filter((word) => urgentWords.includes(word))
-      .slice(0, Math.ceil(reviewConfig.dailyReviewTarget * 0.3));
+    // 分离紧急和普通单词（不再限制数量）
+    const urgentReviewWords = sortedWords.filter((word) =>
+      urgentWords.includes(word)
+    );
+    const normalReviewWords = sortedWords.filter(
+      (word) => !urgentWords.includes(word)
+    );
 
-    const normalReviewWords = sortedWords
-      .filter((word) => !urgentWords.includes(word))
-      .slice(0, reviewConfig.dailyReviewTarget - urgentReviewWords.length);
-
-    // 简化负载计算
+    // 基于实际单词数量计算难度
     const totalReviewWords =
       urgentReviewWords.length + normalReviewWords.length;
-    const loadPercentage =
-      (totalReviewWords / reviewConfig.dailyReviewTarget) * 100;
-
-    // 预估复习时间（每个单词平均3分钟）
-    const estimatedTime = Math.round(recommendedWords.length * 3);
-
-    // 确定难度等级
     let difficulty: "easy" | "normal" | "hard" = "normal";
-    if (loadPercentage < 50) {
+
+    if (totalReviewWords < 20) {
       difficulty = "easy";
-    } else if (loadPercentage > 150) {
+    } else if (totalReviewWords > 80) {
       difficulty = "hard";
     }
+
+    // 预估复习时间（每个单词平均3分钟）
+    const estimatedTime = Math.round(recommendedWords.length);
+
+    // 生成负载建议
+    const loadRecommendation = generateLoadRecommendation(
+      urgentReviewWords.length,
+      normalReviewWords.length,
+      totalReviewWords
+    );
 
     return {
       date: date.toISOString().split("T")[0],
@@ -133,13 +135,9 @@ export async function generateDailyReviewPlan(
       urgentWords: urgentReviewWords,
       normalWords: normalReviewWords,
       reviewWords: [...urgentReviewWords, ...normalReviewWords],
-      targetCount: reviewConfig.dailyReviewTarget,
       estimatedTime,
       difficulty,
-      loadRecommendation:
-        urgentReviewWords.length > normalReviewWords.length
-          ? "今日复习量较重，建议专注于重要单词的复习"
-          : "今日复习量适中，保持当前的学习节奏",
+      loadRecommendation,
     };
   } catch (error) {
     console.error("Failed to generate daily review plan:", error);
@@ -231,12 +229,9 @@ export async function getReviewStatistics(
     }, 0);
     const averageProgress = totalWords > 0 ? totalProgress / totalWords : 0;
 
-    // 计算完成率
-    const config = await getReviewConfig();
+    // 计算完成率（基于今日复习数量与到期单词数量的比例）
     const completionRate =
-      config.dailyReviewTarget > 0
-        ? Math.min(100, (reviewedToday / config.dailyReviewTarget) * 100)
-        : 0;
+      dueWords > 0 ? Math.min(100, (reviewedToday / dueWords) * 100) : 100;
 
     // 计算连续天数
     const streakDays = await calculateStreakDays();
@@ -278,6 +273,7 @@ export async function getDueWordsForReview(
 ): Promise<IWordReviewRecord[]> {
   try {
     const allWordReviews = await db.wordReviewRecords.toArray();
+
     const config = await getReviewConfig();
 
     // 筛选需要复习的单词
@@ -441,8 +437,16 @@ export async function completeWordReview(
       ? 1
       : wordRecord.currentIntervalIndex / wordRecord.intervalSequence.length;
 
-    if (isFirstReviewOfRound) {
-      // 首次复习，完全更新（包括间隔推进）
+    // 检查今天是否已经复习过（基于数据库记录的实际状态）
+    const today = new Date().toISOString().split("T")[0];
+    const lastReviewDate = wordRecord.lastReviewedAt
+      ? new Date(wordRecord.lastReviewedAt).toISOString().split("T")[0]
+      : null;
+    const isFirstReviewToday =
+      lastReviewDate !== today || (wordRecord.todayPracticeCount || 0) === 0;
+
+    if (isFirstReviewToday && isFirstReviewOfRound) {
+      const oldNextReviewAt = wordRecord.nextReviewAt;
       wordRecord.completeReview(timestamp);
     } else {
       // 重复练习，只更新练习次数和时间戳
@@ -451,6 +455,7 @@ export async function completeWordReview(
       }
       wordRecord.todayPracticeCount++;
       wordRecord.lastPracticedAt = timestamp;
+      wordRecord.lastReviewedAt = timestamp;
     }
 
     // 设置同步字段
@@ -547,6 +552,29 @@ function getLoadRecommendation(recommendation: string): string {
 }
 
 /**
+ * 生成负载建议
+ */
+function generateLoadRecommendation(
+  urgentCount: number,
+  normalCount: number,
+  totalCount: number
+): string {
+  if (totalCount === 0) {
+    return "今日无需复习，继续保持学习节奏";
+  }
+
+  if (urgentCount > normalCount) {
+    return "今日复习量较重，建议专注于重要单词的复习";
+  } else if (totalCount > 80) {
+    return "今日复习量较大，建议分时段进行复习";
+  } else if (totalCount < 20) {
+    return "今日复习量适中，可以适当增加学习内容";
+  } else {
+    return "今日复习量适中，保持当前的学习节奏";
+  }
+}
+
+/**
  * 计算连续学习天数
  */
 async function calculateStreakDays(): Promise<number> {
@@ -594,7 +622,6 @@ async function generateWeeklyProgress(): Promise<
   }>
 > {
   try {
-    const config = await getReviewConfig();
     const weeklyProgress = [];
 
     for (let i = 6; i >= 0; i--) {
@@ -614,6 +641,11 @@ async function generateWeeklyProgress(): Promise<
 
       const reviewed = dayReviews.length;
 
+      // 计算当天到期的单词数量作为目标
+      const allWordReviews = await db.wordReviewRecords.toArray();
+      const dueWords = filterDueWords(allWordReviews, dayEnd.getTime());
+      const target = dueWords.length;
+
       // 计算准确率
       const correctReviews = dayReviews.filter(
         (review) => review.reviewResult === "correct"
@@ -627,7 +659,7 @@ async function generateWeeklyProgress(): Promise<
           day: "numeric",
         }),
         reviewed,
-        target: config.dailyReviewTarget,
+        target,
         accuracy,
       });
     }

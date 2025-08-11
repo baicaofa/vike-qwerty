@@ -1,4 +1,5 @@
 export * from "./resource";
+export * from "./chapter";
 
 export type PronunciationType =
   | "us"

@@ -131,6 +131,7 @@ export const addWords = async (req: Request, res: Response): Promise<void> => {
     });
   } catch (error) {
     console.error("添加单词出错:", error);
+
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : "添加单词失败",

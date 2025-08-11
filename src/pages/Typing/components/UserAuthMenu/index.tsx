@@ -37,7 +37,6 @@ export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
     pageContext?.locale === "en" ? "en" : "zh";
   // 添加客户端渲染状态控制
   const [isClient, setIsClient] = useState(false);
-  console.log("pageContext", pageContext);
 
   // 在客户端渲染后设置状态
   useEffect(() => {

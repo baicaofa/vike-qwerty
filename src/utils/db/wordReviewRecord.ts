@@ -149,8 +149,19 @@ export class WordReviewRecord implements IWordReviewRecord {
     this.todayPracticeCount++;
     this.lastPracticedAt = currentTime;
 
-    // 只有第一次复习才推进间隔
-    if (this.todayPracticeCount === 1) {
+    // 更健壮的间隔推进判断逻辑
+    const lastReviewDate = this.lastReviewedAt
+      ? new Date(this.lastReviewedAt).toISOString().split("T")[0]
+      : null;
+
+    // 判断是否应该推进间隔：
+    // 1. 今天还没有复习过（日期不同）
+    // 2. 或者今天复习过但间隔还没有推进（检查nextReviewAt是否还是过去的日期）
+    const isFirstReviewToday = lastReviewDate !== today;
+    const isNextReviewOverdue = this.nextReviewAt < Date.now();
+    const shouldAdvanceInterval = isFirstReviewToday || isNextReviewOverdue;
+
+    if (shouldAdvanceInterval) {
       this.currentIntervalIndex++;
 
       // 检查是否毕业
@@ -162,6 +173,7 @@ export class WordReviewRecord implements IWordReviewRecord {
         const nextInterval = this.intervalSequence[this.currentIntervalIndex];
         const nextReviewDate = new Date();
         nextReviewDate.setDate(nextReviewDate.getDate() + nextInterval);
+        const oldNextReviewAt = this.nextReviewAt;
         this.nextReviewAt = nextReviewDate.getTime();
       }
     }
@@ -277,34 +289,51 @@ export class WordReviewRecord implements IWordReviewRecord {
 /**
  * 将普通对象转换为 WordReviewRecord 类实例
  * 用于确保从数据库获取的对象具有完整的方法
+ * 同时处理缺失字段的默认值
  */
 export function toWordReviewRecord(obj: IWordReviewRecord): WordReviewRecord {
+  // 处理缺失字段的默认值
+  const normalizedObj = {
+    ...obj,
+    userId: obj.userId || "default",
+    intervalSequence: obj.intervalSequence || [1, 3, 7, 15, 30, 60],
+    totalReviews: obj.totalReviews || 0,
+    reviewHistory: obj.reviewHistory || [],
+    consecutiveCorrect: obj.consecutiveCorrect || 0,
+    sourceDicts: obj.sourceDicts || [],
+    preferredDict: obj.preferredDict || "",
+    firstSeenAt: obj.firstSeenAt || obj.lastPracticedAt || Date.now(),
+    todayPracticeCount: obj.todayPracticeCount || 0,
+    lastPracticedAt: obj.lastPracticedAt || Date.now(),
+    lastReviewedAt: obj.lastReviewedAt || Date.now(),
+  };
+
   const record = new WordReviewRecord(
-    obj.word,
-    obj.sourceDicts,
-    obj.preferredDict,
-    obj.intervalSequence,
-    obj.firstSeenAt
+    normalizedObj.word,
+    normalizedObj.sourceDicts,
+    normalizedObj.preferredDict,
+    normalizedObj.intervalSequence,
+    normalizedObj.firstSeenAt
   );
 
   // 复制所有属性
-  record.id = obj.id;
-  record.uuid = obj.uuid;
-  record.userId = obj.userId;
-  record.currentIntervalIndex = obj.currentIntervalIndex;
-  record.nextReviewAt = obj.nextReviewAt;
-  record.totalReviews = obj.totalReviews;
-  record.isGraduated = obj.isGraduated;
-  record.reviewHistory = obj.reviewHistory;
-  record.consecutiveCorrect = obj.consecutiveCorrect;
-  record.lastReviewedAt = obj.lastReviewedAt;
-  record.todayPracticeCount = obj.todayPracticeCount;
-  record.lastPracticedAt = obj.lastPracticedAt;
-  record.sourceDicts = obj.sourceDicts;
-  record.preferredDict = obj.preferredDict;
-  record.firstSeenAt = obj.firstSeenAt;
-  record.sync_status = obj.sync_status;
-  record.last_modified = obj.last_modified;
+  record.id = normalizedObj.id;
+  record.uuid = normalizedObj.uuid;
+  record.userId = normalizedObj.userId;
+  record.currentIntervalIndex = normalizedObj.currentIntervalIndex;
+  record.nextReviewAt = normalizedObj.nextReviewAt;
+  record.totalReviews = normalizedObj.totalReviews;
+  record.isGraduated = normalizedObj.isGraduated;
+  record.reviewHistory = normalizedObj.reviewHistory;
+  record.consecutiveCorrect = normalizedObj.consecutiveCorrect;
+  record.lastReviewedAt = normalizedObj.lastReviewedAt;
+  record.todayPracticeCount = normalizedObj.todayPracticeCount;
+  record.lastPracticedAt = normalizedObj.lastPracticedAt;
+  record.sourceDicts = normalizedObj.sourceDicts;
+  record.preferredDict = normalizedObj.preferredDict;
+  record.firstSeenAt = normalizedObj.firstSeenAt;
+  record.sync_status = normalizedObj.sync_status;
+  record.last_modified = normalizedObj.last_modified;
 
   return record;
 }

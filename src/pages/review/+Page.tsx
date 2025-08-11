@@ -12,12 +12,11 @@ const ProgressChart: React.FC<{
   data: Array<{
     date: string;
     reviewed: number;
-    target: number;
     accuracy: number;
   }>;
 }> = ({ data }) => {
   const { t } = useTranslation("review");
-  const maxValue = Math.max(...data.map((d) => Math.max(d.reviewed, d.target)));
+  const maxValue = Math.max(...data.map((d) => d.reviewed));
 
   return (
     <div className="space-y-3">
@@ -33,7 +32,11 @@ const ProgressChart: React.FC<{
             <div className="flex-1 relative h-6 bg-gray-200 rounded">
               <div
                 className="absolute left-0 top-0 h-full bg-blue-500 rounded flex items-center justify-center"
-                style={{ width: `${(item.reviewed / maxValue) * 100}%` }}
+                style={{
+                  width: `${
+                    maxValue > 0 ? (item.reviewed / maxValue) * 100 : 0
+                  }%`,
+                }}
               >
                 {item.reviewed > 0 && (
                   <span className="text-xs text-white font-medium">
@@ -41,14 +44,8 @@ const ProgressChart: React.FC<{
                   </span>
                 )}
               </div>
-              <div
-                className="absolute left-0 top-0 h-full border-2 border-blue-300 rounded pointer-events-none"
-                style={{ width: `${(item.target / maxValue) * 100}%` }}
-              />
             </div>
-            <div className="w-20 text-sm text-gray-600">
-              {item.reviewed}/{item.target}
-            </div>
+            <div className="w-20 text-sm text-gray-600">{item.reviewed}</div>
           </div>
           {/* 准确率条 */}
           <div className="flex items-center space-x-3">
@@ -108,7 +105,7 @@ const StatCard: React.FC<{
 };
 
 export function Page() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("review");
   const { stats, loading: statsLoading } = useReviewStatistics();
   const { config, loading: configLoading } = useReviewConfig();
   const { plan, loading: planLoading } = useDailyReviewPlan();
@@ -144,7 +141,6 @@ export function Page() {
           day: "numeric",
         }),
         reviewed: 0,
-        target: config?.dailyReviewTarget || 50,
         accuracy: 0, // 默认准确率为0
       };
     });
@@ -166,15 +162,9 @@ export function Page() {
         <StatCard
           title={t("stats.todayReview", "今日复习")}
           value={stats?.reviewedToday || 0}
-          subtitle={`${t("stats.target", "目标")}: ${
-            config?.dailyReviewTarget || 50
-          }`}
+          subtitle={t("stats.completed", "已完成")}
           color="blue"
-          trend={
-            (stats?.reviewedToday || 0) >= (config?.dailyReviewTarget || 50)
-              ? "up"
-              : "stable"
-          }
+          trend="up"
         />
 
         <StatCard
@@ -219,10 +209,6 @@ export function Page() {
               <div className="w-4 h-4 bg-blue-500 rounded"></div>
               <span>{t("chart.actualReview", "实际复习")}</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 border-2 border-blue-300 rounded"></div>
-              <span>{t("chart.targetAmount", "目标数量")}</span>
-            </div>
           </div>
         </div>
 
@@ -240,25 +226,18 @@ export function Page() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-600">
-                {t("stats.reviewedWords", "已复习单词")}
+                {t("stats.urgentWords", "紧急单词")}
               </span>
-              <span className="font-semibold">
-                {stats?.totalWords && stats?.dueWords
-                  ? stats.totalWords - stats.dueWords
-                  : 0}
+              <span className="font-semibold text-red-600">
+                {stats?.urgentWords || 0}
               </span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-600">
-                {t("stats.weeklyReviews", "本周复习次数")}
+                {t("stats.completionRate", "完成率")}
               </span>
               <span className="font-semibold">
-                {stats?.weeklyProgress
-                  ? stats.weeklyProgress.reduce(
-                      (sum, day) => sum + day.reviewed,
-                      0
-                    )
-                  : 0}
+                {Math.round(stats?.completionRate || 0)}%
               </span>
             </div>
             <div className="flex justify-between items-center">
@@ -266,19 +245,8 @@ export function Page() {
                 {t("stats.averageAccuracy", "平均准确率")}
               </span>
               <span className="font-semibold">
-                {stats?.monthlyStats?.averageAccuracy
-                  ? `${(stats.monthlyStats.averageAccuracy * 100).toFixed(1)}%`
-                  : "N/A"}
+                {Math.round(stats?.monthlyStats?.averageAccuracy || 0)}%
               </span>
-            </div>
-
-            <div className="mt-6">
-              <Link
-                href="/review/history"
-                className="text-blue-600 hover:underline"
-              >
-                {t("dashboard.viewHistory", "查看历史")} &rarr;
-              </Link>
             </div>
           </div>
         </div>

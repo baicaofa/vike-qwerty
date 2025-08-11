@@ -10,6 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { isEnglishOnly } from "@/utils";
 import { useSaveArticle } from "@/utils/db/article";
 import {
   getFileSizeDescription,
@@ -93,7 +94,7 @@ const FileUploadSection = ({
 
   const handleFileUpload = async (file: File) => {
     if (!validateWordFile(file)) {
-      onError(t("upload.invalidFileType", "仅支持上传 Word 文档"));
+      onError(t("upload.invalidFileType", "仅支持上传 .docx 格式的 Word 文档"));
       return;
     }
 
@@ -177,7 +178,7 @@ const FileUploadSection = ({
           <input
             ref={fileInputRef}
             type="file"
-            accept=".docx,.doc"
+            accept=".docx"
             onChange={handleFileInputChange}
             className="hidden"
           />
@@ -241,17 +242,13 @@ const FileUploadSection = ({
             </div>
 
             <div className="text-xs text-gray-400 space-y-1">
-              <p>
-                {t(
-                  "upload.supportedFormatsText",
-                  "支持的文件格式：.docx, .doc"
-                )}
-              </p>
+              <p>{t("upload.supportedFormatsText", "支持的文件格式：.docx")}</p>
               <p>
                 {t("upload.fileSizeLimit", {
                   size: getFileSizeDescription(MAX_FILE_SIZE),
                 })}
               </p>
+              <p>{t("upload.languageRequirement", "仅支持英文内容")}</p>
             </div>
           </div>
         </div>
@@ -397,7 +394,10 @@ const TextInputSection = ({
           className={`w-full min-h-[200px] px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical ${
             content.length > MAX_CHARS ? "border-red-300" : "border-gray-300"
           }`}
-          placeholder={t("upload.articleContentPlaceholder", "请输入文章内容")}
+          placeholder={t(
+            "upload.articleContentPlaceholder",
+            "请输入文章内容（仅支持英文）"
+          )}
           maxLength={MAX_CHARS + 100} // 允许稍微超出以便显示错误信息
         />
 
@@ -416,6 +416,10 @@ const TextInputSection = ({
             })}
           </div>
         )}
+
+        <div className="text-xs text-gray-500">
+          {t("upload.languageRequirement", "仅支持英文内容")}
+        </div>
       </div>
 
       {/* 实时预览 */}
@@ -474,6 +478,14 @@ export default function UploadArticleDialog({
 
   // 处理内容变化
   const handleContentChange = (newContent: string) => {
+    // 检查内容是否只包含英文字符
+    if (newContent && !isEnglishOnly(newContent)) {
+      setUploadError(
+        t("upload.nonEnglishContent", "内容包含非英文字符，目前只支持英文")
+      );
+    } else {
+      setUploadError(""); // 清除错误
+    }
     setContent(newContent);
   };
 
@@ -542,7 +554,10 @@ export default function UploadArticleDialog({
 
   // 验证表单
   const isFormValid =
-    title.trim() && content.trim() && content.length <= MAX_CHARS;
+    title.trim() &&
+    content.trim() &&
+    content.length <= MAX_CHARS &&
+    isEnglishOnly(content);
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>

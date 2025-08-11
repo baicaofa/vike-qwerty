@@ -60,7 +60,6 @@ const PresetSelector: React.FC<{
             <h3 className="font-medium text-gray-900 mb-1">{info.name}</h3>
             <p className="text-xs text-gray-600 mb-2">{info.description}</p>
             <div className="text-xs text-gray-500 mb-2 space-y-1">
-              <div>目标: {preset.dailyReviewTarget}</div>
               <div>间隔: {preset.baseIntervals.slice(0, 3).join(", ")}...</div>
             </div>
             <button
@@ -152,7 +151,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleCancel()}>
-      <DialogContent className="max-w-3xl h-[80vh] flex flex-col">
+      <DialogContent className="max-w-3xl h-[60vh] flex flex-col">
         <DialogHeader>
           <DialogTitle>复习设置</DialogTitle>
         </DialogHeader>
@@ -171,49 +170,9 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
               </ConfigCard>
 
               <ConfigCard title="核心设置">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      每日目标
-                    </label>
-                    <input
-                      type="number"
-                      min="1"
-                      max="500"
-                      value={localConfig.dailyReviewTarget}
-                      onChange={(e) =>
-                        handleConfigChange(
-                          "dailyReviewTarget",
-                          parseInt(e.target.value)
-                        )
-                      }
-                      className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                      placeholder="20-100"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      最大复习数
-                    </label>
-                    <input
-                      type="number"
-                      min="1"
-                      max="1000"
-                      value={localConfig.maxReviewsPerDay}
-                      onChange={(e) =>
-                        handleConfigChange(
-                          "maxReviewsPerDay",
-                          parseInt(e.target.value)
-                        )
-                      }
-                      className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                      placeholder="上限"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="flex items-center space-x-2 pt-6">
+                    <label className="flex items-center space-x-2">
                       <input
                         type="checkbox"
                         checked={localConfig.enableNotifications}
@@ -230,10 +189,24 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                       </span>
                     </label>
                   </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      提醒时间
+                    </label>
+                    <input
+                      type="time"
+                      value={localConfig.notificationTime}
+                      onChange={(e) =>
+                        handleConfigChange("notificationTime", e.target.value)
+                      }
+                      className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                    />
+                  </div>
                 </div>
               </ConfigCard>
 
-              <ConfigCard title="间隔设置" collapsible>
+              <ConfigCard title="间隔设置">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     记忆间隔 (天)
@@ -255,55 +228,6 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                     rows={2}
                     placeholder="例如: 0.5, 1, 3, 7, 15, 30"
                   />
-                </div>
-              </ConfigCard>
-
-              <ConfigCard title="高级设置" collapsible>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      难度调整因子
-                    </label>
-                    <p className="text-xs text-gray-500 mb-2">
-                      答错时，间隔会乘以该因子。
-                    </p>
-                    <input
-                      type="number"
-                      step="0.1"
-                      min="0.1"
-                      max="1"
-                      value={localConfig.difficultyPenalty}
-                      onChange={(e) =>
-                        handleConfigChange(
-                          "difficultyPenalty",
-                          parseFloat(e.target.value)
-                        )
-                      }
-                      className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      熟悉度阈值
-                    </label>
-                    <p className="text-xs text-gray-500 mb-2">
-                      正确率超过该值，间隔会增加。
-                    </p>
-                    <input
-                      type="number"
-                      step="0.05"
-                      min="0.5"
-                      max="1"
-                      value={localConfig.familiarityThreshold}
-                      onChange={(e) =>
-                        handleConfigChange(
-                          "familiarityThreshold",
-                          parseFloat(e.target.value)
-                        )
-                      }
-                      className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                    />
-                  </div>
                 </div>
               </ConfigCard>
             </div>

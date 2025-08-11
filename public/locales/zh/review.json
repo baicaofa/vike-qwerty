@@ -188,5 +188,64 @@
     "startPractice": "开始练习",
     "punctuationNote": "标点符号设置",
     "punctuationNoteDesc": "您可以在练习页面随时调整是否显示标点符号"
-  }
+  },
+  "chapter": {
+    "title": "章节复习",
+    "subtitle": "以章节形式组织您的复习内容",
+    "number": "第{{number}}章",
+    "completed": "第{{number}}章 完成！",
+    "practiceCount": "练习{{count}}次",
+    "continueChapter": "继续练习",
+    "startChapter": "开始练习",
+    "repeatChapter": "重新练习",
+    "nextChapter": "下一章",
+    "noMistakes": "全部正确！",
+    "chapterOverview": "章节概览",
+    "totalChapters": "共{{total}}章",
+    "completedChapters": "已完成{{completed}}章",
+    "currentChapter": "当前章节",
+    "chapterProgress": "章节进度",
+    "wordsPerChapter": "每章{{count}}个单词",
+    "allChaptersCompleted": "所有章节已完成",
+    "backToChapterList": "返回章节列表",
+    "generateNewChapters": "生成新章节",
+    "noChaptersToday": "今日暂无章节",
+    "buttons": {
+      "repeat": "重新练习",
+      "next": "下一章", 
+      "returnToList": "返回列表",
+      "startPractice": "开始练习",
+      "continuePractice": "继续练习",
+      "viewChapters": "查看章节"
+    },
+    "tooltips": {
+      "space": "快捷键：space",
+      "enter": "快捷键：enter",
+      "closeResult": "关闭结果",
+      "nextChapter": "下一章",
+      "repeatChapter": "重新练习此章节"
+    },
+    "stats": {
+      "accuracy": "正确率",
+      "time": "完成时间",
+      "wpm": "每分钟字数",
+      "totalWords": "总单词数",
+      "correctWords": "正确单词",
+      "wrongWords": "错误单词",
+      "chapterTime": "章节时间"
+    },
+    "progress": {
+      "completed": "已完成",
+      "remaining": "剩余",
+      "wordsCompleted": "已练习{{completed}}/{{total}}个单词",
+      "percentage": "完成度{{percentage}}%"
+    },
+    "status": {
+      "loading": "正在生成章节...",
+      "error": "生成章节失败",
+      "noReviewWords": "没有需要复习的单词",
+      "generating": "正在准备章节内容"
+    }
+  },
+  "home":"首页"
 }

@@ -46,6 +46,37 @@ export const isChineseSymbol = (val: string): boolean =>
     val
   );
 
+/**
+ * 检测文本是否只包含英文字符
+ * @param text 要检测的文本
+ * @returns 如果只包含英文字符返回true，否则返回false
+ */
+export const isEnglishOnly = (text: string): boolean => {
+  // 检查是否包含中文字符
+  if (isChineseSymbol(text)) {
+    return false;
+  }
+
+  // 检查是否包含日文字符（汉字范围）
+  for (const char of text) {
+    const code = char.charCodeAt(0);
+    if (
+      (code >= 0x4e00 && code <= 0x9fcf) || // 基本汉字
+      (code >= 0xf900 && code <= 0xfaff) || // 兼容汉字
+      (code >= 0x3400 && code <= 0x4dbf) // 扩展汉字A
+    ) {
+      return false;
+    }
+  }
+
+  // 检查是否包含其他非ASCII字符（如阿拉伯文、韩文、俄文等）
+  // 只允许英文字母、数字、常见标点符号和空格
+  const englishOnlyRegex =
+    /^[a-zA-Z0-9\s.,!?;:'"()[\]{}_+=@#$%^&*<>\/\\|`~-]+$/;
+
+  return englishOnlyRegex.test(text);
+};
+
 export const IsDesktop = () => {
   const userAgentInfo = navigator.userAgent;
   const Agents = [

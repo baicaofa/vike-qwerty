@@ -179,5 +179,64 @@
     "normal": "Normal",
     "hard": "Hard",
     "difficultyLevel": "Difficulty Level"
-  }
+  },
+  "chapter": {
+    "title": "Chapter Review",
+    "subtitle": "Organize your review content in chapters",
+    "number": "Chapter {{number}}",
+    "completed": "Chapter {{number}} Completed!",
+    "practiceCount": "Practiced {{count}} times",
+    "continueChapter": "Continue Practice",
+    "startChapter": "Start Practice",
+    "repeatChapter": "Repeat Chapter",
+    "nextChapter": "Next Chapter",
+    "noMistakes": "All Correct!",
+    "chapterOverview": "Chapter Overview",
+    "totalChapters": "Total {{total}} Chapters",
+    "completedChapters": "Completed {{completed}} Chapters",
+    "currentChapter": "Current Chapter",
+    "chapterProgress": "Chapter Progress",
+    "wordsPerChapter": "{{count}} words per chapter",
+    "allChaptersCompleted": "All chapters completed",
+    "backToChapterList": "Back to Chapter List",
+    "generateNewChapters": "Generate New Chapters",
+    "noChaptersToday": "No chapters for today",
+    "buttons": {
+      "repeat": "Repeat Practice",
+      "next": "Next Chapter",
+      "returnToList": "Return to List",
+      "startPractice": "Start Practice",
+      "continuePractice": "Continue Practice",
+      "viewChapters": "View Chapters"
+    },
+    "tooltips": {
+      "space": "Shortcut: space",
+      "enter": "Shortcut: enter",
+      "closeResult": "Close Result",
+      "nextChapter": "Next Chapter",
+      "repeatChapter": "Repeat this chapter"
+    },
+    "stats": {
+      "accuracy": "Accuracy",
+      "time": "Completion Time",
+      "wpm": "Words Per Minute",
+      "totalWords": "Total Words",
+      "correctWords": "Correct Words",
+      "wrongWords": "Wrong Words",
+      "chapterTime": "Chapter Time"
+    },
+    "progress": {
+      "completed": "Completed",
+      "remaining": "Remaining",
+      "wordsCompleted": "Practiced {{completed}}/{{total}} words",
+      "percentage": "{{percentage}}% completed"
+    },
+    "status": {
+      "loading": "Generating chapters...",
+      "error": "Failed to generate chapters",
+      "noReviewWords": "No words to review",
+      "generating": "Preparing chapter content"
+    }
+  },
+  "home": "Home"
 }

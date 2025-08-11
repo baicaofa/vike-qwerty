@@ -71,8 +71,7 @@ export const isEnglishOnly = (text: string): boolean => {
 
   // 检查是否包含其他非ASCII字符（如阿拉伯文、韩文、俄文等）
   // 只允许英文字母、数字、常见标点符号和空格
-  const englishOnlyRegex =
-    /^[a-zA-Z0-9\s.,!?;:'"()[\]{}_+=@#$%^&*<>\/\\|`~-]+$/;
+  const englishOnlyRegex = /^[a-zA-Z0-9\s.,!?;:'"()[\]{}_+=@#$%^&*<>/\\|`~-]+$/;
 
   return englishOnlyRegex.test(text);
 };

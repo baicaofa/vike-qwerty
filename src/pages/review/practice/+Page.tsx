@@ -144,7 +144,7 @@ function TypingContent({
 
   const {
     state = { isTyping: false },
-    dispatch = () => {},
+    dispatch,
     words = [],
     stats = { accuracy: 0, wpm: 0, time: 0 },
     index = 0,
@@ -240,11 +240,11 @@ function TypingContent({
       }
 
       // 更新统计数据
-      if (isCorrect) {
+      if (isCorrect && dispatch) {
         dispatch({
           type: TypingStateActionType.REPORT_CORRECT_WORD,
         });
-      } else {
+      } else if (!isCorrect && dispatch) {
         dispatch({
           type: TypingStateActionType.REPORT_WRONG_WORD,
           payload: { letterMistake: [] }, // 复习模式下简化错误统计
@@ -254,11 +254,11 @@ function TypingContent({
       onWordComplete(wordName, isCorrect);
 
       // 移动到下一个单词
-      if (index < words.length - 1) {
+      if (index < words.length - 1 && dispatch) {
         dispatch({
           type: TypingStateActionType.NEXT_WORD,
         });
-      } else {
+      } else if (dispatch) {
         dispatch({ type: TypingStateActionType.FINISH_CHAPTER });
       }
     },

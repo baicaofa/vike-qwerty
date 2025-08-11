@@ -1,10 +1,6 @@
 import type {
-  GetCustomDictionariesParams,
-  GetCustomWordsParams,
   ICustomDictionary,
   ICustomWord,
-  SaveCustomDictionaryResult,
-  SaveCustomWordResult,
 } from "../utils/db/customDictionary";
 import * as customDictionaryService from "@/services/customDictionaryService";
 import { useCallback, useState } from "react";

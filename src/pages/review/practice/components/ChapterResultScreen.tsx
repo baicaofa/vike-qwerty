@@ -4,7 +4,6 @@ import RemarkRing from "@/pages/Typing/components/ResultScreen/RemarkRing";
 import WordChip from "@/pages/Typing/components/ResultScreen/WordChip";
 import type { WordWithIndex } from "@/typings";
 import type { ChapterStats } from "@/typings/chapter";
-import type { IWordReviewRecord } from "@/utils/db/wordReviewRecord";
 import { Transition } from "@headlessui/react";
 import { useMemo } from "react";
 import { useHotkeys } from "react-hotkeys-hook";

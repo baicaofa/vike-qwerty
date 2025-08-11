@@ -1,5 +1,4 @@
 import type { AmountType } from "../DonatingCard";
-import { DonatingCard } from "../DonatingCard";
 import { StickerButton } from "../DonatingCard/components/StickerButton";
 import {
   useChapterNumber,
@@ -44,22 +43,6 @@ export const DonateCard = () => {
     );
   };
 
-  const onClickHasDonated = () => {
-    reportDonateCard({
-      type: "donate",
-      chapterNumber,
-      wordNumber,
-      sumWrongCount,
-      dayFromFirstWord,
-      dayFromQwerty,
-      amount: amount ?? 0,
-    });
-
-    setShow(false);
-    const now = dayjs();
-    window.localStorage.setItem(DONATE_DATE, now.format());
-  };
-
   const onClickRemindMeLater = () => {
     reportDonateCard({
       type: "dismiss",
@@ -72,10 +55,6 @@ export const DonateCard = () => {
     });
 
     setShow(false);
-  };
-
-  const onAmountChange = (amount: AmountType) => {
-    setAmount(amount);
   };
 
   useLayoutEffect(() => {

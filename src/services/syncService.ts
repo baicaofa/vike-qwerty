@@ -27,6 +27,20 @@ export type SyncState = "idle" | "syncing" | "error" | "success";
 export interface SyncError {
   message: string;
   code?: string;
+  severity?: "low" | "medium" | "high" | "critical";
+  retryable?: boolean;
+  details?: any;
+}
+
+// 同步状态监控
+interface SyncStats {
+  totalSyncs: number;
+  successfulSyncs: number;
+  failedSyncs: number;
+  lastSyncTime?: number;
+  lastError?: SyncError;
+  averageSyncTime: number;
+  retryCount: number;
 }
 
 // 同步结果类型
@@ -35,6 +49,9 @@ export interface SyncResult {
   error?: SyncError;
   changesApplied?: number;
   serverChanges?: number;
+  tempSyncTimestamp?: string; // 临时保存的时间戳，用于统一推进时机
+  syncTime?: number; // 同步耗时
+  retryable?: boolean; // 是否可重试
 }
 
 // 从本地存储获取上次同步时间戳
@@ -46,6 +63,134 @@ const getLastSyncTimestamp = (): string => {
 // 保存同步时间戳到本地存储
 const saveLastSyncTimestamp = (timestamp: string): void => {
   setLocalStorageItem("lastSyncTimestamp", timestamp);
+};
+
+// 同步统计和监控
+let syncStats: SyncStats = {
+  totalSyncs: 0,
+  successfulSyncs: 0,
+  failedSyncs: 0,
+  averageSyncTime: 0,
+  retryCount: 0,
+};
+
+// 更新同步统计
+const updateSyncStats = (result: SyncResult, syncTime: number) => {
+  syncStats.totalSyncs++;
+  syncStats.lastSyncTime = Date.now();
+
+  if (result.success) {
+    syncStats.successfulSyncs++;
+    syncStats.retryCount = 0; // 成功时重置重试计数
+  } else {
+    syncStats.failedSyncs++;
+    syncStats.lastError = result.error;
+    if (result.retryable) {
+      syncStats.retryCount++;
+    }
+  }
+
+  // 计算平均同步时间
+  const totalTime =
+    syncStats.averageSyncTime * (syncStats.totalSyncs - 1) + syncTime;
+  syncStats.averageSyncTime = totalTime / syncStats.totalSyncs;
+
+  // 保存统计到本地存储
+  setLocalStorageItem("syncStats", JSON.stringify(syncStats));
+};
+
+// 获取同步统计
+export const getSyncStats = (): SyncStats => {
+  const statsStr = getLocalStorageItem("syncStats");
+  if (statsStr) {
+    try {
+      return JSON.parse(statsStr);
+    } catch (error) {
+      console.error("解析同步统计失败:", error);
+    }
+  }
+  return syncStats;
+};
+
+// 错误分类和处理函数
+const classifyAndHandleError = (error: any, context: string): SyncError => {
+  const errorMessage = error.message?.toLowerCase() || "";
+  const errorName = error.name || "UnknownError";
+
+  // 网络相关错误
+  if (errorMessage.includes("network") || errorMessage.includes("fetch")) {
+    return {
+      message: "网络连接失败，请检查网络设置",
+      code: "NETWORK_ERROR",
+      severity: "medium",
+      retryable: true,
+      details: { originalError: error.message },
+    };
+  }
+
+  // 认证相关错误
+  if (errorMessage.includes("unauthorized") || errorMessage.includes("401")) {
+    return {
+      message: "用户认证失败，请重新登录",
+      code: "AUTH_ERROR",
+      severity: "high",
+      retryable: false,
+      details: { originalError: error.message },
+    };
+  }
+
+  // 权限相关错误
+  if (errorMessage.includes("forbidden") || errorMessage.includes("403")) {
+    return {
+      message: "权限不足，需要验证邮箱",
+      code: "PERMISSION_ERROR",
+      severity: "high",
+      retryable: false,
+      details: { originalError: error.message },
+    };
+  }
+
+  // 服务器错误
+  if (errorMessage.includes("500") || errorMessage.includes("server")) {
+    return {
+      message: "服务器内部错误，请稍后重试",
+      code: "SERVER_ERROR",
+      severity: "medium",
+      retryable: true,
+      details: { originalError: error.message },
+    };
+  }
+
+  // 数据库相关错误
+  if (errorMessage.includes("database") || errorMessage.includes("quota")) {
+    return {
+      message: "数据库操作失败，请检查存储空间",
+      code: "DATABASE_ERROR",
+      severity: "high",
+      retryable: false,
+      details: { originalError: error.message },
+    };
+  }
+
+  // 超时错误
+  if (errorMessage.includes("timeout")) {
+    return {
+      message: "操作超时，请检查网络连接",
+      code: "TIMEOUT_ERROR",
+      severity: "medium",
+      retryable: true,
+      details: { originalError: error.message },
+    };
+  }
+
+  // 默认错误
+  return {
+    message: error instanceof Error ? error.message : "未知错误",
+    code: "UNKNOWN_ERROR",
+    severity: "medium",
+    retryable: true,
+    details: { originalError: error.message, context },
+  };
 };
 
 interface IBaseRecord {
@@ -164,6 +309,45 @@ const getLocalChanges = async () => {
           data: recordCopy,
         });
       }
+    } else if (tableName === "reviewHistories") {
+      // 特殊处理 reviewHistories 表，将本地的 number ID 转换为 ObjectId 字符串
+      for (const record of records) {
+        // 深拷贝记录以避免修改原始数据
+        const recordCopy = JSON.parse(JSON.stringify(record));
+
+        // 将本地的 number ID 转换为 ObjectId 字符串（使用 uuid 作为标识）
+        if (typeof recordCopy.wordReviewRecordId === "number") {
+          // 查找对应的 wordReviewRecord，获取其 uuid
+          const wordReviewRecord = await db.wordReviewRecords
+            .where("id")
+            .equals(recordCopy.wordReviewRecordId)
+            .first();
+
+          if (wordReviewRecord && wordReviewRecord.uuid) {
+            recordCopy.wordReviewRecordId = wordReviewRecord.uuid;
+            console.log(
+              `上传时转换 wordReviewRecordId: ${recordCopy.wordReviewRecordId} -> ${wordReviewRecord.uuid}`
+            );
+          } else {
+            console.warn(
+              `找不到对应的 WordReviewRecord，id: ${recordCopy.wordReviewRecordId}`
+            );
+            // 如果找不到对应的记录，跳过这个变更
+            continue;
+          }
+        }
+
+        changes.push({
+          table: tableName,
+          action:
+            recordCopy.sync_status === "local_deleted"
+              ? "delete"
+              : recordCopy.sync_status === "local_new"
+              ? "create"
+              : "update",
+          data: recordCopy,
+        });
+      }
     } else {
       // 其他表正常处理
       for (const record of records) {
@@ -184,289 +368,18 @@ const getLocalChanges = async () => {
   return changes;
 };
 
-// 应用服务器变更到本地数据库
+// 应用服务器变更到本地数据库（使用批处理优化）
 const applyServerChanges = async (serverChanges: any[]) => {
   let changesApplied = 0;
-
-  console.log("开始应用服务器变更，总数:", serverChanges.length);
 
   // 操作统计
   const stats = {
     total: 0,
     updated: 0,
     created: 0,
+    deleted: 0,
     errors: 0,
-    constraintErrors: 0,
-    fallbackSuccess: 0,
     startTime: Date.now(),
-  };
-
-  // 错误诊断辅助函数
-  const diagnoseSyncError = (error: any, table: string, data: any) => {
-    const errorMessage = error.message?.toLowerCase() || "";
-    const errorName = error.name || "UnknownError";
-
-    if (
-      errorName === "ConstraintError" ||
-      errorMessage.includes("constrainterror")
-    ) {
-      return {
-        type: "constraint",
-        severity: "warning",
-        suggestion: `表 ${table} 存在唯一约束冲突，将尝试回退策略`,
-        canAutoFix: true,
-      };
-    }
-
-    if (errorMessage.includes("database") && errorMessage.includes("locked")) {
-      return {
-        type: "database_locked",
-        severity: "error",
-        suggestion: "数据库被锁定，请稍后重试",
-        canAutoFix: false,
-      };
-    }
-
-    if (errorMessage.includes("quota") || errorMessage.includes("storage")) {
-      return {
-        type: "storage_quota",
-        severity: "error",
-        suggestion: "存储空间不足，请清理数据或增加存储空间",
-        canAutoFix: false,
-      };
-    }
-
-    return {
-      type: "unknown",
-      severity: "error",
-      suggestion: "未知错误，请检查数据格式和网络连接",
-      canAutoFix: false,
-    };
-  };
-
-  // 增强的 upsert 辅助函数：处理不同表的插入逻辑
-  const upsertRecord = async (
-    table: string,
-    data: any,
-    dbTable: any
-  ): Promise<void> => {
-    const startTime = Date.now();
-    const dataIdentifier =
-      table === "wordRecords" || table === "familiarWords"
-        ? `${data.dict}/${data.word}`
-        : data.uuid;
-
-    stats.total++;
-
-    console.log(`[UPSERT] 开始处理: ${table} - ${dataIdentifier}`);
-
-    try {
-      // 特殊处理需要复合索引查询的表
-      if (table === "wordRecords" || table === "familiarWords") {
-        // 使用 [dict+word] 复合索引查询现有记录
-        const queryStartTime = Date.now();
-        const existingRecord = await dbTable
-          .where("[dict+word]")
-          .equals([data.dict, data.word])
-          .first();
-
-        const queryTime = Date.now() - queryStartTime;
-        console.log(`[UPSERT] 查询耗时: ${queryTime}ms - ${table}`);
-
-        if (existingRecord) {
-          // 更新现有记录
-          const updateStartTime = Date.now();
-          await dbTable.update(existingRecord.id!, {
-            ...data,
-            sync_status: "synced" as SyncStatus,
-            last_modified: Date.now(),
-          });
-          const updateTime = Date.now() - updateStartTime;
-          stats.updated++;
-          console.log(
-            `[UPSERT] ✅ 更新成功 (${updateTime}ms): ${table} - ${dataIdentifier}`
-          );
-        } else {
-          // 创建新记录
-          const createStartTime = Date.now();
-          await dbTable.add({
-            ...data,
-            sync_status: "synced" as SyncStatus,
-            last_modified: Date.now(),
-          });
-          const createTime = Date.now() - createStartTime;
-          stats.created++;
-          console.log(
-            `[UPSERT] ✅ 创建成功 (${createTime}ms): ${table} - ${dataIdentifier}`
-          );
-        }
-      } else {
-        // 其他表基于 uuid 查询现有记录
-        const queryStartTime = Date.now();
-        const existingRecord = await dbTable
-          .where("uuid")
-          .equals(data.uuid)
-          .first();
-
-        const queryTime = Date.now() - queryStartTime;
-        console.log(`[UPSERT] 查询耗时: ${queryTime}ms - ${table}`);
-
-        if (existingRecord) {
-          // 更新现有记录
-          const updateStartTime = Date.now();
-          await dbTable.update(existingRecord.id!, {
-            ...data,
-            sync_status: "synced" as SyncStatus,
-            last_modified: Date.now(),
-          });
-          const updateTime = Date.now() - updateStartTime;
-          stats.updated++;
-          console.log(
-            `[UPSERT] ✅ 更新成功 (${updateTime}ms): ${table} - ${dataIdentifier}`
-          );
-        } else {
-          // 创建新记录
-          const createStartTime = Date.now();
-          await dbTable.add({
-            ...data,
-            sync_status: "synced" as SyncStatus,
-            last_modified: Date.now(),
-          });
-          const createTime = Date.now() - createStartTime;
-          stats.created++;
-          console.log(
-            `[UPSERT] ✅ 创建成功 (${createTime}ms): ${table} - ${dataIdentifier}`
-          );
-        }
-      }
-
-      const totalTime = Date.now() - startTime;
-      console.log(`[UPSERT] 操作完成，总耗时: ${totalTime}ms`);
-    } catch (error) {
-      const totalTime = Date.now() - startTime;
-      stats.errors++;
-
-      // 使用错误诊断函数
-      const diagnosis = diagnoseSyncError(error, table, data);
-
-      if (diagnosis.type === "constraint" && diagnosis.canAutoFix) {
-        stats.constraintErrors++;
-        console.warn(
-          `[UPSERT] 🔄 ${diagnosis.suggestion}: ${table} - ${dataIdentifier}`
-        );
-
-        try {
-          // 回退策略：强制查询并更新
-          const fallbackStartTime = Date.now();
-          let existingRecord;
-
-          // 根据表类型使用不同的查询策略
-          if (table === "wordRecords" || table === "familiarWords") {
-            // 使用 [dict+word] 复合索引
-            existingRecord = await dbTable
-              .where("[dict+word]")
-              .equals([data.dict, data.word])
-              .first();
-          } else {
-            // 其他表使用 uuid 查询
-            existingRecord = await dbTable
-              .where("uuid")
-              .equals(data.uuid)
-              .first();
-          }
-
-          if (existingRecord) {
-            await dbTable.update(existingRecord.id!, {
-              ...data,
-              sync_status: "synced" as SyncStatus,
-              last_modified: Date.now(),
-            });
-            const fallbackTime = Date.now() - fallbackStartTime;
-            stats.fallbackSuccess++;
-            stats.errors--; // 回退成功，减少错误计数
-            console.log(
-              `[UPSERT] ✅ 回退策略成功 (${fallbackTime}ms): ${table} - ${dataIdentifier}`
-            );
-          } else {
-            // 如果通过索引找不到记录，尝试通过uuid直接查找
-            console.warn(
-              `[UPSERT] 🔍 通过索引未找到记录，尝试uuid查找: ${table} - ${dataIdentifier}`
-            );
-            const recordByUuid = await dbTable
-              .where("uuid")
-              .equals(data.uuid)
-              .first();
-
-            if (recordByUuid) {
-              console.log(
-                `[UPSERT] 🔍 通过uuid找到记录，执行更新: ${table} - ${dataIdentifier}`
-              );
-              await dbTable.update(recordByUuid.id!, {
-                ...data,
-                sync_status: "synced" as SyncStatus,
-                last_modified: Date.now(),
-              });
-              const fallbackTime = Date.now() - fallbackStartTime;
-              stats.fallbackSuccess++;
-              stats.errors--; // 回退成功，减少错误计数
-              console.log(
-                `[UPSERT] ✅ UUID回退策略成功 (${fallbackTime}ms): ${table} - ${dataIdentifier}`
-              );
-            } else {
-              // 最后的回退：强制使用put操作
-              console.warn(
-                `[UPSERT] 🔄 最后回退：使用put操作强制更新: ${table} - ${dataIdentifier}`
-              );
-              try {
-                await dbTable.put({
-                  ...data,
-                  sync_status: "synced" as SyncStatus,
-                  last_modified: Date.now(),
-                });
-                const fallbackTime = Date.now() - fallbackStartTime;
-                stats.fallbackSuccess++;
-                stats.errors--; // 回退成功，减少错误计数
-                console.log(
-                  `[UPSERT] ✅ PUT回退策略成功 (${fallbackTime}ms): ${table} - ${dataIdentifier}`
-                );
-              } catch (putError) {
-                console.error(
-                  `[UPSERT] ❌ 所有回退策略失败 (${totalTime}ms): ${table} - ${dataIdentifier}`,
-                  {
-                    originalError: error.message,
-                    putError: putError.message,
-                    data: { dict: data.dict, word: data.word, uuid: data.uuid },
-                  }
-                );
-                throw error;
-              }
-            }
-          }
-        } catch (fallbackError) {
-          console.error(
-            `[UPSERT] ❌ 回退策略执行失败 (${totalTime}ms): ${table} - ${dataIdentifier}`,
-            {
-              originalError: error.message,
-              fallbackError: fallbackError.message,
-              data: { dict: data.dict, word: data.word, uuid: data.uuid },
-            }
-          );
-          throw fallbackError;
-        }
-      } else {
-        console.error(
-          `[UPSERT] ❌ ${diagnosis.severity.toUpperCase()} (${totalTime}ms): ${table} - ${dataIdentifier}`,
-          {
-            type: diagnosis.type,
-            suggestion: diagnosis.suggestion,
-            canAutoFix: diagnosis.canAutoFix,
-            error: error.message,
-            data: { dict: data.dict, word: data.word, uuid: data.uuid },
-          }
-        );
-        throw error;
-      }
-    }
   };
 
   // 验证服务器变更数据格式
@@ -513,10 +426,18 @@ const applyServerChanges = async (serverChanges: any[]) => {
 
   console.log("有效变更数:", validChanges.length);
 
+  // 按表分组变更
+  const changesByTable = new Map<string, any[]>();
   for (const change of validChanges) {
-    const { table, action, data } = change;
+    const { table } = change;
+    if (!changesByTable.has(table)) {
+      changesByTable.set(table, []);
+    }
+    changesByTable.get(table)!.push(change);
+  }
 
-    // 根据表名选择对应的数据库表
+  // 批处理函数：处理单个表的变更
+  const processTableChanges = async (table: string, changes: any[]) => {
     let dbTable;
     switch (table) {
       case "wordRecords":
@@ -542,98 +463,162 @@ const applyServerChanges = async (serverChanges: any[]) => {
         break;
       default:
         console.warn(`未知的表名: ${table}`);
-        continue;
+        return;
     }
 
-    // 查找本地是否存在该记录
-    const localRecord = (await dbTable
-      .where("uuid")
-      .equals(data.uuid)
-      .first()) as IRecord | undefined;
+    // 特殊处理 reviewHistories 表的 wordReviewRecordId 类型转换
+    for (const change of changes) {
+      const { data } = change;
+      if (table === "reviewHistories" && data.wordReviewRecordId) {
+        if (typeof data.wordReviewRecordId === "string") {
+          try {
+            const wordReviewRecord = await db.wordReviewRecords
+              .where("word")
+              .equals(data.word)
+              .first();
 
-    console.log(`本地记录(${data.uuid})存在:`, !!localRecord);
-    if (localRecord) {
-      console.log("本地记录详情:", localRecord);
-    }
-
-    if (action === "delete") {
-      // 如果是删除操作，且本地记录存在
-      if (localRecord) {
-        // 如果本地记录已被修改，且修改时间晚于服务器时间，保留本地修改
-        if (
-          localRecord.sync_status === "local_modified" &&
-          localRecord.last_modified > new Date(data.serverModifiedAt).getTime()
-        ) {
-          // 保留本地修改，但更新其他字段
-          console.log("本地修改时间晚于服务器，保留本地修改");
-          await dbTable.update(localRecord.id!, {
-            ...data,
-            sync_status: "synced" as SyncStatus,
-            last_modified: Date.now(),
-          });
-        } else {
-          // 否则，物理删除记录
-          console.log("执行服务器删除操作");
-          await dbTable.delete(localRecord.id!);
+            if (wordReviewRecord && wordReviewRecord.id) {
+              data.wordReviewRecordId = wordReviewRecord.id;
+            } else {
+              console.warn(`找不到对应的 WordReviewRecord，word: ${data.word}`);
+              // 从变更列表中移除这个无效变更
+              const index = changes.indexOf(change);
+              if (index > -1) {
+                changes.splice(index, 1);
+              }
+            }
+          } catch (error) {
+            console.error(`转换 wordReviewRecordId 时出错: ${error}`);
+            // 从变更列表中移除这个无效变更
+            const index = changes.indexOf(change);
+            if (index > -1) {
+              changes.splice(index, 1);
+            }
+          }
         }
-        changesApplied++;
       }
-    } else {
-      // 如果是创建或更新操作
-      if (localRecord) {
-        // 如果本地记录存在，且本地修改时间晚于服务器时间，保留本地修改
-        if (
-          localRecord.sync_status === "local_modified" &&
-          localRecord.last_modified > new Date(data.serverModifiedAt).getTime()
-        ) {
-          // 保留本地修改，但更新其他字段
-          console.log("本地修改时间晚于服务器，保留本地修改");
-          await dbTable.update(localRecord.id!, {
-            ...data,
-            sync_status: "synced" as SyncStatus,
-            last_modified: Date.now(),
-          });
-        } else {
-          // 否则，接受服务器更新
-          console.log("接受服务器更新");
-          await dbTable.update(localRecord.id!, {
-            ...data,
-            sync_status: "synced" as SyncStatus,
-            last_modified: Date.now(),
-          });
-        }
-      } else {
-        // 如果本地记录不存在，使用 upsert 逻辑创建新记录
-        console.log("本地不存在，使用 upsert 创建记录");
-        await upsertRecord(table, data, dbTable);
-      }
-      changesApplied++;
     }
-  }
 
-  // 输出详细的操作统计
-  const totalTime = Date.now() - stats.startTime;
-  const successRate =
-    stats.total > 0
-      ? (((stats.total - stats.errors) / stats.total) * 100).toFixed(1)
-      : "100.0";
+    // 特殊处理 wordReviewRecords 表的 uuid 对齐
+    for (const change of changes) {
+      const { data } = change;
+      if (table === "wordReviewRecords" && data.word) {
+        // 先尝试通过 uuid 查找记录
+        let localRecord = await dbTable.where("uuid").equals(data.uuid).first();
 
-  console.log("=== 服务器变更应用完成 ===");
-  console.log(`📊 操作统计:`);
-  console.log(`  • 总处理数: ${stats.total}`);
-  console.log(`  • 更新记录: ${stats.updated}`);
-  console.log(`  • 创建记录: ${stats.created}`);
-  console.log(`  • 错误数量: ${stats.errors}`);
-  console.log(`  • 约束冲突: ${stats.constraintErrors}`);
-  console.log(`  • 回退成功: ${stats.fallbackSuccess}`);
-  console.log(`  • 成功率: ${successRate}%`);
-  console.log(`  • 总耗时: ${totalTime}ms`);
-  console.log(
-    `  • 平均耗时: ${
-      stats.total > 0 ? (totalTime / stats.total).toFixed(1) : "0"
-    }ms/操作`
+        if (!localRecord) {
+          // 如果通过 uuid 找不到，尝试通过 word 查找
+          localRecord = await dbTable.where("word").equals(data.word).first();
+
+          if (localRecord) {
+            console.log(
+              `通过 word 找到记录，进行 uuid 对齐: ${data.word} -> ${data.uuid}`
+            );
+            // 更新本地的 uuid 为服务器的 uuid
+            await dbTable.update(localRecord.id!, {
+              uuid: data.uuid,
+            });
+            // 更新本地记录的 uuid 引用
+            localRecord.uuid = data.uuid;
+          }
+        }
+      }
+    }
+
+    // 分离不同类型的操作
+    const creates: any[] = [];
+    const updates: any[] = [];
+    const deletes: any[] = [];
+
+    for (const change of changes) {
+      const { action, data } = change;
+      if (action === "delete") {
+        deletes.push(data);
+      } else if (action === "create") {
+        creates.push(data);
+      } else if (action === "update") {
+        updates.push(data);
+      }
+    }
+
+    // 批量处理删除操作
+    if (deletes.length > 0) {
+      try {
+        const deleteIds: number[] = [];
+        for (const data of deletes) {
+          const localRecord = await dbTable
+            .where("uuid")
+            .equals(data.uuid)
+            .first();
+          if (localRecord && localRecord.id) {
+            deleteIds.push(localRecord.id);
+          }
+        }
+
+        if (deleteIds.length > 0) {
+          await dbTable.bulkDelete(deleteIds);
+          stats.deleted += deleteIds.length;
+          changesApplied += deleteIds.length;
+          console.log(`批量删除 ${table} 表 ${deleteIds.length} 条记录`);
+        }
+      } catch (error) {
+        console.error(`批量删除 ${table} 表失败:`, error);
+        stats.errors++;
+      }
+    }
+
+    // 批量处理创建和更新操作
+    const upserts: any[] = [];
+
+    // 收集所有需要 upsert 的记录
+    for (const data of [...creates, ...updates]) {
+      const processedData = {
+        ...data,
+        sync_status: "synced" as SyncStatus,
+        last_modified: Date.now(),
+      };
+      upserts.push(processedData);
+    }
+
+    if (upserts.length > 0) {
+      try {
+        await dbTable.bulkPut(upserts);
+        stats.created += creates.length;
+        stats.updated += updates.length;
+        changesApplied += upserts.length;
+        console.log(
+          `批量 upsert ${table} 表 ${upserts.length} 条记录 (创建: ${creates.length}, 更新: ${updates.length})`
+        );
+      } catch (error) {
+        console.error(`批量 upsert ${table} 表失败:`, error);
+        stats.errors++;
+
+        // 回退到单个处理
+        console.log(`回退到单个处理 ${table} 表...`);
+        for (const data of upserts) {
+          try {
+            await dbTable.put(data);
+            changesApplied++;
+          } catch (singleError) {
+            console.error(`单个 upsert 失败:`, singleError);
+            stats.errors++;
+          }
+        }
+      }
+    }
+  };
+
+  // 按表并行处理变更
+  const tablePromises = Array.from(changesByTable.entries()).map(
+    ([table, changes]) => processTableChanges(table, changes)
   );
-  console.log("========================");
+
+  await Promise.all(tablePromises);
+
+  const totalTime = Date.now() - stats.startTime;
+  console.log(
+    `批量同步完成: 总耗时 ${totalTime}ms, 处理 ${changesApplied} 条记录 (创建: ${stats.created}, 更新: ${stats.updated}, 删除: ${stats.deleted}, 错误: ${stats.errors})`
+  );
 
   return changesApplied;
 };
@@ -711,6 +696,8 @@ const updateLocalRecordStatus = async (changes: any[]) => {
 
 // 初始化时执行的云端到本地同步
 export const syncFromCloud = async (): Promise<SyncResult> => {
+  const startTime = Date.now();
+
   try {
     console.log("开始从云端同步到本地...");
 
@@ -721,18 +708,23 @@ export const syncFromCloud = async (): Promise<SyncResult> => {
     // 获取认证令牌
     const token = getLocalStorageItem("token");
     if (!token) {
-      console.log("未找到认证令牌");
-      return {
+      const error = classifyAndHandleError(
+        new Error("用户未登录"),
+        "syncFromCloud"
+      );
+      const result: SyncResult = {
         success: false,
-        error: { message: "用户未登录" },
+        error,
+        syncTime: Date.now() - startTime,
+        retryable: false,
       };
+      updateSyncStats(result, result.syncTime!);
+      return result;
     }
 
     // 设置请求头
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-    // 从云端获取变更
-    console.log("请求服务器变更...");
     const response = await axios.post(
       "/api/sync",
       {
@@ -741,37 +733,49 @@ export const syncFromCloud = async (): Promise<SyncResult> => {
       },
       {
         headers: { Authorization: `Bearer ${token}` },
+        timeout: 30000, // 30秒超时
       }
     );
 
-    console.log("服务器响应状态:", response.status);
-
     const { newSyncTimestamp, serverChanges } = response.data;
-    console.log("服务器变更数量:", serverChanges?.length || 0);
 
     if (!serverChanges || !Array.isArray(serverChanges)) {
-      console.error("服务器返回的变更数据无效");
-      return {
+      const error = classifyAndHandleError(
+        new Error("服务器返回的变更数据无效"),
+        "syncFromCloud"
+      );
+      const result: SyncResult = {
         success: false,
-        error: { message: "服务器返回的变更数据无效" },
+        error,
+        syncTime: Date.now() - startTime,
+        retryable: true,
       };
+      updateSyncStats(result, result.syncTime!);
+      return result;
     }
 
     // 应用服务器变更到本地
     const changesApplied = await applyServerChanges(serverChanges);
-    console.log("应用的服务器变更数:", changesApplied);
 
-    // 保存新的同步时间戳
-    saveLastSyncTimestamp(newSyncTimestamp);
-    console.log("同步完成，保存新时间戳:", newSyncTimestamp);
+    // 注意：不在这里推进时间戳，等待上传阶段完成后统一推进
+    // 临时保存服务器返回的时间戳，供后续使用
+    const tempSyncTimestamp = newSyncTimestamp;
 
-    return {
+    const result: SyncResult = {
       success: true,
       changesApplied,
       serverChanges: serverChanges.length,
+      tempSyncTimestamp,
+      syncTime: Date.now() - startTime,
+      retryable: false,
     };
+
+    updateSyncStats(result, result.syncTime!);
+    return result;
   } catch (error) {
-    console.error("从云端同步失败:", error);
+    const syncTime = Date.now() - startTime;
+    const classifiedError = classifyAndHandleError(error, "syncFromCloud");
+
     if (axios.isAxiosError(error)) {
       console.error("Axios错误:", {
         status: error.response?.status,
@@ -781,21 +785,21 @@ export const syncFromCloud = async (): Promise<SyncResult> => {
 
       // 处理特定的错误情况
       if (error.response?.status === 403) {
-        return {
-          success: false,
-          error: {
-            message: "需要验证邮箱才能同步数据",
-            code: "EMAIL_NOT_VERIFIED",
-          },
-        };
+        classifiedError.message = "需要验证邮箱才能同步数据";
+        classifiedError.code = "EMAIL_NOT_VERIFIED";
+        classifiedError.retryable = false;
       }
     }
-    return {
+
+    const result: SyncResult = {
       success: false,
-      error: {
-        message: error instanceof Error ? error.message : "未知错误",
-      },
+      error: classifiedError,
+      syncTime,
+      retryable: classifiedError.retryable,
     };
+
+    updateSyncStats(result, syncTime);
+    return result;
   }
 };
 
@@ -842,13 +846,23 @@ export const syncToCloud = async (): Promise<SyncResult> => {
       }
     );
 
-    const { newSyncTimestamp } = response.data;
+    const { newSyncTimestamp, serverChanges } = response.data;
+
+    // 如果有服务器回传的变更，应用它们
+    if (
+      serverChanges &&
+      Array.isArray(serverChanges) &&
+      serverChanges.length > 0
+    ) {
+      console.log("应用服务器回传的变更:", serverChanges.length);
+      await applyServerChanges(serverChanges);
+    }
 
     // 更新本地记录状态
     await updateLocalRecordStatus(localChanges);
     console.log("本地记录状态已更新");
 
-    // 保存新的同步时间戳
+    // 保存新的同步时间戳（统一推进时机）
     saveLastSyncTimestamp(newSyncTimestamp);
     console.log("同步完成，保存新时间戳:", newSyncTimestamp);
 
@@ -886,28 +900,76 @@ export const syncToCloud = async (): Promise<SyncResult> => {
   }
 };
 
-// 为保持兼容性，保留原始的syncData函数，但内部根据条件调用新函数
+// 实现"先下后上"同步策略的函数
 export const syncData = async (): Promise<SyncResult> => {
   try {
-    // 先从云端同步到本地（仅在需要时），再从本地同步到云端
-    const localChanges = await getLocalChanges();
+    console.log("开始执行先下后上同步策略...");
 
-    // 如果有本地变更，只执行本地到云端的同步
-    if (localChanges.length > 0) {
-      return syncToCloud();
+    // 第一步：先下载（云→本地）
+    const downloadResult = await syncFromCloud();
+    if (!downloadResult.success) {
+      console.log("下载失败，停止同步");
+      return downloadResult;
     }
+    console.log("下载成功，应用了", downloadResult.changesApplied, "条变更");
 
-    // 如果没有本地变更，则执行完整的双向同步
-    const cloudResult = await syncFromCloud();
+    // 第二步：重新扫描本地变更（下载可能改变了本地数据和待传集合）
+    const hasLocalChanges = await hasPendingChanges();
 
-    // 如果从云端同步失败，直接返回结果
-    if (!cloudResult.success) {
-      return cloudResult;
+    if (hasLocalChanges) {
+      // 第三步：如果有本地变更，执行上传（本地→云）
+      console.log("发现本地变更，开始上传");
+      const uploadResult = await syncToCloud();
+      if (!uploadResult.success) {
+        console.log("上传失败");
+        return uploadResult;
+      }
+      console.log("上传成功，上传了", uploadResult.changesApplied, "条变更");
+
+      // 返回上传结果，因为它包含了最终的同步状态
+      return uploadResult;
+    } else {
+      console.log("没有本地变更需要上传");
+      // 返回下载结果
+      return downloadResult;
     }
-
-    return cloudResult;
   } catch (error) {
     console.error("同步失败:", error);
+    return {
+      success: false,
+      error: {
+        message: error instanceof Error ? error.message : "未知错误",
+      },
+    };
+  }
+};
+
+// 全局同步触发器（模拟triggerSync('both')的行为）
+export const triggerGlobalSync = async (): Promise<SyncResult> => {
+  try {
+    console.log("触发全局同步（先下后上）...");
+
+    // 第一步：先下载（云→本地）
+    const downloadResult = await syncFromCloud();
+    if (!downloadResult.success) {
+      console.log("下载失败，停止同步");
+      return downloadResult;
+    }
+    console.log("下载成功，应用了", downloadResult.changesApplied, "条变更");
+
+    // 第二步：执行上传（本地→云，syncToCloud内部会检查是否有本地变更）
+    console.log("开始上传本地变更");
+    const uploadResult = await syncToCloud();
+    if (!uploadResult.success) {
+      console.log("上传失败");
+      return uploadResult;
+    }
+    console.log("上传成功，上传了", uploadResult.changesApplied, "条变更");
+
+    // 返回上传结果，因为它包含了最终的同步状态
+    return uploadResult;
+  } catch (error) {
+    console.error("全局同步失败:", error);
     return {
       success: false,
       error: {

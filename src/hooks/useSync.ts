@@ -178,13 +178,13 @@ export const useSync = () => {
     // 初始化时检查变更
     checkPendingChanges();
 
-    // 定义本地到云端同步循环
+    // 定义先下后上同步循环
     const startSyncLoop = () => {
       cleanup(); // 确保只有一个定时器
 
       const interval = isOnline ? SYNC_ONLINE_INTERVAL : SYNC_INTERVAL;
       intervalIdRef.current = window.setInterval(async () => {
-        console.log("定时触发本地到云端同步检查", {
+        console.log("定时触发同步检查", {
           state: syncState,
           isPending: isSyncPendingRef.current,
           time: new Date().toISOString(),
@@ -192,10 +192,14 @@ export const useSync = () => {
 
         // 基础条件判断
         if (!isSyncPendingRef.current && isAuthenticated) {
-          // 检查是否有本地变更需要同步
-          const hasLocalChanges = await hasPendingChanges();
-          if (hasLocalChanges) {
-            await performUploadSync(); // 只在有本地变更时执行上传
+          // 先下载，再决定是否上传
+          const downloadResult = await performDownloadSync();
+          if (downloadResult.success) {
+            // 下载成功后，检查是否有本地变更需要上传
+            const hasLocalChanges = await hasPendingChanges();
+            if (hasLocalChanges) {
+              await performUploadSync();
+            }
           }
         }
       }, interval);

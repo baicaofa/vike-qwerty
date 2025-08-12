@@ -1,3 +1,5 @@
+import { checkAndUpgradeDatabase } from "../utils/db";
+import { autoFixAllUuidConstraints } from "../utils/db/fix-uuid-constraint";
 import { initI18n } from "@/i18n";
 import {
   detectBrowserLanguage,
@@ -11,6 +13,8 @@ import type { OnHydrationEndAsync } from "vike/types";
  * 在页面可交互后异步执行，不阻塞渲染
  */
 export const onHydrationEnd: OnHydrationEndAsync = async () => {
+  console.log("🚀 应用水合完成，开始初始化...");
+
   try {
     // 1. 检查localStorage中的语言偏好
     const preferredLanguage = getLanguagePreference();
@@ -49,6 +53,14 @@ export const onHydrationEnd: OnHydrationEndAsync = async () => {
 
     // 6. 其他非核心初始化逻辑可以在这里添加
     // 例如：分析工具初始化、第三方服务初始化等
+
+    // 检查并升级数据库
+    await checkAndUpgradeDatabase();
+
+    // 自动修复所有表的 uuid 约束错误（如果存在）
+    await autoFixAllUuidConstraints();
+
+    console.log("✅ 数据库初始化完成");
   } catch (error) {
     console.error("Failed to initialize i18n during hydration:", error);
     // 不抛出错误，避免影响页面正常功能

@@ -312,8 +312,7 @@ export const syncData = async (req: Request, res: Response) => {
           let serverRecord = await WordReviewRecordModel.findOne(query);
 
           if (serverRecord) {
-            // 更新现有记录
-            serverRecord.uuid = uuid || serverRecord.uuid;
+            // 更新现有记录 - 不修改 uuid（因为已设置为 immutable）
             serverRecord.intervalSequence = intervalSequence ||
               serverRecord.intervalSequence || [1, 3, 7, 15, 30, 60];
             serverRecord.currentIntervalIndex =

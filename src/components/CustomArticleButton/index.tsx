@@ -13,13 +13,13 @@ const CustomArticleButton: React.FC<CustomArticleButtonProps> = ({
   const { t } = useTranslation("common");
 
   return (
-    <Tooltip content={t("customArticle", "自定义文章")}>
+    <Tooltip content={t("customArticle", "自定义文章练习")}>
       <Link
         href="/custom-article"
         className="flex h-8 min-w-max cursor-pointer items-center justify-center rounded-md px-1 transition-colors text-blue-500 duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
-        title={t("customArticle", "自定义文章")}
+        title={t("customArticle", "自定义文章练习")}
         target="_blank"
-        aria-label={t("customArticle", "自定义文章")}
+        aria-label={t("customArticle", "自定义文章练习")}
         pageContext={pageContext}
       >
         <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 20 20">

@@ -407,6 +407,52 @@ export class RecordDB extends Dexie {
 
             // 确保这是最新的升级版本，直接包含版本10的功能
             console.log("✅ 版本9升级完成 - 已包含复习系统优化");
+
+            // 清理 wordReviewRecords 表中的重复 uuid
+            console.log("🧹 清理 wordReviewRecords 表中的重复 uuid...");
+            const wordReviewRecordsTable = tx.table("wordReviewRecords");
+            const allRecords = await wordReviewRecordsTable.toArray();
+
+            // 按 uuid 分组，找出重复的记录
+            const uuidGroups = new Map<string, any[]>();
+            for (const record of allRecords) {
+              if (record.uuid) {
+                if (!uuidGroups.has(record.uuid)) {
+                  uuidGroups.set(record.uuid, []);
+                }
+                uuidGroups.get(record.uuid)!.push(record);
+              }
+            }
+
+            // 处理重复的 uuid
+            for (const [uuid, records] of uuidGroups) {
+              if (records.length > 1) {
+                console.log(
+                  `发现重复 uuid: ${uuid}，记录数: ${records.length}`
+                );
+
+                // 按 last_modified 排序，保留最新的记录
+                records.sort(
+                  (a, b) => (b.last_modified || 0) - (a.last_modified || 0)
+                );
+                const keepRecord = records[0];
+                const deleteRecords = records.slice(1);
+
+                // 删除重复记录
+                for (const record of deleteRecords) {
+                  await wordReviewRecordsTable.delete(record.id);
+                  console.log(
+                    `删除重复记录: id=${record.id}, word=${record.word}`
+                  );
+                }
+
+                console.log(
+                  `保留记录: id=${keepRecord.id}, word=${keepRecord.word}`
+                );
+              }
+            }
+
+            console.log("✅ wordReviewRecords 表 uuid 清理完成");
           },
           "Version 9 upgrade",
           9
@@ -445,6 +491,34 @@ export async function checkAndUpgradeDatabase() {
         );
         // 对于新安装，不需要执行升级检查
         return;
+      }
+
+      // 尝试访问数据库以检查约束错误
+      try {
+        await db.wordReviewRecords.count();
+      } catch (constraintError: any) {
+        if (
+          constraintError.name === "ConstraintError" &&
+          constraintError.message.includes("uuid")
+        ) {
+          console.error("检测到 uuid 约束错误，需要重置数据库");
+          console.error("错误详情:", constraintError.message);
+
+          // 提示用户重置数据库
+          if (
+            confirm(
+              "检测到数据库约束错误，需要重置数据库。这将清除所有本地数据，但不会影响云端数据。是否继续？"
+            )
+          ) {
+            await db.delete();
+            console.log("数据库已重置，请刷新页面");
+            window.location.reload();
+            return;
+          } else {
+            throw new Error("用户取消了数据库重置");
+          }
+        }
+        throw constraintError;
       }
 
       const upgradeChecker = new UpgradeStatusChecker();

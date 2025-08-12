@@ -1,7 +1,7 @@
 import { db } from ".";
 import { getCurrentDate, recordDataAction } from "..";
 import { generateUUID } from "../uuid";
-import { syncData } from "@/services/syncService";
+import { triggerGlobalSync } from "@/services/syncService";
 
 export type ExportProgress = {
   totalRows?: number;
@@ -110,7 +110,7 @@ export async function importDatabase(
     });
 
     // 导入完成后触发同步
-    await syncData();
+    await triggerGlobalSync();
   });
 
   input.click();

@@ -50,6 +50,7 @@ const WordReviewRecordSchema: Schema<IWordReviewRecord> = new Schema(
       type: String,
       required: true,
       unique: true,
+      immutable: true, // 设置为不可变，更新时忽略此字段
       // 移除 index: true，unique: true 已经创建了索引
     },
     userId: {

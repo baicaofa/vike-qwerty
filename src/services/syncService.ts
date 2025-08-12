@@ -570,14 +570,74 @@ const applyServerChanges = async (serverChanges: any[]) => {
     // 批量处理创建和更新操作
     const upserts: any[] = [];
 
-    // 收集所有需要 upsert 的记录
+    // 收集所有需要 upsert 的记录（先聚合、去重，避免同一 uuid 在一个批次内重复）
+    const latestByUuid = new Map<string, any>();
     for (const data of [...creates, ...updates]) {
       const processedData = {
         ...data,
         sync_status: "synced" as SyncStatus,
         last_modified: Date.now(),
       };
-      upserts.push(processedData);
+      // 如果同一 uuid 多次出现，保留最后一个（服务器通常按时间顺序返回）
+      latestByUuid.set(processedData.uuid, processedData);
+    }
+
+    // 将去重后的记录放入 upserts
+    for (const value of latestByUuid.values()) {
+      upserts.push(value);
+    }
+
+    // 在提交之前，将本地已存在的记录 id 写入 upsert 对象，确保是更新而不是插入
+    if (upserts.length > 0) {
+      // 1) 先按 uuid 映射本地 id
+      const uuids = upserts.map((r) => r.uuid).filter(Boolean);
+      const existingByUuid = await dbTable.where("uuid").anyOf(uuids).toArray();
+      const uuidToId = new Map<string, number>();
+      for (const r of existingByUuid) {
+        if (r.uuid && typeof r.id === "number") uuidToId.set(r.uuid, r.id);
+      }
+
+      // 2) 对于 wordRecords，额外用复合索引 [dict+word] 匹配本地记录
+      if (table === "wordRecords") {
+        // 找出尚未通过 uuid 命中的记录，准备按 [dict+word] 匹配
+        const missingIndexPairs: [string, string][] = [];
+        for (const r of upserts) {
+          if (!uuidToId.has(r.uuid) && r.dict && r.word) {
+            missingIndexPairs.push([r.dict, r.word]);
+          }
+        }
+
+        if (missingIndexPairs.length > 0) {
+          // Dexie 不支持 anyOf 对元组的直接数组，拆分批次查询以避免超大数组
+          // 为简单起见，这里顺序逐个查询（数量通常不大；若很大，可分批）
+          const dictWordToLocal = new Map<string, any>();
+          for (const [dict, word] of missingIndexPairs) {
+            const local = await dbTable.where("[dict+word]").equals([dict, word]).first();
+            if (local) {
+              dictWordToLocal.set(`${dict}@@${word}`, local);
+            }
+          }
+
+          // 为匹配到的记录写入 id（从而将 put 行为变成更新）
+          for (const r of upserts) {
+            if (!uuidToId.has(r.uuid) && r.dict && r.word) {
+              const key = `${r.dict}@@${r.word}`;
+              const local = dictWordToLocal.get(key);
+              if (local && typeof local.id === "number") {
+                r.id = local.id;
+              }
+            }
+          }
+        }
+      }
+
+      // 3) 最终按 uuid 写入 id（优先生效）。
+      for (const r of upserts) {
+        const id = uuidToId.get(r.uuid);
+        if (typeof id === "number") {
+          r.id = id;
+        }
+      }
     }
 
     if (upserts.length > 0) {

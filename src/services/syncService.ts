@@ -66,7 +66,7 @@ const saveLastSyncTimestamp = (timestamp: string): void => {
 };
 
 // 同步统计和监控
-let syncStats: SyncStats = {
+const syncStats: SyncStats = {
   totalSyncs: 0,
   successfulSyncs: 0,
   failedSyncs: 0,

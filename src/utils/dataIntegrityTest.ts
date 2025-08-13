@@ -5,7 +5,6 @@
 import {
   cleanupCorruptedRecords,
   performDataMigration,
-  repairWordReviewRecords,
   resetMigrationStatus,
   shouldPerformDataMigration,
   validateWordReviewRecord,
@@ -39,36 +38,6 @@ interface DataIntegrityReport {
  * 创建测试用的损坏数据
  */
 export async function createTestCorruptedData(): Promise<void> {
-  console.log("创建测试用的损坏数据...");
-
-  const corruptedRecords = [
-    // 缺少 word 字段
-    {
-      uuid: "test-corrupt-1",
-      todayPracticeCount: 1,
-      lastPracticedAt: Date.now(),
-    },
-    // 缺少时间戳字段
-    {
-      uuid: "test-corrupt-2",
-      word: "test-word-1",
-      todayPracticeCount: 2,
-    },
-    // 类型错误
-    {
-      uuid: "test-corrupt-3",
-      word: "test-word-2",
-      todayPracticeCount: "invalid",
-      lastPracticedAt: "invalid-timestamp",
-    },
-    // null 对象
-    null,
-    // undefined 对象
-    undefined,
-    // 字符串而不是对象
-    "invalid-record",
-  ];
-
   try {
     // 注意：直接插入损坏数据可能会被 Dexie 拒绝
     // 这里我们先创建一个有效记录，然后在内存中模拟损坏情况

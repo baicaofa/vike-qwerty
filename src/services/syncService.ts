@@ -484,8 +484,6 @@ const applyServerChanges = async (serverChanges: any[]) => {
       ["create", "update", "delete"].includes(change.action)
   );
 
-  console.log("有效变更数:", validChanges.length);
-
   // 按表分组变更
   const changesByTable = new Map<string, any[]>();
   for (const change of validChanges) {
@@ -571,9 +569,6 @@ const applyServerChanges = async (serverChanges: any[]) => {
           localRecord = await dbTable.where("word").equals(data.word).first();
 
           if (localRecord && localRecord.id) {
-            console.log(
-              `通过 word 找到记录，进行 uuid 对齐: ${data.word} -> ${data.uuid}`
-            );
             // 更新本地的 uuid 为服务器的 uuid
             await dbTable.update(localRecord.id, {
               uuid: data.uuid,
@@ -619,10 +614,8 @@ const applyServerChanges = async (serverChanges: any[]) => {
           await dbTable.bulkDelete(deleteIds);
           stats.deleted += deleteIds.length;
           changesApplied += deleteIds.length;
-          console.log(`批量删除 ${table} 表 ${deleteIds.length} 条记录`);
         }
       } catch (error) {
-        console.error(`批量删除 ${table} 表失败:`, error);
         stats.errors++;
       }
     }
@@ -676,16 +669,13 @@ const applyServerChanges = async (serverChanges: any[]) => {
           stats.created += creates.length;
           stats.updated += updates.length;
           changesApplied += upserts.length;
-          console.log(
-            `批量 upsert ${table} 表 ${upserts.length} 条记录 (创建: ${creates.length}, 更新: ${updates.length})`
-          );
         }
       } catch (error) {
         console.error(`批量 upsert ${table} 表失败:`, error);
         stats.errors++;
 
         // 回退到单个处理
-        console.log(`回退到单个处理 ${table} 表...`);
+
         for (const data of [...creates, ...updates]) {
           try {
             // 查找本地记录

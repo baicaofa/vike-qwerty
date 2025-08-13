@@ -35,22 +35,10 @@ export async function wordListFetcher(url: string): Promise<Word[]> {
     REACT_APP_DEPLOY_ENV === "pages" ? "/qwerty-learner" : "";
 
   const fullUrl = URL_PREFIX + normalizedUrl;
-  console.log("wordListFetcher 参数:", {
-    originalUrl: url,
-    normalizedUrl,
-    URL_PREFIX,
-    REACT_APP_DEPLOY_ENV,
-    fullUrl,
-  });
 
   try {
     console.log("开始获取词典:", fullUrl);
     const response = await fetch(fullUrl);
-    console.log("获取词典响应:", {
-      status: response.status,
-      ok: response.ok,
-      statusText: response.statusText,
-    });
 
     if (!response.ok) {
       throw new Error(

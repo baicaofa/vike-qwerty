@@ -5,7 +5,6 @@
 import type { ExcelParseResult } from "./excelParser";
 import {
   type ExcelParsingMetrics,
-  performanceMonitor,
   withExcelParsingMonitoring,
 } from "./performanceMonitor";
 

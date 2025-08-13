@@ -648,16 +648,8 @@ export async function cleanDuplicateWordReviewRecords(): Promise<{
             console.warn("⚠️ 重复记录没有ID，无法删除:", record);
           }
         });
-
-        console.log(
-          `✅ 保留最新记录 (ID: ${records[0].id})，删除 ${duplicateRecords.length} 条重复记录`
-        );
       }
     }
-
-    console.log(
-      `📈 发现 ${duplicateWordsCount} 个重复单词，需要删除 ${recordsToDelete.length} 条记录`
-    );
 
     // 批量删除重复记录
     if (recordsToDelete.length > 0) {
@@ -668,14 +660,7 @@ export async function cleanDuplicateWordReviewRecords(): Promise<{
       for (let i = 0; i < recordsToDelete.length; i += batchSize) {
         const batch = recordsToDelete.slice(i, i + batchSize);
         await db.wordReviewRecords.bulkDelete(batch);
-        console.log(
-          `✅ 删除批次 ${Math.floor(i / batchSize) + 1}/${Math.ceil(
-            recordsToDelete.length / batchSize
-          )}`
-        );
       }
-
-      console.log(`✅ 成功清理 ${recordsToDelete.length} 条重复记录`);
     } else {
       console.log("✅ 没有发现重复记录");
     }

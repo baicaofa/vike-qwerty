@@ -208,11 +208,20 @@ interface IWordRecord extends IBaseRecord {
   wrongCount: number;
 }
 
-interface IChapterRecord extends IBaseRecord {
+interface IChapterRecord {
+  uuid: string;
   timeStamp: number;
   dict: string;
-  chapter: string;
+  chapter: number | null;
   time: number;
+  correctCount: number;
+  wrongCount: number;
+  wordCount: number;
+  correctWordIndexes: number[];
+  wordNumber: number;
+  wordRecordIds: number[];
+  sync_status: SyncStatus;
+  last_modified: number;
 }
 
 interface IReviewRecord extends IBaseRecord {
@@ -221,7 +230,58 @@ interface IReviewRecord extends IBaseRecord {
   isFinished: boolean;
 }
 
-type IRecord = IWordRecord | IChapterRecord | IReviewRecord;
+interface IFamiliarWord extends IBaseRecord {
+  word: string;
+  dict: string;
+}
+
+interface IWordReviewRecord extends IBaseRecord {
+  word: string;
+  userId?: string;
+  intervalSequence: number[];
+  currentIntervalIndex: number;
+  nextReviewAt: number;
+  totalReviews: number;
+  isGraduated: boolean;
+  reviewHistory?: any[];
+  consecutiveCorrect?: number;
+  lastReviewedAt?: number;
+  todayPracticeCount: number;
+  lastPracticedAt: number;
+  sourceDicts: string[];
+  preferredDict: string;
+  firstSeenAt: number;
+}
+
+interface IReviewHistory extends IBaseRecord {
+  userId?: string;
+  wordReviewRecordId: number;
+  word: string;
+  dict: string;
+  reviewedAt: number;
+  reviewResult: "correct" | "incorrect";
+  responseTime: number;
+  intervalProgressBefore: number;
+  intervalProgressAfter: number;
+  intervalIndexBefore: number;
+  intervalIndexAfter: number;
+  reviewType: "scheduled" | "manual" | "practice_triggered";
+  sessionId?: string;
+}
+
+interface IReviewConfig extends IBaseRecord {
+  userId?: string;
+  config: any;
+}
+
+type IRecord =
+  | IWordRecord
+  | IChapterRecord
+  | IReviewRecord
+  | IFamiliarWord
+  | IWordReviewRecord
+  | IReviewHistory
+  | IReviewConfig;
 
 // 获取需要同步的本地变更
 const getLocalChanges = async () => {
@@ -510,12 +570,12 @@ const applyServerChanges = async (serverChanges: any[]) => {
           // 如果通过 uuid 找不到，尝试通过 word 查找
           localRecord = await dbTable.where("word").equals(data.word).first();
 
-          if (localRecord) {
+          if (localRecord && localRecord.id) {
             console.log(
               `通过 word 找到记录，进行 uuid 对齐: ${data.word} -> ${data.uuid}`
             );
             // 更新本地的 uuid 为服务器的 uuid
-            await dbTable.update(localRecord.id!, {
+            await dbTable.update(localRecord.id, {
               uuid: data.uuid,
             });
             // 更新本地记录的 uuid 引用
@@ -568,36 +628,91 @@ const applyServerChanges = async (serverChanges: any[]) => {
     }
 
     // 批量处理创建和更新操作
-    const upserts: any[] = [];
-
-    // 收集所有需要 upsert 的记录
-    for (const data of [...creates, ...updates]) {
-      const processedData = {
-        ...data,
-        sync_status: "synced" as SyncStatus,
-        last_modified: Date.now(),
-      };
-      upserts.push(processedData);
-    }
-
-    if (upserts.length > 0) {
+    if (creates.length > 0 || updates.length > 0) {
       try {
-        await dbTable.bulkPut(upserts);
-        stats.created += creates.length;
-        stats.updated += updates.length;
-        changesApplied += upserts.length;
-        console.log(
-          `批量 upsert ${table} 表 ${upserts.length} 条记录 (创建: ${creates.length}, 更新: ${updates.length})`
-        );
+        // 1. 批量查询本地记录，获取所有需要更新的记录的 ID
+        const allUpsertData = [...creates, ...updates];
+        const uuids = allUpsertData.map((data) => data.uuid);
+
+        // 批量查询本地记录
+        const localRecords = await dbTable.where("uuid").anyOf(uuids).toArray();
+
+        // 创建 uuid 到本地记录的映射
+        const localRecordMap = new Map<string, any>();
+        for (const record of localRecords) {
+          localRecordMap.set(record.uuid, record);
+        }
+
+        // 2. 准备 upsert 数据，合并服务器数据和本地数据
+        const upserts: any[] = [];
+
+        for (const data of allUpsertData) {
+          const localRecord = localRecordMap.get(data.uuid);
+
+          if (localRecord && localRecord.id) {
+            // 更新操作：合并服务器数据和本地数据
+            const mergedData = {
+              ...localRecord, // 保留本地数据
+              ...data, // 服务器数据覆盖本地数据
+              id: localRecord.id, // 确保保留本地 ID
+              sync_status: "synced" as SyncStatus,
+              last_modified: Date.now(),
+            };
+            upserts.push(mergedData);
+          } else {
+            // 创建操作：直接使用服务器数据
+            const newData = {
+              ...data,
+              sync_status: "synced" as SyncStatus,
+              last_modified: Date.now(),
+            };
+            upserts.push(newData);
+          }
+        }
+
+        // 3. 执行批量 upsert
+        if (upserts.length > 0) {
+          await dbTable.bulkPut(upserts);
+          stats.created += creates.length;
+          stats.updated += updates.length;
+          changesApplied += upserts.length;
+          console.log(
+            `批量 upsert ${table} 表 ${upserts.length} 条记录 (创建: ${creates.length}, 更新: ${updates.length})`
+          );
+        }
       } catch (error) {
         console.error(`批量 upsert ${table} 表失败:`, error);
         stats.errors++;
 
         // 回退到单个处理
         console.log(`回退到单个处理 ${table} 表...`);
-        for (const data of upserts) {
+        for (const data of [...creates, ...updates]) {
           try {
-            await dbTable.put(data);
+            // 查找本地记录
+            const localRecord = await dbTable
+              .where("uuid")
+              .equals(data.uuid)
+              .first();
+
+            if (localRecord && localRecord.id) {
+              // 更新操作：合并数据
+              const mergedData = {
+                ...localRecord,
+                ...data,
+                id: localRecord.id,
+                sync_status: "synced" as SyncStatus,
+                last_modified: Date.now(),
+              };
+              await dbTable.put(mergedData);
+            } else {
+              // 创建操作
+              const newData = {
+                ...data,
+                sync_status: "synced" as SyncStatus,
+                last_modified: Date.now(),
+              };
+              await dbTable.put(newData);
+            }
             changesApplied++;
           } catch (singleError) {
             console.error(`单个 upsert 失败:`, singleError);
@@ -657,18 +772,15 @@ const updateLocalRecordStatus = async (changes: any[]) => {
     }
 
     // 查找本地记录
-    const localRecord = (await dbTable
-      .where("uuid")
-      .equals(data.uuid)
-      .first()) as IRecord | undefined;
+    const localRecord = await dbTable.where("uuid").equals(data.uuid).first();
 
-    if (localRecord) {
+    if (localRecord && localRecord.id) {
       if (action === "delete") {
         // 如果是删除操作，物理删除记录
-        await dbTable.delete(localRecord.id!);
+        await dbTable.delete(localRecord.id);
       } else {
         // 如果是创建或更新操作，更新同步状态
-        await dbTable.update(localRecord.id!, {
+        await dbTable.update(localRecord.id, {
           sync_status: "synced" as SyncStatus,
         });
       }
@@ -684,9 +796,9 @@ const updateLocalRecordStatus = async (changes: any[]) => {
         .equals([data.dict, data.word])
         .first();
 
-      if (existingByDictWord) {
+      if (existingByDictWord && existingByDictWord.id) {
         console.log(`通过 [dict+word] 找到记录，更新同步状态`);
-        await dbTable.update(existingByDictWord.id!, {
+        await dbTable.update(existingByDictWord.id, {
           sync_status: "synced" as SyncStatus,
         });
       }

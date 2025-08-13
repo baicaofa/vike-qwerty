@@ -1,6 +1,5 @@
 import { TypingContext, TypingStateActionType } from "../../store";
 import AdvancedSetting from "./AdvancedSetting";
-import DataSetting from "./DataSetting";
 import SoundSetting from "./SoundSetting";
 import ViewSetting from "@/pages/Typing/components/Setting/ViewSetting";
 import { Dialog, Tab, Transition } from "@headlessui/react";
@@ -10,7 +9,6 @@ import { useTranslation } from "react-i18next";
 import IconCog6Tooth from "~icons/heroicons/cog-6-tooth-solid";
 import IconEye from "~icons/heroicons/eye-solid";
 import IconAdjustmentsHorizontal from "~icons/tabler/adjustments-horizontal";
-import IconDatabaseCog from "~icons/tabler/database-cog";
 import IconEar from "~icons/tabler/ear";
 import IconX from "~icons/tabler/x";
 
@@ -61,11 +59,6 @@ export default function Setting({ pageContext }: SettingProps = {}) {
       name: t("settings.view", "视图"),
       icon: IconEye,
       content: <ViewSetting />,
-    },
-    {
-      name: t("settings.data", "数据"),
-      icon: IconDatabaseCog,
-      content: <DataSetting />,
     },
   ];
 

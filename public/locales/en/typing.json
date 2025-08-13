@@ -54,23 +54,7 @@
     "translateFont": "Translate Font",
     "foreignFont": "Foreign Font"
   },
-  "dataExport": {
-    "label": "Export Data",
-    "description1": "Currently, your practice data is ",
-    "localOnly": "only saved locally",
-    "description2": ". If you want to use Keybr on different devices, browsers, or unofficial deployments, you need to manually sync and save your data. To keep your progress and use upcoming data analysis and smart training features, we recommend backing up your data regularly.",
-    "safetyTip": "For your data safety, please do not modify the exported data file.",
-    "button": "Export Data",
-    "buttonTitle": "Export Data"
-  },
-  "dataImport": {
-    "label": "Import Data",
-    "description1": "Note: Importing data will ",
-    "coverTip": "completely overwrite",
-    "description2": " your current data. Please proceed with caution.",
-    "button": "Import Data",
-    "buttonTitle": "Import Data"
-  },
+
   "results": {
     "title": "Practice Results",
     "congratulations": "Congratulations on completing the practice!",

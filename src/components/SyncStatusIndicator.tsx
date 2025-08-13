@@ -3,15 +3,10 @@ import { useSync } from "@/hooks/useSync";
 import type React from "react";
 
 export const SyncStatusIndicator: React.FC = () => {
-  const { syncState, lastSyncResult, hasChanges, isOnline, triggerSync } =
-    useSync();
+  const { syncState, lastSyncResult, hasChanges, triggerSync } = useSync();
 
   // 获取状态图标
   const getStatusIcon = () => {
-    if (!isOnline) {
-      return <span className="offline-icon">⚫</span>;
-    }
-
     switch (syncState) {
       case "syncing":
         return <span className="syncing-icon">🔄</span>;
@@ -30,10 +25,6 @@ export const SyncStatusIndicator: React.FC = () => {
 
   // 获取状态提示文本
   const getStatusText = () => {
-    if (!isOnline) {
-      return "离线模式";
-    }
-
     switch (syncState) {
       case "syncing":
         return "正在同步...";

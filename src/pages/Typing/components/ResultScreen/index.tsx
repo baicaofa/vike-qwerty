@@ -19,7 +19,6 @@ import { useCallback, useContext, useEffect, useMemo } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { useTranslation } from "react-i18next";
 import { navigate } from "vike/client/router";
-import IexportWords from "~icons/icon-park-outline/excel";
 import IconX from "~icons/tabler/x";
 
 const ResultScreen = () => {
@@ -40,53 +39,6 @@ const ResultScreen = () => {
     // tick a zero timer to calc the stats
     dispatch({ type: TypingStateActionType.TICK_TIMER, addTime: 0 });
   }, [dispatch]);
-
-  const exportWords = useCallback(() => {
-    const { words, userInputLogs } = state.chapterData;
-    const exportData = userInputLogs.map((log) => {
-      const word = words[log.index];
-      const wordName = word.name;
-
-      // 处理翻译数据：优先使用 detailed_translations，如果没有则使用 trans
-      let translationText = "";
-      if (word.detailed_translations && word.detailed_translations.length > 0) {
-        translationText = word.detailed_translations
-          .map((trans) => trans.chinese)
-          .filter(Boolean)
-          .join(";");
-      } else if (word.trans && Array.isArray(word.trans)) {
-        translationText = word.trans.join(";");
-      }
-
-      return {
-        ...word,
-        trans: translationText,
-        correctCount: log.correctCount,
-        wrongCount: log.wrongCount,
-        wrongLetters: Object.entries(log.LetterMistakes)
-          .map(
-            ([key, mistakes]) => `${wordName[Number(key)]}:${mistakes.length}`
-          )
-          .join(";"),
-      };
-    });
-
-    import("xlsx")
-      .then(({ utils, writeFileXLSX }) => {
-        const ws = utils.json_to_sheet(exportData);
-        const wb = utils.book_new();
-        utils.book_append_sheet(wb, ws, "Data");
-        writeFileXLSX(
-          wb,
-          `${currentDictInfo.name}${t("chapter.number", {
-            number: currentChapter + 1,
-          })}.xlsx`
-        );
-      })
-      .catch(() => {
-        console.log("写入 xlsx 模块导入失败");
-      });
-  }, [currentChapter, currentDictInfo.name, state.chapterData]);
 
   const wrongWords = useMemo(() => {
     return state.chapterData.userInputLogs
@@ -288,11 +240,6 @@ const ResultScreen = () => {
                 {!isReviewMode && (
                   <>
                     <ShareButton />
-                    <IexportWords
-                      fontSize={18}
-                      className="cursor-pointer text-gray-500"
-                      onClick={exportWords}
-                    ></IexportWords>
                   </>
                 )}
               </div>

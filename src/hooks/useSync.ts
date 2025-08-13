@@ -9,22 +9,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 // 同步配置
 const SYNC_INTERVAL = 5 * 60 * 1000; // 5分钟
-const SYNC_ONLINE_INTERVAL = 60 * 1000; // 60秒
-
-// SSR安全获取初始网络状态
-const getInitialOnline = () => {
-  if (typeof window !== "undefined" && typeof navigator !== "undefined") {
-    return navigator.onLine;
-  }
-  return true; // SSR时假定在线，避免mismatch
-};
 
 export const useSync = () => {
   const { isAuthenticated } = useAuthStore();
   const [syncState, setSyncState] = useState<SyncState>("idle");
   const [lastSyncResult, setLastSyncResult] = useState<SyncResult | null>(null);
   const [hasChanges, setHasChanges] = useState<boolean>(false);
-  const [isOnline, setIsOnline] = useState<boolean>(getInitialOnline());
   const [retryCount, setRetryCount] = useState<number>(0);
   const [initialSyncDone, setInitialSyncDone] = useState<boolean>(false);
 
@@ -32,20 +22,6 @@ export const useSync = () => {
   const intervalIdRef = useRef<number | null>(null);
   const timeoutIdRef = useRef<number | null>(null);
   const isSyncPendingRef = useRef<boolean>(false);
-
-  // 检查网络状态
-  useEffect(() => {
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
-
-    window.addEventListener("online", handleOnline);
-    window.addEventListener("offline", handleOffline);
-
-    return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
-    };
-  }, []);
 
   // 检查是否有待同步的变更
   const checkPendingChanges = useCallback(async () => {
@@ -147,11 +123,11 @@ export const useSync = () => {
 
   // 初始化时执行一次云端到本地同步
   useEffect(() => {
-    if (isAuthenticated && isOnline && !initialSyncDone) {
+    if (isAuthenticated && !initialSyncDone) {
       console.log("初始化同步：从云端到本地");
       performDownloadSync();
     }
-  }, [isAuthenticated, isOnline, initialSyncDone, performDownloadSync]);
+  }, [isAuthenticated, initialSyncDone, performDownloadSync]);
 
   // 定时执行本地到云端同步
   useEffect(() => {
@@ -182,7 +158,6 @@ export const useSync = () => {
     const startSyncLoop = () => {
       cleanup(); // 确保只有一个定时器
 
-      const interval = isOnline ? SYNC_ONLINE_INTERVAL : SYNC_INTERVAL;
       intervalIdRef.current = window.setInterval(async () => {
         console.log("定时触发同步检查", {
           state: syncState,
@@ -202,34 +177,27 @@ export const useSync = () => {
             }
           }
         }
-      }, interval);
+      }, SYNC_INTERVAL);
     };
 
     // 启动同步循环
     startSyncLoop();
 
-    // 网络状态变化时重新调整同步间隔
-    if (isOnline && !intervalIdRef.current) {
-      startSyncLoop();
-    }
-
     // 清理函数
     return cleanup;
   }, [
     isAuthenticated,
-    isOnline,
-    retryCount,
-    performUploadSync,
+    syncState,
     checkPendingChanges,
+    performDownloadSync,
+    performUploadSync,
   ]);
 
   return {
     syncState,
     lastSyncResult,
     hasChanges,
-    isOnline,
+    retryCount,
     triggerSync,
-    checkPendingChanges,
-    initialSyncDone,
   };
 };

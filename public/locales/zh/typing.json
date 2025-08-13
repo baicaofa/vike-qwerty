@@ -42,8 +42,7 @@
     "fontSize": "字体设置",
     "theme": "主题设置",
     "advanced": "高级设置",
-    "view": "查看设置",
-    "data": "数据设置",
+    "view": "显示设置",
     "sound": "音效设置",
     "rate": "倍速",
     "keySoundEffect": "按键音效",
@@ -54,23 +53,7 @@
     "translateFont": "中文字体",
     "foreignFont": "外语字体"
   },
-  "dataExport": {
-    "label": "数据导出",
-    "description1": "目前，用户的练习数据",
-    "localOnly": "仅保存在本地",
-    "description2": "。如果您需要在不同的设备、浏览器或者其他非官方部署上使用 Keybr，您需要手动进行数据同步和保存。为了保留您的练习进度，以及使用近期即将上线的数据分析和智能训练功能，我们建议您及时备份您的数据。",
-    "safetyTip": "为了您的数据安全，请不要修改导出的数据文件。",
-    "button": "导出数据",
-    "buttonTitle": "导出数据"
-  },
-  "dataImport": {
-    "label": "数据导入",
-    "description1": "请注意，导入数据将",
-    "coverTip": "完全覆盖",
-    "description2": "当前数据。请谨慎操作。",
-    "button": "导入数据",
-    "buttonTitle": "导入数据"
-  },
+
   "results": {
     "title": "练习结果",
     "congratulations": "恭喜完成练习！",

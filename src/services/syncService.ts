@@ -1,5 +1,6 @@
 import { db } from "@/utils/db";
 import type { SyncStatus } from "@/utils/db/record";
+import { autoFixAllUuidConstraints } from "@/utils/db/fix-uuid-constraint";
 import axios from "axios";
 
 // 检查是否在浏览器环境中
@@ -649,17 +650,84 @@ const applyServerChanges = async (serverChanges: any[]) => {
         console.log(
           `批量 upsert ${table} 表 ${upserts.length} 条记录 (创建: ${creates.length}, 更新: ${updates.length})`
         );
-      } catch (error) {
+      } catch (error: any) {
         console.error(`批量 upsert ${table} 表失败:`, error);
         stats.errors++;
+
+        // 如果是 uuid 唯一约束错误，尝试自动修复后重试一次
+        const isUuidConstraintError =
+          (error?.name === "BulkError" || error?.name === "ConstraintError") &&
+          String(error?.message || "").includes("index 'uuid'");
+
+        if (isUuidConstraintError) {
+          console.warn("检测到 uuid 唯一约束错误，尝试自动修复后重试...");
+          try {
+            await autoFixAllUuidConstraints();
+            // 修复后需要重新映射 id 再次尝试 bulkPut
+            const uuidsRetry = upserts.map((r) => r.uuid).filter(Boolean);
+            const existingByUuidRetry = await dbTable
+              .where("uuid")
+              .anyOf(uuidsRetry)
+              .toArray();
+            const uuidToIdRetry = new Map<string, number>();
+            for (const r of existingByUuidRetry) {
+              if (r.uuid && typeof r.id === "number") {
+                uuidToIdRetry.set(r.uuid, r.id);
+              }
+            }
+            for (const r of upserts) {
+              const id = uuidToIdRetry.get(r.uuid);
+              if (typeof id === "number") r.id = id;
+            }
+
+            await dbTable.bulkPut(upserts);
+            console.log("修复后重试 bulkPut 成功");
+            stats.created += 0; // 已计入
+            stats.updated += 0;
+            changesApplied += 0; // 已计入
+            return; // 本表处理完成
+          } catch (retryErr) {
+            console.warn("修复后重试 bulkPut 仍失败，改为逐条处理", retryErr);
+          }
+        }
 
         // 回退到单个处理
         console.log(`回退到单个处理 ${table} 表...`);
         for (const data of upserts) {
           try {
+            // 逐条 put 前也再次确保 id 映射正确
+            const existing = await dbTable.where("uuid").equals(data.uuid).first();
+            if (existing?.id != null) data.id = existing.id;
+            else if (table === "wordRecords" && data.dict && data.word) {
+              const byPair = await dbTable
+                .where("[dict+word]")
+                .equals([data.dict, data.word])
+                .first();
+              if (byPair?.id != null) data.id = byPair.id;
+            }
             await dbTable.put(data);
             changesApplied++;
-          } catch (singleError) {
+          } catch (singleError: any) {
+            // 遇到 uuid 冲突，尝试修复后对该条再尝试一次
+            const singleUuidConstraint =
+              singleError?.name === "ConstraintError" &&
+              String(singleError?.message || "").includes("index 'uuid'");
+            if (singleUuidConstraint) {
+              console.warn("单条 put 命中 uuid 唯一约束，尝试自动修复后重试...");
+              try {
+                await autoFixAllUuidConstraints();
+                const existingAfterFix = await dbTable
+                  .where("uuid")
+                  .equals(data.uuid)
+                  .first();
+                if (existingAfterFix?.id != null) data.id = existingAfterFix.id;
+                await dbTable.put(data);
+                changesApplied++;
+                continue;
+              } catch (retrySingleErr) {
+                console.error("修复后单条重试仍失败:", retrySingleErr);
+              }
+            }
             console.error(`单个 upsert 失败:`, singleError);
             stats.errors++;
           }

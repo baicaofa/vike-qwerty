@@ -38,6 +38,8 @@ export interface IWordReviewRecord extends Document {
   last_modified: number; // 客户端记录的最后修改时间戳
   clientModifiedAt: Date; // 客户端记录的最后修改时间
   isDeleted: boolean; // 是否已删除
+  // 客户端本地标识
+  clientLocalId?: number; // 本地 Dexie 自增ID（可选）
 
   // Mongoose Timestamps
   createdAt: Date;
@@ -163,6 +165,10 @@ const WordReviewRecordSchema: Schema<IWordReviewRecord> = new Schema(
       type: Boolean,
       default: false,
       // 移除 index: true，isDeleted 索引不是必需的
+    },
+    clientLocalId: {
+      type: Number,
+      required: false,
     },
   },
   { timestamps: true }

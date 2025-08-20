@@ -117,13 +117,35 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     user.lastLogin = new Date();
     await user.save();
 
+    const token = generateToken(user._id.toString());
+
+    // 设置 HttpOnly Cookie
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      maxAge: 30 * 24 * 60 * 60 * 1000, // 30d
+    });
+
     res.json({
       _id: user._id.toString(),
       username: user.username,
       email: user.email,
       isEmailVerified: user.isEmailVerified,
-      token: generateToken(user._id.toString()),
     });
+  } catch (error) {
+    res.status(500).json({ message: "服务器错误" });
+  }
+};
+
+export const logout = async (req: Request, res: Response): Promise<void> => {
+  try {
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+    });
+    res.json({ message: "已登出" });
   } catch (error) {
     res.status(500).json({ message: "服务器错误" });
   }

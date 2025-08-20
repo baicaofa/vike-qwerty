@@ -11,7 +11,7 @@ export interface IPerformanceEntry {
   timing: number[];
   wrongCount: number;
   mistakes: { [index: number]: string[] }; // 与客户端 LetterMistakes 一致
-  // entryUuid?: string; // 可选：为每个 performance entry 添加唯一ID，便于精确操作和去重
+  entryUuid: string; // 为每个 performance entry 添加唯一ID，便于精确操作和去重（v10）
 }
 
 export interface IWordRecord extends Document {
@@ -47,8 +47,12 @@ const PerformanceEntrySchema: Schema<IPerformanceEntry> = new Schema(
     chapter: { type: Number, default: null },
     timing: { type: [Number], required: true },
     wrongCount: { type: Number, required: true },
-    mistakes: { type: Schema.Types.Mixed, required: true }, // Schema.Types.Mixed 用于灵活的对象结构
-    // entryUuid: { type: String, unique: true, sparse: true }, // 如果添加，确保唯一性
+    mistakes: { type: Schema.Types.Mixed, required: true, default: {} }, // 默认为空对象以避免校验错误
+    entryUuid: {
+      type: String,
+      required: true,
+      default: () => new mongoose.Types.ObjectId().toString(), // 兼容旧数据：缺省时生成稳定唯一ID
+    },
   },
   { _id: false }
 ); // _id: false 表示子文档不自动生成 _id

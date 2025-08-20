@@ -18,9 +18,16 @@ export const protect = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    let token;
+    let token: string | undefined;
 
+    // 优先从 HttpOnly Cookie 读取
+    if (req.cookies && typeof req.cookies.token === "string") {
+      token = req.cookies.token;
+    }
+
+    // 兼容 Authorization Bearer
     if (
+      !token &&
       req.headers.authorization &&
       req.headers.authorization.startsWith("Bearer")
     ) {

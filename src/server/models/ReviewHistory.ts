@@ -9,6 +9,7 @@ export interface IReviewHistory extends Document {
   uuid: string; // 全局唯一ID
   userId: mongoose.Types.ObjectId | IUser; // 关联到User模型
   wordReviewRecordId: mongoose.Types.ObjectId; // 关联WordReviewRecord的ID
+  parentUuid?: string; // v10：用于回传外键（如本地 wordReviewRecord 的 uuid），兼容可选
   word: string; // 单词（冗余存储，便于查询）
   dict: string; // 复习时使用的词典
 
@@ -56,6 +57,7 @@ const ReviewHistorySchema: Schema<IReviewHistory> = new Schema(
       required: true,
       // 移除 index: true，使用 Schema 级别的索引定义
     },
+    parentUuid: { type: String, index: true },
     word: {
       type: String,
       required: true,

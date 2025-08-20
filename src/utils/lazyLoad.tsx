@@ -159,7 +159,7 @@ export const LazyComponents = {
   // 画廊页面组件
   Gallery: createLazyComponent(
     () =>
-      import("../pages/Gallery/+Page").then((module) => ({
+      import("../pages/gallery/+Page").then((module) => ({
         default: module.default,
       })),
     React.createElement(

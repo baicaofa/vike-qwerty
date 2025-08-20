@@ -30,7 +30,9 @@ export const LoginForm = ({ setView }: { setView: (view: View) => void }) => {
 
       const redirectPath = currentLocale === "zh" ? "/" : `/${currentLocale}/`;
 
-      window.location.href = redirectPath;
+      // 使用 Vike 客户端路由，避免整页刷新
+      const { navigate } = await import("vike/client/router");
+      await navigate(redirectPath);
     } catch (error: any) {
       setError(error.response?.data?.message || t("errorLogin", "登录失败"));
     } finally {

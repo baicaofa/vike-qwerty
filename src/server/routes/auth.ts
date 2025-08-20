@@ -3,6 +3,7 @@ import {
   forgotPassword,
   getProfile,
   login,
+  logout,
   register,
   resetPassword,
   sendVerificationCode,
@@ -18,6 +19,7 @@ const router = express.Router();
 router.post("/register", register as RequestHandler);
 router.post("/complete-registration", completeRegistration as RequestHandler);
 router.post("/login", login as RequestHandler);
+router.post("/logout", logout as RequestHandler);
 router.get("/profile", protect as RequestHandler, getProfile as RequestHandler);
 
 // 邮箱验证路由

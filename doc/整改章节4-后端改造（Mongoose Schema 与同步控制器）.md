@@ -458,12 +458,5 @@ function formatRecordForSync(record, table): SyncChange {
   - 供 QA 的验收 checklist
 - 触点
   - `doc/*`
-- 观测指标
-  - 无（文档项）
-- 验收
-  - 文档完整可用；能支撑上线与回退
-- 回退点
-  - 无代码影响
 
-—
 

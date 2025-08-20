@@ -19,7 +19,7 @@ import type { IReviewConfig } from "./reviewConfig";
 import { ReviewConfig } from "./reviewConfig";
 import type { IReviewHistory } from "./reviewHistory";
 import { ReviewHistory } from "./reviewHistory";
-import { UpgradeStatusChecker, safeUpgradeOperation } from "./upgradeHelper";
+import { UpgradeStatusChecker } from "./upgradeHelper";
 import type { IWordReviewRecord } from "./wordReviewRecord";
 import { WordReviewRecord } from "./wordReviewRecord";
 import { TypingContext, TypingStateActionType } from "@/pages/Typing/store";
@@ -88,61 +88,14 @@ export class RecordDB extends Dexie {
           "++id, &uuid, dict, createTime, isFinished, sync_status, last_modified",
         // revision* 表保持不变 (假设它们不需要同步)
       })
-      .upgrade((tx) => {
-        const now = Date.now();
-        // 返回Promise确保所有迁移操作完成
-        return Promise.all([
-          // 1. 迁移wordRecords表数据
-          tx
-            .table("wordRecords") // 获取wordRecords表的操作句柄
-            .toCollection() // 获取表中所有记录的集合
-            .modify((record) => {
-              console.log("🔄 正在迁移wordRecord:", record.word);
-              // 对每条记录进行修改
-              // 如果记录没有uuid字段，则生成一个新的随机UUID
-              if (record.uuid === undefined) record.uuid = generateUUID();
-
-              // 如果记录没有sync_status字段，则设置为"local_new"(本地新建)
-              // 这表示该记录是本地创建的，尚未同步到服务器
-              if (record.sync_status === undefined)
-                record.sync_status = "local_new";
-
-              // 如果记录没有last_modified字段，则使用记录的timeStamp或当前时间
-              if (record.last_modified === undefined)
-                record.last_modified = record.timeStamp || now;
-            }),
-          // 2. 迁移chapterRecords表数据
-          tx
-            .table("chapterRecords")
-            .toCollection()
-            .modify((record) => {
-              if (record.uuid === undefined) record.uuid = generateUUID();
-              if (record.sync_status === undefined)
-                record.sync_status = "local_new";
-              if (record.last_modified === undefined)
-                record.last_modified = record.timeStamp || now; // 使用timeStamp或当前时间
-            }),
-          // 3. 迁移reviewRecords表数据
-          tx
-            .table("reviewRecords")
-            .toCollection()
-            .modify((record) => {
-              if (record.uuid === undefined) record.uuid = generateUUID();
-              if (record.sync_status === undefined)
-                record.sync_status = "local_new";
-              if (record.last_modified === undefined)
-                record.last_modified = record.createTime || now; // 使用createTime或当前时间
-            }),
-        ])
-          .then(() => {
-            console.log(
-              "Dexie schema upgrade to version 4 completed successfully."
-            );
-          })
-          .catch((err) => {
-            console.error("Failed to upgrade Dexie schema to version 4:", err);
-            throw err; // 抛出错误
-          });
+      .upgrade(async (tx) => {
+        // 清空 v3 数据（wordRecords/chapterRecords/reviewRecords）
+        await Promise.all([
+          tx.table("wordRecords").clear(),
+          tx.table("chapterRecords").clear(),
+          tx.table("reviewRecords").clear(),
+        ]);
+        console.log("✅ v4 升级：清空 v3 数据完成");
       });
 
     // 版本5的数据库模式更新（添加熟词表）
@@ -159,23 +112,14 @@ export class RecordDB extends Dexie {
         revisionDictRecords: "++id",
         revisionWordRecords: "++id",
       })
-      .upgrade(() => {
-        console.log("Upgrading Dexie schema to version 5...");
-        // 版本5主要是添加了familiarWords表，不需要迁移现有数据
-        // 但我们需要确保升级过程被正确记录
-        return Promise.resolve()
-          .then(() => {
-            console.log(
-              "Dexie schema upgrade to version 5 completed successfully."
-            );
-            console.log(
-              "Added familiarWords table for storing familiar word records."
-            );
-          })
-          .catch((err) => {
-            console.error("Failed to upgrade Dexie schema to version 5:", err);
-            throw err;
-          });
+      .upgrade(async (tx) => {
+        // 清空 v4 数据
+        await Promise.all([
+          tx.table("wordRecords").clear(),
+          tx.table("chapterRecords").clear(),
+          tx.table("reviewRecords").clear(),
+        ]);
+        console.log("✅ v5 升级：清空 v4 数据完成");
       });
     // 新版本，用于 WordRecord 结构调整
     this.version(6)
@@ -194,127 +138,14 @@ export class RecordDB extends Dexie {
           "++id, &uuid, dict, word, sync_status, last_modified,[dict+word]",
       })
       .upgrade(async (tx) => {
-        console.log(
-          "Upgrading Dexie schema to version 6 for WordRecord restructuring..."
-        );
-        // 明确指定事务中的表类型
-        const oldWordRecordsTable = tx.table<IWordRecord, number>(
-          "wordRecords"
-        );
-        const oldRecordsArray = await oldWordRecordsTable.toArray();
-
-        const newWordRecordsMap = new Map<string, IWordRecord>();
-
-        for (const oldRecord of oldRecordsArray) {
-          // 兼容旧表结构，允许访问旧字段
-          const legacyRecord = oldRecord as IWordRecord & {
-            timeStamp?: number;
-            chapter?: number;
-            timing?: number[];
-            wrongCount?: number;
-            mistakes?: Record<string, unknown>;
-          };
-          const word = legacyRecord.word;
-          const dict = legacyRecord.dict;
-          const timeStamp = legacyRecord.timeStamp; // 旧字段
-          const chapter = legacyRecord.chapter; // 旧字段
-          const timing = legacyRecord.timing; // 旧字段
-          const wrongCount = legacyRecord.wrongCount; // 旧字段
-          const mistakes = legacyRecord.mistakes; // 旧字段
-          const uuid = legacyRecord.uuid;
-          const sync_status = legacyRecord.sync_status;
-          const last_modified = legacyRecord.last_modified;
-
-          if (
-            word === undefined ||
-            dict === undefined ||
-            timeStamp === undefined
-          ) {
-            console.warn(
-              "Skipping old record due to missing essential fields:",
-              oldRecord
-            );
-            continue;
-          }
-
-          const key = `${dict}-${word}`;
-
-          const performanceEntry: IPerformanceEntry = {
-            timeStamp: timeStamp,
-            chapter: chapter !== undefined ? chapter : null,
-            timing: timing || [],
-            wrongCount: wrongCount || 0,
-            mistakes: (mistakes || {}) as LetterMistakes,
-          };
-
-          let newRecord = newWordRecordsMap.get(key);
-
-          if (newRecord) {
-            newRecord.performanceHistory.push(performanceEntry);
-            // 更新 lastPracticedAt (取最新的)
-            if (timeStamp > (newRecord.lastPracticedAt || 0)) {
-              newRecord.lastPracticedAt = timeStamp;
-            }
-            // 更新 firstSeenAt (取最早的)
-            if (
-              newRecord.firstSeenAt === undefined ||
-              timeStamp < newRecord.firstSeenAt
-            ) {
-              newRecord.firstSeenAt = timeStamp;
-            }
-            // 对于 uuid, sync_status, last_modified，通常选择最新的记录的值
-            if (last_modified > newRecord.last_modified) {
-              newRecord.last_modified = last_modified;
-              newRecord.uuid = uuid; // 使用最新记录的 uuid
-              newRecord.sync_status = sync_status; // 使用最新记录的 sync_status
-            }
-          } else {
-            // 创建一个新的 WordRecord 实例
-            // 注意：这里的 WordRecord 构造函数是更新后的版本
-            newRecord = new WordRecord(word, dict); // 构造函数会生成新的 uuid 和默认 sync_status
-            newRecord.performanceHistory.push(performanceEntry);
-            newRecord.firstSeenAt = timeStamp;
-            newRecord.lastPracticedAt = timeStamp;
-            // 初始时，使用当前记录的 uuid, sync_status, last_modified
-            newRecord.uuid = uuid;
-            newRecord.sync_status = sync_status;
-            newRecord.last_modified = last_modified;
-
-            newWordRecordsMap.set(key, newRecord);
-          }
-        }
-
-        // 清空旧表并插入新数据
-        await oldWordRecordsTable.clear();
-
-        const recordsToPut: IWordRecord[] = [];
-        Array.from(newWordRecordsMap.values()).forEach((record) => {
-          // 确保 performanceHistory 按时间戳排序
-          record.performanceHistory.sort((a, b) => a.timeStamp - b.timeStamp);
-          // 重新设置 firstSeenAt 和 lastPracticedAt 以确保正确性
-          if (record.performanceHistory.length > 0) {
-            record.firstSeenAt = record.performanceHistory[0].timeStamp;
-            record.lastPracticedAt =
-              record.performanceHistory[
-                record.performanceHistory.length - 1
-              ].timeStamp;
-          } else {
-            // 如果没有历史记录，这些字段可以为 undefined 或特定值
-            delete record.firstSeenAt;
-            delete record.lastPracticedAt;
-          }
-          // 确保 sync_status 和 last_modified 是合理的
-          // 如果合并了多个记录，我们已尝试保留最新的状态
-          // 如果是 WordRecord 构造函数创建的，它有默认值
-          recordsToPut.push(record);
-        }); // <--- 在这里添加了缺失的圆括号
-
-        if (recordsToPut.length > 0) {
-          await oldWordRecordsTable.bulkPut(recordsToPut);
-        }
-        console.log(
-          `Dexie schema upgrade to version 6 completed. Migrated ${recordsToPut.length} WordRecord(s).`
-        );
+        // 清空 v5 数据
+        await Promise.all([
+          tx.table("wordRecords").clear(),
+          tx.table("chapterRecords").clear(),
+          tx.table("reviewRecords").clear(),
+          tx.table("familiarWords").clear(),
+        ]);
+        console.log("✅ v6 升级：清空 v5 数据完成");
       });
 
     // familiarWords 表加上 [dict+word] 复合索引的第7版
@@ -322,10 +153,11 @@ export class RecordDB extends Dexie {
       wordRecords:
         "++id, &uuid, &[dict+word], dict, word, lastPracticedAt, sync_status, last_modified",
       chapterRecords:
-        "++id, &uuid, dict, chapter, timeStamp, sync_status, last_modified",
-      reviewRecords: "++id, &uuid, dict, timeStamp, sync_status, last_modified",
+        "++id, &uuid, dict, chapter, createTime, sync_status, last_modified",
+      reviewRecords:
+        "++id, &uuid, dict, createTime, sync_status, last_modified",
       familiarWords:
-        "++id, &uuid, dict, word, sync_status, last_modified, [dict+word]",
+        "++id, &uuid, dict, word, sync_status, last_modified, &[dict+word]",
     });
 
     // 添加自定义文章表的第8版
@@ -365,98 +197,174 @@ export class RecordDB extends Dexie {
         reviewConfigs: "++id, &uuid, userId, sync_status, last_modified",
       })
       .upgrade(async (tx) => {
-        return safeUpgradeOperation(
-          async () => {
-            console.log("🔄 开始升级到版本9: 添加间隔重复系统...");
+        // 清空 v8 数据（wordRecords/chapterRecords/reviewRecords/familiarWords/articleRecords）
+        await Promise.all([
+          tx.table("wordRecords").clear(),
+          tx.table("chapterRecords").clear(),
+          tx.table("reviewRecords").clear(),
+          tx.table("familiarWords").clear(),
+          tx.table("articleRecords").clear(),
+        ]);
+        console.log("✅ v9 升级：清空 v8 数据完成");
+      });
 
-            // 检查升级状态，避免重复升级
-            const upgradeStatus = UpgradeStatusChecker.getUpgradeStatus();
-            if (
-              upgradeStatus?.version === 9 &&
-              upgradeStatus?.status === "completed"
-            ) {
-              console.log("✅ 版本9升级已完成，跳过...");
-              return;
-            }
+    // 版本10：基座升级（声明 stores + 清空两表）
+    this.version(10)
+      .stores({
+        wordRecords:
+          "++id, &uuid, &[dict+word], dict, word, lastPracticedAt, sync_status, last_modified",
+        chapterRecords:
+          "++id, &uuid, dict, chapter, timeStamp, sync_status, last_modified",
+        reviewRecords:
+          "++id, &uuid, dict, timeStamp, sync_status, last_modified",
+        familiarWords:
+          "++id, &uuid, dict, word, sync_status, last_modified, [dict+word]",
+        articleRecords:
+          "++id, &uuid, title, content, createdAt, lastPracticedAt",
+        wordReviewRecords:
+          "++id, &uuid, &word, nextReviewAt, currentIntervalIndex, isGraduated, todayPracticeCount, lastPracticedAt, lastReviewedAt, sync_status, last_modified",
+        reviewHistories:
+          "++id, &uuid, word, wordReviewRecordId, reviewedAt, sync_status, last_modified",
+        reviewConfigs: "++id, &uuid, userId, sync_status, last_modified",
+      })
+      .upgrade(async (tx) => {
+        // PR-2: 清空本地 wordReviewRecords 与 reviewHistories
+        try {
+          await tx.table("wordReviewRecords").clear();
+        } catch (e) {
+          console.warn("v10 升级清空 wordReviewRecords 失败", e);
+        }
+        try {
+          await tx.table("reviewHistories").clear();
+        } catch (e) {
+          console.warn("v10 升级清空 reviewHistories 失败", e);
+        }
 
-            // 获取新创建的表
-            console.log("📋 获取reviewConfigs表...");
-            const reviewConfigsTable = tx.table("reviewConfigs");
-
-            // 检查是否已经有默认配置（避免重复创建）
-            console.log("🔍 检查现有配置数量...");
-            const existingConfigs = await reviewConfigsTable.count();
-            console.log(`📊 现有配置数量: ${existingConfigs}`);
-
-            if (existingConfigs === 0) {
-              console.log("➕ 创建默认复习配置...");
-              // 创建默认复习配置（整合版本10的简化配置）
-              await reviewConfigsTable.add({
-                uuid: generateUUID(),
-                userId: "default", // 全局默认配置
-                baseIntervals: [1, 3, 7, 15, 30, 60],
-                enableNotifications: true,
-                notificationTime: "09:00",
-                sync_status: "local_new",
-                last_modified: Date.now(),
-              });
-              console.log("✅ 默认复习配置创建成功");
+        // PR-3: 在线迁移 wordRecords - 补齐 entryUuid/mistakes，去重 [dict+word]
+        try {
+          const table = tx.table("wordRecords");
+          const all = await table.toArray();
+          const byKey = new Map<string, any>();
+          const updated: any[] = [];
+          for (const rec of all) {
+            // 补齐 performanceHistory
+            if (Array.isArray(rec.performanceHistory)) {
+              rec.performanceHistory = rec.performanceHistory.map((e: any) => ({
+                ...e,
+                mistakes:
+                  e?.mistakes && typeof e.mistakes === "object"
+                    ? e.mistakes
+                    : {},
+                entryUuid:
+                  typeof e?.entryUuid === "string" && e.entryUuid
+                    ? e.entryUuid
+                    : generateUUID(),
+              }));
+              // 排序与 first/last 时间
+              rec.performanceHistory.sort(
+                (a: any, b: any) => (a.timeStamp || 0) - (b.timeStamp || 0)
+              );
+              if (rec.performanceHistory.length > 0) {
+                rec.firstSeenAt = rec.performanceHistory[0].timeStamp;
+                rec.lastPracticedAt =
+                  rec.performanceHistory[
+                    rec.performanceHistory.length - 1
+                  ].timeStamp;
+              } else {
+                delete rec.firstSeenAt;
+                delete rec.lastPracticedAt;
+              }
             } else {
-              console.log("ℹ️ 默认复习配置已存在，跳过创建");
+              rec.performanceHistory = [];
+              delete rec.firstSeenAt;
+              delete rec.lastPracticedAt;
             }
 
-            // 确保这是最新的升级版本，直接包含版本10的功能
-            console.log("✅ 版本9升级完成 - 已包含复习系统优化");
-
-            // 清理 wordReviewRecords 表中的重复 uuid
-            console.log("🧹 清理 wordReviewRecords 表中的重复 uuid...");
-            const wordReviewRecordsTable = tx.table("wordReviewRecords");
-            const allRecords = await wordReviewRecordsTable.toArray();
-
-            // 按 uuid 分组，找出重复的记录
-            const uuidGroups = new Map<string, any[]>();
-            for (const record of allRecords) {
-              if (record.uuid) {
-                if (!uuidGroups.has(record.uuid)) {
-                  uuidGroups.set(record.uuid, []);
+            const key = `${rec.dict}-${rec.word}`;
+            const existed = byKey.get(key);
+            if (!existed) {
+              byKey.set(key, rec);
+            } else {
+              // 去重：保留 last_modified 较新的记录，并合并历史
+              const keep =
+                (existed.last_modified || 0) >= (rec.last_modified || 0)
+                  ? existed
+                  : rec;
+              const drop = keep === existed ? rec : existed;
+              // 合并 performanceHistory（entryUuid 去重）
+              const allEntries = [
+                ...(keep.performanceHistory || []),
+                ...(drop.performanceHistory || []),
+              ];
+              const seen = new Map<string, any>();
+              for (const e of allEntries) {
+                if (
+                  !seen.has(e.entryUuid) ||
+                  (seen.get(e.entryUuid)?.timeStamp || 0) <= (e.timeStamp || 0)
+                ) {
+                  seen.set(e.entryUuid, e);
                 }
-                uuidGroups.get(record.uuid)!.push(record);
               }
-            }
-
-            // 处理重复的 uuid
-            for (const [uuid, records] of uuidGroups) {
-              if (records.length > 1) {
-                console.log(
-                  `发现重复 uuid: ${uuid}，记录数: ${records.length}`
-                );
-
-                // 按 last_modified 排序，保留最新的记录
-                records.sort(
-                  (a, b) => (b.last_modified || 0) - (a.last_modified || 0)
-                );
-                const keepRecord = records[0];
-                const deleteRecords = records.slice(1);
-
-                // 删除重复记录
-                for (const record of deleteRecords) {
-                  await wordReviewRecordsTable.delete(record.id);
-                  console.log(
-                    `删除重复记录: id=${record.id}, word=${record.word}`
-                  );
-                }
-
-                console.log(
-                  `保留记录: id=${keepRecord.id}, word=${keepRecord.word}`
-                );
+              keep.performanceHistory = Array.from(seen.values()).sort(
+                (a: any, b: any) => (a.timeStamp || 0) - (b.timeStamp || 0)
+              );
+              if (keep.performanceHistory.length > 0) {
+                keep.firstSeenAt = keep.performanceHistory[0].timeStamp;
+                keep.lastPracticedAt =
+                  keep.performanceHistory[
+                    keep.performanceHistory.length - 1
+                  ].timeStamp;
+              } else {
+                delete keep.firstSeenAt;
+                delete keep.lastPracticedAt;
               }
+              byKey.set(key, keep);
             }
+          }
 
-            console.log("✅ wordReviewRecords 表 uuid 清理完成");
-          },
-          "Version 9 upgrade",
-          9
-        );
+          byKey.forEach((v) => updated.push(v));
+          if (updated.length > 0) {
+            await table.clear();
+            await table.bulkAdd(updated);
+          }
+        } catch (e) {
+          console.warn("v10 升级迁移 wordRecords 失败", e);
+        }
+
+        // PR-5: familiarWords 去重（按 [dict+word] 保留 last_modified 新者）
+        try {
+          const table = tx.table("familiarWords");
+          const all = await table.toArray();
+          const groups = new Map<string, any[]>();
+          for (let i = 0; i < all.length; i++) {
+            const r = all[i];
+            const key = `${r.dict}-${r.word}`;
+            const arr = groups.get(key);
+            if (arr) arr.push(r);
+            else groups.set(key, [r]);
+          }
+          const deleteIds: number[] = [];
+          groups.forEach((records) => {
+            if (records.length <= 1) return;
+            records.sort(
+              (a: any, b: any) =>
+                (b.last_modified || 0) - (a.last_modified || 0)
+            );
+            const keep = records[0];
+            for (let i = 1; i < records.length; i++) {
+              if (records[i].id != null) deleteIds.push(records[i].id);
+            }
+          });
+          if (deleteIds.length > 0) {
+            // 分批删除，避免大事务压力
+            const batch = 200;
+            for (let i = 0; i < deleteIds.length; i += batch) {
+              await table.bulkDelete(deleteIds.slice(i, i + batch));
+            }
+          }
+        } catch (e) {
+          console.warn("v10 升级去重 familiarWords 失败", e);
+        }
       });
   }
 }
@@ -525,7 +433,7 @@ export async function checkAndUpgradeDatabase() {
 
       // 获取数据库版本和期望版本
       const currentVersion = db.verno;
-      const expectedVersion = 9; // 当前最新版本（回退到版本9）
+      const expectedVersion = 10; // 当前最新版本 v10 基座
 
       if (currentVersion < expectedVersion) {
         console.warn(
@@ -545,6 +453,140 @@ export async function checkAndUpgradeDatabase() {
             `数据库升级失败: 期望版本 ${expectedVersion}, 实际版本 ${newVersion}`
           );
         }
+      }
+
+      // v10 后置迁移：当本地已是 v10 但此前未执行清空/迁移时，补偿执行一次（幂等）
+      try {
+        const markerKey = "v10_post_migration_completed";
+        const marked = localStorage.getItem(markerKey);
+        if (currentVersion >= 10 && !marked) {
+          console.log("🔧 执行 v10 后置迁移（补偿清空/迁移）...");
+          await db.transaction(
+            "rw",
+            db.wordReviewRecords,
+            db.reviewHistories,
+            db.wordRecords,
+            db.familiarWords,
+            async () => {
+              // 1) 清空两表
+              try {
+                await db.wordReviewRecords.clear();
+              } catch {
+                // 忽略清空失败
+              }
+              try {
+                await db.reviewHistories.clear();
+              } catch {
+                // 忽略清空失败
+              }
+
+              // 2) 迁移 wordRecords（与 v10 升级内逻辑保持一致的轻量版）
+              const all = await db.wordRecords.toArray();
+              const byKey = new Map<string, any>();
+              for (const rec of all) {
+                if (!Array.isArray(rec.performanceHistory))
+                  rec.performanceHistory = [];
+                rec.performanceHistory = rec.performanceHistory.map(
+                  (e: any) => ({
+                    ...e,
+                    mistakes:
+                      e?.mistakes && typeof e.mistakes === "object"
+                        ? e.mistakes
+                        : {},
+                    entryUuid:
+                      typeof e?.entryUuid === "string" && e.entryUuid
+                        ? e.entryUuid
+                        : generateUUID(),
+                  })
+                );
+                rec.performanceHistory.sort(
+                  (a: any, b: any) => (a.timeStamp || 0) - (b.timeStamp || 0)
+                );
+                if (rec.performanceHistory.length > 0) {
+                  rec.firstSeenAt = rec.performanceHistory[0].timeStamp;
+                  rec.lastPracticedAt =
+                    rec.performanceHistory[
+                      rec.performanceHistory.length - 1
+                    ].timeStamp;
+                } else {
+                  delete rec.firstSeenAt;
+                  delete rec.lastPracticedAt;
+                }
+                const key = `${rec.dict}-${rec.word}`;
+                const existed = byKey.get(key);
+                if (!existed) byKey.set(key, rec);
+                else {
+                  const keep =
+                    (existed.last_modified || 0) >= (rec.last_modified || 0)
+                      ? existed
+                      : rec;
+                  const drop = keep === existed ? rec : existed;
+                  const allEntries = [
+                    ...(keep.performanceHistory || []),
+                    ...(drop.performanceHistory || []),
+                  ];
+                  const seen = new Map<string, any>();
+                  for (const e of allEntries) {
+                    if (
+                      !seen.has(e.entryUuid) ||
+                      (seen.get(e.entryUuid)?.timeStamp || 0) <=
+                        (e.timeStamp || 0)
+                    ) {
+                      seen.set(e.entryUuid, e);
+                    }
+                  }
+                  keep.performanceHistory = Array.from(seen.values()).sort(
+                    (a: any, b: any) => (a.timeStamp || 0) - (b.timeStamp || 0)
+                  );
+                  if (keep.performanceHistory.length > 0) {
+                    keep.firstSeenAt = keep.performanceHistory[0].timeStamp;
+                    keep.lastPracticedAt =
+                      keep.performanceHistory[
+                        keep.performanceHistory.length - 1
+                      ].timeStamp;
+                  } else {
+                    delete keep.firstSeenAt;
+                    delete keep.lastPracticedAt;
+                  }
+                  byKey.set(key, keep);
+                }
+              }
+              const updated: any[] = [];
+              byKey.forEach((v) => updated.push(v));
+              if (updated.length > 0) {
+                await db.wordRecords.clear();
+                await db.wordRecords.bulkAdd(updated);
+              }
+
+              // 3) familiarWords 去重
+              const allFam = await db.familiarWords.toArray();
+              const groups = new Map<string, any[]>();
+              for (const r of allFam) {
+                const k = `${r.dict}-${r.word}`;
+                const arr = groups.get(k);
+                if (arr) arr.push(r);
+                else groups.set(k, [r]);
+              }
+              groups.forEach(async (arr) => {
+                if (arr.length <= 1) return;
+                arr.sort(
+                  (a: any, b: any) =>
+                    (b.last_modified || 0) - (a.last_modified || 0)
+                );
+                const toDelete = arr
+                  .slice(1)
+                  .map((x: any) => x.id)
+                  .filter((id: any) => id != null);
+                if (toDelete.length)
+                  await db.familiarWords.bulkDelete(toDelete);
+              });
+            }
+          );
+          localStorage.setItem(markerKey, String(Date.now()));
+          console.log("✅ v10 后置迁移完成");
+        }
+      } catch (e) {
+        console.warn("v10 后置迁移失败或已执行", e);
       }
 
       // 数据库升级成功后，简单清理重复数据
@@ -774,6 +816,7 @@ export function useSaveWordRecord() {
         timing: timing,
         wrongCount: wrongCount,
         mistakes: letterMistake || {}, // 确保 mistakes 不为 undefined 或 null
+        entryUuid: generateUUID(),
       };
 
       let dbID = -1;
@@ -910,9 +953,16 @@ export function useMarkFamiliarWord() {
         await db.familiarWords.put(existingRecord);
         return existingRecord;
       } else {
-        // 创建新记录
+        // 创建新记录（严格 upsert，避免重复）
         const newRecord = new FamiliarWord(word, dict, isFamiliar);
-        const id = await db.familiarWords.add(newRecord);
+        const existingByPair = await db.familiarWords
+          .where("[dict+word]")
+          .equals([dict, word])
+          .first();
+        if (existingByPair && existingByPair.id) {
+          newRecord.id = existingByPair.id;
+        }
+        const id = await db.familiarWords.put(newRecord);
         newRecord.id = id;
         return newRecord;
       }

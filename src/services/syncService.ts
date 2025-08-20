@@ -1,3 +1,4 @@
+import { APP_DATA_VERSION } from "@/constants/app";
 import { db } from "@/utils/db";
 import type { SyncStatus } from "@/utils/db/record";
 import axios from "axios";
@@ -255,6 +256,9 @@ interface IWordReviewRecord extends IBaseRecord {
 
 interface IReviewHistory extends IBaseRecord {
   userId?: string;
+  // v10 协议：上传/下载均使用 parentUuid 作为父关联（服务器内部使用 ObjectId 外键）
+  parentUuid?: string;
+  // 本地存储仍使用 wordReviewRecordId:number 关联本地行
   wordReviewRecordId: number;
   word: string;
   dict: string;
@@ -351,7 +355,7 @@ const getLocalChanges = async () => {
         ) {
           // 遍历每个 performanceEntry，确保 mistakes 字段存在
           recordCopy.performanceHistory = recordCopy.performanceHistory.map(
-            (entry) => ({
+            (entry: any) => ({
               ...entry,
               mistakes: entry.mistakes || {}, // 如果 mistakes 不存在，设置为空对象
             })
@@ -370,31 +374,22 @@ const getLocalChanges = async () => {
         });
       }
     } else if (tableName === "reviewHistories") {
-      // 特殊处理 reviewHistories 表，将本地的 number ID 转换为 ObjectId 字符串
+      // v10：上传使用 parentUuid 关联父项（不上传本地 wordReviewRecordId）
       for (const record of records) {
-        // 深拷贝记录以避免修改原始数据
-        const recordCopy = JSON.parse(JSON.stringify(record));
-
-        // 将本地的 number ID 转换为 ObjectId 字符串（使用 uuid 作为标识）
+        const recordCopy: any = JSON.parse(JSON.stringify(record));
         if (typeof recordCopy.wordReviewRecordId === "number") {
-          // 查找对应的 wordReviewRecord，获取其 uuid
-          const wordReviewRecord = await db.wordReviewRecords
+          const parent = await db.wordReviewRecords
             .where("id")
             .equals(recordCopy.wordReviewRecordId)
             .first();
-
-          if (wordReviewRecord && wordReviewRecord.uuid) {
-            recordCopy.wordReviewRecordId = wordReviewRecord.uuid;
-            console.log(
-              `上传时转换 wordReviewRecordId: ${recordCopy.wordReviewRecordId} -> ${wordReviewRecord.uuid}`
-            );
-          } else {
+          if (!parent || !parent.uuid) {
             console.warn(
-              `找不到对应的 WordReviewRecord，id: ${recordCopy.wordReviewRecordId}`
+              `跳过无父引用的 reviewHistory，localId=${recordCopy.wordReviewRecordId}`
             );
-            // 如果找不到对应的记录，跳过这个变更
             continue;
           }
+          recordCopy.parentUuid = parent.uuid;
+          delete recordCopy.wordReviewRecordId;
         }
 
         changes.push({
@@ -524,61 +519,28 @@ const applyServerChanges = async (serverChanges: any[]) => {
         return;
     }
 
-    // 特殊处理 reviewHistories 表的 wordReviewRecordId 类型转换
+    // v10：reviewHistories 使用 parentUuid → 本地 id 映射
     for (const change of changes) {
-      const { data } = change;
-      if (table === "reviewHistories" && data.wordReviewRecordId) {
-        if (typeof data.wordReviewRecordId === "string") {
-          try {
-            const wordReviewRecord = await db.wordReviewRecords
-              .where("word")
-              .equals(data.word)
-              .first();
-
-            if (wordReviewRecord && wordReviewRecord.id) {
-              data.wordReviewRecordId = wordReviewRecord.id;
-            } else {
-              console.warn(`找不到对应的 WordReviewRecord，word: ${data.word}`);
-              // 从变更列表中移除这个无效变更
-              const index = changes.indexOf(change);
-              if (index > -1) {
-                changes.splice(index, 1);
-              }
-            }
-          } catch (error) {
-            console.error(`转换 wordReviewRecordId 时出错: ${error}`);
-            // 从变更列表中移除这个无效变更
-            const index = changes.indexOf(change);
-            if (index > -1) {
-              changes.splice(index, 1);
-            }
-          }
+      const { data } = change as any;
+      if (table === "reviewHistories" && data.parentUuid) {
+        const parent = await db.wordReviewRecords
+          .where("uuid")
+          .equals(data.parentUuid)
+          .first();
+        if (!parent || parent.id == null) {
+          console.warn(
+            `跳过无本地父项的 reviewHistory，parentUuid=${data.parentUuid}`
+          );
+          const idx = changes.indexOf(change);
+          if (idx > -1) changes.splice(idx, 1);
+          continue;
         }
+        data.wordReviewRecordId = parent.id;
+        delete data.parentUuid;
       }
     }
 
-    // 特殊处理 wordReviewRecords 表的 uuid 对齐
-    for (const change of changes) {
-      const { data } = change;
-      if (table === "wordReviewRecords" && data.word) {
-        // 先尝试通过 uuid 查找记录
-        let localRecord = await dbTable.where("uuid").equals(data.uuid).first();
-
-        if (!localRecord) {
-          // 如果通过 uuid 找不到，尝试通过 word 查找
-          localRecord = await dbTable.where("word").equals(data.word).first();
-
-          if (localRecord && localRecord.id) {
-            // 更新本地的 uuid 为服务器的 uuid
-            await dbTable.update(localRecord.id, {
-              uuid: data.uuid,
-            });
-            // 更新本地记录的 uuid 引用
-            localRecord.uuid = data.uuid;
-          }
-        }
-      }
-    }
+    // 删除旧的 word→uuid 回填逻辑，不再通过 word 回填 uuid
 
     // 分离不同类型的操作
     const creates: any[] = [];
@@ -601,7 +563,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
       try {
         const deleteIds: number[] = [];
         for (const data of deletes) {
-          const localRecord = await dbTable
+          const localRecord = await (dbTable as any)
             .where("uuid")
             .equals(data.uuid)
             .first();
@@ -611,7 +573,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
         }
 
         if (deleteIds.length > 0) {
-          await dbTable.bulkDelete(deleteIds);
+          await (dbTable as any).bulkDelete(deleteIds);
           stats.deleted += deleteIds.length;
           changesApplied += deleteIds.length;
         }
@@ -628,7 +590,10 @@ const applyServerChanges = async (serverChanges: any[]) => {
         const uuids = allUpsertData.map((data) => data.uuid);
 
         // 批量查询本地记录
-        const localRecords = await dbTable.where("uuid").anyOf(uuids).toArray();
+        const localRecords = await (dbTable as any)
+          .where("uuid")
+          .anyOf(uuids)
+          .toArray();
 
         // 创建 uuid 到本地记录的映射
         const localRecordMap = new Map<string, any>();
@@ -665,7 +630,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
 
         // 3. 执行批量 upsert
         if (upserts.length > 0) {
-          await dbTable.bulkPut(upserts);
+          await (dbTable as any).bulkPut(upserts);
           stats.created += creates.length;
           stats.updated += updates.length;
           changesApplied += upserts.length;
@@ -679,7 +644,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
         for (const data of [...creates, ...updates]) {
           try {
             // 查找本地记录
-            const localRecord = await dbTable
+            const localRecord: any = await (dbTable as any)
               .where("uuid")
               .equals(data.uuid)
               .first();
@@ -693,7 +658,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
                 sync_status: "synced" as SyncStatus,
                 last_modified: Date.now(),
               };
-              await dbTable.put(mergedData);
+              await (dbTable as any).put(mergedData);
             } else {
               // 创建操作
               const newData = {
@@ -701,7 +666,7 @@ const applyServerChanges = async (serverChanges: any[]) => {
                 sync_status: "synced" as SyncStatus,
                 last_modified: Date.now(),
               };
-              await dbTable.put(newData);
+              await (dbTable as any).put(newData);
             }
             changesApplied++;
           } catch (singleError) {
@@ -762,15 +727,18 @@ const updateLocalRecordStatus = async (changes: any[]) => {
     }
 
     // 查找本地记录
-    const localRecord = await dbTable.where("uuid").equals(data.uuid).first();
+    const localRecord = await (dbTable as any)
+      .where("uuid")
+      .equals(data.uuid)
+      .first();
 
     if (localRecord && localRecord.id) {
       if (action === "delete") {
         // 如果是删除操作，物理删除记录
-        await dbTable.delete(localRecord.id);
+        await (dbTable as any).delete(localRecord.id);
       } else {
         // 如果是创建或更新操作，更新同步状态
-        await dbTable.update(localRecord.id, {
+        await (dbTable as any).update(localRecord.id, {
           sync_status: "synced" as SyncStatus,
         });
       }
@@ -781,14 +749,14 @@ const updateLocalRecordStatus = async (changes: any[]) => {
       data.word
     ) {
       // 对于 familiarWords 表，如果通过 uuid 找不到记录，尝试通过 [dict+word] 复合索引查找
-      const existingByDictWord = await dbTable
+      const existingByDictWord = await (dbTable as any)
         .where("[dict+word]")
         .equals([data.dict, data.word])
         .first();
 
       if (existingByDictWord && existingByDictWord.id) {
         console.log(`通过 [dict+word] 找到记录，更新同步状态`);
-        await dbTable.update(existingByDictWord.id, {
+        await (dbTable as any).update(existingByDictWord.id, {
           sync_status: "synced" as SyncStatus,
         });
       }
@@ -826,6 +794,7 @@ export const syncFromCloud = async (): Promise<SyncResult> => {
 
     // 设置请求头
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    axios.defaults.withCredentials = true;
 
     const response = await axios.post(
       "/api/sync",
@@ -834,8 +803,9 @@ export const syncFromCloud = async (): Promise<SyncResult> => {
         changes: [], // 空数组表示只获取服务器变更
       },
       {
-        headers: { Authorization: `Bearer ${token}` },
-        timeout: 30000, // 30秒超时
+        headers: { "x-app-data-version": APP_DATA_VERSION },
+        withCredentials: true,
+        timeout: 300000, // 300秒超时
       }
     );
 
@@ -934,6 +904,7 @@ export const syncToCloud = async (): Promise<SyncResult> => {
 
     // 设置请求头
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    axios.defaults.withCredentials = true;
 
     // 发送本地变更到云端
     console.log("发送本地变更到云端...");
@@ -944,7 +915,8 @@ export const syncToCloud = async (): Promise<SyncResult> => {
         changes: localChanges,
       },
       {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { "x-app-data-version": APP_DATA_VERSION },
+        withCredentials: true,
       }
     );
 

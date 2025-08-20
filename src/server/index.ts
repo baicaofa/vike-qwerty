@@ -4,6 +4,7 @@ import customDictionaryRoutes from "./routes/customDictionary";
 import dbStatsRoutes from "./routes/db-stats";
 import feedbackRoutes from "./routes/feedback";
 import syncRoutes from "./routes/sync";
+import cookieParser from "cookie-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
@@ -16,7 +17,13 @@ const app = express();
 connectDB();
 
 // 中间件
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN || true,
+    credentials: true,
+  })
+);
+app.use(cookieParser());
 // 增加请求体大小限制为50MB
 app.use(express.json({ limit: "20mb" }));
 app.use(express.urlencoded({ limit: "20mb", extended: true }));

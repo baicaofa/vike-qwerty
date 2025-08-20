@@ -1,18 +1,14 @@
-import { checkAndUpgradeDatabase } from "../utils/db";
-import { autoFixAllUuidConstraints } from "../utils/db/fix-uuid-constraint";
 import { initI18n } from "@/i18n";
 import {
   detectBrowserLanguage,
   detectLanguageFromUrl,
 } from "@/store/languageAtom";
+import { checkAndUpgradeDatabase } from "@/utils/db";
 import { getLanguagePreference } from "@/utils/localStorage";
 import type { OnHydrationEndAsync } from "vike/types";
 
-/**
- * 全局水合完成后的初始化逻辑
- * 在页面可交互后异步执行，不阻塞渲染
- */
-export const onHydrationEnd: OnHydrationEndAsync = async () => {
+// 全局水合完成后的初始化逻辑（不阻塞首屏）
+const onHydrationEnd: OnHydrationEndAsync = async () => {
   console.log("🚀 应用水合完成，开始初始化...");
 
   try {
@@ -31,7 +27,8 @@ export const onHydrationEnd: OnHydrationEndAsync = async () => {
 
       // 避免重定向到相同路径
       if (newPath !== currentPath) {
-        window.location.href = newPath;
+        const { navigate } = await import("vike/client/router");
+        await navigate(newPath);
         return;
       }
     }
@@ -57,12 +54,11 @@ export const onHydrationEnd: OnHydrationEndAsync = async () => {
     // 检查并升级数据库
     await checkAndUpgradeDatabase();
 
-    // 自动修复所有表的 uuid 约束错误（如果存在）
-    await autoFixAllUuidConstraints();
-
     console.log("✅ 数据库初始化完成");
   } catch (error) {
     console.error("Failed to initialize i18n during hydration:", error);
     // 不抛出错误，避免影响页面正常功能
   }
 };
+
+export default onHydrationEnd as unknown as ReturnType<OnHydrationEndAsync>;

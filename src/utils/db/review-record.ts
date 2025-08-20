@@ -1,6 +1,6 @@
 import { db } from "./index";
 import { ReviewRecord } from "./record";
-import type { TErrorWordData } from "@/pages/Gallery/hooks/useErrorWords";
+import type { TErrorWordData } from "@/pages/gallery/hooks/useErrorWords";
 import type { Word } from "@/typings";
 import { useEffect, useState } from "react";
 

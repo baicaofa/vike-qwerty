@@ -12,6 +12,7 @@
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
     "exceljs": "^4.4.0",
     "express": "^5.1.0",
@@ -24,6 +25,7 @@
     "@types/bcryptjs": "^3.0.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
+    "@types/cookie-parser": "^1.4.6",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "18.14.6",
     "@types/nodemailer": "^6.4.17",

@@ -62,8 +62,8 @@ async function getChapterStats(
 ): Promise<IWordStats> {
   // indexedDB查找某个数字范围内的数据
   const records: IWordRecord[] = await db.wordRecords
-    .where("timeStamp")
-    .between(startTimeStamp, endTimeStamp)
+    .where("lastPracticedAt")
+    .between(startTimeStamp * 1000, endTimeStamp * 1000)
     .toArray();
 
   if (records.length === 0) {
@@ -101,18 +101,33 @@ async function getChapterStats(
     .reduce((acc, curr) => ({ ...acc, ...curr }), {});
 
   for (let i = 0; i < records.length; i++) {
-    const date = dayjs(records[i].timeStamp * 1000).format("YYYY-MM-DD");
+    const record = records[i];
+    const entries = Array.isArray(record.performanceHistory)
+      ? record.performanceHistory
+      : [];
 
-    data[date].exerciseTime = data[date].exerciseTime + 1;
-    data[date].words = [...data[date].words, records[i].word];
-    data[date].totalTime =
-      data[date].totalTime +
-      records[i].timing.reduce((acc, curr) => acc + curr, 0);
-    data[date].wrongCount = data[date].wrongCount + records[i].wrongCount;
-    data[date].wrongKeys = [
-      ...(data[date].wrongKeys || []),
-      ...(Object.values(records[i].mistakes).flat() || []),
-    ];
+    for (const entry of entries) {
+      const ts = entry.timeStamp || 0; // 毫秒
+      if (ts < startTimeStamp * 1000 || ts > endTimeStamp * 1000) continue;
+
+      const date = dayjs(ts).format("YYYY-MM-DD");
+      data[date].exerciseTime = data[date].exerciseTime + 1;
+      data[date].words = [...data[date].words, record.word];
+      const entryTotal = (entry.timing || []).reduce(
+        (acc: number, curr: number) => acc + curr,
+        0
+      );
+      data[date].totalTime = data[date].totalTime + entryTotal;
+      data[date].wrongCount = data[date].wrongCount + (entry.wrongCount || 0);
+
+      const mistakeValues = (
+        Object.values(entry.mistakes || {}) as string[][]
+      ).flat();
+      data[date].wrongKeys = [
+        ...(data[date].wrongKeys || []),
+        ...mistakeValues,
+      ];
+    }
   }
 
   const RecordArray = Object.entries(data);

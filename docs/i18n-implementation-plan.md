@@ -125,7 +125,7 @@ export function detectLanguageFromUrl(): SupportedLanguage {
 **需要修改的文件列表：**
 
 1. `src/pages/Typing/+config.ts` - 从 `route: "/"` 改为 `route: "/"`
-2. `src/pages/Gallery/+config.ts` - 保持 `route: "/gallery"`
+2. `src/pages/gallery/+config.ts` - 保持 `route: "/gallery"`
 3. `src/pages/Analysis/+config.ts` - 保持 `route: "/analysis"`
 4. `src/pages/Mobile/+config.ts` - 保持 `route: "/mobile"`
 5. 其他所有页面配置文件
@@ -134,7 +134,7 @@ export function detectLanguageFromUrl(): SupportedLanguage {
 
 #### 3.2.2 动态路由处理
 
-**文件：** `src/pages/Gallery/@id/+config.ts`
+**文件：** `src/pages/gallery/@id/+config.ts`
 
 动态路由无需特殊处理，`onBeforeRoute` 会自动处理语言前缀。
 

@@ -3,11 +3,17 @@ import FamiliarWord from "../models/FamiliarWord";
 import ReviewConfigModel from "../models/ReviewConfig";
 import ReviewHistoryModel from "../models/ReviewHistory";
 import ReviewRecord from "../models/ReviewRecord";
-import WordRecordModel, { // 统一使用这个导入
+import WordRecordModel, {
   type IWordRecord,
   type IPerformanceEntry as ServerPerformanceEntry,
 } from "../models/WordRecord";
 import WordReviewRecordModel from "../models/WordReviewRecord";
+import {
+  ensureObject,
+  mergePerformanceByEntryUuid,
+  toDate,
+  toMillis,
+} from "../utils/syncUtils";
 // WordRecord 将从下面的 WordRecordModel 导入中统一处理
 import type { Request, Response } from "express";
 import mongoose from "mongoose";
@@ -17,14 +23,12 @@ import type { Model } from "mongoose";
 interface SyncChange {
   table:
     | "wordRecords"
-    | "wordrecords" // 添加小写版本
     | "chapterRecords"
     | "reviewRecords"
     | "familiarWords"
     | "wordReviewRecords"
     | "reviewHistories"
-    | "reviewConfigs"
-    | "reviewconfigs"; // 添加小写版本
+    | "reviewConfigs";
   action: "create" | "update" | "delete";
   data: any;
 }
@@ -43,7 +47,6 @@ interface SyncResponse {
 const getModel = (table: string): Model<any> => {
   switch (table) {
     case "wordRecords":
-    case "wordrecords": // 添加小写版本
       return WordRecordModel; // <--- 确保使用 WordRecordModel
     case "chapterRecords":
       return ChapterRecord;
@@ -56,7 +59,6 @@ const getModel = (table: string): Model<any> => {
     case "reviewHistories":
       return ReviewHistoryModel;
     case "reviewConfigs":
-    case "reviewconfigs": // 添加小写版本
       return ReviewConfigModel;
     default:
       throw new Error(`Unknown table: ${table}`);
@@ -78,46 +80,11 @@ const formatRecordForSync = (record: any, table: string): SyncChange => {
 };
 */
 
-// 辅助函数：安全地转换日期
-const safeParseDate = (dateValue: any): Date | undefined => {
-  if (!dateValue) return undefined;
+// 兼容旧命名
+const safeParseDate = toDate;
 
-  // 如果已经是日期对象，直接返回
-  if (dateValue instanceof Date) {
-    return isNaN(dateValue.getTime()) ? undefined : dateValue;
-  }
-
-  // 尝试解析日期字符串
-  const date = new Date(dateValue);
-  return isNaN(date.getTime()) ? undefined : date;
-};
-
-// 辅助函数：合并 Performance History 数组
-// 注意：服务器端的 IPerformanceEntry 使用 Date 类型的时间戳
-function mergePerformanceHistories(
-  serverHistory: ServerPerformanceEntry[],
-  clientHistory: ServerPerformanceEntry[] // 假设客户端传来的时间戳已转换为 Date
-): ServerPerformanceEntry[] {
-  const map = new Map<string, ServerPerformanceEntry>();
-
-  // 为确保唯一性，可以使用 timeStamp.toISOString() 或一个专门的 entryUuid
-  // 这里我们简单使用 timeStamp.getTime() 作为键，假设同一毫秒内不会有重复练习记录
-  // 更健壮的做法是为 IPerformanceEntry 添加一个客户端生成的唯一 entryUuid
-  const getKey = (entry: ServerPerformanceEntry) =>
-    entry.timeStamp.getTime().toString();
-
-  for (const entry of serverHistory) {
-    map.set(getKey(entry), entry);
-  }
-  for (const entry of clientHistory) {
-    // 如果键已存在，并且内容不同，可以根据业务逻辑决定是否覆盖
-    // 对于练习历史，通常不同的练习应该有不同的时间戳，所以直接添加或更新
-    map.set(getKey(entry), entry); // 简单覆盖，或添加更复杂的比较逻辑
-  }
-  return Array.from(map.values()).sort(
-    (a, b) => a.timeStamp.getTime() - b.timeStamp.getTime()
-  );
-}
+// 合并算法改为按 entryUuid 去重
+const mergePerformanceHistories = mergePerformanceByEntryUuid;
 
 export const syncData = async (req: Request, res: Response) => {
   try {
@@ -149,13 +116,13 @@ export const syncData = async (req: Request, res: Response) => {
 
         const query = { userId, dict, word };
 
-        // 将客户端的 performanceHistory 中的 timeStamp (number) 转换为 Date
+        // 将客户端的 performanceHistory 中的 timeStamp (number) 转换为 Date，并兜底 mistakes/entryUuid
         const clientPerformanceHistory: ServerPerformanceEntry[] = (
           clientPerformanceHistoryData || []
         ).map((entry) => ({
           ...entry,
-          mistakes: entry.mistakes || {}, // 如果客户端没有传，设为空对象，避免 validation 错误
-          timeStamp: safeParseDate(entry.timeStamp) || new Date(), // 转换时间戳
+          mistakes: ensureObject(entry.mistakes, {}),
+          timeStamp: safeParseDate(entry.timeStamp) || new Date(),
         }));
 
         if (action === "create" || action === "update") {
@@ -174,21 +141,17 @@ export const syncData = async (req: Request, res: Response) => {
             );
             serverRecord.performanceHistory = mergedHistory;
 
-            // 更新 firstSeenAt (取两者中较早的)
-            if (
-              clientFirstSeenAtDate &&
-              (!serverRecord.firstSeenAt ||
-                clientFirstSeenAtDate < serverRecord.firstSeenAt)
-            ) {
-              serverRecord.firstSeenAt = clientFirstSeenAtDate;
-            }
-            // 更新 lastPracticedAt (取两者中较晚的)
-            if (
-              clientLastPracticedAtDate &&
-              (!serverRecord.lastPracticedAt ||
-                clientLastPracticedAtDate > serverRecord.lastPracticedAt)
-            ) {
-              serverRecord.lastPracticedAt = clientLastPracticedAtDate;
+            // firstSeenAt 取合并后最早；lastPracticedAt 取合并后最晚
+            if (serverRecord.performanceHistory.length === 0) {
+              serverRecord.firstSeenAt = undefined;
+              serverRecord.lastPracticedAt = undefined;
+            } else {
+              serverRecord.firstSeenAt =
+                serverRecord.performanceHistory[0]?.timeStamp;
+              serverRecord.lastPracticedAt =
+                serverRecord.performanceHistory[
+                  serverRecord.performanceHistory.length - 1
+                ]?.timeStamp;
             }
             // 如果 performanceHistory 为空，确保 firstSeenAt 和 lastPracticedAt 也被清除或设为合理值
             if (serverRecord.performanceHistory.length === 0) {
@@ -432,62 +395,46 @@ export const syncData = async (req: Request, res: Response) => {
           }
         }
       } else {
-        // Generic handling for other tables
+        // Generic handling for other tables（覆盖 reviewHistories 的 parentUuid→ObjectId 外键映射）
         const Model = getModel(table);
         const { uuid } = clientRecordData;
         const query = { userId, uuid };
 
         if (action === "create" || action === "update") {
-          // Use a flexible data object, excluding reserved fields from client
           const { _id, ...updateData } = clientRecordData;
 
-          // 特殊处理 ReviewHistory 表中的 wordReviewRecordId 字段
-          if (table === "reviewHistories" && updateData.wordReviewRecordId) {
-            // 检查 wordReviewRecordId 是否是数字或不是有效的 ObjectId
-            if (
-              typeof updateData.wordReviewRecordId === "number" ||
-              (typeof updateData.wordReviewRecordId === "string" &&
-                !mongoose.isValidObjectId(updateData.wordReviewRecordId))
-            ) {
-              // 查找相应的 WordReviewRecord，获取其正确的 ObjectId
-              try {
-                const wordReviewRecord = await WordReviewRecordModel.findOne({
-                  userId,
-                  word: updateData.word,
-                });
-
-                if (wordReviewRecord) {
-                  // 使用找到的记录的 ObjectId
-                  updateData.wordReviewRecordId = wordReviewRecord._id;
-                  console.log(
-                    `找到并转换 wordReviewRecordId: ${updateData.word} -> ${wordReviewRecord._id}`
-                  );
-                } else {
-                  console.warn(
-                    `找不到 WordReviewRecord，无法转换 wordReviewRecordId，word: ${updateData.word}`
-                  );
-                  // 可选：跳过此记录
-                  continue;
-                }
-              } catch (err) {
-                console.error(`查找 WordReviewRecord 时出错: ${err}`);
-                // 可选：跳过此记录
-                continue;
-              }
+          if (table === "reviewHistories") {
+            // 容错：允许客户端仅发送 parentUuid
+            const parentUuid = updateData.parentUuid as string | undefined;
+            if (!parentUuid) {
+              // 无 parentUuid，无法建立外键，跳过
+              continue;
             }
+            // 优先按 uuid 命中父；如果不存在则查询 DB
+            const parent = await WordReviewRecordModel.findOne({
+              userId,
+              uuid: parentUuid,
+            });
+            if (!parent) {
+              // 父缺失，跳过并计 warn
+              console.warn(
+                `Skip reviewHistory due to missing parent uuid=${parentUuid}`
+              );
+              continue;
+            }
+            (updateData as any).wordReviewRecordId = parent._id;
           }
 
           await Model.findOneAndUpdate(
             query,
             { ...updateData, userId },
             {
-              upsert: true, // Create if doesn't exist
-              new: true, // Return the updated document
+              upsert: true,
+              new: true,
               setDefaultsOnInsert: true,
             }
           );
         } else if (action === "delete") {
-          // For most tables, we physically delete. For tables with `isDeleted`, we mark them.
           if ("isDeleted" in Model.schema.paths) {
             await Model.findOneAndUpdate(query, {
               isDeleted: true,
@@ -504,14 +451,12 @@ export const syncData = async (req: Request, res: Response) => {
     const serverChangesResponse: SyncChange[] = [];
     const tables: (
       | "wordRecords"
-      | "wordrecords"
       | "chapterRecords"
       | "reviewRecords"
       | "familiarWords"
       | "wordReviewRecords"
       | "reviewHistories"
       | "reviewConfigs"
-      | "reviewconfigs"
     )[] = [
       "wordRecords",
       "chapterRecords",
@@ -558,14 +503,12 @@ function formatRecordForSync(
   record: any,
   table:
     | "wordRecords"
-    | "wordrecords"
     | "chapterRecords"
     | "reviewRecords"
     | "familiarWords"
     | "wordReviewRecords"
     | "reviewHistories"
     | "reviewConfigs"
-    | "reviewconfigs"
 ): SyncChange {
   const data = { ...record };
   delete data._id; // Remove MongoDB _id
@@ -584,10 +527,13 @@ function formatRecordForSync(
     );
   }
 
-  // 特殊处理 ReviewHistories 表中的 wordReviewRecordId 字段
-  if (table === "reviewHistories" && data.wordReviewRecordId) {
-    // 将 ObjectId 转换为字符串，客户端可以在下次同步时使用
-    data.wordReviewRecordId = data.wordReviewRecordId.toString();
+  if (table === "reviewHistories") {
+    // 输出 parentUuid：从关联父记录中获取 uuid（如果未存，可在查询层 join；此处仅保留 parentUuid）
+    // 为简化，此处假定入库时已保留 parentUuid 字段
+    if (data.wordReviewRecordId) {
+      // 不向客户端输出内部 ObjectId 外键
+      delete data.wordReviewRecordId;
+    }
   }
 
   // Convert other Date fields to Unix timestamps (numbers) for client

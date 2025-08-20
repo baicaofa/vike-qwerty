@@ -23,6 +23,7 @@ export interface IPerformanceEntry {
   timing: number[]; // 本次练习的字母间输入时间差
   wrongCount: number; // 本次练习的错误次数
   mistakes: LetterMistakes; // 本次练习的错误详情
+  entryUuid: string; // v10：单次练习唯一ID，用于幂等与去重
 }
 
 export interface IWordRecord {
@@ -116,7 +117,7 @@ export interface IChapterRecord {
   dict: string;
   // 在错题场景中为 -1
   chapter: number | null;
-  timeStamp: number;
+  createTime: number; // v10 统一：创建时间
   // 单位为 s，章节的记录没必要到毫秒级
   time: number;
   // 正确按键次数，输对一个字母即记录
@@ -139,7 +140,7 @@ export class ChapterRecord implements IChapterRecord {
   uuid: string;
   dict: string;
   chapter: number | null;
-  timeStamp: number;
+  createTime: number;
   time: number;
   correctCount: number;
   wrongCount: number;
@@ -164,7 +165,7 @@ export class ChapterRecord implements IChapterRecord {
     this.uuid = generateUUID(); // 使用新的 generateUUID 函数
     this.dict = dict;
     this.chapter = chapter;
-    this.timeStamp = getUTCUnixTimestamp();
+    this.createTime = getUTCUnixTimestamp();
     this.time = time;
     this.correctCount = correctCount;
     this.wrongCount = wrongCount;

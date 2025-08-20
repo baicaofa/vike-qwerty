@@ -40,4 +40,4 @@
 
 - `pages/Analysis/`
 - `pages/familiar/`
-- `pages/Gallery/`
+- `pages/gallery/`

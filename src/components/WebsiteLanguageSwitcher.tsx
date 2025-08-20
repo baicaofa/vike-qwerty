@@ -58,9 +58,11 @@ export function WebsiteLanguageSwitcher({
     // 简单直接的语言切换：直接跳转到对应语言的首页
     const newPath = newLanguage === "zh" ? "/" : `/${newLanguage}`;
 
-    // 使用原生导航进行页面跳转，触发完整的页面重新加载
-    // 这样可以确保 onBeforeRoute 钩子正确处理新的语言路径
-    window.location.href = newPath;
+    // 使用 Vike 客户端导航，避免整页刷新
+    (async () => {
+      const { navigate } = await import("vike/client/router");
+      await navigate(newPath);
+    })();
     setIsOpen(false);
   };
 
@@ -195,7 +197,10 @@ export function CompactWebsiteLanguageSwitcher({
     // 简单直接的语言切换：直接跳转到对应语言的首页
     const newPath = nextLanguage === "zh" ? "/" : `/${nextLanguage}`;
 
-    window.location.href = newPath;
+    (async () => {
+      const { navigate } = await import("vike/client/router");
+      await navigate(newPath);
+    })();
   };
 
   return (

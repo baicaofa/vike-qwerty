@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
     required: [true, "用户名是必需的"],
     unique: true,
     trim: true,
-    minlength: [3, "用户名至少需要3个字符"],
+    minlength: [1, "用户名至少需要1个字符"],
   },
   email: {
     type: String,

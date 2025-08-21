@@ -57,17 +57,17 @@ export const pageTDK: Record<string, TDK> = {
   },
 
   // 友情链接页
-  "/friend-links": {
-    title: "友情链接 - Keybr",
-    description: "Keybr的合作伙伴和友情链接",
-    keywords: "Keybr, 友情链接, 合作伙伴, 相关网站",
+  "/custom-article": {
+    title: "Keybr文章打字练习 - Keybr打字软件官网",
+    description: "Keybr文章打字练习，提高英语水平",
+    keywords: "Keybr, 文章打字练习, 英语学习, 打字练习",
   },
 
-  // 移动版页
-  "/mobile": {
-    title: "移动版 - Keybr",
-    description: "Keybr移动版，随时随地学习英语单词",
-    keywords: "Keybr, 移动版, 手机应用, 单词记忆, 英语学习",
+  // 更新页
+  "/updates": {
+    title: "Keybr更新日志 -Keybr版本更新-Keybr打字软件",
+    description: "Keybr的更新日志",
+    keywords: "Keybr, 更新日志, 版本更新, 功能更新, 问题修复",
   },
 
   // 词典页面
@@ -85,10 +85,10 @@ export const pageTDK: Record<string, TDK> = {
   },
 
   // 管理员反馈页面
-  "/admin/feedback": {
-    title: "用户反馈管理 - Keybr",
-    description: "管理和回复用户反馈",
-    keywords: "Keybr, 用户反馈, 管理系统, 问题反馈, 建议管理",
+  "/review": {
+    title: "Keybr复习页面 - Keybr打字软件官网",
+    description: "Keybr复习页面，复习单词，提高英语水平",
+    keywords: "Keybr, 复习页面, 复习单词, 英语学习, 打字练习",
   },
 };
 

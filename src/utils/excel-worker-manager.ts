@@ -3,10 +3,6 @@
  * 负责Web Worker的生命周期管理、消息通信、错误处理和资源清理
  */
 import type { ExcelParseResult } from "./excelParser";
-import {
-  type ExcelParsingMetrics,
-  withExcelParsingMonitoring,
-} from "./performanceMonitor";
 
 // 复用现有的进度回调模式
 export interface ExcelParseProgress {
@@ -338,28 +334,9 @@ export class ExcelWorkerManager {
   }
 
   /**
-   * 使用Worker解析Excel文件（公共方法，集成性能监控）
+   * 使用Worker解析Excel文件（公共方法）
    */
-  public parseWithWorker = withExcelParsingMonitoring(
-    this._parseWithWorker.bind(this),
-    (
-      args: [File, ExcelWorkerOptions],
-      result: ExcelParseResult,
-      duration: number
-    ): ExcelParsingMetrics => {
-      const [file, options] = args;
-      return {
-        fileSize: file.size,
-        totalRows: result.totalRows || 0,
-        validRows: result.validRows || 0,
-        parsingTime: duration,
-        validationTime: duration * 0.3, // 估算验证时间约占30%
-        memoryUsage: 0, // 将由装饰器填充
-        workerUsed: true,
-        errorCount: result.errors?.length || 0,
-      };
-    }
-  );
+  public parseWithWorker = this._parseWithWorker.bind(this);
 
   /**
    * 销毁管理器实例

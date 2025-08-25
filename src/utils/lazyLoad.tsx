@@ -44,15 +44,6 @@ export const LazyECharts = createLazyComponent(
 );
 
 /**
- * 懒加载性能监控工具
- */
-export const LazyPerformanceMonitor = createLazyComponent(
-  () =>
-    import("./performanceMonitor").then((module) => ({ default: () => null })),
-  null
-);
-
-/**
  * 动态导入工具函数
  * @param modulePath - 模块路径
  * @param timeout - 超时时间（毫秒）

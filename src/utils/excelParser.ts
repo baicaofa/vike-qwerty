@@ -4,11 +4,6 @@ import {
   getExcelWorkerManager,
   isWebWorkerSupported,
 } from "./excel-worker-manager";
-import {
-  type ExcelParsingMetrics,
-  performanceMonitor,
-  withExcelParsingMonitoring,
-} from "./performanceMonitor";
 import { read, utils } from "xlsx";
 
 /**
@@ -57,60 +52,52 @@ async function _parseExcelFile(
     }
   }
 
-  // 主线程解析（原有逻辑，集成性能监控）
-  return performanceMonitor.measureAsyncFunction(
-    "excel-parsing-main-thread",
-    async () => {
-      try {
-        // 读取文件内容
-        const data = await readFileAsArrayBuffer(file);
+  // 主线程解析
+  try {
+    // 读取文件内容
+    const data = await readFileAsArrayBuffer(file);
 
-        // 解析Excel文件
-        const workbook = read(data, { type: "array" });
+    // 解析Excel文件
+    const workbook = read(data, { type: "array" });
 
-        // 获取第一个工作表
-        const firstSheetName = workbook.SheetNames[0];
-        if (!firstSheetName) {
-          return {
-            success: false,
-            errors: ["Excel文件不包含工作表"],
-          };
-        }
+    // 获取第一个工作表
+    const firstSheetName = workbook.SheetNames[0];
+    if (!firstSheetName) {
+      return {
+        success: false,
+        errors: ["Excel文件不包含工作表"],
+      };
+    }
 
-        const worksheet = workbook.Sheets[firstSheetName];
+    const worksheet = workbook.Sheets[firstSheetName];
 
-        // 将工作表转换为JSON
-        const jsonData = utils.sheet_to_json<Record<string, any>>(worksheet);
+    // 将工作表转换为JSON
+    const jsonData = utils.sheet_to_json<Record<string, any>>(worksheet);
 
-        if (!jsonData || jsonData.length === 0) {
-          return {
-            success: false,
-            errors: ["Excel文件不包含数据"],
-          };
-        }
+    if (!jsonData || jsonData.length === 0) {
+      return {
+        success: false,
+        errors: ["Excel文件不包含数据"],
+      };
+    }
 
-        // 验证和转换数据（支持进度回调）
-        const { words, errors } = validateAndConvertData(jsonData, onProgress);
+    // 验证和转换数据（支持进度回调）
+    const { words, errors } = validateAndConvertData(jsonData, onProgress);
 
-        return {
-          success: errors.length === 0,
-          data: words,
-          errors: errors.length > 0 ? errors : undefined,
-          totalRows: jsonData.length,
-          validRows: words.length,
-        };
-      } catch (error) {
-        console.error("解析Excel文件出错:", error);
-        return {
-          success: false,
-          errors: [
-            error instanceof Error ? error.message : "解析Excel文件失败",
-          ],
-        };
-      }
-    },
-    "timing"
-  );
+    return {
+      success: errors.length === 0,
+      data: words,
+      errors: errors.length > 0 ? errors : undefined,
+      totalRows: jsonData.length,
+      validRows: words.length,
+    };
+  } catch (error) {
+    console.error("解析Excel文件出错:", error);
+    return {
+      success: false,
+      errors: [error instanceof Error ? error.message : "解析Excel文件失败"],
+    };
+  }
 }
 
 /**
@@ -590,31 +577,9 @@ export function generateExcelTemplate() {
 }
 
 /**
- * 解析Excel文件，提取单词数据（公共API，集成性能监控）
+ * 解析Excel文件，提取单词数据（公共API）
  * @param file Excel文件对象
  * @param options 解析选项，包含Worker使用、进度回调等配置
  * @returns 解析结果，包含成功标志和数据或错误信息
  */
-export const parseExcelFile = withExcelParsingMonitoring(
-  _parseExcelFile,
-  (
-    args: [File, ExcelParseOptions],
-    result: ExcelParseResult,
-    duration: number
-  ): ExcelParsingMetrics => {
-    const [file, options] = args;
-    const { useWorker = false } = options;
-    const shouldUseWorker = useWorker && isWebWorkerSupported();
-
-    return {
-      fileSize: file.size,
-      totalRows: result.totalRows || 0,
-      validRows: result.validRows || 0,
-      parsingTime: duration,
-      validationTime: duration * 0.4, // 估算验证时间约占40%（主线程验证更多）
-      memoryUsage: 0, // 将由装饰器填充
-      workerUsed: shouldUseWorker,
-      errorCount: result.errors?.length || 0,
-    };
-  }
-);
+export const parseExcelFile = _parseExcelFile;

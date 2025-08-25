@@ -22,15 +22,15 @@ export default function Speed() {
       />
       <InfoBox
         info={inputNumber + ""}
-        description={t("stats.inputCount", "输入次数")}
+        description={t("stats.inputCount", "输入数")}
       />
       <InfoBox
         info={state.timerData.wpm + ""}
-        description={t("progress.wpm", "每分钟字数")}
+        description={t("progress.wpm", "WPM")}
       />
       <InfoBox
         info={state.chapterData.correctCount + ""}
-        description={t("stats.correctCount", "正确次数")}
+        description={t("stats.correctCount", "正确数")}
       />
       <InfoBox
         info={state.timerData.accuracy + ""}

@@ -29,7 +29,7 @@ export default function DbVersionStats() {
   const [totalDevices, setTotalDevices] = useState(0);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const limit = 10;
+  const limit = 30;
 
   useEffect(() => {
     const fetchStats = async () => {

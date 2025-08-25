@@ -1,7 +1,4 @@
-import {
-  performDataMigration,
-  shouldPerformDataMigration,
-} from "../utils/dataIntegrity";
+// 移除数据修复逻辑的导入
 import { db } from "../utils/db";
 import type { IReviewConfig } from "../utils/db/reviewConfig";
 import type { IWordReviewRecord } from "../utils/db/wordReviewRecord";
@@ -119,18 +116,6 @@ export function useTodayReviews() {
   const refreshTodayReviews = useCallback(async () => {
     try {
       setLoading(true);
-
-      // 检查并执行数据迁移（仅首次运行）
-      if (shouldPerformDataMigration()) {
-        console.log("检测到需要数据迁移，开始执行...");
-        try {
-          const migrationStats = await performDataMigration();
-          console.log("数据迁移完成:", migrationStats);
-        } catch (error) {
-          console.error("数据迁移失败:", error);
-          // 迁移失败不影响正常使用，继续执行
-        }
-      }
 
       // 获取并初始化今日复习数据（包括重置每日练习计数）
       const todayWords = await initializeTodayReviews();

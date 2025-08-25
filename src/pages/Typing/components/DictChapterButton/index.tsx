@@ -9,7 +9,7 @@ import type { SupportedLanguage } from "@/store/languageAtom";
 import range from "@/utils/range";
 import { Listbox, Transition } from "@headlessui/react";
 import { useAtom, useAtomValue } from "jotai";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { usePageContext } from "vike-react/usePageContext";
 import { navigate } from "vike/client/router";
@@ -28,11 +28,19 @@ export const DictChapterButton = ({
   const isReviewMode = useAtomValue(isReviewModeAtom);
   const { t } = useTranslation("typing");
 
+  // 客户端水合状态检查
+  const [isClientHydrated, setIsClientHydrated] = useState(false);
+
   // 获取页面上下文，用于国际化
   const pageContextFromHook = usePageContext();
   const pageContext = pageContextFromHook || pageContextProp;
   const currentLocale: SupportedLanguage =
     pageContext?.locale === "en" ? "en" : "zh";
+
+  // 在客户端水合完成后设置状态
+  useEffect(() => {
+    setIsClientHydrated(true);
+  }, []);
 
   const handleKeyDown: React.KeyboardEventHandler<HTMLButtonElement> = (
     event
@@ -46,6 +54,24 @@ export const DictChapterButton = ({
     // 使用本地化的路径进行导航
     const localizedHref = getLocalizedHref("/gallery", currentLocale);
     navigate(localizedHref);
+  };
+
+  // 渲染章节按钮内容
+  const renderChapterButtonContent = () => {
+    if (!isClientHydrated) {
+      // 服务端渲染时显示占位符，避免水合不匹配
+      return "第 1 章";
+    }
+    return t("chapter.number", { number: currentChapter + 1 });
+  };
+
+  // 渲染章节选项内容
+  const renderChapterOptionContent = (index: number) => {
+    if (!isClientHydrated) {
+      // 服务端渲染时显示占位符
+      return `第 ${index + 1} 章`;
+    }
+    return t("chapter.number", { number: index + 1 });
   };
 
   return (
@@ -66,7 +92,7 @@ export const DictChapterButton = ({
               onKeyDown={handleKeyDown}
               className="rounded-lg px-3 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-blue-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
             >
-              {t("chapter.number", { number: currentChapter + 1 })}
+              {renderChapterButtonContent()}
             </Listbox.Button>
             <Transition
               as={Fragment}
@@ -84,9 +110,7 @@ export const DictChapterButton = ({
                             <IconCheck className="focus:outline-none" />
                           </span>
                         ) : null}
-                        <span>
-                          {t("chapter.number", { number: index + 1 })}
-                        </span>
+                        <span>{renderChapterOptionContent(index)}</span>
                       </div>
                     )}
                   </Listbox.Option>

@@ -370,7 +370,7 @@ async function updateWordReviewRecord(
     // 记录不存在，创建新的
     // 使用config.baseIntervals替代intervalSequence
     const intervalSequence = config.baseIntervals || [1, 3, 7, 15, 30, 60];
-    const currentIntervalIndex = isCorrect ? 1 : 0; // 如果第一次就是正确的，直接从第二个间隔开始
+    const currentIntervalIndex = 0; // 总是从0开始，让复习算法正常推进
     const nextInterval = intervalSequence[currentIntervalIndex];
     const now = Date.now();
 
@@ -381,8 +381,8 @@ async function updateWordReviewRecord(
       currentIntervalIndex,
       nextReviewAt: now + AlgorithmUtils.daysToMilliseconds(nextInterval),
       isGraduated: false,
-      totalReviews: 1,
-      todayPracticeCount: 1,
+      totalReviews: 0, // 从0开始，因为还没有进行过复习
+      todayPracticeCount: 0, // 从0开始，因为还没有练习
       sync_status: "local_new",
       last_modified: now,
       // 添加IWordReviewRecord要求的其他必填字段

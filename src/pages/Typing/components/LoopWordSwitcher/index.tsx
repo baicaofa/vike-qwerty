@@ -43,7 +43,10 @@ export default function LoopWordSwitcher() {
             setIsOpen(!isOpen);
             e.currentTarget.blur();
           }}
-          aria-label={t("loopWordSwitcher.selectLoopTimes", "选择重复次数")}
+          aria-label={t(
+            "loopWordSwitcher.selectLoopTimes",
+            "选择单词的循环次数"
+          )}
         >
           <div className="relative">
             {loopTimes === 1 ? (
@@ -71,7 +74,7 @@ export default function LoopWordSwitcher() {
             <div className="shadow-upper box-border flex w-60 select-none flex-col items-center justify-center gap-4 rounded-xl bg-white p-4 drop-shadow dark:bg-gray-800">
               <div className="flex w-full  flex-col  items-start gap-2 py-0">
                 <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                  {t("loopWordSwitcher.selectLoopTimes", "选择重复次数")}
+                  {t("loopWordSwitcher.selectLoopTimes", "选择单词的循环次数")}
                 </span>
                 <div className="flex w-full flex-row items-center justify-between">
                   <RadioGroup.Root
@@ -79,7 +82,7 @@ export default function LoopWordSwitcher() {
                     defaultValue={loopTimes.toString()}
                     aria-label={t(
                       "loopWordSwitcher.selectLoopTimes",
-                      "选择重复次数"
+                      "选择单词的循环次数"
                     )}
                   >
                     {loopOptions.map((value, index) => (
@@ -98,7 +101,7 @@ export default function LoopWordSwitcher() {
                           onClick={() => onChangeLoopTimes(value)}
                         >
                           {value === Number.MAX_SAFE_INTEGER
-                            ? t("loopWordSwitcher.infinite", "无限循环")
+                            ? t("loopWordSwitcher.infinite", "无限")
                             : value}
                         </label>
                       </div>

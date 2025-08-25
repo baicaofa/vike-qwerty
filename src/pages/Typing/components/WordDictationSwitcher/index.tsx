@@ -24,7 +24,7 @@ export default function WordDictationSwitcher() {
   // 使用翻译函数的类型列表
   const wordDictationTypeList: { name: string; type: WordDictationType }[] = [
     {
-      name: t("wordDictationSwitcher.types.hideAll", "隐藏所有"),
+      name: t("wordDictationSwitcher.types.hideAll", "全部隐藏"),
       type: "hideAll",
     },
     {
@@ -91,7 +91,7 @@ export default function WordDictationSwitcher() {
               open ? " bg-blue-500 text-white" : ""
             }`}
             type="button"
-            aria-label={t("wordDictationSwitcher.title", "听写模式")}
+            aria-label={t("wordDictationSwitcher.title", "开关默写模式")}
           >
             {wordDictationConfig.isOpen ? (
               <IconEye className="icon" />
@@ -112,7 +112,7 @@ export default function WordDictationSwitcher() {
               <div className="shadow-upper box-border flex w-60 select-none flex-col items-center justify-center gap-4 rounded-xl bg-white p-4 drop-shadow dark:bg-gray-800">
                 <div className="flex w-full  flex-col  items-start gap-2 py-0">
                   <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                    {t("wordDictationSwitcher.title", "听写模式")}
+                    {t("wordDictationSwitcher.title", "开关默写模式")}
                   </span>
                   <div className="flex w-full flex-row items-center justify-between">
                     <Switch
@@ -125,7 +125,7 @@ export default function WordDictationSwitcher() {
                     <span className="text-right text-xs font-normal leading-tight text-gray-600">
                       {t(
                         "wordDictationSwitcher.status.dictation",
-                        "听写模式状态",
+                        "默写已{{status}}",
                         {
                           status: wordDictationConfig.isOpen
                             ? t("wordDictationSwitcher.enabled", "开启")
@@ -148,7 +148,7 @@ export default function WordDictationSwitcher() {
                 >
                   <div className="flex w-full  flex-col  items-start gap-2 py-0">
                     <span className="text-sm font-normal leading-5 text-gray-900 dark:text-white dark:text-opacity-60">
-                      {t("wordDictationSwitcher.modeLabel", "听写模式")}
+                      {t("wordDictationSwitcher.modeLabel", "默写模式")}
                     </span>
                     <div className="flex w-full flex-row items-center justify-between">
                       <Listbox

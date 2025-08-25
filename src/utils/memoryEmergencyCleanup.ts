@@ -35,47 +35,19 @@ export class MemoryEmergencyCleanup {
     console.log("🚨 执行应急内存清理...");
 
     try {
-      // 1. 清理性能监控数据
-      this.cleanupPerformanceMonitor();
-
-      // 2. 清理localStorage
+      // 1. 清理localStorage
       this.cleanupLocalStorage();
 
-      // 3. 清理全局缓存
+      // 2. 清理全局缓存
       this.cleanupGlobalCaches();
 
-      // 4. 强制垃圾回收（如果可用）
+      // 3. 强制垃圾回收（如果可用）
       this.forceGarbageCollection();
 
       const memoryInfo = this.getMemoryInfo();
       console.log("✅ 内存清理完成", memoryInfo);
     } catch (error) {
       console.error("❌ 内存清理失败:", error);
-    }
-  }
-
-  /**
-   * 清理性能监控器数据
-   */
-  private static cleanupPerformanceMonitor(): void {
-    try {
-      // 访问全局性能监控器
-      const performanceMonitor = (window as any).performanceMonitor;
-      if (performanceMonitor && performanceMonitor.emergencyCleanup) {
-        performanceMonitor.emergencyCleanup();
-      }
-
-      // 清理performance entries
-      if (window.performance && window.performance.clearMarks) {
-        window.performance.clearMarks();
-      }
-      if (window.performance && window.performance.clearMeasures) {
-        window.performance.clearMeasures();
-      }
-
-      console.log("📊 性能监控数据已清理");
-    } catch (error) {
-      console.warn("性能监控数据清理失败:", error);
     }
   }
 

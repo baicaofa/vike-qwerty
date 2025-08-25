@@ -589,22 +589,10 @@ export async function checkAndUpgradeDatabase() {
         console.warn("v10 后置迁移失败或已执行", e);
       }
 
-      // 数据库升级成功后，简单清理重复数据
-      console.log("🔄 数据库升级完成，开始清理重复数据...");
-      const cleanResult = await cleanDuplicateWordReviewRecords();
-      if (cleanResult.success) {
-        console.log(
-          `✅ 清理完成，删除了 ${cleanResult.deletedCount} 条重复记录`
-        );
-      } else {
-        console.warn("⚠️ 清理失败:", cleanResult.error);
-      }
-
       return {
         success: true,
         currentVersion: db.verno,
         expectedVersion,
-        cleanedRecords: cleanResult.deletedCount,
       };
     } catch (error) {
       lastError = error instanceof Error ? error : new Error(String(error));
@@ -623,103 +611,7 @@ export async function checkAndUpgradeDatabase() {
   };
 }
 
-// 清理重复的单词复习记录
-export async function cleanDuplicateWordReviewRecords(): Promise<{
-  success: boolean;
-  deletedCount: number;
-  error?: string;
-}> {
-  try {
-    console.log("🧹 开始清理重复的单词复习记录...");
-
-    // 🔧 改进：检查表是否存在，避免在表不存在时出错
-    if (!db.wordReviewRecords) {
-      console.log("ℹ️ wordReviewRecords 表不存在，跳过清理");
-      return {
-        success: true,
-        deletedCount: 0,
-      };
-    }
-
-    const allRecords = await db.wordReviewRecords.toArray();
-    console.log(`📊 总共找到 ${allRecords.length} 条复习记录`);
-
-    // 按单词分组，找出重复记录
-    const wordGroups = new Map<string, IWordReviewRecord[]>();
-    allRecords.forEach((record) => {
-      const word = record.word;
-      if (!word || typeof word !== "string") {
-        console.warn("⚠️ 发现无效的单词记录:", record);
-        return; // 跳过无效记录
-      }
-      if (!wordGroups.has(word)) {
-        wordGroups.set(word, []);
-      }
-      wordGroups.get(word)!.push(record);
-    });
-
-    // 处理重复记录
-    const recordsToDelete: number[] = [];
-    let duplicateWordsCount = 0;
-
-    for (const word of Array.from(wordGroups.keys())) {
-      const records = wordGroups.get(word)!;
-      if (records.length > 1) {
-        duplicateWordsCount++;
-        console.log(`🔍 发现重复单词 "${word}"，共 ${records.length} 条记录`);
-
-        // 🔧 改进排序逻辑：优先保留有ID的记录，然后按 last_modified 排序
-        records.sort((a: IWordReviewRecord, b: IWordReviewRecord) => {
-          // 优先保留有ID的记录
-          if (a.id && !b.id) return -1;
-          if (!a.id && b.id) return 1;
-
-          // 然后按 last_modified 排序，保留最新的记录
-          const aTime = a.last_modified || 0;
-          const bTime = b.last_modified || 0;
-          return bTime - aTime;
-        });
-
-        const duplicateRecords = records.slice(1);
-
-        // 标记要删除的记录
-        duplicateRecords.forEach((record: IWordReviewRecord) => {
-          if (record.id) {
-            recordsToDelete.push(record.id);
-          } else {
-            console.warn("⚠️ 重复记录没有ID，无法删除:", record);
-          }
-        });
-      }
-    }
-
-    // 批量删除重复记录
-    if (recordsToDelete.length > 0) {
-      console.log(`🗑️ 批量删除 ${recordsToDelete.length} 条重复记录...`);
-
-      // 🔧 改进：分批删除，避免一次性删除过多记录
-      const batchSize = 100;
-      for (let i = 0; i < recordsToDelete.length; i += batchSize) {
-        const batch = recordsToDelete.slice(i, i + batchSize);
-        await db.wordReviewRecords.bulkDelete(batch);
-      }
-    } else {
-      console.log("✅ 没有发现重复记录");
-    }
-
-    return {
-      success: true,
-      deletedCount: recordsToDelete.length,
-    };
-  } catch (error) {
-    console.error("清理重复记录失败:", error);
-    return {
-      success: false,
-      deletedCount: 0,
-      error: error instanceof Error ? error.message : String(error),
-    };
-  }
-}
+// 移除历史遗留的清理函数
 
 // 重置数据库（仅在紧急情况下使用）
 export async function resetDatabase() {

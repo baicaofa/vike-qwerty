@@ -32,20 +32,20 @@ export default function Switcher({ pageContext }: SwitcherProps = {}) {
 
   return (
     <div className="flex items-center justify-center gap-2">
-      <Tooltip content={t("switcher.tooltips.soundSettings", "声音设置")}>
+      <Tooltip content={t("switcher.tooltips.soundSettings", "音效设置")}>
         <SoundSwitcher />
       </Tooltip>
 
       <Tooltip
         className="h-7 w-7"
-        content={t("switcher.tooltips.loopWord", "循环单词")}
+        content={t("switcher.tooltips.loopWord", "设置单个单词循环")}
       >
         <LoopWordSwitcher />
       </Tooltip>
 
       <Tooltip
         className="h-7 w-7"
-        content={t("switcher.tooltips.dictationMode", "听写模式", {
+        content={t("switcher.tooltips.dictationMode", "默写模式", {
           shortcut: `${CTRL} + V`,
         })}
       >
@@ -53,27 +53,31 @@ export default function Switcher({ pageContext }: SwitcherProps = {}) {
       </Tooltip>
       <Tooltip
         className="h-7 w-7"
-        content={t("switcher.tooltips.toggleTranslation", "切换翻译", {
-          shortcut: `${CTRL} + Shift + V`,
-        })}
+        content={t(
+          "switcher.tooltips.toggleTranslation",
+          "开关释义和例句显示",
+          {
+            shortcut: `${CTRL} + Shift + V`,
+          }
+        )}
       >
         <TranslationSwitcher />
       </Tooltip>
 
-      <Tooltip content={t("switcher.tooltips.errorBook", "错误本")}>
+      <Tooltip content={t("switcher.tooltips.errorBook", "错题本")}>
         <ErrorBookButton />
       </Tooltip>
 
       <Tooltip
         className="h-7 w-7"
-        content={t("switcher.tooltips.dataAnalysis", "数据分析")}
+        content={t("switcher.tooltips.dataAnalysis", "查看数据统计")}
       >
         <AnalysisButton />
       </Tooltip>
 
       <Tooltip
         className="h-7 w-7"
-        content={t("switcher.tooltips.darkMode", "暗色模式")}
+        content={t("switcher.tooltips.darkMode", "开关深色模式")}
       >
         <button
           className={`p-[2px] text-lg text-blue-500 focus:outline-none`}
@@ -93,7 +97,7 @@ export default function Switcher({ pageContext }: SwitcherProps = {}) {
       </Tooltip>
       <Tooltip
         className="h-7 w-7"
-        content={t("switcher.tooltips.handPosition", "手势")}
+        content={t("switcher.tooltips.handPosition", "指法图示")}
       >
         <HandPositionIllustration></HandPositionIllustration>
       </Tooltip>

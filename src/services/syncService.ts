@@ -252,6 +252,7 @@ interface IWordReviewRecord extends IBaseRecord {
   sourceDicts: string[];
   preferredDict: string;
   firstSeenAt: number;
+  clientLocalId?: number; // 云端回传的本地 Dexie 自增ID
 }
 
 interface IReviewHistory extends IBaseRecord {
@@ -607,6 +608,15 @@ const applyServerChanges = async (serverChanges: any[]) => {
         for (const data of allUpsertData) {
           const localRecord = localRecordMap.get(data.uuid);
 
+          // 如果服务器带回 clientLocalId，尝试与本地记录关联
+          let preferredLocalId: number | undefined = undefined;
+          if (!localRecord && typeof data.clientLocalId === "number") {
+            const byId = await dbTable.get(data.clientLocalId);
+            if (byId && byId.uuid === data.uuid) {
+              preferredLocalId = byId.id;
+            }
+          }
+
           if (localRecord && localRecord.id) {
             // 更新操作：合并服务器数据和本地数据
             const mergedData = {
@@ -617,8 +627,17 @@ const applyServerChanges = async (serverChanges: any[]) => {
               last_modified: Date.now(),
             };
             upserts.push(mergedData);
+          } else if (preferredLocalId !== undefined) {
+            // 使用服务器提供的 clientLocalId 来维持本地 id
+            const mergedData = {
+              ...data,
+              id: preferredLocalId,
+              sync_status: "synced" as SyncStatus,
+              last_modified: Date.now(),
+            };
+            upserts.push(mergedData);
           } else {
-            // 创建操作：直接使用服务器数据
+            // 创建操作：直接使用服务器数据（让 Dexie 分配新 id）
             const newData = {
               ...data,
               sync_status: "synced" as SyncStatus,

@@ -232,6 +232,7 @@ export const syncData = async (req: Request, res: Response) => {
         // 需要进行字段映射和类型转换
         const {
           uuid,
+          id: clientLocalId,
           word,
           // 客户端算法字段
           intervalSequence,
@@ -303,6 +304,9 @@ export const syncData = async (req: Request, res: Response) => {
             serverRecord.clientModifiedAt =
               safeParseDate(clientLastModified) || new Date();
             serverRecord.isDeleted = clientIsDeleted || false;
+            if (typeof clientLocalId === "number") {
+              (serverRecord as any).clientLocalId = clientLocalId;
+            }
 
             await serverRecord.save();
           } else {
@@ -327,24 +331,29 @@ export const syncData = async (req: Request, res: Response) => {
               last_modified: clientLastModified || Date.now(),
               clientModifiedAt: safeParseDate(clientLastModified) || new Date(),
               isDeleted: clientIsDeleted || false,
+              clientLocalId:
+                typeof clientLocalId === "number" ? clientLocalId : undefined,
             });
 
             await serverRecord.save();
           }
         } else if (action === "delete") {
           const serverRecord = await WordReviewRecordModel.findOne(query);
-          if (serverRecord) {
-            if ("isDeleted" in WordReviewRecordModel.schema.paths) {
-              serverRecord.isDeleted = true;
-              serverRecord.last_modified =
-                clientRecordData.last_modified || Date.now();
-              serverRecord.clientModifiedAt =
-                safeParseDate(clientRecordData.last_modified) || new Date();
-              await serverRecord.save();
-            } else {
-              await WordReviewRecordModel.findOneAndDelete(query);
+                      if (serverRecord) {
+              if ("isDeleted" in WordReviewRecordModel.schema.paths) {
+                serverRecord.isDeleted = true;
+                serverRecord.last_modified =
+                  clientRecordData.last_modified || Date.now();
+                serverRecord.clientModifiedAt =
+                  safeParseDate(clientRecordData.last_modified) || new Date();
+                if (typeof clientRecordData.id === "number") {
+                  (serverRecord as any).clientLocalId = clientRecordData.id;
+                }
+                await serverRecord.save();
+              } else {
+                await WordReviewRecordModel.findOneAndDelete(query);
+              }
             }
-          }
         }
       } else if (table === "familiarWords") {
         // 特殊处理 FamiliarWord 表，使用 (userId, dict, word) 作为唯一标识

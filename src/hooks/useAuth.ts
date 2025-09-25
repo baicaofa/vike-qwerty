@@ -13,7 +13,7 @@ export interface UseAuthResult {
   isEmailVerified: boolean;
   userData: AuthUser | null;
   login: (email: string, password: string) => Promise<void>;
-  logout: () => void;
+  logout: () => Promise<void>;
   register: (
     username: string,
     email: string,

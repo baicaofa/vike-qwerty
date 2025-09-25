@@ -1,5 +1,6 @@
 import {
   completeRegistration,
+  deleteAccount,
   forgotPassword,
   getProfile,
   login,
@@ -21,6 +22,11 @@ router.post("/complete-registration", completeRegistration as RequestHandler);
 router.post("/login", login as RequestHandler);
 router.post("/logout", logout as RequestHandler);
 router.get("/profile", protect as RequestHandler, getProfile as RequestHandler);
+router.delete(
+  "/account",
+  protect as RequestHandler,
+  deleteAccount as RequestHandler
+);
 
 // 邮箱验证路由
 router.post("/send-verification-code", sendVerificationCode as RequestHandler);

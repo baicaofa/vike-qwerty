@@ -1,4 +1,5 @@
 import { APP_DATA_VERSION } from "@/constants/app";
+import useAuthStore from "@/store/auth";
 import { db } from "@/utils/db";
 import type { SyncStatus } from "@/utils/db/record";
 import axios from "axios";
@@ -775,9 +776,7 @@ export const syncFromCloud = async (): Promise<SyncResult> => {
     const lastSyncTimestamp = getLastSyncTimestamp();
     console.log("上次同步时间戳:", lastSyncTimestamp);
 
-    // 获取认证令牌
-    const token = getLocalStorageItem("token");
-    if (!token) {
+    if (!useAuthStore.getState().isAuthenticated) {
       const error = classifyAndHandleError(
         new Error("用户未登录"),
         "syncFromCloud"
@@ -791,10 +790,6 @@ export const syncFromCloud = async (): Promise<SyncResult> => {
       updateSyncStats(result, result.syncTime!);
       return result;
     }
-
-    // 设置请求头
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    axios.defaults.withCredentials = true;
 
     const response = await axios.post(
       "/api/sync",
@@ -893,18 +888,12 @@ export const syncToCloud = async (): Promise<SyncResult> => {
     // 获取上次同步时间戳
     const lastSyncTimestamp = getLastSyncTimestamp();
 
-    // 获取认证令牌
-    const token = getLocalStorageItem("token");
-    if (!token) {
+    if (!useAuthStore.getState().isAuthenticated) {
       return {
         success: false,
         error: { message: "用户未登录" },
       };
     }
-
-    // 设置请求头
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    axios.defaults.withCredentials = true;
 
     // 发送本地变更到云端
     console.log("发送本地变更到云端...");

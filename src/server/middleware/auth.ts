@@ -6,6 +6,29 @@ interface JwtPayload {
   id: string;
 }
 
+const getJwtSecret = () => {
+  const secret = process.env.JWT_SECRET;
+  if (!secret && process.env.NODE_ENV === "production") {
+    throw new Error("JWT_SECRET is required in production");
+  }
+  return secret || "your-secret-key";
+};
+
+const getTokenFromRequest = (req: Request): string | undefined => {
+  if (req.cookies && typeof req.cookies.token === "string") {
+    return req.cookies.token;
+  }
+
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    return req.headers.authorization.split(" ")[1];
+  }
+
+  return undefined;
+};
+
 declare module "express" {
   interface Request {
     user?: any;
@@ -18,33 +41,16 @@ export const protect = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    let token: string | undefined;
-
-    // 优先从 HttpOnly Cookie 读取
-    if (req.cookies && typeof req.cookies.token === "string") {
-      token = req.cookies.token;
-    }
-
-    // 兼容 Authorization Bearer
-    if (
-      !token &&
-      req.headers.authorization &&
-      req.headers.authorization.startsWith("Bearer")
-    ) {
-      token = req.headers.authorization.split(" ")[1];
-    }
+    const token = getTokenFromRequest(req);
 
     if (!token) {
-      res.status(401).json({ message: "未授权，请先登录111" });
+      res.status(401).json({ message: "未授权，请先登录" });
       return;
     }
 
     try {
       // 验证 token
-      const decoded = jwt.verify(
-        token,
-        process.env.JWT_SECRET || "your-secret-key"
-      ) as JwtPayload;
+      const decoded = jwt.verify(token, getJwtSecret()) as JwtPayload;
 
       // 获取用户信息
       const user = await User.findById(decoded.id).select("-password");
@@ -124,23 +130,13 @@ export const optionalAuth = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    let token;
-
-    if (
-      req.headers.authorization &&
-      req.headers.authorization.startsWith("Bearer")
-    ) {
-      token = req.headers.authorization.split(" ")[1];
-    }
+    const token = getTokenFromRequest(req);
 
     // 如果有token，尝试验证
     if (token) {
       try {
         // 验证 token
-        const decoded = jwt.verify(
-          token,
-          process.env.JWT_SECRET || "your-secret-key"
-        ) as JwtPayload;
+        const decoded = jwt.verify(token, getJwtSecret()) as JwtPayload;
 
         // 获取用户信息
         const user = await User.findById(decoded.id).select("-password");

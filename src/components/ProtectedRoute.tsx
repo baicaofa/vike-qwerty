@@ -1,5 +1,6 @@
 import useAuthStore from "@/store/auth";
 import { useEffect, useState } from "react";
+import { navigate } from "vike/client/router";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -19,7 +20,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
-      window.location.href = "/login";
+      navigate("/login");
     }
   }, [isAuthenticated, isLoading]);
 

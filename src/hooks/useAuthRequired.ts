@@ -59,8 +59,9 @@ export function useAuthRequired(
     if (onAuthRequired) {
       onAuthRequired();
     } else {
-      // 默认行为：跳转到登录页面
-      window.location.href = redirectTo;
+      // 默认行为：使用 Vike 客户端路由跳转到登录页面
+      const { navigate } = await import("vike/client/router");
+      await navigate(redirectTo);
     }
 
     return false;

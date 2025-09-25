@@ -37,6 +37,7 @@ export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
     pageContext?.locale === "en" ? "en" : "zh";
   // 添加客户端渲染状态控制
   const [isClient, setIsClient] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   // 在客户端渲染后设置状态
   useEffect(() => {
@@ -54,10 +55,19 @@ export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
     navigate(localizedHref);
   };
 
-  const handleLogout = () => {
-    logout();
-    const localizedHref = getLocalizedHref("/", currentLocale);
-    navigate(localizedHref);
+  const handleLogout = async () => {
+    if (isLoggingOut) return;
+
+    try {
+      setIsLoggingOut(true);
+      await logout();
+      const localizedHref = getLocalizedHref("/", currentLocale);
+      await navigate(localizedHref);
+    } catch (logoutError) {
+      error(t("userAuthMenu.logoutFailed", "退出登录失败，请稍后重试"));
+    } finally {
+      setIsLoggingOut(false);
+    }
   };
 
   const handleSync = async () => {
@@ -168,14 +178,17 @@ export const UserAuthMenu: React.FC<UserAuthMenuProps> = ({
                 <button
                   type="button"
                   onClick={handleLogout}
+                  disabled={isLoggingOut}
                   className={`${
                     active
                       ? "bg-blue-500 text-white"
                       : "text-gray-700 dark:text-gray-200"
-                  } flex w-full items-center px-4 py-2 text-sm`}
+                  } flex w-full items-center px-4 py-2 text-sm disabled:opacity-60`}
                 >
                   <IconLogout className="mr-2 h-5 w-5" />
-                  {t("userAuthMenu.logout", "退出登录")}
+                  {isLoggingOut
+                    ? t("userAuthMenu.loggingOut", "正在退出")
+                    : t("userAuthMenu.logout", "退出登录")}
                 </button>
               )}
             </Menu.Item>

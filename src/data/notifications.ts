@@ -3,6 +3,16 @@ import type { NotificationItem } from "@/store/updateNotification";
 // 通知数据源
 export const notificationsList: NotificationItem[] = [
   {
+    id: "update-2025-09-25",
+    type: "feature",
+    date: "2025年9月25日",
+    title: "1、复习练习模块增加释义开关显示<br/>2、反馈页面逻辑调整<br/>",
+    tag: "产品更新",
+    desc: "复习练习模块增加释义开关显示，可以选择关闭，或者按“Tab”键开启，或者一直开启<br/>调整反馈页面逻辑，现在可以在反馈中持续留言反馈",
+    images: [],
+    priority: "high",
+  },
+  {
     id: "update-2025-08-06",
     type: "feature",
     date: "2025年8月6日",

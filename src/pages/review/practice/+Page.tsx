@@ -19,7 +19,6 @@
 import ChapterResultScreen from "./components/ChapterResultScreen";
 import { ChapterErrorBoundary } from "./components/ErrorBoundary";
 import { Link } from "@/components/ui/Link";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useTodayReviews } from "@/hooks/useSpacedRepetition";
 import Setting from "@/pages/Typing/components/Setting";
@@ -29,6 +28,7 @@ import {
   TypingProvider,
   TypingStateActionType,
 } from "@/pages/Typing/store/";
+import { reviewMeaningConfigAtom, reviewWordDictMapAtom } from "@/store";
 import type { WordWithIndex } from "@/typings";
 import type { Chapter, ChapterStats } from "@/typings/chapter";
 import { isChineseSymbol, isLegal } from "@/utils";
@@ -44,6 +44,7 @@ import {
   extractWordNameFromTypingWord,
 } from "@/utils/reviewToTypingAdapter";
 import { completeWordReview } from "@/utils/spaced-repetition";
+import { useAtom, useSetAtom } from "jotai";
 import { Loader2 } from "lucide-react";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -138,6 +139,9 @@ function TypingContent({
   }) => void;
 }) {
   const typingContext = useContext(TypingContext);
+  const [reviewMeaningConfig, setReviewMeaningConfig] = useAtom(
+    reviewMeaningConfigAtom
+  );
   const [wrongWords, setWrongWords] = useState<IWordReviewRecord[]>([]);
   const [correctWords, setCorrectWords] = useState<IWordReviewRecord[]>([]);
   const [hasCompletedChapter, setHasCompletedChapter] = useState(false);
@@ -333,6 +337,42 @@ function TypingContent({
           <div className="flex flex-col space-y-6">
             <Setting />
 
+            {/* 复习释义开关（与 Setting 同层级，紧随其后） */}
+            <div className="border rounded-lg p-4 shadow-sm">
+              <h3 className="font-medium text-lg mb-3">释义显示</h3>
+              <div className="flex items-center space-x-2">
+                <button
+                  className={`px-2 py-1 text-sm rounded border ${
+                    reviewMeaningConfig.isOpen
+                      ? "bg-blue-500 text-white border-blue-500"
+                      : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-600"
+                  }`}
+                  onClick={() =>
+                    setReviewMeaningConfig((old) => ({
+                      ...old,
+                      isOpen: !old.isOpen,
+                    }))
+                  }
+                >
+                  {reviewMeaningConfig.isOpen ? "开" : "关"}
+                </button>
+                <select
+                  className="ml-2  pl-2 py-1 text-sm border rounded bg-white dark:bg-gray-800 dark:text-white dark:border-gray-600"
+                  value={reviewMeaningConfig.revealMode}
+                  onChange={(e) =>
+                    setReviewMeaningConfig((old) => ({
+                      ...old,
+                      revealMode: e.target.value as any,
+                    }))
+                  }
+                  title="释义显示模式"
+                >
+                  <option value="always">总是显示</option>
+                  <option value="onTab">按Tab显示</option>
+                </select>
+              </div>
+            </div>
+
             <div className="border rounded-lg p-4 shadow-sm">
               <h3 className="font-medium text-lg mb-3">练习进度</h3>
               <div className="space-y-2">
@@ -427,6 +467,10 @@ function ChapterSelector({
  */
 export default function ReviewPracticePage() {
   const { t } = useTranslation("review");
+  const [reviewMeaningConfig, setReviewMeaningConfig] = useAtom(
+    reviewMeaningConfigAtom
+  );
+  const setReviewWordDictMap = useSetAtom(reviewWordDictMapAtom);
 
   // 数据状态
   const { reviews, refreshTodayReviews } = useTodayReviews();
@@ -516,6 +560,14 @@ export default function ReviewPracticePage() {
         if (chapter && chapter.words && chapter.words.length > 0) {
           const adaptedWords = adaptReviewWordsToTypingWords(chapter.words);
           setTypingWords(adaptedWords);
+          // 建立当前章节的 词->词典 映射，优先 preferredDict，其次 sourceDicts[0]
+          const map: Record<string, string> = {};
+          for (const w of chapter.words) {
+            const dictId =
+              (w as any).preferredDict || (w as any).sourceDicts?.[0];
+            if (dictId) map[w.word] = dictId;
+          }
+          setReviewWordDictMap(map);
         }
 
         setIsLoading(false);
@@ -562,6 +614,14 @@ export default function ReviewPracticePage() {
 
         const adaptedWords = adaptReviewWordsToTypingWords(chapter.words);
         setTypingWords(adaptedWords);
+        // 更新 词->词典 映射
+        const map: Record<string, string> = {};
+        for (const w of chapter.words) {
+          const dictId =
+            (w as any).preferredDict || (w as any).sourceDicts?.[0];
+          if (dictId) map[w.word] = dictId;
+        }
+        setReviewWordDictMap(map);
       } catch (error) {
         console.error("开始章节失败:", error);
         setError(t("chapter.status.error", "开始章节失败"));

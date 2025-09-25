@@ -12,13 +12,16 @@ import Phonetic from "./components/Phonetic";
 import Sentences from "./components/Sentences";
 import Translation from "./components/Translation";
 import WordComponent from "./components/Word";
+import { useMeaningInReview } from "@/hooks/useMeaningInReview";
 import { usePrefetchPronunciationSound } from "@/hooks/usePronunciation";
 import {
+  currentDictInfoAtom,
   isReviewModeAtom,
   isShowPrevAndNextWordAtom,
   isSkipFamiliarWordAtom,
   loopWordConfigAtom,
   phoneticConfigAtom,
+  reviewMeaningConfigAtom,
   reviewModeInfoAtom,
   wordDictationConfigAtom,
 } from "@/store";
@@ -244,11 +247,28 @@ export default function WordPanel({
     []
   );
 
+  const reviewMeaningConfig = useAtomValue(reviewMeaningConfigAtom);
+  const currentDictInfo = useAtomValue(currentDictInfoAtom);
+
+  // 在复习模式下，根据开关与模式决定是否显示释义
   const shouldShowTranslation = useMemo(() => {
-    // 复习模式下不显示翻译
-    if (isInReviewMode) return false;
+    if (isInReviewMode) {
+      if (!reviewMeaningConfig.isOpen) return false;
+      // 复习模式：
+      // always -> 始终显示
+      // onTab  -> 仅按下 Tab（或悬停触发）时显示
+      if (reviewMeaningConfig.revealMode === "always") return true;
+      return isShowTranslation; // onTab 模式
+    }
     return isShowTranslation || state.isTransVisible;
-  }, [isShowTranslation, state.isTransVisible, isInReviewMode]);
+  }, [
+    isInReviewMode,
+    reviewMeaningConfig.isOpen,
+    reviewMeaningConfig.revealMode,
+    isShowTranslation,
+    state.chapterData.userInputLogs,
+    state.chapterData.index,
+  ]);
 
   const shouldShowPhonetic = useMemo(() => {
     // 复习模式下不显示音标
@@ -287,6 +307,30 @@ export default function WordPanel({
     dispatch,
   ]);
 
+  // 复习模式下：尝试按需拉取释义
+  const meaning = useMeaningInReview(
+    isInReviewMode ? currentWord?.name : undefined,
+    { preferredDictId: currentDictInfo?.id }
+  );
+
+  // 基于拉取结果构造用于展示的词对象（仅影响翻译/详细翻译/音标，不影响打字逻辑）
+  const displayWord: Word | undefined = useMemo(() => {
+    if (!currentWord) return undefined;
+    if (!isInReviewMode) return currentWord;
+    const fetched = meaning.word;
+    if (!fetched) return currentWord;
+    return {
+      ...currentWord,
+      trans: fetched.trans ?? currentWord.trans,
+      detailed_translations:
+        (fetched as any).detailed_translations ??
+        (currentWord as any).detailed_translations,
+      sentences: fetched.sentences ?? (currentWord as any).sentences,
+      usphone: fetched.usphone ?? (currentWord as any).usphone,
+      ukphone: fetched.ukphone ?? (currentWord as any).ukphone,
+    } as Word;
+  }, [currentWord, isInReviewMode, meaning.word]);
+
   return (
     <div className="container flex h-full w-full flex-col items-center justify-center">
       <div className="container flex h-24 w-full shrink-0 grow-0 justify-between px-12 pt-10">
@@ -298,7 +342,7 @@ export default function WordPanel({
         )}
       </div>
       <div className="container flex flex-grow flex-col items-center justify-center">
-        {currentWord && (
+        {displayWord && (
           <div className="relative flex w-full justify-center">
             {!state.isTyping && (
               <div className="absolute flex h-full w-full justify-center">
@@ -317,18 +361,17 @@ export default function WordPanel({
               <div className="flex-1 md:mr-4">
                 <div className="relative">
                   <WordComponent
-                    word={currentWord}
+                    word={displayWord}
                     onFinish={onFinish}
                     key={wordComponentKey}
                   />
-                  {shouldShowPhonetic && <Phonetic word={currentWord} />}
-                  {/* 根据是否有详细翻译数据决定显示哪个组件 */}
-                  {!isInReviewMode &&
-                  currentWord.detailed_translations &&
-                  Array.isArray(currentWord.detailed_translations) &&
-                  currentWord.detailed_translations.length > 0 ? (
+                  {shouldShowPhonetic && <Phonetic word={displayWord} />}
+                  {/* 根据是否有详细翻译数据决定显示哪个组件（复习模式也可显示）*/}
+                  {displayWord.detailed_translations &&
+                  Array.isArray(displayWord.detailed_translations) &&
+                  displayWord.detailed_translations.length > 0 ? (
                     <DetailedTranslation
-                      word={currentWord}
+                      word={displayWord}
                       showDetailedTranslation={shouldShowTranslation}
                       onMouseEnter={() => handleShowTranslation(true)}
                       onMouseLeave={() => handleShowTranslation(false)}
@@ -337,8 +380,8 @@ export default function WordPanel({
                     <Translation
                       trans={(() => {
                         // 回退到使用trans
-                        return Array.isArray(currentWord.trans)
-                          ? currentWord.trans
+                        return Array.isArray(displayWord.trans)
+                          ? displayWord.trans
                               .map((t) =>
                                 typeof t === "string"
                                   ? t
@@ -359,13 +402,13 @@ export default function WordPanel({
                 </div>
               </div>
               {!isInReviewMode &&
-                currentWord.sentences &&
-                Array.isArray(currentWord.sentences) &&
-                currentWord.sentences.length > 0 &&
+                displayWord.sentences &&
+                Array.isArray(displayWord.sentences) &&
+                displayWord.sentences.length > 0 &&
                 state.isSentencesVisible &&
                 !wordDictationConfig.isOpen && (
                   <div className="mt-4 md:mt-0 md:w-2/5 lg:w-1/2">
-                    <Sentences word={currentWord} showSentences={true} />
+                    <Sentences word={displayWord} showSentences={true} />
                   </div>
                 )}
             </div>

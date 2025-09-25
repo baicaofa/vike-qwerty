@@ -8,6 +8,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import React from "react";
+import { navigate } from "vike/client/router";
 
 interface LoginPromptModalProps {
   isOpen: boolean;
@@ -38,7 +39,7 @@ const LoginPromptModal: React.FC<LoginPromptModalProps> = ({
     if (onLogin) {
       onLogin();
     } else {
-      window.location.href = "/login";
+      navigate("/login");
     }
   };
 

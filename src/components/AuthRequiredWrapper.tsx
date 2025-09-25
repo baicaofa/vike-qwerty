@@ -2,6 +2,7 @@ import { LoadingUI } from "@/components/Loading";
 import LoginPromptModal from "@/components/LoginPromptModal";
 import { useAuthRequired } from "@/hooks/useAuthRequired";
 import React, { useState } from "react";
+import { navigate } from "vike/client/router";
 
 interface AuthRequiredWrapperProps {
   children: React.ReactNode;
@@ -66,7 +67,7 @@ const AuthRequiredWrapper: React.FC<AuthRequiredWrapperProps> = ({
             isOpen={showLoginPrompt}
             onClose={() => setShowLoginPrompt(false)}
             feature={feature}
-            onLogin={() => (window.location.href = redirectTo)}
+            onLogin={() => navigate(redirectTo)}
           />
           {fallback || (
             <div className="flex items-center justify-center py-12">

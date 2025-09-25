@@ -18,11 +18,14 @@ export interface IFeedback extends mongoose.Document {
     createdAt: Date;
   }[]; // 投票用户列表（支持已登录用户和匿名用户）
   replies: {
-    adminId: mongoose.Types.ObjectId; // 管理员用户ID
-    adminUsername: string; // 管理员用户名
+    replyType: "admin" | "user"; // 回复类型
+    adminId?: mongoose.Types.ObjectId; // 管理员用户ID
+    adminUsername?: string; // 管理员用户名
+    userId?: mongoose.Types.ObjectId; // 用户ID
+    userUsername?: string; // 用户名
     content: string; // 回复内容
     createdAt: Date; // 回复时间
-  }[]; // 管理员回复列表
+  }[]; // 回复列表
   createdAt: Date;
   updatedAt: Date;
 }
@@ -99,14 +102,28 @@ const feedbackSchema = new mongoose.Schema(
     ],
     replies: [
       {
+        replyType: {
+          type: String,
+          enum: ["admin", "user"],
+          required: true,
+        },
         adminId: {
           type: mongoose.Schema.Types.ObjectId,
           ref: "User",
-          required: true, // 管理员用户ID
+          required: false,
         },
         adminUsername: {
           type: String,
-          required: true, // 管理员用户名
+          required: false,
+        },
+        userId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+          required: false,
+        },
+        userUsername: {
+          type: String,
+          required: false,
         },
         content: {
           type: String,
@@ -129,9 +146,12 @@ const feedbackSchema = new mongoose.Schema(
 // 添加复合索引优化查询性能
 feedbackSchema.index({ "voters.userId": 1, "voters.deviceId": 1 });
 
-// 添加验证逻辑：确保userId和deviceId至少有一个存在
+// 仅在投票数据变更时校验，避免回复等操作因历史脏数据导致保存失败
 feedbackSchema.pre("save", function (next) {
-  // 验证每个voter都有userId或deviceId
+  if (!this.isModified("voters")) {
+    return next();
+  }
+
   for (const voter of this.voters) {
     if (!voter.userId && !voter.deviceId) {
       return next(new Error("投票记录必须包含userId或deviceId"));

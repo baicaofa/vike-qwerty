@@ -90,6 +90,18 @@ export const pageTDK: Record<string, TDK> = {
     description: "Keybr复习页面，复习单词，提高英语水平",
     keywords: "Keybr, 复习页面, 复习单词, 英语学习, 打字练习",
   },
+  // 管理员反馈页面
+  "/review/today": {
+    title: "Keybr复习页面 - Keybr今日复习 - Keybr打字软件官网",
+    description: "Keybr复习页面，复习单词，提高英语水平",
+    keywords: "Keybr, 复习页面, 复习单词, 英语学习, 打字练习",
+  },
+  // 管理员反馈页面
+  "/review/history": {
+    title: "Keybr复习页面 - Keybr历史复习 - Keybr打字软件官网",
+    description: "Keybr复习页面，复习单词，提高英语水平",
+    keywords: "Keybr, 复习页面, 复习单词, 英语学习, 打字练习",
+  },
 };
 
 // 动态生成词典页面的TDK

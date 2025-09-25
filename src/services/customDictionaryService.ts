@@ -17,18 +17,16 @@ interface ApiResponse<T = any> {
   error?: string;
 }
 
-// 获取身份验证令牌
-function getAuthHeaders(): HeadersInit {
-  const token = localStorage.getItem("token");
-  const headers: HeadersInit = {
-    "Content-Type": "application/json",
+// HttpOnly Cookie 认证请求配置
+function createAuthFetchInit(init: RequestInit = {}): RequestInit {
+  return {
+    credentials: "include",
+    ...init,
+    headers: {
+      "Content-Type": "application/json",
+      ...(init.headers as Record<string, string> | undefined),
+    },
   };
-
-  if (token) {
-    headers["Authorization"] = `Bearer ${token}`;
-  }
-
-  return headers;
 }
 
 // 获取词库列表参数
@@ -91,9 +89,7 @@ export async function getDictionaries(
     const url = `${API_BASE_URL}/custom-dictionaries${
       queryParams.toString() ? `?${queryParams.toString()}` : ""
     }`;
-    const response = await fetch(url, {
-      headers: getAuthHeaders(),
-    });
+    const response = await fetch(url, createAuthFetchInit());
 
     if (!response.ok) {
       throw new Error(
@@ -125,9 +121,10 @@ export async function getDictionary(
   id: string
 ): Promise<GetCustomDictionaryResult> {
   try {
-    const response = await fetch(`${API_BASE_URL}/custom-dictionaries/${id}`, {
-      headers: getAuthHeaders(),
-    });
+    const response = await fetch(
+      `${API_BASE_URL}/custom-dictionaries/${id}`,
+      createAuthFetchInit()
+    );
 
     if (!response.ok) {
       throw new Error(
@@ -156,11 +153,13 @@ export async function createDictionary(
   dictionary: Partial<ICustomDictionary>
 ): Promise<SaveCustomDictionaryResult> {
   try {
-    const response = await fetch(`${API_BASE_URL}/custom-dictionaries`, {
-      method: "POST",
-      headers: getAuthHeaders(),
-      body: JSON.stringify(dictionary),
-    });
+    const response = await fetch(
+      `${API_BASE_URL}/custom-dictionaries`,
+      createAuthFetchInit({
+        method: "POST",
+        body: JSON.stringify(dictionary),
+      })
+    );
 
     if (!response.ok) {
       // 尝试解析错误响应
@@ -200,11 +199,13 @@ export async function updateDictionary(
   dictionary: Partial<ICustomDictionary>
 ): Promise<SaveCustomDictionaryResult> {
   try {
-    const response = await fetch(`${API_BASE_URL}/custom-dictionaries/${id}`, {
-      method: "PUT",
-      headers: getAuthHeaders(),
-      body: JSON.stringify(dictionary),
-    });
+    const response = await fetch(
+      `${API_BASE_URL}/custom-dictionaries/${id}`,
+      createAuthFetchInit({
+        method: "PUT",
+        body: JSON.stringify(dictionary),
+      })
+    );
 
     if (!response.ok) {
       throw new Error(
@@ -233,10 +234,10 @@ export async function deleteDictionary(
   id: string
 ): Promise<ApiResponse & { deletedWordsCount?: number; message?: string }> {
   try {
-    const response = await fetch(`${API_BASE_URL}/custom-dictionaries/${id}`, {
-      method: "DELETE",
-      headers: getAuthHeaders(),
-    });
+    const response = await fetch(
+      `${API_BASE_URL}/custom-dictionaries/${id}`,
+      createAuthFetchInit({ method: "DELETE" })
+    );
 
     if (!response.ok) {
       throw new Error(
@@ -275,9 +276,7 @@ export async function getDictionaryWords(
 
     const response = await fetch(
       `${API_BASE_URL}/custom-dictionaries/${dictId}/words?${queryParams.toString()}`,
-      {
-        headers: getAuthHeaders(),
-      }
+      createAuthFetchInit()
     );
 
     if (!response.ok) {
@@ -314,11 +313,10 @@ export async function addWords(
   try {
     const response = await fetch(
       `${API_BASE_URL}/custom-dictionaries/${dictId}/words`,
-      {
+      createAuthFetchInit({
         method: "POST",
-        headers: getAuthHeaders(),
         body: JSON.stringify({ words }),
-      }
+      })
     );
 
     if (!response.ok) {
@@ -358,11 +356,10 @@ export async function previewEnrichment(words: string[]): Promise<{
   try {
     const response = await fetch(
       `${API_BASE_URL}/custom-dictionaries/preview-enrichment`,
-      {
+      createAuthFetchInit({
         method: "POST",
-        headers: getAuthHeaders(),
         body: JSON.stringify({ words }),
-      }
+      })
     );
 
     if (!response.ok) {
@@ -395,11 +392,10 @@ export async function updateWord(
   try {
     const response = await fetch(
       `${API_BASE_URL}/custom-dictionaries/${dictId}/words/${wordId}`,
-      {
+      createAuthFetchInit({
         method: "PUT",
-        headers: getAuthHeaders(),
         body: JSON.stringify(updateData),
-      }
+      })
     );
 
     if (!response.ok) {
@@ -429,10 +425,7 @@ export async function deleteWord(
   try {
     const response = await fetch(
       `${API_BASE_URL}/custom-dictionaries/${dictId}/words/${wordId}`,
-      {
-        method: "DELETE",
-        headers: getAuthHeaders(),
-      }
+      createAuthFetchInit({ method: "DELETE" })
     );
 
     if (!response.ok) {

@@ -350,8 +350,9 @@ export const replyToFeedback = async (req: Request, res: Response) => {
       });
     }
 
-    // 添加回复
+    // 添加管理员回复
     feedback.replies.push({
+      replyType: "admin",
       adminId: req.user._id,
       adminUsername: req.user.username,
       content,
@@ -367,6 +368,55 @@ export const replyToFeedback = async (req: Request, res: Response) => {
     });
   } catch (error: any) {
     console.error("添加回复失败:", error);
+    res.status(500).json({
+      success: false,
+      message: "添加回复时出错",
+      error: error.message,
+    });
+  }
+};
+
+// 用户回复反馈（需要登录，可以回复任何反馈）
+export const replyToFeedbackAsUser = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const { content } = req.body;
+
+    // 验证必填字段
+    if (!content) {
+      return res.status(400).json({
+        success: false,
+        message: "请提供回复内容",
+      });
+    }
+
+    const feedback = await Feedback.findById(id);
+
+    if (!feedback) {
+      return res.status(404).json({
+        success: false,
+        message: "未找到该反馈",
+      });
+    }
+
+    // 添加用户回复（允许回复任何反馈）
+    feedback.replies.push({
+      replyType: "user",
+      userId: req.user._id,
+      userUsername: req.user.username,
+      content,
+      createdAt: new Date(),
+    });
+
+    await feedback.save();
+
+    res.status(200).json({
+      success: true,
+      data: feedback,
+      message: "回复已添加",
+    });
+  } catch (error: any) {
+    console.error("添加用户回复失败:", error);
     res.status(500).json({
       success: false,
       message: "添加回复时出错",

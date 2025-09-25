@@ -1,5 +1,10 @@
 import axios from "axios";
 
+/** HttpOnly Cookie 认证 */
+const getAuthRequestConfig = () => ({
+  withCredentials: true,
+});
+
 export interface FeedbackFormData {
   type: string;
   title: string;
@@ -33,22 +38,16 @@ export const getAllFeedback = async (
   filters: Record<string, string> = {}
 ) => {
   try {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      throw new Error("111未授权，请先登录");
-    }
-
     const params = new URLSearchParams({
       page: page.toString(),
       limit: limit.toString(),
       ...filters,
     });
 
-    const response = await axios.get(`/api/feedback?${params}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await axios.get(
+      `/api/feedback?${params}`,
+      getAuthRequestConfig()
+    );
 
     return response.data;
   } catch (error: any) {
@@ -65,16 +64,11 @@ export const updateFeedbackStatus = async (
   data: { status?: string; priority?: string }
 ) => {
   try {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      throw new Error("1111未授权，请先登录");
-    }
-
-    const response = await axios.patch(`/api/feedback/${id}`, data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await axios.patch(
+      `/api/feedback/${id}`,
+      data,
+      getAuthRequestConfig()
+    );
 
     return response.data;
   } catch (error: any) {
@@ -100,17 +94,10 @@ export const getPublicFeedback = async (
       ...(sort === "upvotes" && { sort: "upvotes" }),
     });
 
-    // 获取认证token（如果用户已登录）
-    const token = localStorage.getItem("token");
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
-
-    // 添加调试信息
-    console.log(`Requesting: /api/feedback/public?${params.toString()}`);
-    console.log("Headers:", headers);
-
-    const response = await axios.get(`/api/feedback/public?${params}`, {
-      headers,
-    });
+    const response = await axios.get(
+      `/api/feedback/public?${params}`,
+      getAuthRequestConfig()
+    );
 
     return response.data;
   } catch (error: any) {
@@ -165,19 +152,10 @@ export const voteFeedback = async (id: string, voteData: VoteData) => {
 // 管理员回复反馈
 export const replyToFeedback = async (id: string, content: string) => {
   try {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      throw new Error("未授权，请先登录");
-    }
-
     const response = await axios.post(
       `/api/feedback/${id}/reply`,
       { content },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
+      getAuthRequestConfig()
     );
 
     return response.data;
@@ -191,8 +169,28 @@ export const replyToFeedback = async (id: string, content: string) => {
 
 // 定义回复接口，供前端组件使用
 export interface FeedbackReply {
-  adminId: string;
-  adminUsername: string;
+  replyType: "admin" | "user";
+  adminId?: string;
+  adminUsername?: string;
+  userId?: string;
+  userUsername?: string;
   content: string;
   createdAt: string;
 }
+
+// 用户回复反馈（需要登录）
+export const replyToFeedbackAsUser = async (id: string, content: string) => {
+  try {
+    const response = await axios.post(
+      `/api/feedback/${id}/user-reply`,
+      { content },
+      getAuthRequestConfig()
+    );
+
+    return response.data;
+  } catch (error: any) {
+    const message =
+      error.response?.data?.message || "回复反馈时出错，请稍后再试";
+    throw new Error(message);
+  }
+};

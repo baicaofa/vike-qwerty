@@ -478,19 +478,33 @@ export default function FeedbackAdminPage() {
                   selectedFeedback.replies.length > 0 && (
                     <div className="mt-4 rounded-md bg-gray-50 p-3 dark:bg-gray-700">
                       <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                        管理员回复
+                        对话记录 ({selectedFeedback.replies.length})
                       </h4>
                       <div className="mt-2 space-y-3">
                         {selectedFeedback.replies.map((reply, index) => (
                           <div
                             key={index}
-                            className="border-b border-gray-200 pb-2 dark:border-gray-600"
+                            className={`border-b border-gray-200 pb-2 dark:border-gray-600 ${
+                              reply.replyType === "admin"
+                                ? "bg-blue-50 dark:bg-blue-900/20"
+                                : "bg-green-50 dark:bg-green-900/20"
+                            }`}
                           >
                             <p className="whitespace-pre-wrap text-sm text-gray-700 dark:text-gray-300">
                               {reply.content}
                             </p>
                             <div className="mt-1 flex justify-between text-xs text-gray-500 dark:text-gray-400">
-                              <span>{reply.adminUsername}</span>
+                              <span
+                                className={`font-medium ${
+                                  reply.replyType === "admin"
+                                    ? "text-blue-600 dark:text-blue-400"
+                                    : "text-green-600 dark:text-green-400"
+                                }`}
+                              >
+                                {reply.replyType === "admin"
+                                  ? `${reply.adminUsername} (管理员)`
+                                  : `${reply.userUsername} (用户)`}
+                              </span>
                               <span>
                                 {new Date(reply.createdAt).toLocaleString()}
                               </span>

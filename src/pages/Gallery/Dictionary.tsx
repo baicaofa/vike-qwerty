@@ -18,7 +18,7 @@ function DictionaryComponent({ dictionary, onClick }: Props) {
         <div className="bg-gray-700"></div>
       </div>
       <div className="flex h-full w-7/12 flex-col items-start justify-start px-6 pt-2">
-        <h1 className="mb-5 text-2xl font-normal">{dictionary.name}</h1>
+        <h2 className="mb-5 text-2xl font-normal">{dictionary.name}</h2>
         <p className="mb-6 text-lg text-gray-600">{dictionary.length}</p>
         <div className="mb-0 flex w-full items-center">
           <Progress.Root

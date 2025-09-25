@@ -1,4 +1,14 @@
+import ChapterRecord from "../models/ChapterRecord";
+import CustomDictionary from "../models/CustomDictionary";
+import CustomWord from "../models/CustomWord";
+import FamiliarWord from "../models/FamiliarWord";
+import Feedback from "../models/Feedback";
+import ReviewConfig from "../models/ReviewConfig";
+import ReviewHistory from "../models/ReviewHistory";
+import ReviewRecord from "../models/ReviewRecord";
 import User from "../models/User";
+import WordRecord from "../models/WordRecord";
+import WordReviewRecord from "../models/WordReviewRecord";
 import {
   generatePasswordResetToken,
   generateVerificationCode,
@@ -13,9 +23,32 @@ import {
 import type { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 
+const AUTH_COOKIE_NAME = "token";
+const AUTH_COOKIE_OPTIONS = {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: "lax" as const,
+  path: "/",
+};
+
+const getJwtSecret = () => {
+  const secret = process.env.JWT_SECRET;
+  if (!secret && process.env.NODE_ENV === "production") {
+    throw new Error("JWT_SECRET is required in production");
+  }
+  return secret || "your-secret-key";
+};
+
 export const generateToken = (id: string) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET || "your-secret-key", {
+  return jwt.sign({ id }, getJwtSecret(), {
     expiresIn: "30d",
+  });
+};
+
+const setAuthCookie = (res: Response, token: string) => {
+  res.cookie(AUTH_COOKIE_NAME, token, {
+    ...AUTH_COOKIE_OPTIONS,
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30d
   });
 };
 
@@ -45,13 +78,15 @@ export const register = async (req: Request, res: Response): Promise<void> => {
       isEmailVerified: true,
     });
 
-    // 返回注册成功信息和 token
+    const token = generateToken(user._id.toString());
+    setAuthCookie(res, token);
+
+    // 返回注册成功信息。认证凭证写入 HttpOnly Cookie，不暴露给前端 JS。
     res.status(201).json({
       _id: user._id.toString(),
       username: user.username,
       email: user.email,
       isEmailVerified: true,
-      token: generateToken(user._id.toString()),
       message: "注册成功",
     });
   } catch (error) {
@@ -119,13 +154,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     const token = generateToken(user._id.toString());
 
-    // 设置 HttpOnly Cookie
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      maxAge: 30 * 24 * 60 * 60 * 1000, // 30d
-    });
+    setAuthCookie(res, token);
 
     res.json({
       _id: user._id.toString(),
@@ -140,13 +169,81 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
 export const logout = async (req: Request, res: Response): Promise<void> => {
   try {
-    res.clearCookie("token", {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-    });
+    res.clearCookie(AUTH_COOKIE_NAME, AUTH_COOKIE_OPTIONS);
     res.json({ message: "已登出" });
   } catch (error) {
+    res.status(500).json({ message: "服务器错误" });
+  }
+};
+
+export const deleteAccount = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { password } = req.body;
+
+    if (!password) {
+      res.status(400).json({ message: "请输入密码以确认注销账户" });
+      return;
+    }
+
+    const user = await User.findById(req.user._id);
+    if (!user) {
+      res.status(404).json({ message: "用户不存在" });
+      return;
+    }
+
+    const isPasswordValid = await user.comparePassword(password);
+    if (!isPasswordValid) {
+      res.status(401).json({ message: "密码错误，无法注销账户" });
+      return;
+    }
+
+    const userId = user._id;
+    const customDictionaries = await CustomDictionary.find({ userId }).select(
+      "id"
+    );
+    const customDictionaryIds = customDictionaries.map((dict) => dict.id);
+
+    await Promise.all([
+      WordRecord.deleteMany({ userId }),
+      WordReviewRecord.deleteMany({ userId }),
+      ReviewHistory.deleteMany({ userId }),
+      ReviewRecord.deleteMany({ userId }),
+      ReviewConfig.deleteMany({ userId }),
+      ChapterRecord.deleteMany({ userId }),
+      FamiliarWord.deleteMany({ userId }),
+      CustomDictionary.deleteMany({ userId }),
+      CustomWord.deleteMany({ dictId: { $in: customDictionaryIds } }),
+      Feedback.updateMany(
+        { userId },
+        {
+          $unset: { userId: "" },
+          $set: { contactInfo: "" },
+        }
+      ),
+      Feedback.updateMany(
+        { "voters.userId": userId },
+        { $pull: { voters: { userId } } }
+      ),
+      Feedback.updateMany(
+        { "replies.userId": userId },
+        {
+          $unset: {
+            "replies.$[reply].userId": "",
+            "replies.$[reply].userUsername": "",
+          },
+        },
+        { arrayFilters: [{ "reply.userId": userId }] }
+      ),
+    ]);
+
+    await User.deleteOne({ _id: userId });
+    res.clearCookie(AUTH_COOKIE_NAME, AUTH_COOKIE_OPTIONS);
+    res.json({ message: "账户已注销" });
+  } catch (error) {
+    console.error("注销账户错误:", error);
     res.status(500).json({ message: "服务器错误" });
   }
 };
@@ -309,13 +406,15 @@ export const completeRegistration = async (
       isEmailVerified: true,
     });
 
-    // 4. 返回注册成功信息和 token
+    const token = generateToken(user._id.toString());
+    setAuthCookie(res, token);
+
+    // 4. 返回注册成功信息。认证凭证写入 HttpOnly Cookie，不暴露给前端 JS。
     res.status(201).json({
       _id: user._id.toString(),
       username: user.username,
       email: user.email,
       isEmailVerified: true,
-      token: generateToken(user._id.toString()),
       message: "注册成功",
     });
   } catch (error) {

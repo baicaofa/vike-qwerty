@@ -10,7 +10,6 @@ interface User {
 
 interface AuthState {
   user: User | null;
-  token: string | null;
   isAuthenticated: boolean;
   isEmailVerified: boolean;
   login: (email: string, password: string) => Promise<void>;
@@ -20,8 +19,9 @@ interface AuthState {
     password: string,
     code: string
   ) => Promise<void>;
-  logout: () => void;
-  checkAuth: () => void;
+  logout: () => Promise<void>;
+  deleteAccount: (password: string) => Promise<void>;
+  checkAuth: () => Promise<void>;
   sendVerificationCode: (email: string) => Promise<void>;
   verifyEmail: (email: string, code: string) => Promise<void>;
   forgotPassword: (email: string) => Promise<void>;
@@ -49,13 +49,6 @@ const getLocalStorageItem = (key: string): string | null => {
   return null;
 };
 
-// 安全地设置 localStorage 中的值
-const setLocalStorageItem = (key: string, value: string): void => {
-  if (isBrowser) {
-    localStorage.setItem(key, value);
-  }
-};
-
 // 安全地删除 localStorage 中的值
 const removeLocalStorageItem = (key: string): void => {
   if (isBrowser) {
@@ -63,11 +56,14 @@ const removeLocalStorageItem = (key: string): void => {
   }
 };
 
-// 初始化时设置axios的Authorization请求头
-const token = getLocalStorageItem("token");
-if (token) {
-  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-}
+axios.defaults.withCredentials = true;
+
+// 安全地设置 localStorage 中的值
+const setLocalStorageItem = (key: string, value: string): void => {
+  if (isBrowser) {
+    localStorage.setItem(key, value);
+  }
+};
 
 // 从localStorage获取用户数据
 const getUserFromLocalStorage = (): User | null => {
@@ -87,23 +83,17 @@ const initialUser = getUserFromLocalStorage();
 
 const useAuthStore = create<AuthState>((set) => ({
   user: initialUser,
-  token: getLocalStorageItem("token"),
-  isAuthenticated: !!getLocalStorageItem("token"),
+  isAuthenticated: false,
   isEmailVerified: initialUser?.isEmailVerified || false,
 
   login: async (email: string, password: string) => {
     const response = await axios.post("/api/auth/login", { email, password });
-    const { token, ...user } = response.data;
+    const user = response.data;
 
-    setLocalStorageItem("token", token);
     setLocalStorageItem("user", JSON.stringify(user));
-
-    // 设置请求头中的Authorization
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
     set({
       user,
-      token,
       isAuthenticated: true,
       isEmailVerified: user.isEmailVerified,
     });
@@ -127,17 +117,12 @@ const useAuthStore = create<AuthState>((set) => ({
 
       console.log("注册响应:", response.data);
 
-      const { token, ...user } = response.data;
+      const user = response.data;
 
-      setLocalStorageItem("token", token);
       setLocalStorageItem("user", JSON.stringify(user));
-
-      // 设置请求头中的Authorization
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
       set({
         user,
-        token,
         isAuthenticated: true,
         isEmailVerified: true,
       });
@@ -149,41 +134,37 @@ const useAuthStore = create<AuthState>((set) => ({
     }
   },
 
-  logout: () => {
-    removeLocalStorageItem("token");
+  logout: async () => {
+    try {
+      await axios.post("/api/auth/logout");
+    } finally {
+      removeLocalStorageItem("user");
+      removeLocalStorageItem("lastSyncTimestamp");
+      set({ user: null, isAuthenticated: false, isEmailVerified: false });
+    }
+  },
+
+  deleteAccount: async (password: string) => {
+    await axios.delete("/api/auth/account", { data: { password } });
+    removeLocalStorageItem("user");
     removeLocalStorageItem("lastSyncTimestamp");
-    delete axios.defaults.headers.common["Authorization"];
-    set({ user: null, token: null, isAuthenticated: false });
+    set({ user: null, isAuthenticated: false, isEmailVerified: false });
   },
 
   checkAuth: async () => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      set({ user: null, token: null, isAuthenticated: false });
-      return;
-    }
     try {
-      // 设置默认请求头中的Authorization
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-
-      // 向后端请求校验 token
-      const response = await axios.get("/api/auth/profile", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await axios.get("/api/auth/profile");
       const user = response.data;
       set({
         user,
-        token,
         isAuthenticated: true,
         isEmailVerified: user.isEmailVerified,
       });
       setLocalStorageItem("user", JSON.stringify(user));
     } catch (error) {
-      // token 无效或过期，自动登出
-      removeLocalStorageItem("token");
+      // Cookie 无效或过期，自动登出本地状态
       removeLocalStorageItem("user");
-      delete axios.defaults.headers.common["Authorization"];
-      set({ user: null, token: null, isAuthenticated: false });
+      set({ user: null, isAuthenticated: false, isEmailVerified: false });
     }
   },
 
@@ -202,7 +183,7 @@ const useAuthStore = create<AuthState>((set) => ({
       const userData = JSON.parse(user);
       userData.isEmailVerified = true;
       setLocalStorageItem("user", JSON.stringify(userData));
-      set({ user: userData });
+      set({ user: userData, isEmailVerified: true });
     }
   },
 
@@ -225,22 +206,17 @@ const useAuthStore = create<AuthState>((set) => ({
 
       console.log("完成注册响应:", response.data);
 
-      if (!response.data || !response.data.token) {
+      if (!response.data || !response.data._id) {
         throw new Error("服务器响应格式错误");
       }
 
-      const { token, ...user } = response.data;
+      const user = response.data;
 
-      console.log("设置本地存储和状态...");
-      setLocalStorageItem("token", token);
+      console.log("设置本地用户状态...");
       setLocalStorageItem("user", JSON.stringify(user));
-
-      // 设置请求头中的Authorization
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
       set({
         user,
-        token,
         isAuthenticated: true,
         isEmailVerified: true,
       });

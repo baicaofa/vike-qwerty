@@ -1,20 +1,18 @@
 import { FeedbackDialog } from "../../components/FeedbackDialog";
 import FeedbackNav from "../../components/FeedbackNav";
 import Layout from "../../components/Layout";
+import { ReplyList } from "../../components/ReplyList";
 import { VoteButtons } from "../../components/VoteButtons";
+import { useAuth } from "../../hooks/useAuth";
 import { useToast } from "../../hooks/useToast";
 import type { FeedbackReply } from "../../services/feedbackService";
-import { getPublicFeedback } from "../../services/feedbackService";
-// 优化导入：只导入需要的图标
 import {
-  AlertTriangle,
-  Bug,
-  Heart,
-  Lightbulb,
-  MessageSquare,
-  Star,
-} from "lucide-react";
-import { useEffect, useState } from "react";
+  getPublicFeedback,
+  replyToFeedbackAsUser,
+} from "../../services/feedbackService";
+// 优化导入：只导入需要的图标
+import { MessageSquare, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 // 反馈类型和状态标签映射
 const typeLabels: Record<string, string> = {
@@ -53,6 +51,7 @@ interface FeedbackItem {
   userVote: "up" | "down" | null;
   createdAt: string;
   userId?: {
+    _id: string;
     username: string;
   };
   replies?: FeedbackReply[];
@@ -60,6 +59,8 @@ interface FeedbackItem {
 
 export default function FeedbackPage() {
   const toast = useToast();
+  const auth = useAuth();
+  const { isAuthenticated, userData } = auth;
 
   // 状态管理
   const [feedbacks, setFeedbacks] = useState<FeedbackItem[]>([]);
@@ -70,6 +71,9 @@ export default function FeedbackPage() {
   const [selectedFeedback, setSelectedFeedback] = useState<FeedbackItem | null>(
     null
   );
+  const [userReplyContent, setUserReplyContent] = useState("");
+  const [isReplySubmitting, setIsReplySubmitting] = useState(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
   // 筛选和排序状态
   const [filterType, setFilterType] = useState("");
@@ -96,6 +100,7 @@ export default function FeedbackPage() {
 
         setFeedbacks(response.data);
         setTotalPages(response.pages);
+        setError("");
         setLoading(false);
       } catch (error) {
         setError(error instanceof Error ? error.message : "加载反馈数据时出错");
@@ -105,6 +110,62 @@ export default function FeedbackPage() {
 
     loadFeedbacks();
   }, [currentPage, filterType, filterStatus, sortOption]);
+
+  // 当筛选/排序变更时，重置到第1页
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filterType, filterStatus, sortOption]);
+
+  // 模态打开时锁定背景滚动，关闭时恢复
+  useEffect(() => {
+    if (selectedFeedback) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [selectedFeedback]);
+
+  // 模态 Esc 关闭与焦点陷阱
+  useEffect(() => {
+    if (!selectedFeedback) return;
+
+    const handleKeydown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleCloseDetails();
+      } else if (e.key === "Tab" && modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        const active = document.activeElement as HTMLElement | null;
+        if (e.shiftKey) {
+          if (active === first || !modalRef.current.contains(active)) {
+            last.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (active === last || !modalRef.current.contains(active)) {
+            first.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    };
+
+    // 初始聚焦到模态
+    setTimeout(() => {
+      if (modalRef.current) {
+        modalRef.current.focus();
+      }
+    }, 0);
+
+    window.addEventListener("keydown", handleKeydown);
+    return () => window.removeEventListener("keydown", handleKeydown);
+  }, [selectedFeedback]);
 
   // 处理投票变更
   const handleVoteChange = (
@@ -136,6 +197,51 @@ export default function FeedbackPage() {
   // 关闭详情模态框
   const handleCloseDetails = () => {
     setSelectedFeedback(null);
+    setUserReplyContent("");
+  };
+
+  // 处理用户回复
+  const handleUserReply = async () => {
+    if (!selectedFeedback || !userReplyContent.trim() || isReplySubmitting)
+      return;
+
+    // 检查用户是否已登录
+    if (!isAuthenticated || !userData) {
+      toast.error("请先登录后再回复");
+      return;
+    }
+
+    try {
+      setIsReplySubmitting(true);
+      await replyToFeedbackAsUser(selectedFeedback._id, userReplyContent);
+      toast.success("回复已提交");
+      setUserReplyContent("");
+
+      // 重新加载反馈数据
+      const response = await getPublicFeedback(
+        currentPage,
+        10,
+        { type: filterType, status: filterStatus },
+        sortOption
+      );
+      setFeedbacks(response.data);
+
+      // 更新选中的反馈
+      const updatedFeedback = response.data.find(
+        (f: FeedbackItem) => f._id === selectedFeedback._id
+      );
+      if (updatedFeedback) {
+        setSelectedFeedback(updatedFeedback);
+      } else {
+        toast.info && toast.info("该反馈已移动或当前页不可见，已关闭详情");
+        handleCloseDetails();
+      }
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : "回复失败";
+      toast.error(errorMessage);
+    } finally {
+      setIsReplySubmitting(false);
+    }
   };
 
   // 构建分页按钮
@@ -271,14 +377,15 @@ export default function FeedbackPage() {
                     <div className="p-4">
                       <div className="mb-3 flex items-start justify-between">
                         <span className="inline-block rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
-                          {typeLabels[feedback.type]}
+                          {typeLabels[feedback.type] ?? "其他"}
                         </span>
                         <span
                           className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                            statusColors[feedback.status]
+                            statusColors[feedback.status] ??
+                            "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
                           }`}
                         >
-                          {statusLabels[feedback.status]}
+                          {statusLabels[feedback.status] ?? "未知状态"}
                         </span>
                       </div>
                       <h3 className="mb-2 line-clamp-2 text-lg font-medium text-gray-900 dark:text-white">
@@ -355,8 +462,14 @@ export default function FeedbackPage() {
 
       {/* 反馈详情模态框 */}
       {selectedFeedback && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
-          <div className="w-full max-w-2xl overflow-hidden rounded-lg bg-white shadow-xl dark:bg-gray-800">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
+          onClick={handleCloseDetails}
+        >
+          <div
+            className="w-full max-w-2xl overflow-y-auto max-h-[85vh] rounded-lg bg-white shadow-xl dark:bg-gray-800"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="px-6 py-4">
               <div className="mb-4 flex items-center justify-between">
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white">
@@ -368,20 +481,21 @@ export default function FeedbackPage() {
                   className="rounded-full p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                   aria-label="关闭"
                 >
-                  <AlertTriangle className="h-6 w-6" />
+                  <X className="h-6 w-6" />
                 </button>
               </div>
 
               <div className="mb-4 flex flex-wrap gap-2">
                 <span className="inline-block rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
-                  {typeLabels[selectedFeedback.type]}
+                  {typeLabels[selectedFeedback.type] ?? "其他"}
                 </span>
                 <span
                   className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                    statusColors[selectedFeedback.status]
+                    statusColors[selectedFeedback.status] ??
+                    "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
                   }`}
                 >
-                  {statusLabels[selectedFeedback.status]}
+                  {statusLabels[selectedFeedback.status] ?? "未知状态"}
                 </span>
               </div>
 
@@ -418,33 +532,43 @@ export default function FeedbackPage() {
                 </div>
               </div>
 
-              {/* 管理员回复列表 */}
-              {selectedFeedback.replies &&
-                selectedFeedback.replies.length > 0 && (
-                  <div className="mt-4 rounded-md bg-blue-50 p-4 dark:bg-blue-900/20">
-                    <h4 className="mb-2 text-sm font-medium text-blue-800 dark:text-blue-300">
-                      官方回复
-                    </h4>
-                    <div className="space-y-3">
-                      {selectedFeedback.replies.map((reply, index) => (
-                        <div
-                          key={index}
-                          className="border-b border-blue-100 pb-3 last:border-0 dark:border-blue-800/30"
-                        >
-                          <p className="whitespace-pre-wrap text-sm text-gray-700 dark:text-gray-300">
-                            {reply.content}
-                          </p>
-                          <div className="mt-1 flex justify-end text-xs text-gray-500 dark:text-gray-400">
-                            <span className="font-medium text-blue-600 dark:text-blue-400">
-                              {reply.adminUsername} (管理员) ·{" "}
-                              {new Date(reply.createdAt).toLocaleString()}
-                            </span>
-                          </div>
-                        </div>
-                      ))}
+              {/* 回复列表 */}
+              <ReplyList
+                replies={selectedFeedback.replies || []}
+                className="mt-4"
+              />
+
+              {/* 回复功能 - 仅登录用户可见 */}
+              {isAuthenticated && (
+                <div className="mt-4 rounded-md bg-gray-50 p-4 dark:bg-gray-700">
+                  <h4 className="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                    添加回复
+                  </h4>
+
+                  <div className="space-y-3">
+                    <textarea
+                      value={userReplyContent}
+                      onChange={(e) => setUserReplyContent(e.target.value)}
+                      className="w-full rounded-md border border-gray-300 p-2 text-sm dark:border-gray-600 dark:bg-gray-600 dark:text-white"
+                      rows={3}
+                      placeholder="输入您的回复..."
+                      maxLength={1000}
+                    />
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                        {userReplyContent.length}/1000
+                      </span>
+                      <button
+                        onClick={handleUserReply}
+                        disabled={!userReplyContent.trim()}
+                        className="rounded bg-blue-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-blue-600 dark:hover:bg-blue-700"
+                      >
+                        提交回复
+                      </button>
                     </div>
                   </div>
-                )}
+                </div>
+              )}
             </div>
             <div className="bg-gray-50 px-6 py-4 dark:bg-gray-700">
               <button

@@ -185,3 +185,13 @@ export const showWordAfterCompletionAtom = atomWithStorage(
   "showWordAfterCompletion",
   false
 );
+
+// 复习模式释义显示配置（与复习设置同层级的全局开关）
+export const reviewMeaningConfigAtom = atomWithStorage("reviewMeaningConfig", {
+  isOpen: true as boolean,
+  // 显示模式：always(总是显示) | onTab(按Tab或悬停显示)
+  revealMode: "onTab" as "always" | "onTab",
+});
+
+// 复习单词到词典ID的映射，用于按词典查询释义
+export const reviewWordDictMapAtom = atom<Record<string, string>>({});
